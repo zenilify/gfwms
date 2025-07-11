@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SharePoint Iframe Compatibility Headers -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' https://*.sharepoint.com https://*.office.com https://*.office365.com;">
+    
+    <!-- SharePoint Compatibility Mode -->
+    <meta name="ms.sp.version" content="16.0">
+    <meta name="ms.sp.iframe.compatible" content="true">
+    
+    <title>Enhanced WMS Störungsbehandlung Wiki - Georg Fischer (SharePoint)</title>
+    <style>
+        /* SharePoint-optimized Enhanced Wiki CSS */
+        
+        /* Special styles for iframe mode */
+        body.sp-iframe-mode {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body.sp-iframe-mode .sp-wiki-container {
+            max-width: 100%;
+            padding: 10px;
+            background-color: transparent;
+        }
+        .sp-wiki-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        .sp-wiki-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .sp-wiki-header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+        }
+        
+        .sp-wiki-header p {
+            font-size: 1.2rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .sp-wiki-nav {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sp-wiki-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .sp-wiki-nav a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .sp-wiki-nav a:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        .sp-wiki-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+        }
+        
+        .sp-wiki-sidebar {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sp-wiki-sidebar h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .sp-toc {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sp-toc li {
+            margin-bottom: 8px;
+        }
+        
+        .sp-toc a {
+            color: #666;
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .sp-toc a:hover {
+            background-color: #f8f9fa;
+            color: #3498db;
+        }
+        
+        .sp-toc ul {
+            list-style: none;
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+        
+        .sp-toc ul a {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .sp-wiki-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sp-alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid;
+        }
+        
+        .sp-alert-info {
+            background-color: #e3f2fd;
+            border-left-color: #2196f3;
+            color: #0d47a1;
+        }
+        
+        .sp-alert-warning {
+            background-color: #fff3e0;
+            border-left-color: #ff9800;
+            color: #e65100;
+        }
+        
+        .sp-alert-danger {
+            background-color: #ffebee;
+            border-left-color: #f44336;
+            color: #c62828;
+        }
+        
+        .sp-info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .sp-info-box h3 {
+            margin-top: 0;
+            color: white;
+        }
+        
+        .sp-info-box a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        .sp-error-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-left: 5px solid #3498db;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .sp-error-section.critical {
+            border-left-color: #e74c3c;
+        }
+        
+        .sp-error-section.warning {
+            border-left-color: #f39c12;
+        }
+        
+        .sp-error-code {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .sp-error-title {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .sp-error-details {
+            margin-bottom: 20px;
+        }
+        
+        .sp-error-details h4 {
+            color: #2c3e50;
+            margin: 15px 0 10px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .sp-error-details ul, .sp-error-details ol {
+            margin-left: 20px;
+        }
+        
+        .sp-error-details li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .sp-category-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 40px 0 30px 0;
+        }
+        
+        .sp-category-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .sp-support-classification {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .sp-support-classification h4 {
+            color: #b8860b;
+            margin-top: 0;
+        }
+        
+        .sp-kpi-impact {
+            background: #e8f5e8;
+            border: 1px solid #c8e6c9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .sp-kpi-impact h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        
+        .sp-back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sp-back-link:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        .sp-reference-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .sp-reference-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .sp-reference-table th {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .sp-reference-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .sp-reference-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .sp-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .sp-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .sp-contact-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sp-contact-card h3, .sp-contact-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .sp-contact-card p {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .sp-wiki-layout {
+                grid-template-columns: 250px 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sp-wiki-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sp-wiki-sidebar {
+                position: static;
+                order: 2;
+            }
+            
+            .sp-wiki-content {
+                order: 1;
+            }
+            
+            .sp-wiki-nav ul {
+                flex-direction: column;
+            }
+            
+            .sp-wiki-container {
+                padding: 10px;
+            }
+            
+            .sp-wiki-header,
+            .sp-wiki-content {
+                padding: 20px;
+            }
+            
+            .sp-grid-2,
+            .sp-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SharePoint Iframe Detection and Compatibility Script -->
+    <script>
+        (function() {
+            // Detect if running in iframe
+            var isInIframe = false;
+            try {
+                isInIframe = window.self !== window.top;
+            } catch (e) {
+                isInIframe = true;
+            }
+            
+            if (isInIframe) {
+                // Add iframe class to body for specific styling if needed
+                document.body.classList.add('sp-iframe-mode');
+                
+                // Handle SharePoint postMessage communication
+                window.addEventListener('message', function(e) {
+                    // Validate origin is from SharePoint domains
+                    var allowedOrigins = [
+                        'https://sharepoint.com',
+                        'https://office.com',
+                        'https://office365.com'
+                    ];
+                    
+                    var isAllowed = allowedOrigins.some(function(origin) {
+                        return e.origin.indexOf(origin) !== -1;
+                    });
+                    
+                    if (isAllowed) {
+                        // Handle SharePoint-specific messages
+                        if (e.data && e.data.type === 'resize') {
+                            // Adjust content if needed
+                            document.body.style.height = e.data.height + 'px';
+                        }
+                    }
+                }, false);
+                
+                // Send ready message to parent
+                if (window.parent && window.parent !== window) {
+                    window.parent.postMessage({ type: 'iframe-ready', source: 'gf-wms-wiki' }, '*');
+                }
+            }
+            
+            // SharePoint compatibility for older IE versions
+            if (typeof window.console === 'undefined') {
+                window.console = {
+                    log: function() {},
+                    error: function() {},
+                    warn: function() {}
+                };
+            }
+        })();
+    </script>
+    <div class="sp-wiki-container">
+        <div class="sp-wiki-header">
+            <h1>📚 Enhanced WMS Störungsbehandlung Wiki</h1>
+            <p>Umfassende Dokumentation mit Support-Klassifizierung, KPI-Integration und AI-Features</p>
+        </div>
+
+        <a href="../index.html" class="sp-back-link">← Zurück zur Hauptseite</a>
+
+        <nav class="sp-wiki-nav">
+            <ul>
+                <li><a href="#overview">📋 Übersicht</a></li>
+                <li><a href="#support-classes">🏷️ Support-Klassen</a></li>
+                <li><a href="#automatik">⚙️ Automatik</a></li>
+                <li><a href="#foerdertechnik">🔧 Fördertechnik</a></li>
+                <li><a href="#behaelter-rbg">📦 Behälter-RBG</a></li>
+                <li><a href="#paletten-rbg">📋 Paletten-RBG</a></li>
+                <li><a href="#kpi-monitoring">📊 KPI Monitoring</a></li>
+                <li><a href="#kontakte">📞 Kontakte</a></li>
+            </ul>
+        </nav>
+
+        <div class="sp-wiki-layout">
+            <aside class="sp-wiki-sidebar">
+                <h3>Inhaltsverzeichnis</h3>
+                <ul class="sp-toc">
+                    <li><a href="#overview">Übersicht</a></li>
+                    <li><a href="#support-classes">Support-Klassifizierung</a></li>
+                    <li><a href="#automatik">Automatik Störungsbehandlung</a>
+                        <ul>
+                            <li><a href="#behandlungsmoeglichkeiten">Möglichkeiten</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#foerdertechnik">Fördertechnik</a>
+                        <ul>
+                            <li><a href="#10003">10003 - Kommunikation</a></li>
+                            <li><a href="#10006">10006 - Konturenfehler</a></li>
+                            <li><a href="#10009">10009 - Annahmesperre</a></li>
+                            <li><a href="#10024">10024 - Ziel unerreichbar</a></li>
+                            <li><a href="#10039">10039 - Timeout</a></li>
+                            <li><a href="#10045">10045 - Protokollfehler</a></li>
+                            <li><a href="#10053">10053 - Kein Weg</a></li>
+                            <li><a href="#20162">20162 - TE-ID Null</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#behaelter-rbg">Behälter-RBG</a></li>
+                    <li><a href="#paletten-rbg">Paletten-RBG</a></li>
+                    <li><a href="#kpi-monitoring">KPI Monitoring</a></li>
+                    <li><a href="#kontakte">Kontakte & Support</a></li>
+                </ul>
+            </aside>
+
+            <div class="sp-wiki-content">
+                <section id="overview">
+                    <h2>📋 Systemübersicht</h2>
+                    
+                    <div class="sp-alert sp-alert-info">
+                        <strong>Enhanced Wiki Version</strong> - Diese Dokumentation enthält erweiterte Features:
+                        Support-Klassifizierung, KPI-Integration, AI-Powered Chatbot Support und umfassende Eskalationsverfahren.
+                    </div>
+                    
+                    <div class="sp-info-box">
+                        <h3>Wichtige Features</h3>
+                        <ul>
+                            <li><a href="#support-classes" style="color: white;">Support-Klassifizierung (Klasse 1-3)</a></li>
+                            <li><a href="../chatbot.html" style="color: white;">AI-Powered Chatbot Support</a></li>
+                            <li><a href="../training.html" style="color: white;">WMS Training Center</a></li>
+                            <li><a href="conveyor_system_errors.html" style="color: white;">Erweiterte Fehlercode-Dokumentation</a></li>
+                            <li><a href="#kpi-monitoring" style="color: white;">KPI Monitoring & Analytics</a></li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="support-classes">
+                    <h2>🏷️ Support-Klassifizierung</h2>
+                    
+                    <div class="sp-reference-table">
+                        <h3>Prioritätseinstufung nach Support-Klassen</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Klasse</th>
+                                    <th>Beschreibung</th>
+                                    <th>Reaktionszeit</th>
+                                    <th>Kontaktweg</th>
+                                    <th>Verfügbarkeit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Klasse 1</strong></td>
+                                    <td>Kritische Störungen - laufender Betrieb gefährdet</td>
+                                    <td>Gemäß Vereinbarung (sofort)</td>
+                                    <td>Telefon-Meldung erforderlich</td>
+                                    <td>24/7 Notfall-Support</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Klasse 2</strong></td>
+                                    <td>Nicht-kritische Störungen</td>
+                                    <td>Nächster Arbeitstag</td>
+                                    <td>E-Mail oder Telefon</td>
+                                    <td>Geschäftszeiten</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Klasse 3</strong></td>
+                                    <td>Präventive Unterstützung</td>
+                                    <td>2-6 Arbeitstage</td>
+                                    <td>E-Mail bevorzugt</td>
+                                    <td>Geschäftszeiten</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <section id="automatik">
+                    <h2>⚙️ Automatik Störungsbehandlung</h2>
+                    
+                    <div class="sp-info-box">
+                        <h3>Übersicht</h3>
+                        <p><strong>Navigation:</strong> Automatik > Störungsbehandlung</p>
+                        <p>Tritt während eines Transports eine Störung auf, wird diese umgehend in den Dialog Störungsbehandlung eingeschrieben.</p>
+                    </div>
+                    
+                    <div class="sp-alert sp-alert-warning">
+                        <strong>Erkennungszeichen:</strong> Störung am Hauptbildschirm erkennbar durch rot hinterlegtes Feld "Automatik".
+                    </div>
+                    
+                    <section id="behandlungsmoeglichkeiten">
+                        <h3>Störungsbehandlungsmöglichkeiten</h3>
+                        
+                        <div class="sp-grid-2">
+                            <div class="sp-error-section">
+                                <h4>1. Transport erneut an das Gerät senden</h4>
+                                <p><strong>Standard:</strong> Nach Behebung einer physikalischen Störung</p>
+                                <ul>
+                                    <li>Lagerort sperren und neues Ziel suchen</li>
+                                    <li>Neues Ziel suchen</li>
+                                    <li>LHM-Abmessungen ändern</li>
+                                    <li>LHM wurde bereits aufgenommen</li>
+                                    <li>LHM anfordern</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="sp-error-section">
+                                <h4>2. LHM extern buchen</h4>
+                                <p>Bucht das LHM auf einen definierten externen Ort</p>
+                                <ul>
+                                    <li>LHM physikalisch bereits entfernt</li>
+                                    <li>Lagerfach nur datentechnisch belegt</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="sp-error-section">
+                                <h4>3. Transport abschließen</h4>
+                                <p>Bucht LHM auf Zielort und löscht Transportauftrag</p>
+                                <ul>
+                                    <li>LHM bereits am Ziel</li>
+                                    <li>Falsche Sensorik-Meldung</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="sp-error-section">
+                                <h4>4. Quit an Gerät senden</h4>
+                                <p>Verbindungsaufbau zwischen GM und MFR</p>
+                                <ul>
+                                    <li>Unterbrochene Kommunikation</li>
+                                    <li>Telegramm-Probleme</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                
+                <section id="foerdertechnik">
+                    <div class="sp-category-header">
+                        <h2>🔧 Störungen auf der Fördertechnik</h2>
+                    </div>
+
+                    <div class="sp-error-section critical" id="10003">
+                        <div class="sp-error-code">10003</div>
+                        <div class="sp-error-title">Kommunikationsstörung zum Gerät</div>
+                        
+                        <div class="sp-support-classification">
+                            <h4>🏷️ Support-Klassifizierung: Klasse 1 (Kritisch)</h4>
+                            <p>Produktionsrelevante Störung - Sofortige Meldung erforderlich</p>
+                        </div>
+                        
+                        <div class="sp-error-details">
+                            <h4>🔍 Problembeschreibung:</h4>
+                            <p>Transport kann nicht an Gerät weitergegeben werden - TCP/IP-Verbindung fehlgeschlagen</p>
+                            
+                            <h4>⚠️ Mögliche Ursachen:</h4>
+                            <ul>
+                                <li>Gerät hardwareseitig deaktiviert ('Strom aus')</li>
+                                <li>Unterbrochene Funkverbindung zum Access-Point</li>
+                                <li>Defekter Funkempfänger</li>
+                                <li>Probleme im hausinternen Netzwerk</li>
+                            </ul>
+                            
+                            <h4>🛠️ Lösungsschritte:</h4>
+                            <ol>
+                                <li>Gerät neu starten ('Strom aus' → 'Strom ein')</li>
+                                <li>Gerät im Handbetrieb verfahren für Funkverbindung</li>
+                                <li>IT-Abteilung kontaktieren bei Netzwerkproblemen</li>
+                                <li>Bei fortdauernden Problemen: Jungheinrich Support +43 316 811651 8888</li>
+                            </ol>
+                            
+                            <h4>💻 WMS-Aktion:</h4>
+                            <p>Standard transport retry nach Hardware-Lösung</p>
+                        </div>
+                        
+                        <div class="sp-kpi-impact">
+                            <h4>📊 KPI Impact:</h4>
+                            <ul>
+                                <li>Erhöhte Störungsbehebungszeit bei Netzwerkproblemen</li>
+                                <li>Potentielle Verfügbarkeitseinbußen</li>
+                                <li>Auswirkung auf Gesamte Störungsdauer</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sp-error-section warning" id="10006">
+                        <div class="sp-error-code">10006</div>
+                        <div class="sp-error-title">Konturenfehler</div>
+                        
+                        <div class="sp-support-classification">
+                            <h4>🏷️ Support-Klassifizierung: Klasse 2 (Nicht-kritisch)</h4>
+                            <p>Betriebsbeeinträchtigung - Bearbeitung nächster Arbeitstag</p>
+                        </div>
+                        
+                        <div class="sp-error-details">
+                            <h4>🔍 Problembeschreibung:</h4>
+                            <p>LHM überschreitet Dimensionsvorgaben: Überhöhe, Überbreite, Überlänge oder Übergewicht</p>
+                            
+                            <h4>⚠️ Mögliche Ursachen:</h4>
+                            <ul>
+                                <li>Abmessungen entsprechen nicht den Vorgaben</li>
+                                <li>Ladungsträger zu groß für Zielort</li>
+                                <li>Überladung des Behälters</li>
+                                <li>Falsche Behälterwahl</li>
+                                <li>Defekte Konturenerfassung</li>
+                            </ul>
+                            
+                            <h4>🛠️ Lösungsschritte:</h4>
+                            <ol>
+                                <li>Abmessungen entsprechend der Vorgaben anpassen</li>
+                                <li>LHM von der Anlage nehmen wenn nicht anpassbar</li>
+                                <li>Zielort-Kapazität überprüfen</li>
+                                <li>Behälter-Typ korrigieren</li>
+                                <li>Konturenerfassung kalibrieren</li>
+                            </ol>
+                            
+                            <h4>💻 WMS-Aktion:</h4>
+                            <p>LHM extern buchen, alternatives Ziel suchen</p>
+                        </div>
+                        
+                        <div class="sp-kpi-impact">
+                            <h4>📊 KPI Impact:</h4>
+                            <ul>
+                                <li>Moderate Auswirkung auf Durchsatzrate</li>
+                                <li>Potentielle Erhöhung der Störungsanzahl</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Additional error codes for completeness -->
+                    <div class="sp-alert sp-alert-info">
+                        <strong>Weitere Fehlercodes:</strong> Für die vollständige Liste aller Fördertechnik-Fehlercodes siehe 
+                        <a href="conveyor_system_errors.html">Enhanced Conveyor System Error Guide</a>
+                    </div>
+                </section>
+
+                <section id="kpi-monitoring">
+                    <div class="sp-category-header">
+                        <h2>📊 KPI Monitoring & Performance</h2>
+                    </div>
+                    
+                    <div class="sp-info-box">
+                        <h3>Data Center KPI Überwachung</h3>
+                        <p>Kontinuierliche Überwachung kritischer Leistungsindikatoren für optimale WMS-Performance</p>
+                    </div>
+                    
+                    <div class="sp-reference-table">
+                        <h3>🎯 KPI Zielwerte & Monitoring</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>KPI Metrik</th>
+                                    <th>Zielwert</th>
+                                    <th>Kritischer Wert</th>
+                                    <th>Monitoring Intervall</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Mittlere Störungsbehebungszeit</strong></td>
+                                    <td>&lt; 30 Minuten</td>
+                                    <td>&gt; 60 Minuten</td>
+                                    <td>Kontinuierlich</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mittlere störungsfreie Zeit</strong></td>
+                                    <td>&gt; 4 Stunden</td>
+                                    <td>&lt; 2 Stunden</td>
+                                    <td>Kontinuierlich</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Prozentuelle Störungsfreiheit</strong></td>
+                                    <td>&gt; 95%</td>
+                                    <td>&lt; 90%</td>
+                                    <td>Täglich</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gesamte Störungsdauer</strong></td>
+                                    <td>&lt; 4 Std/Tag</td>
+                                    <td>&gt; 8 Std/Tag</td>
+                                    <td>Täglich</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Anzahl Störungen</strong></td>
+                                    <td>&lt; 10/Tag</td>
+                                    <td>&gt; 25/Tag</td>
+                                    <td>Täglich</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="sp-grid-2">
+                        <div class="sp-error-section">
+                            <h4>🤖 AI-Features</h4>
+                            <ul>
+                                <li><strong>Trend- und Abweichungsanalyse</strong> - Automatische Erkennung von Performance-Trends</li>
+                                <li><strong>Predictive Maintenance</strong> - Vorhersage von Geräteausfällen basierend auf Mustern</li>
+                                <li><strong>Automated Outlier Detection</strong> - Erkennung ungewöhnlicher KPI-Abweichungen</li>
+                                <li><strong>Root Cause Analysis</strong> - KI-gestützte Ursachenanalyse bei Störungshäufungen</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sp-error-section">
+                            <h4>📁 Data Retention</h4>
+                            <ul>
+                                <li><strong>Journal-Daten:</strong> 366 Tage (Real-time Monitoring)</li>
+                                <li><strong>Analyse-Daten:</strong> 5 Jahre (Trend-Analyse)</li>
+                                <li><strong>KPI-Snapshots:</strong> 10 Jahre (Benchmarking)</li>
+                                <li><strong>Critical Events:</strong> Permanent (Compliance)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="kontakte">
+                    <div class="sp-category-header">
+                        <h2>📞 Enhanced Kontakt & Support Center</h2>
+                    </div>
+
+                    <div class="sp-alert sp-alert-danger">
+                        <strong>24/7 Notfallnummer:</strong> Bei kritischen Störungen (Klasse 1) sofort +43 316 811651 8888 oder +41 62 739 32 80 anrufen!
+                    </div>
+
+                    <div class="sp-grid-2">
+                        <div class="sp-contact-card">
+                            <h3>🌧 Jungheinrich Software Support</h3>
+                            <p><strong>Hauptnummer:</strong> +43 316 811651 8888</p>
+                            <p><strong>E-Mail:</strong> support@jungheinrich.at</p>
+                            <p><strong>Notfall (24/7):</strong> +43 316 811651 8888</p>
+                            <p><strong>Verfügbarkeit:</strong> Mo-Fr 06:00-22:00</p>
+                            <p><strong>Premium Support:</strong> 1h Reaktionszeit</p>
+                            <p><strong>Zuständig für:</strong> WMS/WCS, Steuerungstechnik, Protokollfehler, Software-Updates</p>
+                        </div>
+
+                        <div class="sp-contact-card">
+                            <h3>🔧 Jungheinrich Technischer Kundendienst</h3>
+                            <p><strong>Schweiz:</strong> +41 848 330 340</p>
+                            <p><strong>E-Mail:</strong> Service@jungheinrich.ch</p>
+                            <p><strong>Notfall (24/7):</strong> +41 62 739 32 80</p>
+                            <p><strong>Verfügbarkeit:</strong> Mo-Fr 06:00-22:00</p>
+                            <p><strong>Vor-Ort Service:</strong> 4h Reaktionszeit</p>
+                            <p><strong>Zuständig für:</strong> Hardware, Mechanik, Elektrik, Sensorik, Vor-Ort Reparaturen</p>
+                        </div>
+                    </div>
+
+                    <div class="sp-error-section">
+                        <h3>👥 Georg Fischer Ansprechpartner</h3>
+                        <div class="sp-grid-3">
+                            <div class="sp-contact-card">
+                                <h4>Thomas Heusser</h4>
+                                <p><strong>Position:</strong> Warehouse Logistics Manager</p>
+                                <p><strong>Telefon:</strong> +41 79 201 94 90</p>
+                                <p><strong>Verantwortung:</strong> Strategische Logistikplanung, Systementscheidungen</p>
+                            </div>
+                            <div class="sp-contact-card">
+                                <h4>Benjamin Simon</h4>
+                                <p><strong>Position:</strong> Warehouse Operator</p>
+                                <p><strong>Telefon:</strong> +41 76 421 89 64</p>
+                                <p><strong>Verantwortung:</strong> Täglicher Betrieb, Erste Hilfe bei Störungen</p>
+                            </div>
+                            <div class="sp-contact-card">
+                                <h4>Livio Mathis</h4>
+                                <p><strong>Position:</strong> Maintenance/Infrastructure Manager</p>
+                                <p><strong>Telefon:</strong> +41 79 540 84 24</p>
+                                <p><strong>Verantwortung:</strong> Präventive Wartung, Infrastruktur</p>
+                            </div>
+                            <div class="sp-contact-card">
+                                <h4>Giuseppe Carroccia</h4>
+                                <p><strong>Position:</strong> Mechanical Maintenance Team Leader</p>
+                                <p><strong>Telefon:</strong> +41 79 540 84 09</p>
+                                <p><strong>Verantwortung:</strong> Mechanische Wartung, Team-Koordination</p>
+                            </div>
+                            <div class="sp-contact-card">
+                                <h4>Kevin Gleichweit</h4>
+                                <p><strong>Position:</strong> Logistics Shift Supervisor</p>
+                                <p><strong>Telefon:</strong> +41 79 201 94 90</p>
+                                <p><strong>Verantwortung:</strong> Schichtleitung, Operative Entscheidungen</p>
+                            </div>
+                            <div class="sp-contact-card">
+                                <h4>Mirjana Milanovic</h4>
+                                <p><strong>Position:</strong> Logistics Shift Supervisor</p>
+                                <p><strong>Telefon:</strong> +41 79 201 94 90</p>
+                                <p><strong>Verantwortung:</strong> Schichtleitung, Prozessoptimierung</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sp-error-section">
+                        <h3>📞 Eskalationsverfahren</h3>
+                        <div class="sp-reference-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Eskalationslevel</th>
+                                        <th>Zeitrahmen</th>
+                                        <th>Ansprechpartner</th>
+                                        <th>Aktion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Level 1</strong></td>
+                                        <td>0-30 Min</td>
+                                        <td>Shift Supervisor</td>
+                                        <td>Erste Maßnahmen, Lokale Lösung</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Level 2</strong></td>
+                                        <td>30-60 Min</td>
+                                        <td>Maintenance Manager</td>
+                                        <td>Technische Analyse, Ressourcen mobilisieren</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Level 3</strong></td>
+                                        <td>60+ Min</td>
+                                        <td>Warehouse Manager + Jungheinrich Support</td>
+                                        <td>Externe Expertenunterstützung, Vor-Ort Service</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <footer style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #ecf0f1; color: #666;">
+            <p>&copy; 2024 Georg Fischer Enhanced WMS Wiki. SharePoint-Version mit erweiterten Features, KPI-Integration und Support-Klassifizierung.</p>
+        </footer>
+    </div>
+</body>
+</html>

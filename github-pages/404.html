@@ -1,0 +1,323 @@
+---
+layout: default
+title: "Page Not Found"
+description: "The page you're looking for doesn't exist"
+permalink: /404.html
+---
+
+<div class="error-404">
+    <div class="container">
+        <div class="error-content">
+            <div class="error-illustration">
+                <div class="error-code">404</div>
+                <div class="error-message">Page Not Found</div>
+            </div>
+            
+            <div class="error-description">
+                <h1>Oops! The page you're looking for doesn't exist.</h1>
+                <p>The page may have been moved, deleted, or you may have entered the wrong URL.</p>
+            </div>
+            
+            <div class="error-actions">
+                <a href="{{ '/' | relative_url }}" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Go Home
+                </a>
+                <a href="{{ '/pages/wiki/' | relative_url }}" class="btn btn-secondary">
+                    <i class="fas fa-book"></i> Browse Wiki
+                </a>
+                <button class="btn btn-secondary" onclick="history.back()">
+                    <i class="fas fa-arrow-left"></i> Go Back
+                </button>
+            </div>
+            
+            <div class="search-suggestion">
+                <h3>Try searching for what you need:</h3>
+                <div class="search-box">
+                    <input type="search" placeholder="Search the knowledge base..." class="search-input">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="popular-links">
+                <h3>Popular Pages</h3>
+                <div class="links-grid">
+                    <a href="{{ '/pages/training/' | relative_url }}" class="link-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Training Center</span>
+                    </a>
+                    <a href="{{ '/pages/wiki/receiving/' | relative_url }}" class="link-card">
+                        <i class="fas fa-truck-loading"></i>
+                        <span>Receiving Process</span>
+                    </a>
+                    <a href="{{ '/pages/wiki/picking/' | relative_url }}" class="link-card">
+                        <i class="fas fa-hand-paper"></i>
+                        <span>Picking & Packing</span>
+                    </a>
+                    <a href="{{ '/pages/errors/' | relative_url }}" class="link-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Error Documentation</span>
+                    </a>
+                    <a href="{{ '/pages/chatbot/' | relative_url }}" class="link-card">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Assistant</span>
+                    </a>
+                    <a href="{{ '/pages/wiki/inventory/' | relative_url }}" class="link-card">
+                        <i class="fas fa-boxes"></i>
+                        <span>Inventory Management</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-404 {
+    padding: 4rem 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.error-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.error-illustration {
+    margin-bottom: 3rem;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.error-message {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.error-description {
+    margin-bottom: 3rem;
+}
+
+.error-description h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.error-description p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
+}
+
+.search-suggestion {
+    margin-bottom: 4rem;
+}
+
+.search-suggestion h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.search-box {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-btn {
+    padding: 0.75rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-btn:hover {
+    background: var(--primary-light);
+}
+
+.popular-links h3 {
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.link-card:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.link-card i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.link-card:hover i {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 6rem;
+    }
+    
+    .error-message {
+        font-size: 1.5rem;
+    }
+    
+    .error-description h1 {
+        font-size: 1.5rem;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .links-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    const searchBtn = document.querySelector('.search-btn');
+    
+    function performSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+            // Redirect to main search or open search modal
+            window.location.href = `{{ '/' | relative_url }}?search=${encodeURIComponent(query)}`;
+        }
+    }
+    
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+    
+    // Track 404 errors for analytics
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_view', {
+            page_title: '404 Error',
+            page_location: window.location.href,
+            content_group1: 'Error Page'
+        });
+    }
+});
+</script>

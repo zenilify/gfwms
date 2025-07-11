@@ -1,0 +1,124 @@
+
+--- PAGE 1 ---
+Anlage 06
+Notfallblatt für Störungen
+Dokumenten Historie
+Version Datum Bemerkung / Änderung Autor
+1.0 11.10.2024 Erstellung Erstversion Tobias Rautscher
+2.0 15.11.2024 Update Tobias Rautscher
+3.0 23.12.2024 Update Telefonnummern & Supportnehmer Tobias Rautscher
+Jungheinrich AG
+Holzikerstrasse 5 ⋅ CH-5042 Hirschthal ⋅ Telefon +41 62 739 31 00 ⋅ Fax +41 62 739 32 99 ⋅ info@jungheinrich.ch ⋅ www.jungheinrich.ch
+
+--- PAGE 2 ---
+Ablauf/Prozess für Störungsbehebung
+Im Fall einer Störung gilt folgende Vorgehensweise:
+2 / 5
+
+--- PAGE 3 ---
+Leistungs- und Reaktionszeiten
+Leistungsart Wochentage Einsatz- Zeiten Reaktionszeit
+Softwaresupport Premium Mo – Fr 06:00 – 22:00 Uhr 1 Stunden*
+Techniker-Rufbereitschaft Premium Mo – Fr 06:00 – 22:00 Uhr 4 Stunden*
+*garantierte Lösungszeit für Fehler kann nicht festgelegt werden
+Zur Beurteilung der Dringlichkeit und der Reaktion von Support Calls, werden diese in 3 Klassen
+unterteilt und vom KUNDEN unverbindlich klassifiziert. Eine Bestätigung der Klassifizierung erfolgt
+durch den jeweiligen Support-Bereich von JUNGHEINRICH.
+Typ Reaktionszeit Beschreibung
+ Support Calls über Störungen und Probleme, die
+den laufenden Betrieb nachhaltig beinträchtigen
+Call Klasse 1
+nach oder gefährden, d.h. Störungen schränken den
+Kritische Situation, nur
+Vereinbarung Betrieb stark ein oder führen sogar zum Stillstand
+Störungsbehebung
+ Müssen immer per Telefon an die Support
+Hotline gemeldet werden
+Call Klasse 2 Spätestens  Für Support Calls, die den laufenden Betrieb
+Unkritische Situation, nächster beim KUNDEN nicht nachhaltig behindern oder
+Anwenderunterstützung Werktag gefährden
+ Für Schulungsmaßnahmen und die Realisierung
+Call Klasse 3
+von kleinen Change Requests (z.B. Reports) oder
+Präventiver Support, 2-6 Werktage
+Beratungsleistungen
+Anwenderunterstützung oder nach
+ Call Klasse 3 Leistungen die nicht in den
+und kostenpflichtige Vereinbarung
+Supportleistungen aufgeführt sind, sind
+Beratung
+kostenpflichtig
+Die Reaktionszeiten können immer nur dann eingehalten werden, wenn die vom KUNDEN
+verantwortlichen Kommunikationswege eingehalten werden.
+Im Fall einer Support Anfrage des KUNDEN kann sich die Call Klasse im Verlauf ändern. Wird z.B.
+eine temporäre Lösung für einen Call der Klasse 1 gefunden, wodurch der Betrieb fortgesetzt werden
+kann, wird die Call Klasse entsprechend auf Klasse 2 abgestuft.
+Um Reaktionszeiten einhalten zu können, sind Support Calls Klasse 1 immer telefonisch zu melden.
+Sollten sich die Mitarbeiter im Support nicht gerade am Telefon oder mit der Behebung eines anderen
+Support Calls Klasse 1 beschäftigt sein, so wird der KUNDE direkt verbunden. In anderen Fällen wird
+der Support-Call aufgenommen und in der vereinbarten Reaktionszeit von JUNGHEINRICH agiert.
+3 / 5
+
+--- PAGE 4 ---
+Außerhalb der Bürozeiten werden Support Calls an 365 Tagen von einer zentralen Hotline
+aufgenommen. Die Hotline verbindet nach der Bürozeit je nach Leistungsanspruch des KUNDEN Call
+Klasse 1 direkt zum entsprechenden Spezialisten oder nimmt Call Klasse 2 und 3 für eine Bearbeitung
+während der Bürozeit auf.
+Per Email eingehende Support Calls werden zu Bürozeiten abgearbeitet, außerhalb der Bürozeiten
+erfolgt keine Bearbeitung von per Email angefordertem Support.
+Der Vor-Ort-Einsatz in der Rufbereitschaft gilt ausschliesslich für Störungen der Call Klasse 1 und ist
+nicht für planbare oder bereits angekündigte Reparaturen gedacht.
+An folgenden Tagen werden lediglich Call Klasse 1 Support Calls bearbeitet:
+Neujahr Heilige drei Könige Ostermontag Tag der Arbeit
+(1.1) (6.1.) (1.5.)
+Christi Himmelfahrt Pfingstmontag Fronleichnam Feiertag CH
+(1.8.)
+Maria Himmelfahrt Feiertag AT Allerheiligen Maria Empfängnis
+(15.08.) (26.10.) (1.11.) (8.12.)
+Heiligabend Weihnachten Silvester
+(24.12.) (25. und 26.12.) (31.12.)
+Berechtigte Supportnehmer
+Berechtigte Supportnehmer sind Key User des KUNDEN, die in der Lage sind die Mitwirkungspflicht
+zu erfüllen. Key User sind berechtigt, Calls zu platzieren und stehen für die Dauer der Störungsbehebung
+zur Verfügung. Weitere Key User des KUNDEN können nach erfolgreicher Schulung durch
+JUNGHEINRICH zusätzlich aufgenommen werden.
+Telefon mit
+Supportnehmer Funktion E-Mail
+Durchwahl
+Heusser Thomas Leiter Werkslogistik +41 79 201 94 90 thomas.heusser@georgfischer.com
+Simon Benjamin Operator Warehouse +41 76 421 89 64 benjamin.simon@georgfischer.com
+Mathis Livio Leiter Unterhalt/Infrastruktur +41 79 540 84 24 livio.mathis@georgfischer.com
+Carroccia Giuseppe Teamleiter mech. Unterhalt +41 79 540 84 09 giuseppe.carroccia@georgfischer.com
+Gleichweit Kevin Schichtführer Logistik +41 79 201 94 90 keine Mailadresse
+Milanovic Mirjana Schichtführer Logistik +41 79 201 94 90 keine Mailadresse
+Berechtigte Supportnehmer sind zusätzlich Mitarbeiter von JUNGHEINRICH beim KUNDEN vor Ort.
+Diese nehmen im Bedarfsfall, ohne Rücksprache mit dem KUNDEN, den Support in Anspruch.
+4 / 5
+
+--- PAGE 5 ---
+Kontaktmöglichkeiten
+Im Fall des Einsatzes gelten folgende Rufnummern:
+Support softwaretechnische Störung (Support WMS/WCS inkl. Steuerungstechnik):
+Leistungsart Telefon E-Mail Annahme durch
+Normale Arbeitszeiten
++43 316 811651 8888 support@jungheinrich.at Support Hotline
+(Mo – Fr von 08:00 – 17:00)
+Call Center/
+Rufbereitschaft +43 316 811651 8888 Nicht Verfügbar
+Techniker
+Support mechanische Störung (Rufbereitschaft Kundendiensttechniker):
+Annahme
+Leistungsart Telefon E-Mail
+durch
+Normale Arbeitszeiten
++41 848 330 340 Service@jungheinrich.ch Disponent
+(Mo – Fr von 08:00 – 17:00)
+Rufbereitschaft +41 62 739 32 80 Nicht Verfügbar Techniker
+Leistungsausschluss
+ Ausserhalb der definierten Leistungszeiten besteht generell kein Anspruch auf einen Techniker-
+Einsatz im Rahmen der Rufbereitschaft.
+ Auf kundenseitig geforderte Notfalleinsätzen (am gleichen Tag bzw. innert 12 Stunden) ohne
+Rufbereitschaftsvereinbarung besteht generell kein Anspruch. Ist dennoch ein
+Technikereinsatz möglich, wird dieser nach effektivem Aufwand verrechnet. Für Einsätze
+ausserhalb der Normalarbeitszeit, fällt zusätzlich noch eine einmalige Einsatzpauschale an.
+5 / 5

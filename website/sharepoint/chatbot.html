@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SharePoint Iframe Compatibility Headers -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' https://*.sharepoint.com https://*.office.com https://*.office365.com;">
+    
+    <!-- SharePoint Compatibility Mode -->
+    <meta name="ms.sp.version" content="16.0">
+    <meta name="ms.sp.iframe.compatible" content="true">
+    
+    <title>WMS Troubleshooting Chatbot - Georg Fischer</title>
+    <style>
+        /* SharePoint-optimized Chatbot CSS with Enhanced Features */
+        
+        /* Special styles for iframe mode */
+        body.sp-iframe-mode {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body.sp-iframe-mode .sp-chatbot-container {
+            max-width: 100%;
+            padding: 10px;
+        }
+        
+        body.sp-iframe-mode .sp-chatbot-layout {
+            height: calc(100vh - 150px);
+            min-height: 500px;
+        }
+        .sp-chatbot-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .sp-chatbot-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .sp-chatbot-header h1 {
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+        
+        .sp-chatbot-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            height: 600px;
+        }
+        
+        .sp-chatbot-sidebar {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        
+        .sp-chatbot-sidebar h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .sp-quick-actions {
+            margin-bottom: 20px;
+        }
+        
+        .sp-quick-btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .sp-quick-btn:hover {
+            background: #2980b9;
+        }
+        
+        .sp-suggestions {
+            margin-bottom: 20px;
+        }
+        
+        .sp-suggestion-item {
+            padding: 8px;
+            margin-bottom: 5px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+        
+        .sp-suggestion-item:hover {
+            background: #d5dbdb;
+        }
+        
+        .sp-chat-actions {
+            margin-top: 20px;
+        }
+        
+        .sp-action-btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 6px 10px;
+            background: #95a5a6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+        
+        .sp-action-btn:hover {
+            background: #7f8c8d;
+        }
+        
+        .sp-chat-main {
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sp-chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .sp-message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .sp-message.user-message {
+            flex-direction: row-reverse;
+        }
+        
+        .sp-message-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .sp-message.user-message .sp-message-avatar {
+            background: #3498db;
+            color: white;
+        }
+        
+        .sp-message.bot-message .sp-message-avatar {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .sp-message-content {
+            flex: 1;
+            max-width: 70%;
+        }
+        
+        .sp-message-text {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            border-radius: 12px;
+            line-height: 1.4;
+        }
+        
+        .sp-message.user-message .sp-message-text {
+            background: #3498db;
+            color: white;
+        }
+        
+        .sp-message-time {
+            font-size: 0.7rem;
+            color: #95a5a6;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .sp-message.user-message .sp-message-time {
+            text-align: left;
+        }
+        
+        .sp-chat-input {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .sp-input-field {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .sp-send-btn {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .sp-send-btn:hover {
+            background: #2980b9;
+        }
+        
+        .sp-typing-indicator {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .sp-typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .sp-typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #95a5a6;
+            border-radius: 50%;
+            animation: sp-typing 1.4s infinite;
+        }
+        
+        .sp-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .sp-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes sp-typing {
+            0%, 60%, 100% { transform: scale(1); opacity: 0.5; }
+            30% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        /* Enhanced Response Cards */
+        .response-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .response-card.error-response {
+            border-left-color: #e74c3c;
+        }
+        
+        .response-card.support-class-response {
+            border-left-color: #f39c12;
+        }
+        
+        .response-card.kpi-response {
+            border-left-color: #27ae60;
+        }
+        
+        .response-card.emergency-contact-response {
+            border-left-color: #e74c3c;
+        }
+        
+        .response-card.training-response {
+            border-left-color: #9b59b6;
+        }
+        
+        .response-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .response-header h4 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .error-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .priority-badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .priority-hoch { background: #e74c3c; color: white; }
+        .priority-mittel { background: #f39c12; color: white; }
+        .priority-niedrig { background: #27ae60; color: white; }
+        
+        .support-class-badge {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+        }
+        
+        .response-section {
+            margin-bottom: 15px;
+        }
+        
+        .response-section h5 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .response-section ul, .response-section ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        
+        .response-section li {
+            margin-bottom: 4px;
+        }
+        
+        .wms-action {
+            background: #e8f5e8;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: #27ae60;
+            font-weight: 500;
+        }
+        
+        .escalation-info {
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: #856404;
+        }
+        
+        .related-codes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .code-link {
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .code-link:hover {
+            background: #2980b9;
+        }
+        
+        .quick-suggestions {
+            margin-top: 15px;
+        }
+        
+        .quick-suggestions button {
+            margin: 5px 5px 5px 0;
+            padding: 5px 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sp-chatbot-layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+                height: auto;
+                min-height: 600px;
+            }
+            
+            .sp-chatbot-sidebar {
+                order: 2;
+                height: auto;
+                margin-top: 20px;
+            }
+            
+            .sp-chat-main {
+                order: 1;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SharePoint Iframe Detection and Compatibility Script -->
+    <script>
+        (function() {
+            // Detect if running in iframe
+            var isInIframe = false;
+            try {
+                isInIframe = window.self !== window.top;
+            } catch (e) {
+                isInIframe = true;
+            }
+            
+            if (isInIframe) {
+                // Add iframe class to body for specific styling if needed
+                document.body.classList.add('sp-iframe-mode');
+                
+                // Handle SharePoint postMessage communication
+                window.addEventListener('message', function(e) {
+                    // Validate origin is from SharePoint domains
+                    var allowedOrigins = [
+                        'https://sharepoint.com',
+                        'https://office.com',
+                        'https://office365.com'
+                    ];
+                    
+                    var isAllowed = allowedOrigins.some(function(origin) {
+                        return e.origin.indexOf(origin) !== -1;
+                    });
+                    
+                    if (isAllowed) {
+                        // Handle SharePoint-specific messages
+                        if (e.data && e.data.type === 'resize') {
+                            // Adjust content if needed
+                            document.body.style.height = e.data.height + 'px';
+                        }
+                    }
+                }, false);
+                
+                // Send ready message to parent
+                if (window.parent && window.parent !== window) {
+                    window.parent.postMessage({ type: 'iframe-ready', source: 'gf-wms-chatbot' }, '*');
+                }
+            }
+            
+            // SharePoint compatibility for older IE versions
+            if (typeof window.console === 'undefined') {
+                window.console = {
+                    log: function() {},
+                    error: function() {},
+                    warn: function() {}
+                };
+            }
+        })();
+    </script>
+    <div class="sp-chatbot-container">
+        <div class="sp-chatbot-header">
+            <h1>🤖 WMS Troubleshooting Chatbot</h1>
+            <p>Interaktiver AI-Assistent für Georg Fischer WMS - Enhanced mit Training & KPI Monitoring</p>
+        </div>
+
+        <div class="sp-chatbot-layout">
+            <div class="sp-chatbot-sidebar">
+                <div class="sp-quick-actions">
+                    <h3>Quick Actions</h3>
+                    <button class="sp-quick-btn" data-message="Was ist Fehlercode 10003?">❌ Fehlercode 10003</button>
+                    <button class="sp-quick-btn" data-message="Kommunikationsstörung">📡 Kommunikationsstörung</button>
+                    <button class="sp-quick-btn" data-message="LAM belegt">🔧 LAM belegt</button>
+                    <button class="sp-quick-btn" data-message="Klasse 1 Support">🚨 Klasse 1 Support</button>
+                    <button class="sp-quick-btn" data-message="KPI Monitoring">📊 KPI Monitoring</button>
+                    <button class="sp-quick-btn" data-message="Training Informationen">🎓 Training Info</button>
+                </div>
+
+                <div class="sp-suggestions">
+                    <h3>Häufige Fragen</h3>
+                    <div class="sp-suggestion-item" data-question="Wie erreiche ich den Notfall-Support?">📞 Notfall-Support</div>
+                    <div class="sp-suggestion-item" data-question="Was sind die Support-Klassen?">🏷️ Support-Klassen</div>
+                    <div class="sp-suggestion-item" data-question="Predictive Maintenance">🔮 Predictive Maintenance</div>
+                    <div class="sp-suggestion-item" data-question="Training Module">📚 Training Module</div>
+                    <div class="sp-suggestion-item" data-question="Emergency Procedures">⚠️ Notfallverfahren</div>
+                </div>
+
+                <div class="sp-chat-actions">
+                    <h3>Chat Actions</h3>
+                    <button class="sp-action-btn" id="clear-chat">🗑️ Chat löschen</button>
+                    <button class="sp-action-btn" id="export-chat">💾 Chat exportieren</button>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #7f8c8d;">
+                    <strong>Fragen beantwortet:</strong> <span id="questions-answered">0</span>
+                </div>
+            </div>
+
+            <div class="sp-chat-main">
+                <div class="sp-chat-messages" id="chat-messages">
+                    <div class="sp-message bot-message">
+                        <div class="sp-message-avatar">🤖</div>
+                        <div class="sp-message-content">
+                            <div class="sp-message-text">
+                                Willkommen beim erweiterten WMS Troubleshooting Chatbot! 🎯<br><br>
+                                
+                                <strong>Neue Features:</strong><br>
+                                • 🏷️ Support-Klassifizierung (Klasse 1-3)<br>
+                                • 📊 KPI-Monitoring und Trend-Analyse<br>
+                                • 🎓 Training-Module und Zertifizierungen<br>
+                                • 🔮 AI-Powered Predictive Maintenance<br>
+                                • 📞 Erweiterte Notfall-Kontakte<br><br>
+                                
+                                Ich kann Ihnen bei Fehlercodes, Störungen, Support-Anfragen und Training helfen. Fragen Sie nach einem spezifischen Fehlercode oder beschreiben Sie Ihr Problem!
+                            </div>
+                            <div class="sp-message-time">System</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-typing-indicator" id="typing-indicator">
+                    <div class="sp-message-avatar">🤖</div>
+                    <div class="sp-typing-dots">
+                        <div class="sp-typing-dot"></div>
+                        <div class="sp-typing-dot"></div>
+                        <div class="sp-typing-dot"></div>
+                    </div>
+                    <span style="color: #95a5a6; font-size: 0.9rem;">Assistant schreibt...</span>
+                </div>
+
+                <div class="sp-chat-input">
+                    <input type="text" id="message-input" class="sp-input-field" placeholder="Beschreiben Sie Ihr Problem oder fragen Sie nach einem Fehlercode...">
+                    <button id="send-button" class="sp-send-btn">Senden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced WMS Troubleshooting Knowledge Base (SharePoint Inline Version)
+        const WMSKnowledgeBase = {
+            // Support call classification system
+            supportClasses: {
+                "class1": {
+                    title: "Klasse 1 - Kritische Störungen",
+                    description: "Störungen die den laufenden Betrieb erheblich beeinträchtigen oder gefährden",
+                    responseTime: "Gemäß Vereinbarung (sofort)",
+                    method: "Telefon-Meldung erforderlich",
+                    coverage: "24/7 Notfall-Support",
+                    examples: ["Systemausfall", "Sicherheitsprobleme", "Produktionstopp"]
+                },
+                "class2": {
+                    title: "Klasse 2 - Nicht-kritische Störungen", 
+                    description: "Störungen die den laufenden Betrieb nicht erheblich behindern oder gefährden",
+                    responseTime: "Spätestens nächster Arbeitstag",
+                    method: "E-Mail oder Telefon",
+                    coverage: "Geschäftszeiten",
+                    examples: ["Performance-Probleme", "Kleinere Fehler", "Dokumentation"]
+                },
+                "class3": {
+                    title: "Klasse 3 - Präventive Unterstützung",
+                    description: "Schulungsmaßnahmen, kleine Änderungswünsche, Beratungsleistungen",
+                    responseTime: "2-6 Arbeitstage oder nach Vereinbarung",
+                    method: "E-Mail bevorzugt",
+                    coverage: "Geschäftszeiten",
+                    examples: ["Schulungen", "Anpassungen", "Beratung"]
+                }
+            },
+
+            // Enhanced contact information
+            emergencyContacts: {
+                "software_support": {
+                    name: "Jungheinrich Software Support",
+                    purpose: "WMS/WCS inkl. Steuerungstechnik",
+                    phone_business: "+43 316 811651 8888",
+                    phone_emergency: "+43 316 811651 8888", 
+                    email: "support@jungheinrich.at",
+                    hours: "Mo-Fr 06:00-22:00",
+                    responseTime: "1 Stunde (Premium Support)",
+                    coverage: "24/7 Bereitschaftsdienst für Klasse 1"
+                },
+                "mechanical_support": {
+                    name: "Jungheinrich Technischer Kundendienst",
+                    purpose: "Mechanische Wartung und Reparatur",
+                    phone_business: "+41 848 330 340",
+                    phone_emergency: "+41 62 739 32 80",
+                    email: "Service@jungheinrich.ch", 
+                    hours: "Mo-Fr 06:00-22:00",
+                    responseTime: "4 Stunden (Techniker vor Ort)",
+                    coverage: "24/7 Bereitschaftsdienst für Klasse 1"
+                },
+                "georg_fischer_contacts": {
+                    "thomas_heusser": {
+                        name: "Thomas Heusser",
+                        role: "Warehouse Logistics Manager",
+                        phone: "+41 79 201 94 90",
+                        authorized: "Vollzugriff Support-Anfragen"
+                    },
+                    "benjamin_simon": {
+                        name: "Benjamin Simon", 
+                        role: "Warehouse Operator",
+                        phone: "+41 76 421 89 64",
+                        authorized: "Operative Support-Anfragen"
+                    },
+                    "livio_mathis": {
+                        name: "Livio Mathis",
+                        role: "Maintenance/Infrastructure Manager", 
+                        phone: "+41 79 540 84 24",
+                        authorized: "Technische Support-Anfragen"
+                    }
+                }
+            },
+
+            // KPI monitoring metrics
+            kpiMetrics: {
+                "resolution_time": {
+                    name: "Mittlere Störungsbehebungszeit",
+                    description: "Durchschnittliche Zeit zur Behebung von Störungen",
+                    target: "< 30 Minuten",
+                    alertThreshold: "60 Minuten",
+                    category: "Performance"
+                },
+                "availability_percentage": {
+                    name: "Prozentuelle Störungsfreiheit",
+                    description: "Anteil der störungsfreien Betriebszeit",
+                    target: "> 95%",
+                    alertThreshold: "< 90%", 
+                    category: "Availability"
+                },
+                "disturbance_count": {
+                    name: "Anzahl Störungen",
+                    description: "Gesamtzahl der Störungen pro Zeitraum", 
+                    target: "< 10/Tag",
+                    alertThreshold: "> 20/Tag",
+                    category: "Frequency"
+                }
+            },
+
+            // Training contacts
+            trainingContacts: {
+                "training_coordination": {
+                    name: "Nicole Schelling",
+                    role: "WMS Training Manager",
+                    email: "training@georgfischer.com",
+                    phone: "+41 81 725 25 25",
+                    availability: "Mo-Fr 08:00-17:00",
+                    responsibilities: "Trainingskoordination, Zertifizierung, Curriculum"
+                },
+                "technical_training": {
+                    name: "Jungheinrich Training Team",
+                    role: "Technical Trainers",
+                    email: "training@jungheinrich.at",
+                    phone: "+43 316 811651 8888",
+                    availability: "Mo-Fr 06:00-22:00",
+                    responsibilities: "Technische Schulungen, System-Training"
+                }
+            },
+
+            // Enhanced error codes
+            errorCodes: {
+                "10003": {
+                    title: "Kommunikationsstörung zum Gerät",
+                    category: "Fördertechnik",
+                    priority: "Hoch",
+                    supportClass: "class1",
+                    description: "Transport kann nicht an Gerät weitergegeben werden - TCP/IP-Verbindung fehlgeschlagen",
+                    causes: [
+                        "Gerät hardwareseitig deaktiviert ('Strom aus')",
+                        "Unterbrochene Funkverbindung zum Access-Point", 
+                        "Defekter Funkempfänger",
+                        "Probleme im hausinternen Netzwerk"
+                    ],
+                    solutions: [
+                        "Gerät neu starten ('Strom aus' → 'Strom ein')",
+                        "Gerät im Handbetrieb verfahren für Funkverbindung",
+                        "IT-Abteilung kontaktieren bei Netzwerkproblemen"
+                    ],
+                    wmsAction: "Standard transport retry nach Hardware-Lösung",
+                    escalation: "Bei > 3 Wiederholungen: Klasse 1 Support kontaktieren",
+                    relatedCodes: ["10045", "10024"],
+                    kpiImpact: ["resolution_time", "availability_percentage"]
+                },
+                "10006": {
+                    title: "Konturenfehler",
+                    category: "Fördertechnik",
+                    priority: "Mittel", 
+                    supportClass: "class2",
+                    description: "LHM überschreitet Dimensionsvorgaben: Überhöhe, Überbreite, Überlänge oder Übergewicht",
+                    causes: [
+                        "Abmessungen entsprechen nicht den Vorgaben",
+                        "Defekte Konturenerfassung",
+                        "Falsche Behälterwahl"
+                    ],
+                    solutions: [
+                        "Abmessungen entsprechend der Vorgaben anpassen",
+                        "LHM von der Anlage nehmen wenn nicht anpassbar",
+                        "Konturenerfassung kalibrieren"
+                    ],
+                    wmsAction: "Dimension correction dialog",
+                    escalation: "Bei wiederholten Fehlern: Sensor-Kalibrierung anfordern",
+                    relatedCodes: ["20018", "20024"],
+                    kpiImpact: ["disturbance_count"]
+                },
+                "10024": {
+                    title: "Ziel unerreichbar",
+                    category: "Fördertechnik",
+                    priority: "Hoch", 
+                    supportClass: "class1",
+                    description: "Nicht verfahrbares Gerät oder langfristig gestörter Ort blockiert den Weg",
+                    causes: [
+                        "Gerät blockiert den Weg (offline/gestört)",
+                        "Ort ist langfristig gestört",
+                        "Mechanische Blockade",
+                        "Sicherheitsabschaltung aktiv"
+                    ],
+                    solutions: [
+                        "Blockierendes Gerät überprüfen und aktivieren",
+                        "Langfristige Störung aufheben oder neues Ziel suchen",
+                        "Mechanische Hindernisse entfernen",
+                        "Sicherheitssysteme überprüfen"
+                    ],
+                    wmsAction: "Transport erneut senden oder neues Ziel suchen",
+                    escalation: "Bei Systemblockade: Sofort Klasse 1 Support",
+                    relatedCodes: ["10003", "10053"],
+                    kpiImpact: ["availability_percentage", "total_disturbance_duration"]
+                },
+                "10007": {
+                    title: "LAM belegt vor Aufnahme",
+                    category: "Behälter-RBG",
+                    priority: "Mittel",
+                    supportClass: "class2", 
+                    description: "Lastaufnahmemittel ist belegt, Aufnahme nicht möglich",
+                    causes: [
+                        "Hindernisse im LAM",
+                        "Defekte LAM-Sensorik",
+                        "Nicht ordnungsgemäß abgelegtes LHM"
+                    ],
+                    solutions: [
+                        "LAM visuell prüfen",
+                        "Hindernisse entfernen", 
+                        "LAM-Sensorik kalibrieren",
+                        "Transport abschließen falls LHM korrekt positioniert"
+                    ],
+                    wmsAction: "LAM freimachen oder Transport abschließen",
+                    escalation: "Bei häufigen LAM-Problemen: Mechanische Wartung",
+                    relatedCodes: ["10008", "20022"],
+                    kpiImpact: ["resolution_time"]
+                }
+            }
+        };
+
+        // Enhanced Knowledge Search
+        const KnowledgeSearch = {
+            searchAll: function(query) {
+                const lowerQuery = query.toLowerCase();
+                const results = {};
+
+                // Check for error codes
+                const errorCodeMatch = lowerQuery.match(/\b(10\d{3}|20\d{3}|taloes)\b/);
+                if (errorCodeMatch) {
+                    const code = errorCodeMatch[1].toUpperCase();
+                    if (WMSKnowledgeBase.errorCodes[code] || WMSKnowledgeBase.errorCodes[code.toLowerCase()]) {
+                        results.errorCode = WMSKnowledgeBase.errorCodes[code] || WMSKnowledgeBase.errorCodes[code.toLowerCase()];
+                    }
+                }
+
+                // Check for support class information
+                if (lowerQuery.includes('klasse 1') || lowerQuery.includes('class 1') || lowerQuery.includes('kritisch')) {
+                    results.supportClass = WMSKnowledgeBase.supportClasses.class1;
+                } else if (lowerQuery.includes('klasse 2') || lowerQuery.includes('class 2')) {
+                    results.supportClass = WMSKnowledgeBase.supportClasses.class2;
+                } else if (lowerQuery.includes('klasse 3') || lowerQuery.includes('class 3')) {
+                    results.supportClass = WMSKnowledgeBase.supportClasses.class3;
+                }
+
+                // Check for KPI information
+                if (lowerQuery.includes('kpi') || lowerQuery.includes('performance') || lowerQuery.includes('monitoring')) {
+                    results.kpiInfo = Object.values(WMSKnowledgeBase.kpiMetrics);
+                }
+
+                // Check for emergency contacts
+                if (lowerQuery.includes('notfall') || lowerQuery.includes('emergency') || lowerQuery.includes('support')) {
+                    if (lowerQuery.includes('software') || lowerQuery.includes('wms')) {
+                        results.emergencyContact = WMSKnowledgeBase.emergencyContacts.software_support;
+                    } else if (lowerQuery.includes('mechanisch') || lowerQuery.includes('mechanical')) {
+                        results.emergencyContact = WMSKnowledgeBase.emergencyContacts.mechanical_support;
+                    } else if (lowerQuery.includes('georg fischer') || lowerQuery.includes('ansprechpartner')) {
+                        results.emergencyContact = WMSKnowledgeBase.emergencyContacts.georg_fischer_contacts;
+                    }
+                }
+
+                // Check for training information
+                if (lowerQuery.includes('training') || lowerQuery.includes('schulung') || lowerQuery.includes('zertifizierung')) {
+                    if (lowerQuery.includes('kontakt') || lowerQuery.includes('ansprechpartner')) {
+                        results.trainingContact = WMSKnowledgeBase.trainingContacts.training_coordination;
+                    } else {
+                        results.trainingInfo = [{
+                            type: 'category',
+                            data: {
+                                title: 'WMS Training Program',
+                                duration: '40-150 Stunden',
+                                modules: ['Foundation', 'Operational', 'Advanced']
+                            }
+                        }];
+                    }
+                }
+
+                // Search for keywords in error descriptions
+                results.keywords = [];
+                Object.entries(WMSKnowledgeBase.errorCodes).forEach(([code, error]) => {
+                    if (error.title.toLowerCase().includes(lowerQuery) || 
+                        error.description.toLowerCase().includes(lowerQuery) ||
+                        error.causes.some(cause => cause.toLowerCase().includes(lowerQuery))) {
+                        results.keywords.push(error);
+                    }
+                });
+
+                return results;
+            }
+        };
+
+        // Enhanced Chatbot Class
+        class WMSChatbot {
+            constructor() {
+                this.messagesContainer = document.getElementById('chat-messages');
+                this.messageInput = document.getElementById('message-input');
+                this.sendButton = document.getElementById('send-button');
+                this.typingIndicator = document.getElementById('typing-indicator');
+                this.questionsAnswered = 0;
+                
+                this.init();
+            }
+
+            init() {
+                // Event listeners
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+
+                // Quick action buttons
+                document.querySelectorAll('.sp-quick-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const message = e.currentTarget.getAttribute('data-message');
+                        this.messageInput.value = message;
+                        this.sendMessage();
+                    });
+                });
+
+                // Suggested questions
+                document.querySelectorAll('.sp-suggestion-item').forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        const question = e.currentTarget.getAttribute('data-question');
+                        this.messageInput.value = question;
+                        this.sendMessage();
+                    });
+                });
+
+                // Chat actions
+                document.getElementById('clear-chat').addEventListener('click', () => this.clearChat());
+                document.getElementById('export-chat').addEventListener('click', () => this.exportChat());
+
+                // Focus on input
+                this.messageInput.focus();
+            }
+
+            sendMessage() {
+                const message = this.messageInput.value.trim();
+                if (!message) return;
+
+                // Add user message
+                this.addMessage(message, 'user');
+                this.messageInput.value = '';
+
+                // Show typing indicator
+                this.showTypingIndicator();
+
+                // Process message after delay
+                setTimeout(() => {
+                    this.hideTypingIndicator();
+                    const response = this.processMessage(message);
+                    this.addMessage(response, 'bot');
+                    this.updateQuestionCount();
+                }, Math.random() * 1000 + 500);
+            }
+
+            processMessage(message) {
+                // Enhanced message processing
+                const searchResults = KnowledgeSearch.searchAll(message);
+
+                // Check for specific error code
+                if (searchResults.errorCode) {
+                    return this.formatErrorCodeResponse(searchResults.errorCode);
+                }
+
+                // Check for support class information
+                if (searchResults.supportClass) {
+                    return this.formatSupportClassResponse(searchResults.supportClass);
+                }
+
+                // Check for KPI information
+                if (searchResults.kpiInfo && searchResults.kpiInfo.length > 0) {
+                    return this.formatKPIResponse(searchResults.kpiInfo);
+                }
+
+                // Check for emergency contacts
+                if (searchResults.emergencyContact) {
+                    return this.formatEmergencyContactResponse(searchResults.emergencyContact);
+                }
+
+                // Check for training information
+                if (searchResults.trainingInfo && searchResults.trainingInfo.length > 0) {
+                    return this.formatTrainingResponse(searchResults.trainingInfo);
+                }
+
+                // Check for training contacts
+                if (searchResults.trainingContact) {
+                    return this.formatTrainingContactResponse(searchResults.trainingContact);
+                }
+
+                // Check for keyword matches
+                if (searchResults.keywords.length > 0) {
+                    return this.formatKeywordResponse(searchResults.keywords);
+                }
+
+                // Handle general questions
+                return this.handleGeneralQuestion(message);
+            }
+
+            formatErrorCodeResponse(errorCode) {
+                const errorCodeKey = Object.keys(WMSKnowledgeBase.errorCodes).find(key => WMSKnowledgeBase.errorCodes[key] === errorCode);
+                return `
+                    <div class="response-card error-response">
+                        <div class="response-header">
+                            <h4><span class="error-badge">${errorCodeKey}</span> ${errorCode.title}</h4>
+                            <span class="priority-badge priority-${errorCode.priority.toLowerCase()}">${errorCode.priority} Priorität</span>
+                            ${errorCode.supportClass ? `<span class="support-class-badge">${WMSKnowledgeBase.supportClasses[errorCode.supportClass].title}</span>` : ''}
+                        </div>
+                        
+                        <div class="response-section">
+                            <h5>📝 Beschreibung</h5>
+                            <p>${errorCode.description}</p>
+                        </div>
+
+                        <div class="response-section">
+                            <h5>🔍 Mögliche Ursachen</h5>
+                            <ul>
+                                ${errorCode.causes.map(cause => `<li>${cause}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="response-section">
+                            <h5>🛠️ Lösungsschritte</h5>
+                            <ol>
+                                ${errorCode.solutions.map(solution => `<li>${solution}</li>`).join('')}
+                            </ol>
+                        </div>
+
+                        <div class="response-section">
+                            <h5>⚙️ WMS-Aktion</h5>
+                            <p class="wms-action">${errorCode.wmsAction}</p>
+                        </div>
+
+                        ${errorCode.escalation ? `
+                        <div class="response-section escalation">
+                            <h5>⚠️ Eskalation</h5>
+                            <p class="escalation-info">${errorCode.escalation}</p>
+                        </div>
+                        ` : ''}
+
+                        ${errorCode.relatedCodes && errorCode.relatedCodes.length > 0 ? `
+                        <div class="response-section">
+                            <h5>🔗 Verwandte Fehlercodes</h5>
+                            <div class="related-codes">
+                                ${errorCode.relatedCodes.map(code => `<span class="code-link" onclick="chatbot.askAboutCode('${code}')">${code}</span>`).join('')}
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            formatSupportClassResponse(supportClass) {
+                return `
+                    <div class="response-card support-class-response">
+                        <div class="response-header">
+                            <h4>🎧 ${supportClass.title}</h4>
+                        </div>
+                        
+                        <div class="response-section">
+                            <h5>📝 Beschreibung</h5>
+                            <p>${supportClass.description}</p>
+                        </div>
+
+                        <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                            <div style="margin-bottom: 5px;"><strong>⏱️ Reaktionszeit:</strong> ${supportClass.responseTime}</div>
+                            <div style="margin-bottom: 5px;"><strong>📞 Kontaktweg:</strong> ${supportClass.method}</div>
+                            <div style="margin-bottom: 5px;"><strong>📅 Verfügbarkeit:</strong> ${supportClass.coverage}</div>
+                        </div>
+
+                        ${supportClass.examples ? `
+                        <div class="response-section">
+                            <h5>📋 Beispiele</h5>
+                            <ul>
+                                ${supportClass.examples.map(example => `<li>${example}</li>`).join('')}
+                            </ul>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            formatKPIResponse(kpiList) {
+                return `
+                    <div class="response-card kpi-response">
+                        <div class="response-header">
+                            <h4>📊 KPI Monitoring</h4>
+                        </div>
+                        
+                        ${kpiList.map(kpi => `
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                                <h5>${kpi.name}</h5>
+                                <p>${kpi.description}</p>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <span style="background: #27ae60; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem;">Ziel: ${kpi.target}</span>
+                                    <span style="background: #e74c3c; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem;">Alert: ${kpi.alertThreshold}</span>
+                                    <span style="background: #3498db; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem;">Kategorie: ${kpi.category}</span>
+                                </div>
+                            </div>
+                        `).join('')}
+
+                        <div class="response-section">
+                            <p>💡 <strong>Data Center Integration:</strong> Diese KPIs werden automatisch überwacht und Trends analysiert.</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            formatEmergencyContactResponse(contact) {
+                if (contact.name) {
+                    // Single contact
+                    return `
+                        <div class="response-card emergency-contact-response">
+                            <div class="response-header">
+                                <h4>📞 ${contact.name}</h4>
+                            </div>
+                            
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px;">
+                                <div style="margin-bottom: 5px;"><strong>Zuständigkeit:</strong> ${contact.purpose}</div>
+                                <div style="margin-bottom: 5px;"><strong>📞 Geschäftszeiten:</strong> ${contact.phone_business}</div>
+                                <div style="margin-bottom: 5px;"><strong>🚨 Notfall:</strong> ${contact.phone_emergency}</div>
+                                <div style="margin-bottom: 5px;"><strong>📧 E-Mail:</strong> ${contact.email}</div>
+                                <div style="margin-bottom: 5px;"><strong>⏰ Zeiten:</strong> ${contact.hours}</div>
+                                <div style="margin-bottom: 5px;"><strong>⚡ Reaktionszeit:</strong> ${contact.responseTime}</div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Georg Fischer contacts
+                    return `
+                        <div class="response-card emergency-contact-response">
+                            <div class="response-header">
+                                <h4>👥 Georg Fischer Ansprechpartner</h4>
+                            </div>
+                            
+                            ${Object.entries(contact).map(([key, person]) => `
+                                <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                                    <h5>${person.name}</h5>
+                                    <p><strong>Position:</strong> ${person.role}</p>
+                                    <p><strong>📞 Telefon:</strong> ${person.phone}</p>
+                                    <p><strong>Berechtigung:</strong> ${person.authorized}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                }
+            }
+
+            formatTrainingResponse(trainingMatches) {
+                return `
+                    <div class="response-card training-response">
+                        <div class="response-header">
+                            <h4>🎓 WMS Training Information</h4>
+                        </div>
+                        
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                            <h5>Training Program Übersicht</h5>
+                            <p><strong>Gesamtdauer:</strong> 40-150 Stunden je nach Zertifizierungslevel</p>
+                            <p><strong>Module:</strong> 18 verschiedene Trainingsmodule</p>
+                            <p><strong>Zertifizierungen:</strong> 3 Levels (Operator, Advanced Operator, Administrator)</p>
+                            
+                            <div style="margin-top: 15px;">
+                                <h6>Trainingskategorien:</h6>
+                                <ul>
+                                    <li><strong>Foundation Training:</strong> Grundlagen und Navigation (40h)</li>
+                                    <li><strong>Operational Training:</strong> Lagerprozesse und Abläufe (60h)</li>
+                                    <li><strong>Advanced Training:</strong> Administration und Überwachung (80h)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="response-section">
+                            <p>💡 <strong>Hinweis:</strong> Für detaillierte Informationen besuchen Sie die <a href="training.html" target="_blank">WMS Training Center</a> Seite.</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            formatTrainingContactResponse(contact) {
+                return `
+                    <div class="response-card training-contact-response">
+                        <div class="response-header">
+                            <h4>👩‍🏫 ${contact.name}</h4>
+                        </div>
+                        
+                        <div style="background: #f8f9fa; padding: 10px; border-radius: 5px;">
+                            <div style="margin-bottom: 5px;"><strong>Position:</strong> ${contact.role}</div>
+                            <div style="margin-bottom: 5px;"><strong>📧 E-Mail:</strong> ${contact.email}</div>
+                            <div style="margin-bottom: 5px;"><strong>📞 Telefon:</strong> ${contact.phone}</div>
+                            <div style="margin-bottom: 5px;"><strong>⏰ Verfügbarkeit:</strong> ${contact.availability}</div>
+                            <div style="margin-bottom: 5px;"><strong>Zuständigkeiten:</strong> ${contact.responsibilities}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            formatKeywordResponse(matches) {
+                const uniqueMatches = [...new Set(matches.map(m => JSON.stringify(m)))].map(m => JSON.parse(m));
+                
+                return `
+                    <div class="response-card keyword-response">
+                        <div class="response-header">
+                            <h4>🔍 Gefundene Störungen (${uniqueMatches.length})</h4>
+                        </div>
+                        
+                        <div style="margin: 10px 0;">
+                            ${uniqueMatches.map(match => {
+                                const errorCode = Object.keys(WMSKnowledgeBase.errorCodes).find(key => WMSKnowledgeBase.errorCodes[key] === match);
+                                return `
+                                    <div style="display: flex; align-items: center; gap: 10px; margin: 8px 0; padding: 8px; background: #f8f9fa; border-radius: 5px;">
+                                        <span class="code-link" onclick="chatbot.askAboutCode('${errorCode}')">${errorCode}</span>
+                                        <span style="flex: 1;">${match.title}</span>
+                                        <span class="priority-badge priority-${match.priority.toLowerCase()}">${match.priority}</span>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                        
+                        <div class="response-section">
+                            <p>💡 Klicken Sie auf einen Fehlercode für detaillierte Informationen.</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            handleGeneralQuestion(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                if (lowerMessage.includes('hilfe') || lowerMessage.includes('help')) {
+                    return `
+                        <div class="response-card help-response">
+                            <div class="response-header">
+                                <h4>❓ Wie kann ich Ihnen helfen?</h4>
+                            </div>
+                            
+                            <div style="margin: 10px 0;">
+                                <div style="margin-bottom: 15px;">
+                                    <h5>⚠️ Fehlercodes</h5>
+                                    <p>Fragen Sie nach spezifischen Codes wie "10003", "10006", "10007", etc.</p>
+                                </div>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <h5>🔍 Problemsuche</h5>
+                                    <p>Beschreiben Sie Ihr Problem: "Kommunikationsstörung", "LAM belegt", "Timeout", etc.</p>
+                                </div>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <h5>📞 Support-Klassen</h5>
+                                    <p>Fragen Sie nach "Klasse 1", "Klasse 2", "Klasse 3" für Prioritätsinformationen</p>
+                                </div>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <h5>📊 KPI Monitoring</h5>
+                                    <p>Fragen Sie nach "KPI", "Performance", "Verfügbarkeit" für Metriken</p>
+                                </div>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <h5>🎓 Training</h5>
+                                    <p>Fragen Sie nach "Training", "Schulung", "Zertifizierung" für Bildungsressourcen</p>
+                                </div>
+                                
+                                <div style="margin-bottom: 15px;">
+                                    <h5>📞 Notfallkontakte</h5>
+                                    <p>Fragen Sie nach "Kontakte", "Support", "Notfall" für Kontaktinformationen</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                return `
+                    <div class="response-card default-response">
+                        <div class="response-header">
+                            <h4>🤖 Entschuldigung</h4>
+                        </div>
+                        
+                        <p>Ich verstehe Ihre Anfrage nicht ganz. Versuchen Sie es mit:</p>
+                        
+                        <ul>
+                            <li><strong>Spezifischen Fehlercodes</strong> (z.B. "10003", "10007")</li>
+                            <li><strong>Problembeschreibungen</strong> (z.B. "Kommunikationsstörung", "LAM belegt")</li>
+                            <li><strong>Support-Anfragen</strong> (z.B. "Klasse 1", "Notfall")</li>
+                            <li><strong>Training-Informationen</strong> (z.B. "Training", "Zertifizierung")</li>
+                            <li><strong>"Hilfe"</strong> für weitere Optionen</li>
+                        </ul>
+                        
+                        <div class="quick-suggestions">
+                            <button onclick="chatbot.messageInput.value='Was ist Fehlercode 10003?'; chatbot.sendMessage();">Fehlercode 10003</button>
+                            <button onclick="chatbot.messageInput.value='Klasse 1 Support'; chatbot.sendMessage();">Klasse 1 Support</button>
+                            <button onclick="chatbot.messageInput.value='Training Informationen'; chatbot.sendMessage();">Training</button>
+                            <button onclick="chatbot.messageInput.value='Hilfe'; chatbot.sendMessage();">Hilfe</button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            askAboutCode(code) {
+                this.messageInput.value = `Was ist Fehlercode ${code}?`;
+                this.sendMessage();
+            }
+
+            addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `sp-message ${sender}-message`;
+                
+                const avatar = document.createElement('div');
+                avatar.className = 'sp-message-avatar';
+                avatar.innerHTML = sender === 'user' ? '👤' : '🤖';
+                
+                const content = document.createElement('div');
+                content.className = 'sp-message-content';
+                
+                const messageText = document.createElement('div');
+                messageText.className = 'sp-message-text';
+                messageText.innerHTML = text;
+                
+                const messageTime = document.createElement('div');
+                messageTime.className = 'sp-message-time';
+                messageTime.textContent = new Date().toLocaleTimeString('de-DE', { 
+                    hour: '2-digit', 
+                    minute: '2-digit' 
+                });
+                
+                content.appendChild(messageText);
+                content.appendChild(messageTime);
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(content);
+                
+                this.messagesContainer.appendChild(messageDiv);
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+            }
+
+            showTypingIndicator() {
+                this.typingIndicator.style.display = 'flex';
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+            }
+
+            hideTypingIndicator() {
+                this.typingIndicator.style.display = 'none';
+            }
+
+            updateQuestionCount() {
+                this.questionsAnswered++;
+                const counter = document.getElementById('questions-answered');
+                if (counter) {
+                    counter.textContent = this.questionsAnswered;
+                }
+            }
+
+            clearChat() {
+                // Keep the initial bot message
+                const initialMessage = this.messagesContainer.querySelector('.sp-message.bot-message');
+                this.messagesContainer.innerHTML = '';
+                if (initialMessage) {
+                    this.messagesContainer.appendChild(initialMessage);
+                }
+                this.questionsAnswered = 0;
+                this.updateQuestionCount();
+            }
+
+            exportChat() {
+                const messages = this.messagesContainer.querySelectorAll('.sp-message');
+                let chatLog = 'WMS Troubleshooting Chat Export (Enhanced)\n';
+                chatLog += '===============================================\n\n';
+                
+                messages.forEach(message => {
+                    const sender = message.classList.contains('user-message') ? 'Benutzer' : 'Assistant';
+                    const time = message.querySelector('.sp-message-time').textContent;
+                    const text = message.querySelector('.sp-message-text').innerText;
+                    
+                    chatLog += `[${time}] ${sender}:\n${text}\n\n`;
+                });
+                
+                const blob = new Blob([chatLog], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `wms-chat-enhanced-${new Date().toISOString().split('T')[0]}.txt`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        // Initialize enhanced chatbot when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.chatbot = new WMSChatbot();
+        });
+    </script>
+</body>
+</html>

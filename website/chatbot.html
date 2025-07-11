@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WMS Troubleshooting Chatbot - Georg Fischer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1><i class="fas fa-warehouse"></i> Georg Fischer WMS</h1></a>
+                <p>Intelligenter Störungsbehandlung Assistent</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="docs/wiki.html" class="nav-link">Wiki</a></li>
+                    <li><a href="docs/conveyor_system_errors.html" class="nav-link">Fördertechnik</a></li>
+                    <li><a href="chatbot.html" class="nav-link active">Chatbot</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="chatbot-main">
+        <div class="container">
+            <div class="chatbot-layout">
+                <div class="chatbot-sidebar">
+                    <div class="sidebar-content">
+                        <h3><i class="fas fa-robot"></i> WMS Assistant</h3>
+                        <p>Ihr intelligenter Helfer für Störungsbehandlung</p>
+                        
+                        <div class="quick-actions">
+                            <h4>Schnellzugriff</h4>
+                            <button class="quick-btn" data-message="Was ist Fehlercode 10003?">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Fehlercode 10003
+                            </button>
+                            <button class="quick-btn" data-message="Wie behebe ich Kommunikationsstörungen?">
+                                <i class="fas fa-wifi"></i>
+                                Kommunikationsstörung
+                            </button>
+                            <button class="quick-btn" data-message="Was tun bei Konturenfehlern?">
+                                <i class="fas fa-ruler"></i>
+                                Konturenfehler
+                            </button>
+                            <button class="quick-btn" data-message="Notfallkontakte anzeigen">
+                                <i class="fas fa-phone"></i>
+                                Notfallkontakte
+                            </button>
+                        </div>
+
+                        <div class="help-section">
+                            <h4>Tipps</h4>
+                            <ul>
+                                <li>Verwenden Sie spezifische Fehlercodes (z.B. "10003")</li>
+                                <li>Beschreiben Sie das Problem detailliert</li>
+                                <li>Fragen Sie nach Schritt-für-Schritt Anleitungen</li>
+                            </ul>
+                        </div>
+
+                        <div class="stats-section">
+                            <h4>Statistiken</h4>
+                            <div class="stat-item">
+                                <span class="stat-number" id="questions-answered">0</span>
+                                <span class="stat-label">Fragen beantwortet</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">30+</span>
+                                <span class="stat-label">Fehlercodes verfügbar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chatbot-container">
+                    <div class="chat-header">
+                        <div class="chat-status">
+                            <div class="status-indicator online"></div>
+                            <div class="status-text">
+                                <h3>WMS Troubleshooting Assistant</h3>
+                                <p>Online - Bereit zu helfen</p>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button id="clear-chat" class="action-btn" title="Chat löschen">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <button id="export-chat" class="action-btn" title="Chat exportieren">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    Hallo! Ich bin Ihr WMS Troubleshooting Assistant. Ich kann Ihnen bei der Behebung von Störungen helfen.
+                                    <br><br>
+                                    <strong>Was kann ich für Sie tun?</strong>
+                                    <ul>
+                                        <li>Fehlercodes erklären (z.B. "Was ist 10003?")</li>
+                                        <li>Lösungsschritte bereitstellen</li>
+                                        <li>Kontaktinformationen geben</li>
+                                        <li>Notfallverfahren erklären</li>
+                                    </ul>
+                                    Stellen Sie einfach Ihre Frage!
+                                </div>
+                                <div class="message-time">Jetzt</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="typing-text">Assistant tippt...</span>
+                        </div>
+                        
+                        <div class="chat-input">
+                            <input type="text" id="message-input" placeholder="Fragen Sie nach Fehlercodes, Lösungen oder Hilfe..." autocomplete="off">
+                            <button id="send-button" type="button">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="suggested-questions" id="suggested-questions">
+                            <div class="suggestion-item" data-question="Was bedeutet Fehlercode 10003?">Was bedeutet Fehlercode 10003?</div>
+                            <div class="suggestion-item" data-question="Wie behebe ich eine Kommunikationsstörung?">Wie behebe ich eine Kommunikationsstörung?</div>
+                            <div class="suggestion-item" data-question="Was sind die Notfallkontakte?">Was sind die Notfallkontakte?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="floating-help" id="floating-help">
+        <button class="help-toggle" id="help-toggle">
+            <i class="fas fa-question-circle"></i>
+        </button>
+        <div class="help-content" id="help-content">
+            <h4>Chatbot Hilfe</h4>
+            <p>Beispiele für Fragen:</p>
+            <ul>
+                <li>"Fehlercode 10003"</li>
+                <li>"Kommunikationsstörung beheben"</li>
+                <li>"LAM belegt Problem"</li>
+                <li>"Notfallkontakte"</li>
+                <li>"Timeout Platzbelegung"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="assets/js/chatbot-knowledge-enhanced.js"></script>
+    <script src="assets/js/chatbot-enhanced.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

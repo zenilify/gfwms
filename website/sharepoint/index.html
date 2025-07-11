@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SharePoint Iframe Compatibility Headers -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' https://*.sharepoint.com https://*.office.com https://*.office365.com;">
+    
+    <!-- SharePoint Compatibility Mode -->
+    <meta name="ms.sp.version" content="16.0">
+    <meta name="ms.sp.iframe.compatible" content="true">
+    
+    <title>Georg Fischer WMS - Störungsbehandlung Dokumentation</title>
+    <style>
+        /* SharePoint-optimized CSS - Inline to avoid conflicts */
+        
+        /* Special styles for iframe mode */
+        body.sp-iframe-mode {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body.sp-iframe-mode .sp-wms-container {
+            max-width: 100%;
+            padding: 10px;
+        }
+        .sp-wms-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .sp-wms-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .sp-wms-header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+        }
+        
+        .sp-wms-header p {
+            font-size: 1.2rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .sp-wms-nav {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sp-wms-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .sp-wms-nav a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .sp-wms-nav a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .sp-wms-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sp-wms-stat-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+        
+        .sp-wms-stat-card h3 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            color: #3498db;
+        }
+        
+        .sp-wms-stat-card p {
+            margin: 0;
+            color: #666;
+        }
+        
+        .sp-wms-doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sp-wms-doc-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sp-wms-doc-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .sp-wms-doc-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .sp-wms-doc-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .sp-wms-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .sp-wms-feature {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .sp-wms-doc-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sp-wms-doc-link:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .sp-wms-quick-ref {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .sp-wms-quick-ref h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .sp-wms-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .sp-wms-ref-card {
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .sp-wms-ref-card.critical {
+            border-left-color: #e74c3c;
+            background-color: #fdf2f2;
+        }
+        
+        .sp-wms-ref-card.warning {
+            border-left-color: #f39c12;
+            background-color: #fefaf2;
+        }
+        
+        .sp-wms-ref-card.info {
+            border-left-color: #3498db;
+            background-color: #f2f8fd;
+        }
+        
+        .sp-wms-ref-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        .sp-wms-ref-card.critical h3 {
+            color: #e74c3c;
+        }
+        
+        .sp-wms-ref-card.warning h3 {
+            color: #f39c12;
+        }
+        
+        .sp-wms-ref-card.info h3 {
+            color: #3498db;
+        }
+        
+        .sp-wms-ref-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sp-wms-ref-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .sp-wms-ref-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .sp-wms-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .sp-wms-contact-card {
+            background: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sp-wms-contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .sp-wms-contact-card p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sp-wms-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .sp-wms-header h1 {
+                font-size: 2rem;
+            }
+            
+            .sp-wms-stat-card h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SharePoint Iframe Detection and Compatibility Script -->
+    <script>
+        (function() {
+            // Detect if running in iframe
+            var isInIframe = false;
+            try {
+                isInIframe = window.self !== window.top;
+            } catch (e) {
+                isInIframe = true;
+            }
+            
+            if (isInIframe) {
+                // Add iframe class to body for specific styling if needed
+                document.body.classList.add('sp-iframe-mode');
+                
+                // Handle SharePoint postMessage communication
+                window.addEventListener('message', function(e) {
+                    // Validate origin is from SharePoint domains
+                    var allowedOrigins = [
+                        'https://sharepoint.com',
+                        'https://office.com',
+                        'https://office365.com'
+                    ];
+                    
+                    var isAllowed = allowedOrigins.some(function(origin) {
+                        return e.origin.indexOf(origin) !== -1;
+                    });
+                    
+                    if (isAllowed) {
+                        // Handle SharePoint-specific messages
+                        if (e.data && e.data.type === 'resize') {
+                            // Adjust content if needed
+                            document.body.style.height = e.data.height + 'px';
+                        }
+                    }
+                }, false);
+                
+                // Send ready message to parent
+                if (window.parent && window.parent !== window) {
+                    window.parent.postMessage({ type: 'iframe-ready', source: 'gf-wms' }, '*');
+                }
+            }
+            
+            // SharePoint compatibility for older IE versions
+            if (typeof window.console === 'undefined') {
+                window.console = {
+                    log: function() {},
+                    error: function() {},
+                    warn: function() {}
+                };
+            }
+        })();
+    </script>
+    <div class="sp-wms-container">
+        <div class="sp-wms-header">
+            <h1>🏭 Georg Fischer WMS</h1>
+            <p>Störungsbehandlung Dokumentation</p>
+        </div>
+
+        <nav class="sp-wms-nav">
+            <ul>
+                <li><a href="#documentation">📚 Dokumentation</a></li>
+                <li><a href="training.html">🎓 Training</a></li>
+                <li><a href="#quick-reference">⚡ Quick Reference</a></li>
+                <li><a href="#contact">📞 Kontakt</a></li>
+                <li><a href="chatbot.html">🤖 Chatbot</a></li>
+            </ul>
+        </nav>
+
+        <div class="sp-wms-stats">
+            <div class="sp-wms-stat-card">
+                <h3>30+</h3>
+                <p>Dokumentierte Störungen</p>
+            </div>
+            <div class="sp-wms-stat-card">
+                <h3>3</h3>
+                <p>Gerätekategorien</p>
+            </div>
+            <div class="sp-wms-stat-card">
+                <h3>24/7</h3>
+                <p>Verfügbarkeit</p>
+            </div>
+        </div>
+
+        <section id="documentation">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Dokumentation</h2>
+            <div class="sp-wms-doc-grid">
+                <div class="sp-wms-doc-card">
+                    <h3>📖 Vollständige Wiki</h3>
+                    <p>Umfassende Dokumentation aller Störungen und Lösungsverfahren für das Georg Fischer WMS</p>
+                    <div class="sp-wms-features">
+                        <span class="sp-wms-feature">Fördertechnik</span>
+                        <span class="sp-wms-feature">Behälter-RBG</span>
+                        <span class="sp-wms-feature">Paletten-RBG</span>
+                    </div>
+                    <a href="docs/wiki.html" class="sp-wms-doc-link">Dokumentation öffnen</a>
+                </div>
+
+                <div class="sp-wms-doc-card">
+                    <h3>🔧 Fördertechnik Störungen</h3>
+                    <p>Spezialisierte Anleitung für Störungen der Fördertechnik mit detaillierten Lösungsschritten</p>
+                    <div class="sp-wms-features">
+                        <span class="sp-wms-feature">Fehlercode Index</span>
+                        <span class="sp-wms-feature">Diagnose-Schritte</span>
+                        <span class="sp-wms-feature">Notfallverfahren</span>
+                    </div>
+                    <a href="docs/conveyor_system_errors.html" class="sp-wms-doc-link">Anleitung öffnen</a>
+                </div>
+
+                <div class="sp-wms-doc-card">
+                    <h3>🤖 Intelligenter Chatbot</h3>
+                    <p>Interaktiver AI-Assistent für sofortige Hilfe bei WMS-Störungen und Fehlercodes</p>
+                    <div class="sp-wms-features">
+                        <span class="sp-wms-feature">24/7 verfügbar</span>
+                        <span class="sp-wms-feature">Instant-Antworten</span>
+                        <span class="sp-wms-feature">Interaktiv</span>
+                    </div>
+                    <a href="chatbot.html" class="sp-wms-doc-link">Chatbot starten</a>
+                </div>
+
+                <div class="sp-wms-doc-card">
+                    <h3>📄 Original Dokument</h3>
+                    <p>Originale Störungsbehandlung Schulungsunterlage im Textformat</p>
+                    <div class="sp-wms-features">
+                        <span class="sp-wms-feature">Version 0.9</span>
+                        <span class="sp-wms-feature">Stand 20.12.2024</span>
+                        <span class="sp-wms-feature">48 Seiten</span>
+                    </div>
+                    <a href="docs/stoerungsbehebung.txt" class="sp-wms-doc-link">Dokument öffnen</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="quick-reference" class="sp-wms-quick-ref">
+            <h2>Quick Reference</h2>
+            <div class="sp-wms-ref-grid">
+                <div class="sp-wms-ref-card critical">
+                    <h3>🔴 Kritische Störungen</h3>
+                    <ul>
+                        <li><strong>10003</strong> - Kommunikationsstörung</li>
+                        <li><strong>10024</strong> - Ziel unerreichbar</li>
+                        <li><strong>10045</strong> - Protokollfehler</li>
+                        <li><strong>10053</strong> - Kein Weg modelliert</li>
+                    </ul>
+                </div>
+
+                <div class="sp-wms-ref-card warning">
+                    <h3>⚠️ Häufige Störungen</h3>
+                    <ul>
+                        <li><strong>10006</strong> - Konturenfehler</li>
+                        <li><strong>10039</strong> - Timeout Platzbelegung</li>
+                        <li><strong>20162</strong> - TE-ID ist Null</li>
+                        <li><strong>10004</strong> - Zielfach belegt</li>
+                    </ul>
+                </div>
+
+                <div class="sp-wms-ref-card info">
+                    <h3>🛠️ Schnelle Lösungen</h3>
+                    <ul>
+                        <li><strong>Neustart</strong> - Gerät aus/ein schalten</li>
+                        <li><strong>Sensorik</strong> - Justierung prüfen</li>
+                        <li><strong>Quit senden</strong> - Kommunikation zurücksetzen</li>
+                        <li><strong>Extern buchen</strong> - LHM umbuchen</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Kontakt & Support</h2>
+            <div class="sp-wms-contact-grid">
+                <div class="sp-wms-contact-card">
+                    <h3>🎧 Technischer Support</h3>
+                    <p><strong>Jungheinrich Support</strong></p>
+                    <p>Für Protokollfehler und technische Probleme</p>
+                </div>
+
+                <div class="sp-wms-contact-card">
+                    <h3>🌐 Netzwerk-Probleme</h3>
+                    <p><strong>IT-Abteilung</strong></p>
+                    <p>Bei Kommunikations- und Netzwerkstörungen</p>
+                </div>
+
+                <div class="sp-wms-contact-card">
+                    <h3>🔧 Kundendienst</h3>
+                    <p><strong>Jungheinrich Kundendienst</strong></p>
+                    <p>Für spezielle Gerätewartung und -reparatur</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #ecf0f1; color: #666;">
+            <p>&copy; 2024 Georg Fischer WMS Dokumentation. Version 0.9 - Stand: 20.12.2024</p>
+        </footer>
+    </div>
+</body>
+</html>

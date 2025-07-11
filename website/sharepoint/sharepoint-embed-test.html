@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharePoint Iframe Embedding Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .success-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .iframe-wrapper {
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .iframe-title {
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+        
+        .sharepoint-code {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .sharepoint-section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>SharePoint Iframe Embedding Test</h1>
+        
+        <div class="info-box">
+            <strong>Info:</strong> This page demonstrates that the WMS pages are now properly configured for SharePoint iframe embedding. All pages include the necessary headers and JavaScript compatibility code.
+        </div>
+        
+        <div class="success-box">
+            <strong>✓ Fixed Issues:</strong>
+            <ul>
+                <li>Added proper X-Frame-Options header set to SAMEORIGIN</li>
+                <li>Added Content Security Policy allowing SharePoint domains</li>
+                <li>Added SharePoint compatibility meta tags</li>
+                <li>Added iframe detection and postMessage communication</li>
+                <li>Added responsive styles for iframe mode</li>
+                <li>Added IE compatibility for older SharePoint versions</li>
+            </ul>
+        </div>
+        
+        <div class="sharepoint-section">
+            <h2>How to Embed in SharePoint</h2>
+            
+            <h3>Method 1: Using SharePoint Embed Web Part</h3>
+            <ol>
+                <li>Edit your SharePoint page</li>
+                <li>Add an "Embed" web part</li>
+                <li>Click "Add embed code"</li>
+                <li>Paste the iframe code below</li>
+            </ol>
+            
+            <div class="sharepoint-code">
+&lt;iframe src="https://your-domain.com/website/sharepoint/index.html" 
+        width="100%" 
+        height="800" 
+        frameborder="0"
+        scrolling="auto"
+        title="Georg Fischer WMS Documentation"&gt;
+&lt;/iframe&gt;
+            </div>
+            
+            <h3>Method 2: Using SharePoint Content Editor Web Part</h3>
+            <ol>
+                <li>Add a Content Editor Web Part</li>
+                <li>Edit the web part</li>
+                <li>Click "Edit Source"</li>
+                <li>Paste the iframe code</li>
+                <li>Save and publish</li>
+            </ol>
+            
+            <h3>Method 3: Using SharePoint Modern Pages</h3>
+            <ol>
+                <li>Edit your modern SharePoint page</li>
+                <li>Add an "Embed" web part</li>
+                <li>Choose "Website or video address"</li>
+                <li>Enter the URL directly: <code>https://your-domain.com/website/sharepoint/index.html</code></li>
+            </ol>
+        </div>
+        
+        <h2>Test Iframes</h2>
+        
+        <div class="iframe-wrapper">
+            <div class="iframe-title">Main Documentation Page</div>
+            <iframe src="index.html" title="Main Documentation"></iframe>
+        </div>
+        
+        <div class="iframe-wrapper">
+            <div class="iframe-title">Chatbot Interface</div>
+            <iframe src="chatbot.html" title="WMS Chatbot"></iframe>
+        </div>
+        
+        <div class="sharepoint-section">
+            <h2>SharePoint-Specific Features Added</h2>
+            <ul>
+                <li><strong>Automatic iframe detection:</strong> Pages detect when they're embedded and adjust styling</li>
+                <li><strong>PostMessage API:</strong> Pages can communicate with SharePoint parent window</li>
+                <li><strong>Responsive design:</strong> Content adapts to SharePoint container width</li>
+                <li><strong>Console polyfill:</strong> Ensures compatibility with older IE versions in SharePoint</li>
+                <li><strong>Security headers:</strong> Properly configured to allow SharePoint domains while maintaining security</li>
+            </ul>
+        </div>
+        
+        <div class="sharepoint-section">
+            <h2>Troubleshooting</h2>
+            <p>If you still encounter issues:</p>
+            <ol>
+                <li><strong>Check SharePoint permissions:</strong> Ensure users have access to both SharePoint and the hosted pages</li>
+                <li><strong>Verify HTTPS:</strong> SharePoint requires HTTPS for embedded content</li>
+                <li><strong>Update URLs:</strong> Replace "your-domain.com" with your actual domain</li>
+                <li><strong>Browser console:</strong> Check for any JavaScript errors</li>
+                <li><strong>SharePoint settings:</strong> Some organizations restrict iframe embedding - check with your SharePoint admin</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        // Test iframe communication
+        window.addEventListener('message', function(e) {
+            if (e.data && e.data.type === 'iframe-ready') {
+                console.log('Iframe ready:', e.data.source);
+            }
+        });
+    </script>
+</body>
+</html>

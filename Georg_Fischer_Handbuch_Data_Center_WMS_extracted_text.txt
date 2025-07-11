@@ -1,0 +1,2818 @@
+
+--- PAGE 1 ---
+JH-Confidential
+Jungheinrich WMS
+Handbuch
+Data Center
+Version 7.4b
+Datum: 12.09.2024
+Jungheinrich Systemlösungen GmbH
+Köglerweg 50 · 8042 Graz · Telefon +43 316 8116510 ·
+systemloesungen@jungheinrich.at · www.jungheinrich.at
+
+--- PAGE 2 ---
+JH-Confidential
+Urheberrechte
+Dieses Werk und seine Inhalte (Text, Fotos und Zeichnungen) sind urheberrechtlich
+geschützt. Inhaberin der Urheberrechte ist die Jungheinrich AG mit Sitz in Hamburg,
+Deutschland. Das Vervielfältigen (Fotokopieren, Scannen etc.), Bearbeiten,
+Verbreiten, Übersetzen oder Verwerten in sonstiger Weise ist unzulässig.
+Jungheinrich Aktiengesellschaft
+Friedrich-Ebert-Damm 129
+22047 Hamburg
+Telefon: +49 (0) 40 6948-0
+Fax: +49 (0) 40 6948-1777
+www.jungheinrich.de
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 2 von 98
+
+--- PAGE 3 ---
+JH-Confidential
+Inhaltsverzeichnis
+1 Abkürzungsverzeichnis .......................................................................... 4
+2 Einleitung ................................................................................................. 5
+3 Data Center-Konfiguration ...................................................................... 7
+4 Data Center-Analysen ........................................................................... 12
+4.1 Analysen erstellen und bearbeiten........................................................... 14
+4.2 Kennzahlen .............................................................................................. 26
+4.3 Drilldown-Funktionen ............................................................................... 49
+4.3.1 Drilldown via Kontextmenü ...................................................................... 50
+4.3.2 Drilldown via Doppelklick ......................................................................... 54
+4.3.3 Drilldown via Filter ................................................................................... 55
+4.4 Histogramm ............................................................................................. 56
+4.5 Häufigkeitsverteilung ............................................................................... 58
+5 Transportmatrix ..................................................................................... 60
+6 Assistenzfunktionen .............................................................................. 62
+6.1 Trend- und Abweichungsüberwachung ................................................... 62
+6.2 Artikelstammbereichsoptimierung ............................................................ 63
+6.3 Auslastungsprognose .............................................................................. 69
+7 Assistentenkonfiguration ..................................................................... 76
+7.1 Assistentenkonfiguration – Datenanalyse ................................................ 78
+7.2 Assistentenkonfiguration – Trend- und Abweichungsüberwachung ........ 79
+7.3 Assistentenkonfiguration – Artikelstammbereichsoptimierung ................. 83
+7.4 Assistentenkonfiguration – Sendungsdurchlaufzeit ................................. 86
+7.5 Assistentenkonfiguration – Auslastungsprognose ................................... 92
+7.5.1 Arbeitseinheiten ....................................................................................... 93
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 3 von 98
+
+--- PAGE 4 ---
+JH-Confidential
+1 Abkürzungsverzeichnis
+Host Übergeordnetes System (z. B. Warenwirtschaft)
+Komm. Kommissionsauftrag, Warenausgangsaviso
+KI Künstliche Intelligenz
+KPI Key Performance Indicator(s), Schlüsselkennzahlen, die die
+unternehmerische Leistung widerspiegeln; dienen als Zielvorgabe
+LAM Lastaufnahmemittel
+LHM Ladehilfsmittel (z. B. Tablare, Behälter, Paletten)
+MFR Materialflussrechner
+MRC Mobile Robot Control
+VPE Verpackungseinheit
+WMS Warehouse Management System
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 4 von 98
+
+--- PAGE 5 ---
+JH-Confidential
+2 Einleitung
+Bitte beachten Sie, dass Data Center ein separates Modul ist, das extra zu
+lizenzieren ist. Auch die Submodule zum Data Center sind jeweils
+lizenzierungspflichtig.
+Das Data Center bildet die Grundlage für die intelligenten Assistenzfunktionen im
+WMS. Durch Aktivierung des Data Centers wird die zentrale Datensammlung und
+-transformation gestartet. Diese Daten werden in weiterer Folge von den KI-
+Funktionalitäten des WMS genutzt.
+Mit dem Basismodul Data Center werden darüber hinaus Drilldown-Diagramme für
+häufig genutzte KPIs zu WMS-Prozessen integriert. Die Darstellungsmöglichkeiten
+umfassen den chronologischen Verlauf und Häufigkeitsverteilungen nach
+Zeiteinheiten, sowie nach Kennzahlenwert mit statistischen Messgrößen.
+Das Basismodul beinhaltet:
+⎯ detaillierte Auswertungen anhand umfangreicher Filter- und
+Gruppierungsmöglichkeiten
+⎯ vertikale Navigation durch die Daten
+⎯ Integrationsmöglichkeit der Drilldown-Diagramme direkt am Dashboard
+Zusätzlich zum Basismodul stehen folgende, ebenfalls lizenzierungspflichte
+Erweiterungsmodule zur Verfügung:
+⎯ Trend- und Ausreißer-Analyse
+⎯ KI-basierte Nachschuboptimierung
+⎯ KI-Unterstützung im Ressourceneinsatz
+Alle Submodule werden nachfolgend kurz beschrieben:
+Trend- und Ausreißer-Analyse
+Die automatische Trend- und Ausreißer-Analyse überwacht mittels der Daten des
+Data Centers die Lager-KPIs. Wenn Trends oder Ausreißer in den Daten erkannt
+werden, wird der Leitstand darüber mittels einer Leitstandsmeldung informiert (siehe
+dazu Handbuch Lagermanagement, Kapitel Leitstandsmeldungen).
+Der Kunde erhält über die Darstellung der Trends hinaus auch eine Information über
+zusammenhängende KPIs. Beispielsweise könnte ein steigender Trend der
+durchschnittlichen Durchlaufzeit von Kommissionen bzw. Sendungen erkannt worden
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 5 von 98
+
+--- PAGE 6 ---
+JH-Confidential
+sein, der Kunde wird aber zusätzlich darüber informiert, dass dies laut der Daten im
+Zusammenhang mit einem allgemeinen Rückgang der Kommissionszahl steht.
+Auch eine Überwachung der Durchlaufzeit von Kommissionen/Sendungen ist in
+diesem Modul enthalten. Der Leitstand wird dabei aktiv über kritische
+Kommissionen/Sendungen (prognostizierte Durchlaufzeit > Restzeit bis zur
+geplanten Auslieferzeit) informiert. Optional ist auch ein automatischer Kommissions-
+/Sendungsstart auf Basis der Durchlaufzeit möglich. Zu beachten ist, dass der
+Mehrwert dieser Funktion stark von der Datenmenge und -qualität abhängt.
+Außerdem muss die geplante Auslieferzeit vom Kunden exakt und durchgängig für
+alle Kommissionen/Sendungen vorgegeben werden können.
+KI-basierte Nachschuboptimierung
+Mit der KI-basierten Nachschuboptimierung werden die Bereichseinstellungen
+hinsichtlich Maximal- und Mindestbeständen pro Artikel vom WMS überwacht. Dazu
+werden Nachschubkosten und erwartete Entnahmemengen, berechnet mittels KI-
+Funktionalität aus den Daten des Data Centers, betrachtet. Sobald eine Anpassung
+der Mengen für einen Artikel notwendig wird, kann das WMS den Leitstand entweder
+darüber informieren, oder die Anpassung direkt durchführen.
+KI-Unterstützung im Ressourceneinsatz
+Mit der KI-Unterstützung im Ressourceneinsatz nutzt das Jungheinrich WMS die
+Daten des Data Centers für eine Auslastungsprognose für Tätigkeitsbereiche
+inklusive Arbeitsplätze und Arbeitsarten. Mitarbeitende können mit einem
+übersichtlichen Dialog auf Basis der Auslastungsprognosen den Tätigkeitsbereichen
+zugeordnet werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 6 von 98
+
+--- PAGE 7 ---
+JH-Confidential
+3 Data Center-Konfiguration
+Einstellungen > Data Center-Konfiguration
+In diesem Menü wird die Konfiguration des Data Centers vorgenommen. Sie dient als
+Basis für die Ausführung der Data Center-Analyse. Details dazu finden Sie im
+Kapitel 4 Data Center-Analysen.
+Verbindung
+Host: Hier wird die Adresse des Data Center-Servers angegeben.
+Port: In diesem Feld wird die Portnummer für den verwendeten Data
+Center-Server eingetragen. Der Standardwert ist 34021.
+Aktiv: Mit Anhaken dieses Kontrollkästchens wird das Data Center
+aktiviert.
+Verschlüsselung: Mit Anhaken dieses Kontrollkästchens wird eine sichere
+Kommunikation zwischen dem WMS und dem Data Center-
+Server gewährleistet.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 7 von 98
+
+--- PAGE 8 ---
+JH-Confidential
+Datentransformation
+Im Zuge der Datentransformation bereitet das Data Center gesammelte, historische
+Daten so auf, dass diese später für die Analyse im Dialog Analysen herangezogen
+werden können. Des Weiteren stehen Optionen zur Definition eines Zeitplans zur
+Verfügung, welche nachfolgend im Detail beschrieben werden.
+Zeitplan aktiv: Mit Anhaken dieses Kontrollkästchens wird der für die Aktion
+definierte Zeitplan aktiviert. Mit Deaktivieren des
+Kontrollkästchens wird die geplante Aktion zu den unten
+definierten Zeitpunkten nicht durchgeführt. In beiden Fällen
+werden die Eingabemöglichkeiten darunter nicht beeinflusst.
+Status laufend: Dieses Feld dient nur zur Information und zeigt an, ob die
+geplante Aktion gerade läuft oder auf den nächsten
+Ausführungszeitpunkt wartet. Es kann nicht editiert werden.
+An Mit Aktivieren dieses Kontrollkästchens kann festgelegt werden,
+betriebsfreien dass die geplante Aktion auch an betriebsfreien Tagen ausgeführt
+Tagen werden soll, sofern betriebsfreie Tage im System hinterlegt
+ausführen: wurden und einer der unten in der Liste definierten Zeitpunkte auf
+einen betriebsfreien Tag fällt.
+Nähere Informationen zur Definition von betriebsfreien Tagen
+finden Sie im Handbuch Stammdaten, Kapitel Betriebsfreie Tage.
+Diese Einstellung ist für die Datentransformation immer aktiviert,
+da betriebsfreie Tage zwar je Lager konfiguriert werden, die
+Datentransformation jedoch lagerübergreifend durchgeführt wird.
+Letzter Hier werden das Datum und die Uhrzeit der zuletzt ausgeführten
+Ausführungs- Aktion angezeigt. Das Feld dient nur zur Information und kann
+zeitpunkt: nicht editiert werden.
+Nächster Aus- Dieses Feld gibt an, wann die Aktion das nächste Mal ausgeführt
+führungs- wird. Der nächste Ausführungszeitpunkt errechnet sich aus den in
+zeitpunkt: der Liste definierten Zeitpunkten. Dieses Feld dient ebenfalls nur
+zur Information und kann lediglich mithilfe der Schaltfläche
+Aktuelle Zeit setzen auf die aktuelle Zeit korrigiert werden.
+Datenreorganisation
+Im Zuge der Datenreorganisation entfernt das Data Center Daten, die nicht mehr für
+die Analyse herangezogen werden sollen.
+Lösche Die hier definierte Anzahl an Tagen bestimmt, nach wie vielen
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 8 von 98
+
+--- PAGE 9 ---
+JH-Confidential
+Journaldaten Tagen Einträge in den Journaldaten gelöscht werden. Das
+älter als … Löschen der Daten erfolgt im Zuge des Tagesabschlusses. Die
+Tage: Angabe von Werten im Bereich von 0 – 3660 ist möglich
+(Standard = 366).
+Bei Angabe von 0 Tagen werden alle Einträge gelöscht. Noch
+nicht transformierte Daten sind vom Löschvorgang
+ausgenommen. Im Fall von Stammdaten bleibt der letzte Eintrag
+immer erhalten, auch wenn er bereits in die Löschperiode fallen
+würde.
+Lösche Die hier definierte Anzahl an Tagen bestimmt, nach wie vielen
+Analysedaten Tagen Einträge in den Analysedaten gelöscht werden. Das
+älter als … Löschen der Daten erfolgt im Zuge des Tagesabschlusses. Die
+Tage: Angabe von Werten im Bereich von 0 – 3660 ist möglich
+(Standard = 1830, also 5 Jahre).
+Bei Angabe von 0 Tagen werden alle Einträge gelöscht.
+Lösche Die hier definierte Anzahl an Tagen bestimmt, nach wie vielen
+Lerndaten für Tagen Lerndaten für die KI-Modelle gelöscht werden. Das
+KI-Modelle älter Löschen der Daten erfolgt im Zuge des Tagesabschlusses. Die
+als … Tage: Angabe von Werten im Bereich von 0 – 3660 ist möglich
+(Standard = 1830, also 5 Jahre).
+Bei Angabe von 0 Tagen werden alle Einträge gelöscht.
+Schaltflächen
+Aktuelle Zeit Beim Drücken dieser Schaltfläche wird der nächste
+setzen: Ausführungszeitpunkt automatisch auf das aktuelle Datum und
+die aktuelle Uhrzeit gesetzt.
+Hinzufügen: Mit Betätigen der Schaltfläche Hinzufügen öffnet sich der Dialog
+Tag-/Zeitangabe. Dieser wird nachfolgend im Detail beschrieben.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 9 von 98
+
+--- PAGE 10 ---
+JH-Confidential
+Hier kann ein neuer Zeitpunkt angelegt werden, zu dem die gewünschte Aktion
+stattfinden soll. Der neu angelegte Zeitpunkt wird nach Bestätigen des Dialoges mit
+OK automatisch in der Liste angezeigt.
+Ausführung
+Modus: Die folgenden Optionen stehen hier zur Auswahl:
+⎯ Zeitpunkt
+⎯ Zyklisch
+Zeitpunkt bedeutet, dass die Aktion an einem oder mehreren
+spezifischen Wochentag/en zu einer bestimmten Uhrzeit
+durchgeführt wird.
+Zyklisch bedeutet, dass die Aktion innerhalb der definierten
+Periode (= gesetzte Start und Ende Uhrzeit) entsprechend dem
+definierten Intervall wiederkehrend ausgeführt wird.
+Wochentage: Hier kann der gewünschte Wochentag (Montag – Sonntag) für die
+Aktion ausgewählt werden. Bei Auswahl mehrerer Tage werden
+diese durch einen Strichpunkt getrennt.
+Start Uhrzeit: In diesem Feld kann die gewünschte Uhrzeit, zu der die Aktion
+starten soll, eingetragen werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 10 von 98
+
+--- PAGE 11 ---
+JH-Confidential
+Ende Uhrzeit: In diesem Feld kann die gewünschte Uhrzeit, zu der die Aktion
+enden soll, eingetragen werden.
+Dieses Feld ist nur bei Auswahl des Modus Zyklisch von
+Relevanz.
+Intervall: Hier wird die Zeitspanne definiert, auf Basis derer die Aktion
+innerhalb der gesetzten Periode zyklisch wiederholt wird.
+Beispiel:
+Start Uhrzeit: 10:00
+Ende Uhrzeit: 16:00
+Intervall: 10:00
+In der Zeit von 10:00 – 16:00 wird die Aktion zyklisch alle
+10 Minuten ausgeführt.
+Dieses Feld ist nur bei Auswahl des Modus Zyklisch von
+Relevanz.
+Schaltflächen
+Löschen: Mit Betätigen der Schaltfläche Löschen kann ein zur Liste
+hinzugefügter Zeitpunkt für eine Aktion gelöscht werden.
+OK: Mit Klick auf OK werden die Einstellungen gespeichert und der
+Dialog geschlossen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 11 von 98
+
+--- PAGE 12 ---
+JH-Confidential
+4 Data Center-Analysen
+Information > Data Center > Analysen
+Die Datenanalyse wird grundsätzlich über den Menüpunkt Information > Data
+Center > Analysen geöffnet. Zusätzlich können vorkonfigurierte Drilldown-
+Diagramme auch am Dashboard angezeigt werden (siehe dazu das
+Handbuch Einstellungen, Kapitel Dashboards). Der Analysedialog des Data Centers
+bietet dem Benutzer einen guten Einblick in die aktuelle Situation im Lager und liefert
+je nach Auswahl historische oder aktuell relevante Daten. Im Vergleich zu Special
+Reports ist das Data Center für den Benutzer interaktiv. Genaue Informationen zum
+Analysedialog und den möglichen Einstellungen sind im Kapitel 4.1 Analysen
+erstellen und bearbeiten zu finden.
+Die Datenanalyse erlaubt es, Daten zu WMS-Prozessen und Kenngrößen für
+ausgewählte Zeiträume chronologisch darzustellen. Durch umfangreiche Filter und
+Gruppierungsmöglichkeiten (Drilldown) können die Analyse/Daten schrittweise
+verfeinert werden. Dadurch kann ein tiefer Einblick in die Abläufe im Lager gewonnen
+und Abweichungen und Probleme effektiver analysiert und nachvollzogen werden.
+So kann beispielsweise die Anzahl oder durchschnittliche Bearbeitungszeit von
+Sendungen für einen bestimmten Zeitraum dargestellt werden. Für einen
+detaillierteren Einblick können diese noch weiter gruppiert dargestellt werden, z. B.
+nach Versandart, Auftragsart oder Lager.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 12 von 98
+
+--- PAGE 13 ---
+JH-Confidential
+Schaltflächen
+Neue Analyse: Mithilfe der Schaltfläche Neue Analyse wird eine neue
+Analyse gestartet. Details zur Erstellung einer Datenanalyse
+finden Sie in Kapitel 4.1 Analysen erstellen und bearbeiten.
+Analyse fortsetzen: Über die Schaltfläche Analyse fortsetzen kann eine bereits
+gespeicherte Analyse wieder geöffnet und weiterbearbeitet
+werden. Details zur Bearbeitung einer Datenanalyse finden
+Sie in Kapitel 4.1 Analysen erstellen und bearbeiten.
+Umbenennen: Durch Klick auf diese Schaltfläche öffnet sich ein Dialog, in
+welchem der Name der gespeicherten Analyse geändert
+werden kann. Dieser Dialog ist in Kapitel 4.1 Analysen
+erstellen und bearbeiten abgebildet.
+Löschen: Mithilfe der Schaltfläche Löschen kann eine nicht mehr
+benötigte Analyse gelöscht werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 13 von 98
+
+--- PAGE 14 ---
+JH-Confidential
+4.1 Analysen erstellen und bearbeiten
+Information > Data Center > Analysen, Schaltfläche Neue Analyse oder Analyse
+fortsetzen
+Bei der Anlage einer neuen Analyse öffnet sich zunächst der Hinweis, dass
+entsprechende Basiskriterien sowie gegebenenfalls erweiterte Kriterien über den
+Filter gesetzt werden müssen. Mit Betätigen von [F5] wird die Auswertung gestartet.
+Beispiel – Dialog Analyse mit gesetztem Filter:
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 14 von 98
+
+--- PAGE 15 ---
+JH-Confidential
+Beispiel – Dialog Analyse mit gesetztem Filter und aktivierter Anzeige für
+Histogramm sowie Häufigkeitsverteilung:
+Auf der linken Seite des Dialoges befindet sich das Drilldown-Diagramm. Hierbei
+handelt es sich um eine chronologische Auswertung von definierten Daten
+(Kennzahl-Größe, Kennzahl-Wert) und einer definierten Periode und Dimension.
+Auf der x-Achse wird dabei die ausgewählte Dimension angezeigt. Auf der y-Achse
+wird der ausgewählte Kennzahlenwert angezeigt. Die Daten werden für die
+ausgewählte Periode entsprechend eingeschränkt. Die Darstellung der Werte in
+Balken ist automatisch aktiviert (Option Diagramm anzeigen). Mithilfe der
+Anzeigeoptionen kann sie jedoch angepasst werden. Details dazu finden Sie weiter
+unten im selben Kapitel.
+Zusätzlich dazu können ein Histogramm und eine Häufigkeitsverteilung angezeigt
+werden. Beim Histogramm werden Daten periodisch nach der ausgewählten
+Dimension zusammengefasst (siehe dazu auch das Kapitel 4.4 Histogramm). Die
+Häufigkeitsverteilung wird für den ausgewählten Kennzahlenwert ausgegeben.
+Zusätzlich dazu werden statistische Kennzahlen errechnet (siehe dazu auch das
+Kapitel 4.5 Häufigkeitsverteilung).
+Die Größe der verschiedenen Anzeigen ist skalierbar. Eine Größenanpassung erfolgt
+über das Versetzen der Trennlinien zwischen den einzelnen Diagrammen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 15 von 98
+
+--- PAGE 16 ---
+JH-Confidential
+Filter:
+Basiskriterien
+Periode: Die Periode gibt an, welche Daten zur Auswertung
+herangezogen werden.
+Im System sind bereits folgende Zeiträume vordefiniert:
+⎯ 1 Tag
+⎯ 7 Tage
+⎯ 1 Monat
+⎯ 3 Monate
+⎯ 1 Jahr
+⎯ Aktuelles Jahr
+⎯ Alle
+Sollten diese den gewünschten Analysezeitraum nicht
+umfassen, kann durch die Auswahl der Option
+Benutzerdefiniert eine Wunschperiode mittels Kalender
+definiert werden.
+Die vordefinierten Werte gehen immer vom heutigen Datum
+aus und blicken genau diese Zeitspanne zurück.
+Periode von: Hier wird das Startdatum der selektierten Periode angezeigt.
+Der Benutzer hat auch die Möglichkeit, ein beliebiges Datum
+einzustellen. Mit Auswahl eines beliebigen Datums wechselt die
+unter Periode getroffene Einstellung auf Benutzerdefiniert.
+Periode bis: Hier wird das Enddatum der selektierten Periode angezeigt.
+Der Benutzer hat auch die Möglichkeit, ein beliebiges Datum
+einzustellen. Mit Auswahl eines beliebigen Datums wechselt die
+unter Periode getroffene Einstellung auf Benutzerdefiniert.
+Dimension: Die Dimension definiert die Gruppierung der Werte auf der
+x-Achse der Auswertung/Darstellung. Hier stehen die folgenden
+Optionen zur Verfügung:
+⎯ Alle
+⎯ Jahr
+⎯ Monat
+⎯ Woche
+⎯ Tag
+⎯ Stunde
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 16 von 98
+
+--- PAGE 17 ---
+JH-Confidential
+Beispiel:
+Periode = 1 Jahr
+Dimension = Monat
+Im Diagramm werden nun zwölf Säulen angezeigt,
+vorausgesetzt es sind für jeden Monat Daten vorhanden.
+Kennzahl: Die Kennzahl unterteilt sich in eine Kennzahl-Größe und einen
+Kennzahl-Wert. Auf das Zusammenspiel beider Einheiten wird
+im Kapitel 4.2 Kennzahlen im Detail eingegangen.
+Erweiterte Kriterien
+Die erweiterten Filterkriterien stehen nur für bestimmte Kombinationen von Kennzahl-
+Größe und Kennzahl-Wert zur Verfügung und werden nicht standardmäßig
+angezeigt.
+Die erweiterten Kriterien werden unter den Basiskriterien eingeblendet. Sie werden
+als Teil des Drilldown-Pfads für die Anzeige am Dashboard mitkopiert. Nähere
+Informationen dazu finden Sie im vorliegenden Kapitel bei der Beschreibung der
+Schaltfläche Drilldown-Pfad kopieren.
+Gerät: Über dieses erweiterte Filterkriterium kann die Analyse für
+ausgewählte Geräte gestartet werden. Der Gerätefilter wird
+allerdings nur für bestimmte Kennzahlen angezeigt, wie z. B. für
+die Kennzahl Transport (Anzahl), für die Kombination Transport
+(Durchsatz auf Ort) jedoch nicht.
+In der Auswahlliste stehen alle im Lager modellierten Geräte zur
+Auswahl:
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 17 von 98
+
+--- PAGE 18 ---
+JH-Confidential
+Bei der Analyse werden nur Transporte der ausgewählten Geräte
+berücksichtigt und ausgewertet.
+Mandant: Mithilfe dieses erweiterten Kriteriums kann die Analyse auf einen
+bestimmten Mandanten begrenzt werden. In der Auswahlliste
+stehen grundsätzlich alle im WMS definierten Mandanten zur
+Verfügung. Soll die Analyse nicht eingeschränkt werden, kann die
+Option Beliebig gewählt werden.
+Versandart: Die Analyse kann mithilfe dieses erweiterten Kriteriums auf eine
+oder mehrere Versandarten beschränkt werden.
+Quellbereich: Die Analyse der Kennzahl-Größen Lageraufgabengruppen,
+Lageraufgaben, Zugriffsorte, Geräte und Transport kann auf
+einen oder mehrere Quellbereiche begrenzt werden.
+Zielbereich: Mithilfe dieses erweiterten Kriteriums kann die Analyse
+bestimmter Kennzahlen auf einen oder mehrere Zielbereiche
+beschränkt werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 18 von 98
+
+--- PAGE 19 ---
+JH-Confidential
+Bereich: Für die Kennzahl-Größen Automatikgeräte, Geräte und
+Ressourcen kann die Analyse mithilfe des Kriteriums auf einen
+oder mehrere Bereiche beschränkt werden.
+Störung: Ist für die Kennzahl-Größe Geräte der Kennzahl-Wert Anzahl
+Störungen oder Durchschnittliche Störungsdauer gewählt,
+steht das erweiterte Kriterium Störung zu Verfügung. Mithilfe
+dieses Eingabefelds kann nach einer bestimmten
+Störungsnummer gefiltert werden.
+Standardmäßig findet keine Filterung statt (eingetragener
+Wert = 0).
+Drilldown:
+Weitere Filter
+Ein Drilldown ist eine detailliertere Einsicht in hierarchisch organisierte Daten, die
+über verschiedene Gruppierungsmöglichkeiten vorgenommen werden kann. Über
+diesen Abschnitt können Drilldown-Dimensionen für Diagramme und Listen
+ausgewählt werden. Genaue Informationen zu den verfügbaren
+Gruppierungsmöglichkeiten finden Sie in Kapitel 4.3.3 Drilldown via Filter.
+Anzeigeoptionen
+Diagramm Ist dieses Kontrollkästchen angehakt, wird das Ergebnis der
+anzeigen: Analyse in einem Balkendiagramm dargestellt. Dieses
+Diagramm kann mit Abhaken des Kontrollkästchens
+ausgeblendet werden.
+Das Diagramm kann unabhängig vom Histogramm, der
+Häufigkeitsverteilung und der Tabelle ein- bzw. ausgeblendet
+werden. Details zum Histogramm bzw. zur
+Häufigkeitsverteilung finden Sie in den Kapiteln 4.4 Histogramm
+und 4.5 Häufigkeitsverteilung. Informationen zur Anzeige der
+Tabelle sind bei der Beschreibung der Option Tabelle
+anzeigen verfügbar.
+Säulen stapeln: Mit Aktivierung dieser Funktion werden die angezeigten
+Diagrammsäulen zum besseren Vergleich gestapelt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 19 von 98
+
+--- PAGE 20 ---
+JH-Confidential
+Beispiel – Option Säulen stapeln inaktiv:
+In diesem Beispiel wird die gesamte Fahrzeit der Geräte über
+einen Zeitraum von 3 Monaten analysiert. Als Dimension wurde
+Fahrmodus gewählt. Im Drilldown werden alle Geräte
+gegenübergestellt (siehe dazu das Kapitel 4.3 Drilldown-
+Funktionen).
+Die Option Säulen stapeln ist nicht aktiviert. Die Werte je
+Gerät werden somit in separaten Säulen angezeigt. Zudem
+sind die Optionen Werte anzeigen und Tabelle anzeigen
+aktiviert. Diese werden nachstehend beschrieben.
+Beispiel – Option Säulen stapeln aktiv:
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 20 von 98
+
+--- PAGE 21 ---
+JH-Confidential
+Bei aktivierter Option Säulen stapeln erfolgt die Anzeige wie in
+der Abbildung oben dargestellt. Die Werte sind für alle Geräte
+in jeweils einer Säule gemeinsam, allerdings farblich getrennt,
+visualisiert. So erfolgt eine direkte Gegenüberstellung der
+Werte.
+Diese Anzeigeoption ist nur bei Vorhandensein mindestens
+zweier Diagrammreihen aktivierbar.
+Werte anzeigen: Ist diese Option angehakt, werden die genauen Werte (auch
+bei Wert = 0) der angezeigten Daten aus der y-Achse als Text
+dargestellt. Diese Werte werden über den einzelnen Balken im
+angezeigten Diagramm eingeblendet. Die Werte werden
+sowohl im Hauptdiagramm als auch im Histogramm und der
+Häufigkeitsverteilung angezeigt. Details zum Histogramm bzw.
+zur Häufigkeitsverteilungen finden Sie in den Kapiteln
+4.4 Histogramm und 4.5 Häufigkeitsverteilung.
+Beispiel – Option Werte anzeigen aktiviert:
+Darstellung als Mithilfe dieser Option können die geladenen Daten auch als
+Linie: Linie dargestellt werden. Ist das Kontrollkästchen nicht
+angehakt, werden die Daten wie beim initialen Öffnen als
+Balken dargestellt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 21 von 98
+
+--- PAGE 22 ---
+JH-Confidential
+Beispiel – Option Darstellung als Linie aktiviert:
+Histogramm Mit Aktivierung dieser Option wird zusätzlich zum Diagramm ein
+anzeigen: Histogramm angezeigt. Dieses fasst Daten periodisch nach der
+ausgewählten Dimension zusammen. Details dazu finden Sie
+im Kapitel 4.4 Histogramm.
+Das Histogramm kann unabhängig vom Diagramm, der
+Häufigkeitsverteilung und der Tabelle ein- bzw. ausgeblendet
+werden. Details zur Häufigkeitsverteilung finden Sie in Kapitel
+4.5 Häufigkeitsverteilung. Informationen zur Anzeige der
+Tabelle sind bei der Beschreibung der Option Tabelle
+anzeigen verfügbar.
+Dimension für Als Dimension für die Anzeige im Histogramm stehen folgende
+Histogramm: Optionen zur Auswahl:
+⎯ Monat
+⎯ Woche
+⎯ Tag
+⎯ Wochentag
+⎯ Stunde
+Details zu den einzelnen Dimensionen finden Sie im Kapitel
+4.4 Histogramm.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 22 von 98
+
+--- PAGE 23 ---
+JH-Confidential
+Häufigkeits- Mit Aktivierung dieser Option wird zusätzlich zum Diagramm
+verteilung eine Häufigkeitsverteilung angezeigt. Die Häufigkeitsverteilung
+anzeigen: gibt an, wie die Werte, die aktuell im Drilldown-Diagramm
+angezeigt werden, verteilt sind.
+Details zur Häufigkeitsverteilung finden Sie im Kapitel
+4.5 Häufigkeitsverteilung.
+Tabelle anzeigen: Ist diese Option angehakt, werden die Diagrammwerte in einer
+Liste angezeigt. Diese Liste kann zusätzlich zum oder anstelle
+des Balkendiagramms angezeigt werden. Die Darstellung in
+einer Liste ermöglicht es, die Daten mit einem Klick in eine
+Datei zu exportieren (Kontextmenü > Datei Alles, siehe auch
+Handbuch Bedienkonzept, Kapitel Kontextmenü bei Listen).
+Die Tabelle kann unabhängig vom Diagramm, dem Histogramm
+und der Häufigkeitsverteilung ein- bzw. ausgeblendet werden.
+Details zum Histogramm bzw. zur Häufigkeitsverteilung finden
+Sie in den Kapiteln 4.4 Histogramm und
+4.5 Häufigkeitsverteilung.
+Beispiel – Anzeige von Diagramm und Tabelle:
+In der Liste werden die Daten so angezeigt, dass es pro x-Wert
+eine eigene Zeile gibt. Der x-Wert sowie ein eventuell
+vorhandener sekundärer x-Wert werden immer in den ersten
+beiden Spalten angezeigt. Die nächsten Spalten enthalten die
+Werte pro existierender Datenreihe.
+Im abgebildeten Beispiel wird die durchschnittliche
+Durchlaufzeit von Transporten in einem Zeitraum von einem
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 23 von 98
+
+--- PAGE 24 ---
+JH-Confidential
+Jahr analysiert. Als x-Dimension wurde Woche gewählt. Die
+Tabelle im unteren Bereich enthält demnach eine Spalte für die
+Dimension sowie eine weitere für die sekundären x-Werte – in
+diesem Fall das Startdatum der einzelnen Wochen. In der
+dritten Spalte wird die durchschnittliche Durchlaufzeit der
+Transporte im ausgewählten Zeitraum angezeigt.
+Werden mehrere Werte in einem Drilldown gegenübergestellt,
+enthält die Tabelle die entsprechende Anzahl an Zeilen für die
+gewählte x-Dimension sowie eine Hauptspalte für die Daten der
+vorhandenen Datenreihe.
+Analysedetails
+Im Abschnitt Analysedetails werden Informationen zum aktuellen Zustand des
+Dialogs ausgegeben. Neben der zu Beginn ausgewählten Analyseperiode werden
+auch die Werte aus dem Abschnitt Erweiterte Kriterien ausgegeben. Dieser
+Abschnitt ist rein informativ und kann nicht bearbeitet werden.
+Erweiterte Anzeigeoptionen
+Zusätzliche Eine zusätzliche Kennzahl ermöglicht es Einflüsse auf die unter
+Kennzahl: den Basiskriterien ausgewählte Kennzahl (z. B.
+Transport/durchschnittliche Durchlaufzeit) durch andere
+Kennzahlen anzuzeigen und schneller entdecken zu können.
+Nähere Informationen zu den Kennzahlen finden Sie im Kapitel
+4.2 Kennzahlen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 24 von 98
+
+--- PAGE 25 ---
+JH-Confidential
+Dieser Abschnitt wird nur für bestimmte Kennzahlen
+angezeigt.
+Schaltflächen
+Drilldown-Pfad Mit Klick auf diese Schaltfläche wird der aktuelle Drilldown-Pfad
+kopieren: kopiert und in der Zwischenablage gespeichert. Soll ein
+Drilldown-Diagramm auf dem Dashboard angezeigt werden,
+kann der Pfad zur Konfiguration der entsprechenden
+Dashboard-Kachel direkt aus der Zwischenablage eingefügt
+werden (siehe dazu das Handbuch Einstellungen,
+Kapitel Dashboards).
+Die Schaltfläche ist deaktiviert, sobald für den Drilldown ein
+Filter nach Zeit gesetzt ist, da auf dem Dashboard nur aktuelle
+Daten angezeigt werden sollen.
+Drilldown- Diese Schaltfläche dient dem Überspeichern einer bereits
+Zustand <Name> vorhandenen Analyse. Wird die Analyse hinsichtlich
+speichern: Anzeigeoptionen, Drilldown oder zusätzlicher Kennzahl
+bearbeitet, wird diese Schaltfläche aktiv und die überarbeitete
+Analyse kann unter demselben Namen überspeichert werden.
+Drilldown- Mithilfe dieser Schaltfläche wird eine neu gestartete oder eine
+Zustand vorhandene Analyse, die bearbeitet wurde, unter neuem
+speichern als: Namen gespeichert werden. Dazu öffnet sich ein
+entsprechender Dialog, in welchem ein Name für die zu
+speichernde Analyse vergeben werden kann.
+PDF exportieren: Eine Datenanalyse kann mithilfe dieser Schaltfläche als PDF-
+Datei gespeichert werden. Es öffnet sich ein entsprechender
+Speicherdialog. Die gespeicherte PDF-Datei enthält sämtliche
+Informationen der exportierten Analyse.
+Beispiel
+Als PDF-Datei gespeichert wurde eine Analyse zur
+durchschnittlichen Durchlaufzeit von Transporten innerhalb
+eines Jahres, wobei die Anzahl an Transporten als zusätzliche
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 25 von 98
+
+--- PAGE 26 ---
+JH-Confidential
+Kennzahl ausgewählt wurde, inkl. Anzeige des Histogramms
+und der Häufigkeitsverteilung.
+4.2 Kennzahlen
+Zur Analyse von Daten stehen im WMS unterschiedliche Kennzahlen zur Verfügung.
+Die Kennzahlen setzen sich dabei aus einer Kennzahl-Größe (z. B. Transport) und
+einem Kennzahl-Wert (z. B. Durchschnittliche Durchlaufzeit) zusammen. Die
+Kennzahl-Größe definiert jene WMS-Prozesse, die näher betrachtet werden sollen.
+Der Kennzahl-Wert definiert, welcher Wert für den ausgewählten Prozess
+ausgegeben werden soll.
+Die zur Verfügung stehenden Kennzahlen werden stetig erweitert.
+Die nachfolgende Tabelle zeigt, welche Kennzahl-Größen mit welchen Kennzahl-
+Werten kombiniert werden können. Zudem illustriert sie, auf welcher Ebene ein
+Drilldown erfolgen kann.
+Zusätzlich zu den in der Tabelle gelisteten Drilldown-Dimensionen gibt es noch fixe
+Dimensionen, die über das Kontextmenü zur Verfügung stehen:
+⎯ Alle
+Alle Daten werden zu einer Gruppe zusammengefasst.
+⎯ Jahr/Monat/Woche/Tag/Stunde
+Die Gruppierung erfolgt je nach gewählter zeitlicher Dimension.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 26 von 98
+
+--- PAGE 27 ---
+JH-Confidential
+Kennzahl- Kennzahl-Wert Drilldown- Abhängige
+Größe Dimensionen/Grupp- Kennzahlen
+ierungselemente
+Kommiss- Durchschnittliche Versandart, Auftragsart, Kommission/
+ion Durchlaufzeit, Lieferart, WA-Profil, Anzahl,
+Durchschnittliche Entnahmestrategie- Lageraufgaben-
+Bearbeitungszeit, profil, gruppen/Anzahl,
+Anzahl Fertigungsauftrag, Lageraufgaben/
+Rückstand, Nur Anzahl,
+komplett liefern, Tour, Transport/Anzahl,
+Mandant, Lager, Packen/Anzahl,
+Kundennummer, Automatikgeräte/
+Priorität, Anzahl Prozentuelle
+Positionen, Anzahl Störungsfreiheit,
+stornierter Positionen, Automatikgeräte/
+Anzahl Lageraufgaben Anzahl Störungen
+pro
+Kommissionsposition,
+Anzahl Nachschübe pro
+Kommissionsposition
+Sendung Durchschnittliche Versandart, Auftragsart, Kommission/
+Durchlaufzeit, Lieferart, Tour, Anzahl,
+Anzahl Mandant, Lager, Lageraufgaben-
+Kundennummer, Order gruppen/Anzahl,
+by Order, Gefahrgut, Lageraufgaben/
+Priorität, Anzahl Anzahl,
+Kommissionen Transport/Anzahl,
+Packen/Anzahl
+Packen Mittlere Packstück- Arbeitsplätze, Kommission/
+bearbeitungszeit, Kundennummer, Anzahl
+Anzahl Packstücke Versandart, Tour,
+Mandant, Lager
+Mittlere Packvorgangs- Kundennummer, Kommission/
+bearbeitungszeit, Versandart, Tour, Anzahl
+Anzahl Packvorgänge Mandant, Lager
+Verladung Durchschnittliche Versandart, Tour, Sendung/Anzahl,
+Durchlaufzeit, Mandant, Lager Packen/Anzahl
+Anzahl
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 27 von 98
+
+--- PAGE 28 ---
+JH-Confidential
+Lagerauf- Durchschnittliche Arbeitsart, Quellbereich, Kommission/
+gaben- Durchlaufzeit, Zielbereich, Priorität, Anzahl,
+gruppen Anzahl Anzahl Transporte, Lageraufgaben-
+Anzahl Lageraufgaben gruppen/Anzahl,
+Lageraufgaben/
+Anzahl,
+Transport/Anzahl
+Lagerauf- Durchschnittliche Arbeitsart, Quellbereich, Kommission/
+gaben Durchlaufzeit, Lager, Segment, VPE, Anzahl,
+Anzahl, Anzahl Mandant, Priorität, Lageraufgaben-
+Auslagerungen Anzahl Transporte gruppen/Anzahl,
+Lageraufgaben/
+Anzahl,
+Transport/Anzahl
+Transport Durchsatz auf Ort Lager, Segment, -
+Bereich, Ort
+Durchschnittliche Quellbereich, Kommission/
+Durchlaufzeit, Zielbereich, Lager, Anzahl,
+Anzahl, Anzahl Segment, Gerät, Typ, Lageraufgaben-
+[zeitbasierte Aus- LHM-Ebene, LHM- gruppen/Anzahl,
+lastung], Durchschn. Stelltyp, Zuständiger Lageraufgaben/
+Durchlaufzeit MFR, Mandant, Anzahl,
+[zeitbasierte Priorität, Teilzeiten, Transport/Anzahl
+Auslastung] Anlage-Abschluss
+Status
+Warenein- Anzahl Lager, Mandant, -
+gänge Auftragsart, Retoure,
+Geplant,
+Lieferantennummer,
+Fertigungsauftrag,
+Priorität
+Zugriffsorte Anzahl Lager, Segment, -
+Lagerzeilen,
+Quellbereich, ABC-
+Zone, Höhe, 20 meist
+frequentierte Orte, Ort
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 28 von 98
+
+--- PAGE 29 ---
+JH-Confidential
+Automatik- Auslagerdurchsatz, Lager, Segment, Kommission/
+geräte Einlagerdurchsatz, Bereich, Gerät, Anzahl,
+Anzahl Einzelspiele, Gerätegruppe, Ort, Typ Lageraufgaben-
+Anzahl Doppelspiele, gruppen/Anzahl,
+Anzahl Anzahl
+Teilbewegungen, Doppelspiele,
+Anzahl interne Anzahl
+Umlagerungen, Einzelspiele,
+Anzahl Transporte Anzahl Transporte
+gesamt, gesamt
+Mittlere Dauer
+Doppelspiel
+Mittlere Störungsbe- Lager, Gerät, Transport/Anzahl
+hebungszeit, Gerätegruppe
+Mittlere störungsfreie
+Zeit,
+Prozentuelle
+Störungsfreiheit
+Gesamte Lager, Gerät, -
+Störungsdauer Gerätegruppe
+Res- Auslastung Bereich, Arbeitsplätze, Kommission/
+sourcen Arbeitsart, Anzahl,
+Arbeitseinheit Lageraufgaben/
+Anzahl
+Geräte Gesamte Fahrzeit, Gerät, Quellbereich, -
+Anzahl Bewegungen Zielbereich, Lager,
+Fahrmodus
+Anzahl Störungen, Lager, Gerät, Transport/Anzahl
+Durchschnittliche Gerätegruppe, Störung,
+Störungsdauer Quittierbereich,
+Segment, Geräteart
+Gesamte Betriebszeit Gerät, Gerätegruppe, -
+Segment, Lager,
+Bereich, Betriebsmodus
+Gesamte Gerät, Gerätegruppe, -
+Batterieladezeit Geräteart
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 29 von 98
+
+--- PAGE 30 ---
+JH-Confidential
+In nachfolgender Tabelle wird im Detail auf die verfügbaren Kennzahl-Werte
+eingegangen. Oftmals steht ein Kennzahl-Wert mehreren Kennzahl-Größen zur
+Verfügung, z. B. Durchschnittliche Durchlaufzeit. Vom Prinzip her erfolgt die
+Berechnung für die diversen Kennzahl-Größen auf dieselbe Weise, der Unterschied
+liegt lediglich in der zur Berechnung herangezogenen Werte.
+Für die Berechnung quantitativer KPIs (z. B. Anzahl) wird immer die Anzahl pro
+Zeitraum angegeben. Der Zeitraum wird entweder über die Dimension der X-Achse
+(Drilldown nach Zeit z. B. Monat/Woche/Tag) oder den gefilterten Zeitraum (wenn
+Drilldown keine Zeitdimension) bestimmt.
+Ausführlichere Informationen bzw. Beispiele zu Drilldowns in Zusammenhang mit
+den nachfolgend beschriebenen Kennzahl-Werten finden Sie in und nach dieser
+Tabelle. Allgemeine Informationen zu Drilldowns finden Sie ab Kapitel 4.3 Drilldown-
+Funktionen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 30 von 98
+
+--- PAGE 31 ---
+JH-Confidential
+Kennzahl-Wert Beschreibung
+Durchschnittliche Die durchschnittliche Durchlaufzeit wird als Gruppierung
+Durchlaufzeit: auf Basis einer definierten Zeitspanne, welche je Kennzahl-
+Größe variiert, berechnet.
+Sendung: Zeit, ab der die Sendung im Status
+kommissionierbar war, bis zu dem Zeitpunkt, ab dem sie
+in den Status abgeschlossen gewechselt ist
+Beispiel: Ist die Zeitdimension Tag ausgewählt (über das
+Kontextmenü), werden alle Einträge, die innerhalb des
+entsprechenden Tages abgeschlossen wurden, summiert
+und durch die Anzahl der Sendungen innerhalb der
+Tagesgruppe geteilt. Das heißt, für jede Gruppierung wird
+der Durchschnitt auf Grundlage der Einträge innerhalb der
+Gruppe berechnet.
+Die Berechnung der nachfolgend beschriebenen Kennzahl-
+Größen erfolgt ähnlich wie jene der Sendung.
+Kommission: Zeit, ab der die Kommission im Status
+kommissionierbar war, bis zu dem Zeitpunkt, ab dem sie
+in den Status abgeschlossen gewechselt ist
+Verladung: Zeitspanne zwischen Beginn der Verladung
+und Verladeabschluss (= Differenz zwischen
+VERLADUNG.ABSCHLUSSZEIT und
+VERLADUNG.BEGINNZEIT)
+Lageraufgabengruppen: Zeitspanne zwischen der
+Startzeit und der Abschlusszeit der Lageraufgabengruppe
+(= Differenz zwischen HANDY.ABSCHLUSSZEIT und
+HANDY.STARTZEIT)
+Lageraufgaben: Zeitspanne zwischen der Startzeit und
+der Abschlusszeit der Lageraufgabe (= Differenz zwischen
+AUFTRAG.ABSCHLUSSZEIT und AUFTRAG.STARTZEIT)
+Transport: Zeitspanne zwischen der Sendezeit und der
+Abschlusszeit des Transports (= Differenz zwischen
+TRANSPORT.ABSCHLUSSZEIT und
+TRANSPORT.SENDEZEIT)
+➔ Informationen zu Drilldowns nach der Tabelle
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 31 von 98
+
+--- PAGE 32 ---
+JH-Confidential
+Durchschnittliche Die durchschnittliche Bearbeitungszeit wird als
+Bearbeitungszeit: Gruppierung aller Einträge einer definierten Zeitspanne
+berechnet.
+Sendung – Beispiel: Das Startdatum ist der 1.1.2020 und
+das Enddatum ist der 30.6.2020. Als Zeitdimension wird
+Tag ausgewählt. Alle Einträge innerhalb dieser Zeitspanne
+werden nach Jahr, Monat, Tag gruppiert. Das bedeutet,
+dass die Anzahl an Sendungseinträgen, die an einem
+bestimmten Tag abgeschlossen wurden, für den
+entsprechenden Tag zählt.
+Kommission: Die Bearbeitungszeit errechnet sich aus der
+Summe der Durchlaufzeiten der Lageraufgaben, welche
+zur Kommission gehören (siehe Sendung).
+➔ Informationen zu Drilldowns nach der Tabelle
+Anzahl/Anzahl Anzahl der Elemente der gewählten Kennzahl-Größe, die
+Packstücke/Anzahl im definierten Zeitraum abgeschlossen bzw. quittiert
+Packvorgänge/Anzahl wurden. Mögliche Kennzahl-Größen sind: Kommission,
+Störungen/Anzahl Sendung, Packen, Verladung, Lageraufgaben + -gruppen,
+Auslagerungen: Transport, Wareneingänge oder Zugriffsorte (siehe auch
+Tabelle oben)
+Kennzahl-Größe Zugriffsorte: Die 20 meistfrequentierten
+Orte errechnen sich aus AUFTRAG.ZIEL and
+AUFTRAG.QUELLE.
+Mittlere Zeitspanne, zwischen Packstartzeit und Packzeit
+Packstückbearbeitun (Packstückabschluss)
+gszeit:
+Berechnung: Differenz zwischen
+LHMPACKDATEN.PACKSTARTZEIT und
+LHMPACKDATEN.PACKSTUECKABSCHLUSSZEIT
+(siehe Sendung unter Durchschnittliche
+Bearbeitungszeit)
+Mittlere Zeitspanne, zwischen Startzeit und Abschlusszeit
+Packvorgangsbearbei
+Berechnung: siehe Sendung unter Durchschnittliche
+tungszeit:
+Bearbeitungszeit
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 32 von 98
+
+--- PAGE 33 ---
+JH-Confidential
+Durchsatz auf Ort: Anzahl der Transporte, die im definierten Zeitraum von
+einem Lagerort starten (Quellort) oder deren Ziel ein
+bestimmter Lagerort ist (Zielort)
+Die Orte für die Durchsatzanalyse werden über die
+Assistentenkonfiguration festgelegt (siehe dazu das Kapitel
+7 Assistentenkonfiguration).
+Berechnung: siehe Sendung unter Durchschnittliche
+Durchlaufzeit
+Auslagerdurchsatz: Der Auslagerdurchsatz errechnet sich aus der Anzahl an
+Auslagerungen (Transporte), die in einem bestimmten
+Zeitraum von einem oder mehreren Automatikgerät/en
+ausgeführt wurden. Ein Transport wird gezählt, sobald ein
+Gerät Ware von einem Lagerort zu einer Übergabestation
+bringt.
+Berechnung: siehe Sendung unter Durchschnittliche
+Durchlaufzeit
+Einlagerdurchsatz: Der Einlagerdurchsatz errechnet sich aus der Anzahl an
+Einlagerungen (Transporte), die in einem bestimmten
+Zeitraum von einem oder mehreren Automatikgerät/en
+ausgeführt wurden. Ein Transport wird gezählt, sobald ein
+Gerät Ware von einer Übergabestation zu einem Lagerort
+bringt und dort einlagert.
+Berechnung: siehe Sendung unter Durchschnittliche
+Durchlaufzeit
+Anzahl Einzelspiele: Unter einem Einzelspiel wird die Bewegung eines
+Automatikgeräts ohne Rückbewegung verstanden, z. B.
+eine Einlagerung. Eine Einlagerung mit darauffolgender
+Auslagerung wäre ein Doppelspiel.
+Sobald eine Bewegung als Einzelspiel gewertet wurde,
+kann sie nicht mehr im Zuge eines Doppelspiels gezählt
+werden.
+Als Spiel zählt die Bewegung eines Geräts ohne
+Beachtung der Anzahl an LHM, die mit der Bewegung
+transportiert werden.
+Beispiel: Ein Gerät hat zwei LAM und beide sind belegt.
+Diese Bewegung zählt als Einzelspiel, da es sich um einen
+physikalischen Transport handelt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 33 von 98
+
+--- PAGE 34 ---
+JH-Confidential
+Eine hohe Anzahl an Einzelspielen kann darauf hinweisen,
+dass die Anlage nicht mit voller Auslastung läuft.
+Berechnung: siehe Sendung unter Durchschnittliche
+Durchlaufzeit
+Anzahl Doppelspiele: Unter einem Doppelspiel wird die Bewegung eines
+Automatikgeräts mit nachfolgender Rückbewegung
+verstanden, z. B. eine Einlagerung mit darauffolgender
+Auslagerung.
+Jede Einlagerung mit nachfolgender Auslagerung wird als
+Doppelspiel gewertet.
+Sobald eine Bewegung als Doppelspiel gewertet wurde,
+kann sie nicht mehr als Einzelspiel gezählt werden.
+Für die Anzahl an Doppelspielen wird der Nutzungsgrad
+nicht beachtet, da für Spiele nur Gerätebewegungen
+unabhängig vom Nutzungsgrad gezählt werden (siehe
+Definition von Spiel unter Anzahl Einzelspiele).
+Berechnung: siehe Sendung unter Durchschnittliche
+Durchlaufzeit
+Anzahl Unter einer Teilbewegung wird die Bewegung eines nicht
+Teilbewegungen: voll beladenen Automatikgeräts verstanden. Hat ein Stapler
+beispielsweise vier Gabeln, werden davon für den
+Transport jedoch nur zwei genutzt, zählt diese Bewegung
+als Teilbewegung.
+Berücksichtigt werden nur Ein- oder Auslagerungen.
+Interne Umlagerungen sind von der Zählung
+ausgenommen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 34 von 98
+
+--- PAGE 35 ---
+JH-Confidential
+Beispiel: Ein Gerät kann 4 Paletten gleichzeitig
+transportieren. Es nimmt 4 gleichzeitig auf und gibt alle 4
+auch wieder gleichzeitig auf einem Ort ab. Dies zählt nicht
+als eine einzelne Bewegung. Wenn das Gerät 4 Paletten
+gleichzeitig aufnimmt und 2 davon auf Ort A und 2 auf Ort
+B abgibt, werden diese Transporte als Einzelbewegungen
+gezählt, weil das Gerät nicht voll beladen war. Es werden
+also die Gerätebewegungen von nicht voll beladenen
+Geräten gezählt anstatt von internen Transporten.
+Berechnung: siehe Sendung unter Durchschnittliche
+Durchlaufzeit
+Anzahl interne Die Anzahl an internen Umlagerungen errechnet sich aus
+Umlagerungen: der Anzahl an Transporten, die weder Ein- noch
+Auslagerungen sind und in einem bestimmten Zeitraum
+von einem oder mehreren Automatikgerät/en ausgeführt
+wurden.
+Ein Transport wird als interne Umlagerung gezählt, wenn
+ein Gerät Ware von einem internen Lagerort zu einem
+anderen internen Lagerort bringt (z. B. innerhalb eines
+Hochregallagers).
+Anzahl Transporte Die gesamte Anzahl an Transporten errechnet sich aus der
+gesamt: Summe aller Transporte (Ein- und Auslagerungen, interne
+Umlagerungen), die in einem bestimmten Zeitraum von
+einem oder mehreren Automatikgerät/en ausgeführt
+wurden.
+Berechnung: siehe Sendung unter Durchschnittliche
+Durchlaufzeit
+Mittlere Dauer Die mittlere Dauer eines Doppelspiels (Definition unter
+Doppelspiel: Anzahl Doppelspiele) errechnet sich aus der Summe
+folgender Werte:
+⎯ Start des Einlagertransports bis zum Ende des
+Einlagertransports
+⎯ Start des Auslagertransports bis zum Ende des
+Auslagertransports
+Die Zeit zwischen den Transporten wird nicht
+berücksichtigt. Auf Grundlage dieser Dauer wird die
+durchschnittliche Dauer für die ausgewählte Gruppe
+berechnet.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 35 von 98
+
+--- PAGE 36 ---
+JH-Confidential
+Mittlere Die mittlere Störungsbehebungszeit errechnet sich aus
+Störungsbehebungs- dem Zeitpunkt, ab dem der Status eines Automatikgeräts
+zeit: von OK auf Störung wechselt, bis zu dem Zeitpunkt, ab
+dem der Gerätestatus wieder auf OK gesetzt wird.
+Die Status Langfrst. Störung ein bzw. Außer Betrieb
+werden als störungsfreie Zeit gewertet. Berücksichtigt wird
+zudem nur die Arbeitszeit, die lt. Arbeitszeitschema
+definiert ist.
+Zur Gewährleistung einer möglichst realistischen
+Auswertung wird empfohlen, ein Arbeitszeitschema
+festzulegen. Details dazu finden Sie im Handbuch
+Ressourcenmanagement, Kapitel Definition der
+Arbeitszeiten.
+Für die mittlere Störungsbehebungszeit sind die
+Zeitdimensionen harte Grenzen (Stundengrenzen für
+Stunden und Betriebsstunden für Tage). Das bedeutet,
+dass Drilldowns mit zuvor ausgewählten Filtern die letzte
+Zeitdimension verwenden und Einträge gesplittet werden,
+wenn sie die Grenzen der Zeitdimension überschreiten.
+Alle für die mittlere störungsfreie Zeit definierten
+Störungsbehandlungen gelten auch für die Berechnung
+dieses Kennzahl-Wertes.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 36 von 98
+
+--- PAGE 37 ---
+JH-Confidential
+Mittlere störungsfreie Die mittlere störungsfreie Zeit errechnet sich aus dem
+Zeit: Zeitpunkt, ab dem der Status eines Automatikgeräts von
+Störung auf OK wechselt, bis zu dem Zeitpunkt, ab dem
+der Gerätestatus wieder auf Störung gesetzt wird.
+Die Status Langfrst. Störung ein bzw. Außer Betrieb
+werden als störungsfreie Zeit gewertet. Berücksichtigt wird
+zudem nur die Arbeitszeit, die lt. Arbeitszeitschema
+definiert ist.
+Zur Gewährleistung einer möglichst realistischen
+Auswertung wird empfohlen, ein Arbeitszeitschema
+festzulegen. Details dazu finden Sie im Handbuch
+Ressourcenmanagement, Kapitel Definition der
+Arbeitszeiten.
+➔ Informationen zu Drilldowns nach der Tabelle
+Prozentuelle Die prozentuelle Störungsfreiheit (störungsfrei = Anlage ist
+Störungsfreiheit: verfügbar) errechnet sich aus der mittleren störungsfreien
+Zeit dividiert durch die Summe aus mittlerer störungsfreier
+Zeit und mittlerer Störungsbehebungszeit. Zusätzlich dazu
+wird die Anzahl der aktiven LAM berücksichtigt. Die Status
+Langfrst. Störung ein bzw. Außer Betrieb werden als
+störungsfreie Zeit gewertet. Berücksichtigt wird zudem nur
+die Arbeitszeit, die lt. Arbeitszeitschema definiert ist.
+Zur Gewährleistung einer möglichst realistischen
+Auswertung wird empfohlen, ein Arbeitszeitschema
+festzulegen. Details dazu finden Sie im Handbuch
+Ressourcenmanagement, Kapitel Definition der
+Arbeitszeiten.
+Bei den LAM wird der durchschnittliche Prozentsatz der
+Verwendung mit der Verfügbarkeit multipliziert. Das heißt,
+wenn nur 2 von 4 LAM genutzt werden, beträgt der LAM-
+Faktor 50 %. Wenn die Verfügbarkeit 80 % beträgt, wird
+diese Verfügbarkeit durch Berechnung von 80 % * 50 % =
+40 % reduziert.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 37 von 98
+
+--- PAGE 38 ---
+JH-Confidential
+Gesamte Dieser Wert gibt die gesamte Störungsdauer innerhalb der
+Störungsdauer: ausgewählten Periode für die ausgewählte Gruppierung
+und die ausgewählten Automatikgeräte an.
+Die gesamte Störungsdauer wird genau wie die mittlere
+Störungsbehebungszeit gehandhabt. Die einzige
+Ausnahme ist, dass die Summe der Störungszeiten für den
+betrachteten Zeitraum anstelle des Durchschnitts
+verwendet wird.
+Durchschnittliche Die mittlere Dauer einer Gerätestörung errechnet sich aus
+Störungsdauer: der Zeitspanne vom Auftreten der Störung bis zu ihrer
+Quittierung. Jede Störung wird dabei separat betrachtet –
+im Gegensatz zur mittleren Störungsbehebungszeit, wo
+parallel aufgetretene Störungen als eine Störung gewertet
+werden.
+➔ Informationen zu Drilldowns nach der Tabelle
+Auslastung: Die Auslastung zeigt die Gesamtauslastung aller zu einer
+Arbeitseinheit zugewiesenen Lageraufgaben. Die
+Auslastung stellt eine Gesamtdauer dar und berechnet sich
+durch die Anzahl der abgearbeiteten Lageraufgaben pro
+Zeiteinheit (Drilldown nach Zeit). Für die Dauerberechnung
+wird das Ende der letzten Lageraufgaben der
+Mitarbeitenden herangezogen. Dadurch werden Stehzeiten
+berücksichtigt.
+Wenn ein Drilldown zu einer Nicht-Zeitdimension ohne
+Filter durchgeführt wird, wird die Summe für die Kategorien
+der gewählten Drilldown-Dimension angezeigt.
+Anzahl [zeitbasierte Dieser Wert zeigt die Anzahl an Transporten, welche
+Auslastung]: innerhalb der gewählten Zeitdimension (z. B. eine Stunde)
+einen bestimmten Anlage-/Abschlussstatus aufweisen
+(siehe Beschreibung der Kategorien).
+Beispiel: Es sind zwei Transporte vorhanden: (Transport1:
+TRANSPORT.SENDEZEIT=“1.1.2022 17:00“,
+TRANSPORT.ABSCHLUSSZEIT=“1.1.2022 20:15“,
+TRANSPORT.GERAET: 1), (Transport2:
+TRANSPORT.SENDEZEIT=“1.1.2022 17:10“,
+TRANSPORT.ABSCHLUSSZEIT=“1.1.2022 17:15“,
+TRANSPORT.GERAET: 2). Daraus ergibt sich die folgende
+Zeitreihe:
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 38 von 98
+
+--- PAGE 39 ---
+JH-Confidential
+X-Wert Alt Neu Alt wartend Neu wartend
+abgeschlossen abgeschlossen
+1.1.2022 0 1 (Transport 2) 0 1 (Transport 1)
+17:00
+1.1.2022 0 0 1 (Transport 1) 0
+18:00
+1.1.2022 0 0 1 (Transport 1) 0
+19:00
+1.1.2022 1 (Transport 1) 0 0 0
+20:00
+Es wird die Anzahl aller Transporte, die in den gewählten
+Zeitraum fallen, angezeigt. Die Transporte können in
+folgende Kategorien eingeteilt sein:
+⎯ Alt wartend: Diese Gruppe enthält alle
+Transporte, welche vor der angezeigten
+Zeitdimension angelegt und aktuell noch nicht
+abgeschlossen sind (z. B. Transport 1 für
+Stunde 18 des 1.1.2022).
+⎯ Neu wartend: Diese Gruppe enthält alle
+Transporte, die in der angezeigten
+Zeitdimension angelegt, jedoch nicht
+abgeschlossen werden (z. B. Transport 2 für
+Stunde 17 des 1.1.2022).
+⎯ Alt abgeschlossen: In dieser Gruppe werden
+alle Transporte, die vor der angezeigten
+Zeitdimension angelegt und in der aktuellen
+Zeit abgeschlossen werden, angezeigt (z. B.
+Transport 1 für Stunde 20 des 1.1.2022, der
+in Stunde 17 begonnen und in Stunde 20
+beendet wurde).
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 39 von 98
+
+--- PAGE 40 ---
+JH-Confidential
+⎯ Neu abgeschlossen: Diese Gruppe enthält
+alle Transporte, die in der angezeigten
+Zeitdimension angelegt und auch
+abgeschlossen wurden (z. B. Transport 2 für
+Stunde 17 des 1.1.2022, der in Stunde 17
+begonnen und in Stunde 17 abgeschlossen
+wurde).
+➔ Informationen zu Drilldowns nach der Tabelle
+Durchschnittliche Dieser Wert enthält die gleichen Gruppierungselemente
+Durchlaufzeit wie die Anzahl [zeitbasierte Auslastung], allerdings wird
+[zeitbasierte anstelle der Anzahl der Transporte die durchschnittliche
+Auslastung: Durchlaufzeit in der jeweiligen Gruppe angezeigt.
+Basierend auf den Beispieltransporten von oben (Transport
+1: Durchlaufzeit = 195 Minuten, Transport 2: Durchlaufzeit
+= 5 Minuten) sieht das Ergebnis für eine Zeitgruppierung
+nach Stunde wie folgt aus:
+X-Wert Alt Neu Alt Neu
+abgeschlossen abgeschlossen wartend wartend
+1.1.2022 0 5 Min. (Transport 0 195 Min.
+17:00 2) (Transport
+1)
+1.1.2022 0 0 195 Min. 0
+18:00 (Transport
+1)
+1.1.2022 0 0 195 Min. 0
+19:00 (Transport
+1)
+1.1.2022 195 Min. 0 0 0
+20:00 (Transport 1)
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 40 von 98
+
+--- PAGE 41 ---
+JH-Confidential
+Mit der Zeitdimension Tag sieht das Ergebnis folgendermaßen aus:
+X-Wert Alt Neu Alt Neu
+abgeschlossen abgeschlossen wartend wartend
+1.1.2022 0 (5 Min. + 195 0 0
+Min.)/2 = 100 Min.
+((Transport1 +
+Transport 2) / 2)
+Es wird die durchschnittliche Durchlaufzeit für die
+Transporte berechnet, die den entsprechenden Status
+haben. Da beide Transporte am betrachteten Tag
+fertiggestellt wurden, gehören beide zum Status Neu
+abgeschlossen und es wird der Durchschnitt beider
+Durchlaufzeiten berechnet.
+Gesamte Fahrzeit: Dieser Wert gibt die gesamte Fahrzeit innerhalb der
+ausgewählten Periode für die ausgewählten Geräte und die
+ausgewählte Gruppierung an. Die Berechnung erfolgt wie
+für die Sendung (siehe Durchschnittliche
+Bearbeitungszeit), aber anstatt des Durchschnitts wird die
+Summe für alle Einträge berechnet.
+Anzahl Bewegungen: Dieser Wert gibt die Anzahl der vom Gerät ausgeführten
+Bewegungen innerhalb der ausgewählten Periode für die
+ausgewählte Gruppierung und die ausgewählten Geräte
+an. Diese Bewegungen können sowohl Transporte als
+auch Geräteanweisungen sein. Die Berechnung erfolgt wie
+für die Sendung (siehe unter Durchschnittliche
+Durchlaufzeit).
+Gesamte Betriebszeit: Dieser Wert gibt die gesamte Betriebszeit aller Geräte
+innerhalb der ausgewählten Periode für die ausgewählte
+Gruppierung und die ausgewählten Geräte an, in welcher
+das Gerät in einem anderen Betriebsmodus als Außer
+Betrieb war.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 41 von 98
+
+--- PAGE 42 ---
+JH-Confidential
+Ein Drilldown nach Betriebsmodus zeigt, wie lange die
+Geräte insgesamt in einem bestimmten Betriebsmodus
+waren. Ein Drilldown nach Gerät mit der Auswahl eines
+Gerätes und einem anschließenden Drilldown nach
+Betriebsmodus zeigt die Gesamtzeit an, die das Gerät in
+einem bestimmten Betriebsmodus war.
+Gesamte Die gesamte Batterieladezeit ergibt sich aus der Summe
+Batterieladezeit: der Ladezeiten aller Geräte. Für die Berechnung der
+Ladezeit eines Gerätes wird der Zeitpunkt herangezogen,
+ab dem ein Gerät in den Status Ladend wechselt, bis zu
+dem Zeitpunkt, ab dem der Gerätestatus wieder auf OK
+gesetzt wird.
+Ein Drilldown nach Gerät zeigt die Gesamtladezeit pro
+Gerät an. Ein Drilldown nach Gerät mit der Auswahl
+mehrerer Geräte und einem anschließenden Drilldown
+nach Geräteart zeigt die Gesamtladezeit pro Geräteart für
+die ausgewählten Geräte an.
+Durchschnittliche Durchlaufzeit – Drilldown
+Ein Drilldown nach einem Nennwert (z. B. Auftragsart) führt zu einer Gruppierung
+nach der gewählten Drilldown-Dimension. Für die daraus resultierenden Gruppen
+wird der Durchschnitt aus den Durchlaufzeiten innerhalb dieser Gruppen berechnet.
+Bei Auswahl eines bestimmten Drilldown-Balkens wird nach jenen Einträgen gefiltert,
+die für die Berechnung des ausgewählten Balkens verwendet wurden. Anschließend
+wird eine Gruppierung nach der ausgewählten Drilldown-Dimension vorgenommen
+und die durchschnittliche Durchlaufzeit auf der Grundlage der Werte innerhalb der
+Gruppe berechnet.
+Drilldowns nach kontinuierlichen Dimensionen (z. B. Priorität) erfolgen auf ähnliche
+Weise. Anschließend wird die durchschnittliche Durchlaufzeit berechnet, indem die
+Einträge innerhalb jedes Intervalls summiert und durch die Anzahl der Einträge
+dividiert werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 42 von 98
+
+--- PAGE 43 ---
+JH-Confidential
+Durchschnittliche Bearbeitungszeit – Drilldown
+Ein Drilldown nach einem Nennwert (z. B. Auftragsart) führt zu einer zusätzlichen
+Gruppierung nach dieser Drilldown-Dimension. Wird kein bestimmter Drilldown-
+Balken ausgewählt, gruppiert der Drilldown alle Einträge nach der gewählten
+Drilldown-Dimension. Wird ein (oder mehrere) Balken ausgewählt, wird vor der
+Gruppierung ein Filter angewendet, der anzeigt, dass nur die gewählten Balken
+während der Gruppierung der Einträge beachtet wird.
+Drilldowns nach kontinuierlichen Dimensionen (z. B. Priorität) führen zu einer
+Verteilung basierend auf dem Wertebereich. Die Intervalle haben die gleiche Breite.
+Die max. Anzahl an erstellten Intervallen ist 10. Bei einem Wertebereich von 0-100
+ergeben sich somit maximal 10 Intervalle (0-10, 10-20, etc.). Die obere Grenze der
+Intervalle ist immer ausgeschlossen. Das bedeutet, dass die Gruppe der ersten
+Intervalle nur Werte von 0 bis 9.999 umfasst. Alle Einträge innerhalb dieses
+Bereiches zählen für den Balken dieses Intervalls. Drilldowns für alle Drilldown-
+Dimensionen werden anschließend gleich berechnet wie jene für Nennwerte.
+Mittlere störungsfreie Zeit – Drilldown
+Für die Berechnung der mittleren störungsfreien Zeit bildet die gewählte
+Zeitdimension eine harte Grenze. Das bedeutet, dass ein Drilldown nach der
+Dimension Stunde eine mittlere störungsfreie Zeit von höchstens 60 Minuten
+ergeben kann, da die Berechnung wie im folgenden Beispiel abläuft:
+Es gibt einen MFR-Fehler mit dem Störungsbeginn um 12:30 und dem Störungsende
+um 12:40. Mit der Zeitdimension Stunde ergeben sich somit die folgenden
+Zeitspannen: 12:00-12:30 (= 30 Min.) und 12:40-13:00 (= 20 Min.). Die mittlere
+störungsfreie Zeit für diese Stunde wird folgendermaßen berechnet: (30 + 20) / 2 =
+25 Min.
+Ähnlich erfolgt ein Drilldown nach der Zeitdimension Tag. Der Unterschied besteht
+darin, dass nicht der Beginn (00:00) und das Ende (23:59) des Tages verwendet
+werden, sondern die Betriebsstunden (z. B. 07:00-17:00). Im Beispiel oben ergeben
+sich folgende Zeiten zwischen den Störungen: 07:00-12:30 (= 330 Min.) und 12:40-
+17:00 (= 260 Min.). Die mittlere störungsfreie Zeit errechnet sich wie folgt: (330 +
+260) / 2 = 295 Min.
+Drilldowns nach größeren Zeitdimensionen nehmen wegen der Berücksichtigung der
+Betriebsstunden immer die Berechnung nach Tag als Basis. Die Einträge werden
+somit mithilfe der Betriebsstunden als Tagesgrenzen erstellt. Anschließend wird über
+die resultierenden Einträge mit einer Tagesbasis der Durchschnitt berechnet.
+Die Auswahl von Balken und ein nachfolgender Drilldown filtern immer die Einträge
+der ausgewählten Balken. Die Berechnung fällt somit anders aus, wenn die aktuelle
+Dimension Tag ist und nur 2 Tage für einen Drilldown nach Woche ausgewählt sind.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 43 von 98
+
+--- PAGE 44 ---
+JH-Confidential
+Der Durchschnitt wird über die Einträge für diese 2 Tage berechnet und
+unterscheidet sich vom Ergebnis, das sich ohne vorherige Filterung ergeben würde.
+Das Gleiche gilt für Drilldowns nach anderen Dimensionen (z. B. Gerät), wenn ein
+Balken ausgewählt wird. Drilldowns nach einer Nicht-Zeitdimension verwenden die
+letzte Zeitdimension als Grundlage für die Berechnung.
+Wenn nichts ausgewählt wird und ein Drilldown nach Zeit durchgeführt werden soll,
+werden alle vorherigen Filter und Gruppierungen gelöscht. Das bedeutet, dass ein
+zeitbasierter Drilldown ähnlich dem initialen Drilldown nach einer Zeitdimension ist.
+Störungen, die sich über mehrere Zeitspannen erstrecken, werden auf die
+Zeitspannen aufgeteilt.
+Beispiel: Eine Zeitspanne ist 12:30-14:30 und die Zeitdimension ist Stunde. Daraus
+ergeben sich die folgenden Zeiten zwischen Störungen: 12:00-12:30 (= 30 Min.),
+13:00-13:00 (= 0 Min.), 14:30-15:00 (= 30 Min.). Die Berechnung ist somit wie folgt:
+(30+0+30) / 3 = 20. Diese Aufteilung ergibt sich, da die Zeitgrenzen strikte
+Stundengrenzen sind.
+Für Arbeitstage ohne Störungen werden leere Einträge angezeigt.
+Beispiel: Der 01.01. war ein Arbeitstag. Es gab keine Störungen. Die
+Betriebsstunden dauerten von 07:00-17:00. Bei einem Drilldown nach Stunde wird
+für jede Stunde ein Balken in der Höhe von 60 Min. angezeigt.
+Durchschnittliche Störungsdauer – Drilldown
+Bei Drilldowns erfolgt die Berechnung der Störungsbehebungszeit (beginnt mit
+Auftritt der Störung) ähnlich wie die Berechnung der durchschnittlichen Durchlaufzeit.
+Im ersten Schritt des Drilldowns werden die Einträge nach der gewählten
+Zeitdimension gruppiert, z. B. Tag. Die durchschnittliche Störungsdauer wird über
+jede Tagesgruppe berechnet.
+Bei einem weiteren Drilldown werden die Einträge nach der ausgewählten Drilldown-
+Dimension (z. B. Störung) gruppiert, entweder mit einem Filter, wenn ein Balken
+ausgewählt wurde, oder ohne Filter, wenn nichts ausgewählt wurde. Anschließend
+wird über jede sich ergebende Gruppe die durchschnittliche Störungsbehebungszeit
+berechnet.
+Anzahl [zeitbasierte Auslastung] – Drilldown
+In der Tabelle oben erfolgte eine Gruppierung nach der Zeitdimension Stunde. Im
+Gegensatz dazu zeigt eine Gruppierung nach einer Nicht-Zeitdimension ohne Filter
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 44 von 98
+
+--- PAGE 45 ---
+JH-Confidential
+die Zählung für den entsprechenden Status (z. B. Alt abgeschlossen), gruppiert
+nach den Werten der Dimension, nach der der Drilldown durchgeführt wurde.
+Bei einem Drilldown ohne Filter für ein Gerät ergibt sich die folgende Zeitreihe:
+X-Wert Alt Neu Alt wartend Neu wartend
+abgeschlossen abgeschlossen
+Geraet 1 (Transport 1) 0 2 (Transport 1 (Transport
+1 1) 1)
+Geraet 0 1 (Transport 2) 0 0
+2
+Dies bedeutet, dass die Werte aus der vorherigen Zeitdimension in die
+entsprechende Nicht-Zeitdimension gruppiert werden, zu der der Drilldown
+durchgeführt wurde.
+Durch die Auswahl einer zusätzlichen Kennzahl (Feld Zusätzliche Kennzahl unter
+Erweiterte Anzeigeoptionen; siehe Kapitel 4.1 Analysen erstellen und bearbeiten)
+ist es möglich Einflüsse für die initial ausgewählte Kennzahl (z. B.
+Transport/durchschnittliche Durchlaufzeit; Feld Kennzahl unter Basiskriterien)
+durch andere Kennzahlen anzuzeigen und schneller entdecken zu können. Als
+zusätzliche Kennzahl stehen alle Drilldown-Dimensionen, die kontinuierliche Werte
+(z. B. Priorität, Anzahl Transporte) beinhalten, sowie sämtliche als abhängige
+Kennzahlen eingetragenen Kennzahl-Größe/-Wert-Paare der jeweiligen
+Kennzahlgröße, zur Verfügung.
+Wenn eine Drilldown-Dimension (z. B. Priorität) als zusätzliche Kennzahl ausgewählt
+wird, steht diese Dimension nicht mehr für ein Drilldown zur Verfügung. Diese
+Dimension wird in der Folge nicht mehr unter den möglichen Drilldown-Dimensionen
+im Kontextmenü angezeigt. Die Dimension steht wieder zur Verfügung, sobald die
+zusätzliche Kennzahl auf einen anderen Kennzahl-Wert geändert wird.
+Eine abhängige Kennzahl kann über die erweiterten Anzeigeoptionen als zusätzliche
+ausgewählt werden (siehe dazu auch Kapitel 4.1 Analysen erstellen und bearbeiten).
+Eine Kennzahl ist jedoch nur dann verfügbar, wenn sie nicht bereits beim initialen
+Aufruf des Analysedialogs ausgewählt wurde.
+Die zusätzliche Kennzahl ist als Linie dargestellt und folgt demselben Drilldown-Pfad
+wie die ausgewählte Kennzahl.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 45 von 98
+
+--- PAGE 46 ---
+JH-Confidential
+Des Weiteren stehen für einige Kennzahl-Größe/-Werte-Paare bereits
+vorkonfigurierte abhängige Kennzahlen zur selben Kennzahl-Größe zur Verfügung
+(z. B. Anzahl, wenn Transport als Kennzahl-Größe und Durchschnittliche
+Durchlaufzeit als Kennzahl-Wert konfiguriert ist). Diese abhängigen Kennzahlen
+können nicht geändert werden. Die verfügbaren abhängigen Kennzahlen finden Sie
+in der Tabelle weiter oben in diesem Kapitel.
+Die abhängigen Kennzahlen sind bei der Trend- und Abweichungsüberwachung
+relevant. Werden für die Überwachung Kennzahl-Größen und -Werte im Dialog
+Assistentenkonfiguration (Dialogabschnitt Trend- und
+Abweichungsüberwachung) ausgewählt, für die abhängige Kennzahlen vorhanden
+sind, werden diese im Analysen-Dialog des Data Centers angezeigt. Dazu muss der
+Dialog jedoch über die Leitstandsmeldung geöffnet werden (siehe
+Handbuch Lagermanagement, Kapitel Leitstandsmeldungen), die das WMS
+generiert, sobald es einen Trend oder eine Abweichung entdeckt. Mithilfe der
+Schaltfläche Referenz im Dialog Leitstandsmeldungen öffnet sich der
+Analysedialog. Die Werte der abhängigen Kennzahlen werden unter
+Detailinformationen angezeigt und in Prozent ausgegeben. Sie ergeben sich aus
+dem Vergleich zwischen der tatsächlichen Überwachungsperiode und der
+Vergleichsperiode. Nähere Informationen zur Trend- und Abweichungsüberwachung
+finden Sie im Kapitel 6.1 Trend- und Abweichungsüberwachung bzw.
+7.2 Assistentenkonfiguration – Trend- und Abweichungsüberwachung.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 46 von 98
+
+--- PAGE 47 ---
+JH-Confidential
+Beispiel:
+Durchschnittliche Durchlaufzeit von Transporten
+Zeitliche Dimension = Monat
+An diesem Beispiel sieht man, dass die Daten der Transporte eines Jahres je Monat
+repräsentiert werden. Jeder Monat ist entsprechend beschriftet, z. B. 2022/08.
+Die Höhe der Säulen gibt in diesem Fall an, wie lange die durchschnittliche
+Durchlaufzeit der Transporte je Monat gedauert hat (Kennzahl-Wert:
+Durchschnittliche Durchlaufzeit).
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 47 von 98
+
+--- PAGE 48 ---
+JH-Confidential
+Beispiel:
+Anzahl an Transporten
+Zeitliche Dimension = Woche
+Zusätzliche Kennzahl = Priorität
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 48 von 98
+
+--- PAGE 49 ---
+JH-Confidential
+Beispiel:
+Durchschnittliche Durchlaufzeit von Lageraufgabengruppen
+Zeitliche Dimension = Monat
+Überwachungsperiode: November 2020 bis Januar 2021
+Vergleichsperiode: Januar bis Oktober 2020
+Ergebnis laut abhängiger Kennzahl Kommission (Anzahl): -18.18% → In der
+Überwachungsperiode wurden um 18.18% weniger Kommissionen bearbeitet als in
+der Vergleichsperiode.
+Details zu abhängigen Kennzahlen und Trendüberwachung finden Sie weiter oben in
+diesem Kapitel bzw. in Kapitel 7.2 Assistentenkonfiguration – Trend- und
+Abweichungsüberwachung.
+4.3 Drilldown-Funktionen
+Ein Drilldown, also eine tiefere, detailliertere Einsicht in hierarchisch organisierte
+Daten, wird im WMS durch die Interaktion mit den aktuell angezeigten Daten
+ausgelöst. Die Drilldown-Funktion des WMS filtert bzw. gruppiert Daten und
+ermöglicht es so, in eine tiefere Drilldown-Ebene vorzudringen. Mit jedem Drilldown
+öffnet sich ein neuer Dialog. Mit Klick auf die Zurück-Schaltfläche oder Betätigung
+von [ESC] ist es möglich, auf die nächsthöhere Ebene zurückzunavigieren. Über die
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 49 von 98
+
+--- PAGE 50 ---
+JH-Confidential
+Breadcrumb-Navigation des WMS kann auf eine beliebige höhere Ebene
+zurückgekehrt werden.
+Ein Drilldown kann grundsätzlich über drei Arten erfolgen:
+⎯ Öffnen des Kontextmenüs zuvor ausgewählter Daten
+⎯ Doppelklick auf spezifische Säule
+⎯ Drilldown über Filtereinstellungen
+Nachfolgend werden diese drei Drilldown-Optionen im Detail beschrieben.
+4.3.1 Drilldown via Kontextmenü
+Über das Kontextmenü der rechten Maustaste ist es möglich, sich detailliertere
+Informationen über die aktuell angezeigten Daten einzuholen. Hierbei ist auch eine
+Mehrfachauswahl von Daten möglich.
+Der Vergleich zweier oder mehrerer Datensätze wird mittels [Strg] realisiert. Dazu
+die Datensätze entsprechend mit [Strg] markieren und danach mit einem Rechtsklick
+fortfahren, um das Kontextmenü zu öffnen. Mehrere nebeneinanderliegende
+Datensätze können zudem per Maus selektiert werden. Dabei wird mit gedrückter
+linker Maustaste ein Rechteck über den gewünschten Auswahlbereich gezogen.
+Danach wird die Maustaste „losgelassen“.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 50 von 98
+
+--- PAGE 51 ---
+JH-Confidential
+Erfolgt zuvor keine Auswahl spezifischer Daten, sondern lediglich ein Links- oder
+Rechtsklick auf eine Säule, wird diese Säule ausgewählt. Wird das Kontextmenü
+außerhalb einer Säule geöffnet und ein Drilldown gemacht, werden alle Daten des
+Diagramms herangezogen. Allerdings wird nicht jede Diagrammsäule als separate
+Diagrammreihe visualisiert.
+Das Kontextmenü enthält je nach eingestellter Kennzahl unterschiedliche
+Auswahlmöglichkeiten. Sobald eine Option für eine Drilldown-Dimension verwendet
+wurde, steht diese nicht mehr für die nächste Ebene zur Verfügung.
+Beispiel – Transport (Durchschnittliche Durchlaufzeit):
+Im Beispiel ist die Woche mit der höchsten durchschnittlichen Durchlaufzeit von
+Transporten selektiert (siehe hellrote Hervorhebung). Mit Auswahl eines Werts aus
+dem Kontextmenü begibt man sich nun in die nächste Drilldown-Ebene für diese
+Größe (hier Quellbereich).
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 51 von 98
+
+--- PAGE 52 ---
+JH-Confidential
+Beispiel – Transport (Durchschnittliche Durchlaufzeit) – Quellbereich:
+Für die ausgewählte Woche sieht man nun je eine Säule, die die durchschnittliche
+Durchlaufzeit der Transporte je eingetragenen Quellbereich anzeigt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 52 von 98
+
+--- PAGE 53 ---
+JH-Confidential
+Hätte man im ersten Schritt als Dimension Monat ausgewählt, wäre bei einem
+Drilldown des Monats 2022/03 nach Quellbereich folgende Grafik zu sehen:
+Die Grafik ändert sich entsprechend, wenn anstelle eines Monats zwei Monate
+selektiert werden. Je ausgewähltem Wert (Beispiel = 2 Monate) wird eine eigene
+Diagrammreihe angezeigt. Die einzelnen Reihen werden in unterschiedlichen Farben
+dargestellt:
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 53 von 98
+
+--- PAGE 54 ---
+JH-Confidential
+Es stehen insgesamt acht Farben zur Anzeige der Datenreihen zur Verfügung. Diese
+werden in einer genau definierten Reihenfolge vergeben und wiederholen sich ab der
+neunten Datenreihe.
+Wählt man im Kontextmenü eine Zeitgröße, z. B. Woche, aus, wird je ausgewähltem
+Datensatz keine eigene Diagrammreihe erstellt. Lediglich die Bezeichnung der x-
+Achse ändert sich von Monat auf Woche und es wird je ein Balken pro Woche,
+welche noch in einen der beiden Monate fällt, angezeigt.
+4.3.2 Drilldown via Doppelklick
+Mit einem Doppelklick auf einen Balken wird direkt in die geklickte Säule navigiert
+und die Daten in der nächstkleineren Dimension angezeigt. Als 'Größe' wird hier
+immer die nächstkleinere 'Zeitgröße' ausgewählt. Das heißt, hat der Dialog aktuell
+Monat als Dimension (= Wert der x-Achse) gesetzt, wird mit Doppelklick auf einen
+bestimmten Monat ein Drilldown nach Woche für den selektierten Monat gemacht.
+Ist die für die x-Achse gesetzte Größe kein Zeitwert, wird die zuletzt angezeigte
+'Zeitgröße' herangezogen und ein Drilldown mit der davon nächstkleineren
+'Zeitgröße' durchgeführt.
+Mit einem Rechtsklick auf einen Balken können die Daten nach weiteren Kriterien
+unterteilt angezeigt werden. Die Kriterien sind je gewählter Kennzahl unterschiedlich
+und können z. B. Gerät, Bereich, Transport-Typ oder auch Priorität sein.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 54 von 98
+
+--- PAGE 55 ---
+JH-Confidential
+4.3.3 Drilldown via Filter
+Da der Analysedialog auch ohne Diagramm ausgewertet werden kann, stehen über
+den Filterbereich auf der rechten Seite des Analysedialogs verschiedene Drilldown-
+Dimensionen zur Verfügung. Mithilfe dieser Dimensionen können detaillierte
+Informationen zu den aktuell angezeigten Daten eingeholt werden. Wie im
+Kontextmenü eines Diagramms kann auch hier nur eine Dimension ausgewählt
+werden. Details zum Drilldown über das Kontextmenü finden Sie in Kapitel
+4.3.1 Drilldown via Kontextmenü.
+Je nach gewählter Kennzahl (Kennzahl-Größe und Kennzahl-Wert) stehen
+verschiedene Dimensionen zur Verfügung. Grundsätzlich stehen dieselben Werte
+wie im Kontextmenü eines Diagramms zur Auswahl. Nachdem eine Dimension
+gewählt wurde, wird die Schaltfläche Drilldown anzeigen aktiv.
+Beispiel Drilldown – Weitere Filter für Kennzahl Transport (Durchschnittliche
+Durchlaufzeit):
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 55 von 98
+
+--- PAGE 56 ---
+JH-Confidential
+4.4 Histogramm
+Als zusätzliche Darstellungsoption gibt es die Möglichkeit, sich ein Histogramm
+anzeigen zu lassen.
+Mit Aktivierung des Histogramms über das Kontrollkästchen Histogramm anzeigen
+im Filter des Analysedialogs können anhand der Einstellungen unter Dimensionen
+für Histogramm folgenden Informationen ausgegeben werden:
+Monat
+Ein Histogramm mit der Dimension Monat kann beispielsweise über alle selektierten
+Daten hinweg filtern, wie hoch die Anzahl an Sendungen in einem gewissen Monat
+allgemein ist (ohne sich dabei auf ein bestimmtes Jahr festzulegen). Der Benutzer
+könnte so z. B. feststellen, dass im Winter eventuell weniger Sendungen als im
+Sommer versandt werden. Ein Histogramm mit der Dimension Monat kann
+höchstens 12 Säulen anzeigen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 56 von 98
+
+--- PAGE 57 ---
+JH-Confidential
+Woche
+Ein Histogramm mit der Dimension Woche bietet einen ähnlichen Überblick wie ein
+Histogramm mit der Dimension Monat. Das heißt, auch hier wird die Dauer eines
+Jahres angezeigt, die Maximalanzahl an Säulen beträgt jedoch 52 – eine Säule je
+Kalenderwoche.
+Tag
+Ein Histogramm mit der Dimension Tag erstreckt sich, im Gegensatz zu den
+Dimensionen Woche und Monat, nur über einen Monat, und nicht ein gesamtes
+Jahr. Aus den hier zur Verfügung gestellten Informationen lässt sich z. B. ablesen,
+dass durchschnittlich am Ende jeden Monats mehr Kommissionen bearbeitet
+werden, als zu Monatsbeginn.
+Wochentag
+Ein Histogramm mit der Dimension Wochentag erstreckt sich über den Zeitraum
+einer Woche. Aus den hier zur Verfügung gestellten Informationen lässt sich z. B.
+ablesen, dass am Donnerstag durchschnittlich weniger Transporte als am Mittwoch
+vollzogen werden.
+Stunde
+Ein Histogramm mit der Dimension Stunde erstreckt sich über den Zeitraum eines
+Tages. Aus den hier zur Verfügung gestellten Informationen lässt sich z. B. ablesen,
+dass in der Vormittagsschicht durchschnittlich mehr Lageraufgaben erzeugt werden,
+als in jener am Nachmittag.
+Das WMS zieht die Stunden eines durchschnittlichen Tages heran, jedoch wird nicht
+nur ein bestimmter Tag ausgewertet, sondern die Daten aller Tage, die zurzeit auf
+dem Drilldown-Dialog angezeigt werden. Dasselbe gilt für alle anderen Dimensionen
+des Histogramms.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 57 von 98
+
+--- PAGE 58 ---
+JH-Confidential
+4.5 Häufigkeitsverteilung
+Zusätzlich zum Histogramm gibt es die Möglichkeit, sich eine Häufigkeitsverteilung
+anzeigen zu lassen. Die Aktivierung der Häufigkeitsverteilung erfolgt über das
+Kontrollkästchen Häufigkeitsverteilung anzeigen im Filter des Analysedialogs.
+Die Häufigkeitsverteilung veranschaulicht die Verteilung der Werte, die aktuell im
+Drilldown-Diagramm angezeigt werden. Daher wird die y-Achse des Drilldown-
+Diagrammes, die bisher die durchschnittliche Bearbeitungszeit darstellte (ist
+ebenfalls die y-Achse im Histogramm) zur x-Achse. Die y-Achse der Verteilung ist
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 58 von 98
+
+--- PAGE 59 ---
+JH-Confidential
+immer die Anzahl (= absolute Häufigkeit) der Vorkommnisse pro x-Wert, deshalb
+Häufigkeitsverteilung.
+Unter dem Diagramm werden statistische Kenngrößen zu den angezeigten Daten
+ausgegeben.
+Die Häufigkeitsverteilung kann für folgende Kennzahl-Werte angezeigt werden:
+⎯ Durchschnittliche Bearbeitungszeit
+⎯ Durchschnittliche Durchlaufzeit
+⎯ Mittlere Packvorgangsbearbeitungszeit
+⎯ Mittlere Packstückbearbeitungszeit
+⎯ Auslastung
+⎯ Mittlere Dauer Doppelspiel
+⎯ Durchschnittliche Störungsdauer
+⎯ Gesamte Fahrzeit
+⎯ Gesamte Betriebszeit
+⎯ Durchschn. Durchlaufzeit [zeitbasierte Auslastung]
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 59 von 98
+
+--- PAGE 60 ---
+JH-Confidential
+5 Transportmatrix
+Information > Data Center > Transportmatrix
+Dieser Dialog ist nur bei Benutzung des Mobile Robot Control-Systems von
+Bedeutung. Bitte beachten Sie, dass das MRC extra lizenziert werden muss.
+Die Transportmatrix vergleicht die Anzahl der gefahrenen Transporte mit jener der
+erwarteten (geplanten) Transporte. Die Anzahl von erwarteten Transporten wird
+dabei vom Transportmatrix-Simulator auf Basis vordefinierter Simulationsregeln
+kalkuliert. Außerdem wird die Anzahl der aktiven Transporte ausgegeben. Diese
+Anzahl zeigt, wie viele Transporte für die jeweilige Zeile im ausgewählten Zeitraum
+aktiv waren, aber nicht abgearbeitet wurden. Das Ergebnis wird daraufhin
+übersichtlich in einem Listendialog dargestellt.
+Zusätzlich zum Vergleich der geplanten Transporte (Spalte Transporte Geplant) mit
+der effektiven Anzahl gefahrener Transporte (Spalte Transporte Ist) und der Angabe
+von nicht abgearbeiteten Transporten (Spalte Transporte Aktiv) wird in der Liste
+ausgegeben, von welchen Geräten die Transporte durchgeführt wurden.
+Im Dialogabschnitt Summenzeile wird die Gesamtanzahl der an den Transporten
+beteiligten Geräten angezeigt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 60 von 98
+
+--- PAGE 61 ---
+JH-Confidential
+Filter:
+Basiskriterien
+Alle Daten: Mit Aktivierung dieses Kontrollkästchens werden die
+vorhandenen Daten ohne Berücksichtigung einer
+spezifischen Zeitperiode verglichen.
+Periode von/bis: Sollen nur Daten innerhalb eines spezifischen Zeitraums
+verglichen werden, können hier das Startdatum bzw.
+Enddatum inkl. Uhrzeit der gewünschten Periode festgelegt
+werden.
+Transportplan
+Pfad zur Datei: Hier wird der Pfad zu jener Datei angegeben, welche die
+Simulationsregeln zur Berechnung der geplanten
+Transporte enthält. Es muss sich dabei um eine Datei im
+JSON-Format handeln. Die Generierung erfolgt über das
+Steuerungssystem Jungheinrich Mobile Robot Control
+(MRC).
+Bei Angabe keines bzw. eines ungültigen Pfades wird eine
+entsprechende Meldung ausgegeben.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 61 von 98
+
+--- PAGE 62 ---
+JH-Confidential
+6 Assistenzfunktionen
+Das WMS bietet folgende Assistenzfunktionen zur Unterstützung der Lagerleitung
+bei der Steuerung und Optimierung der Lagerprozesse:
+⎯ 6.1 Trend- und Abweichungsüberwachung
+⎯ 6.2 Artikelstammbereichsoptimierung
+⎯ 6.3 Auslastungsprognose
+6.1 Trend- und Abweichungsüberwachung
+Wurde im definierten Zeitraum ein Trend oder eine Abweichung erkannt, gibt das
+WMS eine entsprechende Leitstandsmeldung aus (siehe dazu das
+Handbuch Lagermanagement, Kapitel Leitstandsmeldungen). Wird nun zur
+erhaltenen Leitstandsmeldung im Dialog Leitstandsmeldungen die Schaltfläche
+Referenz betätigt, wird der Analysedialog des Data Centers geöffnet. In diesem
+besteht die Möglichkeit, die Abweichungen/Trends im Detail zu betrachten.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 62 von 98
+
+--- PAGE 63 ---
+JH-Confidential
+Chronologische Ausreißer, die einmal aufgetreten sind, werden dabei als
+Abweichung im Drilldown-Diagramm angezeigt. Periodische Ausreißer, die mehrmals
+aufgetreten sind, werden im Histogramm visualisiert. Daten, die im definierten
+Überwachungszeitraum als Vergleichsperiode verwendet werden, werden grau
+dargestellt.
+Details zu Drilldown-Diagrammen finden Sie im Kapitel 4 Data Center-Analysen.
+6.2 Artikelstammbereichsoptimierung
+Lagermanagement > Data Center > Artikelstammbereichsoptimierung
+Die Artikelstammbereichsoptimierung unterstützt den Benutzer beim Setzen bzw.
+Verbessern von Artikelstammbereichseinstellungen (Details dazu finden Sie im
+Handbuch Stammdaten, Kapitel Artikelstamm – Schaltflächen). Anhand der zur
+Optimierung der Mengeneinstellungen unterbreiteten Vorschläge können der
+Warenfluss im Lager verbessert und Stehzeiten durch mögliche Nachschübe
+verringert werden. Alle Optionen zur Artikelstammbereichsoptimierung sind kompakt
+im Dialog Artikelstammbereichsoptimierung zusammengefasst, welcher
+nachfolgend im Detail beschrieben wird.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 63 von 98
+
+--- PAGE 64 ---
+JH-Confidential
+Filter:
+Basiskriterien
+Status: Hier kann nach folgenden Status gefiltert werden:
+⎯ Alle
+⎯ Zu übernehmen
+⎯ Mindestbestand übernommen
+⎯ Maximalbestand übernommen
+⎯ Beide übernommen
+⎯ Beide abgelehnt
+Bereich: Hier kann nach einem bestimmten Bereich gefiltert werden.
+Artikelnummer: Hier kann nach einer spezifischen Artikelnummer gefiltert
+werden.
+Anpassung von/bis: Hier kann nach bestimmten Anpassungswerten gefiltert
+werden. Die Angabe erfolgt dabei in Prozent.
+Automatische Hier kann nach Vorschlägen gefiltert werden, für die die
+Mengenoptimierung automatische Mengenoptimierung (in)aktiv ist. Die
+aktiv: folgenden Optionen stehen dabei zur Auswahl:
+⎯ Beliebig
+⎯ Ja
+Es wird nach Einträgen gefiltert, für die die
+automatische Mengenoptimierung aktiv ist.
+Für diese Einträge werden die jeweiligen
+Vorschläge direkt nach der Ausführung der
+Optimierung (anhand eines konfigurierten
+Zeitplans, siehe dazu das im Kapitel
+7 Assistentenkonfiguration) übernommen.
+⎯ Nein
+Es wird nach Einträgen gefiltert, für die die
+automatische Mengenoptimierung nicht aktiv
+ist. Für diese Einträge werden die jeweiligen
+Vorschläge nur übernommen, wenn dies
+manuell über diesen Dialog angestoßen wird
+(Schaltfläche Auswahl übernehmen).
+Letzte Anpassung Hier kann nach Anpassungen gefiltert werden, die zu
+von/bis: einem bestimmten Zeitpunkt in einem bestimmten Zeitraum
+durchgeführt wurden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 64 von 98
+
+--- PAGE 65 ---
+JH-Confidential
+Personalnummer: Hier kann nach einer spezifischen Personalnummer
+gefiltert werden.
+Rechner-ID: Hier kann nach einer bestimmten Rechner-ID gefiltert
+werden.
+Liste
+Die Spalten Artikelnummer, Benennung, Einheit und Bereich dienen der
+Beschreibung des Artikels lt. Artikelstamm. Der Bereich spiegelt den Bereich wider,
+für welchen der Vorschlag zur Änderung des Artikelstammbereichseintrages
+gemacht wird.
+Die Spalten Mindestbestand empfohlen und Maximalbestand empfohlen zeigen
+die vorgeschlagenen Werte, wobei die gelb markierten Felder eine Änderung zum
+Istzustand repräsentieren und die Werte in Klammer die aktuell gesetzten Werte
+anzeigen.
+Die Spalte Zugriffsstatistik gibt einen Einblick in die zur Berechnung der Vorschläge
+verwendeten Parameter. Die Spalte Anzahl Zugriffe je Artikel spiegelt dabei die
+Zugriffe auf den Artikel wider. Die Spalte Anteil Perioden mit Zugriffen gibt an, wie
+regelmäßig auf den Artikel zugegriffen wird. Ein Wert von 100 % und eine
+Periodenlänge von einem Tag würde bedeuten, dass der Artikel an jedem Tag aus
+dem Lager entnommen wurde. Die Spalten Durchschnittliche Zugriffsmenge und
+Median Zugriffsmenge sind weitere Indikatoren dafür, wieviel Stück von einem
+Artikel in einem Bereich pro Zugriff entnommen wurden.
+Die Spalte Status gibt Aufschluss darüber, ob der Vorschlag bereits übernommen,
+teilweise übernommen oder abgelehnt wurde. Die Spalte Automatische
+Mengenoptimierung aktiv zeigt an, ob die jeweiligen Vorschläge direkt (nach
+Ausführung der Optimierung über einen in der Assistentenkonfiguration definierten
+Zeitplan) übernommen werden oder eine manuelle Bearbeitung (über diesen Dialog)
+konfiguriert ist. Diese automatische Mengenoptimierung kann je Artikelstammbereich
+(de)aktiviert werden. Die automatische Übernahme muss jedoch auch global in der
+Assistentenkonfiguration aktiviert sein (siehe dazu das Kapitel
+7 Assistentenkonfiguration).
+Schaltflächen
+Auswahl Der Benutzer selektiert die Optimierungsvorschläge in der
+übernehmen: Liste und hat – sofern er diese übernehmen möchte –
+folgende Optionen:
+⎯ Mindestbestand
+Der Mindestbestand des Vorschlags wird für
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 65 von 98
+
+--- PAGE 66 ---
+JH-Confidential
+den ausgewählten Artikelstammbereich
+übernommen.
+⎯ Maximalbestand
+Der Maximalbestand des Vorschlags wird für
+den ausgewählten Artikelstammbereich
+übernommen.
+⎯ Beides
+Sowohl Mindest- als auch Maximalbestand
+werden als neue
+Artikelstammbereichseinstellungen für den
+ausgewählten Artikelstammbereich
+übernommen.
+Nach Bearbeitung der Vorschläge ändert sich auch der
+Status je nach getroffener Auswahl (z. B. Beide
+übernommen). Zusätzlich dazu wird die gelbe Markierung
+bei Übernahme des Vorschlags in den Zellen entfernt und
+stattdessen der aktuelle Wert angezeigt.
+Auswahl ablehnen: Sagen dem Benutzer gewisse Optimierungsvorschläge nicht
+zu, kann er diese in der Liste selektieren und mit Klick auf
+die Schaltfläche Auswahl ablehnen verwerfen.
+Dazu öffnet sich der Dialog Optimierung ablehnen:
+Dieser Dialog bietet dem Benutzer mit Aktivierung des
+Kontrollkästchens Nicht mehr erinnern für zusätzlich die
+Möglichkeit, für einen bestimmten Zeitraum keine
+Vorschläge zu einem bestimmten Artikelstammbereich
+angezeigt zu bekommen. Die auswählbaren Zeitspannen
+sind:
+⎯ 2 Wochen
+⎯ 1 Monat
+⎯ 6 Monate
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 66 von 98
+
+--- PAGE 67 ---
+JH-Confidential
+Mit Klick auf Ablehnen werden die selektierten Vorschläge
+abgelehnt. Mit Klick auf Abbrechen wird der Vorgang
+abgebrochen und die Vorschläge nicht abgelehnt.
+Nach Ablehnung der Vorschläge ändert sich auch der Status
+je nach getroffener Auswahl (z. B. Beide abgelehnt).
+Artikelstamm- Mit Klick auf die Schaltfläche Artikelstammbereiche öffnet
+bereiche: sich der Dialog Artikelstammbereiche für den Artikel der
+ausgewählten Zeile (Details dazu finden Sie im Handbuch
+Stammdaten, Kapitel Artikelstamm – Schaltflächen).
+Artikelstamm- Mit Klick auf die Schaltfläche Artikelstammbereich
+bereich bearbeiten: bearbeiten öffnet sich der Dialog Artikelstammbereich
+bearbeiten für den Artikel der ausgewählten Zeile (Details
+dazu finden Sie im Handbuch Stammdaten, Kapitel
+Artikelstamm – Schaltflächen).
+Berechne initiale Mit Klick auf diese Schaltfläche wird die initiale Berechnung
+Mengen- von Mengeneinstellungen im Artikelstammbereich des
+einstellungen: selektierten Artikels angestoßen.
+Die initiale Berechnung kann beispielsweise vor
+Inbetriebsetzung des Lagers vorgenommen werden, um
+optimale Artikelstammbereichseinträge zu berechnen. Hierzu
+ist es dem Benutzer möglich, eine CSV-Datei mit den
+benötigten Daten bereitzustellen, welche als Basis für die
+Berechnung der Artikelstammbereichsvorschläge verwendet
+wird. Des Weiteren kann eine initiale Berechnung auch für
+neue Artikel, für die die notwendigen Daten vorhanden sind,
+vorgenommen werden. Welche Informationen die CSV-Datei
+zur initialen Berechnung enthalten muss, wird weiter unten in
+diesem Kapitel im Detail beschrieben.
+Zur Durchführung der initialen Berechnung von
+Mengeneinstellungen muss der Materialfluss im Lager
+bereits definiert sein. Dies inkludiert folgende
+Konfigurationen:
+⎯ die Mengeneinstellungen der
+Artikelstammbereiche, die berechnet werden
+sollen, müssen gesetzt sein
+⎯ der zugehörige Artikelstamm (inkl. VPE) muss
+konfiguriert sein
+⎯ die entsprechenden Lagerorte müssen
+konfiguriert sein, um die Größe der jeweiligen
+Bereiche ableiten zu können
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 67 von 98
+
+--- PAGE 68 ---
+JH-Confidential
+⎯ optional: zur bestmöglichen Abschätzung der
+Kosten einer Lagerbewegung sollten zusätzlich
+die Wege definiert sein
+Zur Durchführung der Berechnung öffnet sich der Dialog
+Berechne initiale Mengeneinstellungen:
+Hier wird der Pfad zur Datei entweder durch direkte Eingabe
+oder Auswahl eines lokalen Zielverzeichnisses mithilfe der
+Schaltfläche ... spezifiziert.
+Der hier angegebene Pfad muss vom Rechner, auf dem der
+AI Backend Server-Dienst läuft, erreichbar sein.
+Nach Auswahl der Datei wird die Berechnung mit Betätigung
+von Berechnen gestartet. Dies kann einige Zeit in Anspruch
+nehmen und erfordert nach Abschluss eine manuelle
+Aktualisierung des Dialoges
+Artikelstammbereichsoptimierung.
+Die initiale Berechnung von Mengeneinstellungen ist nur für
+Artikel möglich, die in der CSV-Datei definiert sind und für
+die Artikelstammbereiche konfiguriert wurden.
+Bei initialer Berechnung der
+Artikelstammbereichseinstellungen wird die Abweichung
+auf 100000 gesetzt, falls der aktuelle Wert 0 ist. Daher
+sollte der Filter Anpassung bis in diesem Fall
+entsprechend hoch gesetzt werden (Standard = 200).
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 68 von 98
+
+--- PAGE 69 ---
+JH-Confidential
+Die zur initialen Berechnung der Mengeneinstellungen benötigte CSV-Datei muss
+folgende Informationen enthalten:
+CSV-Spalte Inhalt
+1 Artikelnummer
+2 Anzahl der Tage, an denen der Artikel innerhalb der Periode
+bestellt wurde
+3 Anzahl der Tage innerhalb der Periode gesamt
+4 Standardabweichung der bestellten Menge pro
+Kommissionsposition
+5 Mittlere bestellte Menge pro Kommissionsposition
+6 Mittlere Anzahl an Kommissionspositionen pro Tag
+(Berücksichtigung aller Tage, an denen mind. eine Bestellung
+erfolgte)
+6.3 Auslastungsprognose
+Lagermanagement > Data Center > Auslastungsprognose
+Die Auslastungsprognose ermöglicht es, eine Übersicht über die Auslastung von
+einzelnen Arbeitseinheiten (= welche Aufgaben einer Einheit in den selben
+Bereichen/Arbeitsplätzen bearbeitet werden können) im Lager zu erhalten und die
+Arbeitslast neu zu verteilen. Die Auslastung wird als die Zeit, welche benötigt wird,
+um die Aufgaben der einzelnen Arbeitseinheiten abzuschließen, dargestellt. Nähere
+Informationen zu den Arbeitseinheiten finden Sie im Kapitel 7.5.1 Arbeitseinheiten.
+Der Funktionalität wird über das Menü Lagermanagement > Data Center >
+Auslastungsprognose aufgerufen. Mithilfe der Taste [F5] wird die
+Auslastungsprognose gestartet und der Dialog mit den aktuell konfigurierten
+Arbeitseinheiten und deren Auslastung im Diagramm angezeigt. Zudem wird das
+freie Lagerpersonal angezeigt, das aktuell keine Arbeitseinheit zugewiesen hat.
+Diese erste Berechnung erfolgt anhand der aktuell definierten Arbeitseinheiten und
+deren Mitarbeiterzuweisung. Jede weitere Aktualisierung des Dialogs mithilfe der
+Taste [F5] berücksichtigt jedoch die aktuellen Zuweisungen und nicht die in der
+Datenbank definierten Arbeitseinheiten. Wenn die definierten Arbeitseinheiten
+geändert werden (z. B. neue hinzugefügt, alte gelöscht, Zuweisung von
+Mitarbeitenden) oder sich der Anmeldestatus der Mitarbeitenden ändert, muss der
+Auslastungsprognosedialog neu geöffnet werden, um die Änderungen in der
+Auslastungsprognose ersichtlich zu machen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 69 von 98
+
+--- PAGE 70 ---
+JH-Confidential
+Filter:
+Basiskriterien
+Lager: Dieses Feld ist nur bei Benutzung der Mehrlagerfähigkeit
+des WMS von Bedeutung. Bitte beachten Sie, dass die
+Mehrlagerfähigkeit extra lizenziert werden muss.
+Mithilfe dieser Auswahlliste können die angezeigten
+Arbeitseinheiten auf ein bestimmtes Lager eingeschränkt
+werden.
+Erwartete Aufgaben Mithilfe dieses Kontrollkästchens kann die Anzeige der
+berücksichtigen: erwarteten Aufgaben im Balkendiagramm (hellgrüne
+Balken) ein- bzw. ausgeblendet werden. Das
+Kontrollkästchen ist standardmäßig aktiviert.
+Erwartete Auslastung
+In diesem Dialogabschnitt wird die Auslastung im Lager in Form eines
+Balkendiagramms dargestellt. Die X-Achse zeigt die Auslastung als Zeit, während die
+Y-Achse die Arbeitseinheiten zeigt. Die Balken der Arbeitseinheiten werden in
+verschiedenen Farben dargestellt:
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 70 von 98
+
+--- PAGE 71 ---
+JH-Confidential
+⎯ Hellrot: Diese Farbe signalisiert, dass die Arbeitseinheit im
+Balkendiagramm ausgewählt wurde. In der Folge werden die
+zugehörigen Informationen auf den Registerkarten Mitarbeiter und
+Auslastung je Aufgabenart angezeigt.
+⎯ Dunkelgelb: Diese Farbe signalisiert die Auslastung für jene Aufgaben,
+die bereits im WMS vorhanden sind oder von einer bereits vorhandenen
+Tätigkeit abgeleitet werden können.
+⎯ Hellgelb: Diese Farbe signalisiert die Auslastung der erwarteten
+Aufgaben. Diese Aufgaben sind noch nicht im WMS vorhanden, aber
+noch für den gleichen Tag erwartet.
+Details
+Registerkarte Mitarbeiter
+Arbeitseinheit: Diese Auswahlliste enthält die im Balkendiagramm
+ausgewählte Arbeitseinheit. Es ist auch möglich, eine
+andere Arbeitseinheit auszuwählen. In diesem Fall werden
+die Angaben in den Feldern Zugewiesene Mitarbeiter und
+Gesamt entsprechend angepasst und der Balken der
+jeweiligen Arbeitseinheit im Diagramm ausgewählt (hellrot
+markiert). Wird im Diagramm keine Arbeitseinheit
+ausgewählt, ist in dieser Liste die Option Keine
+vorausgewählt.
+Zugewiesene Dieses Feld zeigt anhand der Personalnummern, welche
+Mitarbeiter: Mitarbeiter der im Balkendiagramm ausgewählten
+Arbeitseinheit zugewiesen sind.
+Gesamt: Dieses Feld zeigt die Gesamtanzahl der Mitarbeitenden, die
+der ausgewählten Arbeitseinheit zugewiesen sind.
+Freie Mitarbeiter: Dieses Feld zeigt anhand der Personalnummern, welche
+Mitarbeiter aktuell keiner Arbeitseinheit zugewiesen sind.
+Diese Mitarbeitenden werden immer unabhängig von der
+ausgewählten Arbeitseinheit angezeigt.
+Gesamt: Dieses Feld zeigt die Gesamtanzahl der Mitarbeitenden, die
+aktuell keiner Arbeitseinheit zugewiesen sind.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 71 von 98
+
+--- PAGE 72 ---
+JH-Confidential
+Schaltflächen
+Neu zuteilen/Zuteilen: Mithilfe dieser Schaltflächen kann ein bereits zugewiesener
+bzw. freier Mitarbeiter einer (anderen) Arbeitseinheit
+zugeteilt werden, um die Arbeitslast anders zu verteilen. Es
+öffnet sich eine Auswahlliste mit allen verfügbaren
+Arbeitseinheiten. Nach Auswahl einer Arbeitseinheit wird
+der Mitarbeiter zunächst temporär dieser Arbeitseinheit
+zugewiesen. Der Mitarbeiter wird aus dem Feld
+Zugewiesene Mitarbeiter bzw. Freie Mitarbeiter entfernt
+und die geänderte Zuweisung in der Liste auf der
+Registerkarte Neue Zuteilungen angezeigt. Die Option
+Keine steht nur in der Auswahlliste der Schaltfläche Neu
+zuteilen zur Verfügung. Damit wird der Mitarbeiter in die
+Liste der freien Mitarbeiter verschoben.
+Registerkarte Auslastung je Aufgabenart
+Auf dieser Registerkarte ist die Verteilung der Auslastung der im Balkendiagramm
+ausgewählten Arbeitseinheit ersichtlich.
+Art: Diese Spalte zeigt die gewählte Arbeitseinheit.
+Erstellte/Erwartete Diese Spalten enthalten Informationen zu den Aufgaben,
+Aufgaben: die bereits im WMS vorhanden sind bzw. noch erwartet
+werden:
+⎯ Anzahl der Aufgaben der jeweiligen
+Aufgabenart
+⎯ Erwartete Dauer für die Anzahl der Aufgaben
+⎯ Anteil an Gesamtauslastung: Verteilung der
+Auslastung auf die einzelnen Aufgabenarten
+in Prozent
+Der Anteil an der Gesamtauslastung wird für erstellte und
+erwartete Aufgaben separat berechnet. Daher ergibt sich
+sowohl bei den erstellten als auch bei den erwarteten
+Aufgaben immer der Anteil von Gesamt 100%, sofern für
+die erstellten bzw. erwarteten Aufgaben zumindest eine
+Tätigkeit vorhanden ist.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 72 von 98
+
+--- PAGE 73 ---
+JH-Confidential
+Beispiel:
+Für die Arbeitseinheit Wareneingang gibt es bereits 4
+erstellte Aufgaben für die eine erwartete Dauer von 56
+Minuten berechnet wurde. Es gibt keine erstellten
+Aufgaben für die Arbeitseinheit Einlagern. Aus diesem
+Grund hat der Wareneingang die Gesamtauslastung von
+100%. Für den Wareneingang werden aber 2 Aufgaben
+erwartet, deren Dauer mit 28 Minuten berechnet wurde. Es
+gibt auch eine erwartete Aufgabe für das Einlagern. Die
+Dauer für diese Aufgabe wurde mit 42 Minuten berechnet.
+Die längere Einlagern-Aufgabe hat somit einen höheren
+Anteil an der Gesamtauslastung als die beiden kürzeren
+Wareneingang-Aufgaben: 60% + 40% = 100%.
+Registerkarte Neue Zuteilungen
+Auf dieser Registerkarte werden die Mitarbeiter angezeigt, die auf der Registerkarte
+Mitarbeiter einer (anderen) Arbeitseinheit zugewiesen wurden. Die Zuteilung ist
+vorerst temporär und dient dazu, die Änderung der Arbeitslast der einzelnen
+Arbeitseinheiten durch die neue Zuteilung der Mitarbeiter zu simulieren. Mithilfe der
+Taste [F5] wird die Simulation der neuen Zuteilung gestartet. Die geänderte
+Arbeitslast ist sowohl im Balkendiagramm als auch auf der Registerkarte
+Auslastung je Aufgabenart ersichtlich.
+Personalnr.: Diese Spalte zeigt die Personalnummer des zugewiesenen
+Mitarbeiters.
+Name: Diese Spalte zeigt den Benutzernamen des zugewiesenen
+Mitarbeiters.
+Arbeitseinheit: Die Spalte enthält die bisherige Arbeitseinheit und die neue
+Arbeitseinheit, sofern ein bereits zugewiesener Mitarbeiter
+einer anderen Arbeitseinheit zugewiesen wurde. Wenn ein
+freier Mitarbeiter einer Arbeitseinheit zugewiesen wurde,
+wird als bisherige Arbeitseinheit Keine angezeigt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 73 von 98
+
+--- PAGE 74 ---
+JH-Confidential
+Benachrichtigung: Diese Spalte zeigt, ob ein Mitarbeiter über eine neue
+Zuweisung benachrichtigt wird und den gegebenenfalls
+eingegebenen Benachrichtigungstext.
+Schaltflächen
+Bearbeiten: Mithilfe dieser Schaltfläche kann die ausgewählte neue
+Zuteilung bearbeitet werden. Es öffnet sich der Dialog
+Mitarbeiter zuteilen. Nähere Informationen zu diesem
+Dialog finden Sie weiter unten in diesem Kapitel.
+Verwerfen: Mithilfe dieser Schaltfläche kann die in der Liste
+ausgewählte Zuteilung zurückgesetzt werden.
+Dialog Mitarbeiter zuteilen
+Dieser Dialog wird über die Schaltfläche Bearbeiten geöffnet und dient dazu die in
+der Liste ausgewählte Zuteilung zu bearbeiten.
+Auswahl
+Personalnummer: Dieses Feld zeigt die Personalnummer des ausgewählten
+Mitarbeiters, der einer neuen Arbeitseinheit zugewiesen
+wurde. Die Nummer kann nicht geändert werden.
+Name: Dieses Feld zeigt den Benutzernamen des ausgewählten
+Mitarbeiters, der einer neuen Arbeitseinheit zugewiesen
+wurde. Der Name kann nicht geändert werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 74 von 98
+
+--- PAGE 75 ---
+JH-Confidential
+Arbeitseinheit: Diese Auswahlliste enthält alle verfügbaren
+Arbeitseinheiten. Die Zuteilung des Mitarbeiters kann
+mithilfe dieser Liste erneut geändert werden.
+Benachrichtigung
+Benachrichtigung Mit Aktivierung dieses Kontrollkästchens kann konfiguriert
+senden: werden, dass der ausgewählte Mitarbeiter direkt auf dem
+PC-Client oder Funkterminal informiert wird, zur neuen
+Arbeitseinheit zu wechseln. Das Kontrollkästchen kann nur
+aktiviert werden, wenn der Mitarbeiter an einem PC-Client
+oder Funkterminal angemeldet ist.
+Die Anmeldung eines Mitarbeiters wird nur nach dem
+Öffnen des Dialogs Auslastungsprognose überprüft. Bei
+einer Änderung muss der Dialog neu geöffnet werden.
+Wenn ein Mitarbeiter auf keinem PC-Client oder
+Funkterminal angemeldet ist, ist das Kontrollkästchen
+deaktiviert und ausgegraut. Außerdem wird ein Hinweistext
+angezeigt.
+Nachricht: In dieses Feld kann der Text der Nachricht, die an den
+Mitarbeiter gesendet wird, eingegeben werden.
+Wenn ein Mitarbeiter auf keinem PC-Client oder
+Funkterminal angemeldet ist, ist das Feld ausgegraut.
+Schaltflächen
+Neue Mitarbeiterzu- Mithilfe dieser Schaltfläche wird die temporäre Zuteilung
+teilungen der Mitarbeiter übernommen. Der Dialog
+übernehmen: Auslastungsprognose wird geschlossen und muss erneut
+geöffnet werden, damit die aktuelle Mitarbeiterzuteilung
+angezeigt wird.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 75 von 98
+
+--- PAGE 76 ---
+JH-Confidential
+7 Assistentenkonfiguration
+Einstellungen > Assistentenkonfiguration
+Mithilfe dieses Dialoges besteht die Möglichkeit, einen Assistenten für die
+Datenanalyse, zur Trend- und Abweichungsüberwachung, zur
+Artikelstammbereichsoptimierung, zur Sendungsdurchlaufzeit und zur
+Auslastungsprognose zu konfigurieren. Nähere Informationen zu den einzelnen
+Dialogabschnitten finden Sie in den nachfolgenden Kapiteln.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 76 von 98
+
+--- PAGE 77 ---
+JH-Confidential
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 77 von 98
+
+--- PAGE 78 ---
+JH-Confidential
+Schaltflächen
+OK: Mit Klick auf OK wird der konfigurierte Assistent gespeichert und
+der Dialog geschlossen.
+7.1 Assistentenkonfiguration – Datenanalyse
+Einstellungen > Assistentenkonfiguration
+Datenanalyse
+Orte für Durchsatzanalyse
+Auf dieser Registerkarte wird definiert, welche Lagerorte im Zuge der
+Durchsatzanalyse berücksichtigt werden sollen. Mit der Schaltfläche Hinzufügen
+werden Lagerorte zur Analyse hinzugefügt; mit der Schaltfläche Löschen können sie
+wieder aus der Analyse entfernt werden.
+Nach Auswahl eines oder mehrerer Lagerorte kann mit Klick in die Spalte
+Durchsatzerfassung definiert werden, ob die Durchsatzerfassung eines Transports
+bei Veranlassung zum Abtransport oder bei Erreichen des Orts stattfinden soll.
+Die Durchsatzanalyse im Generellen ist ein Messwert des Analysedialogs
+(Transport/Durchsatz auf Ort). Dabei werden alle Transporte gezählt, welche den/die
+in der Tabelle definierten Lagerort/e auf ihrem Weg vom Quell- (Bei Veranlassung
+zum Abtransport) zum Zielort (Bei Erreichen des Orts) passieren, z. B.
+Reservierungspunkte der Fördertechnik für die Einlagerung.
+Bei Mit Aktivierung dieser Option in der Spalte Durchsatzerfassung
+Veranlassung wird der Transport in der Datenanalyse berücksichtigt, wenn der
+zum Lagerort als Quellort des Transports gesetzt ist.
+Abtransport:
+Bei Erreichen Mit Aktivierung dieser Option in der Spalte Durchsatzerfassung
+des Orts: wird der Transport in der Datenanalyse berücksichtigt, wenn der
+Lagerort als Zielort des Transports gesetzt ist.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 78 von 98
+
+--- PAGE 79 ---
+JH-Confidential
+7.2 Assistentenkonfiguration – Trend- und
+Abweichungsüberwachung
+Einstellungen > Assistentenkonfiguration
+Mithilfe der Trend- und Abweichungsüberwachung unterstützt der Assistent die
+Lagerleitung bei der Suche nach Auffälligkeiten im Lager, indem er automatisch
+Leitstandsmeldungen generiert, sofern eine der folgenden Situationen vorliegt:
+⎯ Eine Kennzahl tendierte in den letzten x Tagen1 zu steigen.
+⎯ Eine Kennzahl tendierte in den letzten x Tagen zu sinken.
+⎯ Eine Kennzahl hat in den letzten x Tagen einen periodischen Ausreißer.
+Beispiel: An jedem 10. des Monats werden signifikant weniger
+Lageraufgabengruppen bearbeitet als an jedem anderen Tag.
+⎯ Eine Kennzahl hat in den letzten x Tagen einen chronologischen
+Ausreißer. Beispiel: Am 04.11.2019 und am 13.11.2019 wurde
+signifikant weniger Sendungen bearbeitet als im restlichen
+Betrachtungszeitraum.
+Trend- und Abweichungsüberwachung
+In diesem Dialogabschnitt stehen die folgenden Registerkarten zur Verfügung:
+⎯ Trends
+⎯ Abweichungen
+⎯ Zeitplan
+Alle drei werden nachfolgend im Detail beschrieben.
+1 x Tage = Die Auswertungsperiode ist variabel und nutzt die unter Überwachungsperiode definierten Werte; Je nachdem, in
+welcher Periode ein Trend oder Ausreißer erkannt wird, wird diese Information entsprechend eingefügt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 79 von 98
+
+--- PAGE 80 ---
+JH-Confidential
+Registerkarte Trends
+Steigende Mit Aktivierung dieser Einstellung wird festgelegt, dass im Falle
+Trends aktiv: eines steigenden Trends eine Leitstandsmeldung ausgegeben
+wird.
+Fallende Trends Mit Aktivierung dieser Einstellung wird festgelegt, dass im Falle
+aktiv: eines fallenden Trends eine Leitstandsmeldung ausgegeben
+wird.
+Überwachungs- Die Überwachungsperiode gibt an, über welchen Zeitraum Daten
+periode: für die Trendanalyse verglichen werden sollen.
+Folgende Zeiträume können definiert werden:
+⎯ 1 Monat
+⎯ 3 Monate
+⎯ 1 Jahr
+⎯ Alle
+Aktive Als Dimension für die Anzeige von Trends stehen folgende
+Dimensionen: Optionen zur Auswahl:
+⎯ Jahr
+⎯ Monat
+⎯ Woche
+⎯ Tag
+⎯ Stunde
+Die gewählte aktive Dimension (Mehrfachauswahl möglich) gibt
+an, für welche Dimensionen die Trendüberwachung eine
+Meldung auslösen soll. Bei Auswahl von Tag werden
+beispielsweise die Daten der letzten 3 Monate (bei
+Überwachungsperiode = 3 Monate) nach Tag gruppiert
+ausgewertet. Ändert sich der Wert der aktiven Kennzahl
+innerhalb der letzten Tage der Periode um einen bestimmten
+Wert, wird eine Leitstandsmeldung ausgegeben.
+Aktive Die aktiven Kennzahlen (linke Spalte) definieren jene WMS-
+Kennzahlen: Prozesse, die näher betrachtet werden sollen. Zur Auswahl
+stehen folgende Optionen (Mehrfachauswahl möglich):
+⎯ Kommission
+⎯ Sendung
+⎯ Packen
+⎯ Verladung
+⎯ Lageraufgabengruppen
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 80 von 98
+
+--- PAGE 81 ---
+JH-Confidential
+⎯ Lageraufgaben
+⎯ Transport
+⎯ Wareneingänge
+⎯ Zugriffsorte
+⎯ Automatikgeräte
+⎯ Ressourcen
+Die Kennzahlen werden stetig erweitert.
+Bei Aktivierung einer Kennzahlengröße, werden in der rechten
+Spalte die zugehörigen Kennzahlenwerte angezeigt.
+Standardmäßig sind alle Werte ausgewählt. Sie können jedoch
+einzeln deaktiviert werden, damit sie in der Trendüberwachung
+nicht berücksichtigt werden.
+Registerkarte Abweichungen
+Unterer Mit Aktivierung dieser Einstellung wird festgelegt, dass für einen
+Grenzwert aktiv: Wert, der unter der errechneten Untergrenze liegt, eine
+Leitstandsmeldung ausgegeben wird.
+Der untere Grenzwert wird basierend auf den Daten der
+Überwachungsperiode automatisch ermittelt.
+Oberer Mit Aktivierung dieser Einstellung wird festgelegt, dass für einen
+Grenzwert aktiv: Wert, der über der errechneten Obergrenze liegt, eine
+Leitstandsmeldung ausgegeben wird.
+Der obere Grenzwert wird basierend auf den Daten der
+Überwachungsperiode automatisch ermittelt.
+Überwachungs- Die Überwachungsperiode gibt an, über welchen Zeitraum Daten
+periode: für die Abweichungsanalyse verglichen werden sollen.
+Folgende Zeiträume können definiert werden:
+⎯ 1 Monat
+⎯ 3 Monate
+⎯ 1 Jahr
+⎯ Alle
+Aktive Als Dimension für die Anzeige von Abweichungen stehen
+Dimensionen: folgende Optionen zur Auswahl:
+⎯ Jahr
+⎯ Monat
+⎯ Woche
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 81 von 98
+
+--- PAGE 82 ---
+JH-Confidential
+⎯ Tag
+⎯ Stunde
+Die gewählte aktive Dimension (Mehrfachauswahl möglich) gibt
+an, für welche Dimension die Abweichungsüberwachung eine
+Meldung auslösen soll. Bei Auswahl von Tag werden
+beispielsweise die Daten der letzten 3 Monate (bei
+Überwachungsperiode = 3 Monate) nach Tag gruppiert
+ausgewertet. Ändert sich der Wert der aktiven Kennzahl
+innerhalb der letzten Tage der Periode um einen bestimmten
+Wert, wird eine Leitstandsmeldung ausgegeben.
+Aktive Die aktiven Kennzahlen (linke Spalte) definieren jene WMS-
+Kennzahlen: Prozesse, die näher betrachtet werden sollen. Zur Auswahl
+stehen folgende Optionen (Mehrfachauswahl möglich):
+⎯ Kommission
+⎯ Sendung
+⎯ Packen
+⎯ Verladung
+⎯ Lageraufgabengruppen
+⎯ Lageraufgaben
+⎯ Transport
+⎯ Wareneingänge
+⎯ Zugriffsorte
+⎯ Automatikgeräte
+⎯ Ressourcen
+Die Kennzahlen werden stetig erweitert.
+Bei Aktivierung einer Kennzahlengröße, werden in der rechten
+Spalte die zugehörigen Kennzahlenwerte angezeigt.
+Standardmäßig sind alle Werte ausgewählt. Sie können jedoch
+einzeln deaktiviert werden, damit sie in der
+Abweichungsüberwachung nicht berücksichtigt werden.
+Registerkarte Zeitplan
+Auch hier kann ein Zeitplan festgelegt werden, auf Basis dessen die Trend- und
+Abweichungsüberwachung ausgeführt wird.
+Die auf dieser Registerkarte vorhandenen Einstellungsmöglichkeiten sind identisch
+mit jenen des Dialogs Data Center-Konfiguration (Abschnitt Datentransformation).
+Sie finden die Detailbeschreibung zu den einzelnen Optionen im Kapitel 3 Data
+Center-Konfiguration.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 82 von 98
+
+--- PAGE 83 ---
+JH-Confidential
+7.3 Assistentenkonfiguration – Artikelstammbereichsoptimierung
+Einstellungen > Assistentenkonfiguration
+Artikelstammbereichsoptimierung
+Die regelmäßige Artikelstammbereichsoptimierung dient der kontinuierlichen
+Berechnung neuer, verbesserter Artikelstammbereichsmengeneinstellungen. Als
+primäre Basis dient hierbei die Auswertung der durchgeführten Lagerbewegungen
+und des erwarteten Bedarfs. Anhand dieser Daten werden infolge Vorschläge zur
+Verbesserung der Artikelstammbereichseinstellungen berechnet, welche je nach
+Einstellung entweder automatisch (Einstellung Empfehlungen autom. übernehmen
+in diesem Dialog und Einstellung Automatische Mengenoptimierung aktiv in den
+Artikelstammbereichseinstellungen gesetzt, siehe dazu das Handbuch Stammdaten,
+Kapitel Artikelstamm – Schaltflächen) oder manuell (über den Dialog
+Artikelstammbereichsoptimierung, siehe dazu das Kapitel
+6.2 Artikelstammbereichsoptimierung) übernommen werden können.
+Zur kontinuierlichen Artikelstammbereichsoptimierung wird zudem die Konfiguration
+eines Zeitplans empfohlen. Die Definition erfolgt in diesem Dialogabschnitt auf der
+Registerkarte Zeitplan. So werden in regelmäßigen Abständen
+Optimierungsvorschläge generiert, die immer die aktuellen Daten in die Berechnung
+miteinbeziehen.
+Generell stehen in diesem Dialogabschnitt die folgenden Registerkarten zur
+Verfügung:
+⎯ Allgemein
+⎯ Einschränkungen
+⎯ Optimierungskriterien
+⎯ Zeitplan
+Die einzelnen Registerkarten werden nachfolgend im Detail beschrieben.
+Registerkarte Allgemein
+Auf dieser Registerkarte können allgemeine Einstellungen zur
+Artikelstammbereichsoptimierung getroffen werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 83 von 98
+
+--- PAGE 84 ---
+JH-Confidential
+Folgende Optionen stehen zur Verfügung:
+Empfehlungen Über diese Einstellung wird global definiert, ob
+autom. Optimierungsvorschläge automatisch für jene
+übernehmen: Artikelstammbereichseinträge übernommen werden sollen, für
+die die automatische Optimierung in den jeweiligen
+Artikelstammbereichseinstellungen aktiviert ist (siehe dazu das
+Handbuch Stammdaten, Kapitel Artikelstamm – Schaltflächen).
+Verwendete Die verwendeten Daten zeigen an, welche Daten für die
+Daten: Auswertung der Lagerbewegungen herangezogen werden
+sollen.
+Die Auswahlmöglichkeiten sind dabei wie folgt:
+⎯ Alle (= alle verfügbaren Daten)
+⎯ 1 Jahr
+⎯ 3 Monate
+⎯ 1 Monat
+⎯ 7 Tage
+Jede dieser Auswahlmöglichkeiten nimmt den heutigen Tag als
+Ausgangspunkt. Die Auswahl 1 Monat würde zum Beispiel die
+Daten der letzten 30 Tage für die Auswertung heranziehen.
+Diese Option gibt dem Benutzer die Möglichkeit, auf etwaige
+Strukturänderungen im Lager oder Änderungen in Bezug auf die
+Auftragslage zu reagieren.
+Registerkarte Einschränkungen
+Auf dieser Registerkarte können Einschränkungen definiert werden, welchen die
+Artikelstammbereichsoptimierung unterliegt.
+Folgende Optionen stehen zur Verfügung:
+Maximale Über die Einstellung Maximale Anpassung wird bestimmt, um
+Anpassung: welchen Faktor sich die aktuellen Artikelstammbereichseinträge
+maximal verändern dürfen. Über die Optionen pro Ausführung,
+pro Tag und pro Woche wird festgelegt, welche Einträge aus
+der Vergangenheit zum Vergleich herangezogen werden sollen.
+Die Option pro Ausführung bezieht sich dabei auf die
+Artikelstammbereichsoptimierungsvorschläge der letzten
+Optimierung. Hatte die letzte Optimierung beispielsweise einen
+höheren Wert als der unter Maximale Anpassung definierte
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 84 von 98
+
+--- PAGE 85 ---
+JH-Confidential
+Faktor, wird der aktuelle Wert maximal um den eingestellten
+Faktor erhöht – nicht um den tatsächlich berechneten Faktor.
+Minimale Über die Einstellung Minimale Anpassung wird bestimmt, wie
+Anpassung: groß die Änderung im Vergleich zu den aktuellen Einstellungen
+mindestens sein muss, um generell einen Vorschlag zur
+Artikelstammbereichsoptimierung zu erhalten.
+Der optimierte Wert muss mindestens um den eingestellten
+Faktor vom aktuellen Wert abweichen, damit ein Vorschlag
+erzeugt wird.
+Maximaler Über diese Einstellung wird gesteuert, wie viel Prozent des
+Füllstand des Lagers über alle Artikelstammbereichseinträge eines Bereichs
+Bereichs: hinweg maximal belegt sein dürfen, um trotzdem noch einen
+Puffer für ungeplante Pflicht- und Polsternachschübe zur
+Verfügung zu haben.
+Registerkarte Optimierungskriterien
+Auf dieser Registerkarte kann gesteuert werden, auf Basis welcher Kriterien die
+Optimierung der Artikelstammbereichseinstellungen ausgeführt werden soll.
+Folgende Optionen stehen zur Verfügung:
+Mindestbestand Die Option Mindestbestand ausreichend für steuert, wie viele
+ausreichend für: Tage man zumindest mit dem im jeweiligen Artikelstammbereich
+gesetzten Mindestbestand auskommen soll, um den Bedarf
+bedienen zu können.
+Die Standardeinstellung hierfür ist 1 Tag. Die gesetzte
+Mindestbestandsmenge ist somit für einen Tag ausreichend.
+Zusätzlich dazu stehen die Optionen ohne Varianzkorrektur
+und plus Standardabweichung zur Verfügung. Über diese
+Einstellungen wird gesteuert, ob die Varianz in die Berechnung
+miteinbezogen werden soll. Mit Auswahl der Option ohne
+Varianzkorrektur wird keine mögliche Abweichung bei der
+Berechnung des Mindestbestands berücksichtigt. Mit Auswahl
+der Option plus Standardabweichung wird der Mindestbestand
+um die Standardabweichung der Entnahmen korrigiert.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 85 von 98
+
+--- PAGE 86 ---
+JH-Confidential
+Maximalbestand Die Option Maximalbestand ausreichend für ist vergleichbar
+ausreichend für: mit der Einstellung Mindestbestand ausreichend für und
+steuert, wie viele Tage man maximal mit dem im jeweiligen
+Artikelstammbereich gesetzten Maximalbestand auskommen
+soll.
+Dabei wird die optimale Verteilung auf die einzelnen Artikel im
+Bereich analysiert, um die Kriterien bestmöglich zu erfüllen. Es
+wird also versucht, den Maximalbestand für alle Artikel so zu
+wählen, dass für möglichst viele Artikel möglichst lange
+ausreichend Bestand zur Verfügung steht, aber maximal solange
+wie unter Bis vorgegeben. Dies soll verhindern, dass von
+Artikeln welche nur selten benötigt werden unnötig viel Bestand
+im Lager gehalten wird.
+Registerkarte Zeitplan
+Auch hier kann ein Zeitplan festgelegt werden, auf Basis dessen die
+Artikelstammbereichsoptimierung zyklisch ausgeführt wird.
+Die auf dieser Registerkarte vorhandenen Einstellungsmöglichkeiten sind identisch
+mit jenen des Dialogs Data Center-Konfiguration (Abschnitt Datentransformation).
+Sie finden die Detailbeschreibung zu den einzelnen Optionen im Kapitel 3 Data
+Center-Konfiguration.
+7.4 Assistentenkonfiguration – Sendungsdurchlaufzeit
+Einstellungen > Assistentenkonfiguration
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 86 von 98
+
+--- PAGE 87 ---
+JH-Confidential
+Sendungsdurchlaufzeit
+Die Durchlaufzeit einer Sendung umfasst den Zeitraum vom Start einer
+Kommission/Sendung sowie, falls verwendet, die benötigte Zeit für die Bereitstellung
+bis hin zum Abschluss des Packvorgangs. Dieser Zeitraum inkludiert auch
+Wartezeiten, d. h. die Zeit zwischen dem Kommissions-/Sendungsstart im WMS und
+dem Start der eigentlichen Kommissionierung (Entnahme) sowie die Zeit zwischen
+dem Ende der Kommissionierung und dem Start des Packvorgangs und auch die
+Zeiträume zwischen der aktiven Bearbeitung von Lageraufgaben, welche einer
+Kommission zugeordnet sind.
+In diesem Dialogabschnitt stehen die folgenden Registerkarten zur Verfügung:
+⎯ Durchlaufzeitüberwachung
+⎯ Automatischer Kommissionsstart
+⎯ KI-Modelle trainieren
+Die einzelnen Registerkarten werden nachfolgend im Detail beschrieben.
+Registerkarte Durchlaufzeitüberwachung
+Die Durchlaufzeitüberwachung prüft die im WMS vorhandenen Sendungen und
+informiert den Benutzer über Sendungen, die voraussichtlich nicht rechtzeitig
+abgeschlossen werden können. Zur Information werden im Dialog Kommissionen in
+Abhängigkeit von der Dringlichkeit zwei verschiedene Benachrichtigen ausgegeben.
+Dadurch kann der Benutzer entsprechende Maßnahmen setzen, um einen
+Lieferverzug zu verhindern.
+Wird das Kontrollkästchen Überfällige Sendungen ignorieren angehakt, werden
+Sendungen, die die gesetzte Abschlusszeit bereits überschritten haben, aus der
+Durchlaufzeitüberwachung ausgenommen. Zudem kann mithilfe der Einstellung
+Ignoriere erw. Bearbeitungsdauer definiert werden, ab welcher verbleibenden
+Bearbeitungsdauer die Sendungen nicht überwacht werden. Ist die verbleibende
+Bearbeitungsdauer einer Sendung kleiner als die konfigurierte Zeit, wird die Sendung
+von der Überwachung ausgenommen, da z.B. ein optimierendes Eingreifen nicht
+mehr möglich ist.
+Benachrichtigungen beziehen sich allerdings nur auf die gesamte Sendung in denen
+die entsprechende(n) Kommission(en) enthalten ist(sind). Ist eine Kommission in
+noch keiner Sendung enthalten, werden auch keine Informationen angezeigt.
+Damit die Benachrichtigungen im Dialog Kommissionen ersichtlich sind, muss in
+den Anzeigeoptionen die Option Zeitüberwachung aktiviert werden. Alle
+Kommissionen, deren Sendung einen prognostizierten Zeitverzug hat, werden in der
+Kommissionsliste gelb bzw. rot hinterlegt. Gelbe Warnungen beziehen sich auf die
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 87 von 98
+
+--- PAGE 88 ---
+JH-Confidential
+prognostizierte Durchlaufzeit (= erwarteter Zeitraum für die Abarbeitung der
+Sendung, inkl. Wartezeiten). Rote Warnungen beziehen sich auf die prognostizierte
+Bearbeitungszeit (= erwarteter summierter Zeitraum für die Durchführung der
+einzelnen Bearbeitungsschritte der Sendung, exkl. Wartezeiten). Zusätzlich werden
+die Warnungen auch als Text in der Spalte Im Zeitplan ausgegeben:
+⎯ Warnung = gelb
+⎯ Kritisch = rot
+Nähere Informationen zum Dialog Kommissionen und den verfügbaren
+Einstellungen finden Sie im Handbuch Warenausgang – Basis,
+Kapitel Kommissionen.
+Die erste Benachrichtigung (Warnung) erfolgt, wenn das WMS im Zuge der
+Durchlaufzeitüberwachung feststellt, dass die prognostizierte Durchlaufzeit der
+Sendung größer ist als die verbleibende Zeit bis zur geplanten Auslieferzeit. Die
+zweite Benachrichtigung (Kritisch) erfolgt, wenn die vorhergesagte Bearbeitungszeit
+größer ist als die verbleibende Zeit. Die Warnungen werden auch als
+Leitstandsmeldungen ausgegeben und sind auf dem Dashboard ersichtlich (siehe
+Handbuch Einstellungen, Kapitel Dashboards).
+Der Benutzer kann die Meldungen im Dialog Leitstandsmeldungen quittieren (siehe
+Handbuch Lagermanagement, Kapitel Leitstandsmeldungen). Alternativ gibt es
+jedoch auch im Kommissionsdialog die Möglichkeit zur manuellen Quittierung. Dazu
+muss der Benutzer nach Auswahl der jeweiligen Kommission das Menü der
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 88 von 98
+
+--- PAGE 89 ---
+JH-Confidential
+Bearbeiten-Schaltfläche öffnen und die Option Zeitüberwachung quittieren
+auswählen.
+Beim Quittieren wird jedoch nicht die Meldung für eine bestimmte Kommission,
+sondern für die gesamte Sendung bestätigt.
+Registerkarte Automatischer Kommissionsstart
+Der automatische Kommissions-/Sendungsstart mittels Durchlaufzeitvorhersage
+ermöglicht das Starten einer Kommission/Sendung, bevor diese aufgrund der
+vorhergesagten Durchlaufzeit nicht mehr rechtzeitig abgeschlossen werden kann.
+Mithilfe der Einstellungsmöglichkeiten auf dieser Registerkarte kann festgelegt
+werden, ob, wann und wie der automatische Kommissions-/Sendungsstart
+ausgeführt werden soll.
+Um für einen automatischen Kommissions-/Sendungsstart mittels
+Durchlaufzeitvorhersage in Frage zu kommen, muss eine Kommission die folgenden
+Bedingungen erfüllen:
+⎯ Kommission/Sendung im Status aktiv, mit einem zyklischen
+Kommissionsstart und geplanten Auslieferzeit in der Zukunft, die über
+den Zeitplan ausgeführt wird
+⎯ Kommission, die durch den Tagesabschluss gestartet werden soll
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 89 von 98
+
+--- PAGE 90 ---
+JH-Confidential
+⎯ Kommission/Sendung, die die Voraussetzungen des ersten Punktes
+erfüllt und bearbeitet wurde
+Prüfe Komm.- Mithilfe dieser Option wird zusätzlich zu den definierten
+Start beim Ausführungszeiten im Zeitplan beim Tagesabschluss überprüft,
+Tagesabschluss: ob aktive Kommissionen gestartet werden müssen, um noch
+rechtzeitig abgeschlossen werden zu können.
+Prüfe Komm.- Mithilfe dieser Option wird zusätzlich zu den definierten
+Start nach Ausführungszeiten im Zeitplan nach dem Bearbeiten einer
+Bearbeiten der Kommission geprüft, ob die Kommission gestartet werden soll.
+Komm.:
+Zeitplan aktiv: Mithilfe dieser Option kann der automatische Kommissions-
+/Sendungsstart zu den konfigurierten Ausführungszeiten aktiviert
+werden. Wenn das Kontrollkästchen deaktiviert ist, wird der
+automatische Kommissions-/Sendungsstart nur ausgeführt, wenn
+die Option Prüfe Komm.-Start beim Tagesabschluss oder
+Prüfe Komm.-Start nach Bearbeiten der Komm. aktiviert ist.
+Sicherheits- Der Sicherheitsfaktor gibt an, wie viel Zeit zur Sicherheit zur
+faktor: vorhergesagten Durchlaufzeit addiert werden soll, um die
+Kommission/Sendung rechtzeitig zu starten.
+⎯ Einfache Standardabweichung: Wenn die
+durchschnittliche Durchlaufzeit für
+Kommissionen/Sendungen, die ähnlich zu einer
+Kommission/Sendung x sind, in der Vergangenheit
+2 Stunden und die ermittelte Standardabweichung
+aus diesen ähnlichen Kommissionen/Sendungen
+0,5 Stunden betragen hat, ergibt sich durch diese
+Einstellung die folgende Durchlaufzeit: 2 Std. +
+1 x 0,5 Std. = 2,5 Std.
+⎯ Zweifache Standardabweichung: Basierend auf
+dem oben genannten Beispiel ergibt sich durch
+diese Einstellung die folgende Durchlaufzeit: 2 Std.
++ 2 x 0,5 Std. = 3 Std.
+Speichere Erw. Ist dieses Kontrollkästchen aktiv, wird in der Spalte Erw.
+Entnahme Dlz. Durchlaufzeit Entnahme in der Sendungsliste (Warenausgang
+mit Sicherheits- > Sendungen) die erwartete Durchlaufzeit inklusive
+faktor: Sicherheitsfaktor angezeigt.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 90 von 98
+
+--- PAGE 91 ---
+JH-Confidential
+Der automatische Kommissions-/Sendungsstart betrachtet eine
+Kommission/Sendung als bereit für den Start, wenn die aktuelle Zeit zusammen mit
+der Durchlaufzeit und der Bereitstellungszeit (wenn Vorkommissionierung aktiv)
+sowie einem Sicherheitsfaktor in dem Zeitraum der konfigurierten Abschlusszeit ist.
+Es wird der konfigurierte Zeitraum gewählt, der sich als nächstes vor dem
+Lieferdatum befindet. Ist keine Konfiguration erfolgt, wird das Lieferdatum mit der
+Standardauslieferzeit + 24 Stunden als Zeitraum angenommen.
+Konnte die Sendung/Kommission nicht rechtzeitig gestartet werden, wird der nächste
+konfigurierte Tag nach dem Lieferdatum als Zeitfenster für den automatischen
+Kommissions-/Sendungsstart herangezogen.
+Die weiteren Einstellungen dienen der Konfiguration eines Zeitplans, der bestimmt
+wann und wie oft der automatische Kommissionsstart ausgeführt werden soll. Sie
+sind identisch mit jenen des Dialogs Data Center-Konfiguration (Abschnitt
+Datentransformation). Sie finden die Detailbeschreibung zu den einzelnen
+Einstellungen im Kapitel 3 Data Center-Konfiguration bzw. im
+Handbuch Warenausgang – Basis, Kapitel Erfassen/Bearbeiten eines
+Kommissionskopfes, Registerkarte Abschluss.
+Registerkarte KI-Modelle trainieren
+Verwendete Die verwendeten Daten zeigen an, welche Daten für die
+Daten: Auswertung der Durchlaufzeit herangezogen werden sollen. Die
+Auswahlmöglichkeiten sind dabei wie folgt:
+⎯ 1 Monat
+⎯ 3 Monate
+⎯ 1 Jahr
+⎯ Alle (= alle verfügbaren Daten)
+Jede dieser Auswahlmöglichkeiten nimmt den heutigen Tag als
+Ausgangspunkt. Die Auswahl 1 Monat würde zum Beispiel die
+Daten der letzten 30 Tage für die Auswertung heranziehen. Die
+anderen Optionen funktionieren analog zu 1 Monat.
+Die anderen Einstellungsmöglichkeiten auf dieser Registerkarte dienen zum
+Festlegen eines Zeitplans, auf Basis dessen die KI-Modelle trainiert werden. Alle
+Einstellungsmöglichkeiten sind identisch mit jenen des Dialogs Data Center-
+Konfiguration (Abschnitt Datentransformation). Sie finden die Detailbeschreibung
+zu den einzelnen Optionen im Kapitel 3 Data Center-Konfiguration.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 91 von 98
+
+--- PAGE 92 ---
+JH-Confidential
+7.5 Assistentenkonfiguration – Auslastungsprognose
+Einstellungen > Assistentenkonfiguration
+Auslastungsprognose
+In diesem Dialogabschnitt kann die Auslastungsprognose konfiguriert werden. Die
+Auslastungsprognose ermöglicht es, eine Übersicht über die Auslastung von
+einzelnen Arbeitseinheiten im Lager zu erhalten und die Arbeitslast neu zu verteilen.
+Nähere Informationen zu den Arbeitseinheiten finden Sie im Kapitel
+7.5.1 Arbeitseinheiten. Nähere Informationen zum Dialog Auslastungsprognose
+finden Sie im Kapitel 6.3 Auslastungsprognose.
+In diesem Dialogabschnitt stehen die folgenden Registerkarten zur Verfügung:
+⎯ Bereichszuordnung Arbeitsart
+⎯ KI-Modelle trainieren
+Die einzelnen Registerkarten werden nachfolgend im Detail beschrieben.
+Registerkarte Bereichszuordnung Arbeitsart
+Auf dieser Registerkarte werden die Bereiche definiert, die für die Abbildung der
+Auslastungsprognosedaten herangezogen werden sollen. Es stehen die Arbeitsarten
+Einlagern, Auslagern und Umlagern zur Verfügung. Für diese Arbeitsarten kann
+bestimmt werden, ob der Quellbereich oder Zielbereich für die Zuweisung einer
+Lageraufgabe der jeweiligen Art zu einer Arbeitseinheit verwendet werden soll.
+Dieser Bereich sollte dementsprechend auch in der jeweiligen Arbeitseinheit dafür
+konfiguriert werden. Bei den anderen Arbeitsarten ist keine Bereichszuordnung
+notwendig.
+Registerkarte KI-Modelle trainieren
+Verwendete Die verwendeten Daten zeigen an, welche Daten für die
+Daten: Auswertung der Auslastungsprognose herangezogen werden
+sollen. Die Auswahlmöglichkeiten sind dabei wie folgt:
+⎯ 1 Monat
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 92 von 98
+
+--- PAGE 93 ---
+JH-Confidential
+⎯ 3 Monate
+⎯ 1 Jahr
+⎯ Alle (= alle verfügbaren Daten)
+Jede dieser Auswahlmöglichkeiten nimmt den heutigen Tag als
+Ausgangspunkt. Die Auswahl 1 Monat würde zum Beispiel die
+Daten der letzten 30 Tage für die Auswertung heranziehen. Die
+anderen Optionen funktionieren analog zu 1 Monat.
+Die anderen Einstellungsmöglichkeiten auf dieser Registerkarte dienen zum
+Festlegen eines Zeitplans, auf Basis dessen die KI-Modelle trainiert werden. Alle
+Einstellungsmöglichkeiten sind identisch mit jenen des Dialogs Data Center-
+Konfiguration (Abschnitt Datentransformation). Sie finden die Detailbeschreibung
+zu den einzelnen Optionen im Kapitel 3 Data Center-Konfiguration.
+7.5.1 Arbeitseinheiten
+Lagermodellierung > Arbeitseinheiten
+Arbeitseinheiten definieren, welche Aufgaben (z. B. Packen, Verladen, Auslagern,
+Einlagern) in einer Einheit in denselben Bereichen/Arbeitsplätzen bearbeitet werden
+können. Arbeitseinheiten sollen so definiert werden, dass die Aufgaben eindeutig
+einer Arbeitseinheit zugewiesen werden können, um für die Auslastungsprognose die
+optimalen Ergebnisse erreichen zu können. In der Auslastungsprognose werden die
+aktuelle Auslastung angezeigt und Mitarbeitende zugeteilt, die die Aufgaben einer
+Arbeitseinheit durchführen. Nähere Informationen zur Auslastungsprognose und zur
+Mitarbeiterzuteilung finden Sie im Kapitel 6.3 Auslastungsprognose.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 93 von 98
+
+--- PAGE 94 ---
+JH-Confidential
+Filter:
+Basiskriterien
+Lager: Dieses Feld ist nur bei Benutzung der Mehrlagerfähigkeit des
+WMS von Bedeutung. Bitte beachten Sie, dass die
+Mehrlagerfähigkeit extra lizenziert werden muss.
+Mithilfe dieser Auswahlliste können die angezeigten
+Arbeitseinheiten auf ein bestimmtes Lager eingeschränkt
+werden.
+Bezeichnung: Mit Eingabe der Bezeichnung einer Arbeitseinheit kann die Liste
+auf diese Arbeitseinheit eingeschränkt werden.
+Schaltflächen
+Neu/Bearbeiten: Mit Betätigen der Schaltflächen Neu oder Bearbeiten öffnet sich
+ein separater Dialog, in dem eine Arbeitseinheit neu definiert
+bzw. eine bestehende Arbeitseinheit bearbeitet werden kann.
+Nähere Informationen zum Dialog finden Sie weiter unten in
+diesem Kapitel.
+Kopieren: Mit Betätigen der Schaltfläche Kopieren kann eine neue
+Arbeitseinheit definiert werden, indem man eine bereits
+vorhandene Arbeitseinheit kopiert. Es können alle Daten der
+kopierten Arbeitseinheit übernommen werden.
+Löschen: Mit Betätigen der Schaltfläche Löschen kann die in der Liste
+ausgewählte Arbeitseinheit aus dem WMS gelöscht werden.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 94 von 98
+
+--- PAGE 95 ---
+JH-Confidential
+Arbeitseinheit
+Arbeitseinheit- Dieses Feld enthält die ID der Arbeitseinheit. Sie wird
+ID: automatisch vom WMS vergeben und kann nicht geändert
+werden.
+Bezeichnung: In dieses Feld muss eine möglichst eindeutige Bezeichnung
+eingegeben werden, die aus bis zu 40 alphanumerischen
+Zeichen bestehen kann.
+Lager: Dieses Feld ist nur bei Benutzung der Mehrlagerfähigkeit des
+WMS von Bedeutung. Bitte beachten Sie, dass die
+Mehrlagerfähigkeit extra lizenziert werden muss.
+Diese Auswahlliste enthält alle Lager, die im WMS konfiguriert
+sind. Die Auswahl gibt an, welchem Lager die Arbeitseinheit
+zugewiesen ist.
+Bereiche
+Dieser Dialogabschnitt enthält alle Bereiche, welche der ausgewählten Arbeitseinheit
+zugeordnet sind.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 95 von 98
+
+--- PAGE 96 ---
+JH-Confidential
+Bereich: Diese Spalten enthalten die Nummer und Bezeichnung des
+Bereichs.
+Lager: Diese Spalten enthalten die Nummer und Bezeichnung des
+Lagers zu dem der Bereich gehört.
+Bereichsgruppe: Diese Spalte enthält die Bereichsgruppe zu der der Bereich
+gehört.
+Einschrän- Diese Spalte enthält die diversen Arbeitsarten (z. B.
+kungen Wareneingang, Umlagern) und zeigt an, welche Arbeitsarten im
+Arbeitsarten: gewählten Bereich möglich sind. Mit Doppelklick auf das Feld je
+Arbeitsart öffnet sich der Dialog Bereich bearbeiten. Nähere
+Informationen zu diesem Dialog finden Sie weiter unten in
+diesem Kapitel.
+Schaltflächen
+Hinzufügen: Mithilfe dieser Schaltfläche öffnet sich der Dialog Bereich
+hinzufügen. Er dient dazu einen neuen Bereich zur
+Arbeitseinheit hinzuzufügen. Im Dialog können der gewünschte
+Bereich und die zugehörigen Arbeitsarten ausgewählt werden.
+Der Dialog ist identisch mit dem Dialog Bereich bearbeiten
+(siehe unten).
+Bearbeiten: Mithilfe dieser Schaltfläche öffnet sich der Dialog Bereich
+bearbeiten:
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 96 von 98
+
+--- PAGE 97 ---
+JH-Confidential
+Der zu bearbeitende Bereich ist ausgegraut und kann nicht
+geändert werden. Durch De-/Aktivierung der Kontrollkästchen
+können jedoch die Arbeitsarten des ausgewählten Bereichs
+angepasst werden. Mit Klick auf OK wird die Anpassung im
+Dialog Arbeitseinheit bearbeiten angezeigt.
+Löschen: Mithilfe dieser Schaltfläche kann der ausgewählte Bereich aus
+der Liste entfernt werden.
+Arbeitsplätze
+Dieser Dialogabschnitt enthält alle Arbeitsplätze, welche der ausgewählten
+Arbeitseinheit zugeordnet sind.
+Arbeitsplatz: Diese Spalten enthalten die Nummer und Bezeichnung des
+Arbeitsplatzes.
+Lager: Diese Spalten enthalten die Nummer und Bezeichnung des
+Lagers zu dem der Arbeitsplatz gehört.
+Orte: Diese Spalte enthält die Orte, die dem Arbeitsplatz über die
+Arbeitsplatzkonfiguration zugewiesen wurden (Menü
+Lagermodellierung > Arbeitsplätze, siehe dazu das
+Handbuch Lagerkomponentenmodellierung,
+Kapitel Arbeitsplätze).
+Schaltflächen
+Hinzufügen: Mithilfe dieser Schaltfläche öffnet sich der Dialog Arbeitsplatz
+hinzufügen:
+Er dient dazu einen neuen Arbeitsplatz zur Arbeitseinheit
+hinzuzufügen. Im Dialog kann der gewünschte Arbeitsplatz aus
+der Liste ausgewählt werden. Die Orte, die dem Arbeitsplatz
+zugeordnet sind, werden automatisch in die Liste des Dialogs
+Arbeitseinheit bearbeiten übernommen.
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 97 von 98
+
+--- PAGE 98 ---
+JH-Confidential
+Löschen: Mithilfe dieser Schaltfläche kann der ausgewählte Arbeitsplatz
+aus der Liste entfernt werden.
+Die zugewiesenen Arbeitsplätze und Bereiche definieren, welche Aufgaben der
+ausgewählten Arbeitseinheit für eine Auslastungsprognose herangezogen werden.
+Beispiel:
+Wird ein Wareneingang am Arbeitsplatz Wareneingang durchgeführt, wird dieser
+Wareneingang jener Arbeitseinheit zugewiesen, welcher auch der Arbeitsplatz
+Wareneingang zugeordnet ist. Dies gilt ebenso für die Bereiche einer Arbeitseinheit.
+Wird ein Wareneingang im Bereich 1000 Wareneingang durchgeführt, wird dieser
+Wareneingang jener Arbeitseinheit zugewiesen, für welche der Bereich 1000
+Wareneingang mit der Arbeitsart Wareneingang definiert wurde.
+Um Probleme bei der Zuweisung von Aufgaben zu Arbeitseinheiten zu vermeiden,
+sollen die Arbeitseinheiten möglichst eindeutig definiert werden (z. B. keine
+Zuweisung des Arbeitsplatzes Wareneingang zu zwei verschiedenen
+Arbeitseinheiten).
+Handbuch Data Center 12.09.2024
+Version 7.4b Seite 98 von 98

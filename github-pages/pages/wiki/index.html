@@ -1,0 +1,657 @@
+---
+layout: default
+title: "Knowledge Wiki"
+description: "Comprehensive WMS documentation and procedures"
+breadcrumbs:
+  - title: "Wiki"
+---
+
+<div class="wiki-hero">
+    <div class="container">
+        <h1>WMS Knowledge Wiki</h1>
+        <p class="lead">Your comprehensive guide to WMS procedures, best practices, and documentation</p>
+        <div class="wiki-search">
+            <input type="search" placeholder="Search the wiki..." class="wiki-search-input">
+            <button class="wiki-search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="wiki-content">
+    <div class="container">
+        <div class="wiki-navigation">
+            <div class="wiki-categories">
+                <button class="category-btn active" data-category="all">All Topics</button>
+                <button class="category-btn" data-category="operations">Operations</button>
+                <button class="category-btn" data-category="procedures">Procedures</button>
+                <button class="category-btn" data-category="best-practices">Best Practices</button>
+                <button class="category-btn" data-category="troubleshooting">Troubleshooting</button>
+            </div>
+        </div>
+
+        <div class="wiki-main">
+            <div class="wiki-grid">
+                <!-- Operations Category -->
+                <div class="wiki-section" data-category="operations">
+                    <h2><i class="fas fa-cogs"></i> Operations</h2>
+                    <div class="wiki-cards">
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-truck-loading"></i>
+                            </div>
+                            <h3>Receiving Process</h3>
+                            <p>Complete guide to receiving inventory, from truck arrival to put-away</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 5 days ago</span>
+                                <span class="wiki-views">1,234 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/receiving/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <h3>Picking & Packing</h3>
+                            <p>Master efficient picking strategies and packing procedures</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 3 days ago</span>
+                                <span class="wiki-views">2,156 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/picking/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h3>Shipping Operations</h3>
+                            <p>End-to-end shipping process and carrier integration</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 1 week ago</span>
+                                <span class="wiki-views">987 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/shipping/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <h3>Inventory Management</h3>
+                            <p>Advanced inventory control, cycle counting, and adjustments</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 2 days ago</span>
+                                <span class="wiki-views">1,789 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/inventory/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Procedures Category -->
+                <div class="wiki-section" data-category="procedures">
+                    <h2><i class="fas fa-clipboard-list"></i> Procedures</h2>
+                    <div class="wiki-cards">
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <h3>User Management</h3>
+                            <p>Creating, managing, and configuring user accounts and permissions</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 1 week ago</span>
+                                <span class="wiki-views">756 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/users/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Reporting Procedures</h3>
+                            <p>Generate, customize, and schedule WMS reports</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 4 days ago</span>
+                                <span class="wiki-views">1,023 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/reporting/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3>Data Integration</h3>
+                            <p>Connecting WMS with ERP, EDI, and other systems</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 6 days ago</span>
+                                <span class="wiki-views">612 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/integration/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Security Procedures</h3>
+                            <p>Implement security measures and access controls</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 2 weeks ago</span>
+                                <span class="wiki-views">445 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/security/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Best Practices Category -->
+                <div class="wiki-section" data-category="best-practices">
+                    <h2><i class="fas fa-star"></i> Best Practices</h2>
+                    <div class="wiki-cards">
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>Performance Optimization</h3>
+                            <p>Tips and tricks to maximize WMS performance and efficiency</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 3 days ago</span>
+                                <span class="wiki-views">1,456 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/optimization/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Team Management</h3>
+                            <p>Best practices for managing warehouse teams and workflows</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 1 week ago</span>
+                                <span class="wiki-views">892 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/team-management/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Training Guidelines</h3>
+                            <p>Effective approaches to training new WMS users</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 5 days ago</span>
+                                <span class="wiki-views">634 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/training-guidelines/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <h3>Continuous Improvement</h3>
+                            <p>Strategies for ongoing WMS optimization and enhancement</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 4 days ago</span>
+                                <span class="wiki-views">778 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/continuous-improvement/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting Category -->
+                <div class="wiki-section" data-category="troubleshooting">
+                    <h2><i class="fas fa-wrench"></i> Troubleshooting</h2>
+                    <div class="wiki-cards">
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Common Issues</h3>
+                            <p>Solutions for frequently encountered WMS problems</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 1 day ago</span>
+                                <span class="wiki-views">2,345 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/common-issues/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h3>System Errors</h3>
+                            <p>Diagnostic and resolution guide for system-level errors</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 2 days ago</span>
+                                <span class="wiki-views">1,567 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/system-errors/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-first-aid"></i>
+                            </div>
+                            <h3>Emergency Procedures</h3>
+                            <p>Step-by-step guide for handling system emergencies</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 1 week ago</span>
+                                <span class="wiki-views">456 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/emergency/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+
+                        <div class="wiki-card">
+                            <div class="wiki-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Maintenance Guide</h3>
+                            <p>Routine maintenance tasks and system health checks</p>
+                            <div class="wiki-meta">
+                                <span class="wiki-updated">Updated 3 days ago</span>
+                                <span class="wiki-views">723 views</span>
+                            </div>
+                            <a href="{{ '/pages/wiki/maintenance/' | relative_url }}" class="wiki-link">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wiki-sidebar">
+                <div class="popular-articles">
+                    <h3>Popular Articles</h3>
+                    <div class="popular-list">
+                        <div class="popular-item">
+                            <span class="popular-rank">1</span>
+                            <div class="popular-content">
+                                <a href="{{ '/pages/wiki/receiving/' | relative_url }}">Receiving Process</a>
+                                <span class="popular-views">2,345 views</span>
+                            </div>
+                        </div>
+                        <div class="popular-item">
+                            <span class="popular-rank">2</span>
+                            <div class="popular-content">
+                                <a href="{{ '/pages/wiki/picking/' | relative_url }}">Picking & Packing</a>
+                                <span class="popular-views">2,156 views</span>
+                            </div>
+                        </div>
+                        <div class="popular-item">
+                            <span class="popular-rank">3</span>
+                            <div class="popular-content">
+                                <a href="{{ '/pages/wiki/inventory/' | relative_url }}">Inventory Management</a>
+                                <span class="popular-views">1,789 views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-updates">
+                    <h3>Recent Updates</h3>
+                    <div class="update-list">
+                        <div class="update-item">
+                            <div class="update-date">Today</div>
+                            <a href="{{ '/pages/wiki/common-issues/' | relative_url }}">Common Issues</a>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">2 days ago</div>
+                            <a href="{{ '/pages/wiki/inventory/' | relative_url }}">Inventory Management</a>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">3 days ago</div>
+                            <a href="{{ '/pages/wiki/picking/' | relative_url }}">Picking & Packing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wiki-tools">
+                    <h3>Tools & Resources</h3>
+                    <ul>
+                        <li><a href="{{ '/pages/wiki/glossary/' | relative_url }}">Glossary</a></li>
+                        <li><a href="{{ '/pages/wiki/templates/' | relative_url }}">Templates</a></li>
+                        <li><a href="{{ '/pages/wiki/downloads/' | relative_url }}">Downloads</a></li>
+                        <li><a href="{{ '/pages/wiki/contact/' | relative_url }}">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.wiki-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.wiki-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.wiki-search {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    position: relative;
+}
+
+.wiki-search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 1.125rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+}
+
+.wiki-search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.wiki-search-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.wiki-content {
+    padding: 3rem 0;
+}
+
+.wiki-navigation {
+    margin-bottom: 3rem;
+}
+
+.wiki-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.wiki-main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+}
+
+.wiki-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.wiki-section {
+    display: block;
+}
+
+.wiki-section.hidden {
+    display: none;
+}
+
+.wiki-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.wiki-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.wiki-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.wiki-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.wiki-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.wiki-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.wiki-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.wiki-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.wiki-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.wiki-link:hover {
+    color: var(--primary-light);
+}
+
+.wiki-sidebar {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    height: fit-content;
+}
+
+.popular-articles,
+.recent-updates,
+.wiki-tools {
+    margin-bottom: 2rem;
+}
+
+.popular-articles h3,
+.recent-updates h3,
+.wiki-tools h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.popular-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.popular-rank {
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.popular-content {
+    flex: 1;
+}
+
+.popular-content a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.popular-content a:hover {
+    color: var(--primary-color);
+}
+
+.popular-views {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.update-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.update-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.update-item a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.update-item a:hover {
+    color: var(--primary-color);
+}
+
+.wiki-tools ul {
+    list-style: none;
+}
+
+.wiki-tools li {
+    margin-bottom: 0.5rem;
+}
+
+.wiki-tools a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.wiki-tools a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .wiki-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .wiki-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .wiki-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const wikiSections = document.querySelectorAll('.wiki-section');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show/hide sections based on category
+            wikiSections.forEach(section => {
+                if (category === 'all' || section.dataset.category === category) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        });
+    });
+    
+    // Wiki search functionality
+    const searchInput = document.querySelector('.wiki-search-input');
+    const searchBtn = document.querySelector('.wiki-search-btn');
+    
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        const wikiCards = document.querySelectorAll('.wiki-card');
+        
+        wikiCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+            
+            if (title.includes(query) || description.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = query ? 'none' : 'block';
+            }
+        });
+    });
+    
+    searchBtn.addEventListener('click', function() {
+        searchInput.focus();
+    });
+});
+</script>

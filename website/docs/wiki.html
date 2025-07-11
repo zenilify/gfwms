@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vollständige Störungsbehandlung Wiki - Georg Fischer WMS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/docs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><h1><i class="fas fa-warehouse"></i> Georg Fischer WMS</h1></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="wiki.html" class="nav-link active">Wiki</a></li>
+                    <li><a href="conveyor_system_errors.html" class="nav-link">Fördertechnik</a></li>
+                    <li><a href="stoerungsbehebung.txt" class="nav-link">Original</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="docs-main">
+        <div class="container">
+            <div class="docs-layout">
+                <aside class="docs-sidebar">
+                    <div class="sidebar-content">
+                        <h3>Inhaltsverzeichnis</h3>
+                        <ul class="toc">
+                            <li><a href="#automatik-störungsbehandlung">Automatik Störungsbehandlung</a>
+                                <ul>
+                                    <li><a href="#störungsbehandlungsmöglichkeiten">Möglichkeiten</a></li>
+                                    <li><a href="#störungsbehandlung-assistent">Assistent</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#störungen-auf-der-fördertechnik">Fördertechnik</a>
+                                <ul>
+                                    <li><a href="#10003">10003 - Kommunikation</a></li>
+                                    <li><a href="#10006">10006 - Konturenfehler</a></li>
+                                    <li><a href="#10009">10009 - Annahmesperre</a></li>
+                                    <li><a href="#10024">10024 - Ziel unerreichbar</a></li>
+                                    <li><a href="#10039">10039 - Timeout</a></li>
+                                    <li><a href="#10045">10045 - Protokollfehler</a></li>
+                                    <li><a href="#10053">10053 - Kein Weg</a></li>
+                                    <li><a href="#20162">20162 - TE-ID Null</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#störungen-am-behälter-regalbediengerät">Behälter-RBG</a></li>
+                            <li><a href="#störungen-am-paletten-regalbediengerät">Paletten-RBG</a></li>
+                            <li><a href="#troubleshooting-quick-reference">Quick Reference</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <article class="docs-content">
+                    <h1>Störungsbehandlung Wiki - Georg Fischer WMS</h1>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Wichtiger Hinweis:</strong> Diese Dokumentation basiert auf der offiziellen Schulungsunterlage Version 0.9 vom 20.12.2024. 
+                        Für die vollständige Dokumentation siehe auch das <a href="stoerungsbehebung.txt">Original-Dokument</a>.
+                    </div>
+
+                    <section id="automatik-störungsbehandlung">
+                        <h2>Automatik Störungsbehandlung</h2>
+                        
+                        <div class="info-box">
+                            <h3>Übersicht</h3>
+                            <p><strong>Navigation:</strong> Automatik > Störungsbehandlung</p>
+                            <p>Tritt während eines Transports eine Störung auf, wird diese umgehend in den Dialog Störungsbehandlung eingeschrieben.</p>
+                        </div>
+
+                        <div class="definition-box">
+                            <h4>Wichtige Unterscheidung</h4>
+                            <ul>
+                                <li><strong>Transportbezogene Störungen:</strong> Logische Störungen</li>
+                                <li><strong>Gerätebezogene Störungen:</strong> Physikalische Störungen (anlagenbedingt)</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>Erkennungszeichen:</strong> Störung am Hauptbildschirm erkennbar durch rot hinterlegtes Feld "Automatik".
+                        </div>
+
+                        <section id="störungsbehandlungsmöglichkeiten">
+                            <h3>Störungsbehandlungsmöglichkeiten</h3>
+                            
+                            <div class="option-grid">
+                                <div class="option-card">
+                                    <h4>1. Transport erneut an das Gerät senden</h4>
+                                    <p><strong>Standard:</strong> Nach Behebung einer physikalischen Störung</p>
+                                    <ul>
+                                        <li>Lagerort sperren und neues Ziel suchen</li>
+                                        <li>Neues Ziel suchen</li>
+                                        <li>LHM-Abmessungen ändern</li>
+                                        <li>LHM wurde bereits aufgenommen</li>
+                                        <li>LHM anfordern</li>
+                                    </ul>
+                                </div>
+
+                                <div class="option-card">
+                                    <h4>2. LHM extern buchen</h4>
+                                    <p>Bucht das LHM auf einen definierten externen Ort</p>
+                                    <ul>
+                                        <li>LHM physikalisch bereits entfernt</li>
+                                        <li>Lagerfach nur datentechnisch belegt</li>
+                                    </ul>
+                                </div>
+
+                                <div class="option-card">
+                                    <h4>3. Transport abschließen</h4>
+                                    <p>Bucht LHM auf Zielort und löscht Transportauftrag</p>
+                                    <ul>
+                                        <li>LHM bereits am Ziel</li>
+                                        <li>Falsche Sensorik-Meldung</li>
+                                    </ul>
+                                </div>
+
+                                <div class="option-card">
+                                    <h4>4. Quit an Gerät senden</h4>
+                                    <p>Verbindungsaufbau zwischen GM und MFR</p>
+                                    <ul>
+                                        <li>Unterbrochene Kommunikation</li>
+                                        <li>Telegramm-Probleme</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+
+                    <section id="störungen-auf-der-fördertechnik">
+                        <h2>Störungen auf der Fördertechnik</h2>
+                        
+                        <div class="error-code" id="10003">
+                            <h3><span class="error-number">10003</span> Kommunikationsstörung zum Gerät</h3>
+                            <div class="error-details">
+                                <div class="situation">
+                                    <h4><i class="fas fa-exclamation-circle"></i> Situation</h4>
+                                    <p>Transport kann nicht an Gerät weitergegeben werden - TCP/IP-Verbindung fehlgeschlagen</p>
+                                </div>
+                                
+                                <div class="causes">
+                                    <h4><i class="fas fa-search"></i> Ursachen</h4>
+                                    <ul>
+                                        <li>Gerät hardwareseitig deaktiviert ('Strom aus')</li>
+                                        <li>Unterbrochene Funkverbindung zum Access-Point</li>
+                                        <li>Defekter Funkempfänger</li>
+                                        <li>Probleme im hausinternen Netzwerk</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="solutions">
+                                    <h4><i class="fas fa-tools"></i> Behebung</h4>
+                                    <ol>
+                                        <li>Gerät neu starten ('Strom aus' → 'Strom ein')</li>
+                                        <li>Gerät im Handbetrieb verfahren für Funkverbindung</li>
+                                        <li>IT-Abteilung kontaktieren bei Netzwerkproblemen</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="error-code" id="10006">
+                            <h3><span class="error-number">10006</span> Konturenfehler</h3>
+                            <div class="error-details">
+                                <div class="situation">
+                                    <h4><i class="fas fa-exclamation-circle"></i> Situation</h4>
+                                    <p>LHM überschreitet Dimensionsvorgaben: Überhöhe, Überbreite, Überlänge oder Übergewicht</p>
+                                </div>
+                                
+                                <div class="causes">
+                                    <h4><i class="fas fa-search"></i> Ursachen</h4>
+                                    <ul>
+                                        <li>Abmessungen entsprechen nicht den Vorgaben</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="solutions">
+                                    <h4><i class="fas fa-tools"></i> Behebung</h4>
+                                    <ol>
+                                        <li>Abmessungen entsprechend der Vorgaben anpassen</li>
+                                        <li>LHM von der Anlage nehmen wenn nicht anpassbar</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Continue with other error codes... -->
+                        
+                    </section>
+
+                    <section id="troubleshooting-quick-reference">
+                        <h2>Troubleshooting Quick Reference</h2>
+                        
+                        <div class="reference-table">
+                            <h3>Häufige Störungsbehandlungen</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Aktion</th>
+                                        <th>Verwendung</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Transport erneut senden + Standard</td>
+                                        <td>Nach Behebung physikalischer Störungen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>LHM extern buchen</td>
+                                        <td>LHM physikalisch entfernt oder Fach nur datentechnisch belegt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transport abschließen</td>
+                                        <td>LHM bereits am Ziel oder falsche Sensorik</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quit an Gerät senden</td>
+                                        <td>Kommunikationsprobleme</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="../index.html">Startseite</a></li>
+                        <li><a href="conveyor_system_errors.html">Fördertechnik Störungen</a></li>
+                        <li><a href="stoerungsbehebung.txt">Original Dokument</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Information</h4>
+                    <p>Georg Fischer Störungsbehandlung</p>
+                    <p>Version 0.9 - Stand: 20.12.2024</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

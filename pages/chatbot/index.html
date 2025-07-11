@@ -1,16 +1,16 @@
 ---
 layout: default
-title: "WMS AI Chatbot"
-description: "Get instant answers to your WMS questions with our intelligent assistant"
+title: "WMS KI-Assistent"
+description: "Erhalten Sie sofortige Antworten auf Ihre WMS-Fragen mit unserem intelligenten Assistenten"
 breadcrumbs:
-  - title: "Chatbot"
+  - title: "KI-Assistent"
 ---
 
 <div class="chatbot-container">
     <div class="chatbot-header">
         <div class="container">
-            <h1>WMS AI Assistant</h1>
-            <p>Get instant answers to your WMS questions. Our AI assistant is trained on all WMS documentation and procedures.</p>
+            <h1>Jungheinrich WMS KI-Assistent</h1>
+            <p>Erhalten Sie sofortige Antworten auf Ihre WMS-Fragen. Unser KI-Assistent ist mit der gesamten WMS-Dokumentation und allen Verfahren geschult.</p>
         </div>
     </div>
 
@@ -19,48 +19,48 @@ breadcrumbs:
             <div class="chatbot-interface">
                 <div class="chatbot-sidebar">
                     <div class="chatbot-info">
-                        <h3>How to Use</h3>
+                        <h3>Verwendung</h3>
                         <ul>
-                            <li>Ask questions in plain English</li>
-                            <li>Request step-by-step procedures</li>
-                            <li>Get troubleshooting help</li>
-                            <li>Find relevant documentation</li>
+                            <li>Stellen Sie Fragen in natürlicher Sprache</li>
+                            <li>Fordern Sie Schritt-für-Schritt-Anleitungen an</li>
+                            <li>Erhalten Sie Hilfe bei der Fehlerbehebung</li>
+                            <li>Finden Sie relevante Dokumentation</li>
                         </ul>
                     </div>
 
                     <div class="quick-questions">
-                        <h3>Quick Questions</h3>
+                        <h3>Häufige Fragen</h3>
                         <div class="quick-question-list">
-                            <button class="quick-question-btn" data-question="How do I receive inventory?">
-                                How do I receive inventory?
+                            <button class="quick-question-btn" data-question="Wie führe ich den Wareneingang durch?">
+                                Wie führe ich den Wareneingang durch?
                             </button>
-                            <button class="quick-question-btn" data-question="What are the picking procedures?">
-                                What are the picking procedures?
+                            <button class="quick-question-btn" data-question="Wie funktioniert die Kommissionierung?">
+                                Wie funktioniert die Kommissionierung?
                             </button>
-                            <button class="quick-question-btn" data-question="How do I generate reports?">
-                                How do I generate reports?
+                            <button class="quick-question-btn" data-question="Wie erstelle ich Berichte?">
+                                Wie erstelle ich Berichte?
                             </button>
-                            <button class="quick-question-btn" data-question="What do I do if the system is slow?">
-                                What do I do if the system is slow?
+                            <button class="quick-question-btn" data-question="Was tue ich, wenn das System langsam ist?">
+                                Was tue ich, wenn das System langsam ist?
                             </button>
-                            <button class="quick-question-btn" data-question="How do I add new users?">
-                                How do I add new users?
+                            <button class="quick-question-btn" data-question="Wie füge ich neue Benutzer hinzu?">
+                                Wie füge ich neue Benutzer hinzu?
                             </button>
                         </div>
                     </div>
 
                     <div class="chatbot-stats">
-                        <h3>Assistant Stats</h3>
+                        <h3>Assistent Statistiken</h3>
                         <div class="stat-item">
-                            <span class="stat-label">Questions Answered</span>
+                            <span class="stat-label">Beantwortete Fragen</span>
                             <span class="stat-value">15,847</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-label">Average Response Time</span>
-                            <span class="stat-value">2.3 seconds</span>
+                            <span class="stat-label">Durchschnittliche Antwortzeit</span>
+                            <span class="stat-value">2.3 Sekunden</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-label">Success Rate</span>
+                            <span class="stat-label">Erfolgsrate</span>
                             <span class="stat-value">94%</span>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ breadcrumbs:
                     <div class="chat-header">
                         <div class="chat-status">
                             <div class="status-indicator online"></div>
-                            <span>WMS Assistant is online</span>
+                            <span>WMS Assistent ist online</span>
                         </div>
                         <div class="chat-actions">
                             <button class="chat-action-btn" id="clear-chat" title="Clear conversation">
@@ -89,24 +89,24 @@ breadcrumbs:
                             </div>
                             <div class="message-content">
                                 <div class="message-bubble">
-                                    <p>Hello! I'm your WMS AI Assistant. I can help you with:</p>
+                                    <p>Hallo! Ich bin Ihr WMS KI-Assistent. Ich kann Ihnen helfen bei:</p>
                                     <ul>
-                                        <li>Step-by-step procedures</li>
-                                        <li>Troubleshooting issues</li>
-                                        <li>System configuration</li>
-                                        <li>Best practices</li>
-                                        <li>Finding documentation</li>
+                                        <li>Schritt-für-Schritt-Anleitungen</li>
+                                        <li>Fehlerbehebung</li>
+                                        <li>Systemkonfiguration</li>
+                                        <li>Best Practices</li>
+                                        <li>Dokumentation finden</li>
                                     </ul>
-                                    <p>What would you like to know about the WMS?</p>
+                                    <p>Was möchten Sie über das WMS wissen?</p>
                                 </div>
-                                <div class="message-time">Just now</div>
+                                <div class="message-time">Gerade eben</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="chat-input-area">
                         <div class="chat-input-container">
-                            <input type="text" id="chat-input" placeholder="Type your question about WMS..." maxlength="500">
+                            <input type="text" id="chat-input" placeholder="Stellen Sie Ihre Frage zum WMS..." maxlength="500">
                             <button id="send-button" class="send-btn" disabled>
                                 <i class="fas fa-paper-plane"></i>
                             </button>
@@ -558,7 +558,7 @@ class WMSChatbot {
             const recognition = new webkitSpeechRecognition();
             recognition.continuous = false;
             recognition.interimResults = false;
-            recognition.lang = 'en-US';
+            recognition.lang = 'de-DE';
 
             recognition.onresult = (event) => {
                 const transcript = event.results[0][0].transcript;
@@ -665,7 +665,7 @@ class WMSChatbot {
             </div>
             <div class="message-content">
                 <div class="typing-indicator">
-                    <span>Assistant is typing</span>
+                    <span>Assistent schreibt</span>
                     <div class="typing-dots">
                         <div class="typing-dot"></div>
                         <div class="typing-dot"></div>
@@ -702,145 +702,155 @@ class WMSChatbot {
         const lowerMessage = message.toLowerCase();
         
         // Simple response logic - in a real implementation, this would connect to an AI service
-        if (lowerMessage.includes('receive') || lowerMessage.includes('receiving')) {
-            return `To receive inventory in the WMS:
+        if (lowerMessage.includes('wareneingang') || lowerMessage.includes('receive') || lowerMessage.includes('receiving')) {
+            return `So führen Sie den Wareneingang im WMS durch:
 
-1. **Navigate to Receiving Module**
-   - Click on "Receiving" in the main menu
-   - Select "New Receipt"
+1. **Wareneingang-Modul aufrufen**
+   - Klicken Sie auf "Wareneingang" im Hauptmenü
+   - Wählen Sie "Neuer Wareneingang"
 
-2. **Enter Receipt Details**
-   - Scan or enter the Purchase Order number
-   - Verify vendor information
-   - Review expected items
+2. **Wareneingang-Details eingeben**
+   - Aviso scannen oder eingeben
+   - Lieferanteninformationen verifizieren
+   - Erwartete Artikel überprüfen
 
-3. **Process Items**
-   - Scan each item barcode
-   - Enter quantity received
-   - Note any discrepancies
+3. **Artikel verarbeiten**
+   - Jeden Artikel-Barcode scannen
+   - Erhaltene Menge eingeben
+   - Abweichungen notieren
 
-4. **Complete Receipt**
-   - Review all items
-   - Submit the receipt
-   - Print receiving labels if needed
+4. **Wareneingang abschließen**
+   - Alle Artikel überprüfen
+   - Wareneingang übermitteln
+   - Bei Bedarf Etiketten drucken
 
-For detailed instructions, check the [Receiving Guide]({{ '/pages/wiki/receiving/' | relative_url }}).`;
+Für detaillierte Anweisungen siehe [Wareneingang-Anleitung]({{ '/pages/wiki/wareneingang/' | relative_url }}).`;
         }
         
-        if (lowerMessage.includes('pick') || lowerMessage.includes('picking')) {
-            return `Here's the picking process:
+        if (lowerMessage.includes('kommissionierung') || lowerMessage.includes('pick') || lowerMessage.includes('picking')) {
+            return `So funktioniert die Kommissionierung:
 
-1. **Access Pick List**
-   - Go to "Picking" module
-   - Select assigned pick list
-   - Review pick priorities
+1. **Kommissionierliste aufrufen**
+   - Gehen Sie zum "Kommissionierung" Modul
+   - Wählen Sie die zugewiesene Kommissionierliste
+   - Überprüfen Sie die Prioritäten
 
-2. **Navigate to Locations**
-   - Follow the optimized pick path
-   - Use location codes for guidance
-   - Scan location barcodes
+2. **Zu Lagerorten navigieren**
+   - Folgen Sie dem optimierten Kommissionierweg
+   - Verwenden Sie Lagerortkodes zur Orientierung
+   - Scannen Sie Lagerort-Barcodes
 
-3. **Pick Items**
-   - Scan item barcodes
-   - Verify quantities
-   - Use proper containers
+3. **Artikel kommissionieren**
+   - Artikel-Barcodes scannen
+   - Mengen verifizieren
+   - Geeignete Behälter verwenden
 
-4. **Complete Pick**
-   - Review picked items
-   - Submit pick completion
-   - Move to packing area
+4. **Kommissionierung abschließen**
+   - Kommissionierte Artikel überprüfen
+   - Kommissionierung als abgeschlossen melden
+   - Zum Packplatz weiterleiten
 
-Need more details? Visit the [Picking Guide]({{ '/pages/wiki/picking/' | relative_url }}).`;
+Benötigen Sie weitere Details? Besuchen Sie die [Kommissionier-Anleitung]({{ '/pages/wiki/kommissionierung/' | relative_url }}).`;
         }
         
-        if (lowerMessage.includes('report') || lowerMessage.includes('reporting')) {
-            return `To generate WMS reports:
+        if (lowerMessage.includes('berichte') || lowerMessage.includes('report') || lowerMessage.includes('reporting')) {
+            return `So erstellen Sie WMS-Berichte:
 
-1. **Access Reports Module**
-   - Click "Reports" in main navigation
-   - Choose report category
+1. **Berichte-Modul aufrufen**
+   - Klicken Sie auf "Berichte" in der Hauptnavigation
+   - Wählen Sie die Berichtskategorie
 
-2. **Select Report Type**
-   - Inventory reports
-   - Activity reports
-   - Performance reports
-   - Custom reports
+2. **Berichtstyp auswählen**
+   - Bestandsberichte
+   - Aktivitätsberichte
+   - Leistungsberichte
+   - Benutzerdefinierte Berichte
 
-3. **Set Parameters**
-   - Choose date range
-   - Select filters
-   - Set output format
+3. **Parameter festlegen**
+   - Datumsbereich wählen
+   - Filter auswählen
+   - Ausgabeformat festlegen
 
-4. **Generate & Export**
-   - Click "Generate Report"
-   - Download or email results
-   - Schedule recurring reports
+4. **Generieren & Exportieren**
+   - Klicken Sie auf "Bericht generieren"
+   - Ergebnisse herunterladen oder per E-Mail senden
+   - Wiederkehrende Berichte planen
 
-Check the [Reporting Guide]({{ '/pages/wiki/reporting/' | relative_url }}) for advanced options.`;
+Siehe [Berichterstattungs-Anleitung]({{ '/pages/wiki/berichte/' | relative_url }}) für erweiterte Optionen.`;
         }
         
-        if (lowerMessage.includes('slow') || lowerMessage.includes('performance')) {
-            return `If the system is running slowly:
+        if (lowerMessage.includes('langsam') || lowerMessage.includes('slow') || lowerMessage.includes('performance')) {
+            return `Wenn das System langsam läuft:
 
-**Immediate Steps:**
-1. Check your internet connection
-2. Close unnecessary browser tabs
-3. Clear browser cache
-4. Try refreshing the page
+**Sofortige Schritte:**
+1. Internetverbindung prüfen
+2. Unnötige Browser-Tabs schließen
+3. Browser-Cache leeren
+4. Seite neu laden
 
-**If issues persist:**
-1. Check system status page
-2. Contact IT support
-3. Report the issue with details:
-   - What you were doing
-   - Time of occurrence
-   - Error messages received
+**Wenn Probleme bestehen bleiben:**
+1. System-Status-Seite prüfen
+2. IT-Support kontaktieren
+3. Problem mit Details melden:
+   - Was Sie gerade gemacht haben
+   - Zeitpunkt des Auftretens
+   - Erhaltene Fehlermeldungen
 
-For more troubleshooting tips, see [Performance Issues]({{ '/pages/errors/system/' | relative_url }}).`;
+**Notfallkontakt:**
+📞 +43 316 811651 8888 (Software-Support)
+
+Für weitere Tipps zur Fehlerbehebung siehe [Systemprobleme]({{ '/pages/errors/system/' | relative_url }}).`;
         }
         
-        if (lowerMessage.includes('user') || lowerMessage.includes('add user')) {
-            return `To add new users to the WMS:
+        if (lowerMessage.includes('benutzer') || lowerMessage.includes('user') || lowerMessage.includes('add user')) {
+            return `So fügen Sie neue Benutzer zum WMS hinzu:
 
-1. **Access User Management**
-   - Go to "System" → "User Management"
-   - Click "Add New User"
+1. **Benutzerverwaltung aufrufen**
+   - Gehen Sie zu "System" → "Benutzerverwaltung"
+   - Klicken Sie auf "Neuen Benutzer hinzufügen"
 
-2. **Enter User Information**
-   - Full name
-   - Username
-   - Email address
-   - Employee ID
+2. **Benutzerinformationen eingeben**
+   - Vollständiger Name
+   - Benutzername
+   - E-Mail-Adresse
+   - Mitarbeiter-ID
 
-3. **Set Permissions**
-   - Assign role (Operator, Supervisor, Admin)
-   - Set module access
-   - Define location restrictions
+3. **Berechtigungen festlegen**
+   - Rolle zuweisen (Operator, Vorgesetzter, Administrator)
+   - Modulzugriff festlegen
+   - Standortbeschränkungen definieren
 
-4. **Activate Account**
-   - Send welcome email
-   - Provide temporary password
-   - Schedule training session
+4. **Konto aktivieren**
+   - Willkommens-E-Mail senden
+   - Temporäres Passwort bereitstellen
+   - Schulungstermin planen
 
-See [User Management Guide]({{ '/pages/wiki/users/' | relative_url }}) for detailed instructions.`;
+Siehe [Benutzerverwaltungs-Anleitung]({{ '/pages/wiki/benutzer/' | relative_url }}) für detaillierte Anweisungen.`;
         }
         
         // Default response for unrecognized queries
-        return `I'm here to help with WMS questions! I can assist with:
+        return `Ich bin hier, um bei WMS-Fragen zu helfen! Ich kann Sie unterstützen bei:
 
-• **Operations**: Receiving, picking, packing, shipping
-• **Procedures**: Step-by-step guides and workflows  
-• **Troubleshooting**: Error resolution and system issues
-• **Configuration**: User management and system setup
-• **Reports**: Generating and customizing reports
+• **Betriebsabläufen**: Wareneingang, Kommissionierung, Verpackung, Versand
+• **Verfahren**: Schritt-für-Schritt-Anleitungen und Arbeitsabläufe
+• **Fehlerbehebung**: Problemlösung und Systemprobleme
+• **Konfiguration**: Benutzerverwaltung und Systemeinrichtung
+• **Berichte**: Erstellen und Anpassen von Berichten
 
-Try asking about specific WMS functions, or browse our [Knowledge Wiki]({{ '/pages/wiki/' | relative_url }}) for comprehensive documentation.
+Versuchen Sie, nach spezifischen WMS-Funktionen zu fragen, oder durchsuchen Sie unsere [Wissensdatenbank]({{ '/pages/wiki/' | relative_url }}) für umfassende Dokumentation.
 
-What would you like to know more about?`;
+**Häufige Themen:**
+- Wareneingang durchführen
+- Kommissionierung optimieren
+- Störungen beheben
+- Benutzer verwalten
+- Berichte erstellen
+
+Worüber möchten Sie mehr erfahren?`;
     }
 
     clearChat() {
-        if (confirm('Are you sure you want to clear the conversation?')) {
+        if (confirm('Sind Sie sicher, dass Sie die Unterhaltung löschen möchten?')) {
             const messagesContainer = document.getElementById('chat-messages');
             messagesContainer.innerHTML = `
                 <div class="message assistant-message">
@@ -849,9 +859,9 @@ What would you like to know more about?`;
                     </div>
                     <div class="message-content">
                         <div class="message-bubble">
-                            <p>Chat cleared! How can I help you with WMS today?</p>
+                            <p>Chat gelöscht! Wie kann ich Ihnen heute beim WMS helfen?</p>
                         </div>
-                        <div class="message-time">Just now</div>
+                        <div class="message-time">Gerade eben</div>
                     </div>
                 </div>
             `;

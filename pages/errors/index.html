@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "Error Documentation"
-description: "Comprehensive troubleshooting guide for WMS issues"
+title: "Störungsbehebung"
+description: "Umfassende Fehlerbehebungsanleitung für WMS-Probleme"
 breadcrumbs:
-  - title: "Error Documentation"
+  - title: "Störungsbehebung"
 ---
 
 <div class="errors-hero">
     <div class="container">
-        <h1>WMS Error Documentation</h1>
-        <p class="lead">Find solutions to common WMS issues and get back to work quickly</p>
+        <h1>WMS Störungsbehebung</h1>
+        <p class="lead">Finden Sie schnell Lösungen für häufige WMS-Probleme und arbeiten Sie effizient weiter</p>
         <div class="error-search">
-            <input type="search" placeholder="Search for error codes or descriptions..." class="error-search-input">
+            <input type="search" placeholder="Suchen Sie nach Fehlercodes oder Beschreibungen..." class="error-search-input">
             <button class="error-search-btn"><i class="fas fa-search"></i></button>
         </div>
     </div>
@@ -21,11 +21,11 @@ breadcrumbs:
     <div class="container">
         <div class="errors-navigation">
             <div class="error-categories">
-                <button class="error-category-btn active" data-category="all">All Errors</button>
-                <button class="error-category-btn" data-category="system">System Errors</button>
-                <button class="error-category-btn" data-category="user">User Errors</button>
-                <button class="error-category-btn" data-category="integration">Integration</button>
+                <button class="error-category-btn active" data-category="all">Alle Störungen</button>
+                <button class="error-category-btn" data-category="system">Systemfehler</button>
+                <button class="error-category-btn" data-category="user">Benutzerfehler</button>
                 <button class="error-category-btn" data-category="hardware">Hardware</button>
+                <button class="error-category-btn" data-category="network">Netzwerk</button>
             </div>
         </div>
 
@@ -33,294 +33,242 @@ breadcrumbs:
             <div class="errors-grid">
                 <!-- System Errors -->
                 <div class="error-section" data-category="system">
-                    <h2><i class="fas fa-server"></i> System Errors</h2>
+                    <h2><i class="fas fa-server"></i> Systemfehler</h2>
                     <div class="error-cards">
                         <div class="error-card critical">
                             <div class="error-header">
                                 <div class="error-code">SYS-001</div>
-                                <div class="error-severity critical">Critical</div>
+                                <div class="error-severity critical">Kritisch</div>
                             </div>
-                            <h3>Database Connection Failed</h3>
-                            <p>Unable to connect to the WMS database server</p>
+                            <h3>Datenbankverbindung fehlgeschlagen</h3>
+                            <p>Keine Verbindung zum WMS-Datenbankserver möglich</p>
                             <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
+                                <h4>Symptome:</h4>
                                 <ul>
-                                    <li>Login screen shows "Connection Error"</li>
-                                    <li>Application hangs on startup</li>
-                                    <li>Data not saving or loading</li>
+                                    <li>Anmeldebildschirm zeigt "Verbindungsfehler"</li>
+                                    <li>Anwendung hängt beim Start</li>
+                                    <li>Daten werden nicht gespeichert oder geladen</li>
                                 </ul>
                             </div>
                             <div class="error-solutions">
-                                <h4>Solutions:</h4>
+                                <h4>Lösungen:</h4>
                                 <ol>
-                                    <li>Check network connectivity</li>
-                                    <li>Verify database server status</li>
-                                    <li>Restart WMS services</li>
-                                    <li>Contact system administrator</li>
+                                    <li>Netzwerkverbindung prüfen</li>
+                                    <li>Datenbankserver-Status verifizieren</li>
+                                    <li>WMS-Dienste neu starten</li>
+                                    <li>Systemadministrator kontaktieren</li>
                                 </ol>
                             </div>
-                            <a href="{{ '/pages/errors/sys-001/' | relative_url }}" class="error-link">View Details →</a>
+                            <div class="error-contact">
+                                <h4>Notfallkontakt:</h4>
+                                <p>Call Klasse 1 - Sofortiger Support erforderlich</p>
+                                <p>📞 +43 316 811651 8888</p>
+                            </div>
                         </div>
 
                         <div class="error-card high">
                             <div class="error-header">
                                 <div class="error-code">SYS-002</div>
-                                <div class="error-severity high">High</div>
+                                <div class="error-severity high">Hoch</div>
                             </div>
-                            <h3>Memory Allocation Error</h3>
-                            <p>System running out of available memory</p>
+                            <h3>Speicher-Allokationsfehler</h3>
+                            <p>System hat nicht genügend verfügbaren Arbeitsspeicher</p>
                             <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
+                                <h4>Symptome:</h4>
                                 <ul>
-                                    <li>Application freezes or crashes</li>
-                                    <li>Slow response times</li>
-                                    <li>"Out of memory" messages</li>
+                                    <li>Anwendung friert ein oder stürzt ab</li>
+                                    <li>Langsame Reaktionszeiten</li>
+                                    <li>"Nicht genügend Speicher" Meldungen</li>
                                 </ul>
                             </div>
                             <div class="error-solutions">
-                                <h4>Solutions:</h4>
+                                <h4>Lösungen:</h4>
                                 <ol>
-                                    <li>Close unnecessary applications</li>
-                                    <li>Restart the WMS application</li>
-                                    <li>Check system resources</li>
-                                    <li>Contact IT support</li>
+                                    <li>Unnötige Anwendungen schließen</li>
+                                    <li>WMS-Anwendung neu starten</li>
+                                    <li>Systemressourcen prüfen</li>
+                                    <li>IT-Support kontaktieren</li>
                                 </ol>
                             </div>
-                            <a href="{{ '/pages/errors/sys-002/' | relative_url }}" class="error-link">View Details →</a>
                         </div>
 
                         <div class="error-card medium">
                             <div class="error-header">
                                 <div class="error-code">SYS-003</div>
-                                <div class="error-severity medium">Medium</div>
+                                <div class="error-severity medium">Mittel</div>
                             </div>
-                            <h3>License Validation Failed</h3>
-                            <p>WMS license could not be validated</p>
+                            <h3>Lizenzvalidierung fehlgeschlagen</h3>
+                            <p>WMS-Lizenz konnte nicht validiert werden</p>
                             <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
+                                <h4>Symptome:</h4>
                                 <ul>
-                                    <li>Warning message on startup</li>
-                                    <li>Limited functionality</li>
-                                    <li>Periodic license prompts</li>
+                                    <li>Warnung beim Systemstart</li>
+                                    <li>Eingeschränkte Funktionalität</li>
+                                    <li>Regelmäßige Lizenzabfragen</li>
                                 </ul>
                             </div>
                             <div class="error-solutions">
-                                <h4>Solutions:</h4>
+                                <h4>Lösungen:</h4>
                                 <ol>
-                                    <li>Check license file location</li>
-                                    <li>Verify license expiration date</li>
-                                    <li>Update license file</li>
-                                    <li>Contact vendor support</li>
+                                    <li>Lizenzdatei-Speicherort prüfen</li>
+                                    <li>Lizenz-Ablaufdatum verifizieren</li>
+                                    <li>Lizenzdatei aktualisieren</li>
+                                    <li>Jungheinrich Support kontaktieren</li>
                                 </ol>
                             </div>
-                            <a href="{{ '/pages/errors/sys-003/' | relative_url }}" class="error-link">View Details →</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- User Errors -->
                 <div class="error-section" data-category="user">
-                    <h2><i class="fas fa-user-times"></i> User Errors</h2>
+                    <h2><i class="fas fa-user-times"></i> Benutzerfehler</h2>
                     <div class="error-cards">
                         <div class="error-card low">
                             <div class="error-header">
                                 <div class="error-code">USR-001</div>
-                                <div class="error-severity low">Low</div>
+                                <div class="error-severity low">Niedrig</div>
                             </div>
-                            <h3>Invalid Login Credentials</h3>
-                            <p>Username or password is incorrect</p>
+                            <h3>Ungültige Anmeldedaten</h3>
+                            <p>Benutzername oder Passwort ist falsch</p>
                             <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
+                                <h4>Symptome:</h4>
                                 <ul>
-                                    <li>"Invalid username or password" message</li>
-                                    <li>Unable to access system</li>
-                                    <li>Login screen reappears</li>
+                                    <li>"Ungültiger Benutzername oder Passwort" Meldung</li>
+                                    <li>Kein Zugang zum System</li>
+                                    <li>Anmeldebildschirm erscheint erneut</li>
                                 </ul>
                             </div>
                             <div class="error-solutions">
-                                <h4>Solutions:</h4>
+                                <h4>Lösungen:</h4>
                                 <ol>
-                                    <li>Check caps lock status</li>
-                                    <li>Verify username spelling</li>
-                                    <li>Reset password if needed</li>
-                                    <li>Contact system administrator</li>
+                                    <li>Feststelltaste prüfen</li>
+                                    <li>Benutzername-Schreibweise verifizieren</li>
+                                    <li>Passwort bei Bedarf zurücksetzen</li>
+                                    <li>Systemadministrator kontaktieren</li>
                                 </ol>
                             </div>
-                            <a href="{{ '/pages/errors/usr-001/' | relative_url }}" class="error-link">View Details →</a>
                         </div>
 
                         <div class="error-card medium">
                             <div class="error-header">
                                 <div class="error-code">USR-002</div>
-                                <div class="error-severity medium">Medium</div>
+                                <div class="error-severity medium">Mittel</div>
                             </div>
-                            <h3>Insufficient Permissions</h3>
-                            <p>User does not have required access rights</p>
+                            <h3>Unzureichende Berechtigungen</h3>
+                            <p>Benutzer hat nicht die erforderlichen Zugriffsrechte</p>
                             <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
+                                <h4>Symptome:</h4>
                                 <ul>
-                                    <li>"Access denied" messages</li>
-                                    <li>Missing menu options</li>
-                                    <li>Cannot perform certain actions</li>
+                                    <li>"Zugriff verweigert" Meldungen</li>
+                                    <li>Fehlende Menüoptionen</li>
+                                    <li>Bestimmte Aktionen nicht möglich</li>
                                 </ul>
                             </div>
                             <div class="error-solutions">
-                                <h4>Solutions:</h4>
+                                <h4>Lösungen:</h4>
                                 <ol>
-                                    <li>Check user role assignments</li>
-                                    <li>Verify permission settings</li>
-                                    <li>Request access from supervisor</li>
-                                    <li>Contact system administrator</li>
+                                    <li>Benutzerrollenzuweisungen prüfen</li>
+                                    <li>Berechtigungseinstellungen verifizieren</li>
+                                    <li>Zugriff beim Vorgesetzten beantragen</li>
+                                    <li>Key User kontaktieren</li>
                                 </ol>
                             </div>
-                            <a href="{{ '/pages/errors/usr-002/' | relative_url }}" class="error-link">View Details →</a>
-                        </div>
-
-                        <div class="error-card low">
-                            <div class="error-header">
-                                <div class="error-code">USR-003</div>
-                                <div class="error-severity low">Low</div>
-                            </div>
-                            <h3>Session Timeout</h3>
-                            <p>User session has expired due to inactivity</p>
-                            <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
-                                <ul>
-                                    <li>Automatic logout</li>
-                                    <li>Redirected to login screen</li>
-                                    <li>Unsaved work lost</li>
-                                </ul>
-                            </div>
-                            <div class="error-solutions">
-                                <h4>Solutions:</h4>
-                                <ol>
-                                    <li>Log back in to continue</li>
-                                    <li>Save work frequently</li>
-                                    <li>Adjust session timeout settings</li>
-                                    <li>Stay active during work</li>
-                                </ol>
-                            </div>
-                            <a href="{{ '/pages/errors/usr-003/' | relative_url }}" class="error-link">View Details →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Integration Errors -->
-                <div class="error-section" data-category="integration">
-                    <h2><i class="fas fa-plug"></i> Integration Errors</h2>
-                    <div class="error-cards">
-                        <div class="error-card high">
-                            <div class="error-header">
-                                <div class="error-code">INT-001</div>
-                                <div class="error-severity high">High</div>
-                            </div>
-                            <h3>ERP Connection Failed</h3>
-                            <p>Unable to connect to ERP system</p>
-                            <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
-                                <ul>
-                                    <li>Data sync failures</li>
-                                    <li>Missing order information</li>
-                                    <li>Connection timeout messages</li>
-                                </ul>
-                            </div>
-                            <div class="error-solutions">
-                                <h4>Solutions:</h4>
-                                <ol>
-                                    <li>Check network connectivity</li>
-                                    <li>Verify ERP system status</li>
-                                    <li>Restart integration services</li>
-                                    <li>Contact ERP administrator</li>
-                                </ol>
-                            </div>
-                            <a href="{{ '/pages/errors/int-001/' | relative_url }}" class="error-link">View Details →</a>
-                        </div>
-
-                        <div class="error-card medium">
-                            <div class="error-header">
-                                <div class="error-code">INT-002</div>
-                                <div class="error-severity medium">Medium</div>
-                            </div>
-                            <h3>EDI Transmission Error</h3>
-                            <p>Electronic Data Interchange failed</p>
-                            <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
-                                <ul>
-                                    <li>EDI documents not sent</li>
-                                    <li>Transmission error logs</li>
-                                    <li>Customer notification delays</li>
-                                </ul>
-                            </div>
-                            <div class="error-solutions">
-                                <h4>Solutions:</h4>
-                                <ol>
-                                    <li>Check EDI connection settings</li>
-                                    <li>Verify document format</li>
-                                    <li>Retry transmission</li>
-                                    <li>Contact EDI provider</li>
-                                </ol>
-                            </div>
-                            <a href="{{ '/pages/errors/int-002/' | relative_url }}" class="error-link">View Details →</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Hardware Errors -->
                 <div class="error-section" data-category="hardware">
-                    <h2><i class="fas fa-microchip"></i> Hardware Errors</h2>
+                    <h2><i class="fas fa-microchip"></i> Hardware-Probleme</h2>
                     <div class="error-cards">
                         <div class="error-card medium">
                             <div class="error-header">
                                 <div class="error-code">HW-001</div>
-                                <div class="error-severity medium">Medium</div>
+                                <div class="error-severity medium">Mittel</div>
                             </div>
-                            <h3>Barcode Scanner Not Found</h3>
-                            <p>Scanner hardware not detected</p>
+                            <h3>Barcode-Scanner nicht gefunden</h3>
+                            <p>Scanner-Hardware nicht erkannt</p>
                             <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
+                                <h4>Symptome:</h4>
                                 <ul>
-                                    <li>Scanner not responding</li>
-                                    <li>No beep on scan attempt</li>
-                                    <li>Manual entry required</li>
+                                    <li>Scanner reagiert nicht</li>
+                                    <li>Kein Piepston beim Scanversuch</li>
+                                    <li>Manuelle Eingabe erforderlich</li>
                                 </ul>
                             </div>
                             <div class="error-solutions">
-                                <h4>Solutions:</h4>
+                                <h4>Lösungen:</h4>
                                 <ol>
-                                    <li>Check scanner connection</li>
-                                    <li>Restart scanner device</li>
-                                    <li>Update scanner drivers</li>
-                                    <li>Replace scanner if needed</li>
+                                    <li>Scanner-Verbindung prüfen</li>
+                                    <li>Scanner-Gerät neu starten</li>
+                                    <li>Scanner-Treiber aktualisieren</li>
+                                    <li>Bei Bedarf Scanner austauschen</li>
                                 </ol>
                             </div>
-                            <a href="{{ '/pages/errors/hw-001/' | relative_url }}" class="error-link">View Details →</a>
                         </div>
 
                         <div class="error-card low">
                             <div class="error-header">
                                 <div class="error-code">HW-002</div>
-                                <div class="error-severity low">Low</div>
+                                <div class="error-severity low">Niedrig</div>
                             </div>
-                            <h3>Printer Offline</h3>
-                            <p>Label printer not responding</p>
+                            <h3>Drucker offline</h3>
+                            <p>Etikettendrucker antwortet nicht</p>
                             <div class="error-symptoms">
-                                <h4>Symptoms:</h4>
+                                <h4>Symptome:</h4>
                                 <ul>
-                                    <li>Print jobs not completing</li>
-                                    <li>Printer status offline</li>
-                                    <li>Labels not printing</li>
+                                    <li>Druckaufträge werden nicht abgeschlossen</li>
+                                    <li>Drucker-Status offline</li>
+                                    <li>Etiketten werden nicht gedruckt</li>
                                 </ul>
                             </div>
                             <div class="error-solutions">
-                                <h4>Solutions:</h4>
+                                <h4>Lösungen:</h4>
                                 <ol>
-                                    <li>Check printer power and connection</li>
-                                    <li>Verify paper/label supply</li>
-                                    <li>Clear print queue</li>
-                                    <li>Restart printer</li>
+                                    <li>Drucker-Stromversorgung und -Verbindung prüfen</li>
+                                    <li>Papier-/Etiketten-Vorrat verifizieren</li>
+                                    <li>Druckwarteschlange leeren</li>
+                                    <li>Drucker neu starten</li>
                                 </ol>
                             </div>
-                            <a href="{{ '/pages/errors/hw-002/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Errors -->
+                <div class="error-section" data-category="network">
+                    <h2><i class="fas fa-network-wired"></i> Netzwerkprobleme</h2>
+                    <div class="error-cards">
+                        <div class="error-card high">
+                            <div class="error-header">
+                                <div class="error-code">NET-001</div>
+                                <div class="error-severity high">Hoch</div>
+                            </div>
+                            <h3>SAP-Verbindung unterbrochen</h3>
+                            <p>Keine Verbindung zum SAP-System möglich</p>
+                            <div class="error-symptoms">
+                                <h4>Symptome:</h4>
+                                <ul>
+                                    <li>Datensynchronisation fehlgeschlagen</li>
+                                    <li>Fehlende Auftragsinformationen</li>
+                                    <li>Verbindungs-Timeout-Meldungen</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Lösungen:</h4>
+                                <ol>
+                                    <li>Netzwerkverbindung prüfen</li>
+                                    <li>SAP-System-Status verifizieren</li>
+                                    <li>Integrationsdienste neu starten</li>
+                                    <li>SAP-Administrator kontaktieren</li>
+                                </ol>
+                            </div>
+                            <div class="error-contact">
+                                <h4>Notfallkontakt:</h4>
+                                <p>Call Klasse 1 - Kritische Störung</p>
+                                <p>📞 +43 316 811651 8888</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -328,60 +276,70 @@ breadcrumbs:
 
             <div class="errors-sidebar">
                 <div class="quick-help">
-                    <h3>Quick Help</h3>
+                    <h3>Schnelle Hilfe</h3>
                     <div class="help-item">
-                        <h4>Emergency Contact</h4>
-                        <p>For critical system issues:</p>
-                        <a href="tel:+1-555-0123" class="emergency-phone">📞 555-0123</a>
+                        <h4>Notfallkontakt</h4>
+                        <p>Für kritische Systemprobleme:</p>
+                        <a href="tel:+43316811651888" class="emergency-phone">📞 +43 316 811651 8888</a>
+                        <p class="help-note">Software-Support Premium</p>
                     </div>
                     <div class="help-item">
-                        <h4>Support Hours</h4>
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                        <p>Saturday: 9:00 AM - 2:00 PM</p>
-                        <p>Sunday: Emergency only</p>
+                        <h4>Mechanische Störungen</h4>
+                        <p>Techniker-Rufbereitschaft:</p>
+                        <a href="tel:+41627393280" class="emergency-phone">📞 +41 62 739 32 80</a>
+                        <p class="help-note">Ausserhalb der Normalarbeitszeit</p>
+                    </div>
+                    <div class="help-item">
+                        <h4>Support-Zeiten</h4>
+                        <p>Montag - Freitag: 06:00 - 22:00 Uhr</p>
+                        <p>Reaktionszeit: 1 Stunde (Premium)</p>
+                        <p>Techniker vor Ort: 4 Stunden</p>
                     </div>
                 </div>
 
                 <div class="error-stats">
-                    <h3>Error Statistics</h3>
+                    <h3>Störungsstatistiken</h3>
                     <div class="stat-item">
-                        <span class="stat-label">Most Common</span>
+                        <span class="stat-label">Häufigste Störung</span>
                         <span class="stat-value">USR-001</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">Recently Resolved</span>
-                        <span class="stat-value">87%</span>
+                        <span class="stat-label">Gelöst in 2024</span>
+                        <span class="stat-value">92%</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-label">Avg Resolution Time</span>
-                        <span class="stat-value">15 min</span>
+                        <span class="stat-label">Ø Lösungszeit</span>
+                        <span class="stat-value">45 min</span>
+                    </div>
+                </div>
+
+                <div class="key-users">
+                    <h3>Berechtigte Supportnehmer</h3>
+                    <div class="key-user-item">
+                        <strong>Erick Hernandez Zenil</strong><br>
+                        <span>Leiter Werkslogistik</span><br>
+                        <a href="tel:+41763424731">📞 +41 76 342 47 31</a>
+                    </div>
+                    <div class="key-user-item">
+                        <strong>Benjamin Simon</strong><br>
+                        <span>Operator Warehouse</span><br>
+                        <a href="tel:+41764218964">📞 +41 76 421 89 64</a>
+                    </div>
+                    <div class="key-user-item">
+                        <strong>Livio Mathis</strong><br>
+                        <span>Leiter Unterhalt/Infrastruktur</span><br>
+                        <a href="tel:+41795408424">📞 +41 79 540 84 24</a>
                     </div>
                 </div>
 
                 <div class="error-tools">
-                    <h3>Troubleshooting Tools</h3>
+                    <h3>Störungsbehebungs-Tools</h3>
                     <ul>
-                        <li><a href="{{ '/pages/errors/diagnostic/' | relative_url }}">System Diagnostic</a></li>
-                        <li><a href="{{ '/pages/errors/logs/' | relative_url }}">Error Logs</a></li>
-                        <li><a href="{{ '/pages/errors/status/' | relative_url }}">System Status</a></li>
-                        <li><a href="{{ '/pages/errors/contact/' | relative_url }}">Contact Support</a></li>
+                        <li><a href="{{ '/pages/errors/diagnostic/' | relative_url }}">Systemdiagnose</a></li>
+                        <li><a href="{{ '/pages/errors/logs/' | relative_url }}">Fehlerprotokolle</a></li>
+                        <li><a href="{{ '/pages/errors/status/' | relative_url }}">Systemstatus</a></li>
+                        <li><a href="{{ '/pages/errors/contact/' | relative_url }}">Support kontaktieren</a></li>
                     </ul>
-                </div>
-
-                <div class="recent-errors">
-                    <h3>Recent Errors</h3>
-                    <div class="recent-error-item">
-                        <div class="recent-error-code">SYS-001</div>
-                        <div class="recent-error-time">2 hours ago</div>
-                    </div>
-                    <div class="recent-error-item">
-                        <div class="recent-error-code">USR-002</div>
-                        <div class="recent-error-time">5 hours ago</div>
-                    </div>
-                    <div class="recent-error-item">
-                        <div class="recent-error-code">HW-001</div>
-                        <div class="recent-error-time">1 day ago</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -469,7 +427,7 @@ breadcrumbs:
 
 .errors-main {
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 1fr 320px;
     gap: 3rem;
 }
 
@@ -586,12 +544,14 @@ breadcrumbs:
 }
 
 .error-symptoms,
-.error-solutions {
+.error-solutions,
+.error-contact {
     margin-bottom: 1.5rem;
 }
 
 .error-symptoms h4,
-.error-solutions h4 {
+.error-solutions h4,
+.error-contact h4 {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
@@ -606,6 +566,18 @@ breadcrumbs:
 .error-symptoms li,
 .error-solutions li {
     margin-bottom: 0.25rem;
+}
+
+.error-contact {
+    background: rgba(239, 68, 68, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--error-color);
+}
+
+.error-contact p {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
 }
 
 .error-link {
@@ -627,15 +599,15 @@ breadcrumbs:
 
 .quick-help,
 .error-stats,
-.error-tools,
-.recent-errors {
+.key-users,
+.error-tools {
     margin-bottom: 2rem;
 }
 
 .quick-help h3,
 .error-stats h3,
-.error-tools h3,
-.recent-errors h3 {
+.key-users h3,
+.error-tools h3 {
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
@@ -655,6 +627,12 @@ breadcrumbs:
     margin-bottom: 0.5rem;
 }
 
+.help-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
 .emergency-phone {
     display: inline-block;
     background: var(--error-color);
@@ -663,6 +641,7 @@ breadcrumbs:
     border-radius: var(--radius-md);
     text-decoration: none;
     font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .emergency-phone:hover {
@@ -691,6 +670,34 @@ breadcrumbs:
     color: var(--primary-color);
 }
 
+.key-user-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.key-user-item:last-child {
+    border-bottom: none;
+}
+
+.key-user-item strong {
+    color: var(--text-primary);
+}
+
+.key-user-item span {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.key-user-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.key-user-item a:hover {
+    color: var(--primary-light);
+}
+
 .error-tools ul {
     list-style: none;
 }
@@ -706,29 +713,6 @@ breadcrumbs:
 
 .error-tools a:hover {
     color: var(--primary-color);
-}
-
-.recent-error-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.recent-error-item:last-child {
-    border-bottom: none;
-}
-
-.recent-error-code {
-    font-family: 'Courier New', monospace;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.recent-error-time {
-    font-size: 0.875rem;
-    color: var(--text-muted);
 }
 
 @media (max-width: 768px) {

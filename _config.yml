@@ -1,8 +1,20 @@
 # GitHub Pages Jekyll Configuration
-title: "GF WMS Knowledge Wiki"
-description: "Comprehensive Warehouse Management System Knowledge Base"
-baseurl: "/gfwms" # Change this to your repository name
-url: "https://zenilify.github.io" # Change this to your GitHub Pages URL
+title: "Georg Fischer WMS Wissensdatenbank"
+description: "Umfassende Warehouse Management System Wissensdatenbank für Georg Fischer"
+baseurl: "/gfwms"
+url: "https://zenilify.github.io"
+
+# GitHub Integration
+github:
+  repository_nwo: "zenilify/gfwms"
+  repository_url: "https://github.com/zenilify/gfwms"
+  owner_name: "zenilify"
+  owner_url: "https://github.com/zenilify"
+  owner_gravatar_url: "https://github.com/zenilify.png"
+  edit_page: true
+  source:
+    branch: "main"
+    path: "/"
 
 # Build settings
 markdown: kramdown
@@ -26,11 +38,20 @@ navigation:
   - name: "Error Docs"
     url: "/pages/errors/"
 
-# SEO
-author: "WMS Team"
+# SEO & Social
+author:
+  name: "Erick Hernandez Zenil"
+  email: "erick@zenilify.com"
+  github: "zenilify"
+  url: "https://github.com/zenilify"
+social:
+  name: "Erick Hernandez Zenil"
+  links:
+    - "https://github.com/zenilify"
+    - "https://zenilify.com"
 twitter:
-  username: "yourtwitter"
-  card: summary
+  username: "zenilify"
+  card: summary_large_image
 
 # Collections
 collections:

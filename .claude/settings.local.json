@@ -6,7 +6,10 @@
       "Bash(textutil:*)",
       "Bash(ls:*)",
       "Bash(pip install:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(pip3 install:*)",
+      "Bash(cp:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

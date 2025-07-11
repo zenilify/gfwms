@@ -1,5 +1,7 @@
 
---- PAGE 1 ---
+============================================================
+SEITE 1
+============================================================
 Anlage 06
 Notfallblatt für Störungen
 Dokumenten Historie
@@ -10,12 +12,16 @@ Version Datum Bemerkung / Änderung Autor
 Jungheinrich AG
 Holzikerstrasse 5 ⋅ CH-5042 Hirschthal ⋅ Telefon +41 62 739 31 00 ⋅ Fax +41 62 739 32 99 ⋅ info@jungheinrich.ch ⋅ www.jungheinrich.ch
 
---- PAGE 2 ---
+============================================================
+SEITE 2
+============================================================
 Ablauf/Prozess für Störungsbehebung
 Im Fall einer Störung gilt folgende Vorgehensweise:
 2 / 5
 
---- PAGE 3 ---
+============================================================
+SEITE 3
+============================================================
 Leistungs- und Reaktionszeiten
 Leistungsart Wochentage Einsatz- Zeiten Reaktionszeit
 Softwaresupport Premium Mo – Fr 06:00 – 22:00 Uhr 1 Stunden*
@@ -59,7 +65,9 @@ Support Calls Klasse 1 beschäftigt sein, so wird der KUNDE direkt verbunden. In
 der Support-Call aufgenommen und in der vereinbarten Reaktionszeit von JUNGHEINRICH agiert.
 3 / 5
 
---- PAGE 4 ---
+============================================================
+SEITE 4
+============================================================
 Außerhalb der Bürozeiten werden Support Calls an 365 Tagen von einer zentralen Hotline
 aufgenommen. Die Hotline verbindet nach der Bürozeit je nach Leistungsanspruch des KUNDEN Call
 Klasse 1 direkt zum entsprechenden Spezialisten oder nimmt Call Klasse 2 und 3 für eine Bearbeitung
@@ -95,7 +103,9 @@ Berechtigte Supportnehmer sind zusätzlich Mitarbeiter von JUNGHEINRICH beim KUN
 Diese nehmen im Bedarfsfall, ohne Rücksprache mit dem KUNDEN, den Support in Anspruch.
 4 / 5
 
---- PAGE 5 ---
+============================================================
+SEITE 5
+============================================================
 Kontaktmöglichkeiten
 Im Fall des Einsatzes gelten folgende Rufnummern:
 Support softwaretechnische Störung (Support WMS/WCS inkl. Steuerungstechnik):

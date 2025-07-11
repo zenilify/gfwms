@@ -14,7 +14,11 @@
       "Bash(git push:*)",
       "Bash(curl:*)",
       "WebFetch(domain:zenilify.github.io)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(python:*)",
+      "Bash(grep:*)",
+      "Bash(./create_wip_pages.sh:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

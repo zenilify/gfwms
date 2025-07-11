@@ -1,0 +1,150 @@
+---
+layout: default
+title: "System Status"
+description: "Aktueller Systemstatus und -überwachung"
+breadcrumbs:
+  - title: "ERRORS"
+  - title: "System Status"
+---
+
+<div class="wip-container">
+    <div class="wip-header">
+        <div class="wip-icon">
+            <i class="fas fa-hard-hat"></i>
+        </div>
+        <h1>🚧 Seite in Entwicklung</h1>
+        <p class="wip-subtitle">System Status - Aktueller Systemstatus und -überwachung</p>
+    </div>
+
+    <div class="wip-content">
+        <div class="wip-message">
+            <h2>Diese Seite wird derzeit entwickelt</h2>
+            <p>Die Dokumentation für "System Status" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
+        </div>
+
+        <div class="wip-alternatives">
+            <h3>Verfügbare Alternativen:</h3>
+            <div class="alternatives-grid">
+                <div class="alternative-card">
+                    <i class="fas fa-arrow-right"></i>
+                    <h4>Verwandte Inhalte</h4>
+                    <p>Ähnliche oder verwandte Dokumentation</p>
+                    <a href="../common/" class="btn btn-primary">Verwandte Seite öffnen</a>
+                </div>
+                
+                <div class="alternative-card">
+                    <i class="fas fa-book"></i>
+                    <h4>Wissensdatenbank</h4>
+                    <p>Weitere Dokumentation durchsuchen</p>
+                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
+                </div>
+                
+                <div class="alternative-card">
+                    <i class="fas fa-phone"></i>
+                    <h4>Support</h4>
+                    <p>Hilfe und Unterstützung</p>
+                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.wip-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.wip-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border-radius: var(--radius-lg);
+}
+
+.wip-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.wip-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.wip-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.wip-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.wip-message {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--border-color);
+}
+
+.wip-message h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.wip-alternatives {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.wip-alternatives h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.alternatives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.alternative-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.alternative-card i {
+    font-size: 2rem;
+    color: #f59e0b;
+    margin-bottom: 1rem;
+}
+
+.alternative-card h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.alternative-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .alternatives-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

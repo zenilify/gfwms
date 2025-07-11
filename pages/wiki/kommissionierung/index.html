@@ -1,0 +1,1854 @@
+---
+layout: default
+title: "Kommissionierung - Betriebsabläufe"
+description: "Effiziente Kommissionier-Strategien und Picking-Prozesse bei Georg Fischer"
+breadcrumbs:
+  - title: "Wiki"
+  - title: "Kommissionierung"
+---
+
+<div class="operations-hero">
+    <div class="container">
+        <h1><i class="fas fa-hand-paper"></i> Kommissionierung - Betriebsabläufe</h1>
+        <p class="lead">Effiziente Kommissionier-Strategien und Picking-Prozesse bei Georg Fischer</p>
+    </div>
+</div>
+
+<div class="operations-content">
+    <div class="container">
+        <div class="operations-nav">
+            <div class="operations-tabs">
+                <button class="tab-btn active" data-tab="overview">Übersicht</button>
+                <button class="tab-btn" data-tab="strategien">Strategien</button>
+                <button class="tab-btn" data-tab="fertigungsauftraege">Fertigungsaufträge</button>
+                <button class="tab-btn" data-tab="kanban">Kanban</button>
+                <button class="tab-btn" data-tab="pickbylight">Pick-by-Light</button>
+                <button class="tab-btn" data-tab="optimierung">Optimierung</button>
+            </div>
+        </div>
+
+        <div class="operations-sections">
+            <!-- Overview Section -->
+            <div class="operations-section active" id="overview">
+                <h2>Kommissionierung Übersicht</h2>
+                
+                <div class="picking-types">
+                    <h3>Kommissionierungs-Arten bei Georg Fischer</h3>
+                    <div class="types-grid">
+                        <div class="type-card">
+                            <div class="type-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h4>Fertigungsauftrag-Kommissionierung</h4>
+                            <div class="type-details">
+                                <p><strong>Zweck:</strong> Materialbereitstellung für Produktion</p>
+                                <p><strong>Merkmale:</strong></p>
+                                <ul>
+                                    <li>Termingerechte Lieferung an Arbeitsplätze</li>
+                                    <li>Mengengenaue Bereitstellung</li>
+                                    <li>Qualitätskontrolle der Materialien</li>
+                                    <li>SAP-Integration für Rückmeldungen</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="type-card">
+                            <div class="type-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <h4>Kanban-Kommissionierung</h4>
+                            <div class="type-details">
+                                <p><strong>Zweck:</strong> Bedarfsorientierte Bereitstellung</p>
+                                <p><strong>Merkmale:</strong></p>
+                                <ul>
+                                    <li>Automatische Nachbestellung</li>
+                                    <li>Kleine Losgrößen</li>
+                                    <li>Kontinuierlicher Materialfluss</li>
+                                    <li>Hohe Frequenz, kurze Zykluszeiten</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="type-card">
+                            <div class="type-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h4>Einzelteil-Kommissionierung</h4>
+                            <div class="type-details">
+                                <p><strong>Zweck:</strong> Spezifische Teile für Sonderanforderungen</p>
+                                <p><strong>Merkmale:</strong></p>
+                                <ul>
+                                    <li>Beistellprozesse für Fertigung</li>
+                                    <li>Kostenstellenbezogene Entnahmen</li>
+                                    <li>Direkte Arbeitsplatzversorgung</li>
+                                    <li>Flexible Mengen und Artikel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="picking-workflow">
+                    <h3>Standard-Kommissionierungs-Ablauf</h3>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Auftrag empfangen</h4>
+                                <p>Kommissionsübersicht öffnen und Auftrag auswählen</p>
+                            </div>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Positionen prüfen</h4>
+                                <p>Artikel, Mengen und Lagerplätze kontrollieren</p>
+                            </div>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Entnahme durchführen</h4>
+                                <p>Artikel nach Strategie kommissionieren</p>
+                            </div>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Qualitätskontrolle</h4>
+                                <p>Mengen und Artikel-Identität prüfen</p>
+                            </div>
+                        </div>
+                        <div class="workflow-arrow">→</div>
+                        <div class="workflow-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Bereitstellung</h4>
+                                <p>Kommissionierte Ware an Zielort liefern</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-metrics">
+                    <h3>Leistungskennzahlen</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>Picks per Hour</h4>
+                            <div class="metric-value">120-180</div>
+                            <p>Entnahmen pro Stunde je Mitarbeiter</p>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Durchlaufzeit</h4>
+                            <div class="metric-value">15-30 min</div>
+                            <p>Von Auftragsstart bis Bereitstellung</p>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Genauigkeitsrate</h4>
+                            <div class="metric-value">99.5%</div>
+                            <p>Korrekte Kommissionierungen</p>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-route"></i>
+                            <h4>Laufwege</h4>
+                            <div class="metric-value">80-120 m</div>
+                            <p>Durchschnittliche Wege pro Auftrag</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategien Section -->
+            <div class="operations-section" id="strategien">
+                <h2>Kommissionier-Strategien</h2>
+                
+                <div class="strategy-section">
+                    <h3>FIFO-Strategie (First In, First Out)</h3>
+                    <div class="strategy-details">
+                        <div class="strategy-principle">
+                            <h4>Grundprinzip</h4>
+                            <p>Älteste Bestände werden zuerst entnommen um Verderb und Alterung zu vermeiden</p>
+                            <div class="benefits">
+                                <h5>Vorteile:</h5>
+                                <ul>
+                                    <li>Optimale Lagerrotation</li>
+                                    <li>Vermeidung von Schwund</li>
+                                    <li>Qualitätssicherung durch Umschlag</li>
+                                    <li>Compliance mit Haltbarkeitsvorschriften</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="strategy-implementation">
+                            <h4>Umsetzung im System</h4>
+                            <div class="implementation-steps">
+                                <ol>
+                                    <li>System schlägt ältesten Bestand vor</li>
+                                    <li>Prüfung der Haltbarkeit und Qualität</li>
+                                    <li>Entnahme entsprechend FIFO-Reihenfolge</li>
+                                    <li>Dokumentation der Entnahme mit Zeitstempel</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="fifo-timeframes">
+                                <h5>FIFO-Zeitfenster</h5>
+                                <p>Flexible Zeitfenster ermöglichen Entnahme-Toleranzen:</p>
+                                <ul>
+                                    <li><strong>Kritische Artikel:</strong> Exakte FIFO-Einhaltung</li>
+                                    <li><strong>Standard-Artikel:</strong> ±2 Tage Toleranz</li>
+                                    <li><strong>Langzeit-Artikel:</strong> ±1 Woche Toleranz</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-section">
+                    <h3>Mengenregel-Strategie</h3>
+                    <div class="strategy-details">
+                        <div class="strategy-principle">
+                            <h4>Grundprinzip</h4>
+                            <p>Optimale Mengen für maximale Entnahme-Effizienz und Minimierung von Anbruch-Beständen</p>
+                            <div class="mengenregeln">
+                                <h5>Mengenregeln-Priorität:</h5>
+                                <ol>
+                                    <li>Komplette LHM vor Teilentnahmen</li>
+                                    <li>Große Mengen vor kleinen Mengen</li>
+                                    <li>Zusammenhängende Lagerplätze bevorzugt</li>
+                                    <li>Minimierung von Lagerbewegungen</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="strategy-configuration">
+                            <h4>Konfiguration</h4>
+                            <div class="config-options">
+                                <div class="config-item">
+                                    <h5>Artikel-spezifische Regeln</h5>
+                                    <p>Individuelle Mindestmengen und Entnahme-Einheiten</p>
+                                </div>
+                                <div class="config-item">
+                                    <h5>Ausnahmen für dringende Aufträge</h5>
+                                    <p>Override-Möglichkeiten bei Prioritäts-Aufträgen</p>
+                                </div>
+                                <div class="config-item">
+                                    <h5>Automatische Optimierung</h5>
+                                    <p>KI-gestützte Anpassung basierend auf Erfahrungswerten</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-section">
+                    <h3>Prioritäts-Strategien</h3>
+                    <div class="priority-levels">
+                        <div class="priority-level high">
+                            <div class="priority-header">
+                                <span class="priority-indicator"></span>
+                                <h4>Termin-Priorität</h4>
+                            </div>
+                            <div class="priority-content">
+                                <p>Dringlichkeit nach Liefertermin und Kundenanforderungen</p>
+                                <ul>
+                                    <li>Express-Aufträge: Sofortige Bearbeitung</li>
+                                    <li>Tagestermin: Priorität über Normalbetrieb</li>
+                                    <li>Standard: Normale Bearbeitungsreihenfolge</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="priority-level medium">
+                            <div class="priority-header">
+                                <span class="priority-indicator"></span>
+                                <h4>Kunden-Priorität</h4>
+                            </div>
+                            <div class="priority-content">
+                                <p>Wichtigkeit basierend auf Kundenkategorien</p>
+                                <ul>
+                                    <li>VIP-Kunden: Bevorzugte Behandlung</li>
+                                    <li>Großkunden: Hohe Priorität</li>
+                                    <li>Standard-Kunden: Normale Bearbeitung</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="priority-level normal">
+                            <div class="priority-header">
+                                <span class="priority-indicator"></span>
+                                <h4>Artikel-Priorität</h4>
+                            </div>
+                            <div class="priority-content">
+                                <p>Kritikalität spezifischer Artikel oder Artikelgruppen</p>
+                                <ul>
+                                    <li>Kritische Komponenten: Höchste Priorität</li>
+                                    <li>Sicherheitsbestände: Sonderbehandlung</li>
+                                    <li>Standard-Artikel: Normale Bearbeitung</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dynamic-priorities">
+                        <h4>Dynamische Prioritätenanpassung</h4>
+                        <div class="dynamic-features">
+                            <div class="feature-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <div>
+                                    <h5>Automatische Anpassung</h5>
+                                    <p>Prioritäten ändern sich automatisch bei Terminänderungen</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <h5>Eskalations-Mechanismen</h5>
+                                    <p>Automatische Prioritätserhöhung bei Verzögerungen</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h5>Echtzeitaktualisierung</h5>
+                                    <p>Sofortige Anpassung bei neuen Informationen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fertigungsaufträge Section -->
+            <div class="operations-section" id="fertigungsauftraege">
+                <h2>Fertigungsauftrag-Kommissionierung</h2>
+                
+                <div class="manufacturing-process">
+                    <h3>Prozess-Charakteristika</h3>
+                    <div class="characteristics-grid">
+                        <div class="char-card">
+                            <i class="fas fa-clipboard-check"></i>
+                            <h4>Vollständige Materialbereitstellung</h4>
+                            <p>Alle benötigten Materialien für einen Produktionsauftrag</p>
+                        </div>
+                        <div class="char-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Termingerechte Lieferung</h4>
+                            <p>Pünktliche Bereitstellung zum geplanten Produktionsstart</p>
+                        </div>
+                        <div class="char-card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Mengengenaue Kommissionierung</h4>
+                            <p>Exakte Mengen entsprechend Stückliste</p>
+                        </div>
+                        <div class="char-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Arbeitsplatz-spezifische Bereitstellung</h4>
+                            <p>Direkte Lieferung an den Produktionsarbeitsplatz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manufacturing-workflow">
+                    <h3>Arbeitsablauf Fertigungsauftrag-Kommissionierung</h3>
+                    <div class="detailed-steps">
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">1</span>
+                                <h4>Fertigungsauftrag auswählen</h4>
+                            </div>
+                            <div class="step-content">
+                                <p><strong>Menüpfad:</strong> Warenausgang > Kommissionsübersicht</p>
+                                <div class="step-details">
+                                    <h5>Auswahlkriterien:</h5>
+                                    <ul>
+                                        <li>Produktionstermin beachten</li>
+                                        <li>Priorität des Auftrags prüfen</li>
+                                        <li>Materialverfügbarkeit kontrollieren</li>
+                                        <li>Arbeitsplatz-Kapazität berücksichtigen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">2</span>
+                                <h4>Positionen prüfen und freigeben</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Alle Auftragspositionen auf Vollständigkeit und Verfügbarkeit prüfen</p>
+                                <div class="step-details">
+                                    <h5>Prüfpunkte:</h5>
+                                    <ul>
+                                        <li>Artikel-Verfügbarkeit im Lager</li>
+                                        <li>Qualitätsstatus der Artikel</li>
+                                        <li>Reservierungen und Sperrungen</li>
+                                        <li>Vollständigkeit der Stückliste</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">3</span>
+                                <h4>Entnahme-Reihenfolge optimieren</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Effiziente Route durch das Lager planen</p>
+                                <div class="step-details">
+                                    <h5>Optimierungsfaktoren:</h5>
+                                    <ul>
+                                        <li>Lagerplatz-Entfernungen minimieren</li>
+                                        <li>FIFO-Strategie berücksichtigen</li>
+                                        <li>Artikel-Gewichte und -Größen beachten</li>
+                                        <li>Zerbrechlichkeit und Stapelbarkeit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">4</span>
+                                <h4>Systematische Entnahme</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Artikel entsprechend optimierter Reihenfolge kommissionieren</p>
+                                <div class="step-details">
+                                    <h5>Entnahme-Protokoll:</h5>
+                                    <ul>
+                                        <li>Barcode-Scan für Artikel-Identifikation</li>
+                                        <li>Mengenbestätigung per System</li>
+                                        <li>Qualitätskontrolle bei der Entnahme</li>
+                                        <li>Sofortige Buchung der Bewegung</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">5</span>
+                                <h4>Mengen kontrollieren</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Kommissionierte Mengen gegen Auftrag validieren</p>
+                                <div class="step-details">
+                                    <h5>Kontrollmechanismen:</h5>
+                                    <ul>
+                                        <li>Waagen-Kontrolle bei gewichtsrelevanten Artikeln</li>
+                                        <li>Stückzahl-Verifikation</li>
+                                        <li>Cross-Check mit Auftragsdaten</li>
+                                        <li>Differenzen-Protokollierung</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">6</span>
+                                <h4>Vollständigkeitsprüfung</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Finale Kontrolle aller Auftragspositionen</p>
+                                <div class="step-details">
+                                    <h5>Prüfungsumfang:</h5>
+                                    <ul>
+                                        <li>100% Vollständigkeit erforderlich</li>
+                                        <li>Artikel-Qualität entsprechend Spezifikation</li>
+                                        <li>Verpackung und Kennzeichnung korrekt</li>
+                                        <li>Dokumentation vollständig</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">7</span>
+                                <h4>Bereitstellung für Arbeitsplatz</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Transport und Übergabe an Produktionsarbeitsplatz</p>
+                                <div class="step-details">
+                                    <h5>Bereitstellungs-Prozess:</h5>
+                                    <ul>
+                                        <li>Kennzeichnung für Ziel-Arbeitsplatz</li>
+                                        <li>Termingerechte Anlieferung</li>
+                                        <li>Übergabe an Produktions-Mitarbeiter</li>
+                                        <li>SAP-Rückmeldung automatisch</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manufacturing-specialties">
+                    <h3>Besonderheiten bei Fertigungsaufträgen</h3>
+                    <div class="specialties-grid">
+                        <div class="specialty-card">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>Terminbindung</h4>
+                            <p>Feste Liefertermine müssen eingehalten werden. Verspätungen können Produktionsstillstand verursachen.</p>
+                        </div>
+                        <div class="specialty-card">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <h4>Vollständigkeitsprüfung</h4>
+                            <p>Alle Auftragspositionen müssen verfügbar sein. Unvollständige Aufträge blockieren die Produktion.</p>
+                        </div>
+                        <div class="specialty-card">
+                            <i class="fas fa-map-pin"></i>
+                            <h4>Arbeitsplatz-Zuordnung</h4>
+                            <p>Spezifische Zielorte je nach Produktionsschritt und Arbeitsplatz-Konfiguration.</p>
+                        </div>
+                        <div class="specialty-card">
+                            <i class="fas fa-sync"></i>
+                            <h4>SAP-Rückmeldung</h4>
+                            <p>Sofortige automatische Rückmeldung an SAP für Materialverbrauch und Produktionsplanung.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kanban Section -->
+            <div class="operations-section" id="kanban">
+                <h2>Kanban-Kommissionierung</h2>
+                
+                <div class="kanban-principles">
+                    <h3>Kanban-Prinzipien bei Georg Fischer</h3>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <i class="fas fa-signal"></i>
+                            <h4>Bedarfsorientierte Bereitstellung</h4>
+                            <p>Material wird nur bei tatsächlichem Bedarf nachgeliefert - kein Überbestand, keine Verschwendung.</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-cubes"></i>
+                            <h4>Kleine Losgrößen</h4>
+                            <p>Häufige, kleine Lieferungen statt seltener Großlieferungen für besseren Materialfluss.</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <h4>Kontinuierlicher Nachschub</h4>
+                            <p>Ununterbrochener Materialfluss durch automatische Bestellauslösung bei Unterschreitung von Mindestbeständen.</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-robot"></i>
+                            <h4>Automatische Auslösung</h4>
+                            <p>System-gesteuerte Kanban-Signale basierend auf Verbrauch und Bestandsniveaus.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban-workflow">
+                    <h3>Kanban-Kommissionierungs-Ablauf</h3>
+                    <div class="kanban-steps">
+                        <div class="kanban-step">
+                            <div class="step-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>1. Kanban-Signal empfangen</h4>
+                                <p>Automatische Benachrichtigung über Materialbedarf</p>
+                                <div class="step-details">
+                                    <strong>Auslöser:</strong>
+                                    <ul>
+                                        <li>Mindestbestand unterschritten</li>
+                                        <li>Verbrauch erreicht Nachbestellpunkt</li>
+                                        <li>Leere Kanban-Behälter erkannt</li>
+                                        <li>Zeitbasierte Auslösung</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kanban-step">
+                            <div class="step-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>2. Bedarfsmenge ermitteln</h4>
+                                <p>Automatische Berechnung der optimalen Nachliefermenge</p>
+                                <div class="step-details">
+                                    <strong>Berechnungsfaktoren:</strong>
+                                    <ul>
+                                        <li>Aktueller Bestand am Arbeitsplatz</li>
+                                        <li>Durchschnittlicher Verbrauch</li>
+                                        <li>Sicherheitsbestand</li>
+                                        <li>Container-Größen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kanban-step">
+                            <div class="step-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>3. Schnelle Entnahme</h4>
+                                <p>Prioritäre Bearbeitung für kontinuierlichen Materialfluss</p>
+                                <div class="step-details">
+                                    <strong>Besonderheiten:</strong>
+                                    <ul>
+                                        <li>Höchste Priorität in Arbeitsplatz-Queue</li>
+                                        <li>Standardisierte Entnahme-Routen</li>
+                                        <li>Vorbefüllte Container verwenden</li>
+                                        <li>Minimal-Handling-Prinzip</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kanban-step">
+                            <div class="step-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>4. Direkte Bereitstellung</h4>
+                                <p>Sofortige Lieferung an den anfragenden Arbeitsplatz</p>
+                                <div class="step-details">
+                                    <strong>Lieferoptionen:</strong>
+                                    <ul>
+                                        <li>Direkter Transport durch Kommissionierer</li>
+                                        <li>Automatische Fördertechnik</li>
+                                        <li>Milkrun-Touren für mehrere Arbeitsplätze</li>
+                                        <li>Express-Lieferung bei kritischen Artikeln</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kanban-step">
+                            <div class="step-icon">
+                                <i class="fas fa-check-square"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>5. Kanban-Karte aktualisieren</h4>
+                                <p>System-Update für kontinuierliche Bestandsführung</p>
+                                <div class="step-details">
+                                    <strong>Aktualisierungen:</strong>
+                                    <ul>
+                                        <li>Lieferung bestätigen</li>
+                                        <li>Neuen Bestand registrieren</li>
+                                        <li>Nächsten Nachbestellpunkt berechnen</li>
+                                        <li>Performance-Daten erfassen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban-characteristics">
+                    <h3>Charakteristika der Kanban-Kommissionierung</h3>
+                    <div class="characteristics-comparison">
+                        <div class="char-section">
+                            <h4>Vorteile</h4>
+                            <ul class="advantages">
+                                <li><i class="fas fa-check"></i> Reduzierte Lagerbestände</li>
+                                <li><i class="fas fa-check"></i> Kontinuierlicher Materialfluss</li>
+                                <li><i class="fas fa-check"></i> Minimierte Rüstzeiten</li>
+                                <li><i class="fas fa-check"></i> Automatisierte Nachbestellung</li>
+                                <li><i class="fas fa-check"></i> Reduzierte Verschwendung</li>
+                                <li><i class="fas fa-check"></i> Verbesserte Planbarkeit</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="char-section">
+                            <h4>Herausforderungen</h4>
+                            <ul class="challenges">
+                                <li><i class="fas fa-exclamation-triangle"></i> Hohe Frequenz der Aufträge</li>
+                                <li><i class="fas fa-exclamation-triangle"></i> Kurze Reaktionszeiten erforderlich</li>
+                                <li><i class="fas fa-exclamation-triangle"></i> Präzise Bedarfsprognosen notwendig</li>
+                                <li><i class="fas fa-exclamation-triangle"></i> Abhängigkeit von System-Verfügbarkeit</li>
+                                <li><i class="fas fa-exclamation-triangle"></i> Komplexe Koordination bei vielen Artikeln</li>
+                                <li><i class="fas fa-exclamation-triangle"></i> Schulungsaufwand für Mitarbeiter</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban-optimization">
+                    <h3>Kanban-Optimierung</h3>
+                    <div class="optimization-areas">
+                        <div class="optimization-card">
+                            <h4>Bestandsoptimierung</h4>
+                            <div class="optimization-content">
+                                <p><strong>Ziel:</strong> Minimale Bestände bei 100% Verfügbarkeit</p>
+                                <ul>
+                                    <li>Dynamische Anpassung der Kanban-Mengen</li>
+                                    <li>Saisonale Schwankungen berücksichtigen</li>
+                                    <li>ABC-Analyse für Prioritätsfestlegung</li>
+                                    <li>Kontinuierliche Verbrauchsanalyse</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="optimization-card">
+                            <h4>Prozessoptimierung</h4>
+                            <div class="optimization-content">
+                                <p><strong>Ziel:</strong> Maximale Effizienz bei minimalen Kosten</p>
+                                <ul>
+                                    <li>Batch-Kommissionierung ähnlicher Artikel</li>
+                                    <li>Optimierte Milkrun-Routen</li>
+                                    <li>Standardisierung der Behältergrößen</li>
+                                    <li>Automatisierung wiederkehrender Aufgaben</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="optimization-card">
+                            <h4>System-Integration</h4>
+                            <div class="optimization-content">
+                                <p><strong>Ziel:</strong> Nahtlose Integration in Produktionsabläufe</p>
+                                <ul>
+                                    <li>Real-time Verbrauchserfassung</li>
+                                    <li>Predictive Analytics für Bedarfsprognosen</li>
+                                    <li>IoT-Sensoren für automatische Signale</li>
+                                    <li>Mobile Apps für Arbeitsplatz-Kommunikation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pick-by-Light Section -->
+            <div class="operations-section" id="pickbylight">
+                <h2>Pick-by-Light System</h2>
+                
+                <div class="pbl-overview">
+                    <h3>System-Beschreibung</h3>
+                    <div class="system-components">
+                        <div class="component-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>LED-Anzeigen</h4>
+                            <p>Leuchtdioden an jedem Lagerplatz zeigen Entnahme-Positionen an</p>
+                            <div class="component-details">
+                                <strong>Funktionen:</strong>
+                                <ul>
+                                    <li>Rote LED: Aktive Entnahme-Position</li>
+                                    <li>Grüne LED: Bestätigte Position</li>
+                                    <li>Blinkende LED: Aufmerksamkeit erforderlich</li>
+                                    <li>Dimmbare LEDs: Verschiedene Prioritäten</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="component-card">
+                            <i class="fas fa-desktop"></i>
+                            <h4>Display-Anzeigen</h4>
+                            <p>Digitale Anzeigen zeigen Mengen und zusätzliche Informationen</p>
+                            <div class="component-details">
+                                <strong>Angezeigte Informationen:</strong>
+                                <ul>
+                                    <li>Entnahme-Menge</li>
+                                    <li>Artikel-Nummer</li>
+                                    <li>Auftragsnummer</li>
+                                    <li>Sonderanweisungen</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="component-card">
+                            <i class="fas fa-hand-pointer"></i>
+                            <h4>Bestätigungs-Taster</h4>
+                            <p>Berührungsempfindliche Buttons für Entnahme-Bestätigung</p>
+                            <div class="component-details">
+                                <strong>Funktionen:</strong>
+                                <ul>
+                                    <li>Entnahme bestätigen</li>
+                                    <li>Korrekturen eingeben</li>
+                                    <li>Probleme melden</li>
+                                    <li>Hilfe anfordern</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="component-card">
+                            <i class="fas fa-weight"></i>
+                            <h4>Sensor-Integration</h4>
+                            <p>Gewichts- und Bewegungssensoren für automatische Erkennung</p>
+                            <div class="component-details">
+                                <strong>Sensor-Typen:</strong>
+                                <ul>
+                                    <li>Gewichtssensoren für Mengenprüfung</li>
+                                    <li>Lichtschranken für Entnahme-Erkennung</li>
+                                    <li>Näherungssensoren für Anwesenheit</li>
+                                    <li>Kamera-Systeme für Qualitätskontrolle</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pbl-workflow">
+                    <h3>Pick-by-Light Arbeitsablauf</h3>
+                    <div class="pbl-steps">
+                        <div class="pbl-step">
+                            <div class="step-visual">
+                                <div class="step-number">1</div>
+                                <div class="led-indicator start"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Auftrag am System starten</h4>
+                                <p>Arbeitsauftrag am zentralen Terminal oder mobilen Gerät auswählen</p>
+                                <div class="step-actions">
+                                    <ul>
+                                        <li>Barcode-Scan der Auftragsnummer</li>
+                                        <li>Benutzer-Authentifizierung</li>
+                                        <li>Arbeitsplatz-Zuordnung bestätigen</li>
+                                        <li>System-Initialisierung abwarten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pbl-step">
+                            <div class="step-visual">
+                                <div class="step-number">2</div>
+                                <div class="led-indicator active"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>LED-Anzeige leuchtet auf</h4>
+                                <p>Rote LED am ersten Entnahme-Lagerplatz wird aktiviert</p>
+                                <div class="step-actions">
+                                    <ul>
+                                        <li>Optische Führung zum richtigen Lagerplatz</li>
+                                        <li>Display zeigt Entnahme-Menge</li>
+                                        <li>Zusätzliche Informationen bei Bedarf</li>
+                                        <li>Akustisches Signal bei wichtigen Positionen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pbl-step">
+                            <div class="step-visual">
+                                <div class="step-number">3</div>
+                                <div class="led-indicator pick"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Artikel entnehmen</h4>
+                                <p>Artikel entsprechend angezeigter Menge aus dem Lagerplatz entnehmen</p>
+                                <div class="step-actions">
+                                    <ul>
+                                        <li>Menge gemäß Display entnehmen</li>
+                                        <li>Artikel-Qualität visuell prüfen</li>
+                                        <li>Bei Unstimmigkeiten System informieren</li>
+                                        <li>Ergonomische Entnahme-Techniken anwenden</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pbl-step">
+                            <div class="step-visual">
+                                <div class="step-number">4</div>
+                                <div class="led-indicator check"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Menge über Display prüfen</h4>
+                                <p>Entnommene Menge mit Soll-Menge abgleichen</p>
+                                <div class="step-actions">
+                                    <ul>
+                                        <li>Soll-Ist-Vergleich durchführen</li>
+                                        <li>Bei Abweichungen Korrektur eingeben</li>
+                                        <li>Gewichtskontrolle nutzen (falls verfügbar)</li>
+                                        <li>Qualitätsprüfung dokumentieren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pbl-step">
+                            <div class="step-visual">
+                                <div class="step-number">5</div>
+                                <div class="led-indicator confirm"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Bestätigung durch Tastendruck</h4>
+                                <p>Entnahme durch Drücken des Bestätigungs-Tasters bestätigen</p>
+                                <div class="step-actions">
+                                    <ul>
+                                        <li>Grünen Bestätigungs-Taster drücken</li>
+                                        <li>LED wechselt von rot auf grün</li>
+                                        <li>System registriert erfolgreiche Entnahme</li>
+                                        <li>Automatische Buchung im WMS</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pbl-step">
+                            <div class="step-visual">
+                                <div class="step-number">6</div>
+                                <div class="led-indicator next"></div>
+                            </div>
+                            <div class="step-content">
+                                <h4>Nächste Position wird angezeigt</h4>
+                                <p>System aktiviert automatisch die nächste Entnahme-Position</p>
+                                <div class="step-actions">
+                                    <ul>
+                                        <li>Neue rote LED leuchtet auf</li>
+                                        <li>Optimierte Route zum nächsten Lagerplatz</li>
+                                        <li>Kontinuierlicher Arbeitsfluss</li>
+                                        <li>Auftrag bis zur Vollendung fortsetzen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pbl-advantages">
+                    <h3>Vorteile des Pick-by-Light Systems</h3>
+                    <div class="advantages-grid">
+                        <div class="advantage-card">
+                            <i class="fas fa-crosshairs"></i>
+                            <h4>Fehlerreduzierung</h4>
+                            <p>Visuelle Führung eliminiert Verwechslungen und Entnahme-Fehler</p>
+                            <div class="advantage-stats">
+                                <span class="stat-value">-95%</span>
+                                <span class="stat-label">Kommissionier-Fehler</span>
+                            </div>
+                        </div>
+
+                        <div class="advantage-card">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>Geschwindigkeit</h4>
+                            <p>Schnelle Identifikation und papierlose Abwicklung</p>
+                            <div class="advantage-stats">
+                                <span class="stat-value">+40%</span>
+                                <span class="stat-label">Produktivitätssteigerung</span>
+                            </div>
+                        </div>
+
+                        <div class="advantage-card">
+                            <i class="fas fa-user-friends"></i>
+                            <h4>Ergonomie</h4>
+                            <p>Natürliche Arbeitsweise ohne Papier oder Handheld-Geräte</p>
+                            <div class="advantage-stats">
+                                <span class="stat-value">-60%</span>
+                                <span class="stat-label">Suchzeiten</span>
+                            </div>
+                        </div>
+
+                        <div class="advantage-card">
+                            <i class="fas fa-random"></i>
+                            <h4>Flexibilität</h4>
+                            <p>Verschiedene Auftragsarten und dynamische Priorisierung</p>
+                            <div class="advantage-stats">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Auftragsflexibilität</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pbl-troubleshooting">
+                    <h3>Fehlerbehebung Pick-by-Light</h3>
+                    <div class="troubleshooting-scenarios">
+                        <div class="trouble-scenario">
+                            <div class="trouble-header">
+                                <i class="fas fa-lightbulb-off"></i>
+                                <h4>LED leuchtet nicht</h4>
+                            </div>
+                            <div class="trouble-content">
+                                <div class="trouble-causes">
+                                    <strong>Mögliche Ursachen:</strong>
+                                    <ul>
+                                        <li>Stromversorgung unterbrochen</li>
+                                        <li>Defekte LED-Einheit</li>
+                                        <li>Kommunikationsfehler</li>
+                                        <li>Software-Problem</li>
+                                    </ul>
+                                </div>
+                                <div class="trouble-solutions">
+                                    <strong>Lösungsschritte:</strong>
+                                    <ol>
+                                        <li>System-Reset durchführen</li>
+                                        <li>Stromversorgung prüfen</li>
+                                        <li>Manuelle Entnahme mit Dokumentation</li>
+                                        <li>Techniker informieren</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trouble-scenario">
+                            <div class="trouble-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Falsche Menge angezeigt</h4>
+                            </div>
+                            <div class="trouble-content">
+                                <div class="trouble-causes">
+                                    <strong>Mögliche Ursachen:</strong>
+                                    <ul>
+                                        <li>Bestandsabweichung im System</li>
+                                        <li>Artikel-Verwechslung</li>
+                                        <li>Beschädigte Artikel</li>
+                                        <li>Verpackungseinheiten-Fehler</li>
+                                    </ul>
+                                </div>
+                                <div class="trouble-solutions">
+                                    <strong>Lösungsschritte:</strong>
+                                    <ol>
+                                        <li>Ist-Bestand physisch prüfen</li>
+                                        <li>Korrektur-Menge eingeben</li>
+                                        <li>Grund dokumentieren</li>
+                                        <li>Schichtführer informieren</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trouble-scenario">
+                            <div class="trouble-header">
+                                <i class="fas fa-ban"></i>
+                                <h4>Artikel nicht vorhanden</h4>
+                            </div>
+                            <div class="trouble-content">
+                                <div class="trouble-causes">
+                                    <strong>Mögliche Ursachen:</strong>
+                                    <ul>
+                                        <li>Bestand aufgebraucht</li>
+                                        <li>Falsche Lagerplatz-Zuordnung</li>
+                                        <li>Artikel gesperrt oder beschädigt</li>
+                                        <li>Inventur-Differenz</li>
+                                    </ul>
+                                </div>
+                                <div class="trouble-solutions">
+                                    <strong>Lösungsschritte:</strong>
+                                    <ol>
+                                        <li>Nachschub anfordern</li>
+                                        <li>Alternative Lagerplätze prüfen</li>
+                                        <li>Auftrag pausieren</li>
+                                        <li>Disposition informieren</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trouble-scenario">
+                            <div class="trouble-header">
+                                <i class="fas fa-hand-paper"></i>
+                                <h4>Bestätigung funktioniert nicht</h4>
+                            </div>
+                            <div class="trouble-content">
+                                <div class="trouble-causes">
+                                    <strong>Mögliche Ursachen:</strong>
+                                    <ul>
+                                        <li>Taster defekt</li>
+                                        <li>Verschmutzung</li>
+                                        <li>Kommunikationsfehler</li>
+                                        <li>Software-Hänger</li>
+                                    </ul>
+                                </div>
+                                <div class="trouble-solutions">
+                                    <strong>Lösungsschritte:</strong>
+                                    <ol>
+                                        <li>Taster reinigen</li>
+                                        <li>Mehrfach drücken versuchen</li>
+                                        <li>Alternative Bestätigung nutzen</li>
+                                        <li>System-Neustart</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optimierung Section -->
+            <div class="operations-section" id="optimierung">
+                <h2>Kommissionierungs-Optimierung</h2>
+                
+                <div class="optimization-areas">
+                    <h3>Optimierungsbereiche</h3>
+                    <div class="areas-grid">
+                        <div class="area-card">
+                            <i class="fas fa-route"></i>
+                            <h4>Laufwege-Optimierung</h4>
+                            <p>Minimierung der zurückgelegten Wege durch intelligente Routenplanung</p>
+                        </div>
+                        <div class="area-card">
+                            <i class="fas fa-users-cog"></i>
+                            <h4>Kapazitäts-Optimierung</h4>
+                            <p>Optimale Auslastung der verfügbaren Arbeitsplätze und Mitarbeiter</p>
+                        </div>
+                        <div class="area-card">
+                            <i class="fas fa-medal"></i>
+                            <h4>Qualitäts-Optimierung</h4>
+                            <p>Reduzierung von Fehlern durch systematische Verbesserungen</p>
+                        </div>
+                        <div class="area-card">
+                            <i class="fas fa-robot"></i>
+                            <h4>Technologie-Integration</h4>
+                            <p>Einsatz moderner Technologien für höhere Effizienz</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="path-optimization">
+                    <h3>Laufwege-Optimierung</h3>
+                    <div class="optimization-strategies">
+                        <div class="strategy-section">
+                            <h4>Zonenbildung</h4>
+                            <div class="strategy-content">
+                                <p>Aufteilung des Lagers in zusammenhängende Bereiche für effiziente Bearbeitung</p>
+                                <div class="strategy-benefits">
+                                    <strong>Vorteile:</strong>
+                                    <ul>
+                                        <li>Reduzierte Laufwege zwischen Positionen</li>
+                                        <li>Spezialisierung der Mitarbeiter auf Zonen</li>
+                                        <li>Bessere Orientierung im Lager</li>
+                                        <li>Parallelisierung von Kommissionier-Aufträgen</li>
+                                    </ul>
+                                </div>
+                                <div class="strategy-implementation">
+                                    <strong>Umsetzung:</strong>
+                                    <ul>
+                                        <li>ABC-Analyse für Zonenaufteilung</li>
+                                        <li>Häufig genutzte Artikel in optimale Zonen</li>
+                                        <li>Logische Gruppierung ähnlicher Artikel</li>
+                                        <li>Flexible Zonengrenzen je nach Auftragslage</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="strategy-section">
+                            <h4>Batch-Picking</h4>
+                            <div class="strategy-content">
+                                <p>Gleichzeitige Bearbeitung mehrerer Aufträge in einem Durchgang</p>
+                                <div class="batch-types">
+                                    <strong>Batch-Arten:</strong>
+                                    <ul>
+                                        <li><strong>Artikel-Batching:</strong> Gleiche Artikel für verschiedene Aufträge</li>
+                                        <li><strong>Zonen-Batching:</strong> Mehrere Aufträge in einer Zone</li>
+                                        <li><strong>Routen-Batching:</strong> Aufträge entlang optimaler Route</li>
+                                        <li><strong>Zeit-Batching:</strong> Aufträge mit ähnlichen Terminen</li>
+                                    </ul>
+                                </div>
+                                <div class="batch-benefits">
+                                    <strong>Effizienzsteigerung:</strong>
+                                    <ul>
+                                        <li>50-70% weniger Laufwege</li>
+                                        <li>Höhere Picks per Hour</li>
+                                        <li>Bessere Arbeitsplatz-Auslastung</li>
+                                        <li>Reduzierte Kommissionier-Zeiten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="strategy-section">
+                            <h4>Dynamische Routenplanung</h4>
+                            <div class="strategy-content">
+                                <p>Echtzeitoptimierung der Kommissionier-Routen basierend auf aktueller Situation</p>
+                                <div class="dynamic-factors">
+                                    <strong>Berücksichtigte Faktoren:</strong>
+                                    <ul>
+                                        <li>Aktuelle Lagerplatz-Belegung</li>
+                                        <li>Verkehrsdichte in Lagergängen</li>
+                                        <li>Prioritäten und Termine</li>
+                                        <li>Mitarbeiter-Standorte</li>
+                                        <li>Ausrüstung-Verfügbarkeit</li>
+                                        <li>Störungen und Wartungsarbeiten</li>
+                                    </ul>
+                                </div>
+                                <div class="dynamic-technology">
+                                    <strong>Technische Unterstützung:</strong>
+                                    <ul>
+                                        <li>GPS-Navigation im Lager</li>
+                                        <li>Algorithmus-basierte Optimierung</li>
+                                        <li>Real-time Anpassung</li>
+                                        <li>Mobile App-Integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="capacity-optimization">
+                    <h3>Kapazitäts-Optimierung</h3>
+                    <div class="capacity-strategies">
+                        <div class="capacity-area">
+                            <h4>Lastverteilung</h4>
+                            <div class="capacity-content">
+                                <p>Gleichmäßige Verteilung der Arbeitsbelastung auf verfügbare Ressourcen</p>
+                                <div class="load-balancing">
+                                    <strong>Strategien:</strong>
+                                    <ul>
+                                        <li>Arbeitsplatz-Auslastung kontinuierlich überwachen</li>
+                                        <li>Aufträge dynamisch auf verfügbare Mitarbeiter verteilen</li>
+                                        <li>Spitzenzeiten durch Vorverlagerung entschärfen</li>
+                                        <li>Flexible Arbeitszeit-Modelle implementieren</li>
+                                    </ul>
+                                </div>
+                                <div class="load-metrics">
+                                    <strong>Überwachungs-KPIs:</strong>
+                                    <ul>
+                                        <li>Auslastung pro Arbeitsplatz (%)</li>
+                                        <li>Warteschlangen-Länge</li>
+                                        <li>Durchschnittliche Wartezeiten</li>
+                                        <li>Peak-Load-Zeiten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="capacity-area">
+                            <h4>Performance-Monitoring</h4>
+                            <div class="capacity-content">
+                                <p>Kontinuierliche Überwachung und Analyse der Leistungskennzahlen</p>
+                                <div class="monitoring-dashboard">
+                                    <strong>Echtzeit-Überwachung:</strong>
+                                    <ul>
+                                        <li>Live-Dashboard für Produktivität</li>
+                                        <li>Automatische Alerts bei Abweichungen</li>
+                                        <li>Trend-Analysen für Vorhersagen</li>
+                                        <li>Benchmark-Vergleiche</li>
+                                    </ul>
+                                </div>
+                                <div class="performance-actions">
+                                    <strong>Verbesserungs-Maßnahmen:</strong>
+                                    <ul>
+                                        <li>Coaching bei Leistungsabweichungen</li>
+                                        <li>Zusätzliche Schulungen anbieten</li>
+                                        <li>Arbeitsplatz-Ergonomie optimieren</li>
+                                        <li>Belohnungssysteme für Top-Performer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="capacity-area">
+                            <h4>Ressourcen-Flexibilität</h4>
+                            <div class="capacity-content">
+                                <p>Flexible Einsatzplanung von Personal und Ausrüstung</p>
+                                <div class="flexibility-options">
+                                    <strong>Flexibilitäts-Maßnahmen:</strong>
+                                    <ul>
+                                        <li>Multi-Skill-Training für Mitarbeiter</li>
+                                        <li>Mobile Arbeitsplätze bei Bedarfsspitzen</li>
+                                        <li>Temporäre Aufstockung bei Peaks</li>
+                                        <li>Outsourcing bei Kapazitätsengpässen</li>
+                                    </ul>
+                                </div>
+                                <div class="flexibility-benefits">
+                                    <strong>Vorteile:</strong>
+                                    <ul>
+                                        <li>Bessere Reaktionsfähigkeit</li>
+                                        <li>Reduzierte Überstunden</li>
+                                        <li>Höhere Mitarbeiter-Zufriedenheit</li>
+                                        <li>Kostenoptimierung</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quality-optimization">
+                    <h3>Qualitäts-Optimierung</h3>
+                    <div class="quality-measures">
+                        <div class="quality-prevention">
+                            <h4>Fehlerprävention</h4>
+                            <div class="prevention-strategies">
+                                <div class="prevention-item">
+                                    <i class="fas fa-search"></i>
+                                    <div>
+                                        <h5>Doppel-Kontrollen</h5>
+                                        <p>Vier-Augen-Prinzip bei kritischen Artikeln oder Großaufträgen</p>
+                                    </div>
+                                </div>
+                                <div class="prevention-item">
+                                    <i class="fas fa-barcode"></i>
+                                    <div>
+                                        <h5>Barcode-Validierung</h5>
+                                        <p>Automatische Prüfung durch Scannen bei jeder Entnahme</p>
+                                    </div>
+                                </div>
+                                <div class="prevention-item">
+                                    <i class="fas fa-weight-hanging"></i>
+                                    <div>
+                                        <h5>Waagen-Kontrolle</h5>
+                                        <p>Gewichtsbasierte Verifikation der entnommenen Mengen</p>
+                                    </div>
+                                </div>
+                                <div class="prevention-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <div>
+                                        <h5>Kontinuierliche Schulung</h5>
+                                        <p>Regelmäßige Weiterbildung und Auffrischung der Kompetenzen</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quality-analysis">
+                            <h4>Fehleranalyse</h4>
+                            <div class="analysis-process">
+                                <div class="analysis-step">
+                                    <h5>1. Fehler-Erfassung</h5>
+                                    <p>Systematische Dokumentation aller Abweichungen</p>
+                                </div>
+                                <div class="analysis-step">
+                                    <h5>2. Ursachen-Analyse</h5>
+                                    <p>Root Cause Analysis zur Identifikation der Grundursachen</p>
+                                </div>
+                                <div class="analysis-step">
+                                    <h5>3. Kategorisierung</h5>
+                                    <p>Einordnung nach Fehlertyp, Häufigkeit und Auswirkung</p>
+                                </div>
+                                <div class="analysis-step">
+                                    <h5>4. Maßnahmen-Ableitung</h5>
+                                    <p>Entwicklung gezielter Verbesserungsmaßnahmen</p>
+                                </div>
+                                <div class="analysis-step">
+                                    <h5>5. Implementierung</h5>
+                                    <p>Umsetzung und Erfolgskontrolle der Maßnahmen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quality-metrics">
+                            <h4>Qualitäts-KPIs</h4>
+                            <div class="metrics-dashboard">
+                                <div class="metric-item">
+                                    <div class="metric-value">99.5%</div>
+                                    <div class="metric-label">Kommissionier-Genauigkeit</div>
+                                    <div class="metric-trend positive">+0.3%</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value">0.2%</div>
+                                    <div class="metric-label">Fehlerrate</div>
+                                    <div class="metric-trend negative">-0.1%</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value">98.8%</div>
+                                    <div class="metric-label">Vollständigkeitsrate</div>
+                                    <div class="metric-trend positive">+0.2%</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value">99.1%</div>
+                                    <div class="metric-label">Terminerfüllung</div>
+                                    <div class="metric-trend stable">±0.0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="future-technologies">
+                    <h3>Zukunftstechnologien</h3>
+                    <div class="tech-innovations">
+                        <div class="tech-card">
+                            <i class="fas fa-microphone"></i>
+                            <h4>Voice-Picking</h4>
+                            <div class="tech-content">
+                                <p>Sprachgesteuerte Kommissionierung für freihändige Bedienung</p>
+                                <div class="tech-benefits">
+                                    <strong>Vorteile:</strong>
+                                    <ul>
+                                        <li>Beide Hände frei für Artikel-Handling</li>
+                                        <li>Reduzierte Ablenkung</li>
+                                        <li>Mehrsprachige Unterstützung</li>
+                                        <li>Lärmreduzierte Arbeitsplätze</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <i class="fas fa-eye"></i>
+                            <h4>Augmented Reality</h4>
+                            <div class="tech-content">
+                                <p>AR-Brillen für visuelle Wegführung und Informationsanzeige</p>
+                                <div class="tech-benefits">
+                                    <strong>Funktionen:</strong>
+                                    <ul>
+                                        <li>3D-Navigation durch das Lager</li>
+                                        <li>Visuelle Überlagerung von Informationen</li>
+                                        <li>Interaktive Arbeitsanweisungen</li>
+                                        <li>Integrierte Schulungs-Unterstützung</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <i class="fas fa-robot"></i>
+                            <h4>Robotik-Integration</h4>
+                            <div class="tech-content">
+                                <p>Kollaborative Roboter zur Unterstützung der Kommissionierung</p>
+                                <div class="tech-benefits">
+                                    <strong>Anwendungen:</strong>
+                                    <ul>
+                                        <li>Autonome mobile Roboter (AMR)</li>
+                                        <li>Kollaborative Pick-Roboter</li>
+                                        <li>Automatisierte Sortierung</li>
+                                        <li>Intelligente Transportwagen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>Künstliche Intelligenz</h4>
+                            <div class="tech-content">
+                                <p>KI-gestützte Optimierung und Vorhersage</p>
+                                <div class="tech-benefits">
+                                    <strong>KI-Funktionen:</strong>
+                                    <ul>
+                                        <li>Predictive Analytics für Bedarfsprognosen</li>
+                                        <li>Machine Learning für Routenoptimierung</li>
+                                        <li>Automatische Anomalie-Erkennung</li>
+                                        <li>Intelligente Auftragsreihenfolge</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Use same styling as wareneingang page */
+.operations-hero {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.operations-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.operations-content {
+    padding: 3rem 0;
+}
+
+.operations-nav {
+    margin-bottom: 3rem;
+}
+
+.operations-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #dc2626;
+    color: white;
+    border-color: #dc2626;
+}
+
+.operations-section {
+    display: none;
+}
+
+.operations-section.active {
+    display: block;
+}
+
+/* Picking Types */
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.type-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.type-icon {
+    width: 60px;
+    height: 60px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Performance Metrics */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.metric-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.metric-card i {
+    font-size: 2.5rem;
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc2626;
+    margin: 1rem 0;
+}
+
+/* Workflow Steps */
+.workflow-steps {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.workflow-step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    min-width: 200px;
+    text-align: center;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: bold;
+}
+
+.workflow-arrow {
+    font-size: 1.5rem;
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* Strategy Sections */
+.strategy-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid var(--border-color);
+}
+
+/* Priority Levels */
+.priority-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.priority-level {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.priority-header {
+    background: #dc2626;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.priority-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.priority-content {
+    padding: 1.5rem;
+}
+
+/* Pick-by-Light Specific Styles */
+.system-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.component-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.component-card i {
+    font-size: 2rem;
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.pbl-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.pbl-step {
+    display: flex;
+    gap: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.step-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    min-width: 80px;
+}
+
+.led-indicator {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #dc2626;
+}
+
+.led-indicator.active {
+    background: #dc2626;
+    animation: pulse 2s infinite;
+}
+
+.led-indicator.confirm {
+    background: #10b981;
+    border-color: #10b981;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Advantages Grid */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.advantage-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.advantage-card i {
+    font-size: 2.5rem;
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.advantage-stats {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Troubleshooting */
+.troubleshooting-scenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.trouble-scenario {
+    background: var(--bg-secondary);
+    border: 1px solid #f59e0b;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.trouble-header {
+    background: #f59e0b;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trouble-content {
+    padding: 1.5rem;
+}
+
+.trouble-causes,
+.trouble-solutions {
+    margin-bottom: 1rem;
+}
+
+/* Optimization Areas */
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.area-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.area-card i {
+    font-size: 2.5rem;
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+/* Technology Cards */
+.tech-innovations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tech-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.tech-card i {
+    font-size: 2rem;
+    color: #7c3aed;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .workflow-steps {
+        flex-direction: column;
+    }
+    
+    .workflow-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .pbl-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .operations-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const operationsSections = document.querySelectorAll('.operations-section');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and sections
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            operationsSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding section
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+    
+    // Initialize first tab as active
+    document.getElementById('overview').classList.add('active');
+});
+</script>

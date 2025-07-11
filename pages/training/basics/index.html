@@ -1,0 +1,253 @@
+---
+layout: training
+title: "WMS Grundlagen"
+description: "Einführung in das Jungheinrich Warehouse Management System bei Georg Fischer"
+duration: "45 Minuten"
+difficulty: "Beginner"
+progress: 0
+prerequisites:
+  - title: "Grundlegende Computer-Kenntnisse"
+    url: "#"
+learning_objectives:
+  - "Verstehen der WMS-Systemarchitektur"
+  - "Kennenlernen der wichtigsten Begriffe und Konzepte"
+  - "Überblick über die Lagermodellierung bei Georg Fischer"
+  - "Grundlagen der Systemkommunikation"
+  - "Einführung in die Benutzeroberfläche"
+next:
+  title: "Systemnavigation"
+  url: "/pages/training/navigation/"
+---
+
+# WMS Grundlagen - Jungheinrich Warehouse Management System
+
+## Überblick
+
+Das Jungheinrich Warehouse Management System (WMS) ist ein umfassendes Lagerverwaltungssystem, das bei Georg Fischer zur Steuerung und Optimierung der Lagerlogistik eingesetzt wird. Dieses Modul führt Sie in die Grundlagen des Systems ein.
+
+## Lernziele
+
+Nach Abschluss dieses Moduls können Sie:
+- Die WMS-Systemarchitektur verstehen
+- Wichtige Begriffe und Konzepte erklären
+- Die Lagermodellierung bei Georg Fischer beschreiben
+- Die Systemkommunikation verstehen
+- Die Benutzeroberfläche grundlegend bedienen
+
+## 1. Systemarchitektur
+
+### 1.1 Jungheinrich WMS Systeme
+
+Das Jungheinrich WMS besteht aus zwei Hauptsystemen:
+
+#### **Produktivsystem**
+- Kommuniziert mit physischen Geräten
+- Verbunden mit WMS PC-Clients im Lager
+- Wickelt den Echtbetrieb ab
+- Dienste mit Präfix "ISA-"
+
+#### **Testsystem**
+- Für Tests neuer Change Requests und Erweiterungen
+- Keine Verbindung zu physischen Geräten
+- Eigene Datenbank
+- Dienste mit Präfix "ISATEST-"
+
+### 1.2 Systemkomponenten
+
+Das WMS besteht aus folgenden Hauptkomponenten:
+
+- **WMS-Server**: Zentrale Prozesse als Dienste
+- **Datenbank-Server**: Zentrale Datenhaltung
+- **PC-Clients**: Benutzeroberflächen im Lager
+- **Schnittstellen**: Kommunikation mit externen Systemen
+
+### 1.3 Prozessverbund
+
+Das System besteht aus verschiedenen Prozessen, die folgende Aufgaben übernehmen:
+- Import und Verwaltung von Aufträgen
+- Kommunikation mit dem Hostsystem SAP
+- Freigabe von Transportbefehlen
+- Steuerung der SPS-Steuerungen
+
+## 2. Kommunikation mit SAP
+
+### 2.1 SAP-Schnittstelle
+
+Die Kommunikation mit dem Hostsystem SAP erfolgt über:
+- **SAP-Send**: Übertragung von Daten an SAP
+- **SAP-Receive**: Empfang von Daten aus SAP
+- **RFC-Verbindungen**: Sichere Datenübertragung
+
+### 2.2 Datenfluss
+
+```
+SAP ↔ Jungheinrich WMS Server ↔ WMS PC-Clients
+```
+
+## 3. Lagermodellierung bei Georg Fischer
+
+### 3.1 Lager-Terminologie
+
+**Wichtige Begriffe:**
+- **Lagerort**: Eindeutige Position im Lager
+- **Lagerortkoordinaten**: Aufbau nach festgelegtem Schema
+- **Segmente**: Logische Lagerbereiche
+- **Ladehilfsmittel (LHM)**: Paletten, Behälter, etc.
+
+### 3.2 Anlagenbeschreibung
+
+#### **Hochregallager (HRL)**
+- Für Paletten
+- Automatisierte Lagerung
+- Optimierte Platzausnutzung
+
+#### **Automatikkleinteilelager (AKL)**
+- Für Behälter
+- Hohe Geschwindigkeit
+- Präzise Positionierung
+
+#### **Vorzone**
+- Pufferbereich
+- Kommissionierung
+- Qualitätsprüfung
+
+#### **Qualitätszone**
+- Prüfung von Waren
+- Quarantäne
+- Qualitätskontrolle
+
+#### **Formenlager**
+- Spezieller Bereich
+- Besondere Anforderungen
+- Spezielle Handling-Prozesse
+
+### 3.3 Lagerortkoordinaten
+
+**Aufbau der Koordinaten:**
+- Strukturiertes Schema
+- Eindeutige Identifikation
+- Etikettierung der Lagerorte
+
+## 4. Einheiten und Maßsysteme
+
+### 4.1 Maßeinheiten
+- Länge, Breite, Höhe
+- Gewicht
+- Volumen
+
+### 4.2 Mengeneinheiten
+- Stück (ST)
+- Kilogramm (KG)
+- Liter (L)
+- Meter (M)
+
+### 4.3 Besonderheiten bei Georg Fischer
+- Firmenspezifische Einheiten
+- Besondere Messverfahren
+- Spezielle Anforderungen
+
+## 5. WMS Endgeräte
+
+### 5.1 PC-Clients
+- Stationäre Arbeitsplätze
+- Mobile Terminals
+- Handheld-Geräte
+
+### 5.2 Funktionalitäten
+- Bestandsabfrage
+- Auftragsverwaltung
+- Inventur
+- Reporting
+
+## Praktische Übungen
+
+### Übung 1: Systemverständnis
+1. Erklären Sie den Unterschied zwischen Produktiv- und Testsystem
+2. Nennen Sie die Hauptkomponenten des WMS
+3. Beschreiben Sie die Kommunikation mit SAP
+
+### Übung 2: Lagermodellierung
+1. Identifizieren Sie die verschiedenen Lagerbereiche
+2. Erklären Sie den Aufbau der Lagerortkoordinaten
+3. Beschreiben Sie die Verwendung von Ladehilfsmitteln
+
+### Übung 3: Terminologie
+1. Definieren Sie wichtige WMS-Begriffe
+2. Erklären Sie die verschiedenen Einheiten
+3. Beschreiben Sie die Anlagenstruktur
+
+## Lernerfolgskontrolle
+
+### Fragen zur Selbstüberprüfung
+
+1. **Was ist der Hauptunterschied zwischen Produktiv- und Testsystem?**
+   - [ ] Testsystem hat mehr Funktionen
+   - [x] Produktivsystem kommuniziert mit physischen Geräten
+   - [ ] Testsystem ist schneller
+   - [ ] Kein Unterschied
+
+2. **Welche Lagerbereiche gibt es bei Georg Fischer?**
+   - [x] HRL, AKL, Vorzone, Qualitätszone, Formenlager
+   - [ ] Nur HRL und AKL
+   - [ ] Nur Vorzone und Qualitätszone
+   - [ ] Nur Formenlager
+
+3. **Wie erfolgt die Kommunikation mit SAP?**
+   - [ ] Über E-Mail
+   - [ ] Über FTP
+   - [x] Über RFC-Verbindungen
+   - [ ] Über HTTP
+
+### Bewertung
+- **80-100%**: Ausgezeichnet - Sie haben die Grundlagen vollständig verstanden
+- **60-79%**: Gut - Wiederholen Sie schwächere Bereiche
+- **40-59%**: Befriedigend - Zusätzliche Übungen empfohlen
+- **<40%**: Ungenügend - Modul wiederholen
+
+## Weiterführende Ressourcen
+
+### Dokumentation
+- **Georg Fischer Handbuch Data Center WMS**
+- **Jungheinrich WMS Benutzerhandbuch**
+- **SAP-Schnittstellen-Dokumentation**
+
+### Screenshots und Bilder
+*[Platzhalter für Screenshots der Systemarchitektur]*
+*[Platzhalter für Lageraufbau-Diagramme]*
+*[Platzhalter für Benutzeroberfläche]*
+
+## Nächste Schritte
+
+Nach Abschluss dieses Moduls empfehlen wir:
+1. **Systemnavigation** - Lernen Sie die Benutzeroberfläche kennen
+2. **Benutzerverwaltung** - Verstehen Sie Rollen und Berechtigungen
+3. **Erste Schritte** - Praktische Anwendung der Grundlagen
+
+## Praxis-Tipps
+
+### Häufige Fehler vermeiden
+- Verwechslung von Produktiv- und Testsystem
+- Falsche Lagerortkoordinaten
+- Unvollständige Stammdaten
+
+### Best Practices
+- Regelmäßige Systempflege
+- Korrekte Terminologie verwenden
+- Dokumentation beachten
+
+## Kontakt und Support
+
+**Training Support:**
+- E-Mail: training@georgfischer.com
+- Telefon: +41 81 770 1234
+- Intranet: WMS-Portal
+
+**Technischer Support:**
+- ServiceDesk: +41 81 770 5678
+- E-Mail: wms-support@georgfischer.com
+
+---
+
+*Dieser Trainingsinhalt basiert auf der Jungheinrich WMS Schulungsunterlage für Georg Fischer Seewis, Version 1.1, Stand: 27.03.2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*

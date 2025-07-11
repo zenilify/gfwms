@@ -1,0 +1,1920 @@
+---
+layout: default
+title: "Notfallverfahren - Betriebsabläufe"
+description: "Notfall- und Ausfallprozeduren für kritische Situationen bei Georg Fischer"
+breadcrumbs:
+  - title: "Wiki"
+  - title: "Notfallverfahren"
+---
+
+<div class="operations-hero">
+    <div class="container">
+        <h1><i class="fas fa-first-aid"></i> Notfallverfahren - Betriebsabläufe</h1>
+        <p class="lead">Notfall- und Ausfallprozeduren für kritische Situationen bei Georg Fischer</p>
+    </div>
+</div>
+
+<div class="operations-content">
+    <div class="container">
+        <div class="operations-nav">
+            <div class="operations-tabs">
+                <button class="tab-btn active" data-tab="overview">Übersicht</button>
+                <button class="tab-btn" data-tab="systemausfall">Systemausfall</button>
+                <button class="tab-btn" data-tab="stromausfall">Stromausfall</button>
+                <button class="tab-btn" data-tab="kommunikation">Kommunikation</button>
+                <button class="tab-btn" data-tab="eskalation">Eskalation</button>
+                <button class="tab-btn" data-tab="wiederanlauf">Wiederanlauf</button>
+            </div>
+        </div>
+
+        <div class="operations-sections">
+            <!-- Overview Section -->
+            <div class="operations-section active" id="overview">
+                <h2>Notfallverfahren Übersicht</h2>
+                
+                <div class="emergency-alert">
+                    <div class="alert-content">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="alert-text">
+                            <h3>Notfall-Hotline: +41 81 770 9999</h3>
+                            <p>24/7 erreichbar für kritische WMS-Störungen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emergency-types">
+                    <h3>Notfall-Kategorien</h3>
+                    <div class="emergency-grid">
+                        <div class="emergency-card critical">
+                            <div class="emergency-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4>Systemausfall</h4>
+                            <div class="emergency-details">
+                                <p><strong>Kritikalität:</strong> Sehr hoch</p>
+                                <p><strong>Reaktionszeit:</strong> Sofort</p>
+                                <ul>
+                                    <li>WMS-Server nicht erreichbar</li>
+                                    <li>Datenbank-Probleme</li>
+                                    <li>Netzwerk-Ausfall</li>
+                                    <li>Software-Fehler</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="emergency-card high">
+                            <div class="emergency-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4>Stromausfall</h4>
+                            <div class="emergency-details">
+                                <p><strong>Kritikalität:</strong> Hoch</p>
+                                <p><strong>Reaktionszeit:</strong> 5 Minuten</p>
+                                <ul>
+                                    <li>Vollständiger Stromausfall</li>
+                                    <li>Teilausfall in Bereichen</li>
+                                    <li>USV-Probleme</li>
+                                    <li>Förderanlagen-Stillstand</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="emergency-card medium">
+                            <div class="emergency-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <h4>Kommunikationsausfall</h4>
+                            <div class="emergency-details">
+                                <p><strong>Kritikalität:</strong> Mittel</p>
+                                <p><strong>Reaktionszeit:</strong> 15 Minuten</p>
+                                <ul>
+                                    <li>Internet-Verbindung unterbrochen</li>
+                                    <li>SAP-Verbindung gestört</li>
+                                    <li>Funk-Terminals ausgefallen</li>
+                                    <li>Telefon-System defekt</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="emergency-card low">
+                            <div class="emergency-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4>Hardware-Ausfall</h4>
+                            <div class="emergency-details">
+                                <p><strong>Kritikalität:</strong> Niedrig-Mittel</p>
+                                <p><strong>Reaktionszeit:</strong> 30 Minuten</p>
+                                <ul>
+                                    <li>Einzelne PC-Arbeitsplätze</li>
+                                    <li>Drucker-Ausfälle</li>
+                                    <li>Scanner-Probleme</li>
+                                    <li>Waagen defekt</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-matrix">
+                    <h3>Notfall-Reaktionsmatrix</h3>
+                    <div class="matrix-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Störungstyp</th>
+                                    <th>Sofortmaßnahme</th>
+                                    <th>Verantwortlich</th>
+                                    <th>Eskalation nach</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WMS-Totalausfall</td>
+                                    <td>Papier-Notverfahren aktivieren</td>
+                                    <td>Schichtführer</td>
+                                    <td>Sofort</td>
+                                </tr>
+                                <tr>
+                                    <td>Stromausfall</td>
+                                    <td>Sicherheit prüfen, USV aktivieren</td>
+                                    <td>Technischer Dienst</td>
+                                    <td>5 Minuten</td>
+                                </tr>
+                                <tr>
+                                    <td>SAP-Verbindung</td>
+                                    <td>Lokale WMS-Funktionen nutzen</td>
+                                    <td>IT-Support</td>
+                                    <td>15 Minuten</td>
+                                </tr>
+                                <tr>
+                                    <td>Förderanlage</td>
+                                    <td>Manueller Betrieb</td>
+                                    <td>Lagerleiter</td>
+                                    <td>10 Minuten</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="emergency-contacts">
+                    <h3>Notfall-Kontakte</h3>
+                    <div class="contacts-grid">
+                        <div class="contact-card">
+                            <h4><i class="fas fa-phone"></i> Primäre Kontakte</h4>
+                            <ul>
+                                <li><strong>WMS-Hotline:</strong> +41 81 770 9999</li>
+                                <li><strong>IT-Support:</strong> +41 81 770 1234</li>
+                                <li><strong>Lagerleitung:</strong> +41 79 123 4567</li>
+                                <li><strong>Technischer Dienst:</strong> +41 79 234 5678</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h4><i class="fas fa-users"></i> Eskalation</h4>
+                            <ul>
+                                <li><strong>Werksleitung:</strong> +41 79 345 6789</li>
+                                <li><strong>IT-Leitung:</strong> +41 79 456 7890</li>
+                                <li><strong>Jungheinrich Support:</strong> +49 40 6948 0</li>
+                                <li><strong>Externe Wartung:</strong> +41 44 567 8901</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Systemausfall Section -->
+            <div class="operations-section" id="systemausfall">
+                <h2>WMS-Systemausfall</h2>
+                
+                <div class="system-failure-protocol">
+                    <h3>Sofortmaßnahmen bei WMS-Ausfall</h3>
+                    
+                    <div class="immediate-actions">
+                        <div class="action-phase">
+                            <h4>Phase 1: Erste 5 Minuten</h4>
+                            <div class="action-checklist">
+                                <div class="checklist-item critical">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <div class="item-content">
+                                        <h5>Alle Lagerbewegungen stoppen</h5>
+                                        <p>Sofortige Unterbrechung aller automatischen Prozesse</p>
+                                        <ul>
+                                            <li>□ Förderanlagen anhalten</li>
+                                            <li>□ Automatisches Lager stoppen</li>
+                                            <li>□ Mitarbeiter informieren</li>
+                                            <li>□ Sicherheit prüfen</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="checklist-item high">
+                                    <i class="fas fa-phone"></i>
+                                    <div class="item-content">
+                                        <h5>Notfall-Hotline verständigen</h5>
+                                        <p>Sofortige Meldung an WMS-Support</p>
+                                        <ul>
+                                            <li>□ Hotline: +41 81 770 9999 anrufen</li>
+                                            <li>□ Fehlerbeschreibung bereithalten</li>
+                                            <li>□ Zeitpunkt des Ausfalls dokumentieren</li>
+                                            <li>□ Betroffene Bereiche spezifizieren</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-phase">
+                            <h4>Phase 2: Erste 15 Minuten</h4>
+                            <div class="action-checklist">
+                                <div class="checklist-item medium">
+                                    <i class="fas fa-clipboard"></i>
+                                    <div class="item-content">
+                                        <h5>Papier-Notverfahren aktivieren</h5>
+                                        <p>Umstellung auf manuelle Dokumentation</p>
+                                        <ul>
+                                            <li>□ Notfall-Formulare bereitstellen</li>
+                                            <li>□ Letzte bekannte Bestände ermitteln</li>
+                                            <li>□ Prioritäre Aufträge identifizieren</li>
+                                            <li>□ Manuelle Arbeitsverteilung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="checklist-item medium">
+                                    <i class="fas fa-users"></i>
+                                    <div class="item-content">
+                                        <h5>Krisenstab aktivieren</h5>
+                                        <p>Notfall-Team zusammenrufen</p>
+                                        <ul>
+                                            <li>□ Lagerleiter verständigen</li>
+                                            <li>□ IT-Verantwortlichen kontaktieren</li>
+                                            <li>□ Schichtführer instruieren</li>
+                                            <li>□ Kommunikationsplan aktivieren</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manual-procedures">
+                    <h3>Manuelle Notverfahren</h3>
+                    
+                    <div class="manual-processes">
+                        <div class="process-card">
+                            <h4><i class="fas fa-truck-loading"></i> Wareneingang</h4>
+                            <div class="process-steps">
+                                <h5>Manuelle WE-Abwicklung:</h5>
+                                <ol>
+                                    <li><strong>Anlieferung dokumentieren</strong>
+                                        <ul>
+                                            <li>Lieferschein-Nummer notieren</li>
+                                            <li>Lieferant erfassen</li>
+                                            <li>Uhrzeit dokumentieren</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Artikel prüfen</strong>
+                                        <ul>
+                                            <li>Mengen kontrollieren</li>
+                                            <li>Artikel-Nummern abgleichen</li>
+                                            <li>Qualität bewerten</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Einlagerung vorbereiten</strong>
+                                        <ul>
+                                            <li>Lagerplätze manuell zuweisen</li>
+                                            <li>Prioritäten festlegen</li>
+                                            <li>Transport organisieren</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="process-card">
+                            <h4><i class="fas fa-hand-paper"></i> Kommissionierung</h4>
+                            <div class="process-steps">
+                                <h5>Manuelle Pickprozesse:</h5>
+                                <ol>
+                                    <li><strong>Aufträge priorisieren</strong>
+                                        <ul>
+                                            <li>Eilaufträge zuerst</li>
+                                            <li>Vollständig verfügbare Aufträge</li>
+                                            <li>Kurze Laufwege bevorzugen</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Pick-Listen erstellen</strong>
+                                        <ul>
+                                            <li>Letzte bekannte Lagerplätze</li>
+                                            <li>Artikel-Beschreibungen</li>
+                                            <li>Benötigte Mengen</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Manuelle Kommissionierung</strong>
+                                        <ul>
+                                            <li>Systematisches Abarbeiten</li>
+                                            <li>Doppelte Mengenkontrolle</li>
+                                            <li>Dokumentation aller Entnahmen</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="process-card">
+                            <h4><i class="fas fa-shipping-fast"></i> Warenausgang</h4>
+                            <div class="process-steps">
+                                <h5>Manuelle WA-Abwicklung:</h5>
+                                <ol>
+                                    <li><strong>Sendungen vorbereiten</strong>
+                                        <ul>
+                                            <li>Kommissionierte Artikel sammeln</li>
+                                            <li>Vollständigkeit prüfen</li>
+                                            <li>Verpackung vorbereiten</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Dokumentation erstellen</strong>
+                                        <ul>
+                                            <li>Manuelle Lieferscheine</li>
+                                            <li>Versand-Etiketten vorbereiten</li>
+                                            <li>Gewichte ermitteln</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Verladung organisieren</strong>
+                                        <ul>
+                                            <li>Spediteure kontaktieren</li>
+                                            <li>Verladung koordinieren</li>
+                                            <li>Abgänge dokumentieren</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-recovery">
+                    <h3>Datenrekonstruktion</h3>
+                    
+                    <div class="recovery-strategy">
+                        <h4>Datensicherung und Wiederherstellung</h4>
+                        <div class="recovery-steps">
+                            <div class="recovery-step">
+                                <h5>1. Backup-Status prüfen</h5>
+                                <ul>
+                                    <li>Letztes automatisches Backup ermitteln</li>
+                                    <li>Datenverlust-Zeitraum bestimmen</li>
+                                    <li>Kritische Daten identifizieren</li>
+                                    <li>Wiederherstellbarkeit bewerten</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="recovery-step">
+                                <h5>2. Manuelle Daten sammeln</h5>
+                                <ul>
+                                    <li>Alle Papier-Belege sammeln</li>
+                                    <li>Zeitzeugen befragen</li>
+                                    <li>Bestandsänderungen rekonstruieren</li>
+                                    <li>Bewegungen chronologisch ordnen</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="recovery-step">
+                                <h5>3. System-Wiederherstellung</h5>
+                                <ul>
+                                    <li>Backup einspielen</li>
+                                    <li>Daten-Konsistenz prüfen</li>
+                                    <li>Manuelle Korrekturen eingeben</li>
+                                    <li>Vollständige Inventur erwägen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stromausfall Section -->
+            <div class="operations-section" id="stromausfall">
+                <h2>Stromausfall-Verfahren</h2>
+                
+                <div class="power-failure-protocol">
+                    <h3>Stromausfall-Reaktion</h3>
+                    
+                    <div class="power-phases">
+                        <div class="phase-card">
+                            <h4>Sofortmaßnahmen (0-5 Minuten)</h4>
+                            <div class="phase-actions">
+                                <div class="critical-action">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h5>Sicherheit gewährleisten</h5>
+                                    <ul>
+                                        <li>□ Alle Bewegungen sofort stoppen</li>
+                                        <li>□ Förderanlagen sichern</li>
+                                        <li>□ Notbeleuchtung aktivieren</li>
+                                        <li>□ Fluchtwege prüfen</li>
+                                        <li>□ Personen evakuieren falls nötig</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="high-action">
+                                    <i class="fas fa-battery-three-quarters"></i>
+                                    <h5>USV-Systeme prüfen</h5>
+                                    <ul>
+                                        <li>□ WMS-Server USV-Status</li>
+                                        <li>□ Netzwerk-Komponenten prüfen</li>
+                                        <li>□ Verbleibende Laufzeit ermitteln</li>
+                                        <li>□ Herunterfahren-Prozess vorbereiten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <h4>Kurzzeitreaktion (5-30 Minuten)</h4>
+                            <div class="phase-actions">
+                                <div class="medium-action">
+                                    <i class="fas fa-cogs"></i>
+                                    <h5>Systeme kontrolliert herunterfahren</h5>
+                                    <ul>
+                                        <li>□ WMS-Datenbank sicher schließen</li>
+                                        <li>□ Offene Transaktionen speichern</li>
+                                        <li>□ Arbeitsplätze herunterfahren</li>
+                                        <li>□ Server ordnungsgemäß beenden</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="medium-action">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <h5>Bestandsaufnahme</h5>
+                                    <ul>
+                                        <li>□ Laufende Prozesse dokumentieren</li>
+                                        <li>□ Kritische Aufträge identifizieren</li>
+                                        <li>□ Materialien sichern</li>
+                                        <li>□ Arbeitsplätze absichern</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="phase-card">
+                            <h4>Langzeitmaßnahmen (30+ Minuten)</h4>
+                            <div class="phase-actions">
+                                <div class="low-action">
+                                    <i class="fas fa-plug"></i>
+                                    <h5>Notstromerversorgung</h5>
+                                    <ul>
+                                        <li>□ Notstromaggregat starten</li>
+                                        <li>□ Prioritäre Systeme wieder hochfahren</li>
+                                        <li>□ Minimalbetrieb etablieren</li>
+                                        <li>□ Kraftstoffvorrat prüfen</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="low-action">
+                                    <i class="fas fa-tools"></i>
+                                    <h5>Alternative Arbeitsverfahren</h5>
+                                    <ul>
+                                        <li>□ Manuelle Prozesse aktivieren</li>
+                                        <li>□ Batteriebasierte Geräte nutzen</li>
+                                        <li>□ Externe Hilfsmittel organisieren</li>
+                                        <li>□ Personalumverteilung</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ups-management">
+                    <h3>USV-Management</h3>
+                    
+                    <div class="ups-systems">
+                        <h4>Kritische Systeme mit USV-Schutz</h4>
+                        <div class="ups-grid">
+                            <div class="ups-system">
+                                <h5>WMS-Server</h5>
+                                <div class="ups-details">
+                                    <p><strong>Kapazität:</strong> 60 Minuten</p>
+                                    <p><strong>Priorität:</strong> Höchste</p>
+                                    <p><strong>Maßnahmen:</strong></p>
+                                    <ul>
+                                        <li>Automatisches Herunterfahren nach 45 Min.</li>
+                                        <li>Datenbank-Backup vor Shutdown</li>
+                                        <li>Alle Transaktionen sichern</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="ups-system">
+                                <h5>Netzwerk-Infrastruktur</h5>
+                                <div class="ups-details">
+                                    <p><strong>Kapazität:</strong> 45 Minuten</p>
+                                    <p><strong>Priorität:</strong> Hoch</p>
+                                    <p><strong>Maßnahmen:</strong></p>
+                                    <ul>
+                                        <li>Switches und Router schützen</li>
+                                        <li>WLAN für Funk-Terminals</li>
+                                        <li>Externe Verbindungen halten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="ups-system">
+                                <h5>Steuerungscomputer</h5>
+                                <div class="ups-details">
+                                    <p><strong>Kapazität:</strong> 30 Minuten</p>
+                                    <p><strong>Priorität:</strong> Mittel</p>
+                                    <p><strong>Maßnahmen:</strong></p>
+                                    <ul>
+                                        <li>Förderanlagen-Steuerung</li>
+                                        <li>Automatisches Lager</li>
+                                        <li>Sicherheitssysteme</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="backup-power">
+                    <h3>Notstromversorgung</h3>
+                    
+                    <div class="generator-procedures">
+                        <h4>Notstromaggregat-Betrieb</h4>
+                        <div class="generator-steps">
+                            <div class="step-group">
+                                <h5>Vorbereitung</h5>
+                                <ul>
+                                    <li>Kraftstoffstand prüfen (mind. 8 Stunden)</li>
+                                    <li>Sicherheitsabstände einhalten</li>
+                                    <li>Alle nicht-kritischen Verbraucher trennen</li>
+                                    <li>Umschaltung vorbereiten</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step-group">
+                                <h5>Start-Sequenz</h5>
+                                <ul>
+                                    <li>Manuellen Start durchführen</li>
+                                    <li>Frequenz und Spannung stabilisieren</li>
+                                    <li>Umschaltung auf Notstrom</li>
+                                    <li>Systeme prioritätsbasiert hochfahren</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step-group">
+                                <h5>Betrieb überwachen</h5>
+                                <ul>
+                                    <li>Kraftstoffverbrauch überwachen</li>
+                                    <li>Temperatur und Ölstand prüfen</li>
+                                    <li>Lastverteilung optimieren</li>
+                                    <li>Nachbetankung organisieren</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kommunikation Section -->
+            <div class="operations-section" id="kommunikation">
+                <h2>Kommunikations-Notverfahren</h2>
+                
+                <div class="communication-systems">
+                    <h3>Redundante Kommunikationswege</h3>
+                    
+                    <div class="comm-hierarchy">
+                        <div class="comm-level primary">
+                            <h4><i class="fas fa-signal"></i> Primäre Systeme</h4>
+                            <div class="comm-details">
+                                <h5>Internet/WAN</h5>
+                                <ul>
+                                    <li>Hauptverbindung für SAP-Kommunikation</li>
+                                    <li>E-Mail und externe Services</li>
+                                    <li>Backup: LTE-Router verfügbar</li>
+                                    <li>Umschaltzeit: 2-5 Minuten</li>
+                                </ul>
+                                
+                                <h5>Intranet/LAN</h5>
+                                <ul>
+                                    <li>Interne WMS-Kommunikation</li>
+                                    <li>Arbeitsplatz-Vernetzung</li>
+                                    <li>Backup: WLAN-Redundanz</li>
+                                    <li>Ausfallsicherheit: 99.5%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="comm-level secondary">
+                            <h4><i class="fas fa-mobile-alt"></i> Backup-Systeme</h4>
+                            <div class="comm-details">
+                                <h5>Mobile Daten (LTE)</h5>
+                                <ul>
+                                    <li>Automatische Umschaltung bei Ausfall</li>
+                                    <li>Mobile Hotspots für kritische Arbeitsplätze</li>
+                                    <li>Bandbreite: 50 Mbit/s</li>
+                                    <li>Priorität: WMS-Kommunikation</li>
+                                </ul>
+                                
+                                <h5>Satelliten-Kommunikation</h5>
+                                <ul>
+                                    <li>Notfall-Verbindung bei Totalausfall</li>
+                                    <li>Sehr begrenzte Bandbreite</li>
+                                    <li>Nur für kritische Meldungen</li>
+                                    <li>Aufbauzeit: 10-15 Minuten</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="comm-level emergency">
+                            <h4><i class="fas fa-phone"></i> Notfall-Kommunikation</h4>
+                            <div class="comm-details">
+                                <h5>Analoges Telefon</h5>
+                                <ul>
+                                    <li>Unabhängig von IP-Telefonie</li>
+                                    <li>Direkte Leitungen zu kritischen Kontakten</li>
+                                    <li>Batteriegepuffert für 4 Stunden</li>
+                                    <li>Immer verfügbar</li>
+                                </ul>
+                                
+                                <h5>Funk-Kommunikation</h5>
+                                <ul>
+                                    <li>Walkie-Talkies für interne Kommunikation</li>
+                                    <li>Reichweite: gesamtes Werksgelände</li>
+                                    <li>Batteriebetrieb: 8-12 Stunden</li>
+                                    <li>Kanäle für verschiedene Bereiche</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="communication-protocols">
+                    <h3>Kommunikations-Protokolle</h3>
+                    
+                    <div class="protocol-matrix">
+                        <h4>Eskalations-Matrix</h4>
+                        <div class="escalation-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Störungsgrad</th>
+                                        <th>Sofort informieren</th>
+                                        <th>Binnen 15 Min.</th>
+                                        <th>Binnen 1 Stunde</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Kritisch</td>
+                                        <td>
+                                            • Lagerleiter<br>
+                                            • IT-Support<br>
+                                            • Schichtführer
+                                        </td>
+                                        <td>
+                                            • Werksleiter<br>
+                                            • IT-Leitung<br>
+                                            • Externe Partner
+                                        </td>
+                                        <td>
+                                            • Geschäftsführung<br>
+                                            • Kunden<br>
+                                            • Behörden
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hoch</td>
+                                        <td>
+                                            • Schichtführer<br>
+                                            • IT-Support
+                                        </td>
+                                        <td>
+                                            • Lagerleiter<br>
+                                            • Betroffene Bereiche
+                                        </td>
+                                        <td>
+                                            • Management<br>
+                                            • Externe Dienstleister
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mittel</td>
+                                        <td>
+                                            • Direkte Vorgesetzte
+                                        </td>
+                                        <td>
+                                            • IT-Support<br>
+                                            • Lagerleiter
+                                        </td>
+                                        <td>
+                                            • Bei Nichthähung:<br>
+                                            &nbsp;&nbsp;Höhere Eskalation
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="external-communication">
+                    <h3>Externe Kommunikation</h3>
+                    
+                    <div class="external-contacts">
+                        <div class="contact-group">
+                            <h4>Kunden-Kommunikation</h4>
+                            <div class="contact-procedures">
+                                <h5>Bei Lieferverzögerungen:</h5>
+                                <ul>
+                                    <li>Kunden binnen 2 Stunden informieren</li>
+                                    <li>Realistische Zeitschätzung geben</li>
+                                    <li>Alternative Lösungen anbieten</li>
+                                    <li>Regelmäßige Updates alle 4 Stunden</li>
+                                </ul>
+                                
+                                <h5>Kommunikationskanäle:</h5>
+                                <ul>
+                                    <li>E-Mail (primär)</li>
+                                    <li>Telefon bei kritischen Kunden</li>
+                                    <li>Customer Portal Updates</li>
+                                    <li>SMS bei Express-Aufträgen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-group">
+                            <h4>Lieferanten-Koordination</h4>
+                            <div class="contact-procedures">
+                                <h5>Anlieferungen koordinieren:</h5>
+                                <ul>
+                                    <li>Geplante Anlieferungen verschieben</li>
+                                    <li>Eillieferungen priorisieren</li>
+                                    <li>Umleitung zu alternativen Annahmestellen</li>
+                                    <li>Warteschlangen-Management</li>
+                                </ul>
+                                
+                                <h5>Kommunikation:</h5>
+                                <ul>
+                                    <li>Direkte Spediteur-Hotlines</li>
+                                    <li>EDI-Nachrichten wenn möglich</li>
+                                    <li>Mobile Kommunikation vor Ort</li>
+                                    <li>Alternative Ansprechpartner</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eskalation Section -->
+            <div class="operations-section" id="eskalation">
+                <h2>Eskalations-Management</h2>
+                
+                <div class="escalation-levels">
+                    <h3>Eskalations-Stufen</h3>
+                    
+                    <div class="escalation-pyramid">
+                        <div class="escalation-level level-4">
+                            <div class="level-header">
+                                <h4>Stufe 4 - Management</h4>
+                                <span class="level-time">Binnen 1 Stunde</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Verantwortlich:</strong> Geschäftsführung, Werksleiter</p>
+                                <p><strong>Kriterien:</strong> Produktionsstillstand > 4h, Kundenschäden > 100k €</p>
+                                <h5>Maßnahmen:</h5>
+                                <ul>
+                                    <li>Externe Spezialisten beauftragen</li>
+                                    <li>Notfall-Budget freigeben</li>
+                                    <li>Krisenkommunikation aktivieren</li>
+                                    <li>Rechtliche Bewertung einleiten</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="escalation-level level-3">
+                            <div class="level-header">
+                                <h4>Stufe 3 - Bereichsleitung</h4>
+                                <span class="level-time">Binnen 30 Minuten</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Verantwortlich:</strong> IT-Leitung, Produktionsleitung</p>
+                                <p><strong>Kriterien:</strong> Systemausfall > 2h, mehrere Bereiche betroffen</p>
+                                <h5>Maßnahmen:</h5>
+                                <ul>
+                                    <li>Krisenstab einberufen</li>
+                                    <li>Externe Hilfe organisieren</li>
+                                    <li>Alternative Verfahren aktivieren</li>
+                                    <li>Ressourcen umverteilen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="escalation-level level-2">
+                            <div class="level-header">
+                                <h4>Stufe 2 - Operative Leitung</h4>
+                                <span class="level-time">Binnen 15 Minuten</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Verantwortlich:</strong> Lagerleiter, IT-Support</p>
+                                <p><strong>Kriterien:</strong> Systemausfall > 30min, Betriebsbehinderung</p>
+                                <h5>Maßnahmen:</h5>
+                                <ul>
+                                    <li>Notverfahren aktivieren</li>
+                                    <li>Personal umverteilen</li>
+                                    <li>Prioritäten neu setzen</li>
+                                    <li>Zeitplan anpassen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="escalation-level level-1">
+                            <div class="level-header">
+                                <h4>Stufe 1 - Schichtebene</h4>
+                                <span class="level-time">Sofort</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Verantwortlich:</strong> Schichtführer, Team-Leiter</p>
+                                <p><strong>Kriterien:</strong> Jede Betriebsstörung</p>
+                                <h5>Maßnahmen:</h5>
+                                <ul>
+                                    <li>Problem analysieren</li>
+                                    <li>Sofortmaßnahmen einleiten</li>
+                                    <li>Team informieren</li>
+                                    <li>Dokumentation beginnen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="decision-matrix">
+                    <h3>Entscheidungsmatrix</h3>
+                    
+                    <div class="decision-tree">
+                        <h4>Eskalations-Entscheidung</h4>
+                        <div class="decision-flowchart">
+                            <div class="decision-node start">
+                                <h5>Störung erkannt</h5>
+                                <p>Sofortige Bewertung</p>
+                            </div>
+                            
+                            <div class="decision-paths">
+                                <div class="decision-path">
+                                    <div class="decision-question">
+                                        <p><strong>Betriebsausfall > 30 min?</strong></p>
+                                    </div>
+                                    <div class="decision-outcomes">
+                                        <div class="outcome yes">
+                                            <span>JA</span>
+                                            <p>→ Stufe 2 aktivieren</p>
+                                        </div>
+                                        <div class="outcome no">
+                                            <span>NEIN</span>
+                                            <p>→ Stufe 1 beibehalten</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="decision-path">
+                                    <div class="decision-question">
+                                        <p><strong>Keine Besserung nach 1h?</strong></p>
+                                    </div>
+                                    <div class="decision-outcomes">
+                                        <div class="outcome yes">
+                                            <span>JA</span>
+                                            <p>→ Stufe 3 aktivieren</p>
+                                        </div>
+                                        <div class="outcome no">
+                                            <span>NEIN</span>
+                                            <p>→ Aktuelle Stufe halten</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="decision-path">
+                                    <div class="decision-question">
+                                        <p><strong>Externe Hilfe erforderlich?</strong></p>
+                                    </div>
+                                    <div class="decision-outcomes">
+                                        <div class="outcome yes">
+                                            <span>JA</span>
+                                            <p>→ Stufe 4 aktivieren</p>
+                                        </div>
+                                        <div class="outcome no">
+                                            <span>NEIN</span>
+                                            <p>→ Interne Lösung fortsetzen</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="escalation-documentation">
+                    <h3>Eskalations-Dokumentation</h3>
+                    
+                    <div class="documentation-requirements">
+                        <h4>Pflichtangaben bei Eskalation</h4>
+                        <div class="doc-checklist">
+                            <div class="doc-category">
+                                <h5>Störungs-Information</h5>
+                                <ul>
+                                    <li>□ Zeitpunkt des Ausfalls</li>
+                                    <li>□ Betroffene Systeme/Bereiche</li>
+                                    <li>□ Fehlerbeschreibung</li>
+                                    <li>□ Erste Diagnose</li>
+                                    <li>□ Auswirkungen auf Betrieb</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="doc-category">
+                                <h5>Maßnahmen</h5>
+                                <ul>
+                                    <li>□ Bereits eingeleitete Schritte</li>
+                                    <li>□ Notverfahren aktiviert</li>
+                                    <li>□ Personal-Umverteilung</li>
+                                    <li>□ Externe Kontakte informiert</li>
+                                    <li>□ Zeitschätzung für Lösung</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="doc-category">
+                                <h5>Auswirkungen</h5>
+                                <ul>
+                                    <li>□ Betroffene Aufträge</li>
+                                    <li>□ Verzögerungen abschätzen</li>
+                                    <li>□ Finanzielle Auswirkungen</li>
+                                    <li>□ Kunden-Betroffenheit</li>
+                                    <li>□ Reputations-Risiko</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wiederanlauf Section -->
+            <div class="operations-section" id="wiederanlauf">
+                <h2>System-Wiederanlauf</h2>
+                
+                <div class="restart-procedures">
+                    <h3>Restart-Prozeduren</h3>
+                    
+                    <div class="restart-phases">
+                        <div class="restart-phase">
+                            <h4>Phase 1: System-Vorbereitung</h4>
+                            <div class="phase-steps">
+                                <div class="step-group critical">
+                                    <h5><i class="fas fa-shield-alt"></i> Sicherheits-Check</h5>
+                                    <ul>
+                                        <li>□ Alle Gefahrenquellen beseitigen</li>
+                                        <li>□ Stromversorgung stabilisiert</li>
+                                        <li>□ Netzwerk-Infrastruktur geprüft</li>
+                                        <li>□ Hardware-Status kontrolliert</li>
+                                        <li>□ Personal informiert und bereit</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="step-group high">
+                                    <h5><i class="fas fa-database"></i> Daten-Integrität</h5>
+                                    <ul>
+                                        <li>□ Backup-Status überprüfen</li>
+                                        <li>□ Datenbank-Konsistenz testen</li>
+                                        <li>□ Transaktions-Logs analysieren</li>
+                                        <li>□ Datenverlust bewerten</li>
+                                        <li>□ Recovery-Strategie festlegen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="restart-phase">
+                            <h4>Phase 2: System-Start</h4>
+                            <div class="phase-steps">
+                                <div class="startup-sequence">
+                                    <h5>Startup-Reihenfolge</h5>
+                                    <div class="sequence-steps">
+                                        <div class="sequence-step">
+                                            <span class="step-num">1</span>
+                                            <div class="step-content">
+                                                <h6>Infrastruktur</h6>
+                                                <p>Netzwerk, Switches, Server-Hardware</p>
+                                            </div>
+                                        </div>
+                                        <div class="sequence-step">
+                                            <span class="step-num">2</span>
+                                            <div class="step-content">
+                                                <h6>Datenbank</h6>
+                                                <p>WMS-Datenbank starten und prüfen</p>
+                                            </div>
+                                        </div>
+                                        <div class="sequence-step">
+                                            <span class="step-num">3</span>
+                                            <div class="step-content">
+                                                <h6>WMS-Services</h6>
+                                                <p>Kernmodule und Services aktivieren</p>
+                                            </div>
+                                        </div>
+                                        <div class="sequence-step">
+                                            <span class="step-num">4</span>
+                                            <div class="step-content">
+                                                <h6>SAP-Verbindung</h6>
+                                                <p>EDI und Interface-Services</p>
+                                            </div>
+                                        </div>
+                                        <div class="sequence-step">
+                                            <span class="step-num">5</span>
+                                            <div class="step-content">
+                                                <h6>Arbeitsplätze</h6>
+                                                <p>Client-PCs und Terminals</p>
+                                            </div>
+                                        </div>
+                                        <div class="sequence-step">
+                                            <span class="step-num">6</span>
+                                            <div class="step-content">
+                                                <h6>Automatik</h6>
+                                                <p>Förderanlagen und Lager-Automatik</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="restart-phase">
+                            <h4>Phase 3: Funktions-Tests</h4>
+                            <div class="phase-steps">
+                                <div class="test-procedures">
+                                    <h5>Kritische Tests</h5>
+                                    <div class="test-categories">
+                                        <div class="test-category">
+                                            <h6>System-Tests</h6>
+                                            <ul>
+                                                <li>□ Datenbank-Abfragen funktionsfähig</li>
+                                                <li>□ Benutzer-Anmeldung möglich</li>
+                                                <li>□ Menü-Navigation vollständig</li>
+                                                <li>□ Berichte generierbar</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="test-category">
+                                            <h6>Prozess-Tests</h6>
+                                            <ul>
+                                                <li>□ Test-Wareneingang durchführen</li>
+                                                <li>□ Test-Kommissionierung abwickeln</li>
+                                                <li>□ Bestands-Abfrage funktional</li>
+                                                <li>□ Druckfunktionen testen</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="test-category">
+                                            <h6>Interface-Tests</h6>
+                                            <ul>
+                                                <li>□ SAP-Verbindung stabil</li>
+                                                <li>□ EDI-Nachrichten fließen</li>
+                                                <li>□ Automatiklager erreichbar</li>
+                                                <li>□ Waagen und Scanner aktiv</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-reconciliation">
+                    <h3>Daten-Abgleich</h3>
+                    
+                    <div class="reconciliation-process">
+                        <h4>Bestands-Rekonstruktion</h4>
+                        <div class="recon-steps">
+                            <div class="recon-step">
+                                <h5>1. Basis-Daten wiederherstellen</h5>
+                                <div class="step-details">
+                                    <p><strong>Vorgehen:</strong></p>
+                                    <ul>
+                                        <li>Letztes vollständiges Backup einspielen</li>
+                                        <li>Datenbank-Konsistenz prüfen</li>
+                                        <li>Referenz-Zeitpunkt festlegen</li>
+                                        <li>Basis-Bestände validieren</li>
+                                    </ul>
+                                    
+                                    <p><strong>Kontrollen:</strong></p>
+                                    <ul>
+                                        <li>Artikel-Stammdaten vollständig</li>
+                                        <li>Lagerplatz-Struktur intakt</li>
+                                        <li>Benutzer-Konfiguration korrekt</li>
+                                        <li>System-Parameter richtig</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="recon-step">
+                                <h5>2. Bewegungen nachvollziehen</h5>
+                                <div class="step-details">
+                                    <p><strong>Datenquellen:</strong></p>
+                                    <ul>
+                                        <li>Papier-Belege aus Notverfahren</li>
+                                        <li>SAP-Bewegungsdaten</li>
+                                        <li>Automatiklager-Logs</li>
+                                        <li>Mitarbeiter-Berichte</li>
+                                    </ul>
+                                    
+                                    <p><strong>Rekonstruktion:</strong></p>
+                                    <ul>
+                                        <li>Chronologische Aufarbeitung</li>
+                                        <li>Eingänge und Ausgänge buchen</li>
+                                        <li>Umlagerungen nachvollziehen</li>
+                                        <li>Korrekturen dokumentieren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="recon-step">
+                                <h5>3. Bestände verifizieren</h5>
+                                <div class="step-details">
+                                    <p><strong>Kontroll-Inventur:</strong></p>
+                                    <ul>
+                                        <li>Stichproben in kritischen Bereichen</li>
+                                        <li>Hochfrequente Artikel prüfen</li>
+                                        <li>Wertmäßig wichtige Positionen</li>
+                                        <li>Problematische Lagerplätze</li>
+                                    </ul>
+                                    
+                                    <p><strong>Abweichungs-Behandlung:</strong></p>
+                                    <ul>
+                                        <li>Toleranzen definieren (±2%)</li>
+                                        <li>Große Abweichungen untersuchen</li>
+                                        <li>Korrekturen nur nach Freigabe</li>
+                                        <li>Dokumentation aller Änderungen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gradual-restart">
+                    <h3>Schrittweise Wiederaufnahme</h3>
+                    
+                    <div class="restart-stages">
+                        <div class="stage-timeline">
+                            <div class="stage">
+                                <h4>Stufe 1: Test-Betrieb</h4>
+                                <div class="stage-content">
+                                    <p><strong>Dauer:</strong> 2-4 Stunden</p>
+                                    <p><strong>Umfang:</strong> Begrenzt auf kritische Funktionen</p>
+                                    <h5>Aktivitäten:</h5>
+                                    <ul>
+                                        <li>Nur eilige Aufträge bearbeiten</li>
+                                        <li>Ein Arbeitsplatz pro Bereich</li>
+                                        <li>Intensive Überwachung</li>
+                                        <li>Sofortiges Feedback sammeln</li>
+                                    </ul>
+                                    <h5>Go/No-Go Kriterien:</h5>
+                                    <ul>
+                                        <li>Keine System-Fehler in 2h</li>
+                                        <li>Daten-Konsistenz bestätigt</li>
+                                        <li>Performance akzeptabel</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="stage">
+                                <h4>Stufe 2: Teilbetrieb</h4>
+                                <div class="stage-content">
+                                    <p><strong>Dauer:</strong> 4-8 Stunden</p>
+                                    <p><strong>Umfang:</strong> 50% der normalen Kapazität</p>
+                                    <h5>Aktivitäten:</h5>
+                                    <ul>
+                                        <li>Alle Kernprozesse aktiv</li>
+                                        <li>Reduzierte Arbeitsplatz-Anzahl</li>
+                                        <li>Verstärkte Qualitätskontrolle</li>
+                                        <li>Auftragsrückstau abarbeiten</li>
+                                    </ul>
+                                    <h5>Überwachung:</h5>
+                                    <ul>
+                                        <li>Permanente System-Beobachtung</li>
+                                        <li>Stündliche Status-Reports</li>
+                                        <li>Sofortige Fehler-Eskalation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="stage">
+                                <h4>Stufe 3: Vollbetrieb</h4>
+                                <div class="stage-content">
+                                    <p><strong>Dauer:</strong> Ab 8 Stunden</p>
+                                    <p><strong>Umfang:</strong> 100% normale Kapazität</p>
+                                    <h5>Aktivitäten:</h5>
+                                    <ul>
+                                        <li>Alle Arbeitsplätze aktiv</li>
+                                        <li>Normaler Schichtbetrieb</li>
+                                        <li>Alle Automatik-Funktionen</li>
+                                        <li>Rückstau vollständig aufholen</li>
+                                    </ul>
+                                    <h5>Nachbetreuung:</h5>
+                                    <ul>
+                                        <li>48h verstärkte Überwachung</li>
+                                        <li>Tägliche Performance-Reviews</li>
+                                        <li>Wöchentlicher Stabilitäts-Bericht</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lessons-learned">
+                    <h3>Nachbearbeitung und Verbesserung</h3>
+                    
+                    <div class="post-incident-process">
+                        <h4>Post-Incident Review</h4>
+                        <div class="review-agenda">
+                            <div class="review-section">
+                                <h5>1. Incident-Analyse</h5>
+                                <ul>
+                                    <li>Ursachen-Analyse durchführen</li>
+                                    <li>Timeline rekonstruieren</li>
+                                    <li>Beinahe-Faktoren identifizieren</li>
+                                    <li>System-Schwachstellen aufzeigen</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h5>2. Response-Bewertung</h5>
+                                <ul>
+                                    <li>Reaktionszeiten analysieren</li>
+                                    <li>Kommunikation bewerten</li>
+                                    <li>Notverfahren-Effektivität prüfen</li>
+                                    <li>Team-Performance beurteilen</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h5>3. Verbesserungsmaßnahmen</h5>
+                                <ul>
+                                    <li>Präventive Maßnahmen definieren</li>
+                                    <li>Prozess-Optimierungen ableiten</li>
+                                    <li>Schulungsbedarf identifizieren</li>
+                                    <li>Technology-Updates planen</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="review-section">
+                                <h5>4. Dokumentation</h5>
+                                <ul>
+                                    <li>Vollständiger Incident-Report</li>
+                                    <li>Lessons-Learned dokumentieren</li>
+                                    <li>Verfahren aktualisieren</li>
+                                    <li>Schulungsunterlagen anpassen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.operations-hero {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.operations-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.operations-content {
+    padding: 3rem 0;
+}
+
+.operations-nav {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.operations-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: -2px;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    color: #dc2626;
+    border-bottom-color: #dc2626;
+}
+
+.operations-section {
+    display: none;
+}
+
+.operations-section.active {
+    display: block;
+}
+
+.operations-section h2 {
+    color: #dc2626;
+    margin-bottom: 2rem;
+}
+
+.emergency-alert {
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.alert-content i {
+    font-size: 3rem;
+    color: #dc2626;
+}
+
+.alert-text h3 {
+    color: #dc2626;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.emergency-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border-left: 4px solid #dc2626;
+}
+
+.emergency-card.critical {
+    border-left-color: #dc2626;
+    background: #fef2f2;
+}
+
+.emergency-card.high {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.emergency-card.medium {
+    border-left-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.emergency-card.low {
+    border-left-color: #10b981;
+    background: #f0fdf4;
+}
+
+.emergency-icon {
+    width: 60px;
+    height: 60px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.emergency-card.high .emergency-icon {
+    background: #f59e0b;
+}
+
+.emergency-card.medium .emergency-icon {
+    background: #3b82f6;
+}
+
+.emergency-card.low .emergency-icon {
+    background: #10b981;
+}
+
+.matrix-table {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.matrix-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.matrix-table th,
+.matrix-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.matrix-table th {
+    background: #dc2626;
+    color: white;
+    font-weight: 600;
+}
+
+.matrix-table tr:last-child td {
+    border-bottom: none;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.contact-card h4 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.contact-card ul {
+    list-style: none;
+}
+
+.contact-card li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: var(--radius-md);
+}
+
+.action-phase {
+    margin-bottom: 3rem;
+}
+
+.action-phase h4 {
+    color: #dc2626;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #dc2626;
+}
+
+.action-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.checklist-item {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid #dc2626;
+}
+
+.checklist-item.critical {
+    background: #fef2f2;
+    border-left-color: #dc2626;
+}
+
+.checklist-item.high {
+    background: #fffbeb;
+    border-left-color: #f59e0b;
+}
+
+.checklist-item.medium {
+    background: #eff6ff;
+    border-left-color: #3b82f6;
+}
+
+.checklist-item.low {
+    background: #f0fdf4;
+    border-left-color: #10b981;
+}
+
+.checklist-item i {
+    font-size: 1.5rem;
+    color: #dc2626;
+    margin-top: 0.25rem;
+}
+
+.item-content h5 {
+    color: #dc2626;
+    margin-bottom: 0.5rem;
+}
+
+.item-content ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.item-content li {
+    margin-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.process-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.process-card h4 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.process-steps ol {
+    margin-left: 1rem;
+}
+
+.process-steps li {
+    margin-bottom: 1rem;
+}
+
+.process-steps ul {
+    margin: 0.5rem 0 0 1rem;
+}
+
+.escalation-pyramid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.escalation-level {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border-left: 4px solid #dc2626;
+}
+
+.escalation-level.level-4 {
+    border-left-color: #7c2d12;
+    background: linear-gradient(to right, #fef2f2, var(--bg-secondary));
+}
+
+.escalation-level.level-3 {
+    border-left-color: #dc2626;
+    background: linear-gradient(to right, #fef2f2, var(--bg-secondary));
+}
+
+.escalation-level.level-2 {
+    border-left-color: #f59e0b;
+    background: linear-gradient(to right, #fffbeb, var(--bg-secondary));
+}
+
+.escalation-level.level-1 {
+    border-left-color: #10b981;
+    background: linear-gradient(to right, #f0fdf4, var(--bg-secondary));
+}
+
+.level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.level-header h4 {
+    color: #dc2626;
+    margin: 0;
+}
+
+.level-time {
+    background: #dc2626;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.decision-flowchart {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.decision-node {
+    background: #dc2626;
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.decision-paths {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.decision-path {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.decision-question {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.decision-outcomes {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.outcome {
+    text-align: center;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    flex: 1;
+}
+
+.outcome.yes {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.outcome.no {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+.outcome span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.doc-checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.doc-category {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.doc-category h5 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.doc-category ul {
+    list-style: none;
+}
+
+.doc-category li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.restart-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.restart-phase {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.restart-phase h4 {
+    color: #dc2626;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #dc2626;
+}
+
+.sequence-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.sequence-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.step-num {
+    width: 30px;
+    height: 30px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h6 {
+    color: #dc2626;
+    margin-bottom: 0.25rem;
+}
+
+.test-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.test-category {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+}
+
+.test-category h6 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.test-category ul {
+    list-style: none;
+}
+
+.test-category li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.recon-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.recon-step {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.recon-step h5 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.stage-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.stage {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border-left: 4px solid #dc2626;
+}
+
+.stage h4 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.review-agenda {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.review-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.review-section h5 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .operations-tabs {
+        flex-direction: column;
+    }
+    
+    .emergency-grid,
+    .contacts-grid,
+    .doc-checklist,
+    .test-categories,
+    .review-agenda {
+        grid-template-columns: 1fr;
+    }
+    
+    .decision-outcomes {
+        flex-direction: column;
+    }
+    
+    .sequence-steps {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('.operations-section');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and sections
+            tabBtns.forEach(b => b.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding section
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

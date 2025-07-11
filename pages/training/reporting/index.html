@@ -1,0 +1,795 @@
+---
+layout: training
+title: "Berichtswesen"
+description: "WMS-Berichte und Analytics für datenbasierte Entscheidungen"
+duration: "45 Minuten"
+difficulty: "Intermediate"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Systemnavigation"
+    url: "/pages/training/navigation/"
+  - title: "Bestandsverwaltung"
+    url: "/pages/training/inventory/"
+learning_objectives:
+  - "Standard-Berichte verstehen und nutzen"
+  - "Data Center für erweiterte Analysen verwenden"
+  - "Dashboards konfigurieren und interpretieren"
+  - "Individuelle Berichte erstellen"
+  - "KPIs definieren und überwachen"
+  - "Datenexport und -auswertung beherrschen"
+  - "Reporting-Automatisierung einsetzen"
+previous:
+  title: "Bestandsverwaltung"
+  url: "/pages/training/inventory/"
+next:
+  title: "Abschluss"
+  url: "/pages/training/"
+---
+
+# Berichtswesen - Datenbasierte Entscheidungen
+
+## Überblick
+
+Das Berichtswesen im Jungheinrich WMS ist ein mächtiges Werkzeug zur Analyse und Optimierung der Lagerlogistik. Es ermöglicht datenbasierte Entscheidungen durch umfassende Berichte, interaktive Dashboards und detaillierte Analysen aller Lagerprozesse bei Georg Fischer.
+
+## Lernziele
+
+Nach Abschluss dieses Moduls können Sie:
+- Standard-Berichte verstehen und effektiv nutzen
+- Data Center für erweiterte Analysen verwenden
+- Dashboards konfigurieren und interpretieren
+- Individuelle Berichte erstellen und anpassen
+- KPIs definieren und kontinuierlich überwachen
+- Datenexport und -auswertung professionell durchführen
+- Reporting-Automatisierung für Effizienz einsetzen
+
+## 1. Grundlagen des WMS-Berichtswesens
+
+### 1.1 Bedeutung für das Lager-Management
+
+**Berichtswesen** ermöglicht:
+- **Transparenz** über alle Lagerprozesse
+- **Datenbasierte Entscheidungen** für Optimierungen
+- **Leistungsüberwachung** und Trend-Analyse
+- **Compliance** und Audit-Unterstützung
+- **Kontinuierliche Verbesserung** der Prozesse
+
+### 1.2 Berichts-Kategorien
+
+#### **Operative Berichte**
+- **Tagesberichte**: Aktuelle Lagersituation
+- **Schicht-Berichte**: Leistung pro Schicht
+- **Arbeitsplatz-Berichte**: Effizienz einzelner Arbeitsplätze
+- **Störungs-Berichte**: Probleme und Lösungen
+
+#### **Strategische Berichte**
+- **Monats-/Quartalsberichte**: Langfristige Trends
+- **ABC-Analysen**: Artikel-Klassifizierung
+- **Kapazitäts-Analysen**: Lagerauslastung
+- **Performance-Berichte**: KPI-Überwachung
+
+#### **Compliance-Berichte**
+- **Inventur-Berichte**: Bestandsgenauigkeit
+- **Qualitäts-Berichte**: Qualitätssicherung
+- **Audit-Berichte**: Compliance-Nachweis
+- **Trace-Berichte**: Rückverfolgbarkeit
+
+### 1.3 Datenquellen im WMS
+
+#### **Transaktionsdaten**
+- **Wareneingangs-Buchungen**
+- **Warenausgangs-Buchungen**
+- **Bestandsbewegungen**
+- **Inventur-Ergebnisse**
+
+#### **Stammdaten**
+- **Artikel-Informationen**
+- **Lagerplatz-Daten**
+- **Lieferanten-Informationen**
+- **Kunden-Daten**
+
+#### **Systemdaten**
+- **Performance-Metriken**
+- **Fehler-Logs**
+- **Benutzer-Aktivitäten**
+- **System-Auslastung**
+
+## 2. Standard-Berichte
+
+### 2.1 Wareneingangs-Berichte
+
+#### **Menüpfad: Berichte > Wareneingang**
+
+#### **Verfügbare Berichte**
+- **WE-Übersicht**: Alle Wareneingänge eines Zeitraums
+- **WE-Performance**: Durchsatz und Zeiten
+- **WE-Qualität**: Fehlerquoten und Probleme
+- **Lieferanten-Bewertung**: Performance je Lieferant
+
+#### **Typische Auswertungen**
+- **Täglicher WE-Durchsatz**: Anzahl Positionen, LHM, Gewicht
+- **Buchungszeiten**: Durchschnittliche Bearbeitungszeit
+- **Fehleranalyse**: Häufigste Fehlerarten
+- **Lieferanten-Ranking**: Pünktlichkeit und Qualität
+
+### 2.2 Warenausgangs-Berichte
+
+#### **Menüpfad: Berichte > Warenausgang**
+
+#### **Verfügbare Berichte**
+- **WA-Übersicht**: Alle Warenausgänge eines Zeitraums
+- **Kommissionier-Performance**: Picks per Hour
+- **Auftrags-Analyse**: Vollständigkeit und Termine
+- **Kunden-Bewertung**: Service-Level je Kunde
+
+#### **Typische Auswertungen**
+- **Täglicher WA-Durchsatz**: Anzahl Aufträge, Positionen
+- **Kommissionier-Zeiten**: Durchschnittliche Pick-Zeiten
+- **Fehleranalyse**: Kommissionier-Fehler
+- **Kunden-Service**: Terminerfüllung und Qualität
+
+### 2.3 Bestandsberichte
+
+#### **Menüpfad: Berichte > Bestand**
+
+#### **Verfügbare Berichte**
+- **Bestandsübersicht**: Aktuelle Bestände
+- **Bestandsbewegungen**: Zu- und Abgänge
+- **Inventur-Berichte**: Differenzen und Genauigkeit
+- **Lagerauslastung**: Kapazitäts-Nutzung
+
+#### **Typische Auswertungen**
+- **Bestandswerte**: Aktueller Lagerwert
+- **Umschlagshäufigkeit**: Bewegungen pro Artikel
+- **Lagerplatzbelegung**: Auslastung nach Bereichen
+- **Sperrbestände**: Gesperrte Mengen und Gründe
+
+### 2.4 Performance-Berichte
+
+#### **Menüpfad: Berichte > Performance**
+
+#### **Verfügbare Berichte**
+- **Arbeitsplatz-Performance**: Effizienz je Arbeitsplatz
+- **Mitarbeiter-Performance**: Leistung je Mitarbeiter
+- **System-Performance**: Technische Kennzahlen
+- **Prozess-Performance**: Durchlaufzeiten
+
+#### **Typische Auswertungen**
+- **Durchsatz-Kennzahlen**: Mengen pro Zeiteinheit
+- **Qualitäts-Kennzahlen**: Fehlerquoten
+- **Effizienz-Kennzahlen**: Ressourcennutzung
+- **Verfügbarkeits-Kennzahlen**: System-Uptime
+
+## 3. Data Center für erweiterte Analysen
+
+### 3.1 Data Center Überblick
+
+#### **Menüpfad: Data Center**
+
+#### **Funktionen**
+- **Erweiterte Datenanalyse** mit flexiblen Parametern
+- **Interaktive Dashboards** für Echtzeit-Überwachung
+- **Trend-Analysen** über längere Zeiträume
+- **Vergleichsanalysen** zwischen Perioden
+
+#### **Vorteile**
+- **Selbstständige Analyse** ohne IT-Unterstützung
+- **Flexible Datenfilterung** nach verschiedenen Kriterien
+- **Grafische Darstellung** komplexer Zusammenhänge
+- **Export-Funktionen** für weitere Bearbeitung
+
+### 3.2 Neue Analyse erstellen
+
+#### **Menüpfad: Data Center > Neue Analyse anlegen**
+
+#### **Arbeitsschritte**
+1. **Analyse-Typ** auswählen (Bestand, Bewegung, Performance)
+2. **Datenbereich** festlegen (Artikel, Lagerplatz, Zeitraum)
+3. **Filter** definieren (Spezifische Kriterien)
+4. **Gruppierung** festlegen (Wie sollen Daten zusammengefasst werden)
+5. **Darstellung** wählen (Tabelle, Diagramm, Dashboard)
+6. **Analyse** starten und Ergebnisse interpretieren
+
+#### **Analyse-Typen**
+- **Bestandsanalyse**: Lagerbestände nach verschiedenen Kriterien
+- **Bewegungsanalyse**: Ein- und Ausgang über Zeit
+- **Performance-Analyse**: Kennzahlen und Trends
+- **Vergleichsanalyse**: Zeiträume oder Bereiche vergleichen
+
+### 3.3 ABC-Analyse im Data Center
+
+#### **Anwendung**
+- **Artikel-Klassifizierung** nach Wert und Volumen
+- **Lagerplatz-Optimierung** basierend auf Zugriffshäufigkeit
+- **Inventur-Strategien** nach Artikel-Wichtigkeit
+- **Beschaffungs-Strategien** nach Artikel-Klassen
+
+#### **Durchführung**
+1. **Artikel-Auswahl** treffen
+2. **Bewertungs-Kriterien** festlegen (Wert, Volumen, Häufigkeit)
+3. **Zeitraum** definieren
+4. **Gewichtung** der Kriterien
+5. **Analyse** durchführen
+6. **Klassifizierung** anwenden
+
+#### **Ergebnis-Interpretation**
+- **A-Artikel** (80/20-Regel): Hoher Wert, geringe Anzahl
+- **B-Artikel** (15/30-Regel): Mittlerer Wert, mittlere Anzahl
+- **C-Artikel** (5/50-Regel): Niedriger Wert, hohe Anzahl
+
+## 4. Dashboard-Konfiguration
+
+### 4.1 Dashboard-Grundlagen
+
+#### **Dashboard-Typen**
+- **Operative Dashboards**: Tagesgeschäft-Überwachung
+- **Strategische Dashboards**: Langfristige Trends
+- **Funktionale Dashboards**: Spezifische Bereiche
+- **Personal Dashboards**: Individuelle Bedürfnisse
+
+#### **Dashboard-Komponenten**
+- **KPI-Widgets**: Kennzahlen-Anzeige
+- **Trend-Diagramme**: Zeitliche Entwicklung
+- **Status-Anzeigen**: Aktuelle Zustände
+- **Alarm-Bereiche**: Kritische Werte
+
+### 4.2 Dashboard erstellen
+
+#### **Menüpfad: Dashboard > Neues Dashboard**
+
+#### **Konfiguration**
+1. **Dashboard-Name** und **Beschreibung** festlegen
+2. **Layout** auswählen (Anzahl Spalten, Bereiche)
+3. **Widgets** hinzufügen und konfigurieren
+4. **Datenquellen** verbinden
+5. **Aktualisierung** konfigurieren (Intervall, Trigger)
+6. **Berechtigung** festlegen (Wer kann sehen/ändern)
+
+#### **Widget-Typen**
+- **Zähler**: Einfache Kennzahlen
+- **Balkendiagramm**: Vergleiche zwischen Kategorien
+- **Liniendiagramm**: Trends über Zeit
+- **Tortendiagramm**: Anteile an Gesamtheit
+- **Tabelle**: Detaillierte Datendarstellung
+- **Karte**: Geografische Darstellung
+- **Ampel**: Status-Anzeige
+
+### 4.3 Dashboard-Beispiele
+
+#### **Lagerleiter-Dashboard**
+- **Lagerauslastung**: Aktuelle Belegung
+- **Tagesumsatz**: Ein- und Ausgang
+- **Mitarbeiter-Performance**: Durchsatz pro Schicht
+- **Qualitäts-KPIs**: Fehlerquoten
+- **Kosten-Übersicht**: Betriebskosten
+
+#### **Schichtführer-Dashboard**
+- **Aktuelle Aufträge**: Offene Kommissionen
+- **Arbeitsplatz-Status**: Verfügbarkeit
+- **Störungen**: Aktuelle Probleme
+- **Team-Performance**: Schicht-Leistung
+- **Qualitäts-Alarme**: Kritische Werte
+
+#### **Mitarbeiter-Dashboard**
+- **Persönliche Leistung**: Eigene KPIs
+- **Tagesaufgaben**: Offene Arbeiten
+- **Schulungs-Status**: Fortbildungen
+- **Nachrichten**: Wichtige Infos
+- **Hilfe-Bereich**: Schnelle Unterstützung
+
+## 5. Individuelle Berichte
+
+### 5.1 Berichts-Designer
+
+#### **Menüpfad: Berichte > Berichts-Designer**
+
+#### **Funktionen**
+- **Drag-and-Drop-Editor** für einfache Berichts-Erstellung
+- **Flexible Datenauswahl** aus verschiedenen Tabellen
+- **Bedingte Formatierung** für bessere Lesbarkeit
+- **Berechnungsfelder** für komplexe Auswertungen
+
+#### **Berichts-Elemente**
+- **Kopf-/Fußzeile**: Titel, Datum, Seitenzahl
+- **Datenbereich**: Hauptinhalt des Berichts
+- **Gruppierung**: Zusammenfassung nach Kriterien
+- **Summenzeilen**: Aggregierte Werte
+- **Diagramme**: Grafische Darstellung
+
+### 5.2 Berichts-Erstellung
+
+#### **Schritt-für-Schritt-Anleitung**
+1. **Neuen Bericht** erstellen
+2. **Datenquelle** auswählen
+3. **Felder** auswählen und anordnen
+4. **Filter** definieren
+5. **Gruppierung** festlegen
+6. **Formatierung** anpassen
+7. **Vorschau** prüfen
+8. **Bericht** speichern
+
+#### **Erweiterte Funktionen**
+- **Parameterisierte Berichte**: Benutzer-Eingaben
+- **Bedingte Anzeige**: Felder nur bei bestimmten Werten
+- **Berechnungsfelder**: Neue Werte aus bestehenden Daten
+- **Unter-Berichte**: Eingebettete Detail-Berichte
+
+### 5.3 Berichts-Vorlagen
+
+#### **Standard-Vorlagen**
+- **Bestands-Vorlage**: Für Bestandsberichte
+- **Bewegungs-Vorlage**: Für Transaktionsberichte
+- **Performance-Vorlage**: Für Leistungsberichte
+- **Compliance-Vorlage**: Für Audit-Berichte
+
+#### **Anpassung von Vorlagen**
+1. **Vorlage** auswählen
+2. **Felder** nach Bedarf anpassen
+3. **Filter** modifizieren
+4. **Layout** optimieren
+5. **Als neue Vorlage** speichern
+
+## 6. KPI-Management
+
+### 6.1 Wichtige KPIs für Lagerlogistik
+
+#### **Effizienz-KPIs**
+- **Durchsatz**: Mengen pro Zeiteinheit
+- **Auslastung**: Kapazitäts-Nutzung in %
+- **Laufwege**: Meter pro Auftrag
+- **Arbeitszeit-Nutzung**: Produktive Zeit in %
+
+#### **Qualitäts-KPIs**
+- **Fehlerquote**: Fehler pro 1000 Transaktionen
+- **Bestandsgenauigkeit**: Korrekte Bestände in %
+- **Terminerfüllung**: Pünktliche Lieferungen in %
+- **Vollständigkeit**: Komplette Aufträge in %
+
+#### **Kosten-KPIs**
+- **Kosten pro Transaktion**: Betriebskosten
+- **Lagerkosten**: Kosten pro Lagerplatz
+- **Personalkosten**: Kosten pro Mitarbeiter
+- **Automatisierung**: ROI der Technik
+
+### 6.2 KPI-Konfiguration
+
+#### **Menüpfad: Data Center > KPI-Konfiguration**
+
+#### **Arbeitsschritte**
+1. **KPI** auswählen oder definieren
+2. **Berechnungsformel** festlegen
+3. **Datenquelle** zuordnen
+4. **Zielwerte** definieren
+5. **Alarm-Schwellen** festlegen
+6. **Berichts-Intervall** konfigurieren
+
+#### **KPI-Überwachung**
+- **Echtzeit-Monitoring**: Kontinuierliche Überwachung
+- **Trend-Analyse**: Entwicklung über Zeit
+- **Benchmark-Vergleich**: Vergleich mit Zielen
+- **Automatische Alerts**: Bei Schwellenwert-Überschreitung
+
+### 6.3 KPI-Dashboard
+
+#### **KPI-Darstellung**
+- **Ampel-System**: Rot/Gelb/Grün für Status
+- **Trend-Pfeile**: Richtung der Entwicklung
+- **Vergleichswerte**: Aktuell vs. Ziel vs. Vorperiode
+- **Drill-Down**: Detailanalyse bei Klick
+
+#### **KPI-Reporting**
+- **Automatische Berichte**: Regelmäßige Erstellung
+- **Exception-Reporting**: Nur bei Abweichungen
+- **Management-Summary**: Überblick für Führung
+- **Detail-Analysen**: Tiefere Untersuchungen
+
+## 7. Datenexport und Integration
+
+### 7.1 Export-Funktionen
+
+#### **Unterstützte Formate**
+- **Excel**: Für weitere Bearbeitung
+- **PDF**: Für Präsentation und Archivierung
+- **CSV**: Für Datenaustausch
+- **XML**: Für Systemintegration
+
+#### **Export-Optionen**
+- **Vollexport**: Alle Daten
+- **Gefilterter Export**: Nur relevante Daten
+- **Formatierter Export**: Mit Layout und Diagrammen
+- **Datenexport**: Nur Rohdaten
+
+### 7.2 Automatisierte Exports
+
+#### **Scheduled Exports**
+- **Zeitgesteuerte Erstellung**: Täglich, wöchentlich, monatlich
+- **Automatische Verteilung**: Per E-Mail an Empfänger
+- **Verschiedene Formate**: Je nach Empfänger
+- **Fehlerbehandlung**: Bei Problemen Benachrichtigung
+
+#### **Trigger-basierte Exports**
+- **Ereignis-gesteuert**: Bei bestimmten Vorkommnissen
+- **Schwellenwert-basiert**: Bei Überschreitung von Werten
+- **Status-Änderungen**: Bei Zustandsänderungen
+- **Benutzer-definiert**: Nach individuellen Kriterien
+
+### 7.3 Integration mit anderen Systemen
+
+#### **SAP-Integration**
+- **Automatische Datenübertragung**: Bestände, Bewegungen
+- **Synchronisation**: Stammdaten-Abgleich
+- **Fehlerbehandlung**: Automatische Wiederholung
+- **Protokollierung**: Vollständige Dokumentation
+
+#### **BI-Systeme**
+- **Data Warehouse**: Für historische Analysen
+- **OLAP-Cubes**: Für multidimensionale Analysen
+- **Reporting-Tools**: Für erweiterte Berichte
+- **Dashboards**: Für Management-Übersichten
+
+## 8. Reporting-Automatisierung
+
+### 8.1 Automatisierte Berichte
+
+#### **Regelmäßige Berichte**
+- **Tagesberichte**: Automatisch um 06:00 Uhr
+- **Wochenberichte**: Montags um 08:00 Uhr
+- **Monatsberichte**: Am ersten Werktag des Monats
+- **Quartalsberichte**: Am ersten Werktag des Quartals
+
+#### **Ereignis-basierte Berichte**
+- **Störungsberichte**: Bei kritischen Fehlern
+- **Alarm-Berichte**: Bei Schwellenwert-Überschreitung
+- **Qualitäts-Berichte**: Bei Qualitätsproblemen
+- **Compliance-Berichte**: Bei Audit-Anforderungen
+
+### 8.2 Berichts-Verteilung
+
+#### **Empfänger-Gruppen**
+- **Management**: Strategische Übersichten
+- **Operative Leitung**: Tagesberichte
+- **Schichtführer**: Schicht-spezifische Berichte
+- **Spezialisten**: Fachbereichs-Berichte
+
+#### **Verteilungskanäle**
+- **E-Mail**: Mit Anhang oder Link
+- **Intranet**: Automatische Veröffentlichung
+- **Dashboard**: Direkte Anzeige
+- **Digitale Anzeigen**: Für Shopfloor-Information
+
+### 8.3 Berichts-Archivierung
+
+#### **Archivierungs-Strategie**
+- **Automatische Archivierung**: Nach definierten Regeln
+- **Komprimierung**: Für Speicherplatz-Optimierung
+- **Kategorisierung**: Nach Berichtstyp und Zeitraum
+- **Aufbewahrungszeiten**: Entsprechend Compliance-Anforderungen
+
+#### **Archiv-Zugriff**
+- **Suchfunktion**: Für schnelles Auffinden
+- **Kategorien-Navigation**: Systematische Suche
+- **Berechtigungen**: Nur für autorisierte Personen
+- **Audit-Trail**: Wer hat wann auf was zugegriffen
+
+## 9. Praktische Übungen
+
+### Übung 1: Standard-Berichte nutzen
+1. **Erstellen Sie einen Wareneingangs-Bericht**
+2. **Filtern Sie nach letzten 7 Tagen**
+3. **Analysieren Sie die Ergebnisse**
+4. **Exportieren Sie als Excel-Datei**
+5. **Identifizieren Sie Optimierungsmöglichkeiten**
+
+### Übung 2: Data Center Analyse
+1. **Erstellen Sie eine ABC-Analyse**
+2. **Definieren Sie relevante Parameter**
+3. **Interpretieren Sie die Ergebnisse**
+4. **Leiten Sie Maßnahmen ab**
+5. **Präsentieren Sie die Findings**
+
+### Übung 3: Dashboard konfigurieren
+1. **Erstellen Sie ein persönliches Dashboard**
+2. **Fügen Sie relevante KPIs hinzu**
+3. **Konfigurieren Sie Alarm-Schwellen**
+4. **Testen Sie die Funktionalität**
+5. **Optimieren Sie das Layout**
+
+### Übung 4: Individueller Bericht
+1. **Erstellen Sie einen neuen Bericht**
+2. **Definieren Sie spezifische Anforderungen**
+3. **Nutzen Sie erweiterte Funktionen**
+4. **Formatieren Sie professionell**
+5. **Automatisieren Sie die Verteilung**
+
+### Übung 5: KPI-Monitoring
+1. **Definieren Sie relevante KPIs**
+2. **Konfigurieren Sie Überwachung**
+3. **Erstellen Sie Trend-Analysen**
+4. **Implementieren Sie Alerts**
+5. **Entwickeln Sie Verbesserungsmaßnahmen**
+
+## 10. Erweiterte Reporting-Funktionen
+
+### 10.1 Predictive Analytics
+
+#### **Forecasting**
+- **Bedarfsprognosen**: Basierend auf historischen Daten
+- **Kapazitätsplanung**: Zukünftige Anforderungen
+- **Wartungsvorhersagen**: Vorbeugende Maßnahmen
+- **Qualitätstrends**: Frühwarnsysteme
+
+#### **Machine Learning**
+- **Muster-Erkennung**: In großen Datenmengen
+- **Anomalie-Erkennung**: Ungewöhnliche Ereignisse
+- **Optimierung**: Automatische Verbesserungen
+- **Klassifikation**: Automatische Kategorisierung
+
+### 10.2 Real-time Analytics
+
+#### **Streaming-Daten**
+- **Kontinuierliche Datenverarbeitung**
+- **Echtzeit-Dashboards**
+- **Sofortige Alerts**
+- **Live-Optimierung**
+
+#### **Event-Processing**
+- **Komplexe Ereignis-Verarbeitung**
+- **Regel-basierte Reaktionen**
+- **Automatische Workflows**
+- **Eskalations-Management**
+
+### 10.3 Mobile Reporting
+
+#### **Mobile Apps**
+- **Responsive Design**: Für alle Geräte
+- **Touch-optimiert**: Für Tablet-Nutzung
+- **Offline-Fähigkeit**: Für Bereiche ohne Netz
+- **Push-Benachrichtigungen**: Für wichtige Ereignisse
+
+#### **Mobile Dashboards**
+- **Kompakte Darstellung**: Für kleine Bildschirme
+- **Gesture-Steuerung**: Intuitive Bedienung
+- **Kontext-sensitiv**: Standort-abhängige Inhalte
+- **Kollaborativ**: Für Team-Arbeit
+
+## 11. Compliance und Audit
+
+### 11.1 Compliance-Berichterstattung
+
+#### **Regulatorische Anforderungen**
+- **Inventur-Nachweise**: Für Steuerprüfung
+- **Qualitäts-Dokumentation**: Für Zertifizierung
+- **Umwelt-Berichte**: Für Nachhaltigkeits-Reporting
+- **Arbeitssicherheit**: Für Behörden-Berichte
+
+#### **Audit-Vorbereitung**
+- **Automatische Dokumentation**: Alle Aktivitäten
+- **Rückverfolgbarkeit**: Lückenlose Nachverfolgung
+- **Berechtigung-Nachweis**: Wer hat was gemacht
+- **Vollständigkeit**: Alle erforderlichen Daten
+
+### 11.2 Datenschutz und Sicherheit
+
+#### **Datenschutz-Compliance**
+- **GDPR-konform**: Europäische Datenschutzverordnung
+- **Zugriffskontrollen**: Nur autorisierte Personen
+- **Anonymisierung**: Für Statistiken
+- **Löschungszyklen**: Automatische Archivierung
+
+#### **Sicherheits-Maßnahmen**
+- **Verschlüsselung**: Daten in Ruhe und Transit
+- **Backup-Strategien**: Für Datenverlust-Schutz
+- **Disaster Recovery**: Für Notfälle
+- **Monitoring**: Für Sicherheitsereignisse
+
+## 12. Lernerfolgskontrolle
+
+### Theoretische Prüfung
+
+1. **Welche Berichts-Kategorien gibt es?**
+   - [x] Operative, strategische, Compliance-Berichte
+   - [ ] Nur operative Berichte
+   - [ ] Nur strategische Berichte
+   - [ ] Nur täglich/wöchentlich/monatlich
+
+2. **Was ist das Data Center?**
+   - [x] Tool für erweiterte Datenanalyse
+   - [ ] Physisches Rechenzentrum
+   - [ ] Datenbank-Server
+   - [ ] Backup-System
+
+3. **Wie funktioniert die ABC-Analyse?**
+   - [x] Klassifizierung nach Wert und Wichtigkeit
+   - [ ] Alphabetische Sortierung
+   - [ ] Analyse von drei Artikeln
+   - [ ] Bewertung nach Farben
+
+4. **Was sind KPIs?**
+   - [x] Key Performance Indicators - Leistungskennzahlen
+   - [ ] Kosten-Preis-Indikatoren
+   - [ ] Kunden-Präferenz-Indikatoren
+   - [ ] Keine speziellen Indikatoren
+
+### Praktische Bewertung
+
+#### **Aufgabe 1: Standard-Berichte (25 Punkte)**
+- Korrekte Bericht-Erstellung
+- Angemessene Parameter-Einstellung
+- Richtige Interpretation
+- Professionelle Präsentation
+
+#### **Aufgabe 2: Dashboard-Konfiguration (25 Punkte)**
+- Sinnvolle Widget-Auswahl
+- Benutzerfreundliches Layout
+- Korrekte Datenverbindung
+- Funktionale Alarme
+
+#### **Aufgabe 3: Datenanalyse (25 Punkte)**
+- Systematische Analyse
+- Korrekte Schlussfolgerungen
+- Handlungsempfehlungen
+- Datenbasierte Argumentation
+
+#### **Aufgabe 4: Reporting-Automatisierung (25 Punkte)**
+- Sinnvolle Automatisierung
+- Korrekte Konfiguration
+- Angemessene Verteilung
+- Funktionierende Lösung
+
+### Bewertungsschema
+
+- **90-100 Punkte**: Sehr gut - Reporting-Experte
+- **80-89 Punkte**: Gut - Solide Kenntnisse
+- **70-79 Punkte**: Befriedigend - Verbesserung möglich
+- **<70 Punkte**: Ungenügend - Nachschulung erforderlich
+
+## 13. Weiterführende Qualifikationen
+
+### 13.1 Spezialisierungen
+
+#### **Business Intelligence Spezialist**
+- **Erweiterte Datenanalyse**
+- **Predictive Analytics**
+- **Machine Learning**
+- **Data Science**
+
+#### **Reporting Manager**
+- **Strategische Berichterstattung**
+- **Management-Dashboards**
+- **Compliance-Reporting**
+- **Stakeholder-Management**
+
+#### **Data Analyst**
+- **Statistische Auswertungen**
+- **Trend-Analysen**
+- **Forecasting**
+- **Datenmodellierung**
+
+### 13.2 Managementqualifikationen
+
+#### **Performance Manager**
+- **KPI-Entwicklung**
+- **Benchmark-Analysen**
+- **Continuous Improvement**
+- **Change Management**
+
+#### **Business Analyst**
+- **Geschäftsprozess-Analyse**
+- **Anforderungsmanagement**
+- **Prozess-Optimierung**
+- **Systemintegration**
+
+## 14. Tipps für die Praxis
+
+### 14.1 Effizienz-Tipps
+
+#### **Berichts-Optimierung**
+- **Standardisierung**: Einheitliche Formate
+- **Automatisierung**: Wo immer möglich
+- **Relevanz**: Nur notwendige Informationen
+- **Aktualität**: Rechtzeitige Bereitstellung
+
+#### **Dashboard-Design**
+- **Klarheit**: Einfache, verständliche Darstellung
+- **Fokus**: Auf wesentliche Informationen
+- **Interaktivität**: Drill-Down-Möglichkeiten
+- **Performance**: Schnelle Ladezeiten
+
+### 14.2 Qualitäts-Tipps
+
+#### **Datenqualität**
+- **Vollständigkeit**: Alle erforderlichen Daten
+- **Genauigkeit**: Korrekte Berechnungen
+- **Konsistenz**: Einheitliche Definitionen
+- **Aktualität**: Zeitnahe Daten
+
+#### **Präsentation**
+- **Zielgruppen-gerecht**: Für Empfänger angepasst
+- **Verständlichkeit**: Klare Botschaften
+- **Handlungsrelevanz**: Actionable Insights
+- **Professionalität**: Hohe Qualität
+
+## 15. Zukunftstrends
+
+### 15.1 Emerging Technologies
+
+#### **Artificial Intelligence**
+- **Automatische Insight-Generierung**
+- **Natural Language Processing**
+- **Automated Report Writing**
+- **Predictive Maintenance**
+
+#### **Cloud Computing**
+- **Skalierbare Reporting-Plattformen**
+- **Real-time Data Processing**
+- **Globale Verfügbarkeit**
+- **Kostenoptimierung**
+
+### 15.2 Advanced Analytics
+
+#### **Augmented Analytics**
+- **AI-unterstützte Analysen**
+- **Automatische Anomalie-Erkennung**
+- **Smart Recommendations**
+- **Conversational Analytics**
+
+#### **Edge Computing**
+- **Lokale Datenverarbeitung**
+- **Reduzierte Latenz**
+- **Verbesserte Sicherheit**
+- **Autonome Entscheidungen**
+
+## 16. Kontakt und Support
+
+### Fachliche Unterstützung
+
+**Reporting-Team:**
+- E-Mail: reporting@georgfischer.com
+- Telefon: +41 81 770 1500
+- Analytics: Durchwahl 1550
+
+**Data Center Support:**
+- E-Mail: datacenter@georgfischer.com
+- Telefon: +41 81 770 1520
+- BI-Team: Durchwahl 1530
+
+### Technischer Support
+
+**WMS-Support:**
+- ServiceDesk: +41 81 770 5678
+- E-Mail: wms-support@georgfischer.com
+- Notfall-Hotline: 24/7 verfügbar
+
+**Dashboard-Support:**
+- E-Mail: dashboard@georgfischer.com
+- Telefon: +41 81 770 1540
+- Konfiguration: Durchwahl 1560
+
+### Schulung und Weiterbildung
+
+**Training Center:**
+- E-Mail: wms-training@georgfischer.com
+- Telefon: +41 81 770 1234
+- Intranet: WMS-Portal > Training
+
+**Advanced Analytics:**
+- E-Mail: analytics-training@georgfischer.com
+- Telefon: +41 81 770 1580
+- Spezialkurse: Durchwahl 1590
+
+### Zertifizierung
+
+**Reporting Certification:**
+- E-Mail: certification@georgfischer.com
+- Telefon: +41 81 770 1240
+- Online-Portal: cert.georgfischer.com
+
+---
+
+*Dieser Trainingsinhalt basiert auf der Jungheinrich WMS Schulungsunterlage für Georg Fischer Seewis, Version 1.1, Stand: 27.03.2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*
+
+**Datenbasierte Entscheidungen für optimale Lagerlogistik!**

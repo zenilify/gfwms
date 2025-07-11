@@ -1,0 +1,512 @@
+---
+layout: training
+title: "Benutzerverwaltung"
+description: "Benutzer und Berechtigungen im Jungheinrich WMS verwalten"
+duration: "40 Minuten"
+difficulty: "Beginner"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Systemnavigation"
+    url: "/pages/training/navigation/"
+learning_objectives:
+  - "Benutzergruppen erstellen und verwalten"
+  - "Neue Benutzer anlegen und konfigurieren"
+  - "Berechtigungen zuweisen und anpassen"
+  - "Menüfavoriten für Benutzergruppen einrichten"
+  - "Rechner- und Terminalkonfiguration verstehen"
+  - "Sicherheitsaspekte beachten"
+previous:
+  title: "Systemnavigation"
+  url: "/pages/training/navigation/"
+next:
+  title: "Erste Schritte"
+  url: "/pages/training/first-steps/"
+---
+
+# Benutzerverwaltung - WMS Benutzer und Berechtigungen
+
+## Überblick
+
+Die Benutzerverwaltung im Jungheinrich WMS stellt sicher, dass nur berechtigte Personen Zugang zu spezifischen Systemfunktionen haben. Durch ein durchdachtes Berechtigungskonzept wird sowohl die Sicherheit als auch die Effizienz des Systems gewährleistet.
+
+## Lernziele
+
+Nach Abschluss dieses Moduls können Sie:
+- Benutzergruppen mit spezifischen Berechtigungen erstellen
+- Neue Benutzer anlegen und konfigurieren
+- Berechtigungen für verschiedene Rollen zuweisen
+- Menüfavoriten für Benutzergruppen einrichten
+- Rechner- und Terminalkonfiguration verstehen
+- Sicherheitsrichtlinien umsetzen
+
+## 1. Grundlagen der Benutzerverwaltung
+
+### 1.1 Benutzerkonzept
+
+Das WMS-Benutzerkonzept basiert auf drei Hauptkomponenten:
+
+#### **Benutzer**
+- Individuelle Personen mit WMS-Zugang
+- Eindeutige Identifikation durch Login-Name
+- Passwort-geschützte Anmeldung
+- Zuordnung zu Benutzergruppen
+
+#### **Benutzergruppen**
+- Sammlung von Benutzern mit ähnlichen Aufgaben
+- Zentrale Berechtigungsverwaltung
+- Rollenbasierte Zugriffskontrolle
+- Menüfavoriten pro Gruppe
+
+#### **Berechtigungen**
+- Funktionsspezifische Zugriffsrechte
+- Modulbezogene Einschränkungen
+- Lese- und Schreibrechte
+- Arbeitsplatz-abhängige Berechtigungen
+
+### 1.2 Sicherheitsaspekte
+
+#### **Zugriffskontrolle**
+- Authentifizierung über Benutzername/Passwort
+- Autorisierung über Benutzergruppen
+- Sessionverwaltung
+- Audit-Protokollierung
+
+#### **Passwort-Richtlinien**
+- Sichere Passwort-Erstellung
+- Regelmäßige Passwort-Änderung
+- Passwort-Verschlüsselung
+- Erstanmeldung-Passwort-Änderung
+
+## 2. Benutzergruppen verwalten
+
+### 2.1 Benutzergruppe erstellen
+
+**Menüpfad: Stammdaten > Benutzergruppen**
+
+#### **Schritt 1: Neue Benutzergruppe anlegen**
+1. **"Neu"** oder **"Kopieren"** wählen
+2. **Gruppenname** eingeben
+3. **Beschreibung** hinzufügen
+4. **Grundeinstellungen** festlegen
+
+#### **Schritt 2: Berechtigungen konfigurieren**
+1. **Menüpunkt auswählen**
+   - Doppelklick auf Menüpunkt
+   - Oder "Berechtigung ändern" wählen
+
+2. **Berechtigungstypen**
+   - **Vollzugriff**: Lesen und Schreiben
+   - **Lesezugriff**: Nur Anzeigen
+   - **Kein Zugriff**: Nicht sichtbar
+   - **Eingeschränkt**: Spezielle Bedingungen
+
+#### **Schritt 3: Funkterminal-Berechtigungen**
+- **MDE-Geräte-Zugriff** konfigurieren
+- **Barcode-Scanner** Berechtigungen
+- **Mobile Terminals** einrichten
+- **Arbeitsplatz-spezifische** Rechte
+
+### 2.2 Typische Benutzergruppen bei Georg Fischer
+
+#### **Lagerarbeiter**
+- **Berechtigungen:**
+  - Wareneingang (Lesen/Schreiben)
+  - Warenausgang (Lesen/Schreiben)
+  - Bestandsabfrage (Lesen)
+  - Inventur (Lesen/Schreiben)
+- **Einschränkungen:**
+  - Keine Stammdaten-Änderung
+  - Kein Zugriff auf Systemkonfiguration
+  - Keine Benutzer-Verwaltung
+
+#### **Schichtführer**
+- **Erweiterte Berechtigungen:**
+  - Alle Lagerarbeiter-Funktionen
+  - Störungsbehandlung
+  - Priorisierung von Aufträgen
+  - Arbeitsplatz-Management
+- **Zusätzliche Rechte:**
+  - Berichte und Statistiken
+  - Qualitätsprüfung
+  - Reorganisation
+
+#### **Lagerleiter**
+- **Vollzugriff auf:**
+  - Alle operativen Funktionen
+  - Berichtswesen
+  - Konfiguration (begrenzt)
+  - Benutzerverwaltung (begrenzt)
+- **Administrative Rechte:**
+  - ABC-Analyse
+  - Dashboard-Konfiguration
+  - Arbeitsplatz-Zuordnung
+
+#### **System-Administrator**
+- **Vollzugriff auf alle Funktionen**
+- **Systemkonfiguration**
+- **Benutzerverwaltung**
+- **Wartung und Störungsbehandlung**
+
+#### **Qualitätsprüfer**
+- **Spezialisierte Berechtigungen:**
+  - Qualitätszone-Zugriff
+  - Qualitätsprüfungen
+  - Sperrung/Freigabe von Beständen
+  - Qualitätsberichte
+
+## 3. Benutzer anlegen und konfigurieren
+
+### 3.1 Neuen Benutzer erstellen
+
+**Menüpfad: Stammdaten > Benutzer**
+
+#### **Empfohlenes Vorgehen:**
+1. **Bestehenden Benutzer kopieren**
+   - Ähnliche Rolle auswählen
+   - "Kopieren" verwenden
+   - Arbeitsplatz-Zuordnungen bleiben erhalten
+
+2. **Beispiel:** Neuer Q-Mitarbeiter
+   - Bestehenden Q-Benutzer markieren
+   - Kopieren
+   - Nur Rechnerbezeichnung anpassen
+
+#### **Schritt 1: Grunddaten eingeben**
+
+**Personal-Nr.:**
+- Für Funkterminal-Anmeldung
+- Numerische Werte empfohlen
+- Einfache Eingabe am FT
+- Eindeutige Identifikation
+
+**Name:**
+- Vollständiger Name
+- Reines Informationsfeld
+- Für Identifikation und Audit
+
+**Login-Name & Passwort:**
+- Für WMS-Client Anmeldung
+- Eindeutiger Login-Name
+- Sicheres Passwort
+- Passwort-Richtlinien beachten
+
+#### **Schritt 2: Benutzeroptionen konfigurieren**
+
+**Gesperrt:**
+- Benutzer temporär deaktivieren
+- Kontrollkästchen aktiviert = gesperrt
+- Für Urlaub/Krankheit/Kündigung
+
+**Passwort ändern:**
+- Zwang zur Passwort-Änderung bei Erstanmeldung
+- Sicherheit erhöhen
+- Kontrollkästchen aktiviert = Zwang
+
+**Benutzergruppe:**
+- Zuordnung zu Benutzergruppe
+- Definiert Rechte des Benutzers
+- Rollenbasierte Zugriffskontrolle
+
+#### **Schritt 3: Arbeitsplatz-Zuordnung**
+
+**Rechner-Zuordnung:**
+- Spezifische PC-Arbeitsplätze
+- Mobile Geräte
+- Terminalzugang
+- Arbeitsbereich-Beschränkungen
+
+**Funkterminal-Zuordnung:**
+- MDE-Geräte-Zugang
+- Barcode-Scanner
+- Mobile Terminals
+- Arbeitsplatz-spezifische Terminals
+
+### 3.2 Benutzer-Wartung
+
+#### **Passwort-Management**
+- **Passwort zurücksetzen**
+- **Passwort-Ablauf konfigurieren**
+- **Passwort-Richtlinien durchsetzen**
+- **Notfall-Passwörter verwalten**
+
+#### **Benutzer-Status**
+- **Aktive Benutzer**
+- **Gesperrte Benutzer**
+- **Temporär deaktivierte Benutzer**
+- **Gelöschte Benutzer**
+
+#### **Audit und Überwachung**
+- **Anmelde-Protokolle**
+- **Aktivitäts-Logs**
+- **Fehlgeschlagene Anmeldungen**
+- **Berechtigungs-Änderungen**
+
+## 4. Menüfavoriten verwalten
+
+### 4.1 Favoriten für Benutzergruppen
+
+**Menüpfad: Stammdaten > Benutzergruppen > Menüfavoriten**
+
+#### **Favoriten erstellen**
+1. **Benutzergruppe auswählen**
+2. **Menüpunkt zur Favoriten-Liste hinzufügen**
+3. **Reihenfolge festlegen**
+4. **Kategorien erstellen**
+
+#### **Favoriten-Kategorien**
+
+**Tägliche Aufgaben:**
+- Wareneingang
+- Warenausgang
+- Bestandsabfrage
+- Inventur
+
+**Wöchentliche Aufgaben:**
+- Reorganisation
+- ABC-Analyse
+- Berichte
+- Wartung
+
+**Monatliche Aufgaben:**
+- Vollständige Inventur
+- Statistiken
+- Systemwartung
+- Benutzer-Review
+
+### 4.2 Rollenspezifische Favoriten
+
+#### **Lagerarbeiter-Favoriten**
+- **Wareneingang > Wareneingangsübersicht**
+- **Warenausgang > Kommissionsübersicht**
+- **Bestand > Bestandsabfrage**
+- **Inventur > Artikelbezogene Inventur**
+
+#### **Schichtführer-Favoriten**
+- **Leitstand > Leitstandsübersicht**
+- **Störungsbehandlung > Störungsübersicht**
+- **Dashboard > Schichtstatistiken**
+- **Arbeitsplatz > Arbeitsplatzstatus**
+
+#### **Qualitätsprüfer-Favoriten**
+- **Qualitätsprüfung > Prüfungsübersicht**
+- **Bestand > Bestand sperren/freigeben**
+- **Qualitätszone > Qualitätsarbeitsplatz**
+- **Berichte > Qualitätsberichte**
+
+## 5. Rechner- und Terminalkonfiguration
+
+### 5.1 Rechner-Verwaltung
+
+**Menüpfad: Lagermodellierung > Rechner**
+
+#### **Rechner definieren**
+- **Alle PC-Arbeitsplätze** erfassen
+- **Mobile PC-Arbeitsplätze** einrichten
+- **Funkterminals** konfigurieren
+- **Eindeutige Rechner-ID** vergeben
+
+#### **Konfigurationsdatei**
+- **Rechner-spezifische Einstellungen**
+- **Standard-WE-Ort** definieren
+- **Arbeitsplatz-Parameter** festlegen
+- **Startlink-Verknüpfung** erstellen
+
+### 5.2 Arbeitsplatz-Konfiguration
+
+#### **Arbeitsplatz-Parameter**
+- **Standard-Lagerort**
+- **Drucker-Zuordnung**
+- **Waagen-Konfiguration**
+- **Barcode-Scanner-Einstellungen**
+
+#### **Arbeitsplatz-Profile**
+- **Wareneingang-Arbeitsplätze**
+- **Warenausgang-Arbeitsplätze**
+- **Qualitäts-Arbeitsplätze**
+- **Inventur-Arbeitsplätze**
+
+## 6. Praktische Übungen
+
+### Übung 1: Benutzergruppe erstellen
+1. **Erstellen Sie eine neue Benutzergruppe "Praktikant"**
+2. **Konfigurieren Sie eingeschränkte Berechtigungen**
+3. **Erstellen Sie passende Menüfavoriten**
+4. **Testen Sie die Berechtigungen**
+
+### Übung 2: Benutzer anlegen
+1. **Legen Sie einen neuen Benutzer an**
+2. **Ordnen Sie ihn der Gruppe "Praktikant" zu**
+3. **Konfigurieren Sie Passwort-Zwang**
+4. **Testen Sie die Anmeldung**
+
+### Übung 3: Berechtigungen anpassen
+1. **Erweitern Sie die Berechtigungen für "Lagerarbeiter"**
+2. **Fügen Sie Zugriff auf neue Funktionen hinzu**
+3. **Testen Sie die Änderungen**
+4. **Dokumentieren Sie die Anpassungen**
+
+### Übung 4: Favoriten optimieren
+1. **Überprüfen Sie bestehende Favoriten**
+2. **Erstellen Sie rollenspezifische Favoriten**
+3. **Organisieren Sie Favoriten in Kategorien**
+4. **Sammeln Sie Feedback von Benutzern**
+
+## 7. Sicherheits-Best Practices
+
+### 7.1 Passwort-Sicherheit
+
+#### **Passwort-Richtlinien**
+- **Mindestlänge**: 8 Zeichen
+- **Komplexität**: Groß-/Kleinbuchstaben, Zahlen, Sonderzeichen
+- **Gültigkeitsdauer**: 90 Tage
+- **Wiederholung**: Letzte 5 Passwörter nicht verwendbar
+
+#### **Passwort-Management**
+- **Sichere Speicherung** verschlüsselt
+- **Regelmäßige Änderung** erzwingen
+- **Erstanmeldung-Passwort-Änderung** obligatorisch
+- **Notfall-Passwort-Verfahren** definieren
+
+### 7.2 Zugriffskontrolle
+
+#### **Prinzip der minimalen Berechtigung**
+- **Nur notwendige Berechtigungen** erteilen
+- **Regelmäßige Überprüfung** der Berechtigungen
+- **Zeitlich begrenzte Berechtigungen** für Projekte
+- **Sofortige Sperrung** bei Ausscheiden
+
+#### **Berechtigungs-Audit**
+- **Monatliche Überprüfung** der Benutzer
+- **Quartals-Review** der Berechtigungen
+- **Jährliche Zertifizierung** durch Vorgesetzte
+- **Dokumentation** aller Änderungen
+
+### 7.3 Monitoring und Audit
+
+#### **Überwachung**
+- **Fehlgeschlagene Anmeldungen** protokollieren
+- **Ungewöhnliche Aktivitäten** erkennen
+- **Mehrfachanmeldungen** überwachen
+- **Arbeitszeit-Anomalien** prüfen
+
+#### **Audit-Protokolle**
+- **Alle Benutzer-Aktivitäten** protokollieren
+- **Berechtigungs-Änderungen** dokumentieren
+- **System-Zugriffe** verfolgen
+- **Compliance-Berichte** erstellen
+
+## 8. Häufige Probleme und Lösungen
+
+### 8.1 Anmelde-Probleme
+
+#### **Problem: Benutzer kann sich nicht anmelden**
+- **Lösung 1**: Benutzerstatus prüfen (gesperrt?)
+- **Lösung 2**: Passwort zurücksetzen
+- **Lösung 3**: Benutzergruppe überprüfen
+- **Lösung 4**: Rechner-Zuordnung kontrollieren
+
+#### **Problem: Berechtigungen funktionieren nicht**
+- **Lösung 1**: Benutzergruppen-Zuordnung prüfen
+- **Lösung 2**: Berechtigungs-Konfiguration überprüfen
+- **Lösung 3**: Cache leeren/Neuanmeldung
+- **Lösung 4**: Systemadministrator kontaktieren
+
+### 8.2 Performance-Probleme
+
+#### **Problem: Langsame Anmeldung**
+- **Lösung 1**: Benutzergruppen-Komplexität reduzieren
+- **Lösung 2**: Favoriten-Anzahl optimieren
+- **Lösung 3**: Datenbank-Performance prüfen
+- **Lösung 4**: Netzwerk-Verbindung testen
+
+#### **Problem: Speicher-Probleme**
+- **Lösung 1**: Inaktive Benutzer deaktivieren
+- **Lösung 2**: Alte Audit-Logs archivieren
+- **Lösung 3**: Datenbank-Wartung durchführen
+- **Lösung 4**: System-Ressourcen erweitern
+
+## 9. Lernerfolgskontrolle
+
+### Fragen zur Selbstüberprüfung
+
+1. **Welche Komponenten gehören zum WMS-Benutzerkonzept?**
+   - [x] Benutzer, Benutzergruppen, Berechtigungen
+   - [ ] Nur Benutzer und Passwörter
+   - [ ] Benutzer, Rechner, Drucker
+   - [ ] Benutzergruppen und Favoriten
+
+2. **Wie erstellt man am besten einen neuen Benutzer?**
+   - [x] Bestehenden ähnlichen Benutzer kopieren
+   - [ ] Immer komplett neu anlegen
+   - [ ] Standardbenutzer verwenden
+   - [ ] Temporären Benutzer kopieren
+
+3. **Welche Passwort-Regel ist wichtig?**
+   - [x] Passwort-Änderung bei Erstanmeldung
+   - [ ] Passwort nie ändern
+   - [ ] Einfache Passwörter verwenden
+   - [ ] Passwort für alle gleich
+
+4. **Wofür werden Menüfavoriten verwendet?**
+   - [x] Schneller Zugriff auf häufig genutzte Funktionen
+   - [ ] Systemkonfiguration
+   - [ ] Passwort-Verwaltung
+   - [ ] Berechtigungskontrolle
+
+### Praktische Bewertung
+
+**Aufgabe: Benutzer-Szenario**
+1. **Erstellen Sie Benutzergruppen** für verschiedene Rollen
+2. **Konfigurieren Sie Berechtigungen** entsprechend
+3. **Legen Sie Testbenutzer** an
+4. **Testen Sie die Funktionalität**
+
+### Bewertung
+- **90-100%**: Sehr gut - Sie beherrschen die Benutzerverwaltung
+- **70-89%**: Gut - Einige Bereiche vertiefen
+- **50-69%**: Befriedigend - Grundlagen wiederholen
+- **<50%**: Ungenügend - Modul wiederholen
+
+## 10. Weiterführende Ressourcen
+
+### Dokumentation
+- **WMS Benutzerhandbuch Kapitel 7**
+- **Sicherheitsrichtlinien Georg Fischer**
+- **Passwort-Policy Dokumentation**
+
+### Checklisten
+- **Benutzer-Onboarding Checkliste**
+- **Berechtigungs-Audit Checkliste**
+- **Passwort-Sicherheit Checkliste**
+
+### Screenshots und Hilfsmittel
+*[Platzhalter für Screenshots der Benutzerverwaltung]*
+*[Platzhalter für Berechtigungs-Matrix]*
+*[Platzhalter für Favoriten-Konfiguration]*
+
+## Nächste Schritte
+
+Nach Abschluss dieses Moduls:
+1. **Erste Schritte** - Praktische Anwendung mit konfigurierten Benutzern
+2. **Stammdaten** - Arbeiten mit Artikeln und Ladehilfsmitteln
+3. **Wareneingang** - Operative Prozesse mit Benutzerrollen
+
+## Kontakt und Support
+
+**Benutzerverwaltung Support:**
+- E-Mail: user-admin@georgfischer.com
+- Telefon: +41 81 770 1234
+- Intranet: WMS-Portal > Benutzerverwaltung
+
+**Passwort-Reset:**
+- ServiceDesk: +41 81 770 5678
+- E-Mail: password-reset@georgfischer.com
+- Selbstservice: Portal > Passwort zurücksetzen
+
+---
+
+*Dieser Trainingsinhalt basiert auf der Jungheinrich WMS Schulungsunterlage für Georg Fischer Seewis, Version 1.1, Stand: 27.03.2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*

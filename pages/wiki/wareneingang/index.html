@@ -1,0 +1,1240 @@
+---
+layout: default
+title: "Wareneingang - Betriebsabläufe"
+description: "Vollständiger Leitfaden für Wareneingangs-Prozesse im Georg Fischer WMS"
+breadcrumbs:
+  - title: "Wiki"
+  - title: "Wareneingang"
+---
+
+<div class="operations-hero">
+    <div class="container">
+        <h1><i class="fas fa-truck-loading"></i> Wareneingang - Betriebsabläufe</h1>
+        <p class="lead">Vollständiger Leitfaden für effiziente Wareneingangs-Prozesse bei Georg Fischer</p>
+    </div>
+</div>
+
+<div class="operations-content">
+    <div class="container">
+        <div class="operations-nav">
+            <div class="operations-tabs">
+                <button class="tab-btn active" data-tab="overview">Übersicht</button>
+                <button class="tab-btn" data-tab="geplant">Geplanter WE</button>
+                <button class="tab-btn" data-tab="ungeplant">Ungeplanter WE</button>
+                <button class="tab-btn" data-tab="arbeitsplaetze">Arbeitsplätze</button>
+                <button class="tab-btn" data-tab="qualitaet">Qualitätsprüfung</button>
+                <button class="tab-btn" data-tab="stoerungen">Störungen</button>
+            </div>
+        </div>
+
+        <div class="operations-sections">
+            <!-- Overview Section -->
+            <div class="operations-section active" id="overview">
+                <h2>Wareneingang Übersicht</h2>
+                
+                <div class="process-flow">
+                    <h3>Wareneingangs-Ablauf bei Georg Fischer</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Vorbereitung</h4>
+                                <p>Sortierung und Dekonsolidierung außerhalb WMS</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>WE-Aviso</h4>
+                                <p>Empfang von SAP-Daten im WMS</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>WE-Buchung</h4>
+                                <p>Automatisch oder manuell am PC-Client</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>LHM-Zuweisung</h4>
+                                <p>Palette oder Behälter zuweisen</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Einlagerung</h4>
+                                <p>Automatische Einlagerung in HRL/AKL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-facts">
+                    <h3>Wichtige Fakten</h3>
+                    <div class="facts-grid">
+                        <div class="fact-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Durchschnittliche Bearbeitungszeit</h4>
+                            <p>2-5 Minuten pro Position</p>
+                        </div>
+                        <div class="fact-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Täglicher Durchsatz</h4>
+                            <p>800-1200 WE-Positionen</p>
+                        </div>
+                        <div class="fact-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Genauigkeitsrate</h4>
+                            <p>99.8% korrekte Buchungen</p>
+                        </div>
+                        <div class="fact-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Beteiligte Arbeitsplätze</h4>
+                            <p>3 WE-Arbeitsplätze aktiv</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-info">
+                    <h3>Systemintegration</h3>
+                    <div class="integration-flow">
+                        <div class="system-box">
+                            <h4>SAP</h4>
+                            <p>Bestellungen (YELD)<br>Fertigung (YDIG)</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="system-box">
+                            <h4>WMS</h4>
+                            <p>WE-Aviso<br>Buchungsverarbeitung</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="system-box">
+                            <h4>Fördertechnik</h4>
+                            <p>Automatische<br>Einlagerung</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="system-box">
+                            <h4>Lager</h4>
+                            <p>HRL/AKL<br>Bestandsführung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geplanter WE Section -->
+            <div class="operations-section" id="geplant">
+                <h2>Geplanter Wareneingang</h2>
+                
+                <div class="procedure-box">
+                    <h3>Merkmale geplanter Wareneingänge</h3>
+                    <div class="characteristics">
+                        <div class="char-item">
+                            <i class="fas fa-database"></i>
+                            <div>
+                                <h4>Daten vom Hostsystem</h4>
+                                <p>Vollständige SAP-Übertragung mit WE-Aviso</p>
+                            </div>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-tag"></i>
+                            <div>
+                                <h4>Präfix vom Host</h4>
+                                <p>Automatisch generierte Kennzeichnung</p>
+                            </div>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-check-double"></i>
+                            <div>
+                                <h4>Vollständige Stammdaten</h4>
+                                <p>Artikel-Informationen bereits verfügbar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-steps">
+                    <h3>Schritt-für-Schritt Anleitung - Geplanter WE</h3>
+                    
+                    <div class="step-detail">
+                        <h4>1. Wareneingangsübersicht öffnen</h4>
+                        <div class="step-content">
+                            <p><strong>Menüpfad:</strong> Wareneingang > Wareneingangsübersicht</p>
+                            <div class="substeps">
+                                <p>• WE-Aviso in der Liste suchen</p>
+                                <p>• Filter nach Bestellnummer/Lieferant verwenden</p>
+                                <p>• Status "Aktiv" oder "Laufend" prüfen</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-detail">
+                        <h4>2. Position bearbeiten</h4>
+                        <div class="step-content">
+                            <p>WE-Aviso markieren und "Positionen..." klicken</p>
+                            <div class="substeps">
+                                <p>• Artikel-Details kontrollieren</p>
+                                <p>• Gelieferte Menge mit Bestellung abgleichen</p>
+                                <p>• LHM-Nummer eingeben oder scannen</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-detail">
+                        <h4>3. Buchung durchführen</h4>
+                        <div class="step-content">
+                            <p>Alle Daten prüfen und Buchung bestätigen</p>
+                            <div class="substeps">
+                                <p>• Qualitätsstatus setzen (frei/gesperrt)</p>
+                                <p>• Lagerbereich bestätigen (HRL/AKL)</p>
+                                <p>• "Buchen" Schaltfläche betätigen</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-detail">
+                        <h4>4. LHM auf Fördertechnik aufgeben</h4>
+                        <div class="step-content">
+                            <p>Physische Übergabe an automatisches System</p>
+                            <div class="substeps">
+                                <p>• Etikett drucken (falls erforderlich)</p>
+                                <p>• LHM am richtigen Aufgabepunkt platzieren</p>
+                                <p>• Automatische Einlagerung abwarten</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="automation-info">
+                    <h3>Automatische WE-Buchung am I-Punkt</h3>
+                    <div class="auto-conditions">
+                        <h4>Voraussetzungen für Automatik:</h4>
+                        <ul>
+                            <li>WE-Aviso enthält LHM-Nummer</li>
+                            <li>Einfach-sektoriertes LHM</li>
+                            <li>Vollständige Stammdaten vorhanden</li>
+                            <li>Automatik-Freigabe aktiviert</li>
+                        </ul>
+                    </div>
+                    <div class="auto-benefits">
+                        <h4>Vorteile der Automatik:</h4>
+                        <ul>
+                            <li>Keine manuelle Dateneingabe</li>
+                            <li>Schnellste Bearbeitungszeit</li>
+                            <li>Minimale Fehlerquote</li>
+                            <li>Optimaler Systemdurchsatz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ungeplanter WE Section -->
+            <div class="operations-section" id="ungeplant">
+                <h2>Ungeplanter Wareneingang</h2>
+                
+                <div class="procedure-box">
+                    <h3>Merkmale ungeplanter Wareneingänge</h3>
+                    <div class="characteristics">
+                        <div class="char-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <h4>Keine Hostsystem-Daten</h4>
+                                <p>Vollständige manuelle Erfassung erforderlich</p>
+                            </div>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-edit"></i>
+                            <div>
+                                <h4>Präfix "WMSR"</h4>
+                                <p>WMS-Reserviert für interne Kennzeichnung</p>
+                            </div>
+                        </div>
+                        <div class="char-item">
+                            <i class="fas fa-keyboard"></i>
+                            <div>
+                                <h4>Manuelle Dateneingabe</h4>
+                                <p>Alle Informationen durch Mitarbeiter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="use-cases">
+                    <h3>Anwendungsfälle für ungeplante WE</h3>
+                    <div class="use-case-grid">
+                        <div class="use-case">
+                            <h4>Notlieferungen</h4>
+                            <p>Dringende Nachlieferungen ohne Voranmeldung</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>Fundware</h4>
+                            <p>Nicht zuordenbare Artikel im Lager</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>Korrekturen</h4>
+                            <p>Nachträgliche Erfassung vergessener Lieferungen</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>Sonderlieferungen</h4>
+                            <p>Einmalige Lieferungen außerhalb Standard-Prozess</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-steps">
+                    <h3>Schritt-für-Schritt Anleitung - Ungeplanter WE</h3>
+                    
+                    <div class="step-detail">
+                        <h4>1. Vorbereitung</h4>
+                        <div class="step-content">
+                            <p>Alle erforderlichen Informationen sammeln</p>
+                            <div class="substeps">
+                                <p>• Artikelstammdaten prüfen/erstellen</p>
+                                <p>• Lagerbereich definieren (HRL/AKL)</p>
+                                <p>• Qualitätsstatus festlegen</p>
+                                <p>• Kostenstellenzuordnung klären</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-detail">
+                        <h4>2. WE-Aviso erstellen</h4>
+                        <div class="step-content">
+                            <p><strong>Menü:</strong> Wareneingang > Ungeplanter Wareneingang</p>
+                            <div class="substeps">
+                                <p>• "Neuer Wareneingang" klicken</p>
+                                <p>• Kopfdaten eingeben (Lieferant, Datum, Referenz)</p>
+                                <p>• "Speichern" bestätigen</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-detail">
+                        <h4>3. Positionen erfassen</h4>
+                        <div class="step-content">
+                            <p>Vollständige Artikel-Informationen eingeben</p>
+                            <div class="substeps">
+                                <p>• "Position hinzufügen" klicken</p>
+                                <p>• Artikelnummer, Beschreibung, Menge eingeben</p>
+                                <p>• Einheit und Qualitätsstatus setzen</p>
+                                <p>• LHM zuweisen und buchen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="validation-checklist">
+                    <h3>Validierungs-Checkliste für ungeplante WE</h3>
+                    <div class="checklist">
+                        <div class="check-item">
+                            <input type="checkbox" id="check1">
+                            <label for="check1">Artikelnummer korrekt und eindeutig</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check2">
+                            <label for="check2">Menge physisch kontrolliert</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check3">
+                            <label for="check3">Qualitätsstatus angemessen gesetzt</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check4">
+                            <label for="check4">Lagerbereich korrekt zugeordnet</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check5">
+                            <label for="check5">LHM-Nummer lesbar und eindeutig</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check6">
+                            <label for="check6">Kostenstelle (falls erforderlich) zugeordnet</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arbeitsplätze Section -->
+            <div class="operations-section" id="arbeitsplaetze">
+                <h2>Wareneingang Arbeitsplätze</h2>
+                
+                <div class="workplace-overview">
+                    <h3>Verfügbare Arbeitsplätze bei Georg Fischer</h3>
+                    <div class="workplace-grid">
+                        <div class="workplace-card">
+                            <div class="workplace-header">
+                                <h4>WE Arbeitsplatz AKL 1</h4>
+                                <span class="workplace-type">Behälter mit Waage</span>
+                            </div>
+                            <div class="workplace-details">
+                                <p><strong>Ausstattung:</strong></p>
+                                <ul>
+                                    <li>PC-Client mit WMS-Zugang</li>
+                                    <li>Integrierte Waage</li>
+                                    <li>Barcode-Scanner</li>
+                                    <li>Etikettendrucker</li>
+                                </ul>
+                                <p><strong>Aufgabepunkte:</strong></p>
+                                <ul>
+                                    <li>270mm Behälter (große Behälter)</li>
+                                    <li>170mm Behälter (kleine Behälter)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="workplace-card">
+                            <div class="workplace-header">
+                                <h4>WE Arbeitsplatz AKL 2</h4>
+                                <span class="workplace-type">Behälter mit Waage</span>
+                            </div>
+                            <div class="workplace-details">
+                                <p><strong>Identisch mit AKL 1:</strong></p>
+                                <ul>
+                                    <li>Parallele Bearbeitung möglich</li>
+                                    <li>Gleiche Konfiguration</li>
+                                    <li>Backup-Funktionalität</li>
+                                    <li>Kapazitätserweiterung</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="workplace-card">
+                            <div class="workplace-header">
+                                <h4>WE Arbeitsplatz Extern</h4>
+                                <span class="workplace-type">Paletten-Arbeitsplatz</span>
+                            </div>
+                            <div class="workplace-details">
+                                <p><strong>Spezifikation:</strong></p>
+                                <ul>
+                                    <li>Flexibel positionierbar</li>
+                                    <li>Ein Aufgabepunkt für Paletten</li>
+                                    <li>Organisatorischer Transport</li>
+                                    <li>HRL-Einlagerung</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workflow-comparison">
+                    <h3>Arbeitsabläufe im Vergleich</h3>
+                    <div class="workflow-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Schritt</th>
+                                    <th>AKL-Arbeitsplätze</th>
+                                    <th>Externer Arbeitsplatz</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Leer-LHM von Fördertechnik abnehmen</td>
+                                    <td>Palette mit Ware bereitstellen</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ware in Behälter einlegen</td>
+                                    <td>WE-Buchung am PC durchführen</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>WE-Buchung mit Gewichtsprüfung</td>
+                                    <td>Palette organisatorisch transportieren</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Behälter auf Fördertechnik aufgeben</td>
+                                    <td>Aufgabe auf Palettenfördertechnik</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Automatische Einlagerung ins AKL</td>
+                                    <td>Automatische Einlagerung ins HRL</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="optimization-tips">
+                    <h3>Arbeitsplatz-Optimierung</h3>
+                    <div class="tips-grid">
+                        <div class="tip-category">
+                            <h4>Ergonomie</h4>
+                            <ul>
+                                <li>Optimale Beleuchtung für Artikel-Erkennung</li>
+                                <li>Ergonomische Anordnung der Bedienelemente</li>
+                                <li>Ausreichende Ablageflächen für Aufträge</li>
+                                <li>Kurze Wege zwischen Entnahmepunkten</li>
+                            </ul>
+                        </div>
+                        <div class="tip-category">
+                            <h4>Technische Ausstattung</h4>
+                            <ul>
+                                <li>Barcode-Scanner für Artikel-Identifikation</li>
+                                <li>Waagen für automatische Mengenprüfung</li>
+                                <li>Bildschirm für Auftragsanzeige</li>
+                                <li>Drucker für Etiketten und Listen</li>
+                            </ul>
+                        </div>
+                        <div class="tip-category">
+                            <h4>Effizienz</h4>
+                            <ul>
+                                <li>Parallele Bearbeitung mehrerer Aufträge</li>
+                                <li>Batch-Verarbeitung ähnlicher Artikel</li>
+                                <li>Vorbereitung der nächsten LHM</li>
+                                <li>Regelmäßige Arbeitsplatz-Wartung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Qualitätsprüfung Section -->
+            <div class="operations-section" id="qualitaet">
+                <h2>Qualitätsprüfung im Wareneingang</h2>
+                
+                <div class="quality-status">
+                    <h3>Qualitätsstatus-Verwaltung</h3>
+                    <div class="status-grid">
+                        <div class="status-card free">
+                            <div class="status-icon">✓</div>
+                            <h4>Frei</h4>
+                            <p>Sofort verwendbar für alle Prozesse</p>
+                            <div class="status-criteria">
+                                <strong>Kriterien:</strong>
+                                <ul>
+                                    <li>Vollständige Qualitätsprüfung bestanden</li>
+                                    <li>Alle Dokumente verfügbar</li>
+                                    <li>Keine Mängel festgestellt</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="status-card blocked">
+                            <div class="status-icon">⚠</div>
+                            <h4>Gesperrt</h4>
+                            <p>Qualitätsprüfung erforderlich</p>
+                            <div class="status-criteria">
+                                <strong>Gründe:</strong>
+                                <ul>
+                                    <li>Routineprüfung noch ausstehend</li>
+                                    <li>Verdacht auf Qualitätsmangel</li>
+                                    <li>Dokumentation unvollständig</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="status-card quarantine">
+                            <div class="status-icon">🔒</div>
+                            <h4>Quarantäne</h4>
+                            <p>Sonderprüfung erforderlich</p>
+                            <div class="status-criteria">
+                                <strong>Anlässe:</strong>
+                                <ul>
+                                    <li>Reklamation vom Kunden</li>
+                                    <li>Produktionsfehler vermutet</li>
+                                    <li>Kritische Sicherheitskomponente</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="status-card rejected">
+                            <div class="status-icon">✗</div>
+                            <h4>Verworfen</h4>
+                            <p>Nicht verwendbar</p>
+                            <div class="status-criteria">
+                                <strong>Gründe:</strong>
+                                <ul>
+                                    <li>Qualitätsmangel bestätigt</li>
+                                    <li>Beschädigung nicht reparierbar</li>
+                                    <li>Haltbarkeitsdatum überschritten</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quality-process">
+                    <h3>Qualitätsprüfungs-Prozess</h3>
+                    <div class="process-timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h4>Prüfung anordnen</h4>
+                                <p>Ware auf Qualitätsprüfung setzen</p>
+                                <div class="substeps">
+                                    <p>• Status "Gesperrt" oder "Quarantäne" setzen</p>
+                                    <p>• Grund für Prüfung dokumentieren</p>
+                                    <p>• Prüfverantwortlichen benachrichtigen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <h4>Prüfung durchführen</h4>
+                                <p>Qualitätsprüfer führt Kontrolle durch</p>
+                                <div class="substeps">
+                                    <p>• Vollständigkeit prüfen</p>
+                                    <p>• Optische Kontrolle durchführen</p>
+                                    <p>• Funktionsprüfung (falls erforderlich)</p>
+                                    <p>• Dokumentation validieren</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <h4>Ergebnis dokumentieren</h4>
+                                <p>Prüfergebnis im System erfassen</p>
+                                <div class="substeps">
+                                    <p>• Prüfprotokoll erstellen</p>
+                                    <p>• Mängel detailliert beschreiben</p>
+                                    <p>• Maßnahmen empfehlen</p>
+                                    <p>• Freigabe oder Sperrung veranlassen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step">
+                            <div class="timeline-marker">4</div>
+                            <div class="timeline-content">
+                                <h4>Status setzen</h4>
+                                <p>Endgültigen Qualitätsstatus zuweisen</p>
+                                <div class="substeps">
+                                    <p>• "Frei" bei bestandener Prüfung</p>
+                                    <p>• "Verworfen" bei Qualitätsmangel</p>
+                                    <p>• "Quarantäne" für weitere Prüfung</p>
+                                    <p>• Betroffene Bereiche informieren</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quality-workplace">
+                    <h3>Qualitätsarbeitsplatz</h3>
+                    <div class="workplace-setup">
+                        <div class="equipment-section">
+                            <h4>Arbeitsplatz-Ausstattung</h4>
+                            <div class="equipment-grid">
+                                <div class="equipment-item">
+                                    <i class="fas fa-microscope"></i>
+                                    <div>
+                                        <h5>Prüfgeräte</h5>
+                                        <p>Mess- und Prüfmittel für verschiedene Artikel</p>
+                                    </div>
+                                </div>
+                                <div class="equipment-item">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <div>
+                                        <h5>Dokumentation</h5>
+                                        <p>Prüfprotokolle und Checklisten</p>
+                                    </div>
+                                </div>
+                                <div class="equipment-item">
+                                    <i class="fas fa-desktop"></i>
+                                    <div>
+                                        <h5>PC-Zugang</h5>
+                                        <p>WMS-System für Status-Änderungen</p>
+                                    </div>
+                                </div>
+                                <div class="equipment-item">
+                                    <i class="fas fa-warehouse"></i>
+                                    <div>
+                                        <h5>Lagerplätze</h5>
+                                        <p>Gesonderte Bereiche für Prüfware</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-section">
+                            <h4>Arbeitsablauf Qualitätsprüfung</h4>
+                            <ol class="workflow-steps">
+                                <li>Prüfauftrag im System empfangen</li>
+                                <li>Ware aus Lager zur Prüfung bereitstellen</li>
+                                <li>Prüfung gemäß Vorgaben durchführen</li>
+                                <li>Ergebnis in Prüfprotokoll dokumentieren</li>
+                                <li>Status im WMS entsprechend setzen</li>
+                                <li>Ware zur Weiterleitung oder Sperrung kennzeichnen</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Störungen Section -->
+            <div class="operations-section" id="stoerungen">
+                <h2>Störungsbehandlung Wareneingang</h2>
+                
+                <div class="trouble-categories">
+                    <h3>Häufige Störungsarten</h3>
+                    <div class="trouble-grid">
+                        <div class="trouble-category system">
+                            <h4><i class="fas fa-server"></i> System-Störungen</h4>
+                            <div class="trouble-list">
+                                <div class="trouble-item">
+                                    <strong>WE-Aviso nicht vorhanden</strong>
+                                    <p>SAP-Übertragung fehlgeschlagen oder verzögert</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Manuell ungeplanten WE erstellen
+                                    </div>
+                                </div>
+                                <div class="trouble-item">
+                                    <strong>Artikelstammdaten fehlerhaft</strong>
+                                    <p>Unvollständige oder falsche Artikel-Informationen</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Stammdaten-Verantwortlichen kontaktieren
+                                    </div>
+                                </div>
+                                <div class="trouble-item">
+                                    <strong>LHM-Nummer nicht lesbar</strong>
+                                    <p>Barcode beschädigt oder unleserlich</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Neues Etikett drucken und aufkleben
+                                    </div>
+                                </div>
+                                <div class="trouble-item">
+                                    <strong>Fördertechnik-Störung</strong>
+                                    <p>Technische Probleme bei automatischer Einlagerung</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Wartung informieren, manuell einlagern
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trouble-category process">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Prozess-Störungen</h4>
+                            <div class="trouble-list">
+                                <div class="trouble-item">
+                                    <strong>Falsche Ware geliefert</strong>
+                                    <p>Artikel stimmt nicht mit Bestellung überein</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Lieferant kontaktieren, Ware sperren
+                                    </div>
+                                </div>
+                                <div class="trouble-item">
+                                    <strong>Beschädigte Ware</strong>
+                                    <p>Transportschäden oder Qualitätsmängel</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Qualitätsprüfung einleiten, dokumentieren
+                                    </div>
+                                </div>
+                                <div class="trouble-item">
+                                    <strong>Fehlende Dokumentation</strong>
+                                    <p>Lieferschein oder Zertifikate unvollständig</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Ware sperren, Unterlagen nachfordern
+                                    </div>
+                                </div>
+                                <div class="trouble-item">
+                                    <strong>Arbeitsplatz nicht verfügbar</strong>
+                                    <p>Technischer Ausfall oder Wartung</p>
+                                    <div class="solution">
+                                        <strong>Lösung:</strong> Ausweicharbeitsplatz nutzen
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="escalation-process">
+                    <h3>Eskalations-Prozess bei Störungen</h3>
+                    <div class="escalation-levels">
+                        <div class="escalation-level level1">
+                            <div class="level-header">
+                                <span class="level-number">1</span>
+                                <h4>Mitarbeiter</h4>
+                                <span class="level-time">Sofort - 15 min</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Eigenständige Problemlösung</strong></p>
+                                <ul>
+                                    <li>Standard-Störungen nach Checkliste</li>
+                                    <li>Einfache System-Probleme</li>
+                                    <li>Alternative Arbeitsverfahren</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="escalation-level level2">
+                            <div class="level-header">
+                                <span class="level-number">2</span>
+                                <h4>Schichtführer</h4>
+                                <span class="level-time">15 min - 1 Stunde</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Operative Koordination</strong></p>
+                                <ul>
+                                    <li>Ressourcen-Umverteilung</li>
+                                    <li>Ausweichverfahren aktivieren</li>
+                                    <li>Lieferanten kontaktieren</li>
+                                    <li>Qualitätsprüfung einleiten</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="escalation-level level3">
+                            <div class="level-header">
+                                <span class="level-number">3</span>
+                                <h4>Lagerleiter</h4>
+                                <span class="level-time">1 - 4 Stunden</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Strategische Entscheidungen</strong></p>
+                                <ul>
+                                    <li>Externe Dienstleister beauftragen</li>
+                                    <li>Prozess-Änderungen genehmigen</li>
+                                    <li>Kundenabsprachen treffen</li>
+                                    <li>Investitionsentscheidungen</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="escalation-level level4">
+                            <div class="level-header">
+                                <span class="level-number">4</span>
+                                <h4>Management</h4>
+                                <span class="level-time">4+ Stunden</span>
+                            </div>
+                            <div class="level-content">
+                                <p><strong>Grundsätzliche Änderungen</strong></p>
+                                <ul>
+                                    <li>System-Upgrades genehmigen</li>
+                                    <li>Vertragsverhandlungen</li>
+                                    <li>Budgetfreigaben</li>
+                                    <li>Strategische Neuausrichtung</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emergency-procedures">
+                    <h3>Notfall-Verfahren</h3>
+                    <div class="emergency-scenarios">
+                        <div class="emergency-scenario">
+                            <h4><i class="fas fa-power-off"></i> Kompletter Systemausfall</h4>
+                            <div class="emergency-steps">
+                                <ol>
+                                    <li>Papier-WE-Scheine verwenden</li>
+                                    <li>Manuelle Erfassung aller Daten</li>
+                                    <li>Temporäre Lagerung organisieren</li>
+                                    <li>Nach Wiederherstellung nachbuchen</li>
+                                </ol>
+                            </div>
+                            <div class="emergency-resources">
+                                <strong>Benötigte Ressourcen:</strong>
+                                <ul>
+                                    <li>Papier-Formulare für WE</li>
+                                    <li>Zusätzliches Personal</li>
+                                    <li>Temporäre Lagerplätze</li>
+                                    <li>Alternative Kommunikationswege</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="emergency-scenario">
+                            <h4><i class="fas fa-tools"></i> Teilausfall Fördertechnik</h4>
+                            <div class="emergency-steps">
+                                <ol>
+                                    <li>Manuelle Einlagerung organisieren</li>
+                                    <li>Prioritäten nach Dringlichkeit setzen</li>
+                                    <li>Ausweicharbeitsplätze aktivieren</li>
+                                    <li>Kapazität entsprechend anpassen</li>
+                                </ol>
+                            </div>
+                            <div class="emergency-resources">
+                                <strong>Benötigte Ressourcen:</strong>
+                                <ul>
+                                    <li>Zusätzliche Stapler</li>
+                                    <li>Erfahrene Staplerfahrer</li>
+                                    <li>Mobile Arbeitsplätze</li>
+                                    <li>Koordinations-Personal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prevention-measures">
+                    <h3>Präventionsmaßnahmen</h3>
+                    <div class="prevention-grid">
+                        <div class="prevention-category">
+                            <h4>Regelmäßige Wartung</h4>
+                            <ul>
+                                <li>Wöchentliche System-Checks</li>
+                                <li>Monatliche Hardware-Inspektionen</li>
+                                <li>Quartalsweise Vollwartung</li>
+                                <li>Jährliche Systemupdates</li>
+                            </ul>
+                        </div>
+                        <div class="prevention-category">
+                            <h4>Mitarbeiter-Schulungen</h4>
+                            <ul>
+                                <li>Grundschulung für neue Mitarbeiter</li>
+                                <li>Auffrischungskurse</li>
+                                <li>Störungsbehandlung-Training</li>
+                                <li>Notfall-Verfahren-Übungen</li>
+                            </ul>
+                        </div>
+                        <div class="prevention-category">
+                            <h4>Dokumentation</h4>
+                            <ul>
+                                <li>Aktuelle Arbeitsanweisungen</li>
+                                <li>Störungsbehandlung-Leitfäden</li>
+                                <li>Kontaktlisten pflegen</li>
+                                <li>Lessons Learned dokumentieren</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.operations-hero {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.operations-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.operations-content {
+    padding: 3rem 0;
+}
+
+.operations-nav {
+    margin-bottom: 3rem;
+}
+
+.operations-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #1e40af;
+    color: white;
+    border-color: #1e40af;
+}
+
+.operations-section {
+    display: none;
+}
+
+.operations-section.active {
+    display: block;
+}
+
+/* Process Flow Styling */
+.process-flow {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+}
+
+.flow-steps {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flow-step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    min-width: 200px;
+    text-align: center;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #1e40af;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: bold;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #1e40af;
+    font-weight: bold;
+}
+
+/* Key Facts Grid */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.fact-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.fact-card i {
+    font-size: 2.5rem;
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+/* Integration Flow */
+.integration-flow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.system-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 2px solid #1e40af;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Workplace Cards */
+.workplace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.workplace-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.workplace-header {
+    background: #1e40af;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.workplace-type {
+    display: block;
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+.workplace-details {
+    padding: 1.5rem;
+}
+
+/* Quality Status Cards */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.status-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 2px solid;
+    text-align: center;
+}
+
+.status-card.free {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+.status-card.blocked {
+    border-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.status-card.quarantine {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.status-card.rejected {
+    border-color: #6b7280;
+    background: #f9fafb;
+}
+
+.status-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Escalation Levels */
+.escalation-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.escalation-level {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.level-header {
+    background: #1e40af;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.level-number {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.level-time {
+    margin-left: auto;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.level-content {
+    padding: 1.5rem;
+}
+
+/* Emergency Scenarios */
+.emergency-scenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.emergency-scenario {
+    background: var(--bg-secondary);
+    border: 1px solid #ef4444;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.emergency-scenario h4 {
+    color: #ef4444;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flow-steps {
+        flex-direction: column;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .integration-flow {
+        flex-direction: column;
+    }
+    
+    .escalation-levels {
+        gap: 0.5rem;
+    }
+    
+    .level-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .level-time {
+        margin-left: 0;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const operationsSections = document.querySelectorAll('.operations-section');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and sections
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            operationsSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding section
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+    
+    // Initialize first tab as active
+    document.getElementById('overview').classList.add('active');
+});
+</script>

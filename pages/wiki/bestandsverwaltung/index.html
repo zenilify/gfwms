@@ -1,0 +1,2173 @@
+---
+layout: default
+title: "Bestandsverwaltung - Betriebsabläufe"
+description: "Präzise Bestandskontrolle und Inventur-Verfahren bei Georg Fischer"
+breadcrumbs:
+  - title: "Wiki"
+  - title: "Bestandsverwaltung"
+---
+
+<div class="operations-hero">
+    <div class="container">
+        <h1><i class="fas fa-boxes"></i> Bestandsverwaltung - Betriebsabläufe</h1>
+        <p class="lead">Präzise Bestandskontrolle und Inventur-Verfahren bei Georg Fischer</p>
+    </div>
+</div>
+
+<div class="operations-content">
+    <div class="container">
+        <div class="operations-nav">
+            <div class="operations-tabs">
+                <button class="tab-btn active" data-tab="overview">Übersicht</button>
+                <button class="tab-btn" data-tab="inventur">Inventur</button>
+                <button class="tab-btn" data-tab="korrekturen">Korrekturen</button>
+                <button class="tab-btn" data-tab="sperren">Sperren/Freigeben</button>
+                <button class="tab-btn" data-tab="abc">ABC-Analyse</button>
+                <button class="tab-btn" data-tab="reorganisation">Reorganisation</button>
+            </div>
+        </div>
+
+        <div class="operations-sections">
+            <!-- Overview Section -->
+            <div class="operations-section active" id="overview">
+                <h2>Bestandsverwaltung Übersicht</h2>
+                
+                <div class="inventory-principles">
+                    <h3>Grundlagen der Bestandsverwaltung</h3>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Bestandserfassung</h4>
+                            <p>Präzise Mengenverfolgung aller Artikel im Lager mit kontinuierlicher Überwachung</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-search"></i>
+                            <h4>Bestandskontrolle</h4>
+                            <p>Regelmäßige Überprüfung der Bestände durch verschiedene Inventur-Verfahren</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Bestandsoptimierung</h4>
+                            <p>Kontinuierliche Verbesserung der Effizienz durch ABC-Analyse und Reorganisation</p>
+                        </div>
+                        <div class="principle-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Bestandsschutz</h4>
+                            <p>Qualitätssicherung durch Sperrungen und kontrollierte Freigaben</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inventory-types">
+                    <h3>Bestandsarten bei Georg Fischer</h3>
+                    <div class="inventory-grid">
+                        <div class="inventory-card free">
+                            <div class="inventory-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4>Freie Bestände</h4>
+                            <div class="inventory-details">
+                                <p><strong>Status:</strong> Sofort verfügbar für Auslieferung</p>
+                                <ul>
+                                    <li>Keine Einschränkungen</li>
+                                    <li>Normale Lagerverwaltung</li>
+                                    <li>Automatische Disposition</li>
+                                    <li>Standard-Kommissionierung</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="inventory-card blocked">
+                            <div class="inventory-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h4>Gesperrte Bestände</h4>
+                            <div class="inventory-details">
+                                <p><strong>Status:</strong> Nicht verfügbar für Auslieferung</p>
+                                <ul>
+                                    <li>Qualitätsprüfung erforderlich</li>
+                                    <li>Schadensuntersuchung läuft</li>
+                                    <li>Manuelle Freigabe notwendig</li>
+                                    <li>Separate Behandlung</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="inventory-card reserved">
+                            <div class="inventory-icon">
+                                <i class="fas fa-bookmark"></i>
+                            </div>
+                            <h4>Reservierte Bestände</h4>
+                            <div class="inventory-details">
+                                <p><strong>Status:</strong> Für Aufträge reserviert</p>
+                                <ul>
+                                    <li>Temporär nicht verfügbar</li>
+                                    <li>Automatische Freigabe bei Storno</li>
+                                    <li>Planungsrelevant</li>
+                                    <li>Auftrags-gebunden</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="inventory-card quarantine">
+                            <div class="inventory-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h4>Quarantäne-Bestände</h4>
+                            <div class="inventory-details">
+                                <p><strong>Status:</strong> Sonderprüfung erforderlich</p>
+                                <ul>
+                                    <li>Räumlich getrennt gelagert</li>
+                                    <li>Erweiterte Dokumentation</li>
+                                    <li>Spezialbehandlung</li>
+                                    <li>Qualitätskontrolle</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accuracy-targets">
+                    <h3>Genauigkeits-Ziele</h3>
+                    <div class="targets-grid">
+                        <div class="target-metric">
+                            <div class="metric-circle">
+                                <div class="metric-value">99.5%</div>
+                                <div class="metric-label">Mengengenauigkeit</div>
+                            </div>
+                            <p>Ziel: 99,5% oder höher bei allen Bestandsmengen</p>
+                        </div>
+                        <div class="target-metric">
+                            <div class="metric-circle">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Lagerplatzgenauigkeit</div>
+                            </div>
+                            <p>Ziel: 100% korrekte Lagerplatz-Zuordnungen</p>
+                        </div>
+                        <div class="target-metric">
+                            <div class="metric-circle">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Artikel-Genauigkeit</div>
+                            </div>
+                            <p>Ziel: 100% korrekte Artikel-Identifikation</p>
+                        </div>
+                        <div class="target-metric">
+                            <div class="metric-circle">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Qualitätsstatus-Genauigkeit</div>
+                            </div>
+                            <p>Ziel: 100% korrekte Qualitätsstatus-Führung</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="measurement-methods">
+                    <h3>Messung der Bestandsgenauigkeit</h3>
+                    <div class="methods-grid">
+                        <div class="method-card">
+                            <i class="fas fa-random"></i>
+                            <h4>Regelmäßige Stichproben</h4>
+                            <p>Tägliche Zufallsstichproben zur kontinuierlichen Qualitätskontrolle</p>
+                        </div>
+                        <div class="method-card">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Permanente Inventur</h4>
+                            <p>Zyklische Zählung nach ABC-Klassifizierung und Risikobewertung</p>
+                        </div>
+                        <div class="method-card">
+                            <i class="fas fa-robot"></i>
+                            <h4>Automatische Kontrollen</h4>
+                            <p>System-gesteuerte Plausibilitätsprüfungen bei allen Bewegungen</p>
+                        </div>
+                        <div class="method-card">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Fehleranalyse</h4>
+                            <p>Systematische Auswertung von Abweichungen zur Prozessverbesserung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventur Section -->
+            <div class="operations-section" id="inventur">
+                <h2>Inventur-Verfahren</h2>
+                
+                <div class="inventory-methods">
+                    <h3>Inventur-Methoden im Überblick</h3>
+                    <div class="methods-comparison">
+                        <div class="method-comparison-card">
+                            <h4>Permanente Inventur</h4>
+                            <div class="method-details">
+                                <div class="method-principle">
+                                    <strong>Prinzip:</strong>
+                                    <p>Kontinuierliche Überprüfung der Bestände durch zyklische Zählung</p>
+                                </div>
+                                <div class="method-frequency">
+                                    <strong>Frequenz:</strong>
+                                    <ul>
+                                        <li>A-Artikel: Monatlich</li>
+                                        <li>B-Artikel: Quartalsweise</li>
+                                        <li>C-Artikel: Jährlich</li>
+                                        <li>Kritische Artikel: Wöchentlich</li>
+                                    </ul>
+                                </div>
+                                <div class="method-benefits">
+                                    <strong>Vorteile:</strong>
+                                    <ul>
+                                        <li>Kontinuierliche Genauigkeit</li>
+                                        <li>Frühe Fehlererkennung</li>
+                                        <li>Minimale Störungen</li>
+                                        <li>Bessere Planbarkeit</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-comparison-card">
+                            <h4>Artikelbezogene Inventur</h4>
+                            <div class="method-details">
+                                <div class="method-principle">
+                                    <strong>Anwendung:</strong>
+                                    <p>Gezielte Prüfung spezifischer Artikel bei Verdachtsfällen</p>
+                                </div>
+                                <div class="method-cases">
+                                    <strong>Anlässe:</strong>
+                                    <ul>
+                                        <li>Reklamationen nachverfolgen</li>
+                                        <li>Verdachtsfälle untersuchen</li>
+                                        <li>Qualitätsprüfungen unterstützen</li>
+                                        <li>Systemabweichungen prüfen</li>
+                                    </ul>
+                                </div>
+                                <div class="method-process">
+                                    <strong>Menüpfad:</strong>
+                                    <p>Inventur > Artikelbezogene Inventur</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-comparison-card">
+                            <h4>4-Augen-Prinzip</h4>
+                            <div class="method-details">
+                                <div class="method-principle">
+                                    <strong>Sicherheitskonzept:</strong>
+                                    <p>Zwei Personen führen unabhängige Inventur durch</p>
+                                </div>
+                                <div class="method-workflow">
+                                    <strong>Arbeitsablauf:</strong>
+                                    <ol>
+                                        <li>Erste Person zählt</li>
+                                        <li>Zweite Person kontrolliert</li>
+                                        <li>Bei Differenzen: Nachzählung</li>
+                                        <li>Konsens erreichen</li>
+                                        <li>Buchung durchführen</li>
+                                    </ol>
+                                </div>
+                                <div class="method-config">
+                                    <strong>Konfiguration:</strong>
+                                    <ul>
+                                        <li>Inventur-Teams definieren</li>
+                                        <li>Berechtigungen zuweisen</li>
+                                        <li>Workflows konfigurieren</li>
+                                        <li>Eskalations-Regeln festlegen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-comparison-card">
+                            <h4>Nahe-Null-Inventur</h4>
+                            <div class="method-details">
+                                <div class="method-principle">
+                                    <strong>Anwendung:</strong>
+                                    <p>Vollständige Bestandsbereinigung bei besonderen Anlässen</p>
+                                </div>
+                                <div class="method-occasions">
+                                    <strong>Anlässe:</strong>
+                                    <ul>
+                                        <li>Vor größeren Umbaumaßnahmen</li>
+                                        <li>Bei Systemwechsel</li>
+                                        <li>Für Audit-Zwecke</li>
+                                        <li>Zur Fehlerbereinigung</li>
+                                    </ul>
+                                </div>
+                                <div class="method-steps">
+                                    <strong>Durchführung:</strong>
+                                    <ol>
+                                        <li>Bestände weitgehend abbauen</li>
+                                        <li>Restbestände vollständig erfassen</li>
+                                        <li>Differenzen aufklären</li>
+                                        <li>Neuaufbau mit korrekten Daten</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inventory-process">
+                    <h3>Inventur-Durchführung Schritt für Schritt</h3>
+                    <div class="process-workflow">
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">1</span>
+                                <h4>Artikel auswählen</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Bestimmung der zu inventierenden Artikel basierend auf Inventur-Strategie</p>
+                                <div class="step-details">
+                                    <strong>Auswahlkriterien:</strong>
+                                    <ul>
+                                        <li>ABC-Klassifizierung beachten</li>
+                                        <li>Letzte Inventur-Termine prüfen</li>
+                                        <li>Bewegungshäufigkeit berücksichtigen</li>
+                                        <li>Verdachtsfälle prioritär behandeln</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">2</span>
+                                <h4>Inventur starten</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Inventur im System initialisieren und Zählung vorbereiten</p>
+                                <div class="step-details">
+                                    <strong>Systemschritte:</strong>
+                                    <ul>
+                                        <li>Inventur-Auftrag im WMS erstellen</li>
+                                        <li>Sperrung der Artikel für Bewegungen</li>
+                                        <li>Zähllisten oder mobile Geräte vorbereiten</li>
+                                        <li>Inventur-Team informieren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">3</span>
+                                <h4>Alle Lagerplätze prüfen</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Systematische Durchsuchung aller relevanten Lagerplätze</p>
+                                <div class="step-details">
+                                    <strong>Prüfungsumfang:</strong>
+                                    <ul>
+                                        <li>Standard-Lagerplätze im HRL/AKL</li>
+                                        <li>Sonder-Lagerplätze (Qualität, Sperre)</li>
+                                        <li>Transport- und Kommissionier-Bereiche</li>
+                                        <li>Versteckte oder vergessene Bestände</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">4</span>
+                                <h4>Mengen erfassen</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Präzise Zählung und Dokumentation aller gefundenen Mengen</p>
+                                <div class="step-details">
+                                    <strong>Erfassungsmethoden:</strong>
+                                    <ul>
+                                        <li>Manuelle Zählung mit Protokollierung</li>
+                                        <li>Barcode-Scan für Artikel-Identifikation</li>
+                                        <li>Waagen-Unterstützung bei Schüttgut</li>
+                                        <li>Foto-Dokumentation bei Unklarheiten</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">5</span>
+                                <h4>Differenzen analysieren</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Abweichungen zwischen Soll- und Ist-Bestand systematisch untersuchen</p>
+                                <div class="step-details">
+                                    <strong>Analyseschritte:</strong>
+                                    <ul>
+                                        <li>Differenzen-Berechnung automatisch</li>
+                                        <li>Ursachen-Forschung bei Abweichungen</li>
+                                        <li>Plausibilitätsprüfung der Ergebnisse</li>
+                                        <li>Nachzählung bei kritischen Differenzen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step detailed">
+                            <div class="step-header">
+                                <span class="step-number">6</span>
+                                <h4>Korrekturen durchführen</h4>
+                            </div>
+                            <div class="step-content">
+                                <p>Systembestände entsprechend der Inventur-Ergebnisse anpassen</p>
+                                <div class="step-details">
+                                    <strong>Korrektur-Prozess:</strong>
+                                    <ul>
+                                        <li>Genehmigung bei großen Differenzen</li>
+                                        <li>Buchung der Bestandskorrekturen</li>
+                                        <li>Grund-Codes für Abweichungen</li>
+                                        <li>Dokumentation für Audit-Trail</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Korrekturen Section -->
+            <div class="operations-section" id="korrekturen">
+                <h2>Bestandskorrekturen</h2>
+                
+                <div class="correction-types">
+                    <h3>Arten von Bestandskorrekturen</h3>
+                    <div class="correction-grid">
+                        <div class="correction-card">
+                            <i class="fas fa-calculator"></i>
+                            <h4>Mengenkorrektur</h4>
+                            <div class="correction-details">
+                                <p><strong>Anwendung:</strong> Ist-Menge weicht von Soll-Menge ab</p>
+                                <div class="correction-reasons">
+                                    <strong>Häufige Gründe:</strong>
+                                    <ul>
+                                        <li>Zähldifferenzen bei Inventur</li>
+                                        <li>Schwund durch Verdampfung</li>
+                                        <li>Buchungsfehler korrigieren</li>
+                                        <li>Beschädigung von Artikeln</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="correction-card">
+                            <i class="fas fa-tags"></i>
+                            <h4>Attributkorrektur</h4>
+                            <div class="correction-details">
+                                <p><strong>Anwendung:</strong> Artikel-Eigenschaften ändern</p>
+                                <div class="correction-reasons">
+                                    <strong>Änderungsbereiche:</strong>
+                                    <ul>
+                                        <li>Qualitätsstatus anpassen</li>
+                                        <li>Chargen-Zuordnung korrigieren</li>
+                                        <li>Lagerplatz-Zuordnung aktualisieren</li>
+                                        <li>Haltbarkeitsdaten korrigieren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="correction-card">
+                            <i class="fas fa-crosshairs"></i>
+                            <h4>Einzelbestand-Korrektur</h4>
+                            <div class="correction-details">
+                                <p><strong>Anwendung:</strong> Spezifische LHM korrigieren</p>
+                                <div class="correction-reasons">
+                                    <strong>Vorteile:</strong>
+                                    <ul>
+                                        <li>Gezielte Anpassung einzelner LHM</li>
+                                        <li>Minimale Auswirkungen</li>
+                                        <li>Präzise Dokumentation</li>
+                                        <li>Keine Beeinträchtigung anderer Bestände</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="correction-process">
+                    <h3>Bestandskorrektur durchführen</h3>
+                    <div class="process-steps">
+                        <div class="process-path">
+                            <strong>Menüpfad:</strong> Bestand > Bestandskorrektur
+                        </div>
+
+                        <div class="correction-workflow">
+                            <h4>Einzelbestand korrigieren</h4>
+                            <div class="workflow-steps">
+                                <div class="correction-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h5>Artikel und LHM auswählen</h5>
+                                        <p>Bestand über Artikel-Nummer und LHM-Nummer eindeutig identifizieren</p>
+                                    </div>
+                                </div>
+                                <div class="correction-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h5>Aktuelle Werte prüfen</h5>
+                                        <p>System-Bestand und aktuelle Eigenschaften kontrollieren</p>
+                                    </div>
+                                </div>
+                                <div class="correction-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h5>Neue Werte eingeben</h5>
+                                        <p>Korrekte Menge und/oder Eigenschaften eintragen</p>
+                                    </div>
+                                </div>
+                                <div class="correction-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h5>Korrektur-Grund angeben</h5>
+                                        <p>Grund für die Korrektur aus Dropdown-Liste wählen</p>
+                                    </div>
+                                </div>
+                                <div class="correction-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h5>Korrektur bestätigen</h5>
+                                        <p>Buchung durchführen und Audit-Trail erstellen</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mass-correction">
+                            <h4>Mehrfachauswahl für Massen-Korrekturen</h4>
+                            <div class="mass-process">
+                                <ol>
+                                    <li>Mehrere Bestände über Filter oder manuelle Auswahl markieren</li>
+                                    <li>Massen-Korrektur-Funktion aktivieren</li>
+                                    <li>Einheitliche Änderungen definieren (z.B. Qualitätsstatus)</li>
+                                    <li>Batch-Verarbeitung starten</li>
+                                    <li>Erfolg der Verarbeitung prüfen</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="correction-reasons">
+                    <h3>Korrektur-Gründe und Dokumentation</h3>
+                    <div class="reasons-catalog">
+                        <div class="reason-category">
+                            <h4>Operative Gründe</h4>
+                            <div class="reasons-list">
+                                <div class="reason-item">
+                                    <strong>Inventur-Differenz:</strong>
+                                    <p>Zählung ergab Abweichung vom Systembestand</p>
+                                </div>
+                                <div class="reason-item">
+                                    <strong>Schwund:</strong>
+                                    <p>Natürlicher Verlust durch Verdampfung, Abnutzung etc.</p>
+                                </div>
+                                <div class="reason-item">
+                                    <strong>Eingabefehler:</strong>
+                                    <p>Korrektur einer fehlerhaften manuellen Buchung</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reason-category">
+                            <h4>Qualitäts-Gründe</h4>
+                            <div class="reasons-list">
+                                <div class="reason-item">
+                                    <strong>Beschädigung:</strong>
+                                    <p>Artikel nicht mehr verwendbar durch Transport- oder Lagerschäden</p>
+                                </div>
+                                <div class="reason-item">
+                                    <strong>Qualitätsmangel:</strong>
+                                    <p>Artikel entspricht nicht der Spezifikation</p>
+                                </div>
+                                <div class="reason-item">
+                                    <strong>Ablaufdatum:</strong>
+                                    <p>Haltbarkeitsdatum überschritten</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reason-category">
+                            <h4>System-Gründe</h4>
+                            <div class="reasons-list">
+                                <div class="reason-item">
+                                    <strong>Systemfehler:</strong>
+                                    <p>Technische Probleme bei automatischer Buchung</p>
+                                </div>
+                                <div class="reason-item">
+                                    <strong>Datenkorrektur:</strong>
+                                    <p>Korrektur von Stammdaten-Fehlern</p>
+                                </div>
+                                <div class="reason-item">
+                                    <strong>Migration:</strong>
+                                    <p>Anpassung bei Systemwechsel oder Update</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="documentation-requirements">
+                        <h4>Dokumentations-Anforderungen</h4>
+                        <div class="doc-checklist">
+                            <div class="doc-item">
+                                <i class="fas fa-check"></i>
+                                <span>Detaillierte Beschreibung des Grundes</span>
+                            </div>
+                            <div class="doc-item">
+                                <i class="fas fa-check"></i>
+                                <span>Verantwortliche Person festhalten</span>
+                            </div>
+                            <div class="doc-item">
+                                <i class="fas fa-check"></i>
+                                <span>Exakter Zeitpunkt der Korrektur</span>
+                            </div>
+                            <div class="doc-item">
+                                <i class="fas fa-check"></i>
+                                <span>Auswirkungen auf andere Prozesse bewerten</span>
+                            </div>
+                            <div class="doc-item">
+                                <i class="fas fa-check"></i>
+                                <span>Genehmigung bei größeren Korrekturen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sperren/Freigeben Section -->
+            <div class="operations-section" id="sperren">
+                <h2>Bestände sperren und freigeben</h2>
+                
+                <div class="blocking-reasons">
+                    <h3>Gründe für Bestandssperrungen</h3>
+                    <div class="blocking-categories">
+                        <div class="blocking-category quality">
+                            <h4><i class="fas fa-microscope"></i> Qualitätsprobleme</h4>
+                            <div class="blocking-list">
+                                <div class="blocking-item">
+                                    <strong>Qualitätsprüfung läuft:</strong>
+                                    <p>Routinemäßige oder anlassbezogene Qualitätskontrolle</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Reklamation eingegangen:</strong>
+                                    <p>Kundenbeanstandung erfordert Untersuchung</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Verdacht auf Beschädigung:</strong>
+                                    <p>Sichtbare oder vermutete Schäden am Material</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Haltbarkeitsprobleme:</strong>
+                                    <p>Ablaufdatum erreicht oder Qualitätsverlust</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blocking-category legal">
+                            <h4><i class="fas fa-gavel"></i> Rechtliche Gründe</h4>
+                            <div class="blocking-list">
+                                <div class="blocking-item">
+                                    <strong>Rückruf-Aktion:</strong>
+                                    <p>Herstelleranordnung zur Rücknahme</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Behördliche Anordnung:</strong>
+                                    <p>Offizielle Verfügung von Aufsichtsbehörden</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Patentstreitigkeiten:</strong>
+                                    <p>Rechtliche Auseinandersetzungen</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Zoll-Probleme:</strong>
+                                    <p>Unklare Import/Export-Bestimmungen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blocking-category technical">
+                            <h4><i class="fas fa-cogs"></i> Technische Gründe</h4>
+                            <div class="blocking-list">
+                                <div class="blocking-item">
+                                    <strong>Systemfehler bei Buchung:</strong>
+                                    <p>Technische Probleme in der Datenverarbeitung</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Dateninkonsistenzen:</strong>
+                                    <p>Widersprüchliche Informationen im System</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Lagerplatz-Probleme:</strong>
+                                    <p>Defekte oder unzugängliche Lagerplätze</p>
+                                </div>
+                                <div class="blocking-item">
+                                    <strong>Transport-Schäden:</strong>
+                                    <p>Beschädigungen während der Beförderung</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blocking-process">
+                    <h3>Sperrung durchführen</h3>
+                    <div class="process-flow">
+                        <div class="process-path">
+                            <strong>Menüpfad:</strong> Bestand > Bestand sperren/freigeben
+                        </div>
+
+                        <div class="blocking-steps">
+                            <div class="blocking-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>1. Bestand identifizieren</h4>
+                                    <p>Artikel und LHM über verschiedene Suchkriterien finden</p>
+                                    <div class="step-options">
+                                        <ul>
+                                            <li>Artikel-Nummer eingeben</li>
+                                            <li>LHM-Nummer scannen</li>
+                                            <li>Lagerplatz-basierte Suche</li>
+                                            <li>Chargen-Nummer verwenden</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blocking-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-list-ul"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>2. Sperr-Grund auswählen</h4>
+                                    <p>Vordefinierte Gründe aus Dropdown-Liste wählen</p>
+                                    <div class="step-options">
+                                        <ul>
+                                            <li>Qualitätsprüfung erforderlich</li>
+                                            <li>Beschädigung vermutet</li>
+                                            <li>Reklamation eingegangen</li>
+                                            <li>Behördliche Anordnung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blocking-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>3. Sperr-Kommentar eingeben</h4>
+                                    <p>Detaillierte Beschreibung des Sperr-Grundes</p>
+                                    <div class="step-options">
+                                        <ul>
+                                            <li>Konkrete Beschreibung des Problems</li>
+                                            <li>Referenz zu Reklamation/Ticket</li>
+                                            <li>Erwartete Bearbeitungsdauer</li>
+                                            <li>Ansprechpartner für Rückfragen</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blocking-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>4. Sperrung aktivieren</h4>
+                                    <p>Bestand wird sofort für Entnahmen gesperrt</p>
+                                    <div class="step-effects">
+                                        <strong>Auswirkungen:</strong>
+                                        <ul>
+                                            <li>Keine Entnahme mehr möglich</li>
+                                            <li>Keine Reservierung möglich</li>
+                                            <li>Sichtbar in allen System-Anzeigen</li>
+                                            <li>Automatische Benachrichtigung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blocking-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>5. Bereiche informieren</h4>
+                                    <p>Betroffene Abteilungen über Sperrung benachrichtigen</p>
+                                    <div class="step-options">
+                                        <ul>
+                                            <li>Disposition über gesperrte Mengen</li>
+                                            <li>Qualitätsprüfung über Prüfauftrag</li>
+                                            <li>Einkauf über Lieferantenproblem</li>
+                                            <li>Kunden über Lieferverzögerung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="release-process">
+                    <h3>Freigabe durchführen</h3>
+                    <div class="release-workflow">
+                        <div class="release-requirements">
+                            <h4>Voraussetzungen für Freigabe</h4>
+                            <div class="requirements-checklist">
+                                <div class="requirement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Sperr-Grund ist vollständig behoben</span>
+                                </div>
+                                <div class="requirement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Qualitätsprüfung erfolgreich abgeschlossen</span>
+                                </div>
+                                <div class="requirement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Erforderliche Genehmigungen eingeholt</span>
+                                </div>
+                                <div class="requirement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Dokumentation vollständig und aktuell</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="release-steps">
+                            <h4>Freigabe-Arbeitsschritte</h4>
+                            <div class="release-process-steps">
+                                <div class="release-step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-text">
+                                        <strong>Gesperrte Bestände anzeigen</strong>
+                                        <p>Übersicht aller aktuell gesperrten Bestände aufrufen</p>
+                                    </div>
+                                </div>
+                                <div class="release-step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-text">
+                                        <strong>Bestand auswählen</strong>
+                                        <p>Spezifischen Bestand für Freigabe markieren</p>
+                                    </div>
+                                </div>
+                                <div class="release-step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-text">
+                                        <strong>Freigabe-Grund eingeben</strong>
+                                        <p>Begründung für die Freigabe dokumentieren</p>
+                                    </div>
+                                </div>
+                                <div class="release-step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-text">
+                                        <strong>Freigabe bestätigen</strong>
+                                        <p>Endgültige Freigabe mit digitaler Signatur</p>
+                                    </div>
+                                </div>
+                                <div class="release-step">
+                                    <span class="step-number">5</span>
+                                    <div class="step-text">
+                                        <strong>Verfügbarkeit prüfen</strong>
+                                        <p>Bestätigung der wiederherigestellten Verfügbarkeit</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABC-Analyse Section -->
+            <div class="operations-section" id="abc">
+                <h2>ABC-Analyse</h2>
+                
+                <div class="abc-principles">
+                    <h3>ABC-Klassifizierung Grundlagen</h3>
+                    <div class="abc-overview">
+                        <div class="abc-rule">
+                            <h4>Pareto-Prinzip (80/20-Regel)</h4>
+                            <p>Grundlage der ABC-Analyse ist das Pareto-Prinzip: 80% des Wertes wird durch 20% der Artikel verursacht</p>
+                        </div>
+                        <div class="abc-classification">
+                            <div class="abc-class a-class">
+                                <div class="class-header">
+                                    <span class="class-letter">A</span>
+                                    <h4>A-Artikel</h4>
+                                </div>
+                                <div class="class-details">
+                                    <div class="class-stats">
+                                        <span class="stat-value">80%</span>
+                                        <span class="stat-label">des Wertes</span>
+                                    </div>
+                                    <div class="class-stats">
+                                        <span class="stat-value">20%</span>
+                                        <span class="stat-label">der Artikel</span>
+                                    </div>
+                                    <div class="class-characteristics">
+                                        <strong>Eigenschaften:</strong>
+                                        <ul>
+                                            <li>Hoher Wert pro Artikel</li>
+                                            <li>Geringe Anzahl von Artikeln</li>
+                                            <li>Höchste Priorität bei Behandlung</li>
+                                            <li>Intensive Überwachung erforderlich</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="abc-class b-class">
+                                <div class="class-header">
+                                    <span class="class-letter">B</span>
+                                    <h4>B-Artikel</h4>
+                                </div>
+                                <div class="class-details">
+                                    <div class="class-stats">
+                                        <span class="stat-value">15%</span>
+                                        <span class="stat-label">des Wertes</span>
+                                    </div>
+                                    <div class="class-stats">
+                                        <span class="stat-value">30%</span>
+                                        <span class="stat-label">der Artikel</span>
+                                    </div>
+                                    <div class="class-characteristics">
+                                        <strong>Eigenschaften:</strong>
+                                        <ul>
+                                            <li>Mittlerer Wert pro Artikel</li>
+                                            <li>Mittlere Anzahl von Artikeln</li>
+                                            <li>Normale Priorität</li>
+                                            <li>Regelmäßige Kontrolle</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="abc-class c-class">
+                                <div class="class-header">
+                                    <span class="class-letter">C</span>
+                                    <h4>C-Artikel</h4>
+                                </div>
+                                <div class="class-details">
+                                    <div class="class-stats">
+                                        <span class="stat-value">5%</span>
+                                        <span class="stat-label">des Wertes</span>
+                                    </div>
+                                    <div class="class-stats">
+                                        <span class="stat-value">50%</span>
+                                        <span class="stat-label">der Artikel</span>
+                                    </div>
+                                    <div class="class-characteristics">
+                                        <strong>Eigenschaften:</strong>
+                                        <ul>
+                                            <li>Niedriger Wert pro Artikel</li>
+                                            <li>Hohe Anzahl von Artikeln</li>
+                                            <li>Niedrige Priorität</li>
+                                            <li>Seltene Kontrolle ausreichend</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="abc-criteria">
+                    <h3>Zusätzliche Klassifizierungs-Kriterien</h3>
+                    <div class="criteria-grid">
+                        <div class="criteria-card">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Umschlagshäufigkeit</h4>
+                            <p>Wie oft ein Artikel pro Zeitraum bewegt wird</p>
+                            <div class="criteria-details">
+                                <strong>Bewertung:</strong>
+                                <ul>
+                                    <li>Täglich bewegte Artikel: Höchste Priorität</li>
+                                    <li>Wöchentlich bewegte Artikel: Hohe Priorität</li>
+                                    <li>Monatlich bewegte Artikel: Mittlere Priorität</li>
+                                    <li>Seltener bewegte Artikel: Niedrige Priorität</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="criteria-card">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Kritikalität</h4>
+                            <p>Wichtigkeit für Produktion und Geschäftsprozesse</p>
+                            <div class="criteria-details">
+                                <strong>Faktoren:</strong>
+                                <ul>
+                                    <li>Verfügbarkeit von Ersatzartikeln</li>
+                                    <li>Auswirkung bei Fehlbestand</li>
+                                    <li>Lieferzeit des Artikels</li>
+                                    <li>Sicherheitsrelevanz</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="criteria-card">
+                            <i class="fas fa-euro-sign"></i>
+                            <h4>Lagerkosten</h4>
+                            <p>Kosten für Lagerung und Kapitalbindung</p>
+                            <div class="criteria-details">
+                                <strong>Kostenarten:</strong>
+                                <ul>
+                                    <li>Kapitalbindungskosten</li>
+                                    <li>Lagerplatz-Kosten</li>
+                                    <li>Handling-Kosten</li>
+                                    <li>Versicherungs-Kosten</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="criteria-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Verfügbarkeit</h4>
+                            <p>Lieferzeiten und Beschaffungsaufwand</p>
+                            <div class="criteria-details">
+                                <strong>Aspekte:</strong>
+                                <ul>
+                                    <li>Lieferzeit des Lieferanten</li>
+                                    <li>Anzahl verfügbarer Lieferanten</li>
+                                    <li>Mindestbestellmengen</li>
+                                    <li>Saisonale Verfügbarkeit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="abc-process">
+                    <h3>ABC-Analyse durchführen</h3>
+                    <div class="analysis-workflow">
+                        <div class="process-path">
+                            <strong>Menüpfad:</strong> Data Center > ABC-Analyse
+                        </div>
+
+                        <div class="analysis-steps">
+                            <div class="analysis-step">
+                                <div class="step-header">
+                                    <span class="step-number">1</span>
+                                    <h4>Analyse-Parameter definieren</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Grundeinstellungen für die Analyse festlegen</p>
+                                    <div class="parameter-options">
+                                        <strong>Parameter-Auswahl:</strong>
+                                        <ul>
+                                            <li>Bewertungs-Zeitraum (z.B. letzte 12 Monate)</li>
+                                            <li>Bewertungs-Kriterien (Wert, Menge, Häufigkeit)</li>
+                                            <li>Gewichtung der Kriterien</li>
+                                            <li>Klassifizierungs-Schwellen (80/15/5 oder angepasst)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analysis-step">
+                                <div class="step-header">
+                                    <span class="step-number">2</span>
+                                    <h4>Artikel-Auswahl treffen</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Bestimmung welche Artikel in die Analyse einbezogen werden</p>
+                                    <div class="selection-options">
+                                        <strong>Auswahl-Kriterien:</strong>
+                                        <ul>
+                                            <li>Alle aktiven Artikel</li>
+                                            <li>Spezifische Artikel-Gruppen</li>
+                                            <li>Lagerbereich-spezifische Artikel</li>
+                                            <li>Filter nach Bewegungshäufigkeit</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analysis-step">
+                                <div class="step-header">
+                                    <span class="step-number">3</span>
+                                    <h4>Zeitraum festlegen</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Defizition des Betrachtungs-Zeitraums für die Datengrundlage</p>
+                                    <div class="timeframe-options">
+                                        <strong>Zeitraum-Optionen:</strong>
+                                        <ul>
+                                            <li>Rollierendes Jahr (letzte 12 Monate)</li>
+                                            <li>Kalenderjahr (Januar - Dezember)</li>
+                                            <li>Geschäftsjahr (je nach Unternehmen)</li>
+                                            <li>Benutzerdefinierter Zeitraum</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analysis-step">
+                                <div class="step-header">
+                                    <span class="step-number">4</span>
+                                    <h4>Kriterien gewichten</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Relative Wichtigkeit der verschiedenen Bewertungs-Kriterien festlegen</p>
+                                    <div class="weighting-example">
+                                        <strong>Beispiel-Gewichtung:</strong>
+                                        <ul>
+                                            <li>Umsatz-Wert: 50%</li>
+                                            <li>Umschlagshäufigkeit: 30%</li>
+                                            <li>Kritikalität: 15%</li>
+                                            <li>Lagerkosten: 5%</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analysis-step">
+                                <div class="step-header">
+                                    <span class="step-number">5</span>
+                                    <h4>Analyse starten</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Automatische Berechnung und Klassifizierung aller Artikel</p>
+                                    <div class="calculation-process">
+                                        <strong>Berechnungs-Schritte:</strong>
+                                        <ul>
+                                            <li>Daten-Extraktion aus WMS und SAP</li>
+                                            <li>Berechnung der gewichteten Scores</li>
+                                            <li>Sortierung nach Gesamtwert</li>
+                                            <li>Klassifizierung in A/B/C-Kategorien</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="analysis-step">
+                                <div class="step-header">
+                                    <span class="step-number">6</span>
+                                    <h4>Ergebnisse auswerten</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Interpretation und Ableitung von Maßnahmen aus den Analyse-Ergebnissen</p>
+                                    <div class="evaluation-outputs">
+                                        <strong>Ergebnis-Darstellung:</strong>
+                                        <ul>
+                                            <li>Grafische Darstellung der Verteilung</li>
+                                            <li>Artikel-Listen pro Kategorie</li>
+                                            <li>Wert-Analysen detailliert</li>
+                                            <li>Empfehlungen für Optimierung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="abc-applications">
+                    <h3>ABC-Anwendungsbereiche</h3>
+                    <div class="application-areas">
+                        <div class="application-card">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h4>Lagerplatz-Optimierung</h4>
+                            <div class="application-content">
+                                <p>Optimale Platzierung basierend auf Zugriffshäufigkeit</p>
+                                <div class="optimization-strategy">
+                                    <strong>Strategie:</strong>
+                                    <ul>
+                                        <li><strong>A-Artikel:</strong> Optimale Lagerplätze (kurze Wege, gute Erreichbarkeit)</li>
+                                        <li><strong>B-Artikel:</strong> Standard-Lagerplätze (moderate Entfernungen)</li>
+                                        <li><strong>C-Artikel:</strong> Entfernte Lagerplätze (längere Wege akzeptabel)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="application-card">
+                            <i class="fas fa-search"></i>
+                            <h4>Inventur-Frequenz</h4>
+                            <div class="application-content">
+                                <p>Anpassung der Prüfhäufigkeit nach Artikel-Wichtigkeit</p>
+                                <div class="frequency-schedule">
+                                    <strong>Prüf-Intervalle:</strong>
+                                    <ul>
+                                        <li><strong>A-Artikel:</strong> Monatliche Kontrolle</li>
+                                        <li><strong>B-Artikel:</strong> Quartalsweise Kontrolle</li>
+                                        <li><strong>C-Artikel:</strong> Jährliche Kontrolle</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="application-card">
+                            <i class="fas fa-chart-pie"></i>
+                            <h4>Bestandsstrategien</h4>
+                            <div class="application-content">
+                                <p>Differentierte Bestandsführung nach Artikel-Klassen</p>
+                                <div class="strategy-differences">
+                                    <strong>Strategien:</strong>
+                                    <ul>
+                                        <li><strong>A-Artikel:</strong> Niedrige Bestände, hohe Umschlagshäufigkeit</li>
+                                        <li><strong>B-Artikel:</strong> Moderate Bestände, regelmäßige Bestellungen</li>
+                                        <li><strong>C-Artikel:</strong> Höhere Bestände, seltene Bestellungen</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="application-card">
+                            <i class="fas fa-truck"></i>
+                            <h4>Beschaffungsstrategien</h4>
+                            <div class="application-content">
+                                <p>Lieferanten-Management basierend auf Artikel-Wichtigkeit</p>
+                                <div class="procurement-approach">
+                                    <strong>Ansätze:</strong>
+                                    <ul>
+                                        <li><strong>A-Artikel:</strong> Mehrere Lieferanten, kurze Lieferzeiten</li>
+                                        <li><strong>B-Artikel:</strong> Standard-Lieferanten, normale Konditionen</li>
+                                        <li><strong>C-Artikel:</strong> Einzellieferanten, Großmengen-Rabatte</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reorganisation Section -->
+            <div class="operations-section" id="reorganisation">
+                <h2>Reorganisation</h2>
+                
+                <div class="reorganization-overview">
+                    <h3>Reorganisations-Ziele</h3>
+                    <div class="goals-grid">
+                        <div class="goal-card">
+                            <i class="fas fa-route"></i>
+                            <h4>Lagerplatz-Optimierung</h4>
+                            <p>Optimale Zuordnung von Artikeln zu Lagerplätzen basierend auf Zugriffshäufigkeit und ABC-Klassifizierung</p>
+                        </div>
+                        <div class="goal-card">
+                            <i class="fas fa-stopwatch"></i>
+                            <h4>Zugriffszeiten reduzieren</h4>
+                            <p>Minimierung der Kommissionier-Zeiten durch strategische Platzierung häufig genutzter Artikel</p>
+                        </div>
+                        <div class="goal-card">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <h4>Lagerkapazität optimieren</h4>
+                            <p>Bessere Ausnutzung des verfügbaren Lagerraums durch effiziente Raumaufteilung</p>
+                        </div>
+                        <div class="goal-card">
+                            <i class="fas fa-bug"></i>
+                            <h4>Fehlerquellen eliminieren</h4>
+                            <p>Reduzierung von Kommissionier-Fehlern durch logische Artikel-Anordnung</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reorganization-types">
+                    <h3>Reorganisations-Methoden</h3>
+                    <div class="methods-overview">
+                        <div class="method-card comprehensive">
+                            <h4><i class="fas fa-home"></i> Vollständige Reorganisation</h4>
+                            <div class="method-content">
+                                <p><strong>Anwendung:</strong> Komplette Neuordnung des gesamten Lagers</p>
+                                <div class="method-details">
+                                    <div class="method-benefits">
+                                        <strong>Vorteile:</strong>
+                                        <ul>
+                                            <li>Maximale Optimierungsmöglichkeiten</li>
+                                            <li>Berücksichtigung aller Abhängigkeiten</li>
+                                            <li>Einheitliche Neustrukturierung</li>
+                                            <li>Langfristige Optimierung</li>
+                                        </ul>
+                                    </div>
+                                    <div class="method-challenges">
+                                        <strong>Herausforderungen:</strong>
+                                        <ul>
+                                            <li>Hoher Zeitaufwand</li>
+                                            <li>Betriebsunterbrechungen</li>
+                                            <li>Komplexe Planung erforderlich</li>
+                                            <li>Hohe Kosten</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card partial">
+                            <h4><i class="fas fa-puzzle-piece"></i> Teilweise Reorganisation</h4>
+                            <div class="method-content">
+                                <p><strong>Anwendung:</strong> Gezielte Optimierung spezifischer Lagerbereiche</p>
+                                <div class="method-details">
+                                    <div class="method-benefits">
+                                        <strong>Vorteile:</strong>
+                                        <ul>
+                                            <li>Geringere Betriebsstörungen</li>
+                                            <li>Fokussierte Verbesserungen</li>
+                                            <li>Kürzere Umsetzungsdauer</li>
+                                            <li>Niedrigere Kosten</li>
+                                        </ul>
+                                    </div>
+                                    <div class="method-applications">
+                                        <strong>Anwendungsbereiche:</strong>
+                                        <ul>
+                                            <li>Einzelne Lagerzonen</li>
+                                            <li>Spezifische Artikel-Gruppen</li>
+                                            <li>Problematische Bereiche</li>
+                                            <li>Neue Artikel-Einführungen</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card continuous">
+                            <h4><i class="fas fa-sync-alt"></i> Kontinuierliche Reorganisation</h4>
+                            <div class="method-content">
+                                <p><strong>Anwendung:</strong> Laufende Optimierung basierend auf aktuellen Daten</p>
+                                <div class="method-details">
+                                    <div class="method-benefits">
+                                        <strong>Vorteile:</strong>
+                                        <ul>
+                                            <li>Immer aktuelle Optimierung</li>
+                                            <li>Keine Betriebsunterbrechungen</li>
+                                            <li>Automatisierte Prozesse</li>
+                                            <li>Kontinuierliche Verbesserung</li>
+                                        </ul>
+                                    </div>
+                                    <div class="method-triggers">
+                                        <strong>Auslöser:</strong>
+                                        <ul>
+                                            <li>ABC-Klassen-Änderungen</li>
+                                            <li>Neue Verbrauchsmuster</li>
+                                            <li>Saisonale Anpassungen</li>
+                                            <li>Performance-Schwellenwerte</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card event-based">
+                            <h4><i class="fas fa-bell"></i> Ereignis-basierte Reorganisation</h4>
+                            <div class="method-content">
+                                <p><strong>Anwendung:</strong> Reorganisation bei spezifischen Ereignissen oder Problemen</p>
+                                <div class="method-details">
+                                    <div class="method-triggers">
+                                        <strong>Auslöse-Ereignisse:</strong>
+                                        <ul>
+                                            <li>Performance-Verschlechterung</li>
+                                            <li>Neue Produktlinien</li>
+                                            <li>Kapazitäts-Engpässe</li>
+                                            <li>Technologie-Upgrades</li>
+                                        </ul>
+                                    </div>
+                                    <div class="method-approach">
+                                        <strong>Herangehensweise:</strong>
+                                        <ul>
+                                            <li>Schnelle Reaktion auf Probleme</li>
+                                            <li>Zielgerichtete Maßnahmen</li>
+                                            <li>Messbare Verbesserungen</li>
+                                            <li>Dokumentierte Erfolge</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reorganization-process">
+                    <h3>LHM-Reorganisation durchführen</h3>
+                    <div class="process-flow">
+                        <div class="process-path">
+                            <strong>Menüpfad:</strong> Reorganisation > LHM-Reorganisation
+                        </div>
+
+                        <div class="reorganization-steps">
+                            <div class="reorg-step">
+                                <div class="step-header">
+                                    <span class="step-number">1</span>
+                                    <h4>Reorganisations-Bereich definieren</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Festlegung des Umfangs und der Grenzen der Reorganisation</p>
+                                    <div class="step-options">
+                                        <strong>Bereichs-Optionen:</strong>
+                                        <ul>
+                                            <li>Gesamtes Lager (HRL und AKL)</li>
+                                            <li>Spezifischer Lagerbereich (nur HRL oder nur AKL)</li>
+                                            <li>Einzelne Lagerzonen oder Gänge</li>
+                                            <li>Artikel-spezifische Bereiche</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reorg-step">
+                                <div class="step-header">
+                                    <span class="step-number">2</span>
+                                    <h4>LHM-Auswahl treffen</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Bestimmung welche Ladehilfsmittel reorganisiert werden sollen</p>
+                                    <div class="step-criteria">
+                                        <strong>Auswahl-Kriterien:</strong>
+                                        <ul>
+                                            <li>ABC-Klassifizierung der Artikel</li>
+                                            <li>Bewegungshäufigkeit der LHM</li>
+                                            <li>Aktuelle Lagerplatz-Effizienz</li>
+                                            <li>Lagerplatz-Auslastung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reorg-step">
+                                <div class="step-header">
+                                    <span class="step-number">3</span>
+                                    <h4>Ziel-Strategie festlegen</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Definition der Optimierungs-Ziele und -Strategien</p>
+                                    <div class="strategy-options">
+                                        <strong>Strategie-Optionen:</strong>
+                                        <ul>
+                                            <li><strong>ABC-basiert:</strong> A-Artikel in optimale Bereiche</li>
+                                            <li><strong>FIFO-basiert:</strong> Älteste Bestände zuerst</li>
+                                            <li><strong>Effizienz-basiert:</strong> Minimale Laufwege</li>
+                                            <li><strong>Kapazität-basiert:</strong> Optimale Raumnutzung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reorg-step">
+                                <div class="step-header">
+                                    <span class="step-number">4</span>
+                                    <h4>Reorganisation starten</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Initiierung des automatischen Reorganisations-Prozesses</p>
+                                    <div class="start-process">
+                                        <strong>System-Aktionen:</strong>
+                                        <ul>
+                                            <li>Berechnung optimaler Lagerplatz-Zuordnungen</li>
+                                            <li>Generierung von Umlagerungs-Aufträgen</li>
+                                            <li>Priorisierung der Bewegungen</li>
+                                            <li>Freigabe für Ausführung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reorg-step">
+                                <div class="step-header">
+                                    <span class="step-number">5</span>
+                                    <h4>Fortschritt überwachen</h4>
+                                </div>
+                                <div class="step-content">
+                                    <p>Kontinuierliche Überwachung und Steuerung des Reorganisations-Prozesses</p>
+                                    <div class="monitoring-aspects">
+                                        <strong>Überwachungs-Aspekte:</strong>
+                                        <ul>
+                                            <li>Anzahl bearbeiteter vs. geplanter Umlagerungen</li>
+                                            <li>Durchschnittliche Bearbeitungszeit</li>
+                                            <li>Aufgetretene Probleme oder Blockierungen</li>
+                                            <li>Auswirkungen auf den laufenden Betrieb</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reorganization-strategies">
+                    <h3>Reorganisations-Strategien im Detail</h3>
+                    <div class="strategies-detailed">
+                        <div class="strategy-detailed abc-strategy">
+                            <h4>ABC-basierte Reorganisation</h4>
+                            <div class="strategy-content">
+                                <div class="strategy-principle">
+                                    <strong>Grundprinzip:</strong>
+                                    <p>A-Artikel werden in die optimalen Zonen platziert, B-Artikel in mittlere Bereiche, C-Artikel in entfernte Zonen</p>
+                                </div>
+                                <div class="implementation-steps">
+                                    <strong>Umsetzung:</strong>
+                                    <ol>
+                                        <li>Aktuelle ABC-Analyse durchführen</li>
+                                        <li>Optimale Zonen für A-Artikel definieren</li>
+                                        <li>Häufig genutzte Artikel bevorzugt platzieren</li>
+                                        <li>Laufwege systematisch minimieren</li>
+                                        <li>Effizienz-Verbesserung messen</li>
+                                    </ol>
+                                </div>
+                                <div class="expected-benefits">
+                                    <strong>Erwartete Vorteile:</strong>
+                                    <ul>
+                                        <li>20-30% Reduzierung der Kommissionier-Zeiten</li>
+                                        <li>15-25% weniger Laufwege</li>
+                                        <li>Verbesserte Mitarbeiter-Zufriedenheit</li>
+                                        <li>Höhere Systemdurchsätze</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="strategy-detailed fifo-strategy">
+                            <h4>FIFO-Reorganisation</h4>
+                            <div class="strategy-content">
+                                <div class="strategy-principle">
+                                    <strong>Grundprinzip:</strong>
+                                    <p>Älteste Bestände werden in die am besten zugänglichen Bereiche verlagert um FIFO-Entnahmen zu optimieren</p>
+                                </div>
+                                <div class="implementation-steps">
+                                    <strong>Umsetzung:</strong>
+                                    <ol>
+                                        <li>Bestände nach Alter analysieren</li>
+                                        <li>Älteste Bestände identifizieren</li>
+                                        <li>Optimale FIFO-Bereiche definieren</li>
+                                        <li>Haltbarkeit und Rotation verbessern</li>
+                                        <li>Verderb-Rate messen und reduzieren</li>
+                                    </ol>
+                                </div>
+                                <div class="expected-benefits">
+                                    <strong>Erwartete Vorteile:</strong>
+                                    <ul>
+                                        <li>Reduzierung des Schwunds um 60-80%</li>
+                                        <li>Verbesserte Qualitäts-Rotation</li>
+                                        <li>Compliance mit Haltbarkeitsvorschriften</li>
+                                        <li>Reduzierte Verluste durch Verderb</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reorganization-success">
+                    <h3>Erfolg messen und bewerten</h3>
+                    <div class="success-metrics">
+                        <div class="metrics-categories">
+                            <div class="metric-category efficiency">
+                                <h4>Effizienz-Metriken</h4>
+                                <div class="metric-items">
+                                    <div class="metric-item">
+                                        <div class="metric-name">Durchschnittliche Kommissionier-Zeit</div>
+                                        <div class="metric-target">Ziel: -20%</div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-name">Laufwege pro Auftrag</div>
+                                        <div class="metric-target">Ziel: -25%</div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-name">Picks per Hour</div>
+                                        <div class="metric-target">Ziel: +30%</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="metric-category quality">
+                                <h4>Qualitäts-Metriken</h4>
+                                <div class="metric-items">
+                                    <div class="metric-item">
+                                        <div class="metric-name">Kommissionier-Fehlerrate</div>
+                                        <div class="metric-target">Ziel: -50%</div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-name">FIFO-Einhaltung</div>
+                                        <div class="metric-target">Ziel: >95%</div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-name">Schwund-Rate</div>
+                                        <div class="metric-target">Ziel: -70%</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="metric-category capacity">
+                                <h4>Kapazitäts-Metriken</h4>
+                                <div class="metric-items">
+                                    <div class="metric-item">
+                                        <div class="metric-name">Lagerplatz-Auslastung</div>
+                                        <div class="metric-target">Ziel: >85%</div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-name">Durchsatz pro Quadratmeter</div>
+                                        <div class="metric-target">Ziel: +40%</div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-name">Verfügbare Lagerplätze</div>
+                                        <div class="metric-target">Ziel: +15%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-timeline">
+                        <h4>Erfolgs-Bewertungs-Zeitplan</h4>
+                        <div class="timeline-phases">
+                            <div class="timeline-phase immediate">
+                                <div class="phase-header">
+                                    <span class="phase-timeframe">1-7 Tage</span>
+                                    <h5>Sofortige Auswirkungen</h5>
+                                </div>
+                                <div class="phase-metrics">
+                                    <ul>
+                                        <li>Reorganisations-Vollständigkeit (100%)</li>
+                                        <li>System-Stabilität nach Umstellung</li>
+                                        <li>Mitarbeiter-Akzeptanz der Änderungen</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-phase short-term">
+                                <div class="phase-header">
+                                    <span class="phase-timeframe">1-4 Wochen</span>
+                                    <h5>Kurzfristige Verbesserungen</h5>
+                                </div>
+                                <div class="phase-metrics">
+                                    <ul>
+                                        <li>Kommissionier-Zeiten</li>
+                                        <li>Fehlerreduktion</li>
+                                        <li>Laufwege-Optimierung</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-phase long-term">
+                                <div class="phase-header">
+                                    <span class="phase-timeframe">1-6 Monate</span>
+                                    <h5>Langfristige Erfolge</h5>
+                                </div>
+                                <div class="phase-metrics">
+                                    <ul>
+                                        <li>Gesamtkosten-Reduktion</li>
+                                        <li>Kapazitäts-Steigerung</li>
+                                        <li>ROI der Reorganisation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.operations-hero {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.operations-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.operations-content {
+    padding: 3rem 0;
+}
+
+.operations-nav {
+    margin-bottom: 3rem;
+}
+
+.operations-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #059669;
+    color: white;
+    border-color: #059669;
+}
+
+.operations-section {
+    display: none;
+}
+
+.operations-section.active {
+    display: block;
+}
+
+/* Inventory Principles */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.principle-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.principle-card i {
+    font-size: 2.5rem;
+    color: #059669;
+    margin-bottom: 1rem;
+}
+
+/* Inventory Types */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.inventory-card {
+    background: var(--bg-secondary);
+    border: 2px solid;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.inventory-card.free {
+    border-color: #10b981;
+}
+
+.inventory-card.blocked {
+    border-color: #f59e0b;
+}
+
+.inventory-card.reserved {
+    border-color: #3b82f6;
+}
+
+.inventory-card.quarantine {
+    border-color: #ef4444;
+}
+
+.inventory-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.inventory-card.free .inventory-icon {
+    background: #10b981;
+}
+
+.inventory-card.blocked .inventory-icon {
+    background: #f59e0b;
+}
+
+.inventory-card.reserved .inventory-icon {
+    background: #3b82f6;
+}
+
+.inventory-card.quarantine .inventory-icon {
+    background: #ef4444;
+}
+
+/* Accuracy Targets */
+.targets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.target-metric {
+    text-align: center;
+}
+
+.metric-circle {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #059669;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    background: var(--bg-secondary);
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #059669;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* Methods Grid */
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.method-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.method-card i {
+    font-size: 2rem;
+    color: #059669;
+    margin-bottom: 1rem;
+}
+
+/* Method Comparison */
+.methods-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.method-comparison-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.method-comparison-card h4 {
+    color: #059669;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Correction Types */
+.correction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.correction-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.correction-card i {
+    font-size: 2rem;
+    color: #059669;
+    margin-bottom: 1rem;
+}
+
+/* Workflow Steps */
+.workflow-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.correction-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    min-width: 300px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #059669;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ABC Classification */
+.abc-classification {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.abc-class {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.class-header {
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.a-class .class-header {
+    background: #ef4444;
+}
+
+.b-class .class-header {
+    background: #f59e0b;
+}
+
+.c-class .class-header {
+    background: #10b981;
+}
+
+.class-letter {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.class-details {
+    padding: 1.5rem;
+}
+
+.class-stats {
+    display: inline-block;
+    text-align: center;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #059669;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Criteria Grid */
+.criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.criteria-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.criteria-card i {
+    font-size: 2rem;
+    color: #059669;
+    margin-bottom: 1rem;
+}
+
+/* Reorganization Goals */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.goal-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.goal-card i {
+    font-size: 2.5rem;
+    color: #059669;
+    margin-bottom: 1rem;
+}
+
+/* Method Cards */
+.methods-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.method-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.method-card h4 {
+    color: #059669;
+    margin-bottom: 1rem;
+}
+
+/* Success Metrics */
+.metrics-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.metric-category {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.metric-item:last-child {
+    border-bottom: none;
+}
+
+.metric-target {
+    font-weight: bold;
+    color: #059669;
+}
+
+/* Timeline Phases */
+.timeline-phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.timeline-phase {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.phase-header {
+    background: #059669;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.phase-timeframe {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.phase-metrics {
+    padding: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .workflow-steps {
+        flex-direction: column;
+    }
+    
+    .correction-step {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .operations-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+    
+    .abc-classification,
+    .methods-overview,
+    .timeline-phases {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const operationsSections = document.querySelectorAll('.operations-section');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and sections
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            operationsSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding section
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+    
+    // Initialize first tab as active
+    document.getElementById('overview').classList.add('active');
+});
+</script>

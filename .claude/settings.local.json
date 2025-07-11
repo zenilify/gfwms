@@ -11,7 +11,10 @@
       "Bash(cp:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:zenilify.github.io)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": []
   }

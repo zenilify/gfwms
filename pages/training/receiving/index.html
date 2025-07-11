@@ -1,0 +1,835 @@
+---
+layout: training
+title: "Wareneingang"
+description: "Wareneingangs-Prozesse im Jungheinrich WMS beherrschen"
+duration: "55 Minuten"
+difficulty: "Intermediate"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Systemnavigation"
+    url: "/pages/training/navigation/"
+  - title: "Erste Schritte"
+    url: "/pages/training/first-steps/"
+learning_objectives:
+  - "Wareneingangs-Arten verstehen und unterscheiden"
+  - "Wareneingangsübersicht effizient nutzen"
+  - "Manuelle und automatische WE-Buchungen durchführen"
+  - "Arbeitsplätze für Wareneingang optimal verwenden"
+  - "Über- und Unterlieferungen korrekt behandeln"
+  - "Qualitätsprüfungen durchführen"
+  - "Störungen beim Wareneingang beheben"
+previous:
+  title: "Erste Schritte"
+  url: "/pages/training/first-steps/"
+next:
+  title: "Kommissionierung"
+  url: "/pages/training/picking/"
+---
+
+# Wareneingang - Efficient Receiving Operations
+
+## Überblick
+
+Der Wareneingang ist ein kritischer Prozess im Lagermanagement, bei dem angelieferte Ware als Bestand erfasst und für die Einlagerung vorbereitet wird. Bei Georg Fischer gibt es spezialisierte Abläufe für verschiedene Lagerbereiche (HRL/AKL), die eine effiziente Bearbeitung gewährleisten.
+
+## Lernziele
+
+Nach Abschluss dieses Moduls können Sie:
+- Verschiedene Wareneingangs-Arten unterscheiden und bearbeiten
+- Die Wareneingangsübersicht effizient nutzen
+- Manuelle und automatische WE-Buchungen durchführen
+- Arbeitsplätze für den Wareneingang optimal verwenden
+- Über- und Unterlieferungen korrekt behandeln
+- Qualitätsprüfungen durchführen
+- Störungen beim Wareneingang beheben
+
+## 1. Grundlagen des Wareneingangs
+
+### 1.1 Definition und Bedeutung
+
+**Wareneingang** ist der Prozess, bei dem:
+- Angelieferte Ware als **Bestand erfasst** wird
+- Ware für die **Einlagerung vorbereitet** wird
+- **Qualitätsprüfungen** durchgeführt werden
+- **Hostsystem-Rückmeldungen** generiert werden
+
+### 1.2 Wareneingangs-Ablauf bei Georg Fischer
+
+#### **Vorbereitung (außerhalb WMS)**
+1. **Sortierung** der angelieferten Ware
+2. **Dekonsolidierung** von Lieferungen
+3. **Auftrennung** nach Lagerbereichen (HRL/AKL)
+4. **Qualitätskontrolle** der Lieferung
+
+#### **WMS-Prozess**
+1. **WE-Aviso** von SAP empfangen
+2. **WE-Buchung** im System
+3. **LHM-Zuweisung** (Palette/Behälter)
+4. **Einlagerung** in HRL/AKL
+5. **Bestandsmeldung** an SAP
+
+### 1.3 Schnittstellen-Integration
+
+#### **SAP-Integration**
+- **Bestellungen (YELD)**: Eingekaufte Ware
+- **Fertigung (YDIG)**: Eigenproduktion
+- **Rückmeldungen**: Bestandsbestätigungen
+- **Statusupdates**: Laufende Aktualisierungen
+
+#### **Datenfluss**
+```
+SAP → WMS → Fördertechnik → Lager → SAP
+```
+
+## 2. Arten von Wareneingängen
+
+### 2.1 Geplante Wareneingänge
+
+#### **Merkmale**
+- **Daten vom Hostsystem** (SAP) übermittelt
+- **WE-Aviso** bereits im System vorhanden
+- **Präfix**: Vom Host vorgegeben
+- **Vollständige Artikelstammdaten**
+
+#### **Vorteile**
+- **Automatische Validierung**
+- **Vollständige Datenerfassung**
+- **Optimierte Platzierung**
+- **Fehlerminimierung**
+
+#### **Typische Beispiele**
+- **Bestellungen**: Eingekaufte Materialien
+- **Produktionsrückläufe**: Fertige Produkte
+- **Transfers**: Lagerüberstellungen
+- **Reparaturrückläufe**: Reparierte Artikel
+
+### 2.2 Ungeplante Wareneingänge
+
+#### **Merkmale**
+- **Keine Daten vom Hostsystem**
+- **Manuelle Erfassung** erforderlich
+- **Präfix**: WMSR (WMS-Reserviert)
+- **Vollständige Dateneingabe** durch Mitarbeiter
+
+#### **Anwendungsfälle**
+- **Notlieferungen**: Dringende Nachlieferungen
+- **Fundware**: Nicht zuordenbare Artikel
+- **Korrekturen**: Nachträgliche Erfassungen
+- **Sonderlieferungen**: Einmalige Lieferungen
+
+#### **Besondere Anforderungen**
+- **Artikelstammdaten** prüfen
+- **Lagerplatz** manuell festlegen
+- **Qualitätsstatus** definieren
+- **Kostenstellenzuordnung** klären
+
+### 2.3 Wareneingangs-Identifikation
+
+#### **Erkennungsmerkmale**
+| Wareneingangs-Art | Präfix | Quelle | Bearbeitung |
+|-------------------|---------|---------|-------------|
+| Geplant | Host-definiert | SAP | Weitgehend automatisch |
+| Ungeplant | WMSR | Manuell | Vollständige Erfassung |
+
+#### **Status-Übersicht**
+| Status | Beschreibung | Nächster Schritt |
+|--------|-------------|------------------|
+| **Aktiv** | Noch nicht bearbeitet | WE-Buchung |
+| **Laufend** | Teilweise bearbeitet | Restmengen |
+| **Abgeschlossen** | Vollständig bearbeitet | Einlagerung |
+
+## 3. Wareneingangs-Buchungsarten
+
+### 3.1 Automatische WE-Buchung am I-Punkt
+
+#### **Voraussetzungen**
+- **WE-Aviso** enthält LHM-Nummer
+- **Einfach-sektoriertes LHM**
+- **Vollständige Stammdaten**
+- **Automatik-Freigabe**
+
+#### **Ablauf**
+1. **LHM** auf Fördertechnik aufgeben
+2. **I-Punkt** erkennt LHM automatisch
+3. **WE-Buchung** erfolgt automatisch
+4. **Einlagerung** startet direkt
+
+#### **Vorteile**
+- **Keine manuelle Eingabe**
+- **Schnelle Bearbeitung**
+- **Fehlerminimierung**
+- **Optimaler Durchsatz**
+
+### 3.2 Manuelle WE-Buchung am PC-Client
+
+#### **Anwendung**
+- **WE-Aviso** ohne LHM-Nummer
+- **Ungeplante Wareneingänge**
+- **Mehrsektorierte LHM**
+- **Qualitätsprüfungen**
+
+#### **Arbeitsschritte**
+1. **WE-Aviso** in Übersicht auswählen
+2. **Position** öffnen
+3. **LHM** zuweisen
+4. **Mengen** kontrollieren
+5. **Buchung** durchführen
+6. **LHM** auf Fördertechnik aufgeben
+
+#### **Kontrollpunkte**
+- **Artikelnummer** prüfen
+- **Menge** validieren
+- **Qualitätsstatus** setzen
+- **Lagerbereich** bestätigen
+
+### 3.3 Buchungsvergleich
+
+#### **Verfahrensübersicht**
+| Schritt | Automatisch | Geplant manuell | Ungeplant manuell |
+|---------|-------------|-----------------|-------------------|
+| 1 | WE-Aviso empfangen | WE-Aviso empfangen | WE-Aviso erstellen |
+| 2 | - | WE-Buchung am PC | WE-Buchung am PC |
+| 3 | LHM aufgeben | LHM aufgeben | LHM aufgeben |
+| 4 | Auto-Buchung am I-Punkt | - | - |
+| 5 | Einlagerung | Einlagerung | Einlagerung |
+
+## 4. Wareneingangsübersicht
+
+### 4.1 Übersicht aufrufen
+
+**Menüpfad: Wareneingang > Wareneingangsübersicht**
+
+#### **Darstellung**
+- **Kopfsätze** mit Bestellnummern
+- **Positionsanzahl** je Bestellung
+- **Aktuelle Status** der Wareneingänge
+- **Filtermöglichkeiten** im rechten Bereich
+
+#### **Wichtige Spalten**
+- **Bestellnummer**: Eindeutige Identifikation
+- **Lieferant**: Warenherkunft
+- **Datum**: Liefertermin
+- **Status**: Bearbeitungsstand
+- **Positionen**: Anzahl Artikel
+
+### 4.2 Filterfunktionen
+
+#### **Standard-Filter**
+- **Bestellnummer**: Direkte Suche
+- **Artikelnummer**: Artikel-spezifisch
+- **Lieferant**: Lieferanten-spezifisch
+- **Datum**: Zeitraum-Eingrenzung
+- **Status**: Bearbeitungsstand
+
+#### **Erweiterte Filter**
+- **Kombinierte Kriterien**
+- **Benutzerdefinierte Filter**
+- **Gespeicherte Filtersets**
+- **Schnellfilter-Buttons**
+
+### 4.3 Positionsdetails
+
+#### **Positionen öffnen**
+1. **WE-Aviso** in Liste markieren
+2. **"Positionen..."** Button klicken
+3. **Alternativ**: Doppelklick auf Zeile
+
+#### **Positionsansicht**
+- **Artikel-Details**: Nummer, Beschreibung, Einheit
+- **Mengen**: Bestellt, Geliefert, Offen
+- **Status**: Position-spezifischer Status
+- **LHM-Zuordnung**: Aktuell zugewiesene LHM
+
+## 5. Arbeitsplätze für Wareneingang
+
+### 5.1 Arbeitsplatz-Übersicht
+
+#### **Verfügbare Arbeitsplätze**
+- **WE Arbeitsplatz AKL 1**: Behälter mit Waage
+- **WE Arbeitsplatz AKL 2**: Behälter mit Waage
+- **WE Arbeitsplatz Extern**: Hauptsächlich Paletten
+
+#### **Arbeitsplatz-Ausstattung**
+- **PC-Client**: WMS-Zugang
+- **Waage**: Für Behälter-Arbeitsplätze
+- **Barcode-Scanner**: Für Artikel-/LHM-Erfassung
+- **Etikettendrucker**: Für LHM-Etiketten
+
+### 5.2 AKL-Arbeitsplätze (Behälter)
+
+#### **Spezifikation**
+- **Zielgruppe**: Behälter-Wareneingang
+- **Waagen-Integration**: Automatische Gewichtsprüfung
+- **Aufgabepunkte**: Zwei Zuführstrecken
+  - **270mm Behälter**: Große Behälter
+  - **170mm Behälter**: Kleine Behälter
+
+#### **Arbeitsablauf**
+1. **Leer-LHM** von Fördertechnik abnehmen
+2. **Ware** in Behälter einlegen
+3. **WE-Buchung** durchführen
+4. **Gewicht** prüfen (automatisch)
+5. **Behälter** auf Fördertechnik aufgeben
+
+### 5.3 Externer Arbeitsplatz (Paletten)
+
+#### **Spezifikation**
+- **Zielgruppe**: Paletten-Wareneingang
+- **Standort**: Flexibel positionierbar
+- **Aufgabepunkt**: Ein zentraler Punkt für Paletten
+- **Besonderheit**: Organisatorischer Transport
+
+#### **Arbeitsablauf**
+1. **Palette** mit Ware bereitstellen
+2. **WE-Buchung** am PC durchführen
+3. **Palette** organisatorisch transportieren
+4. **Aufgabe** auf Palettenfördertechnik
+5. **Automatische Einlagerung**
+
+## 6. Lagerspezifische Abläufe
+
+### 6.1 HRL-Wareneingang (Hochregallager)
+
+#### **Prozess-Übersicht**
+```
+WE-Buchung → Organisatorischer Transport → Aufgabe HRL
+```
+
+#### **Arbeitsschritte**
+1. **WE-Buchung** am PC-Client
+2. **Palette** mit Ware verheiraten
+3. **Organisatorischer Transport** zur Fördertechnik
+4. **Aufgabe** am Paletten-Aufgabepunkt
+5. **Automatische Einlagerung** ins HRL
+
+#### **Besonderheiten**
+- **Ein Aufgabepunkt** für alle Paletten
+- **Organisatorischer Transport** ohne WMS-Steuerung
+- **Mehrsektorierung** möglich
+- **Schwerlast-Handling** verfügbar
+
+### 6.2 AKL-Wareneingang (Automatik-Kleinteilelager)
+
+#### **Prozess-Übersicht**
+```
+WE-Buchung → Behälter-Bestückung → Aufgabe AKL
+```
+
+#### **Arbeitsschritte**
+1. **Leer-Behälter** von Fördertechnik abnehmen
+2. **Ware** in Behälter einlegen
+3. **WE-Buchung** mit Gewichtsprüfung
+4. **Behälter** auf Fördertechnik aufgeben
+5. **Automatische Einlagerung** ins AKL
+
+#### **Besonderheiten**
+- **Zwei Aufgabepunkte** (270mm/170mm)
+- **Waagen-Integration** für Gewichtsprüfung
+- **Automatische Behälter-Versorgung**
+- **Hohe Durchsatzraten**
+
+## 7. Praktische Wareneingangs-Buchung
+
+### 7.1 Geplante WE-Buchung - Schritt für Schritt
+
+#### **Vorbereitung**
+1. **Lieferung** physisch entgegennehmen
+2. **Lieferschein** mit WE-Aviso abgleichen
+3. **Arbeitsplatz** vorbereiten
+4. **LHM** bereitstellen
+
+#### **Buchung durchführen**
+1. **Wareneingang > Wareneingangsübersicht** öffnen
+2. **Entsprechendes WE-Aviso** suchen und markieren
+3. **"Positionen..."** klicken
+4. **Position** auswählen
+5. **"Bearbeiten"** klicken
+6. **LHM-Nummer** eingeben oder scannen
+7. **Menge** kontrollieren
+8. **Qualitätsstatus** setzen
+9. **"Buchen"** bestätigen
+
+#### **Nachbearbeitung**
+1. **Buchungsbestätigung** prüfen
+2. **Etikett** drucken (falls erforderlich)
+3. **LHM** auf Fördertechnik aufgeben
+4. **Hostsystem-Rückmeldung** kontrollieren
+
+### 7.2 Ungeplante WE-Buchung - Schritt für Schritt
+
+#### **Vorbereitung**
+1. **Artikel-Stammdaten** prüfen
+2. **Lagerbereich** definieren
+3. **Qualitätsstatus** festlegen
+4. **Kostenstellenzuordnung** klären
+
+#### **WE-Aviso erstellen**
+1. **Wareneingang > Ungeplanter Wareneingang** öffnen
+2. **"Neuer Wareneingang"** klicken
+3. **Kopfdaten** eingeben:
+   - Lieferant
+   - Lieferdatum
+   - Referenz
+4. **"Speichern"** klicken
+
+#### **Positionen erfassen**
+1. **"Position hinzufügen"** klicken
+2. **Artikelstammdaten** eingeben:
+   - Artikelnummer
+   - Beschreibung
+   - Menge
+   - Einheit
+3. **LHM** zuweisen
+4. **Qualitätsstatus** setzen
+5. **"Buchen"** bestätigen
+
+### 7.3 Häufige Buchungsfehler vermeiden
+
+#### **Typische Fehler**
+- **Falsche Artikelnummer**
+- **Inkorrekte Mengen**
+- **Fehlende LHM-Zuordnung**
+- **Falscher Qualitätsstatus**
+
+#### **Prüfungen vor Buchung**
+1. **Artikelnummer** mit Lieferschein abgleichen
+2. **Menge** physisch kontrollieren
+3. **LHM-Nummer** lesbar und eindeutig
+4. **Qualitätsstatus** gemäß Prüfung
+5. **Lagerbereich** korrekt zugeordnet
+
+## 8. Über- und Unterlieferungen
+
+### 8.1 Überlieferungen
+
+#### **Definition**
+Gelieferte Menge ist **größer** als bestellte Menge
+
+#### **Behandlung**
+1. **Differenz** identifizieren
+2. **Berechtigungs-Prüfung** durchführen
+3. **Mehrmenge** bei Berechtigung annehmen
+4. **Ungeplante Position** erstellen
+5. **Rückmeldung** an Einkauf
+
+#### **Arbeitsschritte**
+1. **Überlieferung** in WE-Position erkennen
+2. **"Überlieferung"** Dialog öffnen
+3. **Mehrmenge** eingeben
+4. **Grund** dokumentieren
+5. **Genehmigung** einholen (falls erforderlich)
+6. **Buchung** durchführen
+
+### 8.2 Unterlieferungen
+
+#### **Definition**
+Gelieferte Menge ist **kleiner** als bestellte Menge
+
+#### **Behandlung**
+1. **Fehlmenge** identifizieren
+2. **Teillieferung** buchen
+3. **Restmenge** offen lassen oder stornieren
+4. **Nachlieferung** veranlassen
+5. **Rückmeldung** an Einkauf
+
+#### **Arbeitsschritte**
+1. **Unterlieferung** in WE-Position erkennen
+2. **Ist-Menge** eingeben
+3. **Restmenge** behandeln:
+   - **Offen lassen**: Nachlieferung erwartet
+   - **Stornieren**: Keine Nachlieferung
+4. **Grund** dokumentieren
+5. **Buchung** durchführen
+
+### 8.3 Toleranzen und Genehmigungen
+
+#### **Toleranz-Regelungen**
+- **Überlieferung**: Bis 5% ohne Genehmigung
+- **Unterlieferung**: Immer dokumentieren
+- **Wert-Toleranzen**: Nach Artikel-Kategorie
+- **Sonder-Genehmigungen**: Bei Überschreitung
+
+#### **Eskalations-Prozess**
+1. **Toleranz-Überschreitung** prüfen
+2. **Schichtführer** informieren
+3. **Einkauf** kontaktieren
+4. **Genehmigung** einholen
+5. **Entscheidung** dokumentieren
+
+## 9. Qualitätsprüfung im Wareneingang
+
+### 9.1 Qualitätsstatus-Verwaltung
+
+#### **Qualitätsstatus-Arten**
+- **Frei**: Sofort verwendbar
+- **Gesperrt**: Prüfung erforderlich
+- **Quarantäne**: Sonderprüfung
+- **Verworfen**: Nicht verwendbar
+
+#### **Status-Zuordnung**
+- **Artikel-abhängig**: Stammdaten-Definition
+- **Lieferanten-abhängig**: Lieferanten-Bewertung
+- **Manuell**: Prüfer-Entscheidung
+- **Automatisch**: System-Regeln
+
+### 9.2 Qualitätsprüfungs-Prozess
+
+#### **Prüfungsablauf**
+1. **Ware** auf Qualitätsprüfung setzen
+2. **Qualitätsprüfer** benachrichtigen
+3. **Prüfung** durchführen
+4. **Ergebnis** dokumentieren
+5. **Status** entsprechend setzen
+
+#### **Prüfkriterien**
+- **Vollständigkeit**: Alle Teile vorhanden
+- **Beschaffenheit**: Optische Kontrolle
+- **Funktion**: Technische Prüfung
+- **Dokumentation**: Unterlagen vollständig
+
+### 9.3 Qualitätsarbeitsplatz
+
+#### **Arbeitsplatz-Ausstattung**
+- **Prüfgeräte**: Mess- und Prüfmittel
+- **Dokumentation**: Prüfprotokolle
+- **PC-Zugang**: Status-Änderungen
+- **Lagerplätze**: Gesonderte Bereiche
+
+#### **Arbeitsablauf**
+1. **Prüfauftrag** empfangen
+2. **Ware** zur Prüfung bereitstellen
+3. **Prüfung** gemäß Vorgaben
+4. **Ergebnis** dokumentieren
+5. **Status** im WMS setzen
+6. **Weiterleitung** oder Sperrung
+
+## 10. Störungsbehandlung
+
+### 10.1 Häufige Störungen
+
+#### **System-Störungen**
+- **WE-Aviso nicht vorhanden**
+- **Artikelstammdaten fehlerhaft**
+- **LHM-Nummer nicht lesbar**
+- **Fördertechnik-Störung**
+
+#### **Prozess-Störungen**
+- **Falsche Ware geliefert**
+- **Beschädigte Ware**
+- **Fehlende Dokumentation**
+- **Arbeitsplatz nicht verfügbar**
+
+### 10.2 Störungsbehandlung
+
+#### **Schritt 1: Störung identifizieren**
+1. **Fehlermeldung** analysieren
+2. **Ursache** ermitteln
+3. **Auswirkung** bewerten
+4. **Priorität** festlegen
+
+#### **Schritt 2: Sofortmaßnahmen**
+1. **Sicherheit** gewährleisten
+2. **Prozess** stoppen (falls erforderlich)
+3. **Betroffen Bereiche** informieren
+4. **Ausweichverfahren** aktivieren
+
+#### **Schritt 3: Problemlösung**
+1. **Fachkraft** hinzuziehen
+2. **Ursache** beheben
+3. **Lösung** testen
+4. **Normalbetrieb** wiederherstellen
+
+#### **Schritt 4: Dokumentation**
+1. **Störung** protokollieren
+2. **Ursache** dokumentieren
+3. **Lösung** festhalten
+4. **Präventionsmaßnahmen** definieren
+
+### 10.3 Notfall-Verfahren
+
+#### **Kompletter Systemausfall**
+1. **Papier-WE-Scheine** verwenden
+2. **Manuelle Erfassung** durchführen
+3. **Temporäre Lagerung** organisieren
+4. **Nach Wiederherstellung** nachbuchen
+
+#### **Teilausfall Fördertechnik**
+1. **Manuelle Einlagerung** organisieren
+2. **Prioritäten** setzen
+3. **Ausweicharbeitsplätze** nutzen
+4. **Kapazität** anpassen
+
+## 11. Praktische Übungen
+
+### Übung 1: Geplante WE-Buchung
+1. **Öffnen Sie die Wareneingangsübersicht**
+2. **Suchen Sie ein aktives WE-Aviso**
+3. **Bearbeiten Sie eine Position**
+4. **Führen Sie die WE-Buchung durch**
+5. **Kontrollieren Sie die Buchung**
+
+### Übung 2: Ungeplante WE-Buchung
+1. **Erstellen Sie ein neues WE-Aviso**
+2. **Erfassen Sie Kopf- und Positionsdaten**
+3. **Weisen Sie ein LHM zu**
+4. **Führen Sie die Buchung durch**
+5. **Prüfen Sie die Hostsystem-Rückmeldung**
+
+### Übung 3: Überlieferung behandeln
+1. **Identifizieren Sie eine Überlieferung**
+2. **Prüfen Sie die Toleranzen**
+3. **Dokumentieren Sie den Grund**
+4. **Führen Sie die Buchung durch**
+5. **Informieren Sie den Einkauf**
+
+### Übung 4: Qualitätsprüfung
+1. **Setzen Sie Ware auf Qualitätsprüfung**
+2. **Führen Sie eine Prüfung durch**
+3. **Dokumentieren Sie das Ergebnis**
+4. **Setzen Sie den finalen Status**
+5. **Geben Sie die Ware frei**
+
+### Übung 5: Störungsbehandlung
+1. **Simulieren Sie eine Störung**
+2. **Identifizieren Sie die Ursache**
+3. **Wenden Sie Notfall-Verfahren an**
+4. **Dokumentieren Sie den Vorfall**
+5. **Stellen Sie den Normalbetrieb wieder her**
+
+## 12. Leistungsmessung und KPIs
+
+### 12.1 Wichtige Kennzahlen
+
+#### **Durchsatz-Kennzahlen**
+- **WE-Positionen/Stunde**: Bearbeitungsgeschwindigkeit
+- **LHM/Schicht**: Mengendurchsatz
+- **Buchungszeit**: Durchschnittliche Bearbeitungszeit
+- **Fehlerrate**: Prozent fehlerhafte Buchungen
+
+#### **Qualitäts-Kennzahlen**
+- **Buchungsgenauigkeit**: Korrekte Buchungen
+- **Nachbearbeitungsrate**: Korrekturbedarf
+- **Reklamationsrate**: Qualitätsbeanstandungen
+- **Terminerfüllung**: Pünktlichkeit
+
+### 12.2 Performance-Optimierung
+
+#### **Effizienz-Verbesserungen**
+- **Arbeitsplatz-Optimierung**
+- **Prozess-Standardisierung**
+- **Automatisierung** wo möglich
+- **Schulung** der Mitarbeiter
+
+#### **Fehler-Reduzierung**
+- **Doppel-Kontrollen** bei kritischen Werten
+- **Barcode-Nutzung** für Artikelerfassung
+- **Waagen-Integration** für Mengenprüfung
+- **Systematische Fehleranalyse**
+
+## 13. Reporting und Analyse
+
+### 13.1 Standard-Berichte
+
+#### **Tagesberichte**
+- **WE-Übersicht**: Alle Buchungen des Tages
+- **Fehlerberichte**: Fehlerbehaftete Buchungen
+- **Performance**: Durchsatz und Zeiten
+- **Qualität**: Prüfungsergebnisse
+
+#### **Wochen-/Monatsberichte**
+- **Trend-Analysen**: Entwicklung über Zeit
+- **Lieferanten-Bewertung**: Performance je Lieferant
+- **Artikel-Analysen**: Häufigste Artikel
+- **Kapazitäts-Auslastung**: Arbeitsplatz-Nutzung
+
+### 13.2 Auswertungen
+
+#### **Berichte generieren**
+1. **Berichte > Wareneingang** öffnen
+2. **Berichtstyp** auswählen
+3. **Parameter** eingeben (Zeitraum, Filter)
+4. **Bericht** erstellen
+5. **Exportieren** oder **Drucken**
+
+#### **Datenanalyse**
+- **Excel-Export** für detaillierte Analysen
+- **Grafische Darstellungen** für Trends
+- **Vergleiche** zwischen Perioden
+- **Benchmark-Analysen** mit Zielvorgaben
+
+## 14. Lernerfolgskontrolle
+
+### Theoretische Prüfung
+
+1. **Welche Wareneingangs-Arten gibt es?**
+   - [x] Geplant und ungeplant
+   - [ ] Nur geplant
+   - [ ] Nur ungeplant
+   - [ ] Automatisch und manuell
+
+2. **Woran erkennt man ungeplante Wareneingänge?**
+   - [x] Präfix "WMSR"
+   - [ ] Präfix "AUTO"
+   - [ ] Kein Präfix
+   - [ ] Präfix "PLAN"
+
+3. **Welche Arbeitsplätze gibt es für den Wareneingang?**
+   - [x] AKL 1, AKL 2, Extern
+   - [ ] Nur AKL 1
+   - [ ] Nur Extern
+   - [ ] HRL 1, HRL 2
+
+4. **Was ist bei Überlieferungen zu beachten?**
+   - [x] Toleranzen prüfen und dokumentieren
+   - [ ] Immer ablehnen
+   - [ ] Automatisch buchen
+   - [ ] Nichts besonderes
+
+### Praktische Bewertung
+
+#### **Aufgabe 1: Standard-WE-Buchung (25 Punkte)**
+- Korrekte Navigation zur Wareneingangsübersicht
+- Richtige Positionsbearbeitung
+- Fehlerfreie Buchung
+- Vollständige Dokumentation
+
+#### **Aufgabe 2: Ungeplante WE-Buchung (25 Punkte)**
+- Korrekte WE-Aviso-Erstellung
+- Vollständige Datenerfassung
+- Richtige LHM-Zuordnung
+- Erfolgreiche Buchung
+
+#### **Aufgabe 3: Über-/Unterlieferung (25 Punkte)**
+- Korrekte Mengendifferenz-Behandlung
+- Angemessene Dokumentation
+- Richtige Eskalation
+- Vollständige Nachverfolgung
+
+#### **Aufgabe 4: Qualitätsprüfung (25 Punkte)**
+- Korrekte Status-Setzung
+- Angemessene Prüfung
+- Vollständige Dokumentation
+- Richtige Freigabe/Sperrung
+
+### Bewertungsschema
+
+- **90-100 Punkte**: Sehr gut - Alle Funktionen beherrscht
+- **80-89 Punkte**: Gut - Kleine Verbesserungen möglich
+- **70-79 Punkte**: Befriedigend - Wiederholung empfohlen
+- **<70 Punkte**: Ungenügend - Nachschulung erforderlich
+
+## 15. Weiterführende Themen
+
+### 15.1 Erweiterte Funktionen
+
+Nach diesem Grundmodul können Sie folgende Spezialisierungen wählen:
+
+#### **Qualitätsmanagement**
+- **Prüfpläne** erstellen und verwalten
+- **Prüfmittel-Verwaltung**
+- **Statistische Auswertungen**
+- **Lieferanten-Bewertung**
+
+#### **Warehouse Analytics**
+- **Erweiterte Berichte**
+- **Dashboard-Konfiguration**
+- **Trend-Analysen**
+- **Predictive Analytics**
+
+#### **Prozessoptimierung**
+- **Lean-Prinzipien** im Wareneingang
+- **Automatisierung** von Routine-Aufgaben
+- **Kapazitäts-Optimierung**
+- **Workflow-Management**
+
+### 15.2 Zertifizierungen
+
+#### **Verfügbare Zertifikate**
+- **WMS Wareneingang Specialist**
+- **WMS Quality Inspector**
+- **WMS Process Optimizer**
+- **WMS Trainer Certificate**
+
+#### **Zertifizierungs-Voraussetzungen**
+- **Praktische Erfahrung**: Mindestens 3 Monate
+- **Theoretische Prüfung**: 85% Mindestpunktzahl
+- **Praktische Prüfung**: Alle Aufgaben erfolgreich
+- **Kontinuierliche Weiterbildung**: Jährliche Updates
+
+## 16. Tipps für die Praxis
+
+### 16.1 Effizienz-Tipps
+
+#### **Arbeitsplatz-Organisation**
+- **Barcode-Scanner** griffbereit
+- **Häufige Artikel** in Favoritenliste
+- **Standard-Arbeitsabläufe** definieren
+- **Dokumentation** systematisch ablegen
+
+#### **Zeitmanagement**
+- **Prioritäten** nach Dringlichkeit setzen
+- **Batch-Bearbeitung** ähnlicher Aufgaben
+- **Unterbrechungen** minimieren
+- **Pausen** für Konzentration einhalten
+
+### 16.2 Qualitäts-Tipps
+
+#### **Fehler-Vermeidung**
+- **Doppel-Kontrollen** bei kritischen Werten
+- **Systematische Prüfung** vor Buchung
+- **Barcode-Nutzung** für Artikelerfassung
+- **Waagen-Integration** für Mengenprüfung
+
+#### **Kontinuierliche Verbesserung**
+- **Feedback** von Kollegen einholen
+- **Fehler-Analyse** durchführen
+- **Best Practices** dokumentieren
+- **Verbesserungsvorschläge** einreichen
+
+## 17. Kontakt und Support
+
+### Fachliche Unterstützung
+
+**Wareneingang-Team:**
+- E-Mail: wareneingang@georgfischer.com
+- Telefon: +41 81 770 1234
+- Leitstand: Durchwahl 1250
+
+**Qualitätsprüfung:**
+- E-Mail: qualitaet@georgfischer.com
+- Telefon: +41 81 770 1260
+- Prüflabor: Durchwahl 1270
+
+### Technischer Support
+
+**WMS-Support:**
+- ServiceDesk: +41 81 770 5678
+- E-Mail: wms-support@georgfischer.com
+- Notfall-Hotline: 24/7 verfügbar
+
+**Fördertechnik-Support:**
+- E-Mail: foerdertechnik@georgfischer.com
+- Telefon: +41 81 770 1280
+- Entstörung: Durchwahl 1290
+
+### Schulung und Weiterbildung
+
+**Training Center:**
+- E-Mail: wms-training@georgfischer.com
+- Telefon: +41 81 770 1234
+- Intranet: WMS-Portal > Training
+
+**Zertifizierung:**
+- E-Mail: certification@georgfischer.com
+- Telefon: +41 81 770 1240
+- Online-Portal: cert.georgfischer.com
+
+---
+
+*Dieser Trainingsinhalt basiert auf der Jungheinrich WMS Schulungsunterlage für Georg Fischer Seewis, Version 1.1, Stand: 27.03.2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*
+
+**Erfolgreichen Wareneingang!**

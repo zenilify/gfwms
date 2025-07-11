@@ -7,127 +7,410 @@ breadcrumbs:
   - title: "Häufige Probleme"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
+<div class="error-guide-container">
+    <div class="error-guide-header">
+        <div class="safety-alert">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div class="alert-content">
+                <h2>⚠️ WICHTIG: Sicherheitshinweise</h2>
+                <p><strong>Für neue Mitarbeiter:</strong> Bei kritischen Fehlern IMMER zuerst den Schichtführer oder erfahrene Kollegen kontaktieren, bevor Sie eigenständig Lösungsversuche unternehmen.</p>
+                <div class="emergency-contacts">
+                    <span><strong>Notfall-Hotline:</strong> +41 81 770 9999</span>
+                    <span><strong>Schichtführer:</strong> Intern 1234</span>
+                </div>
+            </div>
         </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Häufige Probleme - WMS Troubleshooting</p>
     </div>
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Häufige Probleme" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
+    <div class="error-guide-content">
+        <h1><i class="fas fa-wrench"></i> Häufige WMS-Probleme & Lösungen</h1>
+        
+        <div class="error-categories">
+            <!-- Login Problems -->
+            <div class="error-category">
+                <h2><i class="fas fa-user-lock"></i> Anmelde-Probleme</h2>
+                
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>❌ Fehler: "Anmeldung fehlgeschlagen"</h3>
+                        <span class="severity low">Gering</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Fehlermeldung beim Login</li>
+                                <li>Benutzername/Passwort werden nicht akzeptiert</li>
+                                <li>System kehrt zum Login-Bildschirm zurück</li>
+                            </ul>
+                        </div>
+                        <div class="solution safe">
+                            <h4>✅ Sichere Lösung (für neue Mitarbeiter):</h4>
+                            <ol>
+                                <li><strong>Benutzername prüfen:</strong> Groß-/Kleinschreibung beachten</li>
+                                <li><strong>Passwort prüfen:</strong> Caps Lock aus? Richtige Tastatur?</li>
+                                <li><strong>5 Minuten warten:</strong> Manchmal temporäre Sperrung</li>
+                                <li><strong>Anderen PC versuchen:</strong> Lokales Problem ausschließen</li>
+                                <li><strong>Bei wiederholtem Fehler:</strong> Schichtführer kontaktieren</li>
+                            </ol>
+                        </div>
+                        <div class="escalation">
+                            <h4>🔝 Eskalation:</h4>
+                            <p><strong>Sofort an Schichtführer,</strong> wenn nach 3 Versuchen kein Login möglich</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>🔒 Fehler: "Benutzer gesperrt"</h3>
+                        <span class="severity medium">Mittel</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Explizite Meldung "Benutzer gesperrt"</li>
+                                <li>Login auch mit korrekten Daten nicht möglich</li>
+                            </ul>
+                        </div>
+                        <div class="solution safe">
+                            <h4>✅ Sofortige Aktion:</h4>
+                            <ol>
+                                <li><strong>NICHT WEITER VERSUCHEN</strong> - verschlimmert Sperrung</li>
+                                <li><strong>Schichtführer sofort informieren</strong></li>
+                                <li><strong>Alternative Arbeitsplätze nutzen</strong> falls verfügbar</li>
+                            </ol>
+                        </div>
+                        <div class="warning">
+                            <p><strong>⚠️ WARNUNG:</strong> Weitere Login-Versuche können Sperrung verlängern</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scanner Problems -->
+            <div class="error-category">
+                <h2><i class="fas fa-barcode"></i> Scanner-Probleme</h2>
+                
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>📱 Fehler: "Scanner reagiert nicht"</h3>
+                        <span class="severity low">Gering</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Kein Piep-Ton beim Scannen</li>
+                                <li>Barcode wird nicht erkannt</li>
+                                <li>Scanner-LED leuchtet nicht</li>
+                            </ul>
+                        </div>
+                        <div class="solution safe">
+                            <h4>✅ Schritt-für-Schritt Lösung:</h4>
+                            <ol>
+                                <li><strong>Batteriestand prüfen:</strong> LED-Anzeige kontrollieren</li>
+                                <li><strong>Scanner neu starten:</strong> Power-Taste 3 Sek. drücken</li>
+                                <li><strong>Entfernung prüfen:</strong> 5-15cm Abstand zum Barcode</li>
+                                <li><strong>Winkel anpassen:</strong> 90° Winkel vermeiden</li>
+                                <li><strong>Barcode-Qualität:</strong> Verschmutzt? Beschädigt?</li>
+                                <li><strong>Test-Barcode scannen:</strong> Bekannter funktionierender Code</li>
+                            </ol>
+                        </div>
+                        <div class="escalation">
+                            <h4>🔝 Ersatz anfordern wenn:</h4>
+                            <p>Scanner nach Neustart immer noch nicht funktioniert</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>⚡ Fehler: "Verbindung unterbrochen"</h3>
+                        <span class="severity medium">Mittel</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="solution safe">
+                            <h4>✅ Schnelle Lösung:</h4>
+                            <ol>
+                                <li><strong>Position ändern:</strong> Näher zur WLAN-Antenne</li>
+                                <li><strong>Scanner neu verbinden:</strong> WLAN-Taste drücken</li>
+                                <li><strong>Backup verwenden:</strong> Andere Scanner in der Nähe</li>
+                                <li><strong>Manuell eingeben:</strong> Bei kritischen Buchungen</li>
+                            </ol>
+                        </div>
+                        <div class="warning">
+                            <p><strong>⚠️ WICHTIG:</strong> Bei manueller Eingabe doppelt kontrollieren</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Problems -->
+            <div class="error-category">
+                <h2><i class="fas fa-boxes"></i> Bestands-Probleme</h2>
+                
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>📊 Fehler: "Artikel nicht gefunden"</h3>
+                        <span class="severity medium">Mittel</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Barcode wird nicht erkannt</li>
+                                <li>Meldung "Artikel unbekannt"</li>
+                                <li>Artikel nicht in System-Datenbank</li>
+                            </ul>
+                        </div>
+                        <div class="solution safe">
+                            <h4>✅ Prüfschritte:</h4>
+                            <ol>
+                                <li><strong>Barcode-Qualität:</strong> Lesbar? Vollständig?</li>
+                                <li><strong>Richtiger Code:</strong> Artikel-Nr. vs. EAN vs. Chargennummer</li>
+                                <li><strong>Datenbank-Suche:</strong> Manuelle Suche nach Teilnummer</li>
+                                <li><strong>Ähnliche Artikel:</strong> Familie oder Varianten prüfen</li>
+                            </ol>
+                        </div>
+                        <div class="escalation">
+                            <h4>🔝 Sofort eskalieren wenn:</h4>
+                            <p>Artikel definitiv im Lager vorhanden aber nicht im System</p>
+                        </div>
+                        <div class="danger">
+                            <p><strong>🚫 NIEMALS:</strong> Unbekannte Artikel unter falscher Nummer buchen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>⚖️ Fehler: "Mengen-Differenz"</h3>
+                        <span class="severity high">Hoch</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>System-Bestand ≠ physischer Bestand</li>
+                                <li>Mehr/weniger Artikel als erwartet</li>
+                                <li>Kommissionierung nicht möglich</li>
+                            </ul>
+                        </div>
+                        <div class="solution safe">
+                            <h4>✅ Vorsichtige Prüfung:</h4>
+                            <ol>
+                                <li><strong>Nachzählen:</strong> Physischen Bestand genau prüfen</li>
+                                <li><strong>Lagerplatz kontrollieren:</strong> Richtige Position?</li>
+                                <li><strong>Einheit prüfen:</strong> Stück vs. Meter vs. kg</li>
+                                <li><strong>Andere Chargen:</strong> Verschiedene Produktionslose</li>
+                                <li><strong>STOPP:</strong> Bei Differenz > 5% sofort melden</li>
+                            </ol>
+                        </div>
+                        <div class="danger">
+                            <p><strong>🚫 KRITISCH:</strong> Bestandskorrekturen nur durch erfahrene Mitarbeiter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Performance -->
+            <div class="error-category">
+                <h2><i class="fas fa-tachometer-alt"></i> System-Performance</h2>
+                
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>🐌 Fehler: "System sehr langsam"</h3>
+                        <span class="severity medium">Mittel</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="solution safe">
+                            <h4>✅ Einfache Maßnahmen:</h4>
+                            <ol>
+                                <li><strong>Geduld bewahren:</strong> Nicht mehrfach klicken</li>
+                                <li><strong>Andere Arbeitsplätze testen:</strong> Lokales Problem?</li>
+                                <li><strong>Prioritäten setzen:</strong> Kritische Aufgaben zuerst</li>
+                                <li><strong>Alternative nutzen:</strong> Papier-Backup bei Eilaufträgen</li>
+                            </ol>
+                        </div>
+                        <div class="escalation">
+                            <h4>🔝 Melden wenn:</h4>
+                            <p>Alle Arbeitsplätze betroffen oder Verzögerung > 30 Sekunden</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Printer Problems -->
+            <div class="error-category">
+                <h2><i class="fas fa-print"></i> Drucker-Probleme</h2>
+                
+                <div class="error-item">
+                    <div class="error-header">
+                        <h3>🖨️ Fehler: "Drucker druckt nicht"</h3>
+                        <span class="severity low">Gering</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="solution safe">
+                            <h4>✅ Basis-Checks:</h4>
+                            <ol>
+                                <li><strong>Stromversorgung:</strong> LED leuchtet?</li>
+                                <li><strong>Papier/Etiketten:</strong> Vorhanden und richtig eingelegt?</li>
+                                <li><strong>Papierstau:</strong> Vorsichtig prüfen und entfernen</li>
+                                <li><strong>Drucker-Queue:</strong> Im System als "Online" angezeigt?</li>
+                                <li><strong>Test-Druck:</strong> Einfachen Test-Ausdruck versuchen</li>
+                            </ol>
+                        </div>
+                        <div class="escalation">
+                            <h4>🔝 Techniker rufen wenn:</h4>
+                            <p>Mechanische Probleme oder Hardware-Defekte vermutet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="wip-preview">
-            <h3>Geplante Inhalte:</h3>
-            <div class="content-preview">
-                <div class="preview-section">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Login-Probleme</h4>
+        <!-- Emergency Procedures -->
+        <div class="emergency-section">
+            <h2><i class="fas fa-first-aid"></i> Notfall-Verfahren</h2>
+            
+            <div class="emergency-grid">
+                <div class="emergency-card critical">
+                    <h3>🚨 System-Totalausfall</h3>
+                    <div class="emergency-steps">
+                        <ol>
+                            <li><strong>ALLE Arbeiten stoppen</strong></li>
+                            <li><strong>Schichtführer sofort informieren</strong></li>
+                            <li><strong>Papier-Notverfahren aktivieren</strong></li>
+                            <li><strong>Sicherheit der Materialien gewährleisten</strong></li>
+                        </ol>
+                    </div>
+                    <div class="emergency-contact">
+                        <strong>Notfall-Hotline: +41 81 770 9999</strong>
+                    </div>
+                </div>
+                
+                <div class="emergency-card high">
+                    <h3>⚡ Stromausfall</h3>
+                    <div class="emergency-steps">
+                        <ol>
+                            <li><strong>Ruhe bewahren</strong></li>
+                            <li><strong>Arbeitsplatz sichern</strong></li>
+                            <li><strong>Notbeleuchtung nutzen</strong></li>
+                            <li><strong>Anweisungen der Sicherheitsbeauftragten befolgen</strong></li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="emergency-card medium">
+                    <h3>🌐 Netzwerk-Ausfall</h3>
+                    <div class="emergency-steps">
+                        <ol>
+                            <li><strong>Andere Geräte testen</strong></li>
+                            <li><strong>WLAN-Verbindung prüfen</strong></li>
+                            <li><strong>IT-Support informieren</strong></li>
+                            <li><strong>Offline-Prozesse nutzen</strong></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Guidelines -->
+        <div class="guidelines-section">
+            <h2><i class="fas fa-exclamation-circle"></i> Wichtige Richtlinien für neue Mitarbeiter</h2>
+            
+            <div class="guidelines-grid">
+                <div class="guideline-card do">
+                    <h3>✅ Immer TUN</h3>
                     <ul>
-                        <li>Anmeldung fehlgeschlagen</li>
-                        <li>Passwort vergessen</li>
-                        <li>Benutzer gesperrt</li>
-                        <li>Berechtigung fehlt</li>
+                        <li>Bei Unsicherheit fragen</li>
+                        <li>Fehler sofort melden</li>
+                        <li>Anweisungen genau befolgen</li>
+                        <li>Sicherheit vor Geschwindigkeit</li>
+                        <li>Dokumentation führen</li>
                     </ul>
                 </div>
                 
-                <div class="preview-section">
-                    <h4><i class="fas fa-database"></i> Datenprobleme</h4>
+                <div class="guideline-card dont">
+                    <h3>🚫 NIEMALS TUN</h3>
                     <ul>
-                        <li>Bestandsdifferenzen</li>
-                        <li>Duplikate vermeiden</li>
-                        <li>Synchronisation</li>
-                        <li>Datenqualität</li>
+                        <li>Bestandskorrekturen ohne Freigabe</li>
+                        <li>System-Einstellungen ändern</li>
+                        <li>Unbekannte Befehle ausführen</li>
+                        <li>Fehler verstecken oder ignorieren</li>
+                        <li>Ohne Backup arbeiten</li>
                     </ul>
                 </div>
                 
-                <div class="preview-section">
-                    <h4><i class="fas fa-network-wired"></i> Verbindungsprobleme</h4>
+                <div class="guideline-card escalate">
+                    <h3>📞 Sofort ESKALIEREN</h3>
                     <ul>
-                        <li>Netzwerk-Timeout</li>
-                        <li>SAP-Verbindung</li>
-                        <li>Scanner-Probleme</li>
-                        <li>Drucker-Ausfälle</li>
+                        <li>Datenverlust-Verdacht</li>
+                        <li>Sicherheitsprobleme</li>
+                        <li>Große Mengen-Differenzen</li>
+                        <li>System-Instabilität</li>
+                        <li>Unklare Fehlermeldungen</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="wip-timeline">
-            <h3>Entwicklungsplan:</h3>
-            <div class="timeline">
-                <div class="timeline-item completed">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Problem-Analyse</h4>
-                        <p>Abgeschlossen - Dezember 2024</p>
+        <!-- Support Contacts -->
+        <div class="support-section">
+            <h2><i class="fas fa-phone"></i> Support-Kontakte</h2>
+            
+            <div class="support-grid">
+                <div class="support-card priority-1">
+                    <h3>🚨 Notfall (24/7)</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>WMS-Hotline:</strong> +41 81 770 9999
+                        </div>
+                        <div class="contact-description">
+                            Bei kritischen Systemausfällen und Datenverlusten
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item current">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Lösungsdokumentation</h4>
-                        <p>In Bearbeitung - Januar 2025</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Testing & Validierung</h4>
-                        <p>Geplant - Februar 2025</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Veröffentlichung</h4>
-                        <p>Geplant - März 2025</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-first-aid"></i>
-                    <h4>Notfallverfahren</h4>
-                    <p>Kritische Problemlösungen und Ausfallverfahren</p>
-                    <a href="../../wiki/notfallverfahren/" class="btn btn-primary">Notfallverfahren öffnen</a>
                 </div>
                 
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Direkter Support</h4>
-                    <p>Sofortige Hilfe bei kritischen Problemen</p>
-                    <a href="tel:+41817701234" class="btn btn-primary">+41 81 770 1234</a>
+                <div class="support-card priority-2">
+                    <h3>👨‍💼 Schichtführer</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>Intern:</strong> 1234
+                        </div>
+                        <div class="contact-description">
+                            Erste Anlaufstelle für alle Probleme während der Schicht
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Umfassende Dokumentation und Anleitungen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
+                <div class="support-card priority-3">
+                    <h3>💻 IT-Support</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>Telefon:</strong> +41 81 770 1234
+                        </div>
+                        <div class="contact-item">
+                            <strong>E-Mail:</strong> it-support@georgfischer.com
+                        </div>
+                        <div class="contact-description">
+                            Technische Probleme und System-Support
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="wip-contact">
-            <h3>Sofortiger Support bei Problemen:</h3>
-            <p>Für dringende WMS-Probleme steht Ihnen unser Support-Team zur Verfügung:</p>
-            <div class="contact-info">
-                <div class="contact-item urgent">
-                    <i class="fas fa-phone"></i>
-                    <span><strong>Hotline:</strong> +41 81 770 9999 (24/7)</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>erick.hernandez.zenil@georgfischer.com</span>
+                
+                <div class="support-card priority-4">
+                    <h3>📚 Schulungsunterstützung</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>E-Mail:</strong> erick.hernandez.zenil@georgfischer.com
+                        </div>
+                        <div class="contact-description">
+                            Fragen zu WMS-Schulungen und Dokumentation
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,13 +418,332 @@ breadcrumbs:
 </div>
 
 <style>
-.contact-item.urgent {
+.error-guide-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.safety-alert {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.safety-alert i {
+    font-size: 3rem;
+    color: #fef2f2;
+}
+
+.alert-content h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.emergency-contacts {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.emergency-contacts span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+}
+
+.error-guide-content h1 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.error-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.error-category {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.error-category h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.error-item {
+    background: white;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-header {
+    background: var(--bg-secondary);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.error-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.severity {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.severity.low {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.severity.medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.severity.high {
+    background: #fecaca;
+    color: #991b1b;
+}
+
+.error-content {
+    padding: 1.5rem;
+}
+
+.symptoms, .solution, .escalation, .warning, .danger {
+    margin-bottom: 1.5rem;
+}
+
+.symptoms h4, .solution h4, .escalation h4, .warning h4, .danger h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.solution.safe {
+    background: #f0fdf4;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #10b981;
+}
+
+.escalation {
+    background: #fffbeb;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #f59e0b;
+}
+
+.warning {
+    background: #fef3c7;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #f59e0b;
+}
+
+.danger {
+    background: #fef2f2;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #dc2626;
+}
+
+.emergency-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+}
+
+.emergency-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.emergency-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #dc2626;
+}
+
+.emergency-card.critical {
+    border-left-color: #dc2626;
+    background: #fef2f2;
+}
+
+.emergency-card.high {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.emergency-card.medium {
+    border-left-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.emergency-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.emergency-steps ol {
+    margin-bottom: 1rem;
+}
+
+.emergency-contact {
+    background: rgba(220, 38, 38, 0.1);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    text-align: center;
     color: #dc2626;
     font-weight: bold;
 }
 
-.contact-item.urgent i {
-    color: #dc2626;
-    animation: pulse 2s infinite;
+.guidelines-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+}
+
+.guidelines-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.guideline-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+}
+
+.guideline-card.do {
+    border-left: 4px solid #10b981;
+    background: #f0fdf4;
+}
+
+.guideline-card.dont {
+    border-left: 4px solid #dc2626;
+    background: #fef2f2;
+}
+
+.guideline-card.escalate {
+    border-left: 4px solid #f59e0b;
+    background: #fffbeb;
+}
+
+.guideline-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.support-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.support-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.support-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #3b82f6;
+}
+
+.support-card.priority-1 {
+    border-left-color: #dc2626;
+    background: #fef2f2;
+}
+
+.support-card.priority-2 {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.support-card.priority-3 {
+    border-left-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.support-card.priority-4 {
+    border-left-color: #10b981;
+    background: #f0fdf4;
+}
+
+.support-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-item {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.contact-description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .emergency-contacts {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .emergency-grid,
+    .guidelines-grid,
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

@@ -8,9 +8,25 @@ description: "Ihre umfassende Anleitung für das Warehouse Management System"
     <div class="hero-content">
         <h1>Willkommen bei der Georg Fischer WMS Wissensdatenbank</h1>
         <p class="hero-subtitle">Ihre umfassende Anleitung zur Beherrschung des Jungheinrich Warehouse Management Systems</p>
+        <div class="safety-notice">
+            <div class="safety-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                    <h3>⚠️ Wichtiger Hinweis für neue Mitarbeiter</h3>
+                    <p>Diese Website enthält Anleitungen für das WMS. Bei Unsicherheiten oder kritischen Fehlern kontaktieren Sie IMMER zuerst Ihren Schichtführer oder erfahrene Kollegen.</p>
+                    <div class="emergency-info">
+                        <span><strong>Schichtführer:</strong> Intern 1234</span>
+                        <span><strong>Notfall:</strong> +41 81 770 9999</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="hero-buttons">
-            <a href="{{ '/pages/training/' | relative_url }}" class="btn btn-primary">Schulung starten</a>
-            <a href="{{ '/pages/wiki/' | relative_url }}" class="btn btn-secondary">Wiki durchsuchen</a>
+            <a href="{{ '/pages/quick-reference.html' | relative_url }}" class="btn btn-primary">🚀 Quick Start für Neue</a>
+            <a href="{{ '/pages/errors/common/' | relative_url }}" class="btn btn-warning">🔧 Problemlösungen</a>
+            <a href="{{ '/pages/training/' | relative_url }}" class="btn btn-secondary">📚 Training Module</a>
+            <a href="{{ '/pages/wiki/' | relative_url }}" class="btn btn-secondary">📖 Wissensdatenbank</a>
         </div>
     </div>
 </div>
@@ -146,6 +162,95 @@ description: "Ihre umfassende Anleitung für das Warehouse Management System"
         </div>
     </div>
 </div>
+
+<style>
+.safety-notice {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.safety-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.safety-content i {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.safety-content h3 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.safety-content p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.emergency-info {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.emergency-info span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn.btn-warning {
+    background-color: #f59e0b;
+    color: white;
+    border: 2px solid #f59e0b;
+}
+
+.btn.btn-warning:hover {
+    background-color: #d97706;
+    border-color: #d97706;
+}
+
+@media (max-width: 768px) {
+    .safety-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .emergency-info {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
 
 <script>
 // Add interactive features

@@ -1,0 +1,279 @@
+---
+layout: default
+title: "Quick Reference für neue Mitarbeiter"
+description: "Wichtige Informationen und Kontakte für den WMS-Einsatz"
+---
+
+<div class="quick-ref-container">
+    <div class="quick-ref-header">
+        <h1>🚀 Quick Reference - Neue Mitarbeiter</h1>
+        <p class="subtitle">Wichtige Informationen für den ersten WMS-Einsatz</p>
+    </div>
+
+    <div class="emergency-banner">
+        <div class="emergency-content">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <h2>Bei Problemen IMMER zuerst fragen!</h2>
+                <div class="emergency-contacts">
+                    <span><strong>Schichtführer:</strong> Intern 1234</span>
+                    <span><strong>Notfall:</strong> +41 81 770 9999</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quick-sections">
+        <div class="quick-section">
+            <h2>🚫 NIEMALS alleine tun</h2>
+            <ul class="danger-list">
+                <li>Bestandskorrekturen durchführen</li>
+                <li>System-Einstellungen ändern</li>
+                <li>Unbekannte Artikel buchen</li>
+                <li>Große Mengen-Differenzen ignorieren</li>
+                <li>Kritische Fehlermeldungen wegklicken</li>
+            </ul>
+        </div>
+
+        <div class="quick-section">
+            <h2>✅ Sichere erste Schritte</h2>
+            <ul class="safe-list">
+                <li>Login mit eigenen Daten</li>
+                <li>Scanner-Funktionstest durchführen</li>
+                <li>Arbeitsplatz und Drucker prüfen</li>
+                <li>Bekannte Artikel scannen üben</li>
+                <li>Bei Unsicherheit IMMER fragen</li>
+            </ul>
+        </div>
+
+        <div class="quick-section">
+            <h2>📞 Wen kontaktieren?</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>Schichtführer (Intern 1234)</strong>
+                    <p>Alle operativen Fragen, Arbeitsverteilung</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Erfahrene Kollegen</strong>
+                    <p>Praktische Tipps, Arbeitsabläufe</p>
+                </div>
+                <div class="contact-item">
+                    <strong>IT-Support (+41 81 770 1234)</strong>
+                    <p>Login-Probleme, Geräte-Defekte</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Notfall-Hotline (+41 81 770 9999)</strong>
+                    <p>Systemausfall, kritische Probleme</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-section">
+            <h2>🔧 Häufige Probleme lösen</h2>
+            <div class="problem-solutions">
+                <div class="problem-item">
+                    <h3>Scanner funktioniert nicht</h3>
+                    <ol>
+                        <li>Batterie prüfen</li>
+                        <li>Power-Taste 3 Sek. drücken</li>
+                        <li>Abstand 5-15cm einhalten</li>
+                        <li>Bei Versagen: Ersatz holen</li>
+                    </ol>
+                </div>
+                <div class="problem-item">
+                    <h3>Artikel nicht gefunden</h3>
+                    <ol>
+                        <li>Barcode-Qualität prüfen</li>
+                        <li>Richtige Nummer scannen</li>
+                        <li>Manuelle Suche versuchen</li>
+                        <li>Schichtführer informieren</li>
+                    </ol>
+                </div>
+                <div class="problem-item">
+                    <h3>System sehr langsam</h3>
+                    <ol>
+                        <li>Geduld bewahren</li>
+                        <li>Nicht mehrfach klicken</li>
+                        <li>Anderen PC testen</li>
+                        <li>IT-Support bei Bedarf rufen</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.quick-ref-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.quick-ref-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quick-ref-header h1 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.emergency-banner {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+}
+
+.emergency-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.emergency-content i {
+    font-size: 2rem;
+}
+
+.emergency-content h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-contacts {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.emergency-contacts span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+}
+
+.quick-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.quick-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.quick-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.danger-list {
+    list-style: none;
+}
+
+.danger-list li {
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius-md);
+}
+
+.danger-list li::before {
+    content: "🚫 ";
+    margin-right: 0.5rem;
+}
+
+.safe-list {
+    list-style: none;
+}
+
+.safe-list li {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius-md);
+}
+
+.safe-list li::before {
+    content: "✅ ";
+    margin-right: 0.5rem;
+}
+
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #3b82f6;
+}
+
+.contact-item strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-item p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.problem-solutions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.problem-item {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #f59e0b;
+}
+
+.problem-item h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.problem-item ol {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.problem-item li {
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .quick-sections {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-contacts {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+</style>

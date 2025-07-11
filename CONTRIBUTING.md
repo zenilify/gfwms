@@ -100,14 +100,14 @@ Vielen Dank für Ihr Interesse an der Verbesserung unserer WMS-Wissensdatenbank!
 ## 🚨 Notfall-Updates
 
 Für kritische Updates (z.B. Notfallkontakte):
-1. **Direkter Kontakt**: erick@zenilify.com
+1. **Direkter Kontakt**: erick.hernandez.zenil@georgfischer.com
 2. **Telefon**: +41 76 342 47 31
 3. **Urgent PR**: Mit "URGENT" im Titel
 
 ## 📞 Kontakt
 
 **Projektverantwortlicher**: Erick Hernandez Zenil  
-**E-Mail**: erick@zenilify.com  
+**E-Mail**: erick.hernandez.zenil@georgfischer.com  
 **Telefon**: +41 76 342 47 31  
 **GitHub**: [@zenilify](https://github.com/zenilify)
 

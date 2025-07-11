@@ -9,7 +9,9 @@
       "Bash(mkdir:*)",
       "Bash(pip3 install:*)",
       "Bash(cp:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }

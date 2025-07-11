@@ -36,7 +36,7 @@ Eine umfassende Wissensdatenbank für das Jungheinrich Warehouse Management Syst
 **Erick Hernandez Zenil**  
 - Leiter Werkslogistik, Georg Fischer  
 - 📞 +41 76 342 47 31  
-- 📧 erick@zenilify.com  
+- 📧 erick.hernandez.zenil@georgfischer.com  
 - 🐙 [@zenilify](https://github.com/zenilify)
 
 ## 🚀 Technologie

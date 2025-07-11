@@ -1,0 +1,84 @@
+# GitHub Pages Jekyll Configuration
+title: "GF WMS Knowledge Wiki"
+description: "Comprehensive Warehouse Management System Knowledge Base"
+baseurl: "/gfwms" # Change this to your repository name
+url: "https://zenilify.github.io" # Change this to your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+navigation:
+  - name: "Home"
+    url: "/"
+  - name: "Training"
+    url: "/pages/training/"
+  - name: "Wiki"
+    url: "/pages/wiki/"
+  - name: "Chatbot"
+    url: "/pages/chatbot/"
+  - name: "Error Docs"
+    url: "/pages/errors/"
+
+# SEO
+author: "WMS Team"
+twitter:
+  username: "yourtwitter"
+  card: summary
+
+# Collections
+collections:
+  training:
+    output: true
+    permalink: /:collection/:name/
+  wiki:
+    output: true
+    permalink: /:collection/:name/
+  errors:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "training"
+    values:
+      layout: "training"
+  - scope:
+      path: ""
+      type: "wiki"
+    values:
+      layout: "wiki"
+  - scope:
+      path: ""
+      type: "errors"
+    values:
+      layout: "error"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

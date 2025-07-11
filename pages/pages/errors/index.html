@@ -1,0 +1,800 @@
+---
+layout: default
+title: "Error Documentation"
+description: "Comprehensive troubleshooting guide for WMS issues"
+breadcrumbs:
+  - title: "Error Documentation"
+---
+
+<div class="errors-hero">
+    <div class="container">
+        <h1>WMS Error Documentation</h1>
+        <p class="lead">Find solutions to common WMS issues and get back to work quickly</p>
+        <div class="error-search">
+            <input type="search" placeholder="Search for error codes or descriptions..." class="error-search-input">
+            <button class="error-search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="errors-content">
+    <div class="container">
+        <div class="errors-navigation">
+            <div class="error-categories">
+                <button class="error-category-btn active" data-category="all">All Errors</button>
+                <button class="error-category-btn" data-category="system">System Errors</button>
+                <button class="error-category-btn" data-category="user">User Errors</button>
+                <button class="error-category-btn" data-category="integration">Integration</button>
+                <button class="error-category-btn" data-category="hardware">Hardware</button>
+            </div>
+        </div>
+
+        <div class="errors-main">
+            <div class="errors-grid">
+                <!-- System Errors -->
+                <div class="error-section" data-category="system">
+                    <h2><i class="fas fa-server"></i> System Errors</h2>
+                    <div class="error-cards">
+                        <div class="error-card critical">
+                            <div class="error-header">
+                                <div class="error-code">SYS-001</div>
+                                <div class="error-severity critical">Critical</div>
+                            </div>
+                            <h3>Database Connection Failed</h3>
+                            <p>Unable to connect to the WMS database server</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>Login screen shows "Connection Error"</li>
+                                    <li>Application hangs on startup</li>
+                                    <li>Data not saving or loading</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check network connectivity</li>
+                                    <li>Verify database server status</li>
+                                    <li>Restart WMS services</li>
+                                    <li>Contact system administrator</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/sys-001/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+
+                        <div class="error-card high">
+                            <div class="error-header">
+                                <div class="error-code">SYS-002</div>
+                                <div class="error-severity high">High</div>
+                            </div>
+                            <h3>Memory Allocation Error</h3>
+                            <p>System running out of available memory</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>Application freezes or crashes</li>
+                                    <li>Slow response times</li>
+                                    <li>"Out of memory" messages</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Close unnecessary applications</li>
+                                    <li>Restart the WMS application</li>
+                                    <li>Check system resources</li>
+                                    <li>Contact IT support</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/sys-002/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+
+                        <div class="error-card medium">
+                            <div class="error-header">
+                                <div class="error-code">SYS-003</div>
+                                <div class="error-severity medium">Medium</div>
+                            </div>
+                            <h3>License Validation Failed</h3>
+                            <p>WMS license could not be validated</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>Warning message on startup</li>
+                                    <li>Limited functionality</li>
+                                    <li>Periodic license prompts</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check license file location</li>
+                                    <li>Verify license expiration date</li>
+                                    <li>Update license file</li>
+                                    <li>Contact vendor support</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/sys-003/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Errors -->
+                <div class="error-section" data-category="user">
+                    <h2><i class="fas fa-user-times"></i> User Errors</h2>
+                    <div class="error-cards">
+                        <div class="error-card low">
+                            <div class="error-header">
+                                <div class="error-code">USR-001</div>
+                                <div class="error-severity low">Low</div>
+                            </div>
+                            <h3>Invalid Login Credentials</h3>
+                            <p>Username or password is incorrect</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>"Invalid username or password" message</li>
+                                    <li>Unable to access system</li>
+                                    <li>Login screen reappears</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check caps lock status</li>
+                                    <li>Verify username spelling</li>
+                                    <li>Reset password if needed</li>
+                                    <li>Contact system administrator</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/usr-001/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+
+                        <div class="error-card medium">
+                            <div class="error-header">
+                                <div class="error-code">USR-002</div>
+                                <div class="error-severity medium">Medium</div>
+                            </div>
+                            <h3>Insufficient Permissions</h3>
+                            <p>User does not have required access rights</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>"Access denied" messages</li>
+                                    <li>Missing menu options</li>
+                                    <li>Cannot perform certain actions</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check user role assignments</li>
+                                    <li>Verify permission settings</li>
+                                    <li>Request access from supervisor</li>
+                                    <li>Contact system administrator</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/usr-002/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+
+                        <div class="error-card low">
+                            <div class="error-header">
+                                <div class="error-code">USR-003</div>
+                                <div class="error-severity low">Low</div>
+                            </div>
+                            <h3>Session Timeout</h3>
+                            <p>User session has expired due to inactivity</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>Automatic logout</li>
+                                    <li>Redirected to login screen</li>
+                                    <li>Unsaved work lost</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Log back in to continue</li>
+                                    <li>Save work frequently</li>
+                                    <li>Adjust session timeout settings</li>
+                                    <li>Stay active during work</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/usr-003/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integration Errors -->
+                <div class="error-section" data-category="integration">
+                    <h2><i class="fas fa-plug"></i> Integration Errors</h2>
+                    <div class="error-cards">
+                        <div class="error-card high">
+                            <div class="error-header">
+                                <div class="error-code">INT-001</div>
+                                <div class="error-severity high">High</div>
+                            </div>
+                            <h3>ERP Connection Failed</h3>
+                            <p>Unable to connect to ERP system</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>Data sync failures</li>
+                                    <li>Missing order information</li>
+                                    <li>Connection timeout messages</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check network connectivity</li>
+                                    <li>Verify ERP system status</li>
+                                    <li>Restart integration services</li>
+                                    <li>Contact ERP administrator</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/int-001/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+
+                        <div class="error-card medium">
+                            <div class="error-header">
+                                <div class="error-code">INT-002</div>
+                                <div class="error-severity medium">Medium</div>
+                            </div>
+                            <h3>EDI Transmission Error</h3>
+                            <p>Electronic Data Interchange failed</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>EDI documents not sent</li>
+                                    <li>Transmission error logs</li>
+                                    <li>Customer notification delays</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check EDI connection settings</li>
+                                    <li>Verify document format</li>
+                                    <li>Retry transmission</li>
+                                    <li>Contact EDI provider</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/int-002/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hardware Errors -->
+                <div class="error-section" data-category="hardware">
+                    <h2><i class="fas fa-microchip"></i> Hardware Errors</h2>
+                    <div class="error-cards">
+                        <div class="error-card medium">
+                            <div class="error-header">
+                                <div class="error-code">HW-001</div>
+                                <div class="error-severity medium">Medium</div>
+                            </div>
+                            <h3>Barcode Scanner Not Found</h3>
+                            <p>Scanner hardware not detected</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>Scanner not responding</li>
+                                    <li>No beep on scan attempt</li>
+                                    <li>Manual entry required</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check scanner connection</li>
+                                    <li>Restart scanner device</li>
+                                    <li>Update scanner drivers</li>
+                                    <li>Replace scanner if needed</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/hw-001/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+
+                        <div class="error-card low">
+                            <div class="error-header">
+                                <div class="error-code">HW-002</div>
+                                <div class="error-severity low">Low</div>
+                            </div>
+                            <h3>Printer Offline</h3>
+                            <p>Label printer not responding</p>
+                            <div class="error-symptoms">
+                                <h4>Symptoms:</h4>
+                                <ul>
+                                    <li>Print jobs not completing</li>
+                                    <li>Printer status offline</li>
+                                    <li>Labels not printing</li>
+                                </ul>
+                            </div>
+                            <div class="error-solutions">
+                                <h4>Solutions:</h4>
+                                <ol>
+                                    <li>Check printer power and connection</li>
+                                    <li>Verify paper/label supply</li>
+                                    <li>Clear print queue</li>
+                                    <li>Restart printer</li>
+                                </ol>
+                            </div>
+                            <a href="{{ '/pages/errors/hw-002/' | relative_url }}" class="error-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="errors-sidebar">
+                <div class="quick-help">
+                    <h3>Quick Help</h3>
+                    <div class="help-item">
+                        <h4>Emergency Contact</h4>
+                        <p>For critical system issues:</p>
+                        <a href="tel:+1-555-0123" class="emergency-phone">📞 555-0123</a>
+                    </div>
+                    <div class="help-item">
+                        <h4>Support Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        <p>Sunday: Emergency only</p>
+                    </div>
+                </div>
+
+                <div class="error-stats">
+                    <h3>Error Statistics</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Most Common</span>
+                        <span class="stat-value">USR-001</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Recently Resolved</span>
+                        <span class="stat-value">87%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Avg Resolution Time</span>
+                        <span class="stat-value">15 min</span>
+                    </div>
+                </div>
+
+                <div class="error-tools">
+                    <h3>Troubleshooting Tools</h3>
+                    <ul>
+                        <li><a href="{{ '/pages/errors/diagnostic/' | relative_url }}">System Diagnostic</a></li>
+                        <li><a href="{{ '/pages/errors/logs/' | relative_url }}">Error Logs</a></li>
+                        <li><a href="{{ '/pages/errors/status/' | relative_url }}">System Status</a></li>
+                        <li><a href="{{ '/pages/errors/contact/' | relative_url }}">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="recent-errors">
+                    <h3>Recent Errors</h3>
+                    <div class="recent-error-item">
+                        <div class="recent-error-code">SYS-001</div>
+                        <div class="recent-error-time">2 hours ago</div>
+                    </div>
+                    <div class="recent-error-item">
+                        <div class="recent-error-code">USR-002</div>
+                        <div class="recent-error-time">5 hours ago</div>
+                    </div>
+                    <div class="recent-error-item">
+                        <div class="recent-error-code">HW-001</div>
+                        <div class="recent-error-time">1 day ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.errors-hero {
+    background: linear-gradient(135deg, var(--error-color), #dc2626);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.errors-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.error-search {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    position: relative;
+}
+
+.error-search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 1.125rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+}
+
+.error-search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.error-search-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.errors-content {
+    padding: 3rem 0;
+}
+
+.errors-navigation {
+    margin-bottom: 3rem;
+}
+
+.error-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.error-category-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.error-category-btn:hover,
+.error-category-btn.active {
+    background: var(--error-color);
+    color: white;
+    border-color: var(--error-color);
+}
+
+.errors-main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+}
+
+.errors-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.error-section {
+    display: block;
+}
+
+.error-section.hidden {
+    display: none;
+}
+
+.error-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.error-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.error-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: var(--transition);
+    border-left: 4px solid var(--border-color);
+}
+
+.error-card.critical {
+    border-left-color: var(--error-color);
+}
+
+.error-card.high {
+    border-left-color: #f59e0b;
+}
+
+.error-card.medium {
+    border-left-color: #3b82f6;
+}
+
+.error-card.low {
+    border-left-color: var(--success-color);
+}
+
+.error-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.error-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.error-code {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.error-severity {
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.error-severity.critical {
+    background: var(--error-color);
+    color: white;
+}
+
+.error-severity.high {
+    background: #f59e0b;
+    color: white;
+}
+
+.error-severity.medium {
+    background: #3b82f6;
+    color: white;
+}
+
+.error-severity.low {
+    background: var(--success-color);
+    color: white;
+}
+
+.error-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.error-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.error-symptoms,
+.error-solutions {
+    margin-bottom: 1.5rem;
+}
+
+.error-symptoms h4,
+.error-solutions h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.error-symptoms ul,
+.error-solutions ol {
+    margin-left: 1rem;
+    color: var(--text-secondary);
+}
+
+.error-symptoms li,
+.error-solutions li {
+    margin-bottom: 0.25rem;
+}
+
+.error-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.error-link:hover {
+    color: var(--primary-light);
+}
+
+.errors-sidebar {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    height: fit-content;
+}
+
+.quick-help,
+.error-stats,
+.error-tools,
+.recent-errors {
+    margin-bottom: 2rem;
+}
+
+.quick-help h3,
+.error-stats h3,
+.error-tools h3,
+.recent-errors h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.help-item {
+    margin-bottom: 1.5rem;
+}
+
+.help-item h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.help-item p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-phone {
+    display: inline-block;
+    background: var(--error-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.emergency-phone:hover {
+    background: #dc2626;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.error-tools ul {
+    list-style: none;
+}
+
+.error-tools li {
+    margin-bottom: 0.5rem;
+}
+
+.error-tools a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.error-tools a:hover {
+    color: var(--primary-color);
+}
+
+.recent-error-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.recent-error-item:last-child {
+    border-bottom: none;
+}
+
+.recent-error-code {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.recent-error-time {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .errors-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .error-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .error-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('.error-category-btn');
+    const errorSections = document.querySelectorAll('.error-section');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show/hide sections based on category
+            errorSections.forEach(section => {
+                if (category === 'all' || section.dataset.category === category) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        });
+    });
+    
+    // Error search functionality
+    const searchInput = document.querySelector('.error-search-input');
+    const searchBtn = document.querySelector('.error-search-btn');
+    
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        const errorCards = document.querySelectorAll('.error-card');
+        
+        errorCards.forEach(card => {
+            const code = card.querySelector('.error-code').textContent.toLowerCase();
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+            
+            if (code.includes(query) || title.includes(query) || description.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = query ? 'none' : 'block';
+            }
+        });
+    });
+    
+    searchBtn.addEventListener('click', function() {
+        searchInput.focus();
+    });
+});
+</script>

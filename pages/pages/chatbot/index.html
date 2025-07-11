@@ -1,0 +1,893 @@
+---
+layout: default
+title: "WMS AI Chatbot"
+description: "Get instant answers to your WMS questions with our intelligent assistant"
+breadcrumbs:
+  - title: "Chatbot"
+---
+
+<div class="chatbot-container">
+    <div class="chatbot-header">
+        <div class="container">
+            <h1>WMS AI Assistant</h1>
+            <p>Get instant answers to your WMS questions. Our AI assistant is trained on all WMS documentation and procedures.</p>
+        </div>
+    </div>
+
+    <div class="chatbot-main">
+        <div class="container">
+            <div class="chatbot-interface">
+                <div class="chatbot-sidebar">
+                    <div class="chatbot-info">
+                        <h3>How to Use</h3>
+                        <ul>
+                            <li>Ask questions in plain English</li>
+                            <li>Request step-by-step procedures</li>
+                            <li>Get troubleshooting help</li>
+                            <li>Find relevant documentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="quick-questions">
+                        <h3>Quick Questions</h3>
+                        <div class="quick-question-list">
+                            <button class="quick-question-btn" data-question="How do I receive inventory?">
+                                How do I receive inventory?
+                            </button>
+                            <button class="quick-question-btn" data-question="What are the picking procedures?">
+                                What are the picking procedures?
+                            </button>
+                            <button class="quick-question-btn" data-question="How do I generate reports?">
+                                How do I generate reports?
+                            </button>
+                            <button class="quick-question-btn" data-question="What do I do if the system is slow?">
+                                What do I do if the system is slow?
+                            </button>
+                            <button class="quick-question-btn" data-question="How do I add new users?">
+                                How do I add new users?
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chatbot-stats">
+                        <h3>Assistant Stats</h3>
+                        <div class="stat-item">
+                            <span class="stat-label">Questions Answered</span>
+                            <span class="stat-value">15,847</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Average Response Time</span>
+                            <span class="stat-value">2.3 seconds</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Success Rate</span>
+                            <span class="stat-value">94%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chatbot-chat">
+                    <div class="chat-header">
+                        <div class="chat-status">
+                            <div class="status-indicator online"></div>
+                            <span>WMS Assistant is online</span>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="chat-action-btn" id="clear-chat" title="Clear conversation">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <button class="chat-action-btn" id="export-chat" title="Export conversation">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message assistant-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    <p>Hello! I'm your WMS AI Assistant. I can help you with:</p>
+                                    <ul>
+                                        <li>Step-by-step procedures</li>
+                                        <li>Troubleshooting issues</li>
+                                        <li>System configuration</li>
+                                        <li>Best practices</li>
+                                        <li>Finding documentation</li>
+                                    </ul>
+                                    <p>What would you like to know about the WMS?</p>
+                                </div>
+                                <div class="message-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="chat-input-container">
+                            <input type="text" id="chat-input" placeholder="Type your question about WMS..." maxlength="500">
+                            <button id="send-button" class="send-btn" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="chat-input-footer">
+                            <span class="character-count">0/500</span>
+                            <div class="chat-features">
+                                <button class="feature-btn" id="voice-input" title="Voice input">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button class="feature-btn" id="attachment" title="Attach file">
+                                    <i class="fas fa-paperclip"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.chatbot-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.chatbot-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.chatbot-main {
+    flex: 1;
+    padding: 2rem 0;
+    background: var(--bg-secondary);
+}
+
+.chatbot-interface {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    height: 600px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.chatbot-sidebar {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.chatbot-info,
+.quick-questions,
+.chatbot-stats {
+    margin-bottom: 2rem;
+}
+
+.chatbot-info h3,
+.quick-questions h3,
+.chatbot-stats h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1.125rem;
+}
+
+.chatbot-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chatbot-info li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.chatbot-info li:before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.quick-question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quick-question-btn {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.quick-question-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.chatbot-chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+}
+
+.chat-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--success-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.chat-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-action-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.chat-action-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 2rem;
+    background: var(--bg-primary);
+}
+
+.message {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.assistant-message .message-avatar {
+    background: var(--primary-color);
+    color: white;
+}
+
+.user-message .message-avatar {
+    background: var(--accent-color);
+    color: white;
+}
+
+.message-content {
+    flex: 1;
+    max-width: 70%;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.user-message .message-content {
+    text-align: right;
+}
+
+.message-bubble {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.user-message .message-bubble {
+    background: var(--primary-color);
+    color: white;
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.chat-input-area {
+    padding: 1rem 2rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+#chat-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.send-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.send-btn:hover:not(:disabled) {
+    background: var(--primary-light);
+    transform: scale(1.05);
+}
+
+.send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chat-input-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.character-count {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.chat-features {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.feature-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.feature-btn:hover {
+    color: var(--primary-color);
+}
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    margin-bottom: 0.5rem;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    .chatbot-interface {
+        grid-template-columns: 1fr;
+        height: 70vh;
+    }
+    
+    .chatbot-sidebar {
+        display: none;
+    }
+    
+    .message-content {
+        max-width: 85%;
+    }
+}
+</style>
+
+<script>
+class WMSChatbot {
+    constructor() {
+        this.messages = [];
+        this.isTyping = false;
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.setupQuickQuestions();
+        this.setupVoiceInput();
+        this.loadChatHistory();
+    }
+
+    setupEventListeners() {
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+        const clearButton = document.getElementById('clear-chat');
+        const exportButton = document.getElementById('export-chat');
+
+        chatInput.addEventListener('input', () => this.handleInputChange());
+        chatInput.addEventListener('keydown', (e) => this.handleKeyPress(e));
+        sendButton.addEventListener('click', () => this.sendMessage());
+        clearButton.addEventListener('click', () => this.clearChat());
+        exportButton.addEventListener('click', () => this.exportChat());
+    }
+
+    setupQuickQuestions() {
+        const quickQuestionBtns = document.querySelectorAll('.quick-question-btn');
+        quickQuestionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const question = btn.dataset.question;
+                this.sendMessage(question);
+            });
+        });
+    }
+
+    setupVoiceInput() {
+        const voiceButton = document.getElementById('voice-input');
+        
+        if ('webkitSpeechRecognition' in window) {
+            const recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById('chat-input').value = transcript;
+                this.handleInputChange();
+            };
+
+            voiceButton.addEventListener('click', () => {
+                recognition.start();
+                voiceButton.innerHTML = '<i class="fas fa-microphone-slash"></i>';
+                setTimeout(() => {
+                    voiceButton.innerHTML = '<i class="fas fa-microphone"></i>';
+                }, 3000);
+            });
+        } else {
+            voiceButton.style.display = 'none';
+        }
+    }
+
+    handleInputChange() {
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+        const characterCount = document.querySelector('.character-count');
+        
+        const length = chatInput.value.length;
+        characterCount.textContent = `${length}/500`;
+        
+        sendButton.disabled = length === 0;
+        
+        if (length > 450) {
+            characterCount.style.color = 'var(--error-color)';
+        } else {
+            characterCount.style.color = 'var(--text-muted)';
+        }
+    }
+
+    handleKeyPress(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            this.sendMessage();
+        }
+    }
+
+    sendMessage(messageText = null) {
+        const chatInput = document.getElementById('chat-input');
+        const message = messageText || chatInput.value.trim();
+        
+        if (!message || this.isTyping) return;
+
+        this.addMessage(message, 'user');
+        chatInput.value = '';
+        this.handleInputChange();
+        
+        this.showTypingIndicator();
+        this.generateResponse(message);
+    }
+
+    addMessage(content, sender) {
+        const messagesContainer = document.getElementById('chat-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+        
+        const avatar = sender === 'user' ? 
+            '<i class="fas fa-user"></i>' : 
+            '<i class="fas fa-robot"></i>';
+        
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        messageDiv.innerHTML = `
+            <div class="message-avatar">${avatar}</div>
+            <div class="message-content">
+                <div class="message-bubble">
+                    ${this.formatMessage(content)}
+                </div>
+                <div class="message-time">${time}</div>
+            </div>
+        `;
+        
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        this.messages.push({ content, sender, time });
+        this.saveChatHistory();
+    }
+
+    formatMessage(content) {
+        // Convert markdown-like formatting to HTML
+        return content
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/`(.*?)`/g, '<code>$1</code>')
+            .replace(/\n/g, '<br>');
+    }
+
+    showTypingIndicator() {
+        const messagesContainer = document.getElementById('chat-messages');
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message assistant-message';
+        typingDiv.id = 'typing-indicator';
+        
+        typingDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <div class="typing-indicator">
+                    <span>Assistant is typing</span>
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        messagesContainer.appendChild(typingDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        this.isTyping = true;
+    }
+
+    hideTypingIndicator() {
+        const typingIndicator = document.getElementById('typing-indicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+        this.isTyping = false;
+    }
+
+    generateResponse(userMessage) {
+        // Simulate AI response delay
+        setTimeout(() => {
+            this.hideTypingIndicator();
+            
+            const response = this.getAIResponse(userMessage);
+            this.addMessage(response, 'assistant');
+        }, 1000 + Math.random() * 2000);
+    }
+
+    getAIResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        // Simple response logic - in a real implementation, this would connect to an AI service
+        if (lowerMessage.includes('receive') || lowerMessage.includes('receiving')) {
+            return `To receive inventory in the WMS:
+
+1. **Navigate to Receiving Module**
+   - Click on "Receiving" in the main menu
+   - Select "New Receipt"
+
+2. **Enter Receipt Details**
+   - Scan or enter the Purchase Order number
+   - Verify vendor information
+   - Review expected items
+
+3. **Process Items**
+   - Scan each item barcode
+   - Enter quantity received
+   - Note any discrepancies
+
+4. **Complete Receipt**
+   - Review all items
+   - Submit the receipt
+   - Print receiving labels if needed
+
+For detailed instructions, check the [Receiving Guide]({{ '/pages/wiki/receiving/' | relative_url }}).`;
+        }
+        
+        if (lowerMessage.includes('pick') || lowerMessage.includes('picking')) {
+            return `Here's the picking process:
+
+1. **Access Pick List**
+   - Go to "Picking" module
+   - Select assigned pick list
+   - Review pick priorities
+
+2. **Navigate to Locations**
+   - Follow the optimized pick path
+   - Use location codes for guidance
+   - Scan location barcodes
+
+3. **Pick Items**
+   - Scan item barcodes
+   - Verify quantities
+   - Use proper containers
+
+4. **Complete Pick**
+   - Review picked items
+   - Submit pick completion
+   - Move to packing area
+
+Need more details? Visit the [Picking Guide]({{ '/pages/wiki/picking/' | relative_url }}).`;
+        }
+        
+        if (lowerMessage.includes('report') || lowerMessage.includes('reporting')) {
+            return `To generate WMS reports:
+
+1. **Access Reports Module**
+   - Click "Reports" in main navigation
+   - Choose report category
+
+2. **Select Report Type**
+   - Inventory reports
+   - Activity reports
+   - Performance reports
+   - Custom reports
+
+3. **Set Parameters**
+   - Choose date range
+   - Select filters
+   - Set output format
+
+4. **Generate & Export**
+   - Click "Generate Report"
+   - Download or email results
+   - Schedule recurring reports
+
+Check the [Reporting Guide]({{ '/pages/wiki/reporting/' | relative_url }}) for advanced options.`;
+        }
+        
+        if (lowerMessage.includes('slow') || lowerMessage.includes('performance')) {
+            return `If the system is running slowly:
+
+**Immediate Steps:**
+1. Check your internet connection
+2. Close unnecessary browser tabs
+3. Clear browser cache
+4. Try refreshing the page
+
+**If issues persist:**
+1. Check system status page
+2. Contact IT support
+3. Report the issue with details:
+   - What you were doing
+   - Time of occurrence
+   - Error messages received
+
+For more troubleshooting tips, see [Performance Issues]({{ '/pages/errors/system/' | relative_url }}).`;
+        }
+        
+        if (lowerMessage.includes('user') || lowerMessage.includes('add user')) {
+            return `To add new users to the WMS:
+
+1. **Access User Management**
+   - Go to "System" → "User Management"
+   - Click "Add New User"
+
+2. **Enter User Information**
+   - Full name
+   - Username
+   - Email address
+   - Employee ID
+
+3. **Set Permissions**
+   - Assign role (Operator, Supervisor, Admin)
+   - Set module access
+   - Define location restrictions
+
+4. **Activate Account**
+   - Send welcome email
+   - Provide temporary password
+   - Schedule training session
+
+See [User Management Guide]({{ '/pages/wiki/users/' | relative_url }}) for detailed instructions.`;
+        }
+        
+        // Default response for unrecognized queries
+        return `I'm here to help with WMS questions! I can assist with:
+
+• **Operations**: Receiving, picking, packing, shipping
+• **Procedures**: Step-by-step guides and workflows  
+• **Troubleshooting**: Error resolution and system issues
+• **Configuration**: User management and system setup
+• **Reports**: Generating and customizing reports
+
+Try asking about specific WMS functions, or browse our [Knowledge Wiki]({{ '/pages/wiki/' | relative_url }}) for comprehensive documentation.
+
+What would you like to know more about?`;
+    }
+
+    clearChat() {
+        if (confirm('Are you sure you want to clear the conversation?')) {
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.innerHTML = `
+                <div class="message assistant-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>Chat cleared! How can I help you with WMS today?</p>
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            `;
+            this.messages = [];
+            this.saveChatHistory();
+        }
+    }
+
+    exportChat() {
+        const chatText = this.messages.map(msg => 
+            `[${msg.time}] ${msg.sender.toUpperCase()}: ${msg.content}`
+        ).join('\n\n');
+        
+        const blob = new Blob([chatText], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `wms-chat-${new Date().toISOString().split('T')[0]}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    saveChatHistory() {
+        localStorage.setItem('wms-chat-history', JSON.stringify(this.messages));
+    }
+
+    loadChatHistory() {
+        const history = localStorage.getItem('wms-chat-history');
+        if (history) {
+            this.messages = JSON.parse(history);
+        }
+    }
+}
+
+// Initialize chatbot when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    new WMSChatbot();
+});
+</script>

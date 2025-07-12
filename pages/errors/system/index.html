@@ -1,53 +1,861 @@
 ---
 layout: default
-title: "System Errors"
-description: "Detaillierte Systemfehler-Diagnose"
+title: "Systemfehler"
+description: "Systemfehler-Diagnose und Lösungsansätze für das Georg Fischer WMS"
 breadcrumbs:
-  - title: "ERRORS"
-  - title: "System Errors"
+  - title: "Fehlerdiagnose"
+  - title: "Systemfehler"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">System Errors - Detaillierte Systemfehler-Diagnose</p>
-    </div>
-
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "System Errors" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../common/" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
+<div class="system-error-container">
+    <div class="system-error-header">
+        <div class="critical-safety-alert">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div class="alert-content">
+                <h2>🚨 KRITISCH: Systemfehler-Sicherheit</h2>
+                <p><strong>Für neue Mitarbeiter:</strong> Systemfehler können Betriebsabläufe stark beeinträchtigen. NIEMALS eigenständig an kritischen Systemkomponenten arbeiten. Immer zuerst Experten kontaktieren.</p>
+                <div class="emergency-contacts">
+                    <span><strong>System-Notfall:</strong> +41 81 770 9999</span>
+                    <span><strong>IT-Support:</strong> +41 81 770 5678</span>
+                    <span><strong>Leitstand:</strong> Intern 1250</span>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="system-error-content">
+        <h1><i class="fas fa-server"></i> WMS Systemfehler-Diagnose</h1>
+        
+        <div class="error-severity-guide">
+            <h2>Fehler-Klassifizierung nach Kritikalität</h2>
+            <div class="severity-grid">
+                <div class="severity-card critical">
+                    <div class="severity-icon">
+                        <i class="fas fa-skull-crossbones"></i>
+                    </div>
+                    <h3>KRITISCH</h3>
+                    <p>Sofortiger Produktionsstopp erforderlich</p>
+                    <div class="action-required">
+                        <strong>Sofortmaßnahme:</strong> Notfall-Hotline anrufen
+                    </div>
+                </div>
+                <div class="severity-card high">
+                    <div class="severity-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>HOCH</h3>
+                    <p>Erhebliche Beeinträchtigung der Abläufe</p>
+                    <div class="action-required">
+                        <strong>Sofortmaßnahme:</strong> IT-Support kontaktieren
+                    </div>
+                </div>
+                <div class="severity-card medium">
+                    <div class="severity-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h3>MITTEL</h3>
+                    <p>Partielle Funktionseinschränkungen</p>
+                    <div class="action-required">
+                        <strong>Sofortmaßnahme:</strong> Schichtführer informieren
+                    </div>
+                </div>
+                <div class="severity-card low">
+                    <div class="severity-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>NIEDRIG</h3>
+                    <p>Kleinere Störungen, Workarounds möglich</p>
+                    <div class="action-required">
+                        <strong>Sofortmaßnahme:</strong> Dokumentieren und melden
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="system-error-categories">
+            <!-- Database Errors -->
+            <div class="error-category">
+                <h2><i class="fas fa-database"></i> Datenbank-Fehler</h2>
+                
+                <div class="error-item critical">
+                    <div class="error-header">
+                        <h3>🚨 Fehler: "Datenbankverbindung unterbrochen"</h3>
+                        <span class="severity critical">KRITISCH</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>WMS-Client reagiert nicht mehr</li>
+                                <li>Fehlermeldung "Database Connection Lost"</li>
+                                <li>Alle Buchungen blockiert</li>
+                                <li>Keine neuen Aufträge verarbeitbar</li>
+                            </ul>
+                        </div>
+                        <div class="immediate-action">
+                            <h4>🚨 SOFORTIGE MASSNAHMEN:</h4>
+                            <ol>
+                                <li><strong>STOPP:</strong> Keine weiteren Buchungsversuche</li>
+                                <li><strong>ISOLATION:</strong> Arbeitsplatz sperren</li>
+                                <li><strong>MELDUNG:</strong> Notfall-Hotline anrufen: +41 81 770 9999</li>
+                                <li><strong>DOKUMENTATION:</strong> Exakte Uhrzeit und Aktivität notieren</li>
+                                <li><strong>INFORMATION:</strong> Alle Kollegen warnen</li>
+                            </ol>
+                        </div>
+                        <div class="not-allowed">
+                            <h4>❌ NICHT ERLAUBT für neue Mitarbeiter:</h4>
+                            <ul>
+                                <li>System-Neustart versuchen</li>
+                                <li>Datenbank-Tools verwenden</li>
+                                <li>Konfigurationsdateien ändern</li>
+                                <li>Netzwerkeinstellungen prüfen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-item high">
+                    <div class="error-header">
+                        <h3>⚠️ Fehler: "Slow Database Response"</h3>
+                        <span class="severity high">HOCH</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Lange Wartezeiten bei Buchungen</li>
+                                <li>Zeitüberschreitungen bei Abfragen</li>
+                                <li>Sporadische Fehlermeldungen</li>
+                            </ul>
+                        </div>
+                        <div class="safe-action">
+                            <h4>✅ Sichere Maßnahmen:</h4>
+                            <ol>
+                                <li><strong>GEDULD:</strong> Längere Wartezeiten einplanen</li>
+                                <li><strong>DOKUMENTATION:</strong> Langsame Transaktionen notieren</li>
+                                <li><strong>MELDUNG:</strong> IT-Support informieren: +41 81 770 5678</li>
+                                <li><strong>ALTERNATIVE:</strong> Manuelle Listen verwenden</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Network Errors -->
+            <div class="error-category">
+                <h2><i class="fas fa-network-wired"></i> Netzwerk-Fehler</h2>
+                
+                <div class="error-item high">
+                    <div class="error-header">
+                        <h3>⚠️ Fehler: "SAP Verbindung unterbrochen"</h3>
+                        <span class="severity high">HOCH</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Keine WE-Avisos von SAP</li>
+                                <li>Rückmeldungen an SAP fehlschlagen</li>
+                                <li>Fehlermeldung "SAP Interface Error"</li>
+                            </ul>
+                        </div>
+                        <div class="immediate-action">
+                            <h4>🚨 SOFORTIGE MASSNAHMEN:</h4>
+                            <ol>
+                                <li><strong>ÜBERPRÜFUNG:</strong> Andere Arbeitsplätze testen</li>
+                                <li><strong>DOKUMENTATION:</strong> Letzte erfolgreiche SAP-Transaktion notieren</li>
+                                <li><strong>MELDUNG:</strong> IT-Support sofort kontaktieren</li>
+                                <li><strong>NOTFALLVERFAHREN:</strong> Papier-WE-Scheine verwenden</li>
+                            </ol>
+                        </div>
+                        <div class="escalation">
+                            <h4>📞 Eskalations-Kette:</h4>
+                            <ol>
+                                <li>IT-Support: +41 81 770 5678</li>
+                                <li>Bei Nichterreichbarkeit: Leitstand Intern 1250</li>
+                                <li>Bei kritischen Problemen: Notfall-Hotline +41 81 770 9999</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-item medium">
+                    <div class="error-header">
+                        <h3>⚠️ Fehler: "Fördertechnik Kommunikationsfehler"</h3>
+                        <span class="severity medium">MITTEL</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>LHM werden nicht automatisch eingelagert</li>
+                                <li>Aufträge bleiben in "Transport" Status</li>
+                                <li>Fördertechnik-Status "Offline"</li>
+                            </ul>
+                        </div>
+                        <div class="safe-action">
+                            <h4>✅ Sichere Maßnahmen:</h4>
+                            <ol>
+                                <li><strong>BEOBACHTUNG:</strong> Fördertechnik visuell prüfen</li>
+                                <li><strong>ALTERNATIVE:</strong> Manuelle Einlagerung vorbereiten</li>
+                                <li><strong>MELDUNG:</strong> Fördertechnik-Support: +41 81 770 1280</li>
+                                <li><strong>WARTUNG:</strong> Betroffene LHM sammeln und markieren</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Errors -->
+            <div class="error-category">
+                <h2><i class="fas fa-desktop"></i> Anwendungs-Fehler</h2>
+                
+                <div class="error-item medium">
+                    <div class="error-header">
+                        <h3>⚠️ Fehler: "WMS Client Absturz"</h3>
+                        <span class="severity medium">MITTEL</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Anwendung schließt sich unerwartet</li>
+                                <li>Windows-Fehlermeldung erscheint</li>
+                                <li>Unvollständige Buchungen bleiben offen</li>
+                            </ul>
+                        </div>
+                        <div class="safe-action">
+                            <h4>✅ Sichere Maßnahmen:</h4>
+                            <ol>
+                                <li><strong>DOKUMENTATION:</strong> Letzte Aktion vor Absturz notieren</li>
+                                <li><strong>NEUSTART:</strong> WMS-Client neu starten</li>
+                                <li><strong>ÜBERPRÜFUNG:</strong> Unvollständige Buchungen kontrollieren</li>
+                                <li><strong>MELDUNG:</strong> Bei Wiederholung IT-Support informieren</li>
+                            </ol>
+                        </div>
+                        <div class="prevention">
+                            <h4>🛡️ Vorbeugung:</h4>
+                            <ul>
+                                <li>Regelmäßige Zwischenspeicherung</li>
+                                <li>Keine parallelen Anwendungen während WMS-Arbeit</li>
+                                <li>PC-Ressourcen überwachen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-item low">
+                    <div class="error-header">
+                        <h3>ℹ️ Fehler: "Druckauftrag fehlgeschlagen"</h3>
+                        <span class="severity low">NIEDRIG</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Etiketten werden nicht gedruckt</li>
+                                <li>Drucker-Status "Offline" oder "Fehler"</li>
+                                <li>Fehlermeldung im WMS-Client</li>
+                            </ul>
+                        </div>
+                        <div class="safe-action">
+                            <h4>✅ Einfache Lösungsschritte:</h4>
+                            <ol>
+                                <li><strong>GRUNDPRÜFUNG:</strong> Drucker eingeschaltet?</li>
+                                <li><strong>MATERIAL:</strong> Papier/Etiketten vorhanden?</li>
+                                <li><strong>VERBINDUNG:</strong> Kabel ordnungsgemäß angeschlossen?</li>
+                                <li><strong>NEUSTART:</strong> Drucker aus-/einschalten</li>
+                                <li><strong>ALTERNATIVE:</strong> Anderen Drucker verwenden</li>
+                                <li><strong>MELDUNG:</strong> Bei anhaltenden Problemen IT-Support kontaktieren</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scanner/Hardware Errors -->
+            <div class="error-category">
+                <h2><i class="fas fa-barcode"></i> Scanner/Hardware-Fehler</h2>
+                
+                <div class="error-item medium">
+                    <div class="error-header">
+                        <h3>⚠️ Fehler: "Barcode Scanner reagiert nicht"</h3>
+                        <span class="severity medium">MITTEL</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Scanner-LED leuchtet nicht</li>
+                                <li>Keine Scan-Signale</li>
+                                <li>Keine Datenübertragung zum PC</li>
+                            </ul>
+                        </div>
+                        <div class="safe-action">
+                            <h4>✅ Sichere Lösungsschritte:</h4>
+                            <ol>
+                                <li><strong>STROMVERSORGUNG:</strong> USB-Kabel prüfen</li>
+                                <li><strong>ANSCHLUSS:</strong> USB-Port wechseln</li>
+                                <li><strong>REINIGUNG:</strong> Scanner-Linse vorsichtig säubern</li>
+                                <li><strong>NEUSTART:</strong> Scanner ab-/anstecken</li>
+                                <li><strong>ALTERNATIVE:</strong> Ersatz-Scanner verwenden</li>
+                                <li><strong>WORKAROUND:</strong> Manuelle Eingabe nutzen</li>
+                            </ol>
+                        </div>
+                        <div class="not-allowed">
+                            <h4>❌ NICHT ERLAUBT:</h4>
+                            <ul>
+                                <li>Scanner auseinandernehmen</li>
+                                <li>Treiber selbst installieren</li>
+                                <li>System-Registry ändern</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-item low">
+                    <div class="error-header">
+                        <h3>ℹ️ Fehler: "Waage zeigt falsche Werte"</h3>
+                        <span class="severity low">NIEDRIG</span>
+                    </div>
+                    <div class="error-content">
+                        <div class="symptoms">
+                            <h4>Symptome:</h4>
+                            <ul>
+                                <li>Gewichtsanzeige schwankt stark</li>
+                                <li>Offensichtlich falsche Gewichtswerte</li>
+                                <li>Waage zeigt permanent "0" an</li>
+                            </ul>
+                        </div>
+                        <div class="safe-action">
+                            <h4>✅ Einfache Prüfschritte:</h4>
+                            <ol>
+                                <li><strong>KALIBRIERUNG:</strong> Waage ohne Last "Nullen"</li>
+                                <li><strong>SÄUBERUNG:</strong> Waagschale reinigen</li>
+                                <li><strong>TESTGEWICHT:</strong> Bekanntes Gewicht zur Kontrolle</li>
+                                <li><strong>UMGEBUNG:</strong> Luftzug und Vibrationen prüfen</li>
+                                <li><strong>ALTERNATIVE:</strong> Andere Waage verwenden</li>
+                                <li><strong>MELDUNG:</strong> Defekt an Wartung melden</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-reporting">
+            <h2><i class="fas fa-clipboard-list"></i> Fehler richtig melden</h2>
+            
+            <div class="reporting-guide">
+                <h3>Vollständige Fehlermeldung erstellen</h3>
+                <div class="reporting-checklist">
+                    <h4>📋 Pflichtangaben bei jeder Meldung:</h4>
+                    <div class="checklist-item">
+                        <i class="fas fa-check"></i>
+                        <span><strong>Zeitpunkt:</strong> Exakte Uhrzeit des Fehlers</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check"></i>
+                        <span><strong>Arbeitsplatz:</strong> PC-Name oder Arbeitsplatz-Nummer</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check"></i>
+                        <span><strong>Benutzer:</strong> Angemeldeter Benutzername</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check"></i>
+                        <span><strong>Aktivität:</strong> Was wurde gerade gemacht?</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check"></i>
+                        <span><strong>Fehlermeldung:</strong> Exakter Wortlaut der Meldung</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check"></i>
+                        <span><strong>Auswirkung:</strong> Was funktioniert nicht mehr?</span>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fas fa-check"></i>
+                        <span><strong>Reproduzierbarkeit:</strong> Fehler wiederholbar?</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reporting-template">
+                <h3>Meldungs-Vorlage</h3>
+                <div class="template-box">
+                    <strong>WMS-Systemfehler Meldung</strong><br><br>
+                    <strong>Datum/Zeit:</strong> [TT.MM.JJJJ HH:MM]<br>
+                    <strong>Arbeitsplatz:</strong> [PC-Name/Nummer]<br>
+                    <strong>Benutzer:</strong> [Login-Name]<br>
+                    <strong>Funktion:</strong> [z.B. Wareneingang, Kommissionierung]<br>
+                    <strong>Aktion:</strong> [Was wurde versucht?]<br>
+                    <strong>Fehlermeldung:</strong> [Exakter Text]<br>
+                    <strong>Auswirkung:</strong> [Was funktioniert nicht?]<br>
+                    <strong>Weitere Details:</strong> [Zusätzliche Beobachtungen]<br>
+                    <strong>Bereits versucht:</strong> [Lösungsversuche]<br>
+                    <strong>Dringlichkeit:</strong> [KRITISCH/HOCH/MITTEL/NIEDRIG]
+                </div>
+            </div>
+        </div>
+
+        <div class="emergency-procedures">
+            <h2><i class="fas fa-ambulance"></i> Notfall-Verfahren</h2>
+            
+            <div class="emergency-levels">
+                <div class="emergency-level critical">
+                    <h3>🚨 KRITISCHER SYSTEMAUSFALL</h3>
+                    <div class="emergency-actions">
+                        <h4>Sofortige Maßnahmen (erste 2 Minuten):</h4>
+                        <ol>
+                            <li><strong>STOPP:</strong> Alle WMS-Aktivitäten einstellen</li>
+                            <li><strong>ALARMIERUNG:</strong> Notfall-Hotline: +41 81 770 9999</li>
+                            <li><strong>ISOLATION:</strong> Betroffene Arbeitsplätze sperren</li>
+                            <li><strong>INFORMATION:</strong> Leitstand und alle Teams informieren</li>
+                        </ol>
+                        <h4>Folgeaktionen:</h4>
+                        <ul>
+                            <li>Notfall-Papier-Verfahren aktivieren</li>
+                            <li>Manuelle Dokumentation starten</li>
+                            <li>Extern Kunden und Lieferanten informieren</li>
+                            <li>Status-Updates alle 15 Minuten</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="emergency-level high">
+                    <h3>⚠️ ERHEBLICHE STÖRUNG</h3>
+                    <div class="emergency-actions">
+                        <h4>Sofortige Maßnahmen (erste 5 Minuten):</h4>
+                        <ol>
+                            <li><strong>BEWERTUNG:</strong> Ausmaß der Störung ermitteln</li>
+                            <li><strong>MELDUNG:</strong> IT-Support: +41 81 770 5678</li>
+                            <li><strong>WORKAROUND:</strong> Alternative Arbeitsweisen aktivieren</li>
+                            <li><strong>DOKUMENTATION:</strong> Detaillierte Fehleraufzeichnung</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prevention-tips">
+            <h2><i class="fas fa-shield-alt"></i> Fehler-Prävention</h2>
+            
+            <div class="prevention-categories">
+                <div class="prevention-card">
+                    <h3><i class="fas fa-laptop"></i> Arbeitsplatz-Hygiene</h3>
+                    <ul>
+                        <li>Regelmäßige PC-Neustarts (täglich)</li>
+                        <li>Ordnungsgemäße An-/Abmeldung</li>
+                        <li>Keine privaten Programme installieren</li>
+                        <li>Desktop sauber halten</li>
+                    </ul>
+                </div>
+                <div class="prevention-card">
+                    <h3><i class="fas fa-database"></i> Daten-Sicherheit</h3>
+                    <ul>
+                        <li>Niemals Datenbank-Tools öffnen</li>
+                        <li>Keine Konfigurationsdateien ändern</li>
+                        <li>Regelmäßige Zwischenspeicherung</li>
+                        <li>Sichere Passwort-Praktiken</li>
+                    </ul>
+                </div>
+                <div class="prevention-card">
+                    <h3><i class="fas fa-tools"></i> Hardware-Pflege</h3>
+                    <ul>
+                        <li>Scanner und Drucker sauber halten</li>
+                        <li>Kabel ordnungsgemäß verlegen</li>
+                        <li>Keine unsachgemäße Behandlung</li>
+                        <li>Defekte sofort melden</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-support">
+            <h2><i class="fas fa-headset"></i> Support-Kontakte</h2>
+            <div class="support-grid">
+                <div class="support-card emergency">
+                    <h3>🚨 NOTFALL</h3>
+                    <p><strong>24/7 Hotline:</strong></p>
+                    <p class="phone">+41 81 770 9999</p>
+                    <p><em>Für kritische Systemausfälle</em></p>
+                </div>
+                <div class="support-card technical">
+                    <h3>💻 IT-SUPPORT</h3>
+                    <p><strong>Technische Probleme:</strong></p>
+                    <p class="phone">+41 81 770 5678</p>
+                    <p><em>Mo-Fr 07:00-17:00</em></p>
+                </div>
+                <div class="support-card operations">
+                    <h3>🏭 LEITSTAND</h3>
+                    <p><strong>Betriebliche Fragen:</strong></p>
+                    <p class="phone">Intern 1250</p>
+                    <p><em>Schichtbetrieb 24/7</em></p>
+                </div>
+                <div class="support-card maintenance">
+                    <h3>🔧 WARTUNG</h3>
+                    <p><strong>Hardware-Defekte:</strong></p>
+                    <p class="phone">+41 81 770 1280</p>
+                    <p><em>Mo-Fr 06:00-18:00</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.system-error-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.critical-safety-alert {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+    border: 3px solid #fecaca;
+}
+
+.critical-safety-alert h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.emergency-contacts {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.emergency-contacts span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+}
+
+.system-error-content h1 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Severity Guide */
+.severity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.severity-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 2px solid;
+}
+
+.severity-card.critical {
+    background: #fef2f2;
+    border-color: #dc2626;
+}
+
+.severity-card.high {
+    background: #fef3c7;
+    border-color: #f59e0b;
+}
+
+.severity-card.medium {
+    background: #eff6ff;
+    border-color: #3b82f6;
+}
+
+.severity-card.low {
+    background: #f0fdf4;
+    border-color: #10b981;
+}
+
+.severity-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.severity-card.critical .severity-icon {
+    background: #dc2626;
+}
+
+.severity-card.high .severity-icon {
+    background: #f59e0b;
+}
+
+.severity-card.medium .severity-icon {
+    background: #3b82f6;
+}
+
+.severity-card.low .severity-icon {
+    background: #10b981;
+}
+
+/* Error Categories */
+.error-category {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.error-category h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.error-item {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--radius-md);
+    border-left: 4px solid;
+}
+
+.error-item.critical {
+    border-left-color: #dc2626;
+}
+
+.error-item.high {
+    border-left-color: #f59e0b;
+}
+
+.error-item.medium {
+    border-left-color: #3b82f6;
+}
+
+.error-item.low {
+    border-left-color: #10b981;
+}
+
+.error-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.error-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.severity {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.severity.critical {
+    background: #dc2626;
+    color: white;
+}
+
+.severity.high {
+    background: #f59e0b;
+    color: white;
+}
+
+.severity.medium {
+    background: #3b82f6;
+    color: white;
+}
+
+.severity.low {
+    background: #10b981;
+    color: white;
+}
+
+.symptoms, .immediate-action, .safe-action, .not-allowed, .escalation, .prevention {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
+
+.symptoms {
+    background: #f8fafc;
+    border-left: 4px solid #64748b;
+}
+
+.immediate-action {
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+}
+
+.safe-action {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+}
+
+.not-allowed {
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+}
+
+.escalation {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+}
+
+.prevention {
+    background: #f0f9ff;
+    border-left: 4px solid #0ea5e9;
+}
+
+/* Error Reporting */
+.error-reporting {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.checklist-item i {
+    color: #10b981;
+}
+
+.template-box {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    border: 1px solid var(--border-color);
+    margin: 1rem 0;
+}
+
+/* Emergency Procedures */
+.emergency-procedures {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.emergency-level {
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+}
+
+.emergency-level.critical {
+    background: #fef2f2;
+    border: 2px solid #dc2626;
+}
+
+.emergency-level.high {
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+}
+
+/* Prevention Tips */
+.prevention-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.prevention-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.prevention-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* Support Contacts */
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.support-card {
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 2px solid;
+}
+
+.support-card.emergency {
+    background: #fef2f2;
+    border-color: #dc2626;
+}
+
+.support-card.technical {
+    background: #eff6ff;
+    border-color: #3b82f6;
+}
+
+.support-card.operations {
+    background: #f0fdf4;
+    border-color: #10b981;
+}
+
+.support-card.maintenance {
+    background: #fef3c7;
+    border-color: #f59e0b;
+}
+
+.phone {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .emergency-contacts {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .error-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .severity-grid,
+    .prevention-categories,
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </div>
 
 <style>

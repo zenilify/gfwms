@@ -23,80 +23,583 @@ next:
   url: "/pages/training/optimization/"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Integration Management - SAP-WMS Integration</p>
-    </div>
+# Integration Management - Advanced SAP-WMS Integration
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Schulungsseite wird derzeit entwickelt</h2>
-            <p>Das Modul "Integration Management" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
+## Überblick
 
-        <div class="wip-preview">
-            <h3>Geplante Inhalte:</h3>
-            <div class="content-preview">
-                <div class="preview-section">
-                    <h4><i class="fas fa-exchange-alt"></i> SAP-Integration</h4>
-                    <ul>
-                        <li>EDI-Schnittstellen konfigurieren</li>
-                        <li>Datenaustausch-Protokolle</li>
-                        <li>Mapping und Transformation</li>
-                        <li>Fehlerbehandlung</li>
-                    </ul>
-                </div>
-                
-                <div class="preview-section">
-                    <h4><i class="fas fa-database"></i> Datenmanagement</h4>
-                    <ul>
-                        <li>Datenqualität sicherstellen</li>
-                        <li>Synchronisation überwachen</li>
-                        <li>Konfliktlösung</li>
-                        <li>Backup-Strategien</li>
-                    </ul>
-                </div>
-                
-                <div class="preview-section">
-                    <h4><i class="fas fa-tools"></i> Troubleshooting</h4>
-                    <ul>
-                        <li>Interface-Monitoring</li>
-                        <li>Log-Analyse</li>
-                        <li>Performance-Optimierung</li>
-                        <li>Disaster Recovery</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+Integration Management ist ein kritischer Aspekt des WMS-Betriebs bei Georg Fischer. Dieses fortgeschrittene Modul behandelt die komplexe SAP-WMS-Integration, EDI-Prozesse und Datenmanagement-Strategien, die für einen reibungslosen Betrieb erforderlich sind.
 
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-cogs"></i>
-                    <h4>Systemkonfiguration</h4>
-                    <p>Grundlagen der WMS-Konfiguration</p>
-                    <a href="../configuration/" class="btn btn-primary">Modul öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Integration und Datenmanagement</p>
-                    <a href="../../wiki/integration/" class="btn btn-primary">Wiki öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-question-circle"></i>
-                    <h4>Support</h4>
-                    <p>Technische Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+## Lernziele
+
+Nach Abschluss dieses Moduls können Sie:
+- SAP-Schnittstellen konfigurieren und überwachen
+- EDI-Prozesse verstehen und verwalten
+- Datenintegrität sicherstellen und Konflikte lösen
+- Integration-Probleme diagnostizieren und beheben
+- Performance-Optimierung durchführen
+- Disaster Recovery-Verfahren implementieren
+
+## 1. SAP-WMS Integration Grundlagen
+
+### 1.1 Integration-Architektur
+
+#### **Systemlandschaft bei Georg Fischer**
+```
+SAP ECC/S4HANA ↔ Middleware ↔ Jungheinrich WMS ↔ Warehouse Equipment
+```
+
+#### **Datenfluss-Übersicht**
+- **Stammdaten**: Artikel, Lagerplätze, Kunden, Lieferanten
+- **Bewegungsdaten**: Aufträge, Buchungen, Bestände
+- **Statusdaten**: Auftragsstatus, Fehlermeldungen, Bestätigungen
+- **Konfigurationsdaten**: Parameter, Regeln, Einstellungen
+
+### 1.2 Interface-Technologien
+
+#### **RFC (Remote Function Call)**
+- **Synchrone Kommunikation**
+- **Echtzeit-Datenabgleich**
+- **Funktionsbausteine**: Z_WMS_*
+- **Fehlerbehandlung**: Immediate Response
+
+#### **IDoc (Intermediate Document)**
+- **Asynchrone Kommunikation**
+- **Bulk-Datenübertragung**
+- **Standard-Nachrichtentypen**: WMMBXY, ORDERS, DESADV
+- **Fehlerbehandlung**: Retry-Mechanismen
+
+#### **Web Services**
+- **SOAP/REST-basiert**
+- **Plattform-unabhängig**
+- **XML/JSON-Datenformat**
+- **Service-orientierte Architektur**
+
+### 1.3 Kritische Datentypen
+
+#### **Stammdaten-Synchronisation**
+| Datentyp | SAP-Tabelle | WMS-Entsprechung | Frequenz |
+|----------|-------------|------------------|----------|
+| Artikel | MARA/MARM | ITEMMASTER | Real-time |
+| Lagerplätze | LAGP | LOCATION | Daily |
+| Kunden | KNA1 | CUSTOMER | Weekly |
+| Lieferanten | LFA1 | SUPPLIER | Weekly |
+
+#### **Transaktionsdaten**
+| Prozess | SAP-Beleg | WMS-Auftrag | SLA |
+|---------|-----------|-------------|-----|
+| Wareneingang | MIGO | INBOUND | 5 min |
+| Warenausgang | VL02N | OUTBOUND | 2 min |
+| Inventur | MI04 | CYCLE_COUNT | 15 min |
+| Transfer | MB1B | MOVE | 5 min |
+
+## 2. EDI-Schnittstellen Konfiguration
+
+### 2.1 SAP-seitige Konfiguration
+
+#### **Partner-Profile (WE20)**
+1. **WMS-Partner** definieren
+2. **Nachrichtentypen** zuordnen
+3. **Prozess-Codes** konfigurieren
+4. **Fehlerbehandlung** einrichten
+
+#### **Logische Systeme (BD54)**
+```
+CLNT100_GF_WMS    - Georg Fischer WMS System
+CLNT100_GF_SAP    - Georg Fischer SAP System
+```
+
+#### **Port-Definition (WE21)**
+- **File-Ports**: Für Batch-Verarbeitung
+- **TRFC-Ports**: Für Echtzeit-Integration
+- **HTTP-Ports**: Für Web Service-Aufrufe
+
+### 2.2 WMS-seitige Konfiguration
+
+#### **Interface-Parameter**
+```xml
+<interface name="SAP_INTEGRATION">
+    <connection>
+        <host>sap-server.georgfischer.com</host>
+        <client>100</client>
+        <user>WMS_USER</user>
+        <language>DE</language>
+    </connection>
+    <parameters>
+        <retry_count>3</retry_count>
+        <timeout>30</timeout>
+        <batch_size>100</batch_size>
+    </parameters>
+</interface>
+```
+
+#### **Mapping-Konfiguration**
+```json
+{
+  "article_mapping": {
+    "sap_field": "MATNR",
+    "wms_field": "ITEM_NUMBER",
+    "transformation": "REMOVE_LEADING_ZEROS"
+  },
+  "location_mapping": {
+    "sap_field": "LGPLA",
+    "wms_field": "LOCATION_ID",
+    "transformation": "UPPERCASE"
+  }
+}
+```
+
+### 2.3 Monitoring und Überwachung
+
+#### **SAP-Monitoring (SM58/ST22)**
+- **tRFC-Queues** überwachen
+- **Fehlerprotokolle** analysieren
+- **Performance-Metriken** sammeln
+- **Alert-Konfiguration** einrichten
+
+#### **WMS-Monitoring**
+- **Interface-Dashboard** nutzen
+- **Real-time-Status** prüfen
+- **Error-Logs** auswerten
+- **SLA-Compliance** überwachen
+
+## 3. Datenqualität und -integrität
+
+### 3.1 Datenvalidierung
+
+#### **Eingangsdaten-Prüfung**
+```sql
+-- Artikel-Validierung
+SELECT * FROM ITEMMASTER 
+WHERE ITEM_NUMBER IS NULL 
+   OR LENGTH(ITEM_NUMBER) = 0
+   OR UNIT_OF_MEASURE NOT IN ('EA', 'KG', 'M', 'L');
+
+-- Lagerplatz-Validierung  
+SELECT * FROM LOCATION
+WHERE LOCATION_TYPE NOT IN ('PICK', 'BULK', 'STAGE')
+   OR CAPACITY <= 0;
+```
+
+#### **Konsistenz-Checks**
+- **Referentielle Integrität**
+- **Business Rule Compliance**
+- **Format-Validierung**
+- **Plausibilitäts-Prüfung**
+
+### 3.2 Konfliktlösung
+
+#### **Daten-Konflikte identifizieren**
+| Konflikttyp | Beschreibung | Lösung |
+|-------------|--------------|--------|
+| Timestamp | Verschiedene Änderungszeiten | Last-Write-Wins |
+| Business Logic | Widersprüchliche Geschäftsregeln | Manual Review |
+| Format | Unterschiedliche Datenformate | Transformation |
+| Missing Data | Fehlende Referenzen | Default-Werte |
+
+#### **Automatische Konfliktlösung**
+```python
+def resolve_data_conflict(sap_data, wms_data, conflict_type):
+    if conflict_type == "TIMESTAMP":
+        return sap_data if sap_data.timestamp > wms_data.timestamp else wms_data
+    elif conflict_type == "BUSINESS_CRITICAL":
+        # Escalate to manual review
+        create_manual_review_task(sap_data, wms_data)
+        return None
+    elif conflict_type == "FORMAT":
+        return transform_data(sap_data, wms_data)
+```
+
+### 3.3 Datenqualitäts-Metriken
+
+#### **KPIs für Datenqualität**
+- **Vollständigkeit**: 99.5% Mindest-Ziel
+- **Genauigkeit**: 99.8% Mindest-Ziel
+- **Konsistenz**: 99.9% zwischen Systemen
+- **Aktualität**: < 5 Minuten Verzögerung
+
+#### **Reporting-Dashboard**
+```javascript
+const dataQualityKPIs = {
+    completeness: calculateCompleteness(),
+    accuracy: calculateAccuracy(),
+    consistency: calculateConsistency(),
+    timeliness: calculateTimeliness()
+};
+
+updateDashboard(dataQualityKPIs);
+```
+
+## 4. Trouble-shooting und Fehlerbehandlung
+
+### 4.1 Häufige Integration-Probleme
+
+#### **Verbindungsprobleme**
+- **Netzwerk-Timeouts**
+- **Authentifizierung-Fehler**
+- **Firewall-Blockierung**
+- **Service-Unavailability**
+
+#### **Daten-Probleme**
+- **Format-Inkonsistenzen**
+- **Fehlende Stammdaten**
+- **Duplikate-Erkennung**
+- **Encoding-Probleme**
+
+#### **Performance-Probleme**
+- **Lange Response-Zeiten**
+- **Memory-Leaks**
+- **Database-Locks**
+- **Batch-Size-Optimierung**
+
+### 4.2 Diagnose-Verfahren
+
+#### **Schritt 1: Problem-Identifikation**
+```bash
+# Check interface status
+curl -X GET "http://wms-server/api/interfaces/sap/status"
+
+# Verify SAP connectivity
+ping sap-server.georgfischer.com
+
+# Check log files
+tail -f /var/log/wms/integration.log
+```
+
+#### **Schritt 2: Root-Cause-Analyse**
+1. **Timeline** der Ereignisse erstellen
+2. **System-Logs** korrelieren
+3. **Performance-Metriken** analysieren
+4. **Business-Impact** bewerten
+
+#### **Schritt 3: Lösungsimplementierung**
+- **Sofort-Maßnahmen** für kritische Probleme
+- **Workarounds** für temporäre Lösungen
+- **Langzeit-Fixes** für strukturelle Probleme
+- **Präventiv-Maßnahmen** für Zukunft
+
+### 4.3 Escalation-Prozesse
+
+#### **Eskalations-Level**
+| Level | Zeitrahmen | Verantwortlich | Maßnahmen |
+|-------|------------|----------------|-----------|
+| L1 | 0-15 min | WMS-Operator | Basic troubleshooting |
+| L2 | 15-60 min | Integration-Specialist | Advanced diagnosis |
+| L3 | 1-4 hours | System-Architect | Complex problem solving |
+| L4 | 4+ hours | Vendor/Expert | Escalation to external |
+
+#### **Kommunikations-Matrix**
+```
+Critical Issue → Immediate notification (SMS/Call)
+High Impact → 15-minute notification (Email/Teams)
+Medium Impact → 1-hour notification (Email)
+Low Impact → Daily summary report
+```
+
+## 5. Performance-Optimierung
+
+### 5.1 Throughput-Optimierung
+
+#### **Batch-Processing**
+```java
+public class OptimizedBatchProcessor {
+    private final int OPTIMAL_BATCH_SIZE = 100;
+    
+    public void processSAPData(List<SAPRecord> records) {
+        List<List<SAPRecord>> batches = partition(records, OPTIMAL_BATCH_SIZE);
+        
+        batches.parallelStream().forEach(batch -> {
+            processbatch(batch);
+        });
+    }
+}
+```
+
+#### **Connection-Pooling**
+```xml
+<connection-pool>
+    <initial-size>5</initial-size>
+    <max-size>20</max-size>
+    <timeout>30000</timeout>
+    <validation-query>SELECT 1 FROM DUAL</validation-query>
+</connection-pool>
+```
+
+### 5.2 Latency-Reduktion
+
+#### **Caching-Strategien**
+- **Stammdaten-Cache**: 24h TTL
+- **Configuration-Cache**: 1h TTL
+- **User-Session-Cache**: 30min TTL
+- **Query-Result-Cache**: 15min TTL
+
+#### **Asynchrone Verarbeitung**
+```python
+import asyncio
+
+async def process_sap_message(message):
+    # Non-blocking SAP call
+    result = await sap_client.process_async(message)
+    
+    # Update WMS database
+    await wms_database.update_async(result)
+    
+    # Send confirmation
+    await send_confirmation(message.id, result.status)
+```
+
+### 5.3 Monitoring und Alerting
+
+#### **Performance-Metriken**
+```yaml
+metrics:
+  response_time:
+    target: < 2000ms
+    warning: > 1500ms
+    critical: > 3000ms
+  
+  throughput:
+    target: > 1000 messages/minute
+    warning: < 800 messages/minute
+    critical: < 500 messages/minute
+  
+  error_rate:
+    target: < 0.1%
+    warning: > 0.05%
+    critical: > 0.2%
+```
+
+#### **Alerting-Regeln**
+```json
+{
+  "alerts": [
+    {
+      "name": "High_Error_Rate",
+      "condition": "error_rate > 0.2%",
+      "severity": "critical",
+      "notification": ["sms", "email", "teams"]
+    },
+    {
+      "name": "Performance_Degradation", 
+      "condition": "response_time > 3000ms",
+      "severity": "warning",
+      "notification": ["email", "teams"]
+    }
+  ]
+}
+```
+
+## 6. Disaster Recovery und Backup
+
+### 6.1 Backup-Strategien
+
+#### **Daten-Backup**
+- **Full Backup**: Täglich um 02:00 Uhr
+- **Incremental Backup**: Alle 4 Stunden
+- **Transaction Log Backup**: Alle 15 Minuten
+- **Configuration Backup**: Bei jeder Änderung
+
+#### **System-Backup**
+```bash
+#!/bin/bash
+# Daily backup script
+
+# Database backup
+mysqldump -u wms_user -p wms_database > /backup/wms_$(date +%Y%m%d).sql
+
+# Configuration backup
+tar -czf /backup/config_$(date +%Y%m%d).tar.gz /opt/wms/config/
+
+# Log backup
+tar -czf /backup/logs_$(date +%Y%m%d).tar.gz /var/log/wms/
+
+# Cleanup old backups (keep 30 days)
+find /backup -name "*.sql" -mtime +30 -delete
+find /backup -name "*.tar.gz" -mtime +30 -delete
+```
+
+### 6.2 Recovery-Verfahren
+
+#### **RTO/RPO-Ziele**
+- **RTO (Recovery Time Objective)**: 4 Stunden
+- **RPO (Recovery Point Objective)**: 15 Minuten
+- **MTTR (Mean Time To Recovery)**: 2 Stunden
+- **MTBF (Mean Time Between Failures)**: 720 Stunden
+
+#### **Recovery-Szenarien**
+| Szenario | Impact | Recovery-Zeit | Verfahren |
+|----------|--------|---------------|-----------|
+| Interface-Ausfall | Medium | 30 min | Service restart |
+| Database-Corruption | High | 2 hours | Restore from backup |
+| Complete-System-Loss | Critical | 4 hours | Full disaster recovery |
+| Data-Center-Outage | Critical | 8 hours | Failover to DR site |
+
+### 6.3 Business Continuity
+
+#### **Fallback-Verfahren**
+```yaml
+fallback_procedures:
+  interface_failure:
+    - Switch to manual processing
+    - Use paper-based workflows
+    - Implement periodic sync
+    
+  sap_unavailable:
+    - Activate standalone mode
+    - Queue transactions
+    - Process when SAP returns
+    
+  complete_outage:
+    - Activate emergency procedures
+    - Use backup systems
+    - Manual warehouse operations
+```
+
+#### **Communication-Plan**
+1. **Immediate**: Technisches Team benachrichtigen
+2. **15 Minuten**: Management informieren
+3. **30 Minuten**: Betroffene Bereiche informieren
+4. **1 Stunde**: Kunden/Lieferanten benachrichtigen
+5. **2 Stunden**: Recovery-Status kommunizieren
+
+## 7. Praktische Übungen
+
+### Übung 1: Interface-Konfiguration
+1. **Erstellen Sie ein neues SAP-Interface**
+2. **Konfigurieren Sie Mapping-Regeln**
+3. **Testen Sie die Verbindung**
+4. **Dokumentieren Sie die Konfiguration**
+
+### Übung 2: Fehlerbehandlung
+1. **Simulieren Sie einen Interface-Fehler**
+2. **Analysieren Sie die Logs**
+3. **Implementieren Sie eine Lösung**
+4. **Testen Sie die Wiederherstellung**
+
+### Übung 3: Performance-Optimierung
+1. **Messen Sie aktuelle Performance**
+2. **Identifizieren Sie Bottlenecks**
+3. **Implementieren Sie Optimierungen**
+4. **Validieren Sie Verbesserungen**
+
+### Übung 4: Disaster Recovery
+1. **Führen Sie einen Backup-Test durch**
+2. **Simulieren Sie einen Systemausfall**
+3. **Stellen Sie aus Backup wieder her**
+4. **Dokumentieren Sie RTO/RPO**
+
+## 8. Best Practices
+
+### 8.1 Development Guidelines
+
+#### **Code-Standards**
+- **Error Handling**: Immer try-catch verwenden
+- **Logging**: Strukturierte Logs mit Korrelations-IDs
+- **Configuration**: Externalisierung aller Parameter
+- **Testing**: Unit Tests für alle Interface-Funktionen
+
+#### **Deployment-Verfahren**
+- **Blue-Green Deployment** für Zero-Downtime
+- **Rollback-Strategien** für jeden Release
+- **Smoke Tests** nach Deployment
+- **Monitoring** während Rollout
+
+### 8.2 Operations Guidelines
+
+#### **Monitoring-Checklists**
+- [ ] Interface-Status täglich prüfen
+- [ ] Performance-Metriken wöchentlich reviewen
+- [ ] Error-Logs täglich analysieren
+- [ ] Backup-Status täglich kontrollieren
+- [ ] Kapazitäts-Planung monatlich aktualisieren
+
+#### **Maintenance-Windows**
+- **Planned Maintenance**: Sonntags 02:00-06:00
+- **Emergency Maintenance**: Nach Bedarf mit 1h Notice
+- **Patch-Deployment**: Monatlich im Maintenance-Window
+- **Major Upgrades**: Quartalweise geplant
+
+## 9. Zertifizierung und Assessment
+
+### Theoretische Prüfung (40 Punkte)
+
+1. **Welche Interface-Technologie wird für Echtzeit-Datenabgleich verwendet?**
+   - [x] RFC (Remote Function Call)
+   - [ ] IDoc (Intermediate Document)
+   - [ ] File Transfer
+   - [ ] Email
+
+2. **Was ist die empfohlene Batch-Size für optimale Performance?**
+   - [ ] 50
+   - [x] 100
+   - [ ] 500
+   - [ ] 1000
+
+3. **Welches RTO-Ziel haben wir für kritische Ausfälle?**
+   - [ ] 1 Stunde
+   - [ ] 2 Stunden
+   - [x] 4 Stunden
+   - [ ] 8 Stunden
+
+### Praktische Bewertung (60 Punkte)
+
+#### **Aufgabe 1: Interface-Setup (20 Punkte)**
+- Korrekte RFC-Konfiguration
+- Funktionierender Datenabgleich
+- Proper Error Handling
+- Dokumentation
+
+#### **Aufgabe 2: Troubleshooting (20 Punkte)**
+- Problem-Identifikation
+- Root-Cause-Analyse
+- Lösungsimplementierung
+- Präventiv-Maßnahmen
+
+#### **Aufgabe 3: Performance-Tuning (20 Punkte)**
+- Baseline-Messung
+- Bottleneck-Identifikation
+- Optimierung-Implementation
+- Verbesserungs-Validierung
+
+### Bewertungsschema
+
+- **90-100 Punkte**: Expert Level - Eigenständige Systemverantwortung
+- **80-89 Punkte**: Advanced Level - Komplexe Aufgaben unter Supervision
+- **70-79 Punkte**: Intermediate Level - Routine-Aufgaben eigenständig
+- **<70 Punkte**: Basic Level - Weitere Schulung erforderlich
+
+## 10. Weiterführende Ressourcen
+
+### Dokumentation
+- **SAP-Integration Guide**: /docs/sap-integration.pdf
+- **API-Documentation**: /docs/api-reference.html
+- **Troubleshooting-Guide**: /docs/troubleshooting.pdf
+- **Best-Practices**: /docs/integration-best-practices.pdf
+
+### Training Materials
+- **Hands-on Labs**: /training/integration-labs/
+- **Video Tutorials**: /training/videos/integration/
+- **Case Studies**: /training/case-studies/
+- **Certification Prep**: /training/certification/
+
+### Support Contacts
+
+**Integration Team:**
+- E-Mail: integration@georgfischer.com
+- Telefon: +41 81 770 1234
+- Hotline: +41 81 770 9999 (24/7)
+
+**SAP Basis Team:**
+- E-Mail: sap-basis@georgfischer.com
+- Telefon: +41 81 770 1240
+
+**Vendor Support:**
+- Jungheinrich: support.wms@jungheinrich.com
+- SAP: Premium Support Portal
+
+---
+
+*Dieses Training basiert auf Georg Fischer WMS Integration Standards v2.1*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*
+
+**Erfolgreiche Integration!**

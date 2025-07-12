@@ -1,49 +1,735 @@
 ---
 layout: default
 title: "Support"
-description: "Kontakt und Unterstützung"
+description: "Umfassende Hilfe und Unterstützung für das Georg Fischer WMS"
 breadcrumbs:
   - title: "WIKI"
   - title: "Support"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Support - Kontakt und Unterstützung</p>
+<div class="support-container">
+    <div class="support-header">
+        <h1><i class="fas fa-life-ring"></i> WMS Support Center</h1>
+        <p class="support-intro">Hier finden Sie alle Informationen für schnelle Hilfe und professionelle Unterstützung bei Ihrem Georg Fischer WMS.</p>
     </div>
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Support" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
+    <div class="emergency-banner">
+        <div class="emergency-content">
+            <div class="emergency-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="emergency-text">
+                <h2>🚨 Notfall-Support</h2>
+                <p>Bei kritischen Systemausfällen oder Sicherheitsproblemen</p>
+                <div class="emergency-contact">
+                    <strong>24/7 Hotline: +41 81 770 9999</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="support-content">
+        <div class="support-navigation">
+            <div class="support-tabs">
+                <button class="tab-btn active" data-tab="contacts">Kontakte</button>
+                <button class="tab-btn" data-tab="self-help">Selbsthilfe</button>
+                <button class="tab-btn" data-tab="tickets">Tickets</button>
+                <button class="tab-btn" data-tab="resources">Ressourcen</button>
+                <button class="tab-btn" data-tab="escalation">Eskalation</button>
+                <button class="tab-btn" data-tab="feedback">Feedback</button>
+            </div>
         </div>
 
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../../../errors/contact//" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
+        <div class="support-sections">
+            <!-- Contacts Section -->
+            <div class="support-section active" id="contacts">
+                <h2>Support-Kontakte</h2>
                 
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
+                <div class="contact-categories">
+                    <div class="contact-category priority-critical">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Kritische Störungen (24/7)</h3>
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <h4>🚨 WMS Notfall-Hotline</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>Telefon:</strong> +41 81 770 9999
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Verfügbarkeit:</strong> 24/7 (Sofortige Antwort)
+                                    </div>
+                                    <div class="contact-description">
+                                        Für Systemausfälle, Datenverluste, Sicherheitsprobleme und kritische Produktionsstörungen
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-category priority-high">
+                        <h3><i class="fas fa-tools"></i> Technischer Support (Geschäftszeiten)</h3>
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <h4>💻 IT-Support Desk</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>Telefon:</strong> +41 81 770 5678
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>E-Mail:</strong> wms-support@georgfischer.com
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Verfügbarkeit:</strong> Mo-Fr 07:00-18:00
+                                    </div>
+                                    <div class="contact-description">
+                                        Software-Probleme, Performance-Issues, Konfigurationsfragen
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <h4>🔧 Hardware-Support</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>Telefon:</strong> +41 81 770 1280
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>E-Mail:</strong> hardware-support@georgfischer.com
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Verfügbarkeit:</strong> Mo-Fr 08:00-17:00
+                                    </div>
+                                    <div class="contact-description">
+                                        Scanner, Drucker, PCs, Fördertechnik, Netzwerk-Hardware
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-category priority-medium">
+                        <h3><i class="fas fa-users"></i> Fachliche Unterstützung</h3>
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <h4>👨‍💼 Schichtführer</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>Intern:</strong> 1234
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Funkruf:</strong> 112
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Verfügbarkeit:</strong> Schichtzeiten
+                                    </div>
+                                    <div class="contact-description">
+                                        Erste Anlaufstelle für alle operativen Fragen und Probleme
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <h4>📚 Schulung & Training</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>E-Mail:</strong> erick.hernandez.zenil@georgfischer.com
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Telefon:</strong> +41 81 770 1234
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Verfügbarkeit:</strong> Mo-Fr 08:00-17:00
+                                    </div>
+                                    <div class="contact-description">
+                                        WMS-Schulungen, Dokumentation, Zertifizierung, Best Practices
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <h4>🔍 Qualitätssicherung</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>E-Mail:</strong> qualitaet@georgfischer.com
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Telefon:</strong> +41 81 770 1260
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Verfügbarkeit:</strong> Mo-Fr 07:00-16:00
+                                    </div>
+                                    <div class="contact-description">
+                                        Qualitätsprüfungen, Sperrungen, Freigaben, Reklamationen
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-category priority-low">
+                        <h3><i class="fas fa-cog"></i> Spezielle Services</h3>
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <h4>📊 SAP-Integration</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>E-Mail:</strong> sap-basis@georgfischer.com
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Telefon:</strong> +41 81 770 1240
+                                    </div>
+                                    <div class="contact-description">
+                                        Interface-Probleme, Datenabgleich, EDI-Schnittstellen
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <h4>🏗️ Jungheinrich Support</h4>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <strong>E-Mail:</strong> support.wms@jungheinrich.com
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Telefon:</strong> +49 40 6948 0
+                                    </div>
+                                    <div class="contact-description">
+                                        Herstellersupport für WMS-Software und System-Updates
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Self-Help Section -->
+            <div class="support-section" id="self-help">
+                <h2>Selbsthilfe-Ressourcen</h2>
                 
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
+                <div class="self-help-categories">
+                    <div class="help-category">
+                        <h3><i class="fas fa-search"></i> Häufige Probleme</h3>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <h4>Login-Probleme</h4>
+                                <p>Benutzername/Passwort wird nicht akzeptiert</p>
+                                <a href="../../errors/common/#login-problems" class="help-link">Lösung anzeigen →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>Scanner funktioniert nicht</h4>
+                                <p>Barcode wird nicht erkannt oder Scanner reagiert nicht</p>
+                                <a href="../../errors/common/#scanner-problems" class="help-link">Lösung anzeigen →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>System sehr langsam</h4>
+                                <p>Lange Wartezeiten bei Buchungen oder Navigation</p>
+                                <a href="../../errors/common/#performance-issues" class="help-link">Lösung anzeigen →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>Drucker druckt nicht</h4>
+                                <p>Etiketten oder Belege werden nicht gedruckt</p>
+                                <a href="../../errors/common/#printer-issues" class="help-link">Lösung anzeigen →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-category">
+                        <h3><i class="fas fa-book-open"></i> Anleitungen & Tutorials</h3>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <h4>WMS Grundlagen</h4>
+                                <p>Erste Schritte und Navigation im System</p>
+                                <a href="../../training/basics/" class="help-link">Training starten →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>Wareneingang durchführen</h4>
+                                <p>Schritt-für-Schritt Anleitung für WE-Buchungen</p>
+                                <a href="../../training/receiving/" class="help-link">Training starten →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>Kommissionierung</h4>
+                                <p>Pick-Aufträge effizient abarbeiten</p>
+                                <a href="../../training/picking/" class="help-link">Training starten →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>Bestandsverwaltung</h4>
+                                <p>Inventur und Bestandskorrekturen</p>
+                                <a href="../bestandsverwaltung/" class="help-link">Wiki öffnen →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-category">
+                        <h3><i class="fas fa-video"></i> Video-Tutorials</h3>
+                        <div class="help-items">
+                            <div class="help-item">
+                                <h4>System-Navigation</h4>
+                                <p>Grundlegende Navigation im WMS (5 Min.)</p>
+                                <a href="/videos/navigation-basics.mp4" class="help-link">Video ansehen →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>Barcode-Scanner Setup</h4>
+                                <p>Scanner konfigurieren und verwenden (3 Min.)</p>
+                                <a href="/videos/scanner-setup.mp4" class="help-link">Video ansehen →</a>
+                            </div>
+                            <div class="help-item">
+                                <h4>Fehlerbehandlung</h4>
+                                <p>Häufige Fehlermeldungen verstehen (8 Min.)</p>
+                                <a href="/videos/error-handling.mp4" class="help-link">Video ansehen →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-checks">
+                    <h3><i class="fas fa-list-check"></i> Schnelle System-Checks</h3>
+                    <div class="check-list">
+                        <div class="check-item">
+                            <input type="checkbox" id="check1">
+                            <label for="check1">Internetverbindung prüfen (ping wms-server.georgfischer.com)</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check2">
+                            <label for="check2">Browser-Cache leeren (Strg+F5)</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check3">
+                            <label for="check3">Scanner-Verbindung testen (Test-Barcode scannen)</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check4">
+                            <label for="check4">Drucker-Status prüfen (Testseite drucken)</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="check5">
+                            <label for="check5">Andere Arbeitsplätze testen (Problem isolieren)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tickets Section -->
+            <div class="support-section" id="tickets">
+                <h2>Support-Tickets verwalten</h2>
+                
+                <div class="ticket-system">
+                    <div class="ticket-creation">
+                        <h3><i class="fas fa-plus-circle"></i> Neues Ticket erstellen</h3>
+                        <div class="ticket-form">
+                            <div class="form-row">
+                                <label>Priorität:</label>
+                                <select class="priority-select">
+                                    <option value="low">Niedrig - Allgemeine Fragen</option>
+                                    <option value="medium">Mittel - Funktionseinschränkung</option>
+                                    <option value="high">Hoch - Arbeitsbehinderung</option>
+                                    <option value="critical">Kritisch - Systemausfall</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label>Kategorie:</label>
+                                <select class="category-select">
+                                    <option value="software">Software-Problem</option>
+                                    <option value="hardware">Hardware-Problem</option>
+                                    <option value="training">Schulung/Anleitung</option>
+                                    <option value="access">Zugriff/Berechtigung</option>
+                                    <option value="performance">Performance-Problem</option>
+                                    <option value="integration">Integration/Interface</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label>Betroffener Bereich:</label>
+                                <select class="area-select">
+                                    <option value="warehouse">Wareneingang</option>
+                                    <option value="picking">Kommissionierung</option>
+                                    <option value="inventory">Inventur</option>
+                                    <option value="shipping">Versand</option>
+                                    <option value="admin">Administration</option>
+                                    <option value="reporting">Berichte</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label>Beschreibung:</label>
+                                <textarea placeholder="Beschreiben Sie das Problem so detailliert wie möglich:
+- Was wollten Sie tun?
+- Was ist passiert?
+- Fehlermeldungen?
+- Welche Schritte haben Sie bereits versucht?"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn-primary" onclick="createTicket()">Ticket erstellen</button>
+                                <button class="btn-secondary" onclick="resetForm()">Zurücksetzen</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ticket-guidelines">
+                        <h3><i class="fas fa-info-circle"></i> Ticket-Richtlinien</h3>
+                        <div class="guidelines-content">
+                            <div class="guideline-section">
+                                <h4>🎯 Effektive Problem-Beschreibung</h4>
+                                <ul>
+                                    <li><strong>Spezifisch:</strong> Konkrete Schritte und Ergebnisse beschreiben</li>
+                                    <li><strong>Reproduzierbar:</strong> Schritte zur Nachstellung angeben</li>
+                                    <li><strong>Screenshots:</strong> Bei visuellen Problemen Bilder anhängen</li>
+                                    <li><strong>Kontext:</strong> Wann tritt das Problem auf? Immer oder nur manchmal?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="guideline-section">
+                                <h4>⏱️ Response-Zeiten</h4>
+                                <div class="response-times">
+                                    <div class="time-item critical">
+                                        <strong>Kritisch:</strong> 15 Minuten
+                                    </div>
+                                    <div class="time-item high">
+                                        <strong>Hoch:</strong> 2 Stunden
+                                    </div>
+                                    <div class="time-item medium">
+                                        <strong>Mittel:</strong> 4 Stunden
+                                    </div>
+                                    <div class="time-item low">
+                                        <strong>Niedrig:</strong> 1 Arbeitstag
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ticket-tracking">
+                    <h3><i class="fas fa-chart-line"></i> Ticket-Status verfolgen</h3>
+                    <div class="status-info">
+                        <p>Ticket-ID: <code>WMS-2025-001234</code></p>
+                        <p>Verfolgen Sie den Status Ihres Tickets:</p>
+                        <a href="mailto:wms-support@georgfischer.com?subject=Ticket%20Status%20WMS-2025-001234" class="btn-secondary">Status abfragen</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="support-section" id="resources">
+                <h2>Support-Ressourcen</h2>
+                
+                <div class="resources-grid">
+                    <div class="resource-category">
+                        <h3><i class="fas fa-download"></i> Downloads</h3>
+                        <div class="resource-items">
+                            <div class="resource-item">
+                                <h4>WMS Benutzerhandbuch</h4>
+                                <p>Komplettes Benutzerhandbuch (PDF, 15 MB)</p>
+                                <a href="/downloads/wms-benutzerhandbuch.pdf" class="resource-link">Download →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Schnellreferenz-Karten</h4>
+                                <p>Pocket-Guide für häufige Funktionen (PDF, 2 MB)</p>
+                                <a href="/downloads/wms-schnellreferenz.pdf" class="resource-link">Download →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Scanner-Treiber</h4>
+                                <p>Aktuelle Treiber für Barcode-Scanner (ZIP, 50 MB)</p>
+                                <a href="/downloads/scanner-drivers.zip" class="resource-link">Download →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Drucker-Vorlagen</h4>
+                                <p>Etiketten-Templates für verschiedene Drucker (ZIP, 5 MB)</p>
+                                <a href="/downloads/label-templates.zip" class="resource-link">Download →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resource-category">
+                        <h3><i class="fas fa-link"></i> Nützliche Links</h3>
+                        <div class="resource-items">
+                            <div class="resource-item">
+                                <h4>WMS Portal</h4>
+                                <p>Direkter Zugang zum WMS-System</p>
+                                <a href="https://wms.georgfischer.com" class="resource-link" target="_blank">Öffnen →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>SAP GUI Download</h4>
+                                <p>SAP-Client für Integration</p>
+                                <a href="https://sap.georgfischer.com/gui" class="resource-link" target="_blank">Download →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Jungheinrich Support Portal</h4>
+                                <p>Herstellersupport und Updates</p>
+                                <a href="https://support.jungheinrich.com" class="resource-link" target="_blank">Besuchen →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Georg Fischer Intranet</h4>
+                                <p>Interne Ressourcen und Dokumentation</p>
+                                <a href="https://intranet.georgfischer.com" class="resource-link" target="_blank">Besuchen →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resource-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Utilities</h3>
+                        <div class="resource-items">
+                            <div class="resource-item">
+                                <h4>System Health Check</h4>
+                                <p>Automatische Diagnose häufiger Probleme</p>
+                                <a href="javascript:runHealthCheck()" class="resource-link">Starten →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Performance Monitor</h4>
+                                <p>System-Performance in Echtzeit überwachen</p>
+                                <a href="/tools/performance-monitor.html" class="resource-link">Öffnen →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Scanner Test Tool</h4>
+                                <p>Barcode-Scanner kalibrieren und testen</p>
+                                <a href="/tools/scanner-test.html" class="resource-link">Testen →</a>
+                            </div>
+                            <div class="resource-item">
+                                <h4>Drucker Setup Wizard</h4>
+                                <p>Automatische Drucker-Konfiguration</p>
+                                <a href="/tools/printer-setup.html" class="resource-link">Konfigurieren →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Escalation Section -->
+            <div class="support-section" id="escalation">
+                <h2>Eskalations-Verfahren</h2>
+                
+                <div class="escalation-flow">
+                    <h3><i class="fas fa-layer-group"></i> Eskalations-Stufen</h3>
+                    <div class="escalation-levels">
+                        <div class="escalation-level level-1">
+                            <div class="level-header">
+                                <h4>Level 1: Selbsthilfe</h4>
+                                <span class="time-limit">0-15 Minuten</span>
+                            </div>
+                            <div class="level-content">
+                                <div class="actions">
+                                    <ul>
+                                        <li>Dokumentation durchsuchen</li>
+                                        <li>Häufige Probleme prüfen</li>
+                                        <li>System-Checks durchführen</li>
+                                        <li>Kollegen fragen</li>
+                                    </ul>
+                                </div>
+                                <div class="escalation-trigger">
+                                    <strong>Weiter zu Level 2 wenn:</strong> Problem nicht gelöst
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="escalation-level level-2">
+                            <div class="level-header">
+                                <h4>Level 2: Schichtführer</h4>
+                                <span class="time-limit">15-30 Minuten</span>
+                            </div>
+                            <div class="level-content">
+                                <div class="contact-info">
+                                    <strong>Kontakt:</strong> Intern 1234 oder Funkruf 112
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li>Problem-Analyse durch erfahrene Kraft</li>
+                                        <li>Workarounds implementieren</li>
+                                        <li>Ressourcen umverteilen</li>
+                                        <li>Erste Lösungsversuche</li>
+                                    </ul>
+                                </div>
+                                <div class="escalation-trigger">
+                                    <strong>Weiter zu Level 3 wenn:</strong> Technisches Problem oder Arbeitsbehinderung
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="escalation-level level-3">
+                            <div class="level-header">
+                                <h4>Level 3: IT-Support</h4>
+                                <span class="time-limit">30 Min - 2 Stunden</span>
+                            </div>
+                            <div class="level-content">
+                                <div class="contact-info">
+                                    <strong>Kontakt:</strong> +41 81 770 5678 oder wms-support@georgfischer.com
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li>Technische Diagnose</li>
+                                        <li>System-Logs analysieren</li>
+                                        <li>Software-Patches anwenden</li>
+                                        <li>Remote-Support durchführen</li>
+                                    </ul>
+                                </div>
+                                <div class="escalation-trigger">
+                                    <strong>Weiter zu Level 4 wenn:</strong> Kritischer Systemausfall oder komplexe Integration-Probleme
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="escalation-level level-4">
+                            <div class="level-header">
+                                <h4>Level 4: Vendor Support</h4>
+                                <span class="time-limit">2+ Stunden</span>
+                            </div>
+                            <div class="level-content">
+                                <div class="contact-info">
+                                    <strong>Kontakt:</strong> +41 81 770 9999 (koordiniert Vendor-Kontakt)
+                                </div>
+                                <div class="actions">
+                                    <ul>
+                                        <li>Jungheinrich-Experten einbeziehen</li>
+                                        <li>System-Architektur-Analyse</li>
+                                        <li>Emergency-Patches</li>
+                                        <li>Disaster Recovery aktivieren</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="escalation-matrix">
+                    <h3><i class="fas fa-table"></i> Eskalations-Matrix</h3>
+                    <table class="escalation-table">
+                        <thead>
+                            <tr>
+                                <th>Problemtyp</th>
+                                <th>Priorität</th>
+                                <th>Direkte Eskalation an</th>
+                                <th>Max. Zeit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="critical">
+                                <td>Kompletter Systemausfall</td>
+                                <td>Kritisch</td>
+                                <td>Level 4 (Notfall-Hotline)</td>
+                                <td>Sofort</td>
+                            </tr>
+                            <tr class="high">
+                                <td>Datenbank-Korruption</td>
+                                <td>Hoch</td>
+                                <td>Level 3 (IT-Support)</td>
+                                <td>15 Min</td>
+                            </tr>
+                            <tr class="high">
+                                <td>Interface-Ausfall SAP</td>
+                                <td>Hoch</td>
+                                <td>Level 3 (IT-Support)</td>
+                                <td>30 Min</td>
+                            </tr>
+                            <tr class="medium">
+                                <td>Scanner-Probleme</td>
+                                <td>Mittel</td>
+                                <td>Level 2 (Schichtführer)</td>
+                                <td>15 Min</td>
+                            </tr>
+                            <tr class="medium">
+                                <td>Performance-Probleme</td>
+                                <td>Mittel</td>
+                                <td>Level 2 (Schichtführer)</td>
+                                <td>30 Min</td>
+                            </tr>
+                            <tr class="low">
+                                <td>Login-Probleme</td>
+                                <td>Niedrig</td>
+                                <td>Level 1 (Selbsthilfe)</td>
+                                <td>15 Min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Feedback Section -->
+            <div class="support-section" id="feedback">
+                <h2>Feedback & Verbesserungen</h2>
+                
+                <div class="feedback-content">
+                    <div class="feedback-form">
+                        <h3><i class="fas fa-star"></i> Support bewerten</h3>
+                        <div class="rating-section">
+                            <label>Wie zufrieden waren Sie mit unserem Support?</label>
+                            <div class="star-rating">
+                                <span class="star" data-rating="1">⭐</span>
+                                <span class="star" data-rating="2">⭐</span>
+                                <span class="star" data-rating="3">⭐</span>
+                                <span class="star" data-rating="4">⭐</span>
+                                <span class="star" data-rating="5">⭐</span>
+                            </div>
+                        </div>
+                        
+                        <div class="feedback-areas">
+                            <div class="feedback-area">
+                                <label>Was lief gut?</label>
+                                <textarea placeholder="Beschreiben Sie positive Aspekte..."></textarea>
+                            </div>
+                            <div class="feedback-area">
+                                <label>Was könnte verbessert werden?</label>
+                                <textarea placeholder="Ihre Verbesserungsvorschläge..."></textarea>
+                            </div>
+                            <div class="feedback-area">
+                                <label>Zusätzliche Kommentare</label>
+                                <textarea placeholder="Weitere Anmerkungen..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn-primary" onclick="submitFeedback()">Feedback senden</button>
+                        </div>
+                    </div>
+
+                    <div class="improvement-suggestions">
+                        <h3><i class="fas fa-lightbulb"></i> Verbesserungsvorschläge</h3>
+                        <div class="suggestion-form">
+                            <div class="form-row">
+                                <label>Kategorie:</label>
+                                <select>
+                                    <option value="documentation">Dokumentation</option>
+                                    <option value="training">Schulungen</option>
+                                    <option value="system">System/Software</option>
+                                    <option value="process">Prozesse</option>
+                                    <option value="support">Support-Service</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label>Ihr Vorschlag:</label>
+                                <textarea placeholder="Beschreiben Sie Ihre Idee zur Verbesserung..."></textarea>
+                            </div>
+                            <div class="form-row">
+                                <label>Geschätzter Nutzen:</label>
+                                <select>
+                                    <option value="high">Hoch - Significant improvement</option>
+                                    <option value="medium">Mittel - Moderate improvement</option>
+                                    <option value="low">Niedrig - Minor improvement</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn-secondary" onclick="submitSuggestion()">Vorschlag einreichen</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-stats">
+                        <h3><i class="fas fa-chart-bar"></i> Support-Statistiken</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-value">98.2%</div>
+                                <div class="stat-label">Kundenzufriedenheit</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">4.6</div>
+                                <div class="stat-label">Durchschnittsbewertung</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">12 Min</div>
+                                <div class="stat-label">Ø Antwortzeit</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">94.8%</div>
+                                <div class="stat-label">First-Call-Resolution</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

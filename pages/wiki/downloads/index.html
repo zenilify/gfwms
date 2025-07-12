@@ -1,50 +1,603 @@
 ---
 layout: default
 title: "Downloads"
-description: "Nützliche Downloads und Hilfsmittel"
+description: "Software, Dokumentation und Tools für das Georg Fischer WMS"
 breadcrumbs:
   - title: "WIKI"
   - title: "Downloads"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Downloads - Nützliche Downloads und Hilfsmittel</p>
+<div class="downloads-container">
+    <div class="downloads-header">
+        <h1><i class="fas fa-download"></i> WMS Downloads</h1>
+        <p class="downloads-intro">Hier finden Sie alle wichtigen Software-Tools, Dokumentationen und Hilfsmittel für die optimale Nutzung des Georg Fischer WMS.</p>
     </div>
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Downloads" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
+    <div class="search-section">
+        <div class="search-bar">
+            <input type="text" id="downloadSearch" placeholder="Downloads durchsuchen..." />
+            <button onclick="searchDownloads()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="filter-tags">
+            <button class="filter-tag active" data-category="all">Alle</button>
+            <button class="filter-tag" data-category="documentation">Dokumentation</button>
+            <button class="filter-tag" data-category="software">Software</button>
+            <button class="filter-tag" data-category="drivers">Treiber</button>
+            <button class="filter-tag" data-category="templates">Vorlagen</button>
+            <button class="filter-tag" data-category="tools">Tools</button>
+        </div>
+    </div>
+
+    <div class="downloads-content">
+        <!-- Documentation Category -->
+        <div class="download-category" data-category="documentation">
+            <h2><i class="fas fa-book"></i> Dokumentation</h2>
+            <div class="downloads-grid">
+                <div class="download-item featured">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>WMS Benutzerhandbuch</h3>
+                        <p>Komplettes Benutzerhandbuch für das Jungheinrich WMS bei Georg Fischer</p>
+                        <div class="download-meta">
+                            <span class="version">Version 2.1</span>
+                            <span class="size">15.2 MB</span>
+                            <span class="date">12.01.2025</span>
+                        </div>
+                        <div class="download-stats">
+                            <span><i class="fas fa-download"></i> 1,247 Downloads</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/wms-benutzerhandbuch-v2.1.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <button class="btn-preview" onclick="previewPDF('wms-benutzerhandbuch-v2.1.pdf')">
+                            <i class="fas fa-eye"></i> Vorschau
+                        </button>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Schnellreferenz-Karten</h3>
+                        <p>Kompakte Übersichtskarten für häufig verwendete WMS-Funktionen</p>
+                        <div class="download-meta">
+                            <span class="version">Version 1.5</span>
+                            <span class="size">2.1 MB</span>
+                            <span class="date">08.01.2025</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/wms-schnellreferenz-v1.5.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Sicherheitsrichtlinien</h3>
+                        <p>Umfassende Sicherheitsrichtlinien für neue Mitarbeiter</p>
+                        <div class="download-meta">
+                            <span class="version">Version 3.0</span>
+                            <span class="size">8.5 MB</span>
+                            <span class="date">15.12.2024</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/wms-sicherheitsrichtlinien-v3.0.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Troubleshooting Guide</h3>
+                        <p>Lösungsansätze für häufige WMS-Probleme und Fehlermeldungen</p>
+                        <div class="download-meta">
+                            <span class="version">Version 2.3</span>
+                            <span class="size">6.8 MB</span>
+                            <span class="date">22.12.2024</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/wms-troubleshooting-v2.3.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Integration API Documentation</h3>
+                        <p>Technische Dokumentation für SAP-WMS Integration</p>
+                        <div class="download-meta">
+                            <span class="version">Version 1.8</span>
+                            <span class="size">12.4 MB</span>
+                            <span class="date">05.01.2025</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/wms-api-documentation-v1.8.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href=".././/" class="btn btn-primary">Verwandte Seite öffnen</a>
+        <!-- Software Category -->
+        <div class="download-category" data-category="software">
+            <h2><i class="fas fa-laptop"></i> Software</h2>
+            <div class="downloads-grid">
+                <div class="download-item featured">
+                    <div class="download-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>WMS PC-Client</h3>
+                        <p>Jungheinrich WMS PC-Client für Georg Fischer (Windows 10/11)</p>
+                        <div class="download-meta">
+                            <span class="version">Version 5.2.1</span>
+                            <span class="size">285 MB</span>
+                            <span class="date">18.01.2025</span>
+                        </div>
+                        <div class="system-requirements">
+                            <strong>Systemanforderungen:</strong>
+                            <ul>
+                                <li>Windows 10/11 (64-bit)</li>
+                                <li>4 GB RAM minimum</li>
+                                <li>.NET Framework 4.8</li>
+                                <li>Netzwerkverbindung zum WMS-Server</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/wms-pc-client-v5.2.1.msi" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <a href="/installation-guides/pc-client-installation.pdf" class="btn-secondary">
+                            <i class="fas fa-book"></i> Installationsanleitung
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>WMS Mobile Client</h3>
+                        <p>Mobile App für Tablet und Smartphone (Android/iOS)</p>
+                        <div class="download-meta">
+                            <span class="version">Version 3.1.4</span>
+                            <span class="size">45 MB</span>
+                            <span class="date">10.01.2025</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.jungheinrich.gf.wms" class="btn-download" target="_blank">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </a>
+                        <a href="https://apps.apple.com/app/jungheinrich-wms-gf/id123456789" class="btn-download" target="_blank">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>WMS Configuration Tool</h3>
+                        <p>Konfigurationstool für Administratoren (Nur für IT-Personal)</p>
+                        <div class="download-meta">
+                            <span class="version">Version 2.0.3</span>
+                            <span class="size">128 MB</span>
+                            <span class="date">03.01.2025</span>
+                        </div>
+                        <div class="access-restriction">
+                            <i class="fas fa-lock"></i>
+                            <span>Administratorrechte erforderlich</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <button class="btn-restricted" onclick="requestAccess('config-tool')">
+                            <i class="fas fa-key"></i> Zugang anfordern
+                        </button>
+                    </div>
                 </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>SAP GUI für Windows</h3>
+                        <p>SAP GUI Client für Integration (Latest Version 7.80)</p>
+                        <div class="download-meta">
+                            <span class="version">Version 7.80</span>
+                            <span class="size">1.2 GB</span>
+                            <span class="date">Update verfügbar</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/sap-gui-780.exe" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drivers Category -->
+        <div class="download-category" data-category="drivers">
+            <h2><i class="fas fa-microchip"></i> Treiber & Hardware</h2>
+            <div class="downloads-grid">
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Barcode Scanner Treiber</h3>
+                        <p>Universal-Treiber für alle unterstützten Barcode-Scanner</p>
+                        <div class="download-meta">
+                            <span class="version">Version 4.2.1</span>
+                            <span class="size">52 MB</span>
+                            <span class="date">15.01.2025</span>
+                        </div>
+                        <div class="compatibility">
+                            <strong>Kompatible Modelle:</strong>
+                            <span>Honeywell 1900g, Zebra DS8178, Datalogic QuickScan</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/scanner-drivers-v4.2.1.zip" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Etikettendrucker Treiber</h3>
+                        <p>Treiber-Paket für Zebra und Brother Etikettendrucker</p>
+                        <div class="download-meta">
+                            <span class="version">Version 3.5.2</span>
+                            <span class="size">89 MB</span>
+                            <span class="date">12.01.2025</span>
+                        </div>
+                        <div class="compatibility">
+                            <strong>Kompatible Modelle:</strong>
+                            <span>Zebra ZT411, Brother QL-820NWB, Zebra GX430t</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/printer-drivers-v3.5.2.zip" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-usb"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>USB-zu-Serial Treiber</h3>
+                        <p>Treiber für USB-zu-Serial Adapter (RS232 Geräte)</p>
+                        <div class="download-meta">
+                            <span class="version">Version 2.12.28</span>
+                            <span class="size">8.4 MB</span>
+                            <span class="date">20.12.2024</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/usb-serial-drivers-v2.12.28.zip" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Netzwerk-Tools</h3>
+                        <p>Diagnose-Tools für Netzwerk- und Verbindungsprobleme</p>
+                        <div class="download-meta">
+                            <span class="version">Version 1.6.0</span>
+                            <span class="size">15.7 MB</span>
+                            <span class="date">28.12.2024</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/network-tools-v1.6.0.zip" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Templates Category -->
+        <div class="download-category" data-category="templates">
+            <h2><i class="fas fa-file-alt"></i> Vorlagen & Templates</h2>
+            <div class="downloads-grid">
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Etiketten-Vorlagen</h3>
+                        <p>Druckvorlagen für verschiedene Etikettentypen und -größen</p>
+                        <div class="download-meta">
+                            <span class="version">Version 2.4</span>
+                            <span class="size">25.6 MB</span>
+                            <span class="date">14.01.2025</span>
+                        </div>
+                        <div class="template-formats">
+                            <strong>Enthaltene Formate:</strong>
+                            <span>ZPL, EPL, PDF, Word, Excel</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/label-templates-v2.4.zip" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Inventur-Vorlagen</h3>
+                        <p>Excel-Vorlagen für manuelle Inventurerfassung</p>
+                        <div class="download-meta">
+                            <span class="version">Version 1.8</span>
+                            <span class="size">1.2 MB</span>
+                            <span class="date">09.01.2025</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/inventur-templates-v1.8.zip" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Checklisten-Vorlagen</h3>
+                        <p>Standardisierte Checklisten für verschiedene WMS-Prozesse</p>
+                        <div class="download-meta">
+                            <span class="version">Version 1.3</span>
+                            <span class="size">3.8 MB</span>
+                            <span class="date">11.01.2025</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/checklist-templates-v1.3.zip" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Schulungs-Präsentationen</h3>
+                        <p>PowerPoint-Vorlagen für interne WMS-Schulungen</p>
+                        <div class="download-meta">
+                            <span class="version">Version 2.1</span>
+                            <span class="size">18.4 MB</span>
+                            <span class="date">16.01.2025</span>
+                        </div>
+                        <div class="access-restriction">
+                            <i class="fas fa-users"></i>
+                            <span>Nur für zertifizierte Trainer</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <button class="btn-restricted" onclick="requestAccess('training-presentations')">
+                            <i class="fas fa-key"></i> Zugang anfordern
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Category -->
+        <div class="download-category" data-category="tools">
+            <h2><i class="fas fa-tools"></i> Diagnose & Tools</h2>
+            <div class="downloads-grid">
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>WMS Health Check Tool</h3>
+                        <p>Automatische Diagnose häufiger WMS-Probleme</p>
+                        <div class="download-meta">
+                            <span class="version">Version 1.4.2</span>
+                            <span class="size">12.8 MB</span>
+                            <span class="date">17.01.2025</span>
+                        </div>
+                        <div class="tool-features">
+                            <strong>Features:</strong>
+                            <ul>
+                                <li>Verbindungstest zu WMS-Server</li>
+                                <li>Hardware-Kompatibilitätsprüfung</li>
+                                <li>Performance-Analyse</li>
+                                <li>Automatischer Bericht</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/wms-health-check-v1.4.2.exe" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Scanner Test Utility</h3>
+                        <p>Test- und Kalibrierungstool für Barcode-Scanner</p>
+                        <div class="download-meta">
+                            <span class="version">Version 2.1.0</span>
+                            <span class="size">8.9 MB</span>
+                            <span class="date">13.01.2025</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/scanner-test-utility-v2.1.0.exe" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Printer Setup Wizard</h3>
+                        <p>Automatische Konfiguration von Etikettendruckern</p>
+                        <div class="download-meta">
+                            <span class="version">Version 1.7.1</span>
+                            <span class="size">22.3 MB</span>
+                            <span class="date">19.01.2025</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="/downloads/printer-setup-wizard-v1.7.1.exe" class="btn-download" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>Performance Monitor</h3>
+                        <p>Real-time Überwachung der WMS-System-Performance</p>
+                        <div class="download-meta">
+                            <span class="version">Version 3.2.1</span>
+                            <span class="size">35.7 MB</span>
+                            <span class="date">21.01.2025</span>
+                        </div>
+                        <div class="access-restriction">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Für IT-Administratoren</span>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <button class="btn-restricted" onclick="requestAccess('performance-monitor')">
+                            <i class="fas fa-key"></i> Zugang anfordern
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Statistics -->
+    <div class="download-stats-section">
+        <h2><i class="fas fa-chart-bar"></i> Download-Statistiken</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">15,247</div>
+                    <div class="stat-label">Downloads diesen Monat</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-file"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">Verfügbare Dateien</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">1,356</div>
+                    <div class="stat-label">Aktive Nutzer</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">4.7</div>
+                    <div class="stat-label">Ø Bewertung</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Information -->
+    <div class="download-support">
+        <h2><i class="fas fa-life-ring"></i> Hilfe & Support</h2>
+        <div class="support-grid">
+            <div class="support-item">
+                <h3>Installation Probleme?</h3>
+                <p>Bei Problemen mit der Installation oder Konfiguration kontaktieren Sie unser Support-Team.</p>
+                <a href="../support/" class="btn-secondary">Support kontaktieren</a>
+            </div>
+            <div class="support-item">
+                <h3>Datei nicht gefunden?</h3>
+                <p>Vermissen Sie eine wichtige Datei oder benötigen Sie eine spezielle Version?</p>
+                <a href="mailto:wms-support@georgfischer.com" class="btn-secondary">Anfrage senden</a>
+            </div>
+            <div class="support-item">
+                <h3>Feedback geben</h3>
+                <p>Helfen Sie uns, unsere Downloads zu verbessern. Teilen Sie Ihr Feedback mit uns.</p>
+                <button class="btn-secondary" onclick="openFeedbackForm()">Feedback geben</button>
             </div>
         </div>
     </div>

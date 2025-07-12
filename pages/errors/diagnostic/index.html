@@ -1,53 +1,936 @@
 ---
 layout: default
-title: "System Diagnostics"
-description: "Systemdiagnose-Tools und -Verfahren"
+title: "Systemdiagnose"
+description: "Sichere Diagnoseverfahren und erste Hilfe bei WMS-Problemen"
 breadcrumbs:
-  - title: "ERRORS"
-  - title: "System Diagnostics"
+  - title: "Fehlerdiagnose"
+  - title: "Systemdiagnose"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">System Diagnostics - Systemdiagnose-Tools und -Verfahren</p>
-    </div>
-
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "System Diagnostics" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../common/" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
+<div class="diagnostic-container">
+    <div class="diagnostic-header">
+        <div class="safety-warning">
+            <i class="fas fa-shield-alt"></i>
+            <div class="warning-content">
+                <h2>🛡️ SICHERHEIT ZUERST: Diagnose-Regeln</h2>
+                <p><strong>Für neue Mitarbeiter:</strong> Diese Seite zeigt NUR sichere Diagnoseschritte, die ohne Risiko durchgeführt werden können. Bei unklaren Problemen oder kritischen Fehlern IMMER Experten hinzuziehen.</p>
+                <div class="safety-contacts">
+                    <span><strong>Erste Hilfe:</strong> Schichtführer Intern 1234</span>
+                    <span><strong>Technisch:</strong> IT-Support +41 81 770 5678</span>
+                    <span><strong>Notfall:</strong> Hotline +41 81 770 9999</span>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="diagnostic-content">
+        <h1><i class="fas fa-stethoscope"></i> WMS Systemdiagnose - Sichere Verfahren</h1>
+        
+        <div class="diagnostic-levels">
+            <h2>Diagnose-Berechtigung nach Erfahrungsgrad</h2>
+            <div class="levels-grid">
+                <div class="level-card new-employee">
+                    <div class="level-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>NEUE MITARBEITER</h3>
+                    <p>Erste 6 Monate</p>
+                    <div class="allowed-actions">
+                        <strong>Erlaubte Aktionen:</strong>
+                        <ul>
+                            <li>Grundlegende Sichtprüfungen</li>
+                            <li>Status-Abfragen (nur Lesen)</li>
+                            <li>Einfache Verbindungsprüfungen</li>
+                            <li>Dokumentation von Problemen</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="level-card experienced">
+                    <div class="level-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>ERFAHRENE MITARBEITER</h3>
+                    <p>6+ Monate Erfahrung</p>
+                    <div class="allowed-actions">
+                        <strong>Zusätzlich erlaubt:</strong>
+                        <ul>
+                            <li>Log-Dateien einsehen</li>
+                            <li>Erweiterte Diagnose-Tools</li>
+                            <li>Konfigurationsprüfungen</li>
+                            <li>Performance-Analysen</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="level-card expert">
+                    <div class="level-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>EXPERTEN/ADMIN</h3>
+                    <p>Spezielle Berechtigung</p>
+                    <div class="allowed-actions">
+                        <strong>Vollzugriff auf:</strong>
+                        <ul>
+                            <li>Alle Diagnose-Tools</li>
+                            <li>System-Konfiguration</li>
+                            <li>Datenbank-Diagnose</li>
+                            <li>Tiefgreifende Analysen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="basic-diagnostics">
+            <h2><i class="fas fa-search"></i> Grundlegende Diagnose (für ALLE)</h2>
+            
+            <div class="diagnostic-category">
+                <h3>👀 Sichtprüfungen (100% sicher)</h3>
+                <div class="diagnostic-steps">
+                    <div class="diagnostic-step safe">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>Hardware-Sichtprüfung</h4>
+                        </div>
+                        <div class="step-content">
+                            <p>Physische Kontrolle aller sichtbaren Komponenten</p>
+                            <div class="checklist">
+                                <div class="checklist-item">
+                                    <i class="fas fa-check"></i>
+                                    <span><strong>Monitor:</strong> Eingeschaltet? Bild klar? Kabel fest?</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <i class="fas fa-check"></i>
+                                    <span><strong>PC:</strong> LED leuchtet? Lüfter läuft? Keine ungewöhnlichen Geräusche?</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <i class="fas fa-check"></i>
+                                    <span><strong>Tastatur/Maus:</strong> Kabel intakt? USB-Verbindung fest?</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <i class="fas fa-check"></i>
+                                    <span><strong>Scanner:</strong> LED-Status? Kabel ordnungsgemäß?</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <i class="fas fa-check"></i>
+                                    <span><strong>Drucker:</strong> Eingeschaltet? Papier vorhanden? Fehlermeldungen?</span>
+                                </div>
+                                <div class="checklist-item">
+                                    <i class="fas fa-check"></i>
+                                    <span><strong>Waage:</strong> Display funktioniert? Kabel angeschlossen?</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="diagnostic-step safe">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h4>Software-Status prüfen</h4>
+                        </div>
+                        <div class="step-content">
+                            <p>Oberflächliche Kontrolle der Anwendungen (OHNE Änderungen)</p>
+                            <div class="safe-checks">
+                                <h5>✅ Sichere Prüfungen:</h5>
+                                <ul>
+                                    <li><strong>WMS-Client:</strong> Startet die Anwendung? Loginbildschirm erreichbar?</li>
+                                    <li><strong>Netzwerk:</strong> Andere Webseiten erreichbar? Internet verfügbar?</li>
+                                    <li><strong>Drucker-Status:</strong> Windows-Druckerwarteschlange prüfen</li>
+                                    <li><strong>Festplatte:</strong> Windows-Explorer öffnen - reagiert normal?</li>
+                                </ul>
+                            </div>
+                            <div class="not-allowed">
+                                <h5>❌ NICHT ERLAUBT für neue Mitarbeiter:</h5>
+                                <ul>
+                                    <li>Systemkonfiguration öffnen</li>
+                                    <li>Dienste starten/stoppen</li>
+                                    <li>Registry bearbeiten</li>
+                                    <li>Netzwerkeinstellungen ändern</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="diagnostic-step safe">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h4>Fehlermeldungen dokumentieren</h4>
+                        </div>
+                        <div class="step-content">
+                            <p>Vollständige und genaue Aufzeichnung aller Probleme</p>
+                            <div class="documentation-template">
+                                <h5>📝 Dokumentations-Vorlage:</h5>
+                                <div class="template-form">
+                                    <strong>PROBLEM-DOKUMENTATION</strong><br><br>
+                                    <strong>Datum/Zeit:</strong> [TT.MM.JJJJ HH:MM]<br>
+                                    <strong>Arbeitsplatz:</strong> [PC-Name/Nummer]<br>
+                                    <strong>Benutzer:</strong> [Ihr Login-Name]<br>
+                                    <strong>Problem:</strong> [Kurze Beschreibung]<br>
+                                    <strong>Fehlermeldung:</strong> [Exakter Text - Screenshot empfohlen]<br>
+                                    <strong>Wann tritt auf:</strong> [Beim Start? Bei bestimmter Aktion?]<br>
+                                    <strong>Häufigkeit:</strong> [Immer? Manchmal? Erstmalig?]<br>
+                                    <strong>Letzte Änderung:</strong> [Was wurde zuletzt gemacht?]<br>
+                                    <strong>Auswirkung:</strong> [Was funktioniert nicht?]<br>
+                                    <strong>Bereits versucht:</strong> [Was wurde schon probiert?]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="safe-troubleshooting">
+            <h2><i class="fas fa-tools"></i> Sichere Lösungsversuche (für neue Mitarbeiter)</h2>
+            
+            <div class="troubleshooting-categories">
+                <div class="troubleshooting-category">
+                    <h3>🔌 Verbindungsprobleme</h3>
+                    <div class="troubleshooting-steps">
+                        <div class="safe-step">
+                            <h4>Problem: "Keine Netzwerkverbindung"</h4>
+                            <div class="safe-actions">
+                                <h5>✅ Sichere Schritte (in dieser Reihenfolge):</h5>
+                                <ol>
+                                    <li><strong>Kabel prüfen:</strong> Netzwerkkabel fest angesteckt?</li>
+                                    <li><strong>LED-Status:</strong> Leuchten am Netzwerkanschluss?</li>
+                                    <li><strong>Andere Geräte:</strong> Funktioniert Netzwerk an anderen PCs?</li>
+                                    <li><strong>Neustart:</strong> PC herunterfahren und neu starten</li>
+                                    <li><strong>5 Minuten warten</strong> und erneut testen</li>
+                                    <li><strong>Meldung:</strong> Bei anhaltenden Problemen IT-Support informieren</li>
+                                </ol>
+                            </div>
+                            <div class="escalation-trigger">
+                                <strong>⚠️ Sofort IT-Support rufen wenn:</strong>
+                                <ul>
+                                    <li>Mehrere PCs betroffen</li>
+                                    <li>Kompletter Bereich ohne Netzwerk</li>
+                                    <li>Nach Neustart immer noch kein Netzwerk</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="safe-step">
+                            <h4>Problem: "Scanner reagiert nicht"</h4>
+                            <div class="safe-actions">
+                                <h5>✅ Sichere Schritte:</h5>
+                                <ol>
+                                    <li><strong>USB-Kabel:</strong> Anschluss prüfen und fest einstecken</li>
+                                    <li><strong>USB-Port wechseln:</strong> Anderen Port am PC versuchen</li>
+                                    <li><strong>Scanner ab-/anstecken:</strong> 10 Sekunden warten</li>
+                                    <li><strong>LED-Test:</strong> Leuchtet Scanner beim Anschließen?</li>
+                                    <li><strong>Ersatz-Scanner:</strong> Falls verfügbar testen</li>
+                                    <li><strong>Workaround:</strong> Manuelle Eingabe verwenden</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="safe-step">
+                            <h4>Problem: "Drucker druckt nicht"</h4>
+                            <div class="safe-actions">
+                                <h5>✅ Sichere Schritte:</h5>
+                                <ol>
+                                    <li><strong>Grundprüfung:</strong> Drucker eingeschaltet? Grüne LED?</li>
+                                    <li><strong>Material:</strong> Papier/Etiketten vorhanden und richtig eingelegt?</li>
+                                    <li><strong>Staus:</strong> Sichtbare Papierstaus?</li>
+                                    <li><strong>USB/Netzwerk:</strong> Kabel fest angeschlossen?</li>
+                                    <li><strong>Neustart:</strong> Drucker aus-/einschalten</li>
+                                    <li><strong>Test-Seite:</strong> Windows-Testdruck versuchen</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="troubleshooting-category">
+                    <h3>💻 Software-Probleme</h3>
+                    <div class="troubleshooting-steps">
+                        <div class="safe-step">
+                            <h4>Problem: "WMS startet nicht"</h4>
+                            <div class="safe-actions">
+                                <h5>✅ Sichere Schritte:</h5>
+                                <ol>
+                                    <li><strong>Desktop-Icon:</strong> Doppelklick auf WMS-Symbol</li>
+                                    <li><strong>5 Minuten warten:</strong> System braucht Zeit zum Laden</li>
+                                    <li><strong>Taskmanager:</strong> Läuft WMS bereits im Hintergrund?</li>
+                                    <li><strong>PC-Neustart:</strong> Vollständiger Neustart</li>
+                                    <li><strong>Erneut versuchen:</strong> Nach Neustart WMS starten</li>
+                                    <li><strong>Meldung:</strong> Bei Fehlschlag IT-Support kontaktieren</li>
+                                </ol>
+                            </div>
+                            <div class="warning-signs">
+                                <strong>⚠️ Warnsignale für sofortige Meldung:</strong>
+                                <ul>
+                                    <li>Fehlermeldung "Database not found"</li>
+                                    <li>Fehlermeldung "License error"</li>
+                                    <li>Mehrere Versuche ohne Erfolg</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="safe-step">
+                            <h4>Problem: "WMS reagiert langsam"</h4>
+                            <div class="safe-actions">
+                                <h5>✅ Sichere Maßnahmen:</h5>
+                                <ol>
+                                    <li><strong>Geduld:</strong> Längere Wartezeiten einplanen</li>
+                                    <li><strong>Andere Programme:</strong> Unnötige Anwendungen schließen</li>
+                                    <li><strong>Speicher prüfen:</strong> Task-Manager > Performance</li>
+                                    <li><strong>Neustart planen:</strong> In der nächsten Pause</li>
+                                    <li><strong>Alternative:</strong> Anderen PC verwenden falls verfügbar</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="diagnostic-tools">
+            <h2><i class="fas fa-wrench"></i> Erlaubte Diagnose-Tools</h2>
+            
+            <div class="tools-by-level">
+                <div class="tool-level beginner">
+                    <h3>🟢 Für NEUE MITARBEITER (sicher)</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card safe">
+                            <h4><i class="fas fa-desktop"></i> Windows Task-Manager</h4>
+                            <p><strong>Zweck:</strong> Grundlegende System-Übersicht</p>
+                            <div class="tool-usage">
+                                <strong>Sichere Verwendung:</strong>
+                                <ul>
+                                    <li>[Strg] + [Shift] + [Esc] drücken</li>
+                                    <li>NUR "Performance" Tab ansehen</li>
+                                    <li>CPU, Speicher, Festplatte prüfen</li>
+                                    <li>NICHTS beenden oder ändern!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tool-card safe">
+                            <h4><i class="fas fa-wifi"></i> Windows Netzwerk-Status</h4>
+                            <p><strong>Zweck:</strong> Netzwerkverbindung prüfen</p>
+                            <div class="tool-usage">
+                                <strong>Sichere Verwendung:</strong>
+                                <ul>
+                                    <li>Rechtsklick auf Netzwerk-Symbol</li>
+                                    <li>"Netzwerk- und Interneteinstellungen öffnen"</li>
+                                    <li>Status ablesen (nur schauen!)</li>
+                                    <li>KEINE Änderungen vornehmen!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tool-card safe">
+                            <h4><i class="fas fa-print"></i> Windows Drucker-Warteschlange</h4>
+                            <p><strong>Zweck:</strong> Druckaufträge einsehen</p>
+                            <div class="tool-usage">
+                                <strong>Sichere Verwendung:</strong>
+                                <ul>
+                                    <li>Start > Einstellungen > Drucker</li>
+                                    <li>Drucker auswählen</li>
+                                    <li>"Warteschlange öffnen"</li>
+                                    <li>Status der Druckaufträge ansehen</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tool-card safe">
+                            <h4><i class="fas fa-camera"></i> Screenshot-Tool</h4>
+                            <p><strong>Zweck:</strong> Fehlermeldungen dokumentieren</p>
+                            <div class="tool-usage">
+                                <strong>Verwendung:</strong>
+                                <ul>
+                                    <li>[Windows] + [Shift] + [S] drücken</li>
+                                    <li>Bereich mit Fehlermeldung auswählen</li>
+                                    <li>Screenshot wird in Zwischenablage kopiert</li>
+                                    <li>In E-Mail oder Word einfügen für Dokumentation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-level intermediate">
+                    <h3>🟡 Für ERFAHRENE MITARBEITER (mit Vorsicht)</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card caution">
+                            <h4><i class="fas fa-list"></i> Windows Ereignisanzeige</h4>
+                            <p><strong>Zweck:</strong> System-Logs einsehen</p>
+                            <div class="tool-usage">
+                                <strong>Vorsichtige Verwendung:</strong>
+                                <ul>
+                                    <li>Start > "Ereignisanzeige" eingeben</li>
+                                    <li>Nur Windows-Logs > System/Anwendung</li>
+                                    <li>NUR LESEN - nichts löschen!</li>
+                                    <li>Fehler-Ereignisse zur Dokumentation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tool-card caution">
+                            <h4><i class="fas fa-server"></i> WMS System-Status</h4>
+                            <p><strong>Zweck:</strong> WMS interne Diagnose</p>
+                            <div class="tool-usage">
+                                <strong>Zugriff NUR mit Berechtigung:</strong>
+                                <ul>
+                                    <li>WMS > System > Systemstatus</li>
+                                    <li>Verbindungsstatus prüfen</li>
+                                    <li>Lizenz-Status einsehen</li>
+                                    <li>Performance-Metriken ablesen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-level expert">
+                    <h3>🔴 Nur für EXPERTEN/ADMINISTRATOREN</h3>
+                    <div class="expert-warning">
+                        <p><strong>⚠️ Diese Tools sind für neue Mitarbeiter NICHT ERLAUBT:</strong></p>
+                        <ul>
+                            <li>Registry Editor (regedit)</li>
+                            <li>System Configuration (msconfig)</li>
+                            <li>Services (services.msc)</li>
+                            <li>Computer Management</li>
+                            <li>WMS Datenbank-Tools</li>
+                            <li>Netzwerk-Konfiguration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="escalation-guide">
+            <h2><i class="fas fa-phone-alt"></i> Wann Experten hinzuziehen?</h2>
+            
+            <div class="escalation-scenarios">
+                <div class="escalation-card immediate">
+                    <h3>🚨 SOFORT eskalieren bei:</h3>
+                    <ul>
+                        <li>Fehlermeldungen mit "Database", "License", "Fatal Error"</li>
+                        <li>Mehrere Arbeitsplätze gleichzeitig betroffen</li>
+                        <li>Produktionsstillstand droht</li>
+                        <li>Datenverlust-Verdacht</li>
+                        <li>Sicherheitswarnungen</li>
+                        <li>Unbekannte Fehlermeldungen</li>
+                    </ul>
+                    <div class="contact-info">
+                        <strong>Kontakt:</strong> Notfall-Hotline +41 81 770 9999
+                    </div>
+                </div>
+
+                <div class="escalation-card quick">
+                    <h3>⚡ SCHNELL eskalieren bei:</h3>
+                    <ul>
+                        <li>Einfache Lösungsversuche ohne Erfolg</li>
+                        <li>Wiederkehrende Probleme</li>
+                        <li>Hardware-Defekten</li>
+                        <li>Netzwerk-Ausfällen</li>
+                        <li>Scanner/Drucker total ausgefallen</li>
+                        <li>WMS startet gar nicht</li>
+                    </ul>
+                    <div class="contact-info">
+                        <strong>Kontakt:</strong> IT-Support +41 81 770 5678
+                    </div>
+                </div>
+
+                <div class="escalation-card normal">
+                    <h3>📞 NORMAL eskalieren bei:</h3>
+                    <ul>
+                        <li>Langsame System-Performance</li>
+                        <li>Gelegentliche kleine Fehler</li>
+                        <li>Fragen zur Bedienung</li>
+                        <li>Optimierungswünsche</li>
+                        <li>Schulungsbedarf</li>
+                    </ul>
+                    <div class="contact-info">
+                        <strong>Kontakt:</strong> Schichtführer Intern 1234
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="documentation-best-practices">
+            <h2><i class="fas fa-clipboard-check"></i> Dokumentations-Best Practices</h2>
+            
+            <div class="best-practices-grid">
+                <div class="practice-card">
+                    <h3><i class="fas fa-camera"></i> Screenshots erstellen</h3>
+                    <ul>
+                        <li>Immer bei Fehlermeldungen</li>
+                        <li>[Windows] + [Shift] + [S] für Bereich-Screenshot</li>
+                        <li>Komplette Fehlermeldung erfassen</li>
+                        <li>Zeitstempel sichtbar machen</li>
+                    </ul>
+                </div>
+
+                <div class="practice-card">
+                    <h3><i class="fas fa-pen"></i> Präzise Beschreibungen</h3>
+                    <ul>
+                        <li>Exakte Uhrzeiten notieren</li>
+                        <li>Schritt-für-Schritt was gemacht wurde</li>
+                        <li>Wörtliche Fehlermeldungen</li>
+                        <li>Häufigkeit der Probleme</li>
+                    </ul>
+                </div>
+
+                <div class="practice-card">
+                    <h3><i class="fas fa-clock"></i> Zeitnahe Meldung</h3>
+                    <ul>
+                        <li>Probleme sofort dokumentieren</li>
+                        <li>Nicht bis Schichtende warten</li>
+                        <li>Details vergessen sich schnell</li>
+                        <li>Schnelle Hilfe ist bessere Hilfe</li>
+                    </ul>
+                </div>
+
+                <div class="practice-card">
+                    <h3><i class="fas fa-users"></i> Kollegen informieren</h3>
+                    <ul>
+                        <li>Andere vor bekannten Problemen warnen</li>
+                        <li>Workarounds weitergeben</li>
+                        <li>Erfolgreiche Lösungen teilen</li>
+                        <li>Gemeinsam lernen und verbessern</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="emergency-contacts">
+            <h2><i class="fas fa-address-book"></i> Diagnose & Support Kontakte</h2>
+            <div class="contacts-grid">
+                <div class="contact-card emergency">
+                    <h3>🚨 NOTFALL</h3>
+                    <p class="phone">+41 81 770 9999</p>
+                    <p>24/7 für kritische Systemausfälle</p>
+                    <div class="when-to-call">
+                        <strong>Anrufen bei:</strong>
+                        <ul>
+                            <li>Produktionsstopp</li>
+                            <li>Datenverlust-Verdacht</li>
+                            <li>Sicherheitsproblemen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-card technical">
+                    <h3>💻 IT-SUPPORT</h3>
+                    <p class="phone">+41 81 770 5678</p>
+                    <p>Mo-Fr 07:00-17:00</p>
+                    <div class="when-to-call">
+                        <strong>Anrufen bei:</strong>
+                        <ul>
+                            <li>Hardware-Problemen</li>
+                            <li>Software-Fehlern</li>
+                            <li>Netzwerk-Ausfällen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-card operations">
+                    <h3>👥 SCHICHTFÜHRER</h3>
+                    <p class="phone">Intern 1234</p>
+                    <p>Schichtbetrieb 24/7</p>
+                    <div class="when-to-call">
+                        <strong>Anrufen bei:</strong>
+                        <ul>
+                            <li>Ersten Problemen</li>
+                            <li>Bedienungsfragen</li>
+                            <li>Allgemeiner Hilfe</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-card maintenance">
+                    <h3>🔧 WARTUNG</h3>
+                    <p class="phone">+41 81 770 1280</p>
+                    <p>Mo-Fr 06:00-18:00</p>
+                    <div class="when-to-call">
+                        <strong>Anrufen bei:</strong>
+                        <ul>
+                            <li>Hardware-Defekten</li>
+                            <li>Drucker-Problemen</li>
+                            <li>Kabel-Schäden</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.diagnostic-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.safety-warning {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+    border: 3px solid #a7f3d0;
+}
+
+.safety-warning h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.safety-contacts {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.safety-contacts span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+}
+
+.diagnostic-content h1 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Diagnostic Levels */
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.level-card {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 2px solid;
+}
+
+.level-card.new-employee {
+    background: #f0fdf4;
+    border-color: #10b981;
+}
+
+.level-card.experienced {
+    background: #eff6ff;
+    border-color: #3b82f6;
+}
+
+.level-card.expert {
+    background: #fef3c7;
+    border-color: #f59e0b;
+}
+
+.level-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.level-card.new-employee .level-icon {
+    background: #10b981;
+}
+
+.level-card.experienced .level-icon {
+    background: #3b82f6;
+}
+
+.level-card.expert .level-icon {
+    background: #f59e0b;
+}
+
+/* Diagnostic Steps */
+.diagnostic-category {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.diagnostic-step {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #10b981;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.checklist {
+    margin: 1rem 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.checklist-item i {
+    color: #10b981;
+}
+
+/* Troubleshooting */
+.troubleshooting-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.troubleshooting-category {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.safe-step {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--radius-md);
+    border-left: 4px solid #10b981;
+}
+
+.safe-actions, .not-allowed, .escalation-trigger, .warning-signs {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
+
+.safe-actions {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+}
+
+.not-allowed {
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+}
+
+.escalation-trigger, .warning-signs {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+}
+
+/* Tools */
+.tools-by-level {
+    margin: 3rem 0;
+}
+
+.tool-level {
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.tool-level.beginner {
+    background: #f0fdf4;
+    border: 2px solid #10b981;
+}
+
+.tool-level.intermediate {
+    background: #eff6ff;
+    border: 2px solid #3b82f6;
+}
+
+.tool-level.expert {
+    background: #fef2f2;
+    border: 2px solid #dc2626;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tool-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.tool-card.safe {
+    border-left: 4px solid #10b981;
+}
+
+.tool-card.caution {
+    border-left: 4px solid #f59e0b;
+}
+
+.expert-warning {
+    background: #fef2f2;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 2px solid #dc2626;
+}
+
+/* Escalation */
+.escalation-scenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.escalation-card {
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 2px solid;
+}
+
+.escalation-card.immediate {
+    background: #fef2f2;
+    border-color: #dc2626;
+}
+
+.escalation-card.quick {
+    background: #fef3c7;
+    border-color: #f59e0b;
+}
+
+.escalation-card.normal {
+    background: #f0fdf4;
+    border-color: #10b981;
+}
+
+/* Best Practices */
+.best-practices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.practice-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid #10b981;
+}
+
+/* Contacts */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-card {
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 2px solid;
+}
+
+.contact-card.emergency {
+    background: #fef2f2;
+    border-color: #dc2626;
+}
+
+.contact-card.technical {
+    background: #eff6ff;
+    border-color: #3b82f6;
+}
+
+.contact-card.operations {
+    background: #f0fdf4;
+    border-color: #10b981;
+}
+
+.contact-card.maintenance {
+    background: #fef3c7;
+    border-color: #f59e0b;
+}
+
+.phone {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin: 0.5rem 0;
+}
+
+.when-to-call {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.documentation-template {
+    margin: 1rem 0;
+}
+
+.template-form {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .safety-contacts {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .levels-grid,
+    .troubleshooting-categories,
+    .tools-grid,
+    .escalation-scenarios,
+    .best-practices-grid,
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+</style>
 </div>
 
 <style>

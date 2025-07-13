@@ -23,369 +23,457 @@ next:
   url: "/pages/training/integration/"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Systemkonfiguration - Erweiterte WMS-Einstellungen</p>
+# Systemkonfiguration - Erweiterte WMS-Einstellungen
+
+<div class="safety-warning">
+    <div class="warning-icon">
+        <i class="fas fa-exclamation-triangle"></i>
     </div>
-
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Schulungsseite wird derzeit entwickelt</h2>
-            <p>Das Modul "Systemkonfiguration" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-preview">
-            <h3>Geplante Inhalte:</h3>
-            <div class="content-preview">
-                <div class="preview-section">
-                    <h4><i class="fas fa-cogs"></i> Systemparameter</h4>
-                    <ul>
-                        <li>WMS-Grundkonfiguration</li>
-                        <li>Lagerstruktur-Einstellungen</li>
-                        <li>Arbeitsplatz-Konfiguration</li>
-                        <li>Benutzer-Standardwerte</li>
-                    </ul>
-                </div>
-                
-                <div class="preview-section">
-                    <h4><i class="fas fa-flow-chart"></i> Workflow-Anpassungen</h4>
-                    <ul>
-                        <li>Prozess-Optimierung</li>
-                        <li>Automatisierung-Regeln</li>
-                        <li>Genehmigungsverfahren</li>
-                        <li>Eskalations-Management</li>
-                    </ul>
-                </div>
-                
-                <div class="preview-section">
-                    <h4><i class="fas fa-tachometer-alt"></i> Performance-Tuning</h4>
-                    <ul>
-                        <li>Datenbank-Optimierung</li>
-                        <li>Cache-Konfiguration</li>
-                        <li>Netzwerk-Einstellungen</li>
-                        <li>Monitoring-Setup</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="wip-timeline">
-            <h3>Entwicklungsplan:</h3>
-            <div class="timeline">
-                <div class="timeline-item completed">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Konzeptentwicklung</h4>
-                        <p>Abgeschlossen - Dezember 2024</p>
-                    </div>
-                </div>
-                <div class="timeline-item current">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Inhaltsproduktion</h4>
-                        <p>In Bearbeitung - Januar 2025</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Testing & Review</h4>
-                        <p>Geplant - Februar 2025</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h4>Veröffentlichung</h4>
-                        <p>Geplant - März 2025</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-users"></i>
-                    <h4>Benutzerverwaltung</h4>
-                    <p>Bereits verfügbar - Grundlagen der Systemkonfiguration</p>
-                    <a href="../users/" class="btn btn-primary">Modul öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Berichtswesen</h4>
-                    <p>Bereits verfügbar - System-Monitoring und Analyse</p>
-                    <a href="../reporting/" class="btn btn-primary">Modul öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Umfassende Dokumentation und Best Practices</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki öffnen</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="wip-contact">
-            <h3>Fragen oder Anregungen?</h3>
-            <p>Haben Sie spezifische Anforderungen für dieses Schulungsmodul? Kontaktieren Sie unser Schulungsteam:</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>erick.hernandez.zenil@georgfischer.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+41 81 770 1234</span>
-                </div>
-            </div>
-        </div>
+    <div class="warning-content">
+        <h3>⚠️ WICHTIGER SICHERHEITSHINWEIS</h3>
+        <p><strong>Nur für autorisierte Administratoren:</strong> Systemkonfigurationen können kritische Auswirkungen auf den Betrieb haben. Änderungen dürfen nur nach Rücksprache mit dem IT-Team vorgenommen werden.</p>
+        <p><strong>Backup-Pflicht:</strong> Vor jeder Konfigurationsänderung MUSS ein vollständiges System-Backup erstellt werden.</p>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+## Überblick
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
-}
+Die Systemkonfiguration des Jungheinrich WMS ermöglicht es Administratoren, das System an die spezifischen Anforderungen von Georg Fischer anzupassen. Dieses Modul vermittelt die notwendigen Kenntnisse für sichere und effiziente Systemkonfiguration.
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+## Lernziele
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+Nach Abschluss dieses Moduls können Sie:
+- Systemparameter sicher konfigurieren
+- Workflow-Anpassungen implementieren
+- Performance-Einstellungen optimieren
+- Backup- und Recovery-Strategien anwenden
+- Compliance-Anforderungen einhalten
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+## 1. Systemparameter-Konfiguration
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+### 1.1 Grundkonfiguration
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+#### **WMS-Server-Parameter**
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+```ini
+# Beispiel-Konfiguration
+[SERVER_CONFIG]
+MaxConnections=100
+DatabaseTimeout=30000
+LogLevel=INFO
+BackupInterval=24h
+```
 
-.wip-preview {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+**Wichtige Parameter:**
+- **MaxConnections**: Maximale gleichzeitige Verbindungen
+- **DatabaseTimeout**: Datenbank-Timeout in Millisekunden
+- **LogLevel**: Protokollierungsebene (DEBUG, INFO, WARN, ERROR)
+- **BackupInterval**: Automatisches Backup-Intervall
 
-.wip-preview h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+#### **Lagerstruktur-Einstellungen**
 
-.content-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
+**Konfigurierbare Bereiche:**
+- Hochregallager (HRL) Parameter
+- Automatikkleinteilelager (AKL) Einstellungen
+- Vorzone-Konfiguration
+- Qualitätszone-Parameter
+- Formenlager-Spezifikationen
 
-.preview-section {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    border-left: 4px solid #f59e0b;
-}
+### 1.2 Arbeitsplatz-Konfiguration
 
-.preview-section h4 {
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+#### **PC-Client Einstellungen**
 
-.preview-section ul {
-    list-style: none;
-    margin: 0;
-}
+**Standard-Konfiguration:**
+- Bildschirmauflösung und Layout
+- Tastaturkürzel-Zuordnung
+- Druckereinstellungen
+- Barcode-Scanner-Parameter
+- Timeout-Werte
 
-.preview-section li {
-    margin-bottom: 0.5rem;
-    padding-left: 1rem;
-    position: relative;
-}
+#### **Mobile Terminals**
 
-.preview-section li::before {
-    content: "•";
-    color: #f59e0b;
-    position: absolute;
-    left: 0;
-}
+**Konfigurationsaspekte:**
+- WLAN-Verbindungsparameter
+- Batterieoptimierung
+- Scan-Engine-Einstellungen
+- Display-Helligkeit und Kontrast
 
-.wip-timeline {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+### 1.3 Benutzer-Standardwerte
 
-.wip-timeline h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+**Konfigurierbare Elemente:**
+- Standard-Berechtigungen für neue Benutzer
+- Passwort-Richtlinien
+- Session-Timeout
+- Menü-Konfiguration je Benutzergruppe
 
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+## 2. Workflow-Anpassungen
 
-.timeline-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-}
+### 2.1 Prozess-Optimierung
 
-.timeline-marker {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--border-color);
-    border: 3px solid white;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-}
+#### **Wareneingang-Workflow**
 
-.timeline-item.completed .timeline-marker {
-    background: #10b981;
-}
+**Anpassbare Schritte:**
+1. **Anmeldung**: Automatische vs. manuelle Erfassung
+2. **Prüfung**: Qualitätskontroll-Workflows
+3. **Einlagerung**: Automatische Lagerplatz-Zuordnung
+4. **Dokumentation**: Beleg-Generierung und -Verteilung
 
-.timeline-item.current .timeline-marker {
-    background: #f59e0b;
-    animation: pulse 2s infinite;
-}
+#### **Kommissionierungs-Workflow**
 
-.timeline-content h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-}
+**Optimierungsoptionen:**
+- Pick-Listen-Generierung
+- Routenoptimierung
+- Qualitätskontroll-Punkte
+- Verpackungs-Workflows
 
-.timeline-content p {
-    color: var(--text-secondary);
-    margin: 0;
-}
+### 2.2 Automatisierung-Regeln
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+#### **Regel-Engine-Konfiguration**
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+```yaml
+# Beispiel: Automatische Lagerplatz-Zuordnung
+automaticStorageRules:
+  - condition: "articleType == 'A-PART'"
+    action: "assignToHRL"
+    priority: 1
+  - condition: "weight < 5kg"
+    action: "assignToAKL"
+    priority: 2
+```
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+**Automatisierungsfelder:**
+- Lagerplatz-Zuordnung
+- Prioritäts-Management
+- Transportauftrag-Erstellung
+- Bestandswarnung-Trigger
 
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
+### 2.3 Genehmigungsverfahren
 
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+#### **Mehrstufige Genehmigungen**
 
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+**Konfigurierbare Workflows:**
+1. **Bestandsumbuchungen** > 1000 CHF
+2. **Sonderlieferungen** außerhalb der Geschäftszeiten
+3. **Inventur-Korrekturen** über definierte Toleranzen
+4. **System-Parameter-Änderungen**
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
+#### **Eskalations-Management**
 
-.wip-contact {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+**Automatische Eskalation:**
+- Nach 2 Stunden ohne Bearbeitung → Teamleiter
+- Nach 4 Stunden ohne Bearbeitung → Abteilungsleiter
+- Nach 8 Stunden ohne Bearbeitung → Geschäftsführung
 
-.wip-contact h3 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+## 3. Performance-Tuning
 
-.contact-info {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-}
+### 3.1 Datenbank-Optimierung
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-secondary);
-}
+#### **Index-Management**
 
-.contact-item i {
-    color: #f59e0b;
-}
+**Kritische Indizes:**
+- Artikel-Stammdaten
+- Lagerort-Tabellen
+- Bewegungsdaten
+- Benutzerzugriffs-Logs
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-}
+#### **Wartungsaufgaben**
 
-@media (max-width: 768px) {
-    .content-preview,
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-info {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}
-</style>
+**Regelmäßige Optimierung:**
+```sql
+-- Beispiel: Statistiken aktualisieren
+UPDATE STATISTICS artikel_stamm;
+UPDATE STATISTICS lagerort_stamm;
+UPDATE STATISTICS bewegungsdaten;
+```
+
+### 3.2 Cache-Konfiguration
+
+#### **Memory-Cache**
+
+**Optimale Einstellungen:**
+- Artikel-Cache: 256 MB
+- Lagerort-Cache: 128 MB
+- Benutzer-Cache: 64 MB
+- Session-Cache: 32 MB
+
+#### **Disk-Cache**
+
+**Konfiguration:**
+- Temporäre Dateien: 2 GB
+- Log-Files: 1 GB
+- Backup-Cache: 5 GB
+
+### 3.3 Netzwerk-Einstellungen
+
+#### **Bandbreiten-Management**
+
+**QoS-Konfiguration:**
+- Kritische WMS-Daten: Höchste Priorität
+- SAP-Kommunikation: Hohe Priorität
+- Reporting: Mittlere Priorität
+- Backup-Traffic: Niedrige Priorität
+
+#### **Verbindungsoptimierung**
+
+**Parameter:**
+- Keep-Alive-Intervall: 60 Sekunden
+- Retry-Versuche: 3
+- Timeout: 30 Sekunden
+- Compression: Aktiviert
+
+## 4. Monitoring und Überwachung
+
+### 4.1 System-Monitoring
+
+#### **Performance-Metriken**
+
+**Zu überwachende Werte:**
+- CPU-Auslastung (< 80%)
+- Memory-Verbrauch (< 85%)
+- Disk-I/O (< 75%)
+- Netzwerk-Latenz (< 100ms)
+
+#### **Automatische Alerts**
+
+**Schwellenwerte:**
+- **Kritisch**: System nicht verfügbar
+- **Hoch**: Performance stark beeinträchtigt  
+- **Mittel**: Einzelne Komponenten betroffen
+- **Niedrig**: Präventive Warnungen
+
+### 4.2 Log-Management
+
+#### **Log-Kategorien**
+
+**Strukturierte Protokollierung:**
+- **System-Logs**: Server-Events und Fehler
+- **User-Logs**: Benutzeraktivitäten
+- **Performance-Logs**: Leistungsmetriken
+- **Security-Logs**: Sicherheitsereignisse
+
+#### **Log-Rotation**
+
+**Automatische Verwaltung:**
+- Tägliche Rotation ab 100 MB
+- Komprimierung nach 7 Tagen
+- Archivierung nach 30 Tagen
+- Löschung nach 1 Jahr
+
+## 5. Backup und Recovery
+
+### 5.1 Backup-Strategien
+
+#### **Vollbackup**
+
+**Zeitplan:**
+- **Produktivsystem**: Täglich um 02:00 Uhr
+- **Testsystem**: Wöchentlich sonntags
+- **Retention**: 30 Tage online, 12 Monate offline
+
+#### **Inkrementelles Backup**
+
+**Konfiguration:**
+- Alle 6 Stunden während Betriebszeiten
+- Nur geänderte Daten
+- Schnelle Recovery-Zeiten
+
+### 5.2 Recovery-Verfahren
+
+#### **Disaster Recovery**
+
+**RTO/RPO-Ziele:**
+- **Recovery Time Objective (RTO)**: 4 Stunden
+- **Recovery Point Objective (RPO)**: 1 Stunde
+- **Verfügbarkeit**: 99.5%
+
+#### **Recovery-Tests**
+
+**Regelmäßige Validierung:**
+- Monatliche Backup-Verifikation
+- Quartalsweise Restore-Tests
+- Jährliche Disaster-Recovery-Übung
+
+## 6. Sicherheits-Konfiguration
+
+### 6.1 Access Control
+
+#### **Benutzer-Authentifizierung**
+
+**Konfigurationsoptionen:**
+- Single Sign-On (SSO) mit Active Directory
+- Zwei-Faktor-Authentifizierung (2FA)
+- Passwort-Komplexitäts-Anforderungen
+- Account-Lockout-Richtlinien
+
+#### **Rollen-basierte Berechtigung**
+
+**Standard-Rollen:**
+- **WMS_ADMIN**: Vollzugriff auf alle Funktionen
+- **WMS_SUPERVISOR**: Erweiterte operative Rechte
+- **WMS_OPERATOR**: Standard-Benutzerrechte
+- **WMS_READONLY**: Nur Leseberechtigung
+
+### 6.2 Netzwerk-Sicherheit
+
+#### **Firewall-Konfiguration**
+
+**Erforderliche Ports:**
+- 1433: SQL Server Datenbank
+- 80/443: Web-Services
+- 8080: WMS-Server
+- 22: SSH-Zugang (nur für Administratoren)
+
+#### **VPN-Zugang**
+
+**Sichere Remote-Verbindungen:**
+- IPSec-Tunneling
+- Zertifikat-basierte Authentifizierung
+- Beschränkter Zugang nur für autorisierte IP-Bereiche
+
+## 7. Change Management
+
+### 7.1 Konfigurations-Kontrolle
+
+#### **Änderungs-Workflow**
+
+**Standardprozess:**
+1. **Antrag**: Formelle Änderungsanforderung
+2. **Bewertung**: Impact-Assessment durch IT-Team
+3. **Genehmigung**: Freigabe durch Systemverantwortlichen
+4. **Implementation**: Testumgebung → Produktivsystem
+5. **Verifikation**: Funktionstest und Monitoring
+6. **Dokumentation**: Aktualisierung der Systemdokumentation
+
+#### **Rollback-Verfahren**
+
+**Für den Notfall:**
+- Automatisches Rollback bei kritischen Fehlern
+- Manuelles Rollback innerhalb von 30 Minuten möglich
+- Vollständige Systemwiederherstellung aus Backup
+
+### 7.2 Dokumentation
+
+#### **Konfigurationsdokumentation**
+
+**Obligatorische Dokumentation:**
+- Systemparameter und deren Zweck
+- Abhängigkeiten zwischen Konfigurationen
+- Auswirkungen von Änderungen
+- Kontaktinformationen für Support
+
+## Praktische Übungen
+
+### Übung 1: Grundkonfiguration
+1. Überprüfen Sie die aktuellen Systemparameter
+2. Identifizieren Sie Optimierungspotential
+3. Erstellen Sie einen Änderungsplan
+4. Simulieren Sie die Änderungen im Testsystem
+
+### Übung 2: Performance-Monitoring
+1. Analysieren Sie die aktuellen Performance-Metriken
+2. Identifizieren Sie Engpässe
+3. Entwickeln Sie Optimierungsmaßnahmen
+4. Implementieren Sie Monitoring-Alerts
+
+### Übung 3: Backup-Recovery
+1. Führen Sie ein Test-Backup durch
+2. Simulieren Sie einen Systemausfall
+3. Stellen Sie das System aus dem Backup wieder her
+4. Dokumentieren Sie die Recovery-Zeit
+
+## Lernerfolgskontrolle
+
+### Fragen zur Selbstüberprüfung
+
+1. **Welche Schritte sind vor einer Konfigurationsänderung obligatorisch?**
+   - [ ] Nur IT-Team informieren
+   - [x] Backup erstellen und Change Request einreichen
+   - [ ] Direkt in Produktion ändern
+   - [ ] Nur dokumentieren
+
+2. **Was ist das Hauptziel von Performance-Tuning?**
+   - [ ] Kosten senken
+   - [x] Systemleistung und Stabilität optimieren
+   - [ ] Mehr Features hinzufügen
+   - [ ] Benutzeroberfläche verbessern
+
+3. **Wie oft sollten Backup-Restore-Tests durchgeführt werden?**
+   - [ ] Jährlich
+   - [ ] Monatlich  
+   - [x] Quartalsweise
+   - [ ] Nie
+
+### Bewertung
+- **80-100%**: Ausgezeichnet - Sie sind bereit für erweiterte Systemadministration
+- **60-79%**: Gut - Vertiefen Sie spezifische Bereiche
+- **40-59%**: Befriedigend - Zusätzliche Schulung empfohlen
+- **<40%**: Ungenügend - Grundlagen wiederholen
+
+## Compliance und Regularien
+
+### 7.3 Regulatory Compliance
+
+#### **Interne Richtlinien Georg Fischer**
+
+**Compliance-Anforderungen:**
+- ISO 9001: Qualitätsmanagementsystem
+- ISO 14001: Umweltmanagementsystem  
+- OHSAS 18001: Arbeitsschutzmanagement
+- Interne IT-Sicherheitsrichtlinien
+
+#### **Externe Vorschriften**
+
+**Zu beachtende Gesetze:**
+- Schweizerisches Datenschutzgesetz (DSG)
+- EU-DSGVO (bei EU-Geschäftstätigkeit)
+- Handelsgesetzbuch (Aufbewahrungsfristen)
+- Zollbestimmungen (bei internationalen Transporten)
+
+### 7.4 Audit-Funktionen
+
+#### **System-Auditing**
+
+**Automatische Protokollierung:**
+- Alle Systemkonfiguration-Änderungen
+- Benutzeranmeldungen und -aktivitäten
+- Datenzugriffe und -änderungen
+- System-Performance-Metriken
+
+#### **Compliance-Reporting**
+
+**Regelmäßige Berichte:**
+- Monatliche Sicherheitsauswertung
+- Quartalsweise Compliance-Überprüfung
+- Jährlicher Security-Audit
+- Ad-hoc Untersuchungen bei Vorfällen
+
+## Weiterführende Ressourcen
+
+### Dokumentation
+- **Georg Fischer IT-Handbuch**: Interne Systemrichtlinien
+- **Jungheinrich WMS Admin Guide**: Herstellerdokumentation
+- **Microsoft SQL Server Best Practices**: Datenbank-Optimierung
+
+### Tools und Utilities
+- **WMS Configuration Manager**: Grafische Konfigurationsoberfläche
+- **Performance Monitor**: System-Überwachung
+- **Backup Scheduler**: Automatisierte Backup-Verwaltung
+- **Log Analyzer**: Erweiterte Log-Auswertung
+
+## Kontakt und Support
+
+**Systemadministration:**
+- E-Mail: wms-admin@georgfischer.com
+- Telefon: +41 81 770 5678
+- Notfall: +41 81 770 9999 (24/7)
+
+**Change Management:**
+- E-Mail: change-management@georgfischer.com
+- ServiceDesk: Ticket-System im Intranet
+- Meetings: Wöchentlich mittwochs 14:00
+
+---
+
+*Dieser Trainingsinhalt basiert auf den Georg Fischer IT-Richtlinien und der Jungheinrich WMS Administrationsdokumentation, Version 2.1, Stand: März 2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*

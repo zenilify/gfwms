@@ -1,150 +1,773 @@
 ---
-layout: default
+layout: training
 title: "System Administration"
-description: "Erweiterte Systemadministration"
-breadcrumbs:
-  - title: "TRAINING"
-  - title: "System Administration"
+description: "Erweiterte WMS-Systemadministration für IT-Administratoren"
+duration: "90 Minuten"
+difficulty: "Specialized"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Systemkonfiguration"
+    url: "/pages/training/configuration/"
+  - title: "Sicherheit & Compliance"
+    url: "/pages/training/security/"
+learning_objectives:
+  - "Erweiterte Systemadministration durchführen"
+  - "Database Administration beherrschen"
+  - "Monitoring und Troubleshooting implementieren"
+  - "Backup und Recovery-Strategien anwenden"
+previous:
+  title: "Manager Training"
+  url: "/pages/training/manager/"
+next:
+  title: "Train-the-Trainer"
+  url: "/pages/training/trainer/"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">System Administration - Erweiterte Systemadministration</p>
+# System Administration - Erweiterte WMS-Administration
+
+<div class="admin-alert">
+    <div class="alert-icon">
+        <i class="fas fa-tools"></i>
     </div>
-
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "System Administration" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../../configuration//" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+    <div class="alert-content">
+        <h3>⚙️ ADMINISTRATOREN-TRAINING</h3>
+        <p><strong>Kritisch:</strong> Nur für autorisierte Systemadministratoren - Fehlerhafte Konfigurationen können Produktionsausfälle verursachen</p>
+        <p><strong>Sicherheit:</strong> Alle Änderungen müssen dokumentiert und getestet werden</p>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+## Überblick
+
+Dieses spezialisierte Training richtet sich an IT-Administratoren, die für die technische Betreuung des Jungheinrich WMS bei Georg Fischer verantwortlich sind. Es vermittelt tiefgreifende Kenntnisse für Systemadministration, Troubleshooting und Optimierung.
+
+## Lernziele
+
+Nach Abschluss dieses Moduls können Sie:
+- Erweiterte Systemadministration eigenständig durchführen
+- Database Administration und Performance-Tuning implementieren
+- Monitoring-Systeme konfigurieren und verwalten
+- Backup- und Recovery-Strategien umsetzen
+- Security-Hardening und Compliance sicherstellen
+
+## 1. Systemarchitektur Deep Dive
+
+### 1.1 WMS Infrastructure
+
+#### **System-Komponenten**
+
+```yaml
+wms_infrastructure:
+  application_tier:
+    wms_server: "Windows Server 2022"
+    iis_webserver: "IIS 10.0"
+    application_services: "Jungheinrich WMS Services"
+    
+  database_tier:
+    database_server: "SQL Server 2022 Enterprise"
+    instance_name: "WMSPROD"
+    database_name: "WMS_GF_PROD"
+    
+  client_tier:
+    pc_clients: "Windows 10/11 Enterprise"
+    mobile_terminals: "Android 11+ Industrial"
+    web_clients: "Chrome/Edge Latest"
+    
+  network_tier:
+    domain_controller: "Active Directory 2022"
+    dns_server: "Windows DNS"
+    dhcp_server: "Windows DHCP"
+```
+
+#### **Service Dependencies**
+
+```
+Active Directory
+├── SQL Server Database Engine
+│   ├── WMS Application Services
+│   │   ├── WMS Web Portal (IIS)
+│   │   ├── WMS PC Client Service
+│   │   └── WMS Mobile Service
+│   └── SQL Server Agent (Scheduled Jobs)
+└── Network Services (DNS, DHCP)
+```
+
+### 1.2 Advanced Configuration
+
+#### **Registry Settings**
+
+```registry
+[HKEY_LOCAL_MACHINE\SOFTWARE\Jungheinrich\WMS]
+"DatabaseServer"="WMSDB01"
+"DatabaseName"="WMS_GF_PROD"
+"LogLevel"=dword:00000002
+"MaxConnections"=dword:00000064
+"SessionTimeout"=dword:00001C20
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Jungheinrich\WMS\Performance]
+"CacheSize"=dword:00000100
+"QueryTimeout"=dword:0000001E
+"BulkInsertBatchSize"=dword:000003E8
+```
+
+#### **Service Configuration**
+
+```xml
+<!-- WMS Service Configuration -->
+<configuration>
+  <appSettings>
+    <add key="DatabaseConnectionString" 
+         value="Server=WMSDB01;Database=WMS_GF_PROD;Integrated Security=true;Connection Timeout=30;" />
+    <add key="LogLevel" value="INFO" />
+    <add key="MaxConcurrentUsers" value="100" />
+    <add key="SessionTimeoutMinutes" value="30" />
+    <add key="EnableAuditing" value="true" />
+  </appSettings>
+  
+  <system.web>
+    <sessionState timeout="30" mode="SQLServer" 
+                  sqlServerConnectionString="server=WMSDB01;..." />
+    <compilation debug="false" targetFramework="4.8" />
+  </system.web>
+</configuration>
+```
+
+## 2. Database Administration
+
+### 2.1 SQL Server Management
+
+#### **Database Maintenance Plan**
+
+```sql
+-- Beispiel: Comprehensive Maintenance Plan
+USE WMS_GF_PROD;
+
+-- 1. Update Statistics
+EXEC sp_updatestats;
+
+-- 2. Rebuild Indexes (for fragmentation > 30%)
+DECLARE @sql NVARCHAR(MAX) = '';
+SELECT @sql = @sql + 
+    'ALTER INDEX ' + i.name + ' ON ' + SCHEMA_NAME(t.schema_id) + '.' + t.name + ' REBUILD;' + CHAR(13)
+FROM sys.indexes i
+INNER JOIN sys.tables t ON i.object_id = t.object_id
+INNER JOIN sys.dm_db_index_physical_stats(DB_ID(), NULL, NULL, NULL, 'SAMPLED') ps
+    ON i.object_id = ps.object_id AND i.index_id = ps.index_id
+WHERE ps.avg_fragmentation_in_percent > 30
+    AND i.type > 0; -- Exclude heaps
+
+EXEC sp_executesql @sql;
+
+-- 3. Check Database Integrity
+DBCC CHECKDB('WMS_GF_PROD') WITH NO_INFOMSGS;
+```
+
+#### **Performance Tuning**
+
+**Index Optimization:**
+```sql
+-- Find Missing Indexes
+SELECT 
+    mid.statement as table_name,
+    migs.avg_total_user_cost * (migs.user_seeks + migs.user_scans) as improvement_measure,
+    'CREATE INDEX IX_' + REPLACE(REPLACE(mid.statement, '[', ''), ']', '') + '_' + 
+    REPLACE(SPACE(1), '', '') + ' ON ' + mid.statement + 
+    ' (' + ISNULL(mid.equality_columns, '') + 
+    CASE WHEN mid.inequality_columns IS NOT NULL 
+         THEN (CASE WHEN mid.equality_columns IS NOT NULL THEN ',' ELSE '' END) + mid.inequality_columns 
+         ELSE '' END + ')' + 
+    CASE WHEN mid.included_columns IS NOT NULL 
+         THEN ' INCLUDE (' + mid.included_columns + ')' 
+         ELSE '' END as create_index_statement
+FROM sys.dm_db_missing_index_groups mig
+INNER JOIN sys.dm_db_missing_index_group_stats migs ON migs.group_handle = mig.index_group_handle
+INNER JOIN sys.dm_db_missing_index_details mid ON mig.index_handle = mid.index_handle
+WHERE migs.avg_total_user_cost * (migs.user_seeks + migs.user_scans) > 10
+ORDER BY improvement_measure DESC;
+```
+
+### 2.2 Backup Strategies
+
+#### **Comprehensive Backup Plan**
+
+```sql
+-- Full Backup (Daily at 02:00)
+BACKUP DATABASE [WMS_GF_PROD] 
+TO DISK = N'E:\Backups\WMS_GF_PROD_Full_' + 
+    CONVERT(VARCHAR(8), GETDATE(), 112) + '.bak'
+WITH INIT, COMPRESSION, STATS = 10;
+
+-- Differential Backup (Every 6 hours)
+BACKUP DATABASE [WMS_GF_PROD] 
+TO DISK = N'E:\Backups\WMS_GF_PROD_Diff_' + 
+    CONVERT(VARCHAR(8), GETDATE(), 112) + '_' +
+    REPLACE(CONVERT(VARCHAR(8), GETDATE(), 108), ':', '') + '.bak'
+WITH DIFFERENTIAL, COMPRESSION, STATS = 10;
+
+-- Transaction Log Backup (Every 15 minutes)
+BACKUP LOG [WMS_GF_PROD] 
+TO DISK = N'E:\Backups\WMS_GF_PROD_Log_' + 
+    CONVERT(VARCHAR(8), GETDATE(), 112) + '_' +
+    REPLACE(CONVERT(VARCHAR(8), GETDATE(), 108), ':', '') + '.trn'
+WITH COMPRESSION, STATS = 10;
+```
+
+#### **Automated Backup Verification**
+
+```powershell
+# PowerShell Script: Backup Verification
+$BackupFile = "E:\Backups\WMS_GF_PROD_Full_" + (Get-Date -Format "yyyyMMdd") + ".bak"
+
+# Verify backup integrity
+$VerifyCommand = @"
+RESTORE VERIFYONLY 
+FROM DISK = '$BackupFile'
+WITH STATS = 10;
+"@
+
+Invoke-Sqlcmd -ServerInstance "WMSDB01" -Query $VerifyCommand
+
+# Test restore to test database
+$RestoreCommand = @"
+RESTORE DATABASE [WMS_TEST_RESTORE] 
+FROM DISK = '$BackupFile'
+WITH REPLACE, STATS = 10,
+MOVE 'WMS_GF_PROD' TO 'E:\TestRestore\WMS_TEST_RESTORE.mdf',
+MOVE 'WMS_GF_PROD_Log' TO 'E:\TestRestore\WMS_TEST_RESTORE.ldf';
+"@
+
+Invoke-Sqlcmd -ServerInstance "WMSDB01" -Query $RestoreCommand -QueryTimeout 3600
+```
+
+## 3. Advanced Monitoring
+
+### 3.1 Performance Monitoring
+
+#### **Custom Performance Counters**
+
+```powershell
+# Create Custom Performance Counters
+$CounterCategory = "Georg Fischer WMS"
+$Counters = @(
+    @{Name="Active Sessions"; Type="NumberOfItems32"},
+    @{Name="Transactions per Second"; Type="RateOfCountsPerSecond32"},
+    @{Name="Average Response Time"; Type="AverageTimer32"},
+    @{Name="Error Rate"; Type="RateOfCountsPerSecond32"}
+)
+
+if ([System.Diagnostics.PerformanceCounterCategory]::Exists($CounterCategory)) {
+    [System.Diagnostics.PerformanceCounterCategory]::Delete($CounterCategory)
 }
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
+$CounterCreationDataCollection = New-Object System.Diagnostics.CounterCreationDataCollection
+foreach ($Counter in $Counters) {
+    $CounterCreationData = New-Object System.Diagnostics.CounterCreationData
+    $CounterCreationData.CounterName = $Counter.Name
+    $CounterCreationData.CounterType = $Counter.Type
+    $CounterCreationDataCollection.Add($CounterCreationData)
 }
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+[System.Diagnostics.PerformanceCounterCategory]::Create(
+    $CounterCategory, 
+    "Georg Fischer WMS Performance Metrics", 
+    [System.Diagnostics.PerformanceCounterCategoryType]::SingleInstance, 
+    $CounterCreationDataCollection
+)
+```
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+#### **SQL Server Monitoring Queries**
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+```sql
+-- Monitor Active Sessions
+SELECT 
+    s.session_id,
+    s.login_name,
+    s.host_name,
+    s.program_name,
+    s.status,
+    r.command,
+    r.percent_complete,
+    r.estimated_completion_time,
+    DATEDIFF(second, s.login_time, GETDATE()) as session_duration_seconds
+FROM sys.dm_exec_sessions s
+LEFT JOIN sys.dm_exec_requests r ON s.session_id = r.session_id
+WHERE s.is_user_process = 1
+    AND s.status != 'sleeping'
+ORDER BY s.session_id;
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+-- Monitor Blocking
+SELECT 
+    blocking.session_id as blocking_session,
+    blocked.session_id as blocked_session,
+    blocking_sql.text as blocking_sql,
+    blocked_sql.text as blocked_sql,
+    w.wait_type,
+    w.wait_time_ms
+FROM sys.dm_exec_sessions blocking
+INNER JOIN sys.dm_exec_sessions blocked ON blocking.session_id = blocked.blocking_session_id
+CROSS APPLY sys.dm_exec_sql_text(blocking.most_recent_sql_handle) blocking_sql
+CROSS APPLY sys.dm_exec_sql_text(blocked.most_recent_sql_handle) blocked_sql
+LEFT JOIN sys.dm_os_waiting_tasks w ON blocked.session_id = w.session_id;
+```
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+### 3.2 Application Monitoring
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+#### **Event Log Monitoring**
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
-
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
-
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
-
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
-
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
+```powershell
+# Monitor WMS Application Events
+$EventLogQueries = @{
+    "System Errors" = @{
+        LogName = "Application"
+        Source = "WMS.Service"
+        Level = "Error"
+        TimeFrame = "-1 Hours"
+    }
+    "Performance Warnings" = @{
+        LogName = "Application" 
+        Source = "WMS.Performance"
+        Level = "Warning"
+        TimeFrame = "-4 Hours"
     }
 }
-</style>
+
+foreach ($QueryName in $EventLogQueries.Keys) {
+    $Query = $EventLogQueries[$QueryName]
+    $StartTime = (Get-Date).AddHours([int]($Query.TimeFrame.Split()[0]))
+    
+    $Events = Get-WinEvent -FilterHashtable @{
+        LogName = $Query.LogName
+        ProviderName = $Query.Source
+        Level = switch($Query.Level) {
+            "Error" { 2 }
+            "Warning" { 3 }
+            "Information" { 4 }
+        }
+        StartTime = $StartTime
+    } -ErrorAction SilentlyContinue
+    
+    if ($Events) {
+        Write-Host "$QueryName`: $($Events.Count) events found"
+        # Send alert to monitoring system
+    }
+}
+```
+
+#### **Custom Health Checks**
+
+```csharp
+// C# Health Check Service
+public class WMSHealthCheckService
+{
+    public async Task<HealthCheckResult> CheckDatabaseConnectivity()
+    {
+        try
+        {
+            using var connection = new SqlConnection(connectionString);
+            await connection.OpenAsync();
+            
+            var command = new SqlCommand("SELECT 1", connection);
+            var result = await command.ExecuteScalarAsync();
+            
+            return HealthCheckResult.Healthy("Database connectivity OK");
+        }
+        catch (Exception ex)
+        {
+            return HealthCheckResult.Unhealthy($"Database connectivity failed: {ex.Message}");
+        }
+    }
+    
+    public async Task<HealthCheckResult> CheckServiceResponsiveness()
+    {
+        var stopwatch = Stopwatch.StartNew();
+        try
+        {
+            // Test critical WMS operation
+            var response = await TestWMSOperation();
+            stopwatch.Stop();
+            
+            if (stopwatch.ElapsedMilliseconds > 5000)
+            {
+                return HealthCheckResult.Degraded($"Service slow: {stopwatch.ElapsedMilliseconds}ms");
+            }
+            
+            return HealthCheckResult.Healthy($"Service responsive: {stopwatch.ElapsedMilliseconds}ms");
+        }
+        catch (Exception ex)
+        {
+            return HealthCheckResult.Unhealthy($"Service unresponsive: {ex.Message}");
+        }
+    }
+}
+```
+
+## 4. Security Hardening
+
+### 4.1 Server Security
+
+#### **Windows Server Hardening**
+
+```powershell
+# Disable unnecessary services
+$ServicesToDisable = @(
+    "Fax",
+    "Print Spooler",
+    "Windows Search",
+    "SNMP Service"
+)
+
+foreach ($Service in $ServicesToDisable) {
+    if (Get-Service -Name $Service -ErrorAction SilentlyContinue) {
+        Stop-Service -Name $Service -Force
+        Set-Service -Name $Service -StartupType Disabled
+        Write-Host "Disabled service: $Service"
+    }
+}
+
+# Configure Windows Firewall
+New-NetFirewallRule -DisplayName "WMS Database Access" -Direction Inbound -Protocol TCP -LocalPort 1433 -Action Allow -Profile Domain
+New-NetFirewallRule -DisplayName "WMS Web Portal" -Direction Inbound -Protocol TCP -LocalPort 80,443 -Action Allow -Profile Domain
+New-NetFirewallRule -DisplayName "WMS Application Service" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow -Profile Domain
+
+# Enable audit policies
+auditpol /set /category:"Logon/Logoff" /success:enable /failure:enable
+auditpol /set /category:"Object Access" /success:enable /failure:enable
+auditpol /set /category:"Privilege Use" /success:enable /failure:enable
+```
+
+#### **SQL Server Security**
+
+```sql
+-- Enable SQL Server Auditing
+USE master;
+GO
+
+-- Create Server Audit
+CREATE SERVER AUDIT [WMS_Security_Audit]
+TO FILE 
+(   FILEPATH = N'E:\Audits\'
+    ,MAXSIZE = 100 MB
+    ,MAX_ROLLOVER_FILES = 10
+    ,RESERVE_DISK_SPACE = OFF
+)
+WITH
+(   QUEUE_DELAY = 1000
+    ,ON_FAILURE = CONTINUE
+);
+
+-- Enable the audit
+ALTER SERVER AUDIT [WMS_Security_Audit] WITH (STATE = ON);
+
+-- Create Database Audit Specification
+USE WMS_GF_PROD;
+GO
+
+CREATE DATABASE AUDIT SPECIFICATION [WMS_Database_Audit]
+FOR SERVER AUDIT [WMS_Security_Audit]
+ADD (SELECT, INSERT, UPDATE, DELETE ON SCHEMA::dbo BY PUBLIC),
+ADD (EXECUTE ON SCHEMA::dbo BY PUBLIC);
+
+ALTER DATABASE AUDIT SPECIFICATION [WMS_Database_Audit] WITH (STATE = ON);
+```
+
+### 4.2 Application Security
+
+#### **Secure Configuration**
+
+```xml
+<!-- Enhanced Web.config Security -->
+<configuration>
+  <system.web>
+    <!-- Remove server information -->
+    <httpRuntime enableVersionHeader="false" />
+    
+    <!-- Secure session configuration -->
+    <sessionState 
+        mode="SQLServer"
+        cookieless="false"
+        cookieTimeout="30"
+        cookieSecure="true"
+        cookieHttpOnlyCookies="true"
+        cookieSameSite="Strict" />
+    
+    <!-- Custom errors -->
+    <customErrors mode="On" defaultRedirect="~/Error/Default">
+      <error statusCode="403" redirect="~/Error/Forbidden" />
+      <error statusCode="404" redirect="~/Error/NotFound" />
+    </customErrors>
+    
+    <!-- Security headers -->
+    <httpProtocol>
+      <customHeaders>
+        <add name="X-Content-Type-Options" value="nosniff" />
+        <add name="X-Frame-Options" value="DENY" />
+        <add name="X-XSS-Protection" value="1; mode=block" />
+        <add name="Strict-Transport-Security" value="max-age=31536000; includeSubDomains" />
+      </customHeaders>
+    </httpProtocol>
+  </system.web>
+</configuration>
+```
+
+## 5. Disaster Recovery
+
+### 5.1 Recovery Planning
+
+#### **Recovery Objectives**
+
+```yaml
+recovery_objectives:
+  rto: "4 hours"  # Recovery Time Objective
+  rpo: "1 hour"   # Recovery Point Objective
+  
+  disaster_scenarios:
+    server_failure:
+      priority: "critical"
+      procedure: "failover_to_standby"
+      estimated_time: "2 hours"
+      
+    database_corruption:
+      priority: "critical" 
+      procedure: "restore_from_backup"
+      estimated_time: "3 hours"
+      
+    network_outage:
+      priority: "high"
+      procedure: "activate_backup_network"
+      estimated_time: "1 hour"
+      
+    data_center_failure:
+      priority: "critical"
+      procedure: "activate_dr_site"
+      estimated_time: "4 hours"
+```
+
+#### **DR Procedures**
+
+```powershell
+# Disaster Recovery Script
+param(
+    [Parameter(Mandatory=$true)]
+    [ValidateSet("ServerFailure", "DatabaseCorruption", "NetworkOutage", "DataCenterFailure")]
+    [string]$DisasterType
+)
+
+switch ($DisasterType) {
+    "ServerFailure" {
+        # 1. Verify primary server status
+        if (-not (Test-Connection -ComputerName "WMSPROD01" -Count 2 -Quiet)) {
+            Write-Host "Primary server unreachable. Initiating failover..."
+            
+            # 2. Start services on standby server
+            Invoke-Command -ComputerName "WMSSTANDBY01" -ScriptBlock {
+                Start-Service "WMS Application Service"
+                Start-Service "W3SVC"
+            }
+            
+            # 3. Update DNS records
+            # 4. Notify users of failover
+            # 5. Update monitoring systems
+        }
+    }
+    
+    "DatabaseCorruption" {
+        # 1. Stop all WMS services
+        # 2. Restore latest backup
+        # 3. Apply transaction log backups
+        # 4. Verify data integrity
+        # 5. Restart services
+    }
+}
+```
+
+### 5.2 High Availability
+
+#### **Always On Availability Groups**
+
+```sql
+-- Configure Always On Availability Group
+-- Primary Replica Configuration
+ALTER AVAILABILITY GROUP [WMS_AG]
+ADD DATABASE [WMS_GF_PROD];
+
+-- Secondary Replica Configuration
+ALTER AVAILABILITY GROUP [WMS_AG] 
+ADD REPLICA ON 'WMSDB02' 
+WITH (ENDPOINT_URL = 'TCP://WMSDB02:5022',
+      AVAILABILITY_MODE = SYNCHRONOUS_COMMIT,
+      FAILOVER_MODE = AUTOMATIC,
+      SECONDARY_ROLE(ALLOW_CONNECTIONS = YES),
+      BACKUP_PRIORITY = 30);
+```
+
+## 6. Troubleshooting Advanced Issues
+
+### 6.1 Performance Issues
+
+#### **Deadlock Analysis**
+
+```sql
+-- Enable deadlock monitoring
+DBCC TRACEON(1222, -1);
+
+-- Query deadlock information
+SELECT 
+    XDL.deadlock_graph,
+    XDL.deadlock_id,
+    XDL.deadlock_time
+FROM (
+    SELECT 
+        CAST(event_data AS XML) as event_data
+    FROM sys.fn_xe_file_target_read_file('E:\ExtendedEvents\Deadlocks*.xel', null, null, null)
+) AS X
+CROSS APPLY (
+    SELECT 
+        event_data.value('(event/@timestamp)[1]', 'datetime2') as deadlock_time,
+        event_data.value('(event/data[@name="xml_report"]/value)[1]', 'varchar(max)') as deadlock_graph,
+        ROW_NUMBER() OVER (ORDER BY event_data.value('(event/@timestamp)[1]', 'datetime2') DESC) as deadlock_id
+    FROM (SELECT event_data) AS XEventData(event_data)
+) AS XDL;
+```
+
+#### **Memory Pressure Diagnosis**
+
+```sql
+-- Check memory usage
+SELECT 
+    counter_name,
+    cntr_value/1024 as value_mb
+FROM sys.dm_os_performance_counters 
+WHERE object_name = 'SQLServer:Memory Manager'
+    AND counter_name IN (
+        'Total Server Memory (KB)',
+        'Target Server Memory (KB)',
+        'Free Memory (KB)'
+    );
+
+-- Check page life expectancy
+SELECT 
+    counter_name,
+    cntr_value
+FROM sys.dm_os_performance_counters 
+WHERE object_name = 'SQLServer:Buffer Manager'
+    AND counter_name = 'Page life expectancy';
+```
+
+### 6.2 Integration Issues
+
+#### **SAP Interface Troubleshooting**
+
+```csharp
+// SAP RFC Connection Diagnostics
+public class SAPConnectionDiagnostics
+{
+    public void DiagnoseSAPConnection()
+    {
+        var destination = RfcDestinationManager.GetDestination("WMS_SAP");
+        
+        try
+        {
+            // Test basic connectivity
+            destination.Ping();
+            Console.WriteLine("SAP system reachable");
+            
+            // Test RFC function
+            var function = destination.Repository.CreateFunction("RFC_PING");
+            function.Invoke(destination);
+            Console.WriteLine("RFC calls working");
+            
+            // Check connection pool
+            var pool = destination.Pool;
+            Console.WriteLine($"Pool size: {pool.PoolSize}, Active: {pool.ActiveConnectionCount}");
+            
+        }
+        catch (RfcCommunicationException ex)
+        {
+            Console.WriteLine($"Communication error: {ex.Message}");
+            // Check network connectivity, firewall, SAP gateway
+        }
+        catch (RfcLogonException ex)
+        {
+            Console.WriteLine($"Logon error: {ex.Message}");
+            // Check credentials, user locks, authorization
+        }
+        catch (RfcAbapException ex)
+        {
+            Console.WriteLine($"ABAP error: {ex.Message}");
+            // Check SAP system status, ABAP program issues
+        }
+    }
+}
+```
+
+## Best Practices
+
+### Administrative Best Practices
+
+#### **Change Management**
+
+```yaml
+change_management_process:
+  planning:
+    - impact_assessment: "Business impact analysis"
+    - risk_evaluation: "Technical risk assessment"
+    - rollback_plan: "Detailed rollback procedure"
+    - testing_plan: "Comprehensive test strategy"
+    
+  implementation:
+    - change_window: "Approved maintenance window"
+    - backup_verification: "Verify backups before changes"
+    - monitoring: "Enhanced monitoring during change"
+    - documentation: "Real-time change documentation"
+    
+  validation:
+    - functionality_test: "Core functionality verification"
+    - performance_test: "Performance impact assessment"
+    - security_test: "Security posture verification"
+    - user_acceptance: "Business user sign-off"
+```
+
+#### **Documentation Standards**
+
+**Required Documentation:**
+- System architecture diagrams
+- Network topology and security zones
+- Database schema and relationships
+- Service dependencies and interactions
+- Recovery procedures and contact lists
+- Performance baseline and thresholds
+
+## Emergency Procedures
+
+### Critical Issue Response
+
+#### **Severity 1 Incidents**
+
+```yaml
+severity_1_response:
+  definition: "Complete system outage affecting production"
+  
+  immediate_actions:
+    - assess_scope: "Determine affected systems and users"
+    - isolate_issue: "Prevent cascading failures"
+    - activate_incident_team: "Notify key personnel"
+    - communicate_status: "Update stakeholders"
+    
+  escalation_timeline:
+    0_minutes: "On-call administrator"
+    15_minutes: "WMS team lead"
+    30_minutes: "IT management"
+    60_minutes: "Business leadership"
+    
+  communication_channels:
+    primary: "Incident bridge conference"
+    updates: "Email distribution list"
+    external: "User notification system"
+```
+
+---
+
+*Dieser Trainingsinhalt basiert auf Georg Fischer IT-Standards und Jungheinrich WMS Best Practices, Version 1.0, Stand: März 2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*

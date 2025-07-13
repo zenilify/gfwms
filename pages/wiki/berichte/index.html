@@ -7,38 +7,814 @@ breadcrumbs:
   - title: "Berichtswesen"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Berichtswesen - WMS Reports und Analytics</p>
-    </div>
+# Berichtswesen - WMS Reports und Analytics
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Wiki-Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Berichtswesen" befindet sich in der Entwicklungsphase.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h4>Berichtswesen Schulung</h4>
-                    <p>Vollständiges Training bereits verfügbar</p>
-                    <a href="../../training/reporting/" class="btn btn-primary">Training starten</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../" class="btn btn-secondary">Wiki Hauptseite</a>
-                </div>
-            </div>
-        </div>
+<div class="reporting-hero">
+    <div class="hero-content">
+        <h2>📊 Intelligente Berichterstattung</h2>
+        <p>Umfassende WMS-Analytics und Reports für datengetriebene Entscheidungen bei Georg Fischer</p>
     </div>
 </div>
+
+## Überblick
+
+Das Berichtswesen im Jungheinrich WMS bietet umfassende Analysemöglichkeiten für alle Lageroperationen. Diese Dokumentation zeigt Ihnen, wie Sie Reports erstellen, anpassen und für strategische Entscheidungen nutzen.
+
+## Navigation
+
+<div class="wiki-nav-tabs">
+    <button class="wiki-tab-btn active" data-tab="standard-reports">Standard Reports</button>
+    <button class="wiki-tab-btn" data-tab="custom-reports">Custom Reports</button>
+    <button class="wiki-tab-btn" data-tab="dashboards">Dashboards</button>
+    <button class="wiki-tab-btn" data-tab="analytics">Analytics</button>
+    <button class="wiki-tab-btn" data-tab="automation">Automatisierung</button>
+</div>
+
+## Standard Reports {#standard-reports}
+
+<div class="wiki-tab-content active" id="standard-reports">
+
+### Operative Berichte
+
+#### **Tägliche Standardberichte**
+
+| Report | Zweck | Zielgruppe | Zeitpunkt |
+|--------|-------|------------|-----------|
+| **Tagesabschluss** | Operative Zusammenfassung | Schichtleiter | Ende jeder Schicht |
+| **Leistungsübersicht** | KPI-Tracking | Management | Täglich 08:00 |
+| **Fehlerprotokoll** | Qualitätskontrolle | QM-Team | Täglich 09:00 |
+| **Bestandsabweichungen** | Inventurkontrolle | Lagerleitung | Täglich 07:00 |
+
+#### **Wöchentliche Berichte**
+
+```yaml
+woechentliche_reports:
+  produktivitaet:
+    titel: "Wöchentlicher Produktivitätsbericht"
+    inhalt:
+      - picks_per_hour: "Kommissionierleistung"
+      - accuracy_rate: "Genauigkeitsrate"
+      - error_analysis: "Fehleranalyse"
+      - benchmark_comparison: "Benchmark-Vergleich"
+    
+  bestandsanalyse:
+    titel: "Wöchentliche Bestandsanalyse"
+    inhalt:
+      - inventory_turnover: "Lagerumschlag"
+      - slow_moving_items: "Langsam drehende Artikel"
+      - overstocked_items: "Überbestände"
+      - stock_accuracy: "Bestandsgenauigkeit"
+```
+
+### Finanzberichte
+
+#### **Kostenstellenberichte**
+
+**Kostenkategorien:**
+- Personalkosten pro Kommissionierungsauftrag
+- Lagerkosten pro Quadratmeter
+- Transportkosten pro Bewegung
+- IT-Systemkosten pro Transaktion
+
+#### **ROI-Analyse**
+
+```sql
+-- Beispiel: ROI-Berechnung WMS-Investment
+SELECT 
+    year,
+    (savings_personnel + savings_efficiency + savings_accuracy - costs_system) 
+    / costs_system * 100 as roi_percentage,
+    savings_personnel as "Personaleinsparungen",
+    savings_efficiency as "Effizienzgewinne", 
+    savings_accuracy as "Qualitätsverbesserungen",
+    costs_system as "Systemkosten"
+FROM wms_roi_analysis 
+WHERE year >= 2023
+ORDER BY year;
+```
+
+### Compliance-Reports
+
+#### **Audit-Reports**
+
+**Regulatory Compliance:**
+- ISO 9001 Qualitätsberichte
+- DSGVO Datenschutz-Dokumentation
+- SOX Kontrollen-Nachweis
+- Lieferanten-Compliance
+
+#### **Sicherheitsberichte**
+
+```yaml
+sicherheits_reports:
+  zugriff:
+    bericht: "Benutzerzugriffs-Analyse"
+    haeufigkeit: "monatlich"
+    inhalt:
+      - failed_logins: "Fehlgeschlagene Anmeldungen"
+      - privilege_escalations: "Berechtigungsänderungen"
+      - after_hours_access: "Zugriffe außerhalb Arbeitszeit"
+  
+  system_health:
+    bericht: "System-Gesundheitsbericht"
+    haeufigkeit: "woechentlich" 
+    inhalt:
+      - uptime_statistics: "Verfügbarkeitsstatistiken"
+      - performance_metrics: "Performance-Kennzahlen"
+      - error_rates: "Fehlerquoten"
+```
+
+</div>
+
+## Custom Reports {#custom-reports}
+
+<div class="wiki-tab-content" id="custom-reports">
+
+### Report Builder
+
+#### **Drag & Drop Interface**
+
+**Verfügbare Datenquellen:**
+- Artikelstamm
+- Bewegungsdaten
+- Benutzeraktivitäten
+- Bestellhistorie
+- Lieferanteninformationen
+- Qualitätsdaten
+
+#### **Report-Erstellung Schritt-für-Schritt**
+
+1. **Datenquelle auswählen**
+   ```yaml
+   datenquellen:
+     primary: "bewegungsdaten"
+     joins:
+       - table: "artikel_stamm"
+         key: "artikel_nr"
+       - table: "lagerort_stamm" 
+         key: "lagerort_id"
+   ```
+
+2. **Felder definieren**
+   - Gruppierungsfelder (z.B. Datum, Artikel, Lagerbereich)
+   - Berechnungsfelder (Summe, Durchschnitt, Anzahl)
+   - Filterkriterien (Zeitraum, Status, Kategorie)
+
+3. **Formatierung anpassen**
+   - Spaltenbreiten und -reihenfolge
+   - Zahlenformate und Dezimalstellen
+   - Farb-Kodierung für Schwellenwerte
+   - Diagramm-Typen (Balken, Linien, Kreisdiagramm)
+
+### Erweiterte Report-Funktionen
+
+#### **Berechnete Felder**
+
+```sql
+-- Beispiel: Lagerumschlag berechnen
+SELECT 
+    artikel_nr,
+    artikel_bezeichnung,
+    durchschnittlicher_bestand,
+    jahresverbrauch,
+    ROUND(jahresverbrauch / NULLIF(durchschnittlicher_bestand, 0), 2) as lagerumschlag,
+    CASE 
+        WHEN jahresverbrauch / NULLIF(durchschnittlicher_bestand, 0) > 12 THEN 'Schnelldreher'
+        WHEN jahresverbrauch / NULLIF(durchschnittlicher_bestand, 0) > 4 THEN 'Normaldreher'
+        ELSE 'Langsamdreher'
+    END as abc_klassifizierung
+FROM artikel_analyse
+WHERE datum_von >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR);
+```
+
+#### **Drill-Down Funktionalität**
+
+**Hierarchische Navigation:**
+```
+Gesamt-Lager
+├── Lagerbereich (HRL, AKL, Vorzone)
+│   ├── Gang
+│   │   ├── Regal
+│   │   │   └── Lagerplatz
+└── Artikel-Kategorie (A, B, C)
+    ├── Artikelgruppe
+    │   └── Einzelartikel
+```
+
+### Template-Bibliothek
+
+#### **Vordefinierte Templates**
+
+| Template | Anwendung | Aktualisierung |
+|----------|-----------|----------------|
+| **Performance KPIs** | Schichtleiter-Report | Stündlich |
+| **ABC-Analyse** | Einkaufs-Optimierung | Wöchentlich |
+| **Slow-Mover Report** | Bestandsoptimierung | Monatlich |
+| **Lieferanten-Scorecard** | Lieferantenbewertung | Quartalsweise |
+| **Kostenstellen-Analyse** | Controlling | Monatlich |
+
+#### **Template anpassen**
+
+```yaml
+template_customization:
+  grundlagen:
+    - basis_template_auswaehlen: "Performance KPIs"
+    - zielgruppe_definieren: "Warehouse Manager"
+    - aktualisierung_festlegen: "täglich 08:00"
+  
+  anpassungen:
+    - additional_kpis: ["error_rate", "overtime_hours"]
+    - filter_criteria: "lagerbereich = 'HRL'"
+    - alert_thresholds: "picks_per_hour < 80"
+  
+  verteilung:
+    - email_recipients: ["manager@gf.com", "supervisor@gf.com"]
+    - dashboard_integration: true
+    - export_formats: ["PDF", "Excel", "CSV"]
+```
+
+</div>
+
+## Dashboards {#dashboards}
+
+<div class="wiki-tab-content" id="dashboards">
+
+### Echtzeit-Dashboards
+
+#### **Operations Dashboard**
+
+**Live-Metriken:**
+```yaml
+operations_dashboard:
+  real_time_widgets:
+    current_throughput:
+      titel: "Aktueller Durchsatz"
+      metrik: "Aufträge/Stunde"
+      update_interval: "30 Sekunden"
+      
+    active_users:
+      titel: "Aktive Benutzer"
+      metrik: "Angemeldete Operatoren"
+      update_interval: "1 Minute"
+      
+    system_health:
+      titel: "System-Status" 
+      metrik: "Verfügbarkeit %"
+      update_interval: "5 Minuten"
+      
+    queue_status:
+      titel: "Warteschlangen"
+      metrik: "Offene Aufträge"
+      update_interval: "1 Minute"
+```
+
+#### **Management Dashboard**
+
+**Strategische KPIs:**
+- Produktivitätstrends (letzte 30 Tage)
+- Qualitätsindikatoren (Fehlerquoten)
+- Kostenkennzahlen (Cost per Pick)
+- Kapazitätsauslastung (%)
+
+### Interactive Features
+
+#### **Drill-Down Navigation**
+
+**Navigation-Hierarchie:**
+```
+Dashboard Ebene 1: Überblick
+├── Produktivität (clicks → Details)
+│   ├── Pro Schicht
+│   ├── Pro Mitarbeiter  
+│   └── Pro Lagerbereich
+├── Qualität (clicks → Details)
+│   ├── Fehlerarten
+│   ├── Ursachenanalyse
+│   └── Korrekturmaßnahmen
+└── Kosten (clicks → Details)
+    ├── Personalkosten
+    ├── Systemkosten
+    └── Overhead
+```
+
+#### **Filter und Zeiträume**
+
+```yaml
+dashboard_filter:
+  zeitraum:
+    optionen: ["Heute", "Gestern", "Diese Woche", "Letzter Monat", "Custom"]
+    default: "Heute"
+    
+  lagerbereich:
+    optionen: ["Alle", "HRL", "AKL", "Vorzone", "Qualität", "Formenlager"]
+    multiple_selection: true
+    
+  schicht:
+    optionen: ["Alle", "Früh", "Spät", "Nacht"]
+    default: "Aktuelle Schicht"
+    
+  mitarbeiter:
+    optionen: "dropdown_with_search"
+    permissions: "supervisor_and_above"
+```
+
+### Mobile Dashboards
+
+#### **Responsive Design**
+
+**Mobile-optimierte Widgets:**
+- Vereinfachte KPI-Karten
+- Touch-freundliche Navigation
+- Offline-Fähigkeiten für kritische Daten
+- Push-Benachrichtigungen für Alerts
+
+#### **Supervisor Mobile App**
+
+```yaml
+mobile_features:
+  quick_actions:
+    - "Schichtbericht abrufen"
+    - "Team-Performance prüfen" 
+    - "Offene Issues anzeigen"
+    - "Genehmigungen bearbeiten"
+    
+  alerts:
+    - "SLA-Verletzungen"
+    - "Systemausfälle"
+    - "Qualitätsprobleme"
+    - "Personalengpässe"
+```
+
+</div>
+
+## Analytics {#analytics}
+
+<div class="wiki-tab-content" id="analytics">
+
+### Predictive Analytics
+
+#### **Demand Forecasting**
+
+**Vorhersagemodelle:**
+```python
+# Beispiel: Bedarfsprognose
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+
+# Historische Daten laden
+data = pd.read_sql("""
+    SELECT 
+        artikel_nr,
+        datum,
+        menge,
+        wochentag,
+        monat,
+        ist_feiertag,
+        temperatur,
+        promo_aktiv
+    FROM bewegungsdaten 
+    WHERE datum >= DATE_SUB(CURDATE(), INTERVAL 2 YEAR)
+""", connection)
+
+# Features für ML-Modell
+features = ['wochentag', 'monat', 'ist_feiertag', 'temperatur', 'promo_aktiv']
+X = data[features]
+y = data['menge']
+
+# Modell trainieren
+model = RandomForestRegressor(n_estimators=100)
+model.fit(X, y)
+
+# Prognose für nächste Woche
+prognose = model.predict(next_week_features)
+```
+
+#### **Anomalie-Erkennung**
+
+**Algorithmen:**
+- Statistische Ausreißer-Erkennung
+- Machine Learning basierte Muster-Erkennung
+- Zeitreihen-Anomalien
+- Verhaltens-Anomalien von Benutzern
+
+### Business Intelligence
+
+#### **OLAP-Cubes**
+
+**Dimensionen:**
+```yaml
+olap_dimensionen:
+  zeit:
+    hierarchie: ["Jahr", "Quartal", "Monat", "Woche", "Tag", "Stunde"]
+    
+  artikel:
+    hierarchie: ["Kategorie", "Gruppe", "Einzelartikel"]
+    
+  lager:
+    hierarchie: ["Standort", "Bereich", "Gang", "Regal", "Platz"]
+    
+  personal:
+    hierarchie: ["Abteilung", "Team", "Mitarbeiter"]
+```
+
+#### **Data Mining**
+
+**Analysemuster:**
+- Marktkorb-Analyse (welche Artikel zusammen kommissioniert werden)
+- Lieferanten-Performance-Clustering
+- Mitarbeiter-Produktivitäts-Segmentierung
+- Lagerplatz-Optimierungs-Algorithmen
+
+### Advanced Analytics
+
+#### **Statistical Process Control (SPC)**
+
+```sql
+-- Beispiel: Kontrollelgrenzen berechnen
+WITH daily_stats AS (
+    SELECT 
+        DATE(bewegungsdatum) as datum,
+        AVG(picks_per_hour) as durchschnitt,
+        STDDEV(picks_per_hour) as standardabweichung,
+        COUNT(*) as anzahl_operatoren
+    FROM produktivitaets_daten
+    WHERE bewegungsdatum >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+    GROUP BY DATE(bewegungsdatum)
+),
+control_limits AS (
+    SELECT 
+        AVG(durchschnitt) as centerline,
+        AVG(durchschnitt) + (3 * AVG(standardabweichung)) as ucl,
+        AVG(durchschnitt) - (3 * AVG(standardabweichung)) as lcl
+    FROM daily_stats
+)
+SELECT 
+    ds.datum,
+    ds.durchschnitt,
+    cl.centerline,
+    cl.ucl,
+    cl.lcl,
+    CASE 
+        WHEN ds.durchschnitt > cl.ucl THEN 'Über Kontrollgrenze'
+        WHEN ds.durchschnitt < cl.lcl THEN 'Unter Kontrollgrenze'
+        ELSE 'In Kontrolle'
+    END as status
+FROM daily_stats ds, control_limits cl
+ORDER BY ds.datum;
+```
+
+#### **Root Cause Analysis**
+
+**Systematische Problemanalyse:**
+1. **5-Why-Methode** in Reports integriert
+2. **Fishbone-Diagramme** für Fehlerursachen
+3. **Pareto-Analysen** für Problempriorisierung
+4. **Korrelations-Analysen** zwischen KPIs
+
+</div>
+
+## Automatisierung {#automation}
+
+<div class="wiki-tab-content" id="automation">
+
+### Automatische Report-Generierung
+
+#### **Scheduled Reports**
+
+```yaml
+scheduled_reports:
+  tagesabschluss:
+    zeitplan: "täglich 22:00"
+    parameter:
+      datum: "heute"
+      bereiche: "alle"
+    verteilung:
+      email: ["schichtleiter@gf.com", "manager@gf.com"]
+      format: "PDF"
+      
+  wochen_kpi:
+    zeitplan: "montags 08:00"
+    parameter:
+      zeitraum: "letzte_woche"
+      vergleich: "vorwoche"
+    verteilung:
+      dashboard: "management_portal"
+      sharepoint: "reports_folder"
+      
+  monats_analyse:
+    zeitplan: "1. des Monats 09:00"
+    parameter:
+      zeitraum: "letzter_monat"
+      detaillevel: "hoch"
+    verteilung:
+      email: ["controlling@gf.com"]
+      format: ["PDF", "Excel"]
+```
+
+#### **Event-Triggered Reports**
+
+**Auslöser für automatische Reports:**
+- SLA-Verletzungen (sofortige Benachrichtigung)
+- Qualitätsprobleme (nach 3 Fehlern)
+- Systemausfälle (Recovery-Report)
+- Sicherheitsvorfälle (Compliance-Report)
+
+### Alert-System
+
+#### **Schwellenwert-Monitoring**
+
+```yaml
+alert_thresholds:
+  produktivitaet:
+    picks_per_hour:
+      warning: 75
+      critical: 60
+      notification: ["supervisor", "teamleiter"]
+      
+  qualitaet:
+    error_rate:
+      warning: 0.5  # 0.5%
+      critical: 1.0  # 1.0%
+      notification: ["quality_manager", "schichtleiter"]
+      
+  system:
+    response_time:
+      warning: 3000  # 3 Sekunden
+      critical: 5000  # 5 Sekunden
+      notification: ["it_admin", "wms_admin"]
+```
+
+#### **Escalation Matrix**
+
+| Severity | Immediate | 15 Min | 1 Hour | 4 Hours |
+|----------|-----------|--------|---------|---------|
+| **Critical** | Operator | Supervisor | Manager | Director |
+| **High** | Supervisor | Manager | - | - |
+| **Medium** | - | Manager | - | - |
+| **Low** | - | - | Manager | - |
+
+### Integration APIs
+
+#### **BI-Tool Integration**
+
+**Unterstützte Systeme:**
+- Microsoft Power BI
+- Tableau
+- QlikView/QlikSense
+- SAP BusinessObjects
+
+```yaml
+api_endpoints:
+  data_export:
+    url: "/api/v1/reports/export"
+    methods: ["GET", "POST"]
+    formats: ["json", "xml", "csv"]
+    authentication: "bearer_token"
+    
+  real_time_data:
+    url: "/api/v1/metrics/live"
+    protocol: "websocket"
+    update_frequency: "30_seconds"
+    
+  custom_query:
+    url: "/api/v1/query/execute"
+    method: "POST"
+    security: "sql_injection_protection"
+```
+
+#### **SAP Integration**
+
+**Datenexchange:**
+```xml
+<!-- Beispiel: SAP IDocs für Reporting -->
+<IDOC>
+    <EDI_DC40>
+        <DOCTYP>WMS_REPORT</DOCTYP>
+        <MESTYP>WMSKPI</MESTYP>
+    </EDI_DC40>
+    <E1WMS_KPI>
+        <DATUM>{{ current_date }}</DATUM>
+        <BEREICH>{{ warehouse_area }}</BEREICH>
+        <PICKS_HOUR>{{ picks_per_hour }}</PICKS_HOUR>
+        <ERROR_RATE>{{ error_percentage }}</ERROR_RATE>
+    </E1WMS_KPI>
+</IDOC>
+```
+
+</div>
+
+## Best Practices
+
+### Report Design Guidelines
+
+#### **Benutzerfreundlichkeit**
+
+**Design-Prinzipien:**
+- **Klarheit**: Wichtige KPIs prominent platzieren
+- **Konsistenz**: Einheitliche Farbcodes und Symbole
+- **Interaktivität**: Drill-Down und Filter-Optionen
+- **Mobilität**: Responsive Design für alle Geräte
+
+#### **Performance-Optimierung**
+
+```yaml
+performance_tips:
+  daten_aggregation:
+    - "Große Datenmengen vorab aggregieren"
+    - "Indizes auf häufig abgefragte Spalten"
+    - "Materialized Views für komplexe Berechnungen"
+    
+  cache_strategien:
+    - "Statische Reports cachen (24h)"
+    - "Parametrisierte Reports cachen (1h)"
+    - "Real-time Daten nicht cachen"
+    
+  query_optimierung:
+    - "WHERE-Klauseln frühzeitig anwenden"
+    - "JOINs minimieren"
+    - "Subqueries vermeiden wo möglich"
+```
+
+### Data Governance
+
+#### **Datenqualität sicherstellen**
+
+**Qualitätskriterien:**
+- **Vollständigkeit**: Alle erforderlichen Felder ausgefüllt
+- **Genauigkeit**: Korrekte Werte ohne Tippfehler
+- **Konsistenz**: Einheitliche Formate und Standards
+- **Aktualität**: Zeitnahe Datenaktualisierung
+
+#### **Datenschutz und Compliance**
+
+```yaml
+data_privacy:
+  anonymisierung:
+    - "Personenbezogene Daten in Reports anonymisieren"
+    - "Aggregierte Daten bevorzugen"
+    - "Pseudonymisierung für interne Analysen"
+    
+  zugriffskontrolle:
+    - "Role-based Access zu sensiblen Reports"
+    - "Audit-Logs für Report-Zugriffe"
+    - "Automatische Session-Timeouts"
+    
+  retention_policy:
+    - "Rohdaten: 7 Jahre"
+    - "Aggregierte Daten: 10 Jahre"
+    - "Personal-KPIs: 3 Jahre nach Austritt"
+```
+
+## Troubleshooting
+
+### Häufige Probleme
+
+#### **Langsame Report-Generierung**
+
+**Diagnose-Checklist:**
+```yaml
+performance_check:
+  datenbank:
+    - query_execution_plan: "Überprüfen"
+    - index_usage: "Optimieren"
+    - table_statistics: "Aktualisieren"
+    
+  system:
+    - memory_usage: "< 80%"
+    - cpu_utilization: "< 75%"
+    - disk_io: "< 80%"
+    
+  netzwerk:
+    - bandwidth_utilization: "< 70%"
+    - latency: "< 100ms"
+```
+
+#### **Dateninkonsistenzen**
+
+**Ursachen und Lösungen:**
+- **ETL-Fehler**: Datenübernahme-Protokolle prüfen
+- **Synchronisations-Probleme**: SAP-Interface überprüfen
+- **Timing-Issues**: Batch-Job-Reihenfolge korrigieren
+- **Benutzer-Eingaben**: Validierungs-Regeln verschärfen
+
+### Support-Eskalation
+
+#### **Report-Support Team**
+
+```yaml
+support_kontakte:
+  level_1:
+    team: "IT-Helpdesk"
+    telefon: "+41 81 770 5678"
+    email: "helpdesk@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 08:00-17:00"
+    
+  level_2:
+    team: "BI-Specialists"
+    telefon: "+41 81 770 6789"
+    email: "bi-support@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 07:00-19:00"
+    
+  level_3:
+    team: "Database Administrators"
+    telefon: "+41 81 770 9999"
+    email: "dba@georgfischer.com"
+    verfuegbarkeit: "24/7 für kritische Issues"
+```
+
+---
+
+*Diese Dokumentation wird regelmäßig aktualisiert. Letzte Aktualisierung: März 2025*
+
+<style>
+.reporting-hero {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.wiki-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.wiki-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wiki-tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wiki-tab-content {
+    display: none;
+}
+
+.wiki-tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+code {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.wiki-tab-btn');
+    const tabContents = document.querySelectorAll('.wiki-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

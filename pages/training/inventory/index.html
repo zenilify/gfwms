@@ -1,7 +1,7 @@
 ---
 layout: training
 title: "Bestandsverwaltung"
-description: "Inventur, Bestandskorrekturen und Lagerverwaltung meistern"
+description: "Erweiterte Bestandskontrolle und Inventur-Verfahren im WMS"
 duration: "65 Minuten"
 difficulty: "Intermediate"
 progress: 0
@@ -10,16 +10,15 @@ prerequisites:
     url: "/pages/training/basics/"
   - title: "Systemnavigation"
     url: "/pages/training/navigation/"
-  - title: "Erste Schritte"
-    url: "/pages/training/first-steps/"
+  - title: "Benutzerverwaltung"
+    url: "/pages/training/users/"
 learning_objectives:
-  - "Inventur-Verfahren verstehen und durchführen"
-  - "Bestandskorrekturen korrekt ausführen"
-  - "Bestände sperren und freigeben"
-  - "Umlagerungen erstellen und verwalten"
-  - "ABC-Analyse durchführen"
-  - "Reorganisation planen und ausführen"
-  - "Dashboard für Bestandsüberwachung nutzen"
+  - "Inventur-Verfahren durchführen"
+  - "Bestandskorrekturen verstehen und anwenden"
+  - "ABC-Analyse nutzen"
+  - "Bestandsoptimierung implementieren"
+  - "Qualitätszonen verwalten"
+  - "Sperr- und Freigabeprozesse handhaben"
 previous:
   title: "Kommissionierung"
   url: "/pages/training/picking/"
@@ -28,789 +27,734 @@ next:
   url: "/pages/training/reporting/"
 ---
 
-# Bestandsverwaltung - Präzise Lagerkontrolle
+# Bestandsverwaltung - Erweiterte Inventur und Optimierung
 
 ## Überblick
 
-Die Bestandsverwaltung ist ein kritischer Bereich der Lagerlogistik, der die Genauigkeit und Verfügbarkeit von Lagerbeständen sicherstellt. Bei Georg Fischer werden verschiedene Verfahren zur Bestandskontrolle, Inventur und Optimierung eingesetzt, um höchste Qualität und Effizienz zu gewährleisten.
+Die Bestandsverwaltung ist ein kritischer Aspekt des WMS bei Georg Fischer. Eine präzise Bestandsführung gewährleistet reibungslose Betriebsabläufe, reduziert Kosten und verbessert die Kundenzufriedenheit. Dieses Modul vermittelt fortgeschrittene Techniken zur Bestandskontrolle und -optimierung.
 
 ## Lernziele
 
 Nach Abschluss dieses Moduls können Sie:
-- Verschiedene Inventur-Verfahren verstehen und durchführen
-- Bestandskorrekturen korrekt und nachvollziehbar ausführen
-- Bestände gezielt sperren und freigeben
-- Umlagerungen erstellen und verwalten
-- ABC-Analyse für Bestandsoptimierung nutzen
-- Reorganisation planen und ausführen
-- Dashboard für Bestandsüberwachung effizient nutzen
+- Verschiedene Inventur-Verfahren effektiv durchführen
+- Bestandskorrekturen sicher und genau vornehmen
+- ABC-Analyse zur Bestandsoptimierung nutzen
+- Qualitätszonen und Sperrverfahren verwalten
+- Reorganisationsstrategien implementieren
+- Bestandsberichte interpretieren und nutzen
 
 ## 1. Grundlagen der Bestandsverwaltung
 
-### 1.1 Definition und Bedeutung
-
-**Bestandsverwaltung** umfasst:
-- **Bestandserfassung**: Präzise Mengenverfolgung
-- **Bestandskontrolle**: Regelmäßige Überprüfung
-- **Bestandsoptimierung**: Effizienz-Verbesserung
-- **Bestandsschutz**: Qualitätssicherung
-
-### 1.2 Bestandsarten bei Georg Fischer
+### 1.1 Bestandsarten im WMS
 
 #### **Freie Bestände**
-- **Sofort verfügbar** für Auslieferung
-- **Keine Einschränkungen**
-- **Normale Lagerverwaltung**
-- **Automatische Disposition**
+- **Definition:** Sofort verfügbare Artikel ohne Einschränkungen
+- **Verwendung:** Standard-Kommissionierung und Disposition
+- **Merkmale:**
+  - Keine Qualitätssperren
+  - Automatische Verfügbarkeit für Aufträge
+  - Standard-Lagerverfahren
 
 #### **Gesperrte Bestände**
-- **Nicht verfügbar** für Auslieferung
-- **Qualitätsprüfung** erforderlich
-- **Schadensuntersuchung** läuft
-- **Manuelle Freigabe** notwendig
+- **Definition:** Temporär nicht verfügbare Artikel
+- **Gründe für Sperrung:**
+  - Qualitätsprobleme
+  - Beschädigungen
+  - Unvollständige Wareneingänge
+  - Chargensperren
+
+#### **Qualitätsbestände**
+- **Definition:** Artikel in Qualitätsprüfung
+- **Prozess:**
+  - Automatische Weiterleitung bei kritischen Artikeln
+  - Manuelle Prüfung durch Q-Personal
+  - Freigabe oder endgültige Sperrung
 
 #### **Reservierte Bestände**
-- **Für Aufträge** reserviert
-- **Temporär nicht verfügbar**
-- **Automatische Freigabe** bei Storno
-- **Planungsrelevant**
+- **Definition:** Für spezifische Aufträge reservierte Mengen
+- **Anwendung:**
+  - Kundenspezifische Reservierungen
+  - Fertigungsaufträge
+  - Projekt-Reservierungen
 
-#### **Quarantäne-Bestände**
-- **Sonderprüfung** erforderlich
-- **Räumlich getrennt** gelagert
-- **Erweiterte Dokumentation**
-- **Spezialbehandlung**
+### 1.2 Bestandsführung-Prinzipien
 
-### 1.3 Bestandsgenauigkeit
+#### **FIFO (First In, First Out)**
+- **Anwendung:** Artikel mit Verfallsdaten oder Alterung
+- **Umsetzung:** Automatische Priorisierung älterer Chargen
+- **Überwachung:** Chargenverfolgung und Alerts
 
-#### **Genauigkeits-Ziele**
-- **Mengengenauigkeit**: 99,5% oder höher
-- **Lagerplatzgenauigkeit**: 100%
-- **Artikel-Genauigkeit**: 100%
-- **Qualitätsstatus-Genauigkeit**: 100%
+#### **LIFO (Last In, First Out)**
+- **Anwendung:** Stabile Artikel ohne Alterung
+- **Vorteil:** Einfachere Lagerverwaltung
+- **Nachteile:** Mögliche Artikel-Alterung
 
-#### **Messung der Genauigkeit**
-- **Regelmäßige Stichproben**
-- **Permanente Inventur**
-- **Automatische Kontrollen**
-- **Fehleranalyse**
+#### **Stichtagsinventur**
+- **Durchführung:** Vollständige Bestandsaufnahme zu einem bestimmten Zeitpunkt
+- **Frequenz:** Jährlich oder nach Bedarf
+- **Vorbereitung:** System-Stopp und Vollzählung
+
+#### **Permanente Inventur**
+- **Durchführung:** Kontinuierliche Bestandskontrollen
+- **Vorteile:** Keine Betriebsunterbrechung
+- **Methode:** Zyklische Zählung nach ABC-Analyse
 
 ## 2. Inventur-Verfahren
 
-### 2.1 Permanente Inventur
+### 2.1 Zyklische Inventur
 
-#### **Prinzip**
-- **Kontinuierliche Überprüfung** der Bestände
-- **Zyklische Zählung** nach ABC-Analyse
-- **Risikobasierte Auswahl**
-- **Minimale Betriebsunterbrechung**
+#### **Planung und Vorbereitung**
 
-#### **Frequenz**
-- **A-Artikel**: Monatlich
-- **B-Artikel**: Quartalsweise
-- **C-Artikel**: Jährlich
-- **Kritische Artikel**: Wöchentlich
+**Menüpfad: Inventur > Zyklische Inventur > Planung**
 
-#### **Vorteile**
-- **Kontinuierliche Genauigkeit**
-- **Frühe Fehlererkennung**
-- **Minimale Störungen**
-- **Bessere Planbarkeit**
+1. **Inventur-Zyklen definieren**
+   ```
+   A-Artikel: Monatlich
+   B-Artikel: Quartalsweise
+   C-Artikel: Halbjährlich
+   ```
 
-### 2.2 Artikelbezogene Inventur
+2. **Inventur-Listen generieren**
+   - Nach Lagerbereich filtern
+   - Nach Artikel-Kategorie sortieren
+   - Zählgruppen zuweisen
 
-#### **Anwendung**
-- **Spezifische Artikel** prüfen
-- **Verdachtsfälle** untersuchen
-- **Reklamationen** nachverfolgen
-- **Qualitätsprüfungen** unterstützen
+3. **Arbeitsplanung**
+   - Optimale Zählzeiten bestimmen
+   - Personal zuweisen
+   - Materialien bereitstellen
 
-#### **Menüpfad: Inventur > Artikelbezogene Inventur**
+#### **Durchführung der Zählung**
 
-#### **Arbeitsschritte**
-1. **Artikel** auswählen
-2. **Inventur** starten
-3. **Alle Lagerplätze** prüfen
-4. **Mengen** erfassen
-5. **Differenzen** analysieren
-6. **Korrekturen** durchführen
+**Schritt 1: Inventur starten**
+```
+Menü: Inventur > Zyklische Inventur > Durchführung
+1. Inventur-Liste auswählen
+2. Zähler anmelden
+3. Lagerplatz scannen
+4. Artikel erfassen
+```
 
-### 2.3 4-Augen-Prinzip
+**Schritt 2: Zählvorgang**
+1. **Lagerplatz lokalisieren**
+   - GPS-Navigation nutzen
+   - Lagerplatz-Barcode scannen
+   - Visuelle Kontrolle der Position
 
-#### **Sicherheitskonzept**
-- **Zwei Personen** führen Inventur durch
-- **Unabhängige Zählung**
-- **Gegenseitige Kontrolle**
-- **Höhere Genauigkeit**
+2. **Artikel identifizieren**
+   - Artikel-Nummer scannen
+   - Chargennummer erfassen
+   - Verpackungseinheit prüfen
 
-#### **Konfiguration**
-- **Inventur-Teams** definieren
-- **Berechtigungen** zuweisen
-- **Workflows** konfigurieren
-- **Eskalations-Regeln** festlegen
+3. **Menge zählen**
+   - Physische Zählung durchführen
+   - Angebrochene Einheiten berücksichtigen
+   - Beschädigungen dokumentieren
 
-#### **Arbeitsablauf**
-1. **Erste Person** zählt
-2. **Zweite Person** kontrolliert
-3. **Bei Differenzen**: Nachzählung
-4. **Konsens** erreichen
-5. **Buchung** durchführen
+4. **Eingabe im System**
+   - Gezählte Menge eingeben
+   - Qualitätsstatus prüfen
+   - Bemerkungen hinzufügen
 
-### 2.4 Nahe-Null-Inventur
+**Schritt 3: Differenz-Behandlung**
+```
+Toleranzgrenzen bei Georg Fischer:
+- A-Artikel: ±1%
+- B-Artikel: ±2%
+- C-Artikel: ±5%
+```
 
-#### **Anwendung**
-- **Vor größeren Umbaumaßnahmen**
-- **Bei Systemwechsel**
-- **Für Audit-Zwecke**
-- **Zur Fehlerbereinigung**
+1. **Automatische Buchung** (innerhalb Toleranz)
+2. **Nachzählung** (außerhalb Toleranz)
+3. **Manuelle Freigabe** (durch Lagerleiter)
+
+### 2.2 Stichproben-Inventur
+
+#### **ABC-basierte Stichproben**
+
+**Häufigkeit nach Artikel-Klasse:**
+- **A-Artikel:** Wöchentlich 5% der Artikel
+- **B-Artikel:** Monatlich 3% der Artikel  
+- **C-Artikel:** Quartalsweise 1% der Artikel
+
+**Auswahlkriterien:**
+1. **Zufallsauswahl** aus Artikel-Kategorien
+2. **Problematische Bereiche** gezielt prüfen
+3. **Hochfrequente Lagerplätze** bevorzugen
+4. **Saisonale Artikel** berücksichtigen
 
 #### **Durchführung**
-1. **Bestände** weitgehend abbauen
-2. **Restbestände** vollständig erfassen
-3. **Differenzen** aufklären
-4. **Neuaufbau** mit korrekten Daten
+
+```
+Menü: Inventur > Stichproben-Inventur
+1. Stichproben-Parameter definieren
+2. Artikel-Liste generieren
+3. Zählung durchführen
+4. Ergebnisse analysieren
+```
+
+**Qualitätskontrolle:**
+- Mindestens 95% Genauigkeit
+- Maximale Abweichung nach ABC-Klasse
+- Dokumentation aller Auffälligkeiten
+
+### 2.3 Vollständige Inventur
+
+#### **Vorbereitung**
+1. **Timing planen** (üblicherweise Jahresende)
+2. **System-Stopp** koordinieren
+3. **Zusätzliches Personal** organisieren
+4. **Inventur-Materialien** bereitstellen
+
+#### **Durchführung**
+1. **Bestandseinfrierung** zu Stichtag
+2. **Vollständige Zählung** aller Lagerplätze
+3. **Doppelte Kontrolle** bei kritischen Artikeln
+4. **Sofortige Differenz-Klärung**
+
+#### **Nachbearbeitung**
+1. **Buchung aller Korrekturen**
+2. **Ursachen-Analyse** für größere Differenzen
+3. **Prozess-Verbesserungen** ableiten
+4. **Bilanz-Erstellung** für Buchhaltung
 
 ## 3. Bestandskorrekturen
 
-### 3.1 Arten von Korrekturen
+### 3.1 Korrektur-Arten
 
-#### **Mengenkorrektur**
-- **Ist-Menge** von **Soll-Menge** abweichend
-- **Zähldifferenzen** bereinigen
-- **Schwund** oder **Mehrbefund**
-- **Dokumentations-Fehler**
+#### **Mengenkorrekturen**
+- **Zu wenig Bestand:** Nachbuchung erforderlich
+- **Zu viel Bestand:** Abbuchung durchführen
+- **Einheitenfehler:** Umrechnung zwischen Einheiten
 
-#### **Attributkorrektur**
-- **Artikel-Eigenschaften** ändern
-- **Qualitätsstatus** anpassen
-- **Chargen-Zuordnung** korrigieren
-- **Lagerplatz-Zuordnung** aktualisieren
+#### **Qualitätskorrekturen**
+- **Freigabe gesperrter Artikel**
+- **Sperrung problematischer Bestände**
+- **Qualitätsstatus-Änderungen**
 
-#### **Einzelbestand-Korrektur**
-- **Spezifische LHM** korrigieren
-- **Gezielte Anpassung**
-- **Minimale Auswirkungen**
-- **Präzise Dokumentation**
+#### **Lagerplatz-Korrekturen**
+- **Falsche Einlagerung:** Umlagerung
+- **Lagerplatz-Optimierung:** Reorganisation
+- **Beschädigte Lagerplätze:** Sperrung
 
-### 3.2 Bestandskorrektur durchführen
+### 3.2 Korrektur-Prozess
 
-#### **Menüpfad: Bestand > Bestandskorrektur**
+**Menüpfad: Bestand > Bestandskorrekturen**
 
-#### **Einzelbestand korrigieren**
-1. **Artikel** und **LHM** auswählen
-2. **Aktuelle Werte** prüfen
-3. **Neue Werte** eingeben
-4. **Korrektur-Grund** angeben
-5. **Korrektur** bestätigen
+#### **Schritt 1: Vorbereitung**
+```
+Erforderliche Informationen:
+- Artikel-Nummer
+- Lagerplatz
+- Aktuelle vs. korrekte Menge
+- Grund der Korrektur
+- Freigabe-Berechtigung
+```
 
-#### **Mehrfachauswahl**
-1. **Mehrere Bestände** markieren
-2. **Massen-Korrektur** durchführen
-3. **Einheitliche Änderungen** anwenden
-4. **Batch-Verarbeitung** nutzen
+#### **Schritt 2: Durchführung**
+1. **Artikel auswählen**
+   - Scanner oder manuelle Eingabe
+   - Lagerplatz bestätigen
+   - Aktuelle Menge anzeigen
 
-### 3.3 Korrektur-Gründe
+2. **Korrektur eingeben**
+   - Neue Menge eingeben
+   - Grund auswählen (Dropdown)
+   - Bemerkung hinzufügen
 
-#### **Häufige Gründe**
-- **Inventur-Differenz**: Zählung ergab Abweichung
-- **Schwund**: Verlust durch Verdampfung, etc.
-- **Beschädigung**: Artikel nicht mehr verwendbar
-- **Qualitätsmangel**: Artikel entspricht nicht Spezifikation
-- **Systemfehler**: Technische Probleme
-- **Eingabefehler**: Manuelle Fehlbuchung
+3. **Validation und Freigabe**
+   - Plausibilitätsprüfung
+   - Freigabe durch Berechtigen
+   - Buchung durchführen
 
-#### **Dokumentation**
-- **Detaillierte Beschreibung** des Grundes
-- **Verantwortliche Person** festhalten
-- **Zeitpunkt** der Korrektur
-- **Auswirkungen** bewerten
+#### **Schritt 3: Dokumentation**
+- **Korrektur-Protokoll** automatisch erstellt
+- **Audit-Trail** für Nachverfolgung
+- **Monatsberichte** für Management
 
-## 4. Bestände sperren und freigeben
+### 3.3 Berechtigungen und Kontrollen
 
-### 4.1 Sperr-Gründe
+#### **Berechtigungs-Matrix**
+```
+Lagerarbeiter:    Kleine Korrekturen (±5%)
+Schichtführer:    Mittlere Korrekturen (±10%)
+Lagerleiter:      Große Korrekturen (>10%)
+System-Admin:     Alle Korrekturen
+```
 
-#### **Qualitätsprobleme**
-- **Qualitätsprüfung** läuft
-- **Reklamation** eingegangen
-- **Verdacht** auf Beschädigung
-- **Haltbarkeitsprobleme**
+#### **Vier-Augen-Prinzip**
+- Korrekturen >100 Stück: Zweite Unterschrift
+- Wertmäßig >1000 CHF: Lagerleiter-Freigabe
+- Kritische Artikel: Immer doppelte Kontrolle
 
-#### **Rechtliche Gründe**
-- **Rückruf-Aktion** des Herstellers
-- **Behördliche Anordnung**
-- **Patentstreitigkeiten**
-- **Zoll-Probleme**
+## 4. ABC-Analyse
 
-#### **Technische Gründe**
-- **Systemfehler** bei Buchung
-- **Dateninkonsistenzen**
-- **Lagerplatz-Probleme**
-- **Transport-Schäden**
+### 4.1 Klassifizierung
 
-### 4.2 Sperrung durchführen
+#### **A-Artikel (20% der Artikel, 80% des Wertes)**
+- **Eigenschaften:**
+  - Hoher Umschlagswert
+  - Kritisch für Produktion
+  - Enge Lieferanten-Beziehungen
 
-#### **Menüpfad: Bestand > Bestand sperren/freigeben**
+- **Verwalgungs-Intensität:**
+  - Tägliche Bestandskontrolle
+  - Wöchentliche Inventur
+  - Automatische Disposition
+  - Detaillierte Verfolgung
 
-#### **Arbeitsschritte**
-1. **Bestand** identifizieren
-2. **Sperr-Grund** auswählen
-3. **Sperr-Kommentar** eingeben
-4. **Sperrung** aktivieren
-5. **Betroffene Bereiche** informieren
+#### **B-Artikel (30% der Artikel, 15% des Wertes)**
+- **Eigenschaften:**
+  - Mittlerer Umschlagswert
+  - Wichtig für Betrieb
+  - Standardisierte Beschaffung
 
-#### **Auswirkungen**
-- **Keine Entnahme** möglich
-- **Keine Reservierung** möglich
-- **Sichtbar** in allen Anzeigen
-- **Automatische Benachrichtigung**
+- **Verwaltungs-Intensität:**
+  - Wöchentliche Bestandskontrolle
+  - Monatliche Inventur
+  - Teilautomatische Disposition
+  - Stichproben-Kontrolle
 
-### 4.3 Freigabe durchführen
+#### **C-Artikel (50% der Artikel, 5% des Wertes)**
+- **Eigenschaften:**
+  - Niedriger Umschlagswert
+  - Standardartikel
+  - Einfache Beschaffung
 
-#### **Voraussetzungen**
-- **Sperr-Grund** ist behoben
-- **Qualitätsprüfung** abgeschlossen
-- **Genehmigung** eingeholt
-- **Dokumentation** vollständig
+- **Verwaltungs-Intensität:**
+  - Monatliche Bestandskontrolle
+  - Quartalsweise Inventur
+  - Einfache Disposition
+  - Minimale Verfolgung
 
-#### **Arbeitsschritte**
-1. **Gesperrte Bestände** anzeigen
-2. **Bestand** auswählen
-3. **Freigabe-Grund** eingeben
-4. **Freigabe** bestätigen
-5. **Verfügbarkeit** prüfen
+### 4.2 ABC-Berechnung im WMS
 
-## 5. Umlagerungen
+**Menüpfad: Analyse > ABC-Analyse**
 
-### 5.1 Umlagerungs-Arten
+#### **Parameter definieren**
+```
+Berechnungsgrundlage:
+- Umsatzwert (Menge × Preis)
+- Zeitraum: 12 Monate
+- Berücksichtigung: Durchschnittswerte
+- Update-Frequenz: Monatlich
+```
 
-#### **Interne Umlagerungen**
-- **Lagerplatz-Optimierung**
-- **Reorganisation**
-- **Defektes Lager** reparieren
-- **Qualitätsprüfung** in Spezialzone
+#### **Klassifizierung durchführen**
+1. **Daten sammeln** (Verbrauch × Wert)
+2. **Ranking erstellen** (absteigend nach Wert)
+3. **Klassen zuweisen** (20/30/50-Regel)
+4. **Ergebnisse validieren**
 
-#### **Externe Umlagerungen**
-- **Zwischen Lagern** bewegen
-- **Zur Produktion** bereitstellen
-- **Zum Kunden** versenden
-- **Zur Entsorgung** vorbereiten
+#### **Parameter anpassen**
+- **Saisonale Korrekturen**
+- **Trend-Berücksichtigung**  
+- **Manuelle Überschreibungen**
+- **Spezielle Artikel-Kategorien**
 
-### 5.2 Umlagerung für LHM erstellen
+### 4.3 ABC-basierte Optimierung
 
-#### **Menüpfad: Umlagerung > Umlagerung für ein LHM erzeugen**
+#### **Lagerplatz-Zuordnung**
+```
+A-Artikel: Optimale Plätze (kurze Wege)
+B-Artikel: Standard-Plätze
+C-Artikel: Entfernte Plätze (lange Wege)
+```
 
-#### **Arbeitsschritte**
-1. **Quell-LHM** auswählen
-2. **Ziel-Lagerplatz** festlegen
-3. **Umlagerungs-Grund** angeben
-4. **Priorität** setzen
-5. **Umlagerung** freigeben
+#### **Bestellstrategien**
+- **A-Artikel:** Just-in-Time, kleine Losgrößen
+- **B-Artikel:** Periodische Bestellung
+- **C-Artikel:** Große Losgrößen, seltene Bestellung
 
-#### **Automatische Umlagerungen**
-- **System-gesteuerte** Optimierung
-- **Regelbasierte** Bewegungen
-- **Kapazitäts-Ausgleich**
-- **Qualitäts-Zonierung**
+#### **Kontrolldichte**
+- **A-Artikel:** Täglich überwachen
+- **B-Artikel:** Wöchentlich kontrollieren
+- **C-Artikel:** Monatlich prüfen
 
-### 5.3 LHM-Anforderung
+## 5. Qualitätszonen-Verwaltung
 
-#### **Menüpfad: Umlagerung > LHM-Anforderung**
+### 5.1 Qualitätszonen-Konzept
 
-#### **Anwendung**
-- **Leer-LHM** anfordern
-- **Spezielle LHM** bereitstellen
-- **Defekte LHM** austauschen
-- **Kapazität** erweitern
+#### **Zweck der Qualitätszonen**
+- **Separierung** problematischer Artikel
+- **Kontrollierte Umgebung** für Prüfungen
+- **Qualitätssicherung** vor Freigabe
+- **Dokumentation** von Qualitätsentscheidungen
 
-#### **Arbeitsschritte**
-1. **LHM-Typ** auswählen
-2. **Ziel-Arbeitsplatz** angeben
-3. **Anzahl** festlegen
-4. **Priorität** setzen
-5. **Anforderung** absenden
+#### **Zone-Arten bei Georg Fischer**
+1. **Eingangsprüfung:** Neue Lieferungen
+2. **Stichproben-Prüfung:** Zufällige Kontrollen
+3. **Beschwerde-Bearbeitung:** Kundenreklamationen
+4. **Schadens-Beurteilung:** Beschädigte Artikel
 
-## 6. ABC-Analyse
+### 5.2 Qualitäts-Workflows
 
-### 6.1 ABC-Klassifizierung
+#### **Eingang in Qualitätszone**
 
-#### **Klassifizierungs-Kriterien**
-- **A-Artikel**: 80% des Wertes, 20% der Artikel
-- **B-Artikel**: 15% des Wertes, 30% der Artikel
-- **C-Artikel**: 5% des Wertes, 50% der Artikel
+**Menüpfad: Qualität > Qualitätszonen > Eingang**
 
-#### **Zusätzliche Kriterien**
-- **Umschlagshäufigkeit**: Wie oft bewegt
-- **Kritikalität**: Wichtigkeit für Produktion
-- **Lagerkosten**: Kosten pro Lagerplatz
-- **Verfügbarkeit**: Lieferzeiten
+```
+Automatische Auslöser:
+- Neue Lieferungen (Stichproben)
+- Kundenreklamationen
+- Interne Meldungen
+- Systematische Prüfzyklen
+```
 
-### 6.2 ABC-Analyse durchführen
+**Manuelle Einsteuerung:**
+1. Artikel scannen
+2. Qualitäts-Grund auswählen
+3. Qualitätszone zuweisen
+4. Prüfauftrag erstellen
 
-#### **Menüpfad: Data Center > ABC-Analyse**
+#### **Qualitätsprüfung durchführen**
 
-#### **Arbeitsschritte**
-1. **Analyse-Parameter** definieren
-2. **Artikel-Auswahl** treffen
-3. **Zeitraum** festlegen
-4. **Kriterien** gewichten
-5. **Analyse** starten
-6. **Ergebnisse** auswerten
+**Prüfprozess:**
+1. **Visueller Check:** Äußere Beschädigungen
+2. **Funktionsprüfung:** Je nach Artikel-Art
+3. **Dokumentations-Check:** Zertifikate, Begleitpapiere
+4. **Mess-Protokoll:** Bei kritischen Maßen
 
-#### **Ergebnis-Interpretation**
-- **Grafische Darstellung** der Verteilung
-- **Artikel-Listen** pro Kategorie
-- **Wert-Analysen** detailliert
-- **Empfehlungen** für Optimierung
+**Entscheidungen:**
+- **Freigabe:** Artikel für normalen Bestand
+- **Nacharbeit:** Reparatur oder Nachbesserung  
+- **Sperrung:** Permanent gesperrt
+- **Rückgabe:** An Lieferanten zurück
 
-### 6.3 ABC-Anwendung
+#### **Freigabe aus Qualitätszone**
 
-#### **Lagerplatz-Optimierung**
-- **A-Artikel**: Optimale Lagerplätze
-- **B-Artikel**: Standard-Lagerplätze
-- **C-Artikel**: Entfernte Lagerplätze
+```
+Freigabe-Arten:
+1. Vollständige Freigabe → Freier Bestand
+2. Eingeschränkte Freigabe → Sonderverwendung
+3. Chargen-Freigabe → Teilweise verfügbar
+4. Endgültige Sperrung → Entsorgung
+```
 
-#### **Inventur-Frequenz**
-- **A-Artikel**: Häufige Kontrolle
-- **B-Artikel**: Regelmäßige Kontrolle
-- **C-Artikel**: Seltene Kontrolle
+### 5.3 Qualitäts-Dokumentation
 
-#### **Bestandsstrategien**
-- **A-Artikel**: Niedrige Bestände, hohe Umschlagshäufigkeit
-- **B-Artikel**: Moderate Bestände
-- **C-Artikel**: Höhere Bestände, seltene Bestellungen
+#### **Prüfprotokolle**
+- **Standardisierte Formulare** je Artikel-Kategorie
+- **Digitale Erfassung** mit Foto-Dokumentation
+- **Automatische Archivierung** für Audit-Zwecke
+- **Integration** mit Kunden-Portalen
 
-## 7. Reorganisation
+#### **Qualitäts-KPIs**
+```
+Durchlaufzeit Qualitätsprüfung: <24h
+Erstprüfungs-Quote: >95%
+Nacharbeits-Quote: <5%
+Kundenreklamations-Quote: <1%
+```
 
-### 7.1 LHM-Reorganisation
+## 6. Sperr- und Freigabeprozesse
 
-#### **Ziele**
-- **Lagerplatz-Optimierung**
-- **Zugriffszeiten** reduzieren
-- **Lagerkapazität** optimieren
-- **Fehlerquellen** eliminieren
+### 6.1 Sperrverfahren
 
-#### **Menüpfad: Reorganisation > LHM-Reorganisation**
+#### **Sperrung-Auslöser**
+- **Qualitätsprobleme:** Mängel bei Prüfung
+- **Schadensmeldungen:** Transport- oder Lagerschäden
+- **Kundenreklamationen:** Externe Qualitätsmeldungen
+- **Interne Findings:** Mitarbeiter-Meldungen
 
-#### **Arbeitsschritte**
-1. **Reorganisations-Bereich** definieren
-2. **LHM-Auswahl** treffen
-3. **Ziel-Strategie** festlegen
-4. **Reorganisation** starten
-5. **Fortschritt** überwachen
+#### **Sperrung durchführen**
 
-### 7.2 Bestandsreorganisation
+**Menüpfad: Bestand > Sperren/Freigeben**
 
-#### **Reorganisations-Methoden**
-- **Vollständige Reorganisation**: Komplette Neuordnung
-- **Teilweise Reorganisation**: Specific Bereiche
-- **Kontinuierliche Reorganisation**: Laufende Optimierung
-- **Ereignis-basierte Reorganisation**: Bei Bedarf
+1. **Artikel identifizieren**
+   - Barcode scannen oder manuell eingeben
+   - Lagerplatz bestätigen
+   - Verfügbare Menge anzeigen
 
-#### **Durchführung**
-1. **Reorganisations-Plan** erstellen
-2. **Ressourcen** bereitstellen
-3. **Reorganisation** durchführen
-4. **Qualitätskontrolle** durchführen
-5. **Ergebnisse** dokumentieren
+2. **Sperrparameter festlegen**
+   ```
+   Sperrart:
+   - Vollsperrung: Gesamter Bestand
+   - Teilsperrung: Bestimmte Menge/Charge
+   - Lagerplatz-Sperrung: Kompletter Lagerplatz
+   ```
 
-### 7.3 Reorganisations-Strategien
+3. **Sperrgrund dokumentieren**
+   - Dropdown-Auswahl
+   - Freitext-Bemerkung
+   - Foto-Upload möglich
+   - Verantwortlichen zuweisen
+
+#### **Auswirkungen der Sperrung**
+- **Kommissionierung:** Artikel nicht verfügbar
+- **Disposition:** Automatische Ausblendung
+- **Berichte:** Separate Ausweisung
+- **Alerts:** Benachrichtigung der Verantwortlichen
+
+### 6.2 Freigabeprozesse
+
+#### **Freigabe-Voraussetzungen**
+1. **Problem gelöst:** Ursprüngliche Ursache behoben
+2. **Qualität bestätigt:** Erneute Prüfung positiv
+3. **Dokumentation vollständig:** Alle Unterlagen vorhanden
+4. **Freigabe-Berechtigung:** Authorized Person
+
+#### **Freigabe durchführen**
+
+**Standardprozess:**
+```
+1. Gesperrten Artikel auswählen
+2. Qualitätsstatus prüfen
+3. Freigabe-Grund eingeben
+4. Digitale Unterschrift/Freigabe
+5. Automatische Verfügbarkeit
+```
+
+**Bedingte Freigabe:**
+- **Sonderverwendung:** Nur für bestimmte Zwecke
+- **Zeitlich begrenzt:** Mit Ablaufdatum
+- **Chargen-spezifisch:** Nur bestimmte Lose
+- **Kunden-spezifisch:** Nur für bestimmte Abnehmer
+
+### 6.3 Sperr-/Freigabe-Überwachung
+
+#### **Dashboard-Übersicht**
+```
+Aktuelle Sperrungen: 45 Artikel
+Durchschnittliche Sperrdauer: 3.2 Tage
+Offene Qualitätsprüfungen: 12
+Überfällige Freigaben: 2
+```
+
+#### **Automatische Eskalation**
+- **Nach 48h:** E-Mail an Qualitätsmanager
+- **Nach 1 Woche:** Eskalation an Lagerleiter
+- **Nach 2 Wochen:** Management-Report
+- **Monatlich:** Vollständiger Sperrungsreport
+
+## 7. Reorganisations-Strategien
+
+### 7.1 Lagerplatz-Optimierung
+
+#### **Optimierungs-Ziele**
+- **Reduktion der Wegzeiten**
+- **Erhöhung der Flächennutzung**
+- **Verbesserung der Ergonomie**
+- **Reduzierung von Fehlern**
 
 #### **ABC-basierte Reorganisation**
-- **A-Artikel** in optimale Zonen
-- **Häufig genutzte Artikel** zuerst
-- **Laufwege** minimieren
-- **Effizienz** maximieren
 
-#### **FIFO-Reorganisation**
-- **Älteste Bestände** zuerst
-- **Haltbarkeit** optimieren
-- **Verderb** minimieren
-- **Rotation** verbessern
+**Strategie:**
+```
+A-Artikel: Beste Plätze (Nähe zu Kommissionierung)
+- Bodennah (ergonomisch)
+- Kurze Wege
+- Breite Gänge
+- Gute Beleuchtung
 
-## 8. Dashboard und Monitoring
+B-Artikel: Standard-Bereiche
+- Mittlere Lagerebenen
+- Standard-Zugänglichkeit
+- Normale Wegstrecken
 
-### 8.1 Bestandsdashboard
+C-Artikel: Entfernte Bereiche
+- Obere Lagerebenen
+- Längere Wegstrecken
+- Schmälere Gänge (Staplerbereich)
+```
 
-#### **Menüpfad: Dashboard > Bestandsübersicht**
+### 7.2 Reorganisation durchführen
 
-#### **Key Performance Indicators**
-- **Bestandsgenauigkeit**: Prozent korrekte Bestände
-- **Umschlagshäufigkeit**: Bewegungen pro Zeitraum
-- **Lagerauslastung**: Belegte vs. verfügbare Plätze
-- **Sperr-Quote**: Prozent gesperrte Bestände
+#### **Planungsphase**
 
-#### **Echtzeit-Überwachung**
-- **Live-Daten** aus dem System
-- **Automatische Aktualisierung**
-- **Trend-Anzeigen**
-- **Alarm-Funktionen**
+**Menüpfad: Lager > Reorganisation > Planung**
 
-### 8.2 Bestandsberichte
+1. **Ist-Analyse erstellen**
+   - Aktuelle Lagerplatz-Belegung
+   - Bewegungs-Häufigkeiten analysieren
+   - Weg-Zeit-Analyse durchführen
+   - Problembereiche identifizieren
 
-#### **Standard-Berichte**
-- **Bestandsliste**: Vollständige Übersicht
-- **Bewegungsanalyse**: Zu- und Abgänge
-- **Differenzen-Berichte**: Inventur-Abweichungen
-- **Sperr-Berichte**: Gesperrte Bestände
+2. **Soll-Konzept entwickeln**
+   - ABC-Analyse aktualisieren
+   - Optimale Lagerplatz-Zuordnung
+   - Umzugs-Reihenfolge planen
+   - Ressourcen-Bedarf ermitteln
 
-#### **Individuelle Berichte**
-- **Benutzerdefinierte Filter**
-- **Spezielle Auswertungen**
-- **Export-Funktionen**
-- **Automatische Versendung**
+#### **Umsetzungsphase**
 
-### 8.3 Alarmierung
+**Reorganisation starten:**
+```
+1. Umzugs-Aufträge generieren
+2. Personal und Technik einteilen
+3. Systemsperren für betroffene Plätze
+4. Physische Umlagerung durchführen
+5. System-Buchungen aktualisieren
+6. Qualitätskontrolle Neuzuordnung
+```
 
-#### **Alarm-Kategorien**
-- **Bestandsunterschreitung**: Mindestbestand erreicht
-- **Überschreitung**: Maximale Menge überschritten
-- **Qualitätsprobleme**: Gesperrte Bestände
-- **Systemfehler**: Technische Probleme
+**Überwachung:**
+- **Real-time Dashboard** mit Fortschritt
+- **Störungsprotokoll** für Probleme
+- **Zeitplan-Überwachung**
+- **Qualitätssicherung** der Umlagerungen
 
-#### **Benachrichtigungen**
-- **E-Mail-Benachrichtigung**
-- **SMS-Alerts**
-- **Dashboard-Warnungen**
-- **Automatische Eskalation**
+#### **Erfolgskontrolle**
 
-## 9. Langfristige Störungsbehandlung
+**KPIs vor/nach Reorganisation:**
+```
+Durchschnittliche Kommissionierzeit
+Fehlerrate bei Entnahmen
+Mitarbeiter-Zufriedenheit
+Flächennutzungsgrad
+```
 
-### 9.1 Störungs-Kategorien
+**Nachbearbeitung:**
+- **Feintuning** bei Problemen
+- **Mitarbeiter-Schulung** neue Plätze
+- **Prozess-Anpassungen**
+- **Dokumentations-Update**
 
-#### **Lagerplatz-Störungen**
-- **Defekte Lagerplätze**
-- **Unzugängliche Bereiche**
-- **Reparatur-Arbeiten**
-- **Umbauten**
+## 8. Praktische Übungen
 
-#### **System-Störungen**
-- **Software-Probleme**
-- **Hardware-Ausfälle**
-- **Netzwerk-Probleme**
-- **Datenbank-Fehler**
+### Übung 1: Zyklische Inventur durchführen
+1. **Wählen Sie 10 A-Artikel** aus Ihrem Bereich
+2. **Generieren Sie eine Inventur-Liste**
+3. **Führen Sie die Zählung durch** mit Scanner
+4. **Behandeln Sie eventuelle Differenzen**
+5. **Dokumentieren Sie das Ergebnis**
 
-### 9.2 Störungsbehandlung
+### Übung 2: Bestandskorrektur vornehmen
+1. **Identifizieren Sie einen Artikel** mit kleiner Differenz
+2. **Bereiten Sie die Korrektur vor** (Grund, Menge)
+3. **Führen Sie die Korrektur durch** im System
+4. **Überprüfen Sie das Ergebnis** in Berichten
 
-#### **Menüpfad: Störungsbehandlung > Langfristige Störung**
+### Übung 3: ABC-Analyse interpretieren
+1. **Generieren Sie eine ABC-Analyse** für Ihren Bereich
+2. **Analysieren Sie die Klassifizierung**
+3. **Identifizieren Sie Optimierungspotenzial**
+4. **Schlagen Sie Verbesserungen vor**
 
-#### **Arbeitsschritte**
-1. **Störung** identifizieren
-2. **Betroffene Bereiche** erfassen
-3. **Ausweichlager** definieren
-4. **Umlagerungen** planen
-5. **Störung** dokumentieren
+### Übung 4: Qualitätszone-Workflow
+1. **Steuern Sie einen Artikel** in die Qualitätszone
+2. **Führen Sie eine Prüfung durch**
+3. **Dokumentieren Sie das Ergebnis**
+4. **Geben Sie den Artikel frei** oder sperren
 
-#### **Kommunikation**
-- **Betroffene Bereiche** informieren
-- **Alternative Prozesse** definieren
-- **Zeitpläne** kommunizieren
-- **Fortschritt** melden
+## 9. Häufige Probleme und Lösungen
 
-### 9.3 Wiederherstellung
+### 9.1 Inventur-Probleme
 
-#### **Wiederherstellungs-Plan**
-1. **Störung** beheben
-2. **System-Test** durchführen
-3. **Testlauf** mit echten Daten
-4. **Vollbetrieb** wiederherstellen
-5. **Lessons Learned** dokumentieren
+#### **Problem: Große Differenzen bei Inventur**
+- **Ursachen:** Buchungsfehler, Diebstahl, Schwund
+- **Lösung:** 
+  1. Nachzählung durchführen
+  2. Buchungshistorie prüfen
+  3. Ursachen-Analyse starten
+  4. Prozess-Verbesserungen ableiten
 
-## 10. Praktische Übungen
+#### **Problem: Inventur dauert zu lange**
+- **Ursachen:** Ineffiziente Planung, zu wenig Personal
+- **Lösung:**
+  1. ABC-Analyse zur Priorisierung
+  2. Optimierte Zählrouten
+  3. Mehr Personal in Stoßzeiten
+  4. Mobile Scanner verwenden
 
-### Übung 1: Inventur durchführen
-1. **Starten Sie eine artikelbezogene Inventur**
-2. **Führen Sie Zählungen durch**
-3. **Dokumentieren Sie Differenzen**
-4. **Führen Sie Korrekturen durch**
-5. **Erstellen Sie einen Inventur-Bericht**
+### 9.2 Korrektur-Probleme
 
-### Übung 2: Bestandskorrektur
-1. **Identifizieren Sie einen korrektur-bedürftigen Bestand**
-2. **Führen Sie eine Mengenkorrektur durch**
-3. **Dokumentieren Sie den Grund**
-4. **Prüfen Sie die Auswirkungen**
-5. **Informieren Sie betroffene Bereiche**
+#### **Problem: Häufige Bestandskorrekturen**
+- **Ursachen:** Systemfehler, Prozess-Mängel
+- **Lösung:**
+  1. Root-Cause-Analyse durchführen
+  2. Trainings für Mitarbeiter
+  3. System-Validierung
+  4. Prozess-Standardisierung
 
-### Übung 3: Bestände sperren/freigeben
-1. **Sperren Sie einen Bestand**
-2. **Dokumentieren Sie den Sperr-Grund**
-3. **Prüfen Sie die Auswirkungen**
-4. **Simulieren Sie die Problemlösung**
-5. **Geben Sie den Bestand frei**
+#### **Problem: Unauthorized Korrekturen**
+- **Ursachen:** Fehlende Berechtigungen, Notfälle
+- **Lösung:**
+  1. Berechtigungs-Matrix überprüfen
+  2. Eskalations-Verfahren definieren
+  3. Audit-Kontrollen verstärken
+  4. Schulung Compliance
 
-### Übung 4: ABC-Analyse
-1. **Führen Sie eine ABC-Analyse durch**
-2. **Interpretieren Sie die Ergebnisse**
-3. **Leiten Sie Optimierungen ab**
-4. **Präsentieren Sie die Ergebnisse**
-5. **Implementieren Sie Verbesserungen**
+## 10. Lernerfolgskontrolle
 
-### Übung 5: Reorganisation planen
-1. **Analysieren Sie den aktuellen Zustand**
-2. **Definieren Sie Reorganisations-Ziele**
-3. **Erstellen Sie einen Reorganisations-Plan**
-4. **Simulieren Sie die Durchführung**
-5. **Bewerten Sie die Ergebnisse**
+### Fragen zur Selbstüberprüfung
 
-## 11. Erweiterte Themen
+1. **Welche Bestandsarten gibt es im WMS?**
+   - [x] Frei, Gesperrt, Qualität, Reserviert
+   - [ ] Nur frei und gesperrt
+   - [ ] Frei, Gesperrt, Verkauft
+   - [ ] Eingangsprüfung, Kommissionierung, Versand
 
-### 11.1 Automatisierte Bestandsführung
+2. **Wie häufig sollten A-Artikel inventiert werden?**
+   - [x] Monatlich
+   - [ ] Jährlich
+   - [ ] Wöchentlich
+   - [ ] Täglich
 
-#### **Sensor-Technologie**
-- **Gewichtssensoren** für automatische Mengenerfassung
-- **Lichtschranken** für Bewegungserkennung
-- **RFID-Tags** für Artikel-Identifikation
-- **Kameras** für visuelle Kontrolle
+3. **Wer darf Bestandskorrekturen >10% durchführen?**
+   - [x] Lagerleiter
+   - [ ] Jeder Mitarbeiter
+   - [ ] Schichtführer
+   - [ ] System-Administrator
 
-#### **IoT-Integration**
-- **Vernetzte Sensoren**
-- **Echtzeit-Datenübertragung**
-- **Automatische Alerts**
-- **Predictive Analytics**
-
-### 11.2 Künstliche Intelligenz
-
-#### **Machine Learning**
-- **Bedarfsprognosen** basierend auf historischen Daten
-- **Anomalie-Erkennung** in Bestandsbewegungen
-- **Optimierung** von Lagerplatz-Zuordnungen
-- **Automatische Reorganisation**
-
-#### **Predictive Analytics**
-- **Vorhersage** von Bestandsengpässen
-- **Optimale Bestellzeitpunkte**
-- **Qualitätsprobleme** früh erkennen
-- **Wartungsbedarfe** vorhersagen
-
-### 11.3 Blockchain-Technologie
-
-#### **Rückverfolgbarkeit**
-- **Unveränderliche Bestandshistorie**
-- **Transparente Lieferketten**
-- **Qualitäts-Nachweise**
-- **Compliance-Dokumentation**
-
-#### **Smart Contracts**
-- **Automatische Bestellungen**
-- **Qualitäts-Garantien**
-- **Lieferanten-Verträge**
-- **Zahlungsabwicklung**
-
-## 12. Leistungsmessung
-
-### 12.1 KPIs für Bestandsverwaltung
-
-#### **Genauigkeits-KPIs**
-- **Bestandsgenauigkeit**: 99,5% Ziel
-- **Lagerplatz-Genauigkeit**: 100% Ziel
-- **Inventur-Genauigkeit**: 99,8% Ziel
-- **Fehlerrate**: <0,5% Ziel
-
-#### **Effizienz-KPIs**
-- **Inventur-Zykluszeit**: Tage pro Inventur
-- **Korrektur-Durchlaufzeit**: Stunden bis Korrektur
-- **Reorganisations-Effizienz**: Verbesserung in %
-- **Automatisierungs-Grad**: % automatische Prozesse
-
-### 12.2 Benchmarking
-
-#### **Interne Benchmarks**
-- **Vergleich** zwischen Lagerbereichen
-- **Historische Entwicklung**
-- **Saisonale Schwankungen**
-- **Trend-Analysen**
-
-#### **Externe Benchmarks**
-- **Branchenvergleich**
-- **Best-Practice-Vergleich**
-- **Technologie-Vergleich**
-- **Kosten-Vergleich**
-
-### 12.3 Kontinuierliche Verbesserung
-
-#### **Verbesserungs-Zyklus**
-1. **Ist-Zustand** analysieren
-2. **Soll-Zustand** definieren
-3. **Maßnahmen** planen
-4. **Implementierung** durchführen
-5. **Ergebnisse** messen
-6. **Optimierung** fortsetzen
-
-#### **Verbesserungs-Methoden**
-- **Kaizen**: Kontinuierliche kleine Verbesserungen
-- **Six Sigma**: Fehlerreduzierung
-- **Lean Management**: Verschwendung eliminieren
-- **Agile Methoden**: Schnelle Anpassung
-
-## 13. Lernerfolgskontrolle
-
-### Theoretische Prüfung
-
-1. **Welche Inventur-Verfahren gibt es?**
-   - [x] Permanente, artikelbezogene, Nahe-Null-Inventur
-   - [ ] Nur permanente Inventur
-   - [ ] Nur artikelbezogene Inventur
-   - [ ] Nur Jahresinventur
-
-2. **Was bedeutet das 4-Augen-Prinzip?**
-   - [x] Zwei Personen führen unabhängig Inventur durch
-   - [ ] Vier Personen prüfen gleichzeitig
-   - [ ] Vier verschiedene Prüfungen
-   - [ ] Vier Augen sehen mehr
-
-3. **Wie funktioniert die ABC-Analyse?**
-   - [x] Klassifizierung nach Wert und Wichtigkeit
-   - [ ] Alphabetische Sortierung
-   - [ ] Analyse von drei Artikeln
-   - [ ] Bewertung nach Farben
-
-4. **Wann werden Bestände gesperrt?**
-   - [x] Bei Qualitätsproblemen, Rechtsproblemen, Systemfehlern
-   - [ ] Nur bei Qualitätsproblemen
-   - [ ] Nur bei Systemfehlern
-   - [ ] Nie
+4. **Was ist der Hauptzweck der ABC-Analyse?**
+   - [x] Ressourcen-Fokussierung auf wichtige Artikel
+   - [ ] Lagerplatz-Zuordnung
+   - [ ] Preisgestaltung
+   - [ ] Kundenklassifizierung
 
 ### Praktische Bewertung
 
-#### **Aufgabe 1: Inventur durchführen (25 Punkte)**
-- Korrekte Inventur-Durchführung
-- Differenzen-Identifikation
-- Korrekte Dokumentation
-- Angemessene Korrekturmaßnahmen
+**Aufgabe: Inventur-Szenario**
+1. **Führen Sie eine Inventur durch** mit 5 Artikeln
+2. **Simulieren Sie eine Differenz** von 8%
+3. **Dokumentieren Sie den Korrektur-Prozess**
+4. **Erstellen Sie einen kurzen Bericht**
 
-#### **Aufgabe 2: Bestandskorrektur (25 Punkte)**
-- Korrekte Korrektur-Durchführung
-- Angemessene Begründung
-- Vollständige Dokumentation
-- Auswirkungen berücksichtigt
+### Bewertung
+- **90-100%**: Sehr gut - Sie beherrschen die Bestandsverwaltung
+- **70-89%**: Gut - Einige Bereiche vertiefen
+- **50-69%**: Befriedigend - Grundlagen wiederholen
+- **<50%**: Ungenügend - Modul wiederholen
 
-#### **Aufgabe 3: ABC-Analyse (25 Punkte)**
-- Korrekte Analyse-Durchführung
-- Richtige Interpretation
-- Sinnvolle Optimierungen
-- Klare Präsentation
+## 11. Weiterführende Ressourcen
 
-#### **Aufgabe 4: Reorganisation (25 Punkte)**
-- Systematische Planung
-- Realistische Ziele
-- Durchführbare Maßnahmen
-- Messbare Ergebnisse
+### Dokumentation
+- **WMS Benutzerhandbuch Kapitel 8-10**
+- **ABC-Analyse Leitfaden Georg Fischer**
+- **Inventur-Richtlinien Schweiz**
 
-### Bewertungsschema
+### Checklisten
+- **Inventur-Vorbereitung Checkliste**
+- **Bestandskorrektur-Workflow**
+- **ABC-Analyse Durchführung**
 
-- **90-100 Punkte**: Sehr gut - Bestandsexperte
-- **80-89 Punkte**: Gut - Solide Kenntnisse
-- **70-79 Punkte**: Befriedigend - Verbesserung möglich
-- **<70 Punkte**: Ungenügend - Nachschulung erforderlich
+### Tools und Templates
+- **Inventur-Planungs-Template**
+- **Differenz-Analyse Excel-Tool**
+- **KPI-Dashboard Bestandsverwaltung**
 
-## 14. Weiterführende Qualifikationen
+## Nächste Schritte
 
-### 14.1 Spezialisierungen
+Nach Abschluss dieses Moduls:
+1. **Berichtswesen** - Analyse und KPI-Monitoring
+2. **Systemkonfiguration** - Erweiterte Einstellungen
+3. **Optimierung** - Performance-Verbesserungen
 
-#### **Inventur-Spezialist**
-- **Erweiterte Inventur-Verfahren**
-- **Statistik und Analyse**
-- **Automatisierte Inventur**
-- **Audit-Durchführung**
+## Kontakt und Support
 
-#### **Bestandsanalyst**
-- **Erweiterte ABC-Analyse**
-- **Predictive Analytics**
-- **Optimierungsalgorithmen**
-- **Business Intelligence**
-
-#### **Qualitäts-Koordinator**
-- **Qualitäts-Bestandsmanagement**
-- **Risikobewertung**
-- **Compliance-Management**
-- **Audit-Vorbereitung**
-
-### 14.2 Managementqualifikationen
-
-#### **Lagerleiter**
-- **Strategische Bestandsplanung**
-- **Kostenmanagement**
-- **Personalführung**
-- **Prozessoptimierung**
-
-#### **Supply Chain Manager**
-- **Integrierte Bestandsstrategien**
-- **Lieferantenintegration**
-- **Risikomanagement**
-- **Digitale Transformation**
-
-## 15. Tipps für die Praxis
-
-### 15.1 Effizienz-Tipps
-
-#### **Inventur-Optimierung**
-- **Feste Inventur-Zyklen** einhalten
-- **Technologie** optimal nutzen
-- **Mitarbeiter** gut schulen
-- **Prozesse** standardisieren
-
-#### **Datenqualität**
-- **Systematische Kontrollen**
-- **Automatisierung** wo möglich
-- **Fehlerquellen** eliminieren
-- **Kontinuierliche Überwachung**
-
-### 15.2 Qualitäts-Tipps
-
-#### **Genauigkeit verbessern**
-- **Doppel-Kontrollen** bei kritischen Werten
-- **Barcode-Technologie** konsequent nutzen
-- **Regelmäßige Schulungen**
-- **Fehleranalyse** durchführen
-
-#### **Compliance sicherstellen**
-- **Dokumentation** vollständig
-- **Nachverfolgbarkeit** gewährleisten
-- **Audit-Bereitschaft** aufrechterhalten
-- **Gesetzliche Anforderungen** erfüllen
-
-## 16. Kontakt und Support
-
-### Fachliche Unterstützung
-
-**Bestandsverwaltung-Team:**
-- E-Mail: bestandsverwaltung@georgfischer.com
-- Telefon: +41 81 770 1400
-- Leitstand: Durchwahl 1450
-
-**Inventur-Team:**
-- E-Mail: inventur@georgfischer.com
-- Telefon: +41 81 770 1420
-- Koordination: Durchwahl 1430
-
-### Technischer Support
-
-**WMS-Support:**
-- ServiceDesk: +41 81 770 5678
-- E-Mail: wms-support@georgfischer.com
-- Notfall-Hotline: 24/7 verfügbar
-
-**Dashboard-Support:**
-- E-Mail: dashboard@georgfischer.com
-- Telefon: +41 81 770 1440
-- Analytics: Durchwahl 1460
-
-### Schulung und Weiterbildung
-
-**Training Center:**
-- E-Mail: wms-training@georgfischer.com
+**Bestandsverwaltung Support:**
+- E-Mail: inventory@georgfischer.com
 - Telefon: +41 81 770 1234
-- Intranet: WMS-Portal > Training
+- Intranet: WMS-Portal > Bestandsverwaltung
 
-**Zertifizierung:**
-- E-Mail: certification@georgfischer.com
-- Telefon: +41 81 770 1240
-- Online-Portal: cert.georgfischer.com
+**Inventur-Koordination:**
+- E-Mail: inventur@georgfischer.com
+- Telefon: +41 81 770 5678
+- Notfall-Hotline: +41 81 770 9999
 
 ---
 
 *Dieser Trainingsinhalt basiert auf der Jungheinrich WMS Schulungsunterlage für Georg Fischer Seewis, Version 1.1, Stand: 27.03.2025*
 
 *© Georg Fischer AG - Alle Rechte vorbehalten*
-
-**Präzise Bestandsverwaltung für optimale Lagerlogistik!**

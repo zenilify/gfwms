@@ -3,148 +3,1111 @@ layout: default
 title: "Leistungsoptimierung"
 description: "Tipps zur Maximierung der WMS-Performance"
 breadcrumbs:
-  - title: "WIKI"
+  - title: "Wiki"
   - title: "Leistungsoptimierung"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Leistungsoptimierung - Tipps zur Maximierung der WMS-Performance</p>
-    </div>
+# Leistungsoptimierung - Performance-Maximierung im WMS
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Leistungsoptimierung" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../notfallverfahren/" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+<div class="optimization-hero">
+    <div class="hero-content">
+        <h2>⚡ WMS Performance Excellence</h2>
+        <p>Systematische Optimierungsstrategien für maximale Effizienz des Jungheinrich WMS bei Georg Fischer</p>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+<div class="performance-alert">
+    <div class="alert-icon">
+        <i class="fas fa-tachometer-alt"></i>
+    </div>
+    <div class="alert-content">
+        <h3>📈 PERFORMANCE-ZIELE</h3>
+        <p><strong>Ziel:</strong> Systemantwortzeit < 2 Sekunden, 99.9% Verfügbarkeit, 0% Datenverlust</p>
+        <p><strong>Performance-Support:</strong> +41 81 770 5555 (Performance Team)</p>
+    </div>
+</div>
+
+## Überblick
+
+Die Performance-Optimierung des Jungheinrich WMS ist entscheidend für die Produktivität bei Georg Fischer. Diese Dokumentation bietet systematische Ansätze zur Identifikation, Analyse und Behebung von Performance-Problemen sowie präventive Optimierungsmaßnahmen.
+
+## Navigation
+
+<div class="wiki-nav-tabs">
+    <button class="wiki-tab-btn active" data-tab="system-performance">System-Performance</button>
+    <button class="wiki-tab-btn" data-tab="database-optimization">Datenbank-Optimierung</button>
+    <button class="wiki-tab-btn" data-tab="application-tuning">Anwendungs-Tuning</button>
+    <button class="wiki-tab-btn" data-tab="infrastructure">Infrastruktur</button>
+    <button class="wiki-tab-btn" data-tab="monitoring">Performance-Monitoring</button>
+</div>
+
+## System-Performance {#system-performance}
+
+<div class="wiki-tab-content active" id="system-performance">
+
+### Performance-Baseline
+
+#### **Aktuelle Performance-Kennzahlen**
+
+```yaml
+performance_baselines:
+  response_times:
+    login: "< 3 Sekunden"
+    order_creation: "< 5 Sekunden"
+    inventory_lookup: "< 2 Sekunden"
+    report_generation: "< 30 Sekunden"
+    
+  throughput:
+    concurrent_users: "100 gleichzeitige Benutzer"
+    transactions_per_minute: "500 TPS"
+    pick_operations: "120 Picks/Stunde/Operator"
+    
+  availability:
+    uptime_target: "99.9%"
+    planned_downtime: "< 4 Stunden/Monat"
+    mttr: "< 2 Stunden"
+    mtbf: "> 720 Stunden"
+```
+
+#### **Performance-KPIs Dashboard**
+
+```yaml
+kpi_metriken:
+  system_metrics:
+    cpu_utilization:
+      target: "< 70%"
+      warning: "70-85%"
+      critical: "> 85%"
+      
+    memory_usage:
+      target: "< 75%"
+      warning: "75-90%"
+      critical: "> 90%"
+      
+    disk_io:
+      target: "< 50 IOPS/GB"
+      warning: "50-80 IOPS/GB"
+      critical: "> 80 IOPS/GB"
+      
+  application_metrics:
+    session_count:
+      target: "< 80 aktive Sessions"
+      warning: "80-100 Sessions"
+      critical: "> 100 Sessions"
+      
+    queue_depth:
+      target: "< 10 Nachrichten"
+      warning: "10-50 Nachrichten"
+      critical: "> 50 Nachrichten"
+```
+
+### Bottleneck-Analyse
+
+#### **Systematische Performance-Diagnose**
+
+```yaml
+bottleneck_analysis:
+  step_1_overview:
+    tool: "Windows Performance Monitor"
+    metrics: ["CPU", "Memory", "Disk", "Network"]
+    duration: "15 Minuten Peak-Zeit-Monitoring"
+    
+  step_2_database:
+    tool: "SQL Server Management Studio"
+    queries: ["sp_who2", "sys.dm_exec_requests", "sys.dm_os_wait_stats"]
+    focus: "Blocking, Wait Stats, Long-running Queries"
+    
+  step_3_application:
+    tool: "Application Event Logs"
+    search: "WMS-spezifische Fehlermeldungen"
+    patterns: "Timeout-Errors, Memory-Exceptions"
+    
+  step_4_network:
+    tool: "Network Performance Monitor"
+    tests: ["Latency zu DB-Server", "Bandwidth-Auslastung"]
+    baselines: "< 5ms Latency, < 70% Bandwidth"
+```
+
+#### **Common Performance Issues**
+
+```yaml
+haeufige_probleme:
+  slow_login:
+    symptom: "Anmeldung dauert > 10 Sekunden"
+    ursachen:
+      - "Active Directory Latency"
+      - "Benutzerrechte-Validierung langsam"
+      - "Session-Store überlastet"
+    solutions:
+      - "AD-Connection-Pool optimieren"
+      - "Lokale Benutzerrechte-Cache"
+      - "Session-Store auf SSD migrieren"
+      
+  slow_reporting:
+    symptom: "Berichte-Generierung > 60 Sekunden"
+    ursachen:
+      - "Fehlende Datenbank-Indizes"
+      - "Große Datenmengen ohne Paginierung"
+      - "Unoptimierte SQL-Queries"
+    solutions:
+      - "Index-Analyse und -Optimierung"
+      - "Report-Paginierung implementieren"
+      - "Query-Execution-Plan analysieren"
+      
+  high_memory_usage:
+    symptom: "Arbeitsspeicher-Verbrauch > 90%"
+    ursachen:
+      - "Memory Leaks in Anwendung"
+      - "Zu große Cache-Größen"
+      - "Unzureichende Garbage Collection"
+    solutions:
+      - "Memory-Profiling durchführen"
+      - "Cache-Strategien überprüfen"
+      - "GC-Parameter anpassen"
+```
+
+### Hardware-Optimierung
+
+#### **Server-Konfiguration**
+
+```yaml
+server_optimization:
+  cpu_optimization:
+    cores: "Minimum 8 Cores für WMS-Server"
+    clock_speed: "Minimum 2.4 GHz"
+    hyperthreading: "Aktiviert für Multi-Threading"
+    power_plan: "High Performance"
+    
+  memory_optimization:
+    total_ram: "32 GB für Produktionsserver"
+    allocation:
+      os_reserved: "4 GB"
+      sql_server: "16 GB"
+      wms_application: "8 GB"
+      cache_buffer: "4 GB"
+      
+  storage_optimization:
+    system_drive: "SSD für OS und Programme"
+    database_files: "Separate SSD/NVMe für DB-Files"
+    log_files: "Separate SSD für Transaction Logs"
+    backup_storage: "Schnelle NAS für Backup-Files"
+```
+
+#### **Netzwerk-Optimierung**
+
+```yaml
+network_optimization:
+  lan_configuration:
+    bandwidth: "Gigabit Ethernet minimum"
+    switch_ports: "Dedicated Ports für kritische Server"
+    vlan_segmentation: "Separate VLANs für WMS-Traffic"
+    
+  wan_optimization:
+    compression: "Aktiviert für SAP-Verbindungen"
+    caching: "Lokaler Cache für häufige Abfragen"
+    qos: "Priorisierung von WMS-Traffic"
+    
+  wireless_optimization:
+    standard: "WiFi 6 (802.11ax) für Mobile Terminals"
+    coverage: "Vollständige Lager-Abdeckung"
+    handoff: "Nahtloser Roaming zwischen Access Points"
+```
+
+</div>
+
+## Datenbank-Optimierung {#database-optimization}
+
+<div class="wiki-tab-content" id="database-optimization">
+
+### SQL Server Performance Tuning
+
+#### **Index-Optimierung**
+
+```sql
+-- Index-Analyse und -Optimierung
+-- 1. Fehlende Indizes identifizieren
+SELECT 
+    migs.avg_total_user_cost * (migs.user_seeks + migs.user_scans) as improvement_measure,
+    'CREATE INDEX IX_' + 
+    REPLACE(REPLACE(REPLACE(mid.statement, '[', ''), ']', ''), '.', '_') + '_' + 
+    CAST(ROW_NUMBER() OVER (ORDER BY migs.avg_total_user_cost DESC) AS VARCHAR(3)) +
+    ' ON ' + mid.statement + 
+    ' (' + ISNULL(mid.equality_columns, '') + 
+    CASE WHEN mid.inequality_columns IS NOT NULL 
+         THEN (CASE WHEN mid.equality_columns IS NOT NULL THEN ',' ELSE '' END) + mid.inequality_columns 
+         ELSE '' END + ')' + 
+    CASE WHEN mid.included_columns IS NOT NULL 
+         THEN ' INCLUDE (' + mid.included_columns + ')' 
+         ELSE '' END as create_index_statement,
+    migs.user_seeks,
+    migs.user_scans,
+    migs.avg_total_user_cost
+FROM sys.dm_db_missing_index_groups mig
+INNER JOIN sys.dm_db_missing_index_group_stats migs ON migs.group_handle = mig.index_group_handle
+INNER JOIN sys.dm_db_missing_index_details mid ON mig.index_handle = mid.index_handle
+WHERE migs.avg_total_user_cost * (migs.user_seeks + migs.user_scans) > 10
+ORDER BY improvement_measure DESC;
+
+-- 2. Fragmentierte Indizes identifizieren
+SELECT 
+    OBJECT_NAME(ips.object_id) as table_name,
+    i.name as index_name,
+    ips.avg_fragmentation_in_percent,
+    ips.page_count,
+    CASE 
+        WHEN ips.avg_fragmentation_in_percent > 30 THEN 'REBUILD'
+        WHEN ips.avg_fragmentation_in_percent > 10 THEN 'REORGANIZE'
+        ELSE 'NO ACTION'
+    END as recommendation
+FROM sys.dm_db_index_physical_stats(DB_ID(), NULL, NULL, NULL, 'SAMPLED') ips
+INNER JOIN sys.indexes i ON ips.object_id = i.object_id AND ips.index_id = i.index_id
+WHERE ips.avg_fragmentation_in_percent > 10
+    AND ips.page_count > 100
+ORDER BY ips.avg_fragmentation_in_percent DESC;
+```
+
+#### **Query-Optimierung**
+
+```sql
+-- Langsame Queries identifizieren
+SELECT TOP 10
+    qs.total_elapsed_time / qs.execution_count / 1000 as avg_duration_ms,
+    qs.execution_count,
+    qs.total_logical_reads / qs.execution_count as avg_logical_reads,
+    SUBSTRING(st.text, (qs.statement_start_offset/2)+1, 
+        ((CASE qs.statement_end_offset
+            WHEN -1 THEN DATALENGTH(st.text)
+            ELSE qs.statement_end_offset
+        END - qs.statement_start_offset)/2) + 1) as statement_text,
+    qp.query_plan
+FROM sys.dm_exec_query_stats qs
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st
+CROSS APPLY sys.dm_exec_query_plan(qs.plan_handle) qp
+WHERE qs.total_elapsed_time / qs.execution_count > 1000000 -- > 1 Sekunde
+ORDER BY avg_duration_ms DESC;
+
+-- Blocking-Situationen analysieren
+SELECT 
+    blocking.session_id as blocking_spid,
+    blocked.session_id as blocked_spid,
+    blocking_sql.text as blocking_sql,
+    blocked_sql.text as blocked_sql,
+    w.wait_type,
+    w.wait_time_ms,
+    w.resource_description
+FROM sys.dm_exec_sessions blocking
+INNER JOIN sys.dm_exec_sessions blocked ON blocking.session_id = blocked.blocking_session_id
+CROSS APPLY sys.dm_exec_sql_text(blocking.most_recent_sql_handle) blocking_sql
+CROSS APPLY sys.dm_exec_sql_text(blocked.most_recent_sql_handle) blocked_sql
+LEFT JOIN sys.dm_os_waiting_tasks w ON blocked.session_id = w.session_id
+WHERE blocking.session_id != blocked.session_id;
+```
+
+### Database Configuration
+
+#### **SQL Server Einstellungen**
+
+```yaml
+sql_server_configuration:
+  memory_settings:
+    max_server_memory: "16384 MB" # 16 GB für 32 GB Server
+    min_server_memory: "8192 MB"  # 8 GB Minimum
+    optimize_for_ad_hoc: "1"      # Plan Cache optimieren
+    
+  io_settings:
+    max_degree_of_parallelism: "4" # Anzahl CPU Cores / 2
+    cost_threshold_for_parallelism: "50"
+    page_verify: "CHECKSUM"
+    
+  tempdb_optimization:
+    data_files: "4" # Ein File pro CPU Core
+    initial_size: "1024 MB"
+    growth: "256 MB"
+    separate_drive: "T:\\"
+    
+  maintenance_settings:
+    auto_update_statistics: "ON"
+    auto_create_statistics: "ON"
+    backup_compression: "ON"
+    recovery_model: "FULL"
+```
+
+#### **Wartungsplan**
+
+```sql
+-- Automatisierter Wartungsplan
+-- 1. Index-Wartung (Sonntags 02:00)
+DECLARE @sql NVARCHAR(MAX) = '';
+
+SELECT @sql = @sql + 
+    CASE 
+        WHEN avg_fragmentation_in_percent > 30 
+        THEN 'ALTER INDEX ' + i.name + ' ON ' + SCHEMA_NAME(t.schema_id) + '.' + t.name + ' REBUILD;' + CHAR(13)
+        WHEN avg_fragmentation_in_percent > 10 
+        THEN 'ALTER INDEX ' + i.name + ' ON ' + SCHEMA_NAME(t.schema_id) + '.' + t.name + ' REORGANIZE;' + CHAR(13)
+    END
+FROM sys.dm_db_index_physical_stats(DB_ID(), NULL, NULL, NULL, 'SAMPLED') ips
+INNER JOIN sys.indexes i ON ips.object_id = i.object_id AND ips.index_id = i.index_id
+INNER JOIN sys.tables t ON i.object_id = t.object_id
+WHERE ips.avg_fragmentation_in_percent > 10
+    AND ips.page_count > 100;
+
+EXEC sp_executesql @sql;
+
+-- 2. Statistiken aktualisieren
+EXEC sp_updatestats;
+
+-- 3. Database Integrity Check
+DBCC CHECKDB('WMS_GF_PROD') WITH NO_INFOMSGS;
+```
+
+### Connection Pooling
+
+#### **Verbindungspool-Optimierung**
+
+```yaml
+connection_pooling:
+  pool_configuration:
+    min_pool_size: "5"
+    max_pool_size: "100"
+    connection_timeout: "30"
+    command_timeout: "300"
+    
+  connection_string_optimization: |
+    Server=WMSDB01;Database=WMS_GF_PROD;
+    Integrated Security=true;
+    Connection Timeout=30;
+    Command Timeout=300;
+    Max Pool Size=100;
+    Min Pool Size=5;
+    Pooling=true;
+    Connection Lifetime=600;
+    
+  monitoring:
+    pool_performance_counters:
+      - "Current # pooled connections"
+      - "Current # connection pools"
+      - "Peak # pooled connections"
+      - "Total # failed connections"
+```
+
+</div>
+
+## Anwendungs-Tuning {#application-tuning}
+
+<div class="wiki-tab-content" id="application-tuning">
+
+### .NET Application Optimization
+
+#### **Memory Management**
+
+```yaml
+memory_optimization:
+  garbage_collection:
+    gc_mode: "Server GC für Multi-Core-Server"
+    concurrent_gc: "Aktiviert für bessere Responsiveness"
+    gc_heap_size: "Nicht mehr als 70% des verfügbaren RAM"
+    
+  memory_profiling:
+    tools: ["PerfView", "JetBrains dotMemory", "ANTS Memory Profiler"]
+    focus_areas:
+      - "Memory Leaks in Event Handlers"
+      - "Große Object Heap (LOH) Fragmentierung"
+      - "Unmanaged Memory Leaks"
+      
+  caching_strategy:
+    application_cache:
+      size_limit: "512 MB"
+      expiry_policy: "Sliding 30 Minuten"
+      items: ["Benutzerberechtigungen", "Materialstamm", "Lagerplätze"]
+      
+    session_cache:
+      provider: "SQL Server"
+      timeout: "30 Minuten"
+      compression: "Aktiviert für große Sessions"
+```
+
+#### **Code-Optimierungen**
+
+```csharp
+// Beispiel: Optimierte Datenbank-Abfrage
+public async Task<List<InventoryItem>> GetInventoryOptimizedAsync(string location)
+{
+    // 1. Connection Pooling nutzen
+    using var connection = new SqlConnection(connectionString);
+    
+    // 2. Prepared Statements für bessere Performance
+    const string sql = @"
+        SELECT i.ItemId, i.ItemNumber, i.Quantity, i.Location
+        FROM Inventory i WITH (NOLOCK)
+        INNER JOIN Items it ON i.ItemId = it.Id
+        WHERE i.Location = @Location
+            AND i.IsActive = 1
+        ORDER BY i.ItemNumber";
+    
+    // 3. Async-Operationen für Non-Blocking IO
+    var result = await connection.QueryAsync<InventoryItem>(sql, new { Location = location });
+    
+    // 4. Materialized List für bessere Memory-Effizienz
+    return result.ToList();
 }
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
-}
+// Beispiel: Caching-Pattern
+private static readonly MemoryCache _cache = new MemoryCache(new MemoryCacheOptions
+{
+    SizeLimit = 1000
+});
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
-
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
-
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
-
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
-
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
-
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
-
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
+public async Task<MaterialMaster> GetMaterialAsync(string materialNumber)
+{
+    string cacheKey = $"material_{materialNumber}";
+    
+    if (_cache.TryGetValue(cacheKey, out MaterialMaster cachedMaterial))
+    {
+        return cachedMaterial;
     }
+    
+    var material = await _repository.GetMaterialAsync(materialNumber);
+    
+    var cacheOptions = new MemoryCacheEntryOptions
+    {
+        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30),
+        Size = 1
+    };
+    
+    _cache.Set(cacheKey, material, cacheOptions);
+    return material;
+}
+```
+
+### Web Application Tuning
+
+#### **IIS-Optimierung**
+
+```yaml
+iis_optimization:
+  application_pool:
+    process_model:
+      idle_timeout: "0" # Keine automatische Recycling
+      max_processes: "1" # Single Process für bessere Memory-Effizienz
+      ping_enabled: "false"
+      
+    recycling_conditions:
+      memory_limit: "1.5 GB"
+      time_based: "Täglich um 03:00"
+      request_limit: "100000 Requests"
+      
+  compression:
+    static_compression: "Aktiviert"
+    dynamic_compression: "Aktiviert für .aspx/.ashx"
+    compression_level: "9" # Maximum
+    
+  caching:
+    output_caching:
+      reports: "5 Minuten"
+      static_data: "60 Minuten"
+      user_specific: "Deaktiviert"
+      
+    kernel_caching: "Aktiviert für statische Inhalte"
+```
+
+#### **Session State Optimization**
+
+```xml
+<!-- Web.config Session State Optimierung -->
+<system.web>
+  <sessionState 
+    mode="SQLServer"
+    sqlServerConnectionString="server=WMSDB01;database=ASPState;Integrated Security=true"
+    timeout="30"
+    regenerateExpiredSessionId="true"
+    stateNetworkTimeout="600"
+    compressionEnabled="true" />
+    
+  <compilation 
+    debug="false" 
+    targetFramework="4.8"
+    tempDirectory="E:\Temp\ASP.NET\" />
+    
+  <httpRuntime 
+    targetFramework="4.8"
+    maxRequestLength="51200"
+    executionTimeout="300"
+    enableVersionHeader="false" />
+</system.web>
+```
+
+### Client-Side Optimization
+
+#### **Browser-Performance**
+
+```yaml
+client_optimization:
+  javascript_optimization:
+    minification: "Aktiviert für Produktionsumgebung"
+    bundling: "CSS/JS-Files kombinieren"
+    async_loading: "Nicht-kritische Scripts async laden"
+    
+  resource_optimization:
+    image_compression: "WebP-Format wo möglich"
+    css_optimization: "Critical CSS inline"
+    font_loading: "Web Font Loader verwenden"
+    
+  caching_headers:
+    static_resources: "Cache-Control: max-age=31536000"
+    dynamic_content: "Cache-Control: no-cache"
+    api_responses: "ETag-Header für Conditional Requests"
+```
+
+</div>
+
+## Infrastruktur {#infrastructure}
+
+<div class="wiki-tab-content" id="infrastructure">
+
+### Server-Infrastruktur
+
+#### **Virtualisierung-Optimierung**
+
+```yaml
+virtualization_tuning:
+  vmware_settings:
+    cpu_allocation:
+      reservation: "50% der zugewiesenen vCPUs"
+      limit: "Unlimited"
+      shares: "High für WMS-VMs"
+      
+    memory_allocation:
+      reservation: "100% für Produktions-VMs"
+      ballooning: "Deaktiviert"
+      transparent_page_sharing: "Deaktiviert"
+      
+    storage_optimization:
+      disk_type: "Thick Provisioned Eager Zeroed"
+      multipathing: "Aktiviert für Storage-Arrays"
+      queue_depth: "32 für High-Performance"
+      
+  hyper_v_settings:
+    dynamic_memory: "Deaktiviert für WMS-VMs"
+    integration_services: "Alle aktuellen Services installiert"
+    numa_spanning: "Deaktiviert für bessere Performance"
+```
+
+#### **Load Balancing**
+
+```yaml
+load_balancing:
+  web_tier:
+    algorithm: "Least Connections"
+    health_checks: "HTTP 200 auf /health-endpoint"
+    session_affinity: "Aktiviert für Session-State"
+    
+  application_tier:
+    clustering: "Active/Active für WMS-Services"
+    failover_time: "< 30 Sekunden"
+    data_replication: "Sync zwischen Cluster-Nodes"
+    
+  database_tier:
+    always_on: "Availability Groups konfiguriert"
+    read_replicas: "Read-Only für Reporting"
+    automatic_failover: "Bei Primary-Ausfall"
+```
+
+### Storage-Optimierung
+
+#### **SAN/NAS-Konfiguration**
+
+```yaml
+storage_optimization:
+  disk_configuration:
+    database_files:
+      raid_level: "RAID 10"
+      disk_type: "SSD/NVMe"
+      stripe_size: "64KB"
+      
+    log_files:
+      raid_level: "RAID 1"
+      disk_type: "High-Speed SSD"
+      dedicated_spindles: "Separate von Data Files"
+      
+    backup_storage:
+      raid_level: "RAID 6"
+      disk_type: "High-Capacity SATA"
+      deduplication: "Aktiviert"
+      
+  io_optimization:
+    queue_depth: "32-64 für SSD"
+    io_scheduler: "NOOP für SSD"
+    read_ahead: "128KB für Sequential Reads"
+```
+
+#### **Backup-Performance**
+
+```yaml
+backup_optimization:
+  backup_strategy:
+    compression: "Hardware-Compression bevorzugt"
+    parallelization: "4 parallele Backup-Streams"
+    network_optimization: "Dedicated Backup-VLAN"
+    
+  restore_optimization:
+    staging_area: "High-Speed Storage für Restores"
+    parallel_restore: "Mehrere Files gleichzeitig"
+    verification: "Async Backup-Verification"
+```
+
+### Netzwerk-Infrastruktur
+
+#### **Bandbreiten-Management**
+
+```yaml
+network_optimization:
+  qos_configuration:
+    wms_traffic: "Höchste Priorität (DSCP 46)"
+    sap_integration: "Hohe Priorität (DSCP 34)"
+    backup_traffic: "Niedrige Priorität (DSCP 10)"
+    
+  bandwidth_allocation:
+    wms_operations: "60% der verfügbaren Bandbreite"
+    integration_traffic: "25% für SAP/EDI"
+    management_traffic: "15% für Administration"
+    
+  link_aggregation:
+    server_uplinks: "LACP für redundante Verbindungen"
+    inter_switch: "Port Channels für Hochlast-Verbindungen"
+    wan_links: "ECMP für Load Distribution"
+```
+
+#### **Monitoring & Alerting**
+
+```yaml
+infrastructure_monitoring:
+  server_monitoring:
+    cpu_threshold: "Warning > 70%, Critical > 85%"
+    memory_threshold: "Warning > 80%, Critical > 90%"
+    disk_space: "Warning < 20%, Critical < 10%"
+    
+  network_monitoring:
+    latency_threshold: "Warning > 10ms, Critical > 20ms"
+    packet_loss: "Warning > 0.1%, Critical > 1%"
+    bandwidth_utilization: "Warning > 70%, Critical > 85%"
+    
+  storage_monitoring:
+    iops_threshold: "Warning > 80% of max IOPS"
+    response_time: "Warning > 10ms, Critical > 20ms"
+    queue_depth: "Warning > 16, Critical > 32"
+```
+
+</div>
+
+## Performance-Monitoring {#monitoring}
+
+<div class="wiki-tab-content" id="monitoring">
+
+### Monitoring-Framework
+
+#### **Überwachungs-Architektur**
+
+```yaml
+monitoring_architecture:
+  data_collection:
+    agents:
+      windows_perfmon: "System-Metriken sammeln"
+      sql_server_agent: "Database-Performance"
+      application_insights: "Application Performance Monitoring"
+      
+    metrics_storage:
+      short_term: "InfluxDB für Real-time Metrics"
+      long_term: "SQL Server für Historical Data"
+      retention: "Real-time: 7 Tage, Historical: 2 Jahre"
+      
+  visualization:
+    dashboards: "Grafana für Executive Dashboards"
+    alerting: "Email + SMS + Slack Integration"
+    reporting: "Wöchentliche Performance-Reports"
+```
+
+#### **Key Performance Indicators**
+
+```yaml
+performance_kpis:
+  system_metrics:
+    availability:
+      calculation: "(Uptime / Total Time) * 100"
+      target: "> 99.9%"
+      measurement: "Minutenweise Überwachung"
+      
+    response_time:
+      calculation: "95th Percentile Response Time"
+      target: "< 2 Sekunden"
+      measurement: "Kontinuierliche Messung"
+      
+    throughput:
+      calculation: "Successful Transactions / Time"
+      target: "> 500 TPS"
+      measurement: "5-Minuten-Durchschnitt"
+      
+  business_metrics:
+    picks_per_hour:
+      calculation: "Picks / Worked Hours"
+      target: "> 120 Picks/Stunde"
+      measurement: "Schichtweise Aggregation"
+      
+    error_rate:
+      calculation: "(Failed Operations / Total Operations) * 100"
+      target: "< 0.1%"
+      measurement: "Tägliche Berechnung"
+```
+
+### Real-Time Performance Monitoring
+
+#### **Live-Dashboard Konfiguration**
+
+```yaml
+dashboard_configuration:
+  executive_dashboard:
+    refresh_interval: "30 Sekunden"
+    widgets:
+      - system_health_summary
+      - current_active_users
+      - transaction_throughput
+      - error_rate_trend
+      - sla_compliance_gauge
+      
+  technical_dashboard:
+    refresh_interval: "10 Sekunden"
+    widgets:
+      - cpu_utilization_graph
+      - memory_usage_trend
+      - disk_io_metrics
+      - network_latency_map
+      - database_performance
+      
+  operational_dashboard:
+    refresh_interval: "60 Sekunden"
+    widgets:
+      - warehouse_productivity
+      - pick_accuracy_rates
+      - inventory_accuracy
+      - order_fulfillment_times
+```
+
+#### **Alerting-Strategie**
+
+```yaml
+alerting_framework:
+  severity_levels:
+    critical:
+      response_time: "5 Minuten"
+      notification: "SMS + Phone Call + Email"
+      escalation: "Nach 15 Minuten Auto-Escalation"
+      
+    high:
+      response_time: "15 Minuten"
+      notification: "Email + Slack"
+      escalation: "Nach 1 Stunde Manager-Notification"
+      
+    medium:
+      response_time: "1 Stunde"
+      notification: "Email"
+      escalation: "Nach 4 Stunden Team Lead"
+      
+    low:
+      response_time: "4 Stunden"
+      notification: "Daily Digest Email"
+      escalation: "Wöchentlicher Review"
+      
+  alert_correlation:
+    suppression: "Ähnliche Alerts innerhalb 5 Minuten gruppieren"
+    root_cause: "Automatische Root-Cause-Analyse"
+    dependencies: "Alert-Dependencies berücksichtigen"
+```
+
+### Performance Reports
+
+#### **Automatisierte Berichterstattung**
+
+```yaml
+performance_reporting:
+  daily_reports:
+    recipients: ["operations-team@gf.com", "it-team@gf.com"]
+    content:
+      - "24h System Health Summary"
+      - "Peak Usage Times"
+      - "Error Summary"
+      - "Performance Trends"
+      
+  weekly_reports:
+    recipients: ["management@gf.com", "operations-manager@gf.com"]
+    content:
+      - "SLA Compliance Summary"
+      - "Capacity Planning Metrics"
+      - "Performance Improvement Opportunities"
+      - "Cost-Benefit Analysis"
+      
+  monthly_reports:
+    recipients: ["executives@gf.com", "board@gf.com"]
+    content:
+      - "Strategic Performance Overview"
+      - "ROI Analysis"
+      - "Technology Roadmap Updates"
+      - "Business Impact Assessment"
+```
+
+#### **Performance Benchmarking**
+
+```sql
+-- Performance Baseline Queries
+-- 1. Response Time Trends
+SELECT 
+    DATE(timestamp) as date,
+    operation_type,
+    AVG(response_time_ms) as avg_response_time,
+    PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY response_time_ms) as p95_response_time,
+    COUNT(*) as operation_count
+FROM performance_metrics 
+WHERE timestamp >= DATEADD(day, -30, GETDATE())
+GROUP BY DATE(timestamp), operation_type
+ORDER BY date DESC, operation_type;
+
+-- 2. System Resource Utilization
+SELECT 
+    DATEPART(hour, timestamp) as hour_of_day,
+    AVG(cpu_percent) as avg_cpu,
+    AVG(memory_percent) as avg_memory,
+    AVG(disk_io_percent) as avg_disk_io
+FROM system_metrics
+WHERE timestamp >= DATEADD(day, -7, GETDATE())
+GROUP BY DATEPART(hour, timestamp)
+ORDER BY hour_of_day;
+
+-- 3. Database Performance Metrics
+SELECT 
+    database_name,
+    AVG(logical_reads) as avg_logical_reads,
+    AVG(physical_reads) as avg_physical_reads,
+    AVG(duration_ms) as avg_duration,
+    COUNT(*) as query_count
+FROM query_performance_stats
+WHERE execution_time >= DATEADD(day, -1, GETDATE())
+GROUP BY database_name
+ORDER BY avg_duration DESC;
+```
+
+</div>
+
+## Best Practices
+
+### Performance-Optimierungs-Checklist
+
+#### **Regelmäßige Wartungsaufgaben**
+
+```yaml
+maintenance_checklist:
+  taegliche_aufgaben:
+    - "System Health Dashboard überprüfen"
+    - "Error Logs auf neue Probleme prüfen"
+    - "Backup Success Status validieren"
+    - "Performance Alerts reviewen"
+    
+  woechentliche_aufgaben:
+    - "Index Fragmentation Analysis"
+    - "Query Performance Review"
+    - "Capacity Planning Update"
+    - "Security Patch Assessment"
+    
+  monatliche_aufgaben:
+    - "Comprehensive Performance Review"
+    - "Hardware Utilization Analysis"
+    - "Cost-Benefit Analysis Update"
+    - "Technology Roadmap Review"
+    
+  quartalsweise_aufgaben:
+    - "Performance Baseline Update"
+    - "Disaster Recovery Testing"
+    - "Security Audit"
+    - "Business Continuity Plan Review"
+```
+
+#### **Proaktive Optimierung**
+
+```yaml
+proactive_optimization:
+  capacity_planning:
+    growth_projection: "20% jährliches Wachstum"
+    resource_forecasting: "6 Monate im Voraus"
+    performance_modeling: "Load-Testing für neue Features"
+    
+  continuous_improvement:
+    performance_reviews: "Monatliche Team-Reviews"
+    optimization_sprints: "Quartalsweise Verbesserungs-Sprints"
+    technology_evaluation: "Halbjährliche Tool-Evaluierung"
+    
+  knowledge_management:
+    documentation: "Performance-Playbooks aktuell halten"
+    training: "Regelmäßige Performance-Schulungen"
+    best_practices: "Lessons Learned dokumentieren"
+```
+
+## Support & Eskalation
+
+### Performance Support Team
+
+```yaml
+support_struktur:
+  level_1_monitoring:
+    team: "Operations Center"
+    telefon: "+41 81 770 5555"
+    email: "performance-monitoring@georgfischer.com"
+    verfuegbarkeit: "24/7"
+    
+  level_2_analysis:
+    team: "Performance Engineering"
+    telefon: "+41 81 770 5566"
+    email: "performance-engineering@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 07:00-19:00"
+    
+  level_3_architecture:
+    team: "Principal Engineers"
+    telefon: "+41 81 770 5577"
+    email: "principal-engineers@georgfischer.com"
+    verfuegbarkeit: "Nach Vereinbarung"
+```
+
+## Quick Reference
+
+### Performance-Troubleshooting
+
+| Symptom | Wahrscheinliche Ursache | Sofort-Maßnahme |
+|---------|------------------------|------------------|
+| **Langsame Anmeldung** | AD-Latency oder Cache-Problem | Connection Pool prüfen |
+| **Hohe CPU-Last** | Ineffiziente Queries oder Indexprobleme | Top Queries analysieren |
+| **Memory-Lecks** | Application Memory-Management | Memory Profiling starten |
+| **Disk I/O-Bottleneck** | Index Fragmentation | Index Rebuild ausführen |
+| **Netzwerk-Latency** | WAN-Verbindung oder Switch-Problem | Network Monitoring aktivieren |
+
+### Performance-Targets
+
+- **Response Time:** < 2 Sekunden (95th Percentile)
+- **Availability:** > 99.9% Uptime
+- **Throughput:** > 500 Transaktionen/Minute
+- **Error Rate:** < 0.1%
+- **Resource Utilization:** < 70% CPU/Memory
+
+---
+
+*Diese Performance-Dokumentation wird kontinuierlich aktualisiert basierend auf aktuellen Monitoring-Daten und Best Practices. Letzte Aktualisierung: März 2025*
+
+<style>
+.optimization-hero {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.performance-alert {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.performance-alert .alert-icon {
+    font-size: 2rem;
+    margin-top: 0.25rem;
+}
+
+.performance-alert .alert-content h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.wiki-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.wiki-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wiki-tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wiki-tab-content {
+    display: none;
+}
+
+.wiki-tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+code {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.wiki-tab-btn');
+    const tabContents = document.querySelectorAll('.wiki-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

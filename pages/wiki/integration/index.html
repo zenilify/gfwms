@@ -3,148 +3,1061 @@ layout: default
 title: "Datenintegration"
 description: "WMS mit SAP, EDI und anderen Systemen verbinden"
 breadcrumbs:
-  - title: "WIKI"
+  - title: "Wiki"
   - title: "Datenintegration"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Datenintegration - WMS mit SAP, EDI und anderen Systemen verbinden</p>
-    </div>
+# Datenintegration - Systemvernetzung & Datenfluss
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Datenintegration" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../notfallverfahren/" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+<div class="integration-hero">
+    <div class="hero-content">
+        <h2>🔗 Nahtlose Systemintegration</h2>
+        <p>Umfassende Datenintegration zwischen Jungheinrich WMS und Georg Fischer Enterprise-Systemen</p>
     </div>
 </div>
 
+<div class="integration-alert">
+    <div class="alert-icon">
+        <i class="fas fa-network-wired"></i>
+    </div>
+    <div class="alert-content">
+        <h3>🔄 INTEGRATIONS-HINWEIS</h3>
+        <p><strong>Kritisch:</strong> Alle Integrations-Änderungen müssen in der Testumgebung validiert werden</p>
+        <p><strong>Support-Hotline:</strong> +41 81 770 6666 (Integration Support Team)</p>
+    </div>
+</div>
+
+## Überblick
+
+Die Datenintegration des Jungheinrich WMS bei Georg Fischer stellt sicher, dass alle kritischen Geschäftsprozesse nahtlos zwischen verschiedenen Unternehmenssystemen abgewickelt werden. Diese Dokumentation beschreibt alle Integrationspunkte, Datenflüsse und Konfigurationen.
+
+## Navigation
+
+<div class="wiki-nav-tabs">
+    <button class="wiki-tab-btn active" data-tab="sap-integration">SAP Integration</button>
+    <button class="wiki-tab-btn" data-tab="edi-systems">EDI-Systeme</button>
+    <button class="wiki-tab-btn" data-tab="middleware">Middleware</button>
+    <button class="wiki-tab-btn" data-tab="apis">APIs & Services</button>
+    <button class="wiki-tab-btn" data-tab="monitoring">Monitoring</button>
+</div>
+
+## SAP Integration {#sap-integration}
+
+<div class="wiki-tab-content active" id="sap-integration">
+
+### SAP-Architektur Übersicht
+
+#### **Systemlandschaft**
+
+```yaml
+sap_landschaft:
+  produktions_systeme:
+    sap_erp: "SAP ECC 6.0 EhP8"
+    sap_host: "SAPGF01.georgfischer.local"
+    client: "100"
+    
+  test_systeme:
+    sap_quality: "SAP ECC 6.0 EhP8 (QAS)"
+    sap_host: "SAPGFQ01.georgfischer.local"
+    client: "200"
+    
+  entwicklung:
+    sap_development: "SAP ECC 6.0 EhP8 (DEV)"
+    sap_host: "SAPGFD01.georgfischer.local"
+    client: "300"
+```
+
+#### **RFC-Verbindungen**
+
+**Produktive Verbindungen:**
+```yaml
+rfc_connections:
+  wms_to_sap:
+    connection_type: "RFC_TCP"
+    gateway_host: "SAPGF01.georgfischer.local"
+    gateway_service: "3300"
+    program_id: "WMS_GF_PROD"
+    
+  sap_to_wms:
+    connection_type: "RFC_TCP"
+    target_host: "WMSAPP01.georgfischer.local"
+    target_service: "3301"
+    program_id: "SAP_GF_WMS"
+    
+  connection_pool:
+    max_connections: 10
+    initial_connections: 2
+    connection_timeout: 300
+    retry_attempts: 3
+```
+
+### Materialwirtschaft (MM) Integration
+
+#### **Materialstamm-Synchronisation**
+
+**Datenfluss-Schema:**
+```
+SAP MM → WMS Article Master
+├── Materialnummer → Artikel-Nr
+├── Materialbezeichnung → Artikel-Bezeichnung  
+├── Mengeneinheit → Basiseinheit
+├── Lagerarten → WMS-Lagertypen
+└── ABC-Klassifizierung → Picking-Strategien
+```
+
+**RFC-Funktionen:**
+```abap
+* Materialstamm abrufen
+FUNCTION Z_WMS_GET_MATERIAL_MASTER
+  IMPORTING
+    IV_MATNR TYPE MATNR
+    IV_WERKS TYPE WERKS_D
+  EXPORTING
+    ET_MATERIAL TYPE ZTT_WMS_MATERIAL
+  EXCEPTIONS
+    MATERIAL_NOT_FOUND
+    PLANT_NOT_ASSIGNED.
+```
+
+#### **Bestandsabgleich**
+
+```yaml
+bestandsabgleich:
+  frequenz: "Alle 15 Minuten"
+  
+  sap_bewegungsarten:
+    wareneingang: "101"
+    warenausgang: "601"
+    umbuchung: "311/312"
+    inventur: "701/702"
+    
+  wms_transaktionen:
+    goods_receipt: "Automatische MM-Buchung"
+    goods_issue: "Bestätigter Warenausgang"
+    stock_transfer: "Lagerplatz-Umbuchung"
+    cycle_count: "Inventur-Korrekturen"
+```
+
+### Vertrieb (SD) Integration
+
+#### **Kundenaufträge**
+
+**Auftragsfluss:**
+```yaml
+sales_order_flow:
+  auftragserstellung:
+    quelle: "SAP SD"
+    trigger: "Auftragsfreigabe"
+    idoc_type: "ORDERS05"
+    
+  kommissionierung:
+    prioritaet: "Kundenprioritäts-Matrix"
+    routing: "Automatische Lagerplatz-Optimierung"
+    picking: "Wellenplanung basiert auf Lieferterminen"
+    
+  versandabwicklung:
+    rueckmeldung: "Lieferschein-Erstellung in SAP"
+    tracking: "Versandnummer zurück zu SAP"
+    abrechnung: "Automatische Faktura-Freigabe"
+```
+
+#### **IDoc-Verarbeitung**
+
+```xml
+<!-- Beispiel: ORDERS05 IDoc für Kundenauftrag -->
+<IDOC BEGIN="1">
+  <EDI_DC40 SEGMENT="1">
+    <DOCTYP>ORDERS05</DOCTYP>
+    <MESTYP>ORDERS</MESTYP>
+    <SNDPRT>KU</SNDPRT>
+  </EDI_DC40>
+  
+  <E1EDK01 SEGMENT="1">
+    <BELNR>{{ order_number }}</BELNR>
+    <DATUM>{{ order_date }}</DATUM>
+    <UZEIT>{{ order_time }}</UZEIT>
+  </E1EDK01>
+  
+  <E1EDP01 SEGMENT="1">
+    <POSEX>{{ line_item }}</POSEX>
+    <MATNR>{{ material_number }}</MATNR>
+    <MENGE>{{ quantity }}</MENGE>
+    <LGORT>{{ storage_location }}</LGORT>
+  </E1EDP01>
+</IDOC>
+```
+
+### Einkauf (MM-PUR) Integration
+
+#### **Bestellabwicklung**
+
+```yaml
+purchase_order_integration:
+  eingehende_bestellungen:
+    idoc_type: "PORDCR03"
+    verarbeitung: "Automatische WE-Aviso-Erstellung"
+    lieferanten_daten: "Sync mit SAP-Lieferantenstamm"
+    
+  wareneingang_rueckmeldung:
+    timing: "Nach erfolgreicher WE-Buchung"
+    bewegungsart: "101"
+    toleranzen: "Mengen-/Preisabweichungen lt. Customizing"
+    
+  qualitaetspruefung:
+    qm_integration: "QM-Prüflos automatisch erstellen"
+    verwendungsentscheidung: "UD-Code zurück zu SAP"
+    sperrbestand: "Qualitätssperrung in SAP"
+```
+
+### Finanzwesen (FI) Integration
+
+#### **Buchungslogik**
+
+```yaml
+financial_integration:
+  bewertung:
+    bewertungsklasse: "Aus SAP-Materialstamm"
+    standardpreis: "Moving Average oder Standard"
+    waehrung: "EUR (Georg Fischer Standard)"
+    
+  kostenstellen:
+    lagerkosten: "Kostenstellenverteilung nach Lagerbereich"
+    personal: "Direkte Buchung auf Kostenstelle Lager"
+    abschreibungen: "Automatische Periodenabgrenzung"
+    
+  reporting:
+    lagerumschlag: "Wöchentliche KPI-Berichte"
+    slow_moving: "Monatliche Langsamdreher-Analyse"
+    obsolescence: "Quartalsweise Obsoleszenz-Bewertung"
+```
+
+</div>
+
+## EDI-Systeme {#edi-systems}
+
+<div class="wiki-tab-content" id="edi-systems">
+
+### EDI-Architektur
+
+#### **EDI-Provider & Standards**
+
+```yaml
+edi_infrastruktur:
+  provider:
+    primary: "Seeburger BIS Platform"
+    backup: "IBM Sterling B2B Integrator"
+    cloud_gateway: "Seeburger Cloud Services"
+    
+  standards:
+    edifact: "D.96A, D.01B"
+    x12: "4010, 5010"
+    tradacoms: "UK Retail Standards"
+    xml: "Custom Georg Fischer Schemas"
+    
+  kommunikation:
+    as2: "Sichere Punkt-zu-Punkt-Verbindungen"
+    sftp: "Batch-Dateiübertragung"
+    web_services: "Real-time API-Integration"
+```
+
+#### **Partner-Onboarding**
+
+```yaml
+partner_setup:
+  technische_specs:
+    message_format: "EDIFACT ORDERS/ORDRSP/DESADV/INVOIC"
+    transmission: "AS2 über HTTPS"
+    acknowledgments: "MDN required"
+    
+  testing_prozess:
+    connectivity_test: "AS2-Verbindung etablieren"
+    message_validation: "Sample-Nachrichten validieren"
+    business_validation: "End-to-End-Prozess testen"
+    go_live_approval: "Fachbereich + IT sign-off"
+    
+  monitoring:
+    uptime_sla: "99.5% Verfügbarkeit"
+    response_time: "< 5 Sekunden für Acknowledgments"
+    error_handling: "Automatische Retry + Eskalation"
+```
+
+### Kundendaten-Exchange
+
+#### **ORDERS (Bestellungen)**
+
+```edifact
+UNB+IATB:1+GEORGFISCHER+CUSTOMER01+210315:1000+12345+++++1'
+UNH+1+ORDERS:D:96A:UN'
+BGM+220+ORDER123+9'
+DTM+137:20210315:102'
+NAD+BY+CUSTOMER01::9++Customer Ltd+Street 1+City+12345+DE'
+NAD+SU+GEORGFISCHER::9++Georg Fischer AG+Amsler Str. 1+Schaffhausen+8201+CH'
+LIN+1++PRODUCT001:SA'
+QTY+21:100:PCE'
+DTM+2:20210320:102'
+UNT+8+1'
+UNZ+1+12345'
+```
+
+#### **ORDRSP (Auftragsbestätigung)**
+
+```yaml
+order_response_logic:
+  bestellannahme:
+    vollstaendig: "Alle Positionen bestätigt"
+    teilweise: "Menge/Termin angepasst"
+    ablehnung: "Artikel nicht verfügbar"
+    
+  liefertermine:
+    verfuegbarkeitspruefung: "Real-time ATP-Check"
+    kapazitaetsplanung: "Produktions-/Logistikkapazität"
+    alternative_termine: "Max. 3 Terminvorschläge"
+    
+  preise:
+    gueltigkeitspruefung: "Konditionen-Master validieren"
+    waehrungsumrechnung: "Aktueller Wechselkurs"
+    rabatte: "Kundenstaffel berücksichtigen"
+```
+
+### Lieferanten-Integration
+
+#### **DESADV (Lieferavis)**
+
+```yaml
+advance_shipping_notice:
+  datenelemente:
+    lieferung_nummer: "Eindeutige Identifikation"
+    versanddatum: "Geplanter/Tatsächlicher Versand"
+    ankunftszeit: "Geschätzte Ankunft"
+    transporteur: "Spediteur-Informationen"
+    
+  artikeldetails:
+    sscc_codes: "Paletten-/Container-Kennzeichnung"
+    chargen_nummern: "Rückverfolgbarkeit"
+    mindesthaltbarkeit: "MHD für verderbliche Waren"
+    seriennummern: "High-value items tracking"
+    
+  wareneingang_automation:
+    pre_receiving: "Aviso aktiviert WE-Arbeitsplatz"
+    cross_docking: "Direkter Transfer ohne Einlagerung"
+    quality_routing: "Automatisches QM-Routing"
+```
+
+#### **INVOIC (Rechnung)**
+
+```edifact
+UNB+IATB:1+SUPPLIER01+GEORGFISCHER+210320:1200+67890+++++1'
+UNH+1+INVOIC:D:96A:UN'
+BGM+380+INV2021001+9'
+DTM+137:20210320:102'
+DTM+35:20210315:102'
+RFF+ON:ORDER123'
+NAD+SU+SUPPLIER01::9++Supplier AG+Industrial Street 5+Munich+80331+DE'
+LIN+1++PRODUCT001:SA'
+QTY+47:100:PCE'
+MOA+203:1000:EUR'
+TAX+7+VAT:::19'
+UNT+10+1'
+UNZ+1+67890'
+```
+
+### Transport-Management
+
+#### **Spediteur-Integration**
+
+```yaml
+carrier_integration:
+  pickup_requests:
+    message_type: "Custom XML über Web Service"
+    trigger: "Versandauftrag abgeschlossen"
+    data_elements: ["Pickup-Address", "Delivery-Address", "Weight", "Volume"]
+    
+  tracking_updates:
+    frequency: "Real-time Push-Notifications"
+    events: ["Picked-up", "In-Transit", "Out-for-Delivery", "Delivered"]
+    exception_handling: "Delays, Damages, Returns"
+    
+  proof_of_delivery:
+    digital_signature: "Customer signature capture"
+    photo_documentation: "Delivery photos"
+    timestamp: "GPS + Zeitstempel"
+```
+
+</div>
+
+## Middleware {#middleware}
+
+<div class="wiki-tab-content" id="middleware">
+
+### Integration Platform
+
+#### **Middleware-Architektur**
+
+```yaml
+middleware_stack:
+  platform: "MuleSoft Anypoint Platform"
+  runtime: "Mule Runtime 4.4"
+  management: "Anypoint Platform (Cloud)"
+  
+  komponenten:
+    api_gateway: "Traffic Management + Security"
+    message_queues: "RabbitMQ für Async-Processing"
+    transformation: "DataWeave für Mapping"
+    error_handling: "Dead Letter Queues + Retry Logic"
+    
+  deployment:
+    on_premise: "Mule Runtime Server (Clustered)"
+    cloud_hub: "Anypoint CloudHub (Backup)"
+    hybrid: "Cloud + On-Premise Connectivity"
+```
+
+#### **Message Flow Patterns**
+
+```yaml
+integration_patterns:
+  request_response:
+    verwendung: "Sync SAP-Abfragen"
+    timeout: "30 Sekunden"
+    retry_policy: "3 Versuche mit exponential backoff"
+    
+  publish_subscribe:
+    verwendung: "Event Broadcasting (Bestandsänderungen)"
+    topics: ["inventory.update", "order.status", "shipment.tracking"]
+    subscribers: ["WMS", "SAP", "EDI", "Portal"]
+    
+  message_queue:
+    verwendung: "Async Batch Processing"
+    durability: "Persistent Messages"
+    ordering: "FIFO für kritische Nachrichten"
+    dlq: "Dead Letter Queue für fehlerhafte Nachrichten"
+```
+
+### Data Transformation
+
+#### **Mapping-Definitionen**
+
+```yaml
+transformation_maps:
+  sap_to_wms:
+    material_master:
+      MATNR: "article_number"
+      MAKTX: "description"
+      MEINS: "base_unit"
+      MTART: "material_type"
+      
+  wms_to_sap:
+    inventory_movement:
+      article_id: "MATNR"
+      quantity: "MENGE"
+      location: "LGORT"
+      movement_type: "BWART"
+      
+  edi_transformations:
+    orders_to_internal:
+      BGM_1001: "document_type"
+      DTM_2380: "delivery_date"
+      LIN_7140: "line_number"
+      QTY_6060: "quantity"
+```
+
+#### **Data Validation Rules**
+
+```yaml
+validation_rules:
+  mandatory_fields:
+    material_number: "required, format: GF\\d{8}"
+    quantity: "required, positive_number, max_precision: 3"
+    location: "required, valid_storage_location"
+    
+  business_rules:
+    max_order_value: "1000000 EUR"
+    delivery_date: "not_in_past, max_future: 365_days"
+    customer_credit: "check_credit_limit"
+    
+  data_quality:
+    duplicate_check: "Message deduplication"
+    referential_integrity: "Foreign key validation"
+    format_validation: "Schema validation against XSD"
+```
+
+### Error Handling & Recovery
+
+#### **Exception Management**
+
+```yaml
+error_handling:
+  kategorien:
+    technical_errors:
+      connection_timeout: "Retry mit exponential backoff"
+      authentication_failure: "Credential refresh + retry"
+      schema_validation: "Message zu Error Queue"
+      
+    business_errors:
+      invalid_material: "Business Error Queue + Manual Review"
+      credit_limit_exceeded: "Hold für Manager-Freigabe"
+      inventory_shortage: "Automatic backorder creation"
+      
+    system_errors:
+      database_unavailable: "Circuit breaker pattern"
+      memory_exhaustion: "Auto-restart + Alerting"
+      disk_full: "Cleanup + Emergency notification"
+```
+
+#### **Dead Letter Queue Processing**
+
+```yaml
+dlq_processing:
+  automatische_retry:
+    interval: "5, 15, 45 Minuten, dann täglich"
+    max_attempts: "10"
+    escalation: "Nach 5 Tagen zu Manual Review"
+    
+  manual_processing:
+    dashboard: "Operations Console für DLQ-Review"
+    reprocessing: "Korrigierte Messages resubmit"
+    archiving: "Permanente Archivierung nach 30 Tagen"
+    
+  reporting:
+    error_metrics: "Error rate, recovery rate, avg processing time"
+    alerting: "Email + Slack bei kritischen Fehlern"
+    dashboard: "Real-time Error-Monitoring"
+```
+
+</div>
+
+## APIs & Services {#apis}
+
+<div class="wiki-tab-content" id="apis">
+
+### REST API Framework
+
+#### **API-Design Standards**
+
+```yaml
+api_standards:
+  versioning:
+    url_versioning: "/api/v1/orders"
+    header_versioning: "API-Version: 1.0"
+    deprecation_policy: "6 Monate Support für alte Versionen"
+    
+  authentication:
+    oauth2: "Bearer Token Authentication"
+    api_keys: "Für System-zu-System-Integration"
+    jwt: "Für User-Context-Services"
+    
+  response_format:
+    success: "HTTP 200 mit JSON Body"
+    error: "HTTP 4xx/5xx mit standardisiertem Error-Format"
+    pagination: "Limit/Offset mit Link-Headers"
+```
+
+#### **Core APIs**
+
+**Inventory API:**
+```yaml
+inventory_api:
+  base_url: "https://api.georgfischer.com/wms/v1"
+  
+  endpoints:
+    get_stock:
+      method: "GET"
+      path: "/inventory/{material_number}"
+      response: |
+        {
+          "material_number": "GF12345678",
+          "total_stock": 1500,
+          "available_stock": 1200,
+          "reserved_stock": 300,
+          "locations": [
+            {
+              "location_id": "HRL-001-A-01",
+              "quantity": 500,
+              "status": "available"
+            }
+          ]
+        }
+        
+    reserve_stock:
+      method: "POST"
+      path: "/inventory/reserve"
+      request: |
+        {
+          "material_number": "GF12345678",
+          "quantity": 100,
+          "reservation_id": "ORDER-2021-001",
+          "expiry_date": "2021-12-31T23:59:59Z"
+        }
+```
+
+**Order Management API:**
+```yaml
+order_api:
+  create_order:
+    method: "POST"
+    path: "/orders"
+    authentication: "OAuth2 + Customer-Scope"
+    request_schema: |
+      {
+        "order_number": "string",
+        "customer_id": "string", 
+        "delivery_date": "ISO8601",
+        "priority": "enum[low,normal,high,urgent]",
+        "line_items": [
+          {
+            "material_number": "string",
+            "quantity": "number",
+            "unit_price": "number"
+          }
+        ]
+      }
+      
+  get_order_status:
+    method: "GET"
+    path: "/orders/{order_id}/status"
+    response: |
+      {
+        "order_id": "ORDER-2021-001",
+        "status": "in_picking",
+        "progress": {
+          "total_lines": 5,
+          "picked_lines": 3,
+          "shipped_lines": 0
+        },
+        "estimated_ship_date": "2021-03-20T14:00:00Z"
+      }
+```
+
+### Event-Driven Architecture
+
+#### **Event Schema**
+
+```yaml
+event_definitions:
+  inventory_updated:
+    schema: |
+      {
+        "event_type": "inventory.updated",
+        "timestamp": "2021-03-15T10:30:00Z",
+        "source": "wms.georgfischer.com",
+        "data": {
+          "material_number": "GF12345678",
+          "location": "HRL-001-A-01",
+          "old_quantity": 500,
+          "new_quantity": 450,
+          "movement_reason": "picked_for_order"
+        }
+      }
+      
+  order_shipped:
+    schema: |
+      {
+        "event_type": "order.shipped",
+        "timestamp": "2021-03-15T16:45:00Z",
+        "source": "wms.georgfischer.com",
+        "data": {
+          "order_number": "ORDER-2021-001",
+          "tracking_number": "1Z999AA1234567890",
+          "carrier": "UPS",
+          "shipped_items": [
+            {
+              "material_number": "GF12345678",
+              "quantity": 100,
+              "serial_numbers": ["SN001", "SN002"]
+            }
+          ]
+        }
+      }
+```
+
+#### **Event Consumers**
+
+```yaml
+event_consumers:
+  sap_integration:
+    subscribed_events: ["inventory.updated", "order.shipped"]
+    processing: "Async mit Guaranteed Delivery"
+    error_handling: "Dead Letter Queue + Manual Intervention"
+    
+  customer_portal:
+    subscribed_events: ["order.status_changed", "shipment.tracking_updated"]
+    processing: "Real-time WebSocket Push"
+    rate_limiting: "100 events/minute per customer"
+    
+  analytics_platform:
+    subscribed_events: ["*"]
+    processing: "Batch processing alle 15 Minuten"
+    storage: "Data Lake für Historical Analysis"
+```
+
+### Webhook Management
+
+#### **Webhook-Konfiguration**
+
+```yaml
+webhook_system:
+  registration:
+    endpoint: "POST /webhooks"
+    authentication: "API Key Required"
+    configuration: |
+      {
+        "url": "https://customer.com/webhooks/wms",
+        "events": ["order.shipped", "inventory.low_stock"],
+        "secret": "webhook_secret_key",
+        "retry_policy": {
+          "max_retries": 3,
+          "backoff": "exponential"
+        }
+      }
+      
+  delivery:
+    signature: "HMAC-SHA256 mit Secret"
+    timeout: "10 Sekunden"
+    retry_schedule: "1min, 5min, 15min"
+    
+  monitoring:
+    success_rate: "Erfolgsquote pro Endpoint"
+    response_times: "Durchschnittliche Antwortzeit"
+    error_analysis: "Fehlertypen und -häufigkeit"
+```
+
+</div>
+
+## Monitoring & Troubleshooting {#monitoring}
+
+<div class="wiki-tab-content" id="monitoring">
+
+### Integration Monitoring
+
+#### **Monitoring-Dashboard**
+
+```yaml
+monitoring_metrics:
+  message_throughput:
+    inbound_messages: "Nachrichten/Minute von SAP/EDI"
+    outbound_messages: "Nachrichten/Minute zu Zielsystemen"
+    queue_depth: "Anzahl wartender Nachrichten"
+    processing_time: "Durchschnittliche Verarbeitungszeit"
+    
+  error_rates:
+    technical_errors: "Connection failures, timeouts"
+    business_errors: "Validation failures, business rule violations"
+    retry_rates: "Erfolgreiche Wiederholungen"
+    dlq_accumulation: "Nachrichten in Dead Letter Queues"
+    
+  system_health:
+    cpu_utilization: "Middleware-Server-Last"
+    memory_usage: "Heap-/Non-Heap-Memory"
+    disk_space: "Verfügbarer Speicherplatz"
+    network_latency: "Verbindungsqualität zu Partnersystemen"
+```
+
+#### **Alerting-Regeln**
+
+```yaml
+alert_definitions:
+  kritische_alerts:
+    sap_connection_down:
+      condition: "RFC-Verbindung nicht verfügbar > 5 Minuten"
+      recipients: ["sap-team@gf.com", "integration-team@gf.com"]
+      escalation: "Nach 15 Minuten IT-Manager informieren"
+      
+    high_error_rate:
+      condition: "Error Rate > 5% über 10 Minuten"
+      recipients: ["integration-team@gf.com"]
+      auto_actions: ["Circuit Breaker aktivieren"]
+      
+  warning_alerts:
+    queue_backup:
+      condition: "Queue Depth > 1000 Messages"
+      recipients: ["integration-team@gf.com"]
+      frequency: "Hourly digest"
+      
+    slow_processing:
+      condition: "Average Processing Time > 30 Sekunden"
+      recipients: ["performance-team@gf.com"]
+      analysis: "Automatic performance profiling"
+```
+
+### Performance Optimization
+
+#### **Tuning-Parameter**
+
+```yaml
+performance_tuning:
+  connection_pooling:
+    sap_rfc_pool:
+      initial_size: 3
+      max_size: 10
+      idle_timeout: 300
+      connection_validation: "SELECT 1 FROM DUAL"
+      
+    database_pool:
+      initial_size: 5
+      max_size: 20
+      connection_timeout: 30
+      statement_cache_size: 50
+      
+  message_processing:
+    batch_size: 100
+    thread_pool_size: 20
+    queue_prefetch: 10
+    compression: "gzip für > 1KB Messages"
+    
+  caching:
+    material_master: "TTL 1 Stunde"
+    customer_data: "TTL 4 Stunden"
+    exchange_rates: "TTL 24 Stunden"
+```
+
+### Troubleshooting Guides
+
+#### **Häufige Probleme**
+
+```yaml
+common_issues:
+  sap_connection_errors:
+    symptom: "RFC_ERROR_COMMUNICATION"
+    diagnose:
+      1: "SAP Gateway-Prozess läuft (gwrd, gwmon)"
+      2: "Firewall-Regeln für Port 3300-3399"
+      3: "RFC-Destination in SM59 testen"
+      4: "Benutzer-Credentials und Berechtigungen"
+    
+    solution:
+      1: "Gateway-Service neu starten"
+      2: "Firewall-Freigabe erweitern"
+      3: "RFC-Destination neu konfigurieren"
+      4: "Benutzer-Passwort zurücksetzen"
+      
+  edi_transmission_failures:
+    symptom: "AS2 MDN Timeout"
+    diagnose:
+      1: "Partner-Endpoint erreichbar (ping/telnet)"
+      2: "Zertifikat-Gültigkeit prüfen"
+      3: "Message-Format validieren"
+      4: "EDI-Provider-Status checken"
+    
+    solution:
+      1: "Netzwerk-Konnektivität wiederherstellen"
+      2: "Zertifikat erneuern"
+      3: "Message korrigieren und neu senden"
+      4: "Provider-Support kontaktieren"
+```
+
+#### **Diagnostic Tools**
+
+```yaml
+diagnostic_tools:
+  message_tracing:
+    tool: "MuleSoft Anypoint Monitoring"
+    capabilities: ["Request/Response Logging", "Performance Metrics", "Error Analysis"]
+    retention: "90 Tage für Prod, 30 Tage für Test"
+    
+  sap_monitoring:
+    tools: ["ST22 (Dumps)", "SM21 (System Log)", "SM58 (tRFC)", "WE02/WE05 (IDocs)"]
+    custom_reports: "Z_WMS_INTEGRATION_MONITOR"
+    automation: "ABAP-Jobs für Gesundheitschecks"
+    
+  network_analysis:
+    tools: ["Wireshark", "tcpdump", "SAP Niping"]
+    baselines: "Performance-Baselines für alle Verbindungen"
+    monitoring: "Continuous Network Performance Monitoring"
+```
+
+### Disaster Recovery
+
+#### **Backup & Recovery**
+
+```yaml
+disaster_recovery:
+  backup_strategy:
+    configuration_backup:
+      frequency: "Täglich"
+      retention: "90 Tage"
+      scope: "Alle Konfigurationsdateien, Mappings, Credentials"
+      
+    message_backup:
+      frequency: "Real-time"
+      retention: "30 Tage"
+      scope: "Alle verarbeiteten Nachrichten mit Metadaten"
+      
+  recovery_procedures:
+    rto: "4 Stunden"
+    rpo: "15 Minuten"
+    failover: "Automatisch zu Standby-System"
+    fallback: "Manuelle Rückkehr nach Testing"
+    
+  business_continuity:
+    manual_processes: "Kritische Transaktionen über Excel/E-Mail"
+    communication: "Stakeholder-Benachrichtigung binnen 30 Minuten"
+    priorities: "SAP-Integration > EDI > APIs > Reporting"
+```
+
+</div>
+
+## Support & Kontakte
+
+### Integration Support Team
+
+```yaml
+support_kontakte:
+  level_1_support:
+    team: "Integration Operations"
+    telefon: "+41 81 770 6666"
+    email: "integration-support@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 07:00-19:00"
+    
+  level_2_support:
+    team: "Middleware Specialists"
+    telefon: "+41 81 770 6677"
+    email: "middleware-team@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 08:00-17:00"
+    
+  level_3_support:
+    team: "Architecture Team"
+    telefon: "+41 81 770 6688"
+    email: "integration-architects@georgfischer.com"
+    verfuegbarkeit: "Nach Vereinbarung"
+    
+  emergency_support:
+    hotline: "+41 81 770 9999"
+    verfuegbarkeit: "24/7 für Produktionsstörungen"
+    escalation: "Automatic escalation nach 30 Minuten"
+```
+
+## Quick Reference
+
+### Integration Endpoints
+
+| System | Protokoll | Endpoint | Port |
+|--------|-----------|----------|------|
+| **SAP RFC** | RFC/TCP | sapgf01.georgfischer.local | 3300 |
+| **EDI Gateway** | AS2/HTTPS | edi.georgfischer.com | 443 |
+| **WMS API** | REST/HTTPS | api.georgfischer.com/wms | 443 |
+| **Webhook Receiver** | HTTPS | webhooks.georgfischer.com | 443 |
+
+### Error Code Reference
+
+- **I001-I099:** SAP-Integration Fehler
+- **E001-E099:** EDI-Transmission Fehler  
+- **M001-M099:** Middleware-Verarbeitungsfehler
+- **A001-A099:** API-Gateway Fehler
+- **D001-D099:** Datenvalidierungsfehler
+
+---
+
+*Diese Integrationsdokumentation wird kontinuierlich aktualisiert und dient als zentrale Referenz für alle Georg Fischer WMS-Integrationen. Letzte Aktualisierung: März 2025*
+
 <style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+.integration-hero {
+    background: linear-gradient(135deg, #059669, #10b981);
     color: white;
+    padding: 2rem;
     border-radius: var(--radius-lg);
-}
-
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
-
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.wip-message {
     text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
+    margin-bottom: 2rem;
 }
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
-
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
-
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.alternative-card {
-    background: white;
+.integration-alert {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
     padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.alternative-card i {
+.integration-alert .alert-icon {
     font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
+    margin-top: 0.25rem;
 }
 
-.alternative-card h4 {
-    color: var(--text-primary);
+.integration-alert .alert-content h3 {
+    color: white;
     margin-bottom: 0.5rem;
 }
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
+.wiki-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
 }
 
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
+.wiki-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wiki-tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wiki-tab-content {
+    display: none;
+}
+
+.wiki-tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+code {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.wiki-tab-btn');
+    const tabContents = document.querySelectorAll('.wiki-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

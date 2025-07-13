@@ -1,7 +1,7 @@
 ---
 layout: training
 title: "Kommissionierung"
-description: "Kommissionier-Strategien und Picking-Prozesse meistern"
+description: "Effiziente Picking-Strategien und Kommissionierungs-Prozesse"
 duration: "50 Minuten"
 difficulty: "Intermediate"
 progress: 0
@@ -13,13 +13,12 @@ prerequisites:
   - title: "Wareneingang"
     url: "/pages/training/receiving/"
 learning_objectives:
-  - "Kommissionier-Strategien verstehen und anwenden"
-  - "Kommissionsübersicht effizient nutzen"
-  - "Entnahmeanweisungen korrekt bearbeiten"
-  - "Pick-by-Light-Systeme bedienen"
-  - "Arbeitsplatz-Optimierung durchführen"
-  - "Fehler bei der Kommissionierung vermeiden"
-  - "Prioritäten und Strategien verstehen"
+  - "Kommissionierungs-Strategien verstehen"
+  - "Pick-by-Light System bedienen"
+  - "Kanban-Kommissionierung durchführen"
+  - "Fertigungsaufträge abwickeln"
+  - "Qualitätskontrolle durchführen"
+  - "Optimierungsmaßnahmen anwenden"
 previous:
   title: "Wareneingang"
   url: "/pages/training/receiving/"
@@ -32,682 +31,657 @@ next:
 
 ## Überblick
 
-Die Kommissionierung ist der Kernprozess der Lagerlogistik, bei dem einzelne Artikel aus dem Lagerbestand entnommen und für Auslieferungen zusammengestellt werden. Bei Georg Fischer werden verschiedene Kommissionier-Strategien eingesetzt, um sowohl Effizienz als auch Qualität zu maximieren.
+Die Kommissionierung ist der Kernprozess im Georg Fischer WMS. Hier werden Materialien für Fertigungsaufträge, Kanban-Nachschub und Kunden-Aufträge zusammengestellt. Eine effiziente Kommissionierung ist entscheidend für die Produktivität und Kundenzufriedenheit.
 
 ## Lernziele
 
 Nach Abschluss dieses Moduls können Sie:
-- Verschiedene Kommissionier-Strategien verstehen und anwenden
-- Die Kommissionsübersicht effizient nutzen
-- Entnahmeanweisungen korrekt bearbeiten
-- Pick-by-Light-Systeme optimal bedienen
-- Arbeitsplätze für maximale Effizienz optimieren
-- Fehler bei der Kommissionierung vermeiden
-- Prioritäten und Strategien richtig einsetzen
+- Verschiedene Kommissionierungs-Strategien effektiv anwenden
+- Das Pick-by-Light System sicher und effizient bedienen
+- Kanban-Kommissionierung systematisch durchführen
+- Fertigungsaufträge korrekt abwickeln
+- Qualitätskontrollen integriert durchführen
+- Optimierungsmaßnahmen identifizieren und umsetzen
 
 ## 1. Grundlagen der Kommissionierung
 
-### 1.1 Definition und Bedeutung
-
-**Kommissionierung** ist der Prozess der:
-- **Entnahme** von Artikeln aus dem Lagerbestand
-- **Zusammenstellung** für spezifische Aufträge
-- **Qualitätskontrolle** der gepickten Artikel
-- **Bereitstellung** für den Versand
-
-### 1.2 Kommissionier-Arten bei Georg Fischer
+### 1.1 Kommissionierungs-Arten bei Georg Fischer
 
 #### **Fertigungsauftrag-Kommissionierung**
-- **Materialbereitstellung** für Produktion
-- **Termingerechte Lieferung** an Arbeitsplätze
-- **Mengengenaue Bereitstellung**
-- **Qualitätskontrolle** der Materialien
+- **Zweck:** Materialbereitstellung für Produktion
+- **Charakteristika:**
+  - Termingerechte Lieferung an Arbeitsplätze
+  - Mengengenaue Bereitstellung nach Stückliste
+  - Qualitätskontrolle der Materialien
+  - SAP-Integration für Rückmeldungen
+
+- **Typische Mengen:**
+  - 50-500 Positionen pro Auftrag
+  - 1-100 Stück pro Position
+  - Hohe Präzision erforderlich
 
 #### **Kanban-Kommissionierung**
-- **Bedarfsorientierte Bereitstellung**
-- **Automatische Nachbestellung**
-- **Kleine Losgrößen**
-- **Kontinuierlicher Materialfluss**
+- **Zweck:** Bedarfsorientierte Bereitstellung
+- **Charakteristika:**
+  - Automatische Nachbestellung bei Unterschreitung
+  - Kleine Losgrößen (1-10 Stück)
+  - Kontinuierlicher Materialfluss
+  - Hohe Frequenz, kurze Zykluszeiten
+
+- **Typische Merkmale:**
+  - 10-50 Positionen pro Kanban-Lauf
+  - Standardisierte Behälter
+  - Kurze Transportwege
 
 #### **Einzelteil-Kommissionierung**
-- **Spezifische Teile** für Sonderanforderungen
-- **Beistellprozesse** für Fertigung
-- **Kostenstellenbezogene Entnahmen**
-- **Direkte Arbeitsplatzversorgung**
+- **Zweck:** Spezifische Teile für Sonderanforderungen
+- **Charakteristika:**
+  - Beistellprozesse für Fertigung
+  - Kostenstellenbezogene Entnahmen
+  - Direkte Arbeitsplatzversorgung
+  - Flexible Mengen und Artikel
 
-### 1.3 Systemintegration
+### 1.2 Kommissionierungs-Prinzipien
+
+#### **Artikel-orientierte Kommissionierung**
+- **Konzept:** Ein Kommissionierer arbeitet einen Auftrag komplett ab
+- **Vorteile:**
+  - Hohe Verantwortlichkeit
+  - Einfache Fehleranalyse
+  - Geringe Koordination
+
+- **Nachteile:**
+  - Längere Wegzeiten
+  - Ungleichmäßige Auslastung
+
+#### **Zonale Kommissionierung**
+- **Konzept:** Lager in Zonen aufgeteilt, Staffelübergabe
+- **Vorteile:**
+  - Kurze Wegzeiten
+  - Spezialisierung möglich
+  - Parallele Abarbeitung
+
+- **Nachteile:**
+  - Koordinationsaufwand
+  - Zwischenpufferung erforderlich
+
+#### **Batch-Kommissionierung**
+- **Konzept:** Mehrere Aufträge gleichzeitig bearbeiten
+- **Vorteile:**
+  - Optimale Wegzeiten
+  - Hohe Effizienz
+  - Reduzierte Leerfahrten
+
+- **Anwendung bei Georg Fischer:**
+  - Kanban-Aufträge werden gebatcht
+  - 5-10 Aufträge pro Batch
+  - Automatische Batch-Bildung
+
+## 2. Pick-by-Light System
+
+### 2.1 System-Übersicht
+
+#### **Hardware-Komponenten**
+- **Light-Module:** LED-Anzeigen an Lagerplätzen
+- **Display:** 7-Segment-Anzeige für Mengen
+- **Quittiertaster:** Bestätigung der Entnahme
+- **Zentralsteuerung:** Koordination aller Module
+
+#### **Funktionsweise**
+```
+1. Auftrag wird dem Pick-by-Light zugewiesen
+2. Relevante Lagerplätze leuchten auf
+3. Display zeigt zu entnehmende Menge
+4. Kommissionierer entnimmt Material
+5. Quittiertaster bestätigt Entnahme
+6. System wechselt zum nächsten Platz
+```
+
+### 2.2 Bedienung des Pick-by-Light Systems
+
+#### **Anmeldung am System**
+
+**Menüpfad: Kommissionierung > Pick-by-Light**
+
+1. **Personal-ID eingeben**
+   - Scanner auf Mitarbeiter-Badge
+   - Oder manuelle Eingabe der Personal-Nr.
+   - Automatische Plausibilitätsprüfung
+
+2. **Arbeitsplatz wählen**
+   - Pick-by-Light Zone auswählen
+   - Verfügbare Aufträge anzeigen
+   - Prioritäten berücksichtigen
+
+3. **Auftrag starten**
+   - Ersten Auftrag aus Queue auswählen
+   - Auftrags-Informationen anzeigen
+   - Start-Bestätigung
+
+#### **Kommissionierungs-Prozess**
+
+**Schritt 1: Navigation**
+```
+LED-Signale interpretieren:
+- Blau blinkend: Nächster Platz
+- Grün leuchtend: Aktueller Entnahme-Platz
+- Rot blinkend: Fehler oder Problem
+- Gelb leuchtend: Aufmerksamkeit erforderlich
+```
+
+**Schritt 2: Entnahme**
+1. **Lagerplatz erreichen**
+   - Visueller Check der Artikel
+   - Menge auf Display ablesen
+   - Artikel-Nummer überprüfen
+
+2. **Material entnehmen**
+   - Exakte Menge laut Display
+   - Qualität visuell prüfen
+   - Bei Auffälligkeiten stoppen
+
+3. **Entnahme quittieren**
+   - Quittiertaster drücken
+   - Bestätigung abwarten
+   - Zum nächsten Platz gehen
+
+**Schritt 3: Besonderheiten**
+
+```
+Fehlbehandlung:
+- Artikel nicht verfügbar → Rote LED + Signal
+- Falsche Menge → Mengen-Korrektur möglich
+- Beschädigte Artikel → Qualitäts-Workflow
+- System-Fehler → Techniker-Ruf
+```
+
+### 2.3 Pick-by-Light Optimierung
+
+#### **Ergonomie-Optimierung**
+- **Höhenverteilung:** Häufige Artikel in optimaler Griffhöhe
+- **Gewichtsverteilung:** Schwere Artikel unten
+- **Zugriffshäufigkeit:** A-Artikel in bester Zugänglichkeit
+
+#### **Batch-Optimierung**
+```
+Batch-Kriterien:
+- Maximale Batch-Größe: 8 Aufträge
+- Ähnliche Entnahme-Bereiche
+- Kompatible Artikel-Typen
+- Zeitliche Prioritäten
+```
+
+**Wegoptimierung:**
+- Automatische Reihenfolgen-Optimierung
+- Kürzeste-Wege-Algorithmus
+- Berücksichtigung von Sackgassen
+- Dynamische Anpassung bei Störungen
+
+## 3. Kanban-Kommissionierung
+
+### 3.1 Kanban-Prinzip
+
+#### **Grundlagen**
+- **Pull-Prinzip:** Nachschub nur bei Bedarf
+- **Kontinuierlicher Fluss:** Konstante Materialversorgung
+- **Verschwendungs-Reduktion:** Minimale Bestände
+- **Selbststeuerung:** Automatische Auslösung
+
+#### **Kanban-Karten-System**
+```
+Kanban-Karte enthält:
+- Artikel-Nummer und Beschreibung
+- Lieferort (Arbeitsplatz/Linie)
+- Standardmenge pro Behälter
+- Prioritätskennzeichnung
+- Barcode für Scanner-Erfassung
+```
+
+### 3.2 Kanban-Kommissionierung durchführen
+
+#### **Kanban-Aufträge empfangen**
+
+**Menüpfad: Kommissionierung > Kanban**
+
+1. **Kanban-Karten sammeln**
+   - Aus Kanban-Postfächern
+   - Von Produktions-Linien
+   - Elektronische Kanban-Signale
+
+2. **Prioritäten sortieren**
+   ```
+   Prioritätsstufen:
+   1. Sofort (rote Karten): <30 min
+   2. Dringend (gelbe Karten): <2h
+   3. Normal (grüne Karten): <4h
+   4. Niedrig (blaue Karten): <8h
+   ```
+
+3. **Batch-Bildung**
+   - Ähnliche Bereiche gruppieren
+   - Optimale Route planen
+   - Transport-Kapazität berücksichtigen
+
+#### **Kanban-Rundgang**
+
+**Vorbereitung:**
+1. **Transportmittel bereitstellen**
+   - Kanban-Wagen mit Fächern
+   - Scanner und Etiketten
+   - Notfall-Telefon
+
+2. **Route optimieren**
+   - Elektronische Navigation nutzen
+   - Leerfahrten minimieren
+   - Störungen berücksichtigen
+
+**Durchführung:**
+1. **Artikel kommissionieren**
+   ```
+   Für jeden Kanban:
+   1. Kanban-Karte scannen
+   2. Lagerplatz anfahren
+   3. Artikel entnehmen
+   4. Menge kontrollieren
+   5. Behälter bereitstellen
+   ```
+
+2. **Transport zur Linie**
+   - Direkte Lieferung bevorzugen
+   - Zwischenpufferung minimieren
+   - Lieferbestätigung einholen
+
+3. **Leerbehälter zurückbringen**
+   - Systematische Sammlung
+   - Reinigung falls erforderlich
+   - Bereitstellung für Wareneingang
+
+### 3.3 Kanban-Optimierung
+
+#### **Häufigkeits-Analyse**
+```
+A-Artikel (häufige Kanbans):
+- Mehrmals täglich
+- Kurze Transportwege
+- Kleine Losgrößen
+- Kontinuierliche Verfügbarkeit
+
+C-Artikel (seltene Kanbans):
+- Wöchentlich oder seltener
+- Größere Losgrößen
+- Längere Transportwege akzeptabel
+```
+
+#### **Behälter-Optimierung**
+- **Standardisierte Größen:** 3-5 Standard-Behälter-Typen
+- **Ergonomische Gestaltung:** Griffmulden, angemessenes Gewicht
+- **Kennzeichnung:** Eindeutige Artikel-Zuordnung
+- **Stapelbarkeit:** Platzsparende Lagerung
+
+## 4. Fertigungsauftrag-Kommissionierung
+
+### 4.1 Fertigungsaufträge verstehen
 
 #### **SAP-Integration**
-- **Produktionsaufträge** aus SAP
-- **Bedarfsmeldungen** automatisch
-- **Rückmeldungen** an SAP
-- **Statusverfolgung** in Echtzeit
-
-#### **Automatisierung**
-- **Automatische Auslagerung** aus HRL/AKL
-- **Transportsteuerung** über Fördertechnik
-- **Pick-by-Light** in der Vorzone
-- **Barcode-Unterstützung** für Artikel-ID
-
-## 2. Kommissionsübersicht
-
-### 2.1 Übersicht aufrufen
-
-**Menüpfad: Warenausgang > Kommissionsübersicht**
-
-#### **Darstellung**
-- **Auftragsliste** mit Status-Informationen
-- **Filter-Optionen** für gezielte Suche
-- **Prioritäts-Anzeige** für Dringlichkeit
-- **Arbeitsplatz-Zuordnung** für Effizienz
-
-#### **Wichtige Spalten**
-- **Auftragsnummer**: Eindeutige Identifikation
-- **Auftragsart**: Fertigung, Kanban, Einzelteil
-- **Priorität**: Dringlichkeit der Bearbeitung
-- **Status**: Bearbeitungsstand
-- **Arbeitsplatz**: Zugewiesener Kommissionier-Arbeitsplatz
-- **Termin**: Liefertermin
-- **Artikel-Anzahl**: Anzahl zu pickender Positionen
-
-### 2.2 Kommissions-Status
-
-#### **Status-Übersicht**
-| Status | Beschreibung | Aktion |
-|--------|-------------|---------|
-| **Geplant** | Auftrag erstellt, noch nicht freigegeben | Warten auf Freigabe |
-| **Freigegeben** | Zur Bearbeitung freigegeben | Kommissionierung starten |
-| **Laufend** | Kommissionierung begonnen | Positionen bearbeiten |
-| **Bereit** | Alle Positionen gepickt | Versand vorbereiten |
-| **Abgeschlossen** | Vollständig bearbeitet | Archiviert |
-
-#### **Prioritäten**
-- **Hoch**: Dringende Aufträge (rot)
-- **Normal**: Standard-Aufträge (gelb)
-- **Niedrig**: Nicht dringende Aufträge (grün)
-
-### 2.3 Filterfunktionen
-
-#### **Standard-Filter**
-- **Auftragsnummer**: Direkte Suche
-- **Auftragsart**: Fertigung, Kanban, etc.
-- **Priorität**: Dringlichkeit
-- **Status**: Bearbeitungsstand
-- **Arbeitsplatz**: Zugewiesener Arbeitsplatz
-- **Termin**: Zeitraum-Filter
-
-#### **Erweiterte Filter**
-- **Artikel-spezifisch**: Bestimmte Artikel
-- **Kunden-spezifisch**: Bestimmte Kunden
-- **Kombinierte Kriterien**: Mehrere Filter
-- **Gespeicherte Filter**: Wiederverwendbare Sets
-
-## 3. Arbeitsplätze für Kommissionierung
-
-### 3.1 Arbeitsplatz-Übersicht
-
-#### **Verfügbare Arbeitsplätze**
-- **WA-Arbeitsplatz 1**: Hauptkommissionierung
-- **WA-Arbeitsplatz 2**: Zusatzkommissionierung
-- **WA-Arbeitsplatz 3**: Spezialkommissionierung
-- **Pick-by-Light Vorzone**: Automatisierte Kommissionierung
-
-#### **Arbeitsplatz-Nummerierung**
-- **Systematische Nummerierung** für eindeutige Zuordnung
-- **Arbeitsplatz-spezifische Konfiguration**
-- **Filter-Profile** für Auftragstypen
-- **Kapazitäts-Steuerung** pro Arbeitsplatz
-
-### 3.2 Arbeitsplatz-Filterprofile
-
-#### **Profil-Konfiguration**
-- **Auftragsart-Filter**: Welche Aufträge werden bearbeitet
-- **Prioritäts-Filter**: Welche Prioritäten werden bevorzugt
-- **Artikel-Filter**: Welche Artikel können bearbeitet werden
-- **Kapazitäts-Filter**: Maximale Anzahl gleichzeitiger Aufträge
-
-#### **Typische Profile**
-- **Fertigungs-Arbeitsplatz**: Nur Fertigungsaufträge
-- **Kanban-Arbeitsplatz**: Nur Kanban-Aufträge
-- **Express-Arbeitsplatz**: Nur hohe Priorität
-- **Universal-Arbeitsplatz**: Alle Auftragsarten
-
-### 3.3 Arbeitsplatz-Optimierung
-
-#### **Effizienz-Faktoren**
-- **Ergonomische Anordnung** der Bedienelemente
-- **Optimale Beleuchtung** für Artikel-Erkennung
-- **Kurze Wege** zwischen Entnahmepunkten
-- **Ausreichende Ablageflächen** für Aufträge
-
-#### **Technische Ausstattung**
-- **Barcode-Scanner** für Artikel-Identifikation
-- **Waagen** für Mengenprüfung
-- **Bildschirm** für Auftragsanzeige
-- **Drucker** für Etiketten und Picklisten
-
-## 4. Kommissionier-Strategien
-
-### 4.1 FIFO-Strategie (First In, First Out)
-
-#### **Grundprinzip**
-- **Älteste Bestände** werden zuerst entnommen
-- **Vermeidung** von Verderb und Alterung
-- **Optimale Lagerrotation**
-- **Qualitätssicherung** durch Umschlag
-
-#### **FIFO-Zeitfenster**
-- **Flexible Zeitfenster** für Entnahme-Toleranzen
-- **Artikelspezifische Konfiguration**
-- **Ausnahmen** für kritische Artikel
-- **Automatische Überwachung**
-
-#### **Umsetzung**
-1. **System** schlägt ältesten Bestand vor
-2. **Prüfung** der Haltbarkeit
-3. **Entnahme** entsprechend FIFO
-4. **Dokumentation** der Entnahme
-
-### 4.2 Mengenregel-Strategie
-
-#### **Grundprinzip**
-- **Optimale Mengen** für Entnahme-Effizienz
-- **Minimierung** von Anbruch-Beständen
-- **Vollständige LHM-Entnahmen** bevorzugt
-- **Reduzierung** von Restbeständen
-
-#### **Mengenregeln**
-- **Komplette LHM** vor Teilentnahmen
-- **Große Mengen** vor kleinen Mengen
-- **Zusammenhängende Lagerplätze** bevorzugt
-- **Minimierung** von Lagerbewegungen
-
-#### **Konfiguration**
-- **Artikel-spezifische Regeln**
-- **Mindestmengen** für Entnahmen
-- **Ausnahmen** für dringende Aufträge
-- **Automatische Optimierung**
-
-### 4.3 Prioritäts-Strategien
-
-#### **Prioritätsebenen**
-1. **Termin-Priorität**: Dringlichkeit nach Liefertermin
-2. **Kunden-Priorität**: Wichtigkeit des Kunden
-3. **Artikel-Priorität**: Kritische Artikel
-4. **Auftragsart-Priorität**: Fertigungsaufträge vor Kanban
-
-#### **Dynamische Prioritäten**
-- **Automatische Anpassung** bei Terminänderungen
-- **Eskalations-Mechanismen** bei Verzögerungen
-- **Benutzer-definierte Prioritäten**
-- **Echtzeitaktualisierung** der Prioritäten
-
-## 5. Entnahmeanweisungen
-
-### 5.1 Fertigungsauftrag-Entnahme
-
-#### **Merkmale**
-- **Vollständige Materialbereitstellung** für Produktion
-- **Termingerechte Lieferung**
-- **Mengengenaue Kommissionierung**
-- **Arbeitsplatz-spezifische Bereitstellung**
-
-#### **Arbeitsschritte**
-1. **Fertigungsauftrag** aus Kommissionsübersicht wählen
-2. **Positionen** prüfen und freigeben
-3. **Entnahme-Reihenfolge** optimieren
-4. **Artikel** systematisch picken
-5. **Mengen** kontrollieren
-6. **Vollständigkeit** prüfen
-7. **Bereitstellung** für Arbeitsplatz
-
-#### **Besonderheiten**
-- **Terminbindung**: Feste Liefertermine
-- **Vollständigkeitsprüfung**: Alle Positionen erforderlich
-- **Arbeitsplatz-Zuordnung**: Spezifische Zielorte
-- **Rückmeldung**: Sofortige SAP-Rückmeldung
-
-### 5.2 Kanban-Aufträge
-
-#### **Merkmale**
-- **Bedarfsorientierte Bereitstellung**
-- **Kleine Losgrößen**
-- **Kontinuierlicher Nachschub**
-- **Automatische Auslösung**
-
-#### **Arbeitsschritte**
-1. **Kanban-Signal** empfangen
-2. **Bedarfsmenge** ermitteln
-3. **Schnelle Entnahme** durchführen
-4. **Direkte Bereitstellung** am Arbeitsplatz
-5. **Kanban-Karte** aktualisieren
-
-#### **Besonderheiten**
-- **Hohe Frequenz**: Viele kleine Aufträge
-- **Schnelle Bearbeitung**: Kurze Zykluszeiten
-- **Standardisierung**: Wiederkehrende Artikel
-- **Automatisierung**: Systemgesteuerte Auslösung
-
-### 5.3 Einzelteil-Lieferungen
-
-#### **Merkmale**
-- **Spezifische Teile** für Sonderanforderungen
-- **Beistellprozesse** für Fertigung
-- **Kostenstellenbezogene Entnahmen**
-- **Direkte Arbeitsplatzversorgung**
-
-#### **Arbeitsschritte**
-1. **Einzelteil-Anforderung** erhalten
-2. **Artikel** lokalisieren
-3. **Entnahme** durchführen
-4. **Kostenstelle** zuordnen
-5. **Direkte Lieferung** an Arbeitsplatz
-
-#### **Besonderheiten**
-- **Flexibilität**: Verschiedene Artikel
-- **Kostenkontrolle**: Kostenstellenzuordnung
-- **Dokumentation**: Detaillierte Nachverfolgung
-- **Beratung**: Fachkundige Unterstützung
-
-## 6. Pick-by-Light in der Vorzone
-
-### 6.1 System-Beschreibung
-
-#### **Technologie**
-- **LED-Anzeigen** an Lagerplätzen
-- **Berührungslose Bedienung**
-- **Mengenerkennung** über Sensoren
-- **Automatische Bestätigung**
-
-#### **Vorteile**
-- **Fehlerreduzierung**: Visuelle Führung
-- **Geschwindigkeit**: Schnelle Identifikation
-- **Ergonomie**: Natürliche Arbeitsweise
-- **Flexibilität**: Verschiedene Auftragsarten
-
-### 6.2 Bedienung
-
-#### **Arbeitsablauf**
-1. **Auftrag** am System starten
-2. **LED-Anzeige** leuchtet auf
-3. **Artikel** entnehmen
-4. **Menge** über Display prüfen
-5. **Bestätigung** durch Tastendruck
-6. **Nächste Position** wird angezeigt
-
-#### **Anzeige-Elemente**
-- **Rote LED**: Entnahme-Position
-- **Grüne LED**: Bestätigung
-- **Display**: Mengeanzeige
-- **Taster**: Bestätigung/Korrektur
-
-### 6.3 Fehlerbehebung
-
-#### **Häufige Probleme**
-- **LED leuchtet nicht**: Systemfehler
-- **Falsche Menge**: Korrektur erforderlich
-- **Artikel nicht vorhanden**: Nachschub anfordern
-- **Bestätigung funktioniert nicht**: Taster defekt
-
-#### **Lösungsansätze**
-1. **System-Reset** durchführen
-2. **Manuelle Korrektur** eingeben
-3. **Techniker** rufen
-4. **Ausweichverfahren** anwenden
-
-## 7. Kommissions-Optimierung
-
-### 7.1 Laufwege-Optimierung
-
-#### **Optimierungsstrategien**
-- **Zonenbildung**: Zusammenhängende Bereiche
-- **Wegzeit-Minimierung**: Kürzeste Routen
-- **Batch-Picking**: Mehrere Aufträge gleichzeitig
-- **Sequenzierung**: Optimale Reihenfolge
-
-#### **Technische Unterstützung**
-- **GPS-Navigation** im Lager
-- **Optimierte Picklisten**
-- **Dynamische Routenplanung**
-- **Echtzeitaktualisierung** der Wege
-
-### 7.2 Kapazitäts-Optimierung
-
-#### **Lastverteilung**
-- **Arbeitsplatz-Auslastung** überwachen
-- **Aufträge** gleichmäßig verteilen
-- **Spitzenzeiten** identifizieren
-- **Ressourcen** flexibel einsetzen
-
-#### **Performance-Monitoring**
-- **Durchsatzzeiten** messen
-- **Fehlerquoten** überwachen
-- **Mitarbeiter-Performance** bewerten
-- **Optimierungspotenziale** identifizieren
-
-### 7.3 Qualitäts-Optimierung
-
-#### **Qualitätssicherung**
-- **Doppel-Kontrollen** bei kritischen Artikeln
-- **Stichproben-Prüfungen**
-- **Barcode-Validierung**
-- **Waagen-Kontrolle** für Mengen
-
-#### **Fehler-Reduzierung**
-- **Systematische Fehleranalyse**
-- **Schulung** der Mitarbeiter
-- **Prozess-Verbesserungen**
-- **Technische Hilfsmittel**
-
-## 8. Störungsbehandlung
-
-### 8.1 Häufige Störungen
-
-#### **System-Störungen**
-- **Entnahmeanweisung** nicht verfügbar
-- **Artikel** nicht am vorgesehenen Platz
-- **Barcode** nicht lesbar
-- **Waage** funktioniert nicht
-
-#### **Prozess-Störungen**
-- **Artikel-Engpass**: Nicht genügend Bestand
-- **Qualitätsproblem**: Artikel beschädigt
-- **Terminproblem**: Liefertermin nicht einzuhalten
-- **Kapazitätsproblem**: Arbeitsplatz überlastet
-
-### 8.2 Störungsbehebung
-
-#### **Sofortmaßnahmen**
-1. **Störung** identifizieren und klassifizieren
-2. **Auswirkungen** bewerten
-3. **Betroffene Bereiche** informieren
-4. **Ausweichverfahren** einleiten
-
-#### **Lösungsstrategien**
-- **Artikel-Engpass**: Nachschub anfordern
-- **Qualitätsproblem**: Ersatzartikel bereitstellen
-- **Terminproblem**: Prioritäten neu setzen
-- **Kapazitätsproblem**: Zusätzliche Ressourcen
-
-### 8.3 Eskalations-Prozess
-
-#### **Eskalationsstufen**
-1. **Mitarbeiter**: Eigenständige Problemlösung
-2. **Schichtführer**: Operative Koordination
-3. **Lagerleiter**: Strategische Entscheidungen
-4. **Management**: Grundsätzliche Änderungen
-
-#### **Kommunikationswege**
-- **Direkte Meldung**: Sofortige Information
-- **Digitale Systeme**: Automatische Benachrichtigung
-- **Regelmäßige Updates**: Statusmeldungen
-- **Abschluss-Meldung**: Problemlösung bestätigen
-
-## 9. Praktische Übungen
-
-### Übung 1: Fertigungsauftrag-Kommissionierung
-1. **Öffnen Sie die Kommissionsübersicht**
-2. **Wählen Sie einen Fertigungsauftrag**
-3. **Prüfen Sie die Positionen**
-4. **Führen Sie die Kommissionierung durch**
-5. **Dokumentieren Sie die Entnahmen**
-
-### Übung 2: Kanban-Bearbeitung
-1. **Identifizieren Sie Kanban-Aufträge**
-2. **Bearbeiten Sie mehrere Aufträge im Batch**
-3. **Optimieren Sie die Reihenfolge**
-4. **Messen Sie die Bearbeitungszeit**
-5. **Vergleichen Sie verschiedene Strategien**
-
-### Übung 3: Pick-by-Light-Bedienung
-1. **Starten Sie ein Pick-by-Light-System**
-2. **Folgen Sie den LED-Anzeigen**
-3. **Führen Sie Mengenkorrekturen durch**
-4. **Behandeln Sie Fehlermeldungen**
-5. **Optimieren Sie Ihren Arbeitsablauf**
-
-### Übung 4: Störungsbehandlung
-1. **Simulieren Sie verschiedene Störungen**
-2. **Wenden Sie Lösungsstrategien an**
-3. **Dokumentieren Sie die Maßnahmen**
-4. **Messen Sie die Auswirkungen**
-5. **Entwickeln Sie Verbesserungsvorschläge**
-
-## 10. Leistungsmessung
-
-### 10.1 KPIs für Kommissionierung
-
-#### **Effizienz-Kennzahlen**
-- **Picks per Hour**: Entnahmen pro Stunde
-- **Auftragsdurchlaufzeit**: Zeit von Start bis Abschluss
-- **Laufwege**: Meter pro Auftrag
-- **Arbeitsplatz-Auslastung**: Produktive Zeit
-
-#### **Qualitäts-Kennzahlen**
-- **Fehlerrate**: Prozent falsche Picks
-- **Vollständigkeitsrate**: Prozent vollständige Aufträge
-- **Terminerfüllung**: Pünktlichkeit
-- **Kundenzufriedenheit**: Bewertungen
-
-### 10.2 Benchmarking
-
-#### **Interne Benchmarks**
-- **Vergleich** zwischen Arbeitsplätzen
-- **Best Practices** identifizieren
-- **Leistungsunterschiede** analysieren
-- **Verbesserungen** ableiten
-
-#### **Externe Benchmarks**
-- **Branchenvergleich**: Industrie-Standards
-- **Technologie-Vergleich**: Neue Systeme
-- **Prozess-Vergleich**: Andere Unternehmen
-- **Innovations-Potenzial**: Zukunftstrends
-
-## 11. Kommissionier-Technologien
-
-### 11.1 Aktuelle Technologien
-
-#### **Barcode-Technologie**
-- **1D-Barcodes**: Standard-Artikelcodes
-- **2D-Barcodes**: Zusätzliche Informationen
-- **Mobile Scanner**: Flexible Anwendung
-- **Fest-Scanner**: Hohe Geschwindigkeit
-
-#### **RFID-Technologie**
-- **Passive Tags**: Einfache Identifikation
-- **Aktive Tags**: Erweiterte Funktionen
-- **Bulk-Reading**: Mehrere Tags gleichzeitig
-- **Echtzeittracking**: Kontinuierliche Überwachung
-
-### 11.2 Zukunftstrends
-
-#### **Voice-Picking**
-- **Sprachgesteuerte Kommissionierung**
-- **Freihändige Bedienung**
-- **Mehrsprachige Unterstützung**
-- **Lärmreduzierte Arbeitsplätze**
-
-#### **Augmented Reality**
-- **AR-Brillen** für Wegführung
-- **Visuelle Überlagerungen**
-- **Interaktive Anweisungen**
-- **Schulungs-Unterstützung**
-
-#### **Robotik**
-- **Autonome mobile Roboter**
-- **Kollaborative Roboter**
-- **Automatisierte Kommissionierung**
-- **Menschliche Supervision**
-
-## 12. Lernerfolgskontrolle
-
-### Theoretische Prüfung
-
-1. **Welche Kommissionier-Strategien gibt es?**
-   - [x] FIFO und Mengenregel
-   - [ ] Nur FIFO
-   - [ ] Nur Mengenregel
-   - [ ] Alphabetische Reihenfolge
-
-2. **Was ist Pick-by-Light?**
-   - [x] LED-gesteuerte Kommissionierung
-   - [ ] Laser-gesteuerte Kommissionierung
-   - [ ] Licht-gesteuerte Lagerung
-   - [ ] Beleuchtungs-System
-
-3. **Welche Auftragsarten gibt es?**
-   - [x] Fertigungsaufträge, Kanban, Einzelteile
-   - [ ] Nur Fertigungsaufträge
-   - [ ] Nur Kanban
-   - [ ] Nur Einzelteile
-
-4. **Wie werden Prioritäten gesetzt?**
-   - [x] Nach Termin, Kunde, Artikel, Auftragsart
-   - [ ] Nur nach Termin
-   - [ ] Nur nach Kunde
-   - [ ] Zufällig
+- **Automatischer Import:** Fertigungsaufträge aus SAP PP
+- **Stücklisten-Auflösung:** Materialbedarfe ermitteln
+- **Verfügbarkeitsprüfung:** Bestand vs. Bedarf
+- **Terminplanung:** Just-in-Time Bereitstellung
+
+#### **Auftrags-Arten**
+```
+Standard-Fertigungsauftrag:
+- Normale Priorität
+- Standard-Durchlaufzeit
+- Bekannte Stückliste
+- Automatische Abwicklung
+
+Eilauftrag:
+- Hohe Priorität
+- Verkürzte Durchlaufzeit
+- Manuelle Überwachung
+- Bevorzugte Behandlung
+
+Sonderauftrag:
+- Spezielle Materialien
+- Manuelle Freigabe
+- Einzelfallprüfung
+- Dokumentation erforderlich
+```
+
+### 4.2 Fertigungsauftrag abwickeln
+
+#### **Auftrags-Vorbereitung**
+
+**Menüpfad: Kommissionierung > Fertigungsaufträge**
+
+1. **Auftrag auswählen**
+   - Aus Auftrags-Pool wählen
+   - Prioritäten berücksichtigen
+   - Verfügbarkeit prüfen
+   - Ressourcen-Bedarf abschätzen
+
+2. **Stückliste analysieren**
+   ```
+   Prüfpunkte:
+   - Alle Materialien verfügbar?
+   - Spezielle Qualitäts-Anforderungen?
+   - Gefahrgut oder besondere Behandlung?
+   - Mengentoleranzen beachten?
+   ```
+
+3. **Kommissionierungs-Strategie**
+   - **Artikel-orientiert:** Bei wenigen Positionen
+   - **Batch-orientiert:** Bei vielen kleinen Aufträgen
+   - **Zonen-orientiert:** Bei großen Aufträgen
+
+#### **Kommissionierung durchführen**
+
+**Schritt 1: Startvorbereitung**
+```
+1. Kommissionier-Wagen bereitstellen
+2. Scanner und Etiketten prüfen
+3. Auftrags-Unterlagen ausdrucken
+4. Arbeitsplatz-Adresse notieren
+5. Start-Zeit dokumentieren
+```
+
+**Schritt 2: Artikel sammeln**
+1. **Route abarbeiten**
+   - Optimierte Reihenfolge befolgen
+   - Lagerplätze systematisch anfahren
+   - GPS-Navigation nutzen
+
+2. **Entnahme durchführen**
+   ```
+   Für jede Position:
+   1. Lagerplatz lokalisieren
+   2. Artikel-Nummer scannen
+   3. Menge prüfen und entnehmen
+   4. Qualität visuell kontrollieren
+   5. Entnahme im System buchen
+   ```
+
+3. **Zwischenkontrollen**
+   - Vollständigkeits-Check alle 10 Positionen
+   - Gewichts-Plausibilität prüfen
+   - Qualitäts-Auffälligkeiten dokumentieren
+
+**Schritt 3: Abschluss**
+1. **Vollständigkeits-Kontrolle**
+   - Alle Positionen abgehakt?
+   - Mengen korrekt?
+   - Keine beschädigten Artikel?
+
+2. **Bereitstellung**
+   - Transport zum Arbeitsplatz
+   - Übergabe an Produktions-Team
+   - Elektronische Quittierung
+
+3. **Rückmeldung an SAP**
+   - Automatische Materialentnahme-Buchung
+   - Status-Update im Fertigungsauftrag
+   - Zeit-Protokollierung
+
+### 4.3 Besondere Materialien
+
+#### **Gefahrgut-Handling**
+```
+Gefahrgut-Klassen bei Georg Fischer:
+- Klasse 3: Brennbare Flüssigkeiten
+- Klasse 8: Ätzende Stoffe
+- Klasse 9: Verschiedene gefährliche Stoffe
+
+Spezielle Maßnahmen:
+- Persönliche Schutzausrüstung
+- Separate Transport-Behälter
+- Dokumentations-Pflicht
+- Spezielle Lagerung
+```
+
+#### **Qualitäts-kritische Artikel**
+- **Lot-Rückverfolgung:** Chargen-Nummern dokumentieren
+- **Erstmuster-Prüfung:** Bei neuen Lieferungen
+- **Zwischenlagerung:** In klimatisierten Bereichen
+- **Handling-Schutz:** Antistatik-Maßnahmen
+
+#### **Hochwertige Artikel**
+- **Vier-Augen-Prinzip:** Doppelte Kontrolle
+- **Einzelstück-Verfolgung:** Serien-Nummern scannen
+- **Secure-Transport:** Versperrbare Behälter
+- **Diebstahl-Schutz:** Überwachte Bereiche
+
+## 5. Qualitätskontrolle
+
+### 5.1 Integrierte Qualitätsprüfung
+
+#### **Visuelle Kontrolle**
+```
+Standard-Checks:
+- Verpackung unbeschädigt?
+- Artikel-Nummer stimmt überein?
+- Menge korrekt?
+- Verfallsdatum noch gültig?
+- Äußerlich keine Beschädigungen?
+```
+
+#### **Systematische Prüfung**
+- **5% Stichprobe:** Bei Standard-Artikeln
+- **10% Stichprobe:** Bei kritischen Artikeln
+- **100% Prüfung:** Bei Qualitäts-Problemen
+- **Foto-Dokumentation:** Bei Auffälligkeiten
+
+### 5.2 Qualitäts-Workflow
+
+#### **Problem-Erkennung**
+1. **Sofortiger Stopp** der Kommissionierung
+2. **Artikel separieren** und kennzeichnen
+3. **Problem dokumentieren** (Foto, Beschreibung)
+4. **Qualitäts-Team informieren**
+
+#### **Problem-Behandlung**
+```
+Qualitäts-Kategorien:
+1. Geringfügig → Artikel verwendbar
+2. Mittel → Nacharbeit erforderlich
+3. Schwer → Artikel sperren
+4. Kritisch → Charge sperren
+```
+
+#### **Dokumentation**
+- **Qualitäts-Protokoll** automatisch erstellt
+- **Foto-Upload** in WMS-System
+- **Benachrichtigung** an relevante Personen
+- **Follow-up** Verfolgung bis Lösung
+
+### 5.3 Qualitäts-KPIs
+
+#### **Messgrößen**
+```
+Qualitäts-Kennzahlen:
+- Fehlerrate: <0.1% der Positionen
+- Reklamations-Quote: <0.05%
+- Nacharbeit-Quote: <1%
+- Qualitäts-Durchlaufzeit: <2h
+```
+
+#### **Kontinuierliche Verbesserung**
+- **Wöchentliche Reviews** der Qualitäts-Daten
+- **Root-Cause-Analyse** bei Häufungen
+- **Lieferanten-Feedback** bei systematischen Problemen
+- **Prozess-Optimierung** basierend auf Erkenntnissen
+
+## 6. Optimierungsmaßnahmen
+
+### 6.1 Leistungs-Optimierung
+
+#### **Wegezeiten-Reduktion**
+```
+Optimierungs-Ansätze:
+- ABC-Analyse für Lagerplatz-Zuordnung
+- Batch-Größen optimieren
+- Route-Algorithmus verbessern
+- Engpass-Stellen identifizieren
+```
+
+#### **Ergonomie-Verbesserung**
+- **Griffhöhen-Optimierung:** 60-120cm Bereich bevorzugen
+- **Gewichts-Verteilung:** Max. 15kg pro Behälter
+- **Greif-Bereiche:** Arm-Länge berücksichtigen
+- **Entnahme-Hilfsmittel:** Zangen, Vakuum-Griffe
+
+### 6.2 Technologie-Optimierung
+
+#### **Scanner-Optimierung**
+- **Ring-Scanner:** Freihändige Bedienung
+- **Voice-Picking:** Sprachgesteuerte Kommissionierung
+- **AR-Brillen:** Augmented Reality Navigation
+- **KI-Assistenz:** Intelligente Routenplanung
+
+#### **System-Integration**
+```
+Schnittstellen-Optimierung:
+- SAP PP Real-time Integration
+- MES-System Anbindung
+- IoT-Sensoren für Umgebung
+- Predictive Analytics
+```
+
+### 6.3 Personal-Optimierung
+
+#### **Skill-Management**
+- **Kompetenz-Matrix:** Fähigkeiten pro Mitarbeiter
+- **Cross-Training:** Vielseitige Einsetzbarkeit
+- **Spezialisierung:** Experten für komplexe Aufträge
+- **Mentoring:** Erfahrene begleiten Neue
+
+#### **Motivation und Anreize**
+```
+Anreizsysteme:
+- Leistungsprämien bei Zielerreichung
+- Qualitäts-Boni bei fehlerfreier Arbeit
+- Verbesserungs-Vorschläge belohnen
+- Team-Events bei Meilensteinen
+```
+
+## 7. Praktische Übungen
+
+### Übung 1: Pick-by-Light Simulation
+1. **Simulieren Sie einen Kanban-Auftrag** mit 5 Positionen
+2. **Folgen Sie der LED-Führung** systematisch
+3. **Dokumentieren Sie Ihre Entnahmezeiten**
+4. **Identifizieren Sie Optimierungspotenzial**
+
+### Übung 2: Fertigungsauftrag bearbeiten
+1. **Wählen Sie einen mittelgroßen FA** (20-30 Positionen)
+2. **Analysieren Sie die Stückliste**
+3. **Planen Sie die optimale Route**
+4. **Führen Sie eine Vollständigkeitskontrolle durch**
+
+### Übung 3: Qualitätskontrolle
+1. **Simulieren Sie einen Qualitäts-Fund**
+2. **Dokumentieren Sie das Problem**
+3. **Folgen Sie dem Eskalations-Prozess**
+4. **Erstellen Sie einen Qualitäts-Bericht**
+
+### Übung 4: Optimierung analysieren
+1. **Messen Sie Zeiten** für verschiedene Auftrags-Typen
+2. **Identifizieren Sie Zeitfresser**
+3. **Entwickeln Sie Verbesserungs-Vorschläge**
+4. **Präsentieren Sie Ihre Erkenntnisse**
+
+## 8. Häufige Probleme und Lösungen
+
+### 8.1 System-Probleme
+
+#### **Pick-by-Light Ausfall**
+- **Problem:** LED-Module funktionieren nicht
+- **Sofortmaßnahme:** Auf Papier-Listen umstellen
+- **Lösung:** Techniker rufen, Ersatzmodule verwenden
+- **Prävention:** Regelmäßige Wartung, Ersatzteile bevorraten
+
+#### **Scanner-Probleme**
+- **Problem:** Barcode wird nicht erkannt
+- **Sofortmaßnahme:** Manuell eingeben mit Kontrolle
+- **Lösung:** Scanner reinigen, Ersatzgerät verwenden
+- **Prävention:** Tägliche Funktionsprüfung
+
+### 8.2 Qualitäts-Probleme
+
+#### **Häufige Beschädigungen**
+- **Ursachen:** Unsachgemäße Lagerung, Transport
+- **Lösung:** Handling-Schulung, bessere Verpackung
+- **Monitoring:** Schadensstatistik führen
+
+#### **Mengen-Differenzen**
+- **Ursachen:** Falsche Entnahmen, Buchungsfehler
+- **Lösung:** Doppelte Kontrolle, System-Validierung
+- **Prävention:** Schulung, bessere Prozesse
+
+## 9. Lernerfolgskontrolle
+
+### Fragen zur Selbstüberprüfung
+
+1. **Welche Kommissionierungs-Art hat die höchste Priorität?**
+   - [x] Eilaufträge der Fertigung
+   - [ ] Standard Kanban-Aufträge
+   - [ ] Einzelteil-Kommissionierungen
+   - [ ] Umlagerkaufträge
+
+2. **Was bedeutet eine rote LED am Pick-by-Light?**
+   - [x] Fehler oder Problem
+   - [ ] Nächster Entnahme-Platz
+   - [ ] Auftrag beendet
+   - [ ] System-Start
+
+3. **Wie groß ist die maximale Kanban-Batch-Größe?**
+   - [x] 8 Aufträge
+   - [ ] 5 Aufträge
+   - [ ] 10 Aufträge
+   - [ ] Unbegrenzt
+
+4. **Wann muss eine Qualitätsprüfung durchgeführt werden?**
+   - [x] Bei allen Auffälligkeiten sofort
+   - [ ] Nur am Ende der Schicht
+   - [ ] Nur bei Kundenbeschwerden
+   - [ ] Nur bei teuren Artikeln
 
 ### Praktische Bewertung
 
-#### **Aufgabe 1: Standard-Kommissionierung (25 Punkte)**
-- Korrekte Auftragsauswahl
-- Optimale Arbeitsreihenfolge
-- Fehlerfreie Entnahmen
-- Vollständige Dokumentation
+**Aufgabe: Kommissionierungs-Szenario**
+1. **Bearbeiten Sie einen gemischten Auftrag**
+2. **Nutzen Sie Pick-by-Light und Scanner**
+3. **Führen Sie Qualitätskontrollen durch**
+4. **Dokumentieren Sie Auffälligkeiten**
+5. **Messen Sie Ihre Performance**
 
-#### **Aufgabe 2: Pick-by-Light (25 Punkte)**
-- Korrekte System-Bedienung
-- Schnelle Arbeitsweise
-- Fehlerbehandlung
-- Qualitätskontrolle
+### Bewertung
+- **90-100%**: Sehr gut - Sie beherrschen die Kommissionierung
+- **70-89%**: Gut - Kleine Verbesserungen möglich
+- **50-69%**: Befriedigend - Übung erforderlich
+- **<50%**: Ungenügend - Modul wiederholen
 
-#### **Aufgabe 3: Batch-Picking (25 Punkte)**
-- Mehrere Aufträge gleichzeitig
-- Optimierte Reihenfolge
-- Effiziente Abarbeitung
-- Korrekte Zuordnung
+## 10. Weiterführende Ressourcen
 
-#### **Aufgabe 4: Störungsbehandlung (25 Punkte)**
-- Schnelle Problemerkennung
-- Angemessene Lösungsansätze
-- Korrekte Eskalation
-- Dokumentation
+### Dokumentation
+- **Pick-by-Light Bedienungsanleitung**
+- **Kanban-System Handbuch Georg Fischer**
+- **Qualitäts-Richtlinien Kommissionierung**
 
-### Bewertungsschema
+### Checklisten
+- **Tägliche Pick-by-Light Checks**
+- **Kanban-Rundgang Checkliste**
+- **Qualitätskontrolle Kommissionierung**
 
-- **90-100 Punkte**: Sehr gut - Experte in Kommissionierung
-- **80-89 Punkte**: Gut - Solide Grundkenntnisse
-- **70-79 Punkte**: Befriedigend - Verbesserung möglich
-- **<70 Punkte**: Ungenügend - Nachschulung erforderlich
+### Kontakt und Support
 
-## 13. Weiterführende Qualifikationen
-
-### 13.1 Spezialisierungen
-
-#### **Kommissionier-Spezialist**
-- **Erweiterte Strategien**
-- **Prozessoptimierung**
-- **Technologie-Integration**
-- **Team-Führung**
-
-#### **Pick-by-Light-Experte**
-- **System-Konfiguration**
-- **Troubleshooting**
-- **Optimierung**
-- **Schulung anderer**
-
-#### **Qualitäts-Koordinator**
-- **Qualitätssicherung**
-- **Fehleranalyse**
-- **Verbesserungsprozesse**
-- **Audit-Durchführung**
-
-### 13.2 Führungsqualifikationen
-
-#### **Team-Leader Kommissionierung**
-- **Mitarbeiter-Führung**
-- **Kapazitätsplanung**
-- **Performance-Management**
-- **Konfliktlösung**
-
-#### **Schichtführer**
-- **Operative Verantwortung**
-- **Prozesssteuerung**
-- **Ressourcenplanung**
-- **Qualitätssicherung**
-
-## 14. Tipps für die Praxis
-
-### 14.1 Effizienz-Tipps
-
-#### **Arbeitsorganisation**
-- **Systematische Abarbeitung**
-- **Optimale Reihenfolge**
-- **Minimale Laufwege**
-- **Ergonomische Arbeitsweise**
-
-#### **Technologie-Nutzung**
-- **Barcode-Scanner** konsequent nutzen
-- **Waagen** für Mengenprüfung
-- **Mobile Geräte** für Flexibilität
-- **Automatisierung** wo möglich
-
-### 14.2 Qualitäts-Tipps
-
-#### **Fehlerprävention**
-- **Systematische Kontrollen**
-- **Doppel-Prüfungen** bei kritischen Artikeln
-- **Aufmerksamkeit** für Details
-- **Regelmäßige Pausen**
-
-#### **Kontinuierliche Verbesserung**
-- **Feedback** von Kollegen
-- **Fehleranalyse** durchführen
-- **Beste Praktiken** dokumentieren
-- **Verbesserungsvorschläge** einreichen
-
-## 15. Kontakt und Support
-
-### Fachliche Unterstützung
-
-**Kommissionier-Team:**
-- E-Mail: kommissionierung@georgfischer.com
-- Telefon: +41 81 770 1300
-- Leitstand: Durchwahl 1350
-
-**Pick-by-Light Support:**
-- E-Mail: pickbylight@georgfischer.com
-- Telefon: +41 81 770 1320
-- Techniker: Durchwahl 1330
-
-### Technischer Support
-
-**WMS-Support:**
-- ServiceDesk: +41 81 770 5678
-- E-Mail: wms-support@georgfischer.com
-- Notfall-Hotline: 24/7 verfügbar
-
-**Automatisierung:**
-- E-Mail: automation@georgfischer.com
-- Telefon: +41 81 770 1340
-- Entstörung: Durchwahl 1360
-
-### Schulung und Weiterbildung
-
-**Training Center:**
-- E-Mail: wms-training@georgfischer.com
+**Kommissionierung Support:**
+- E-Mail: picking@georgfischer.com
 - Telefon: +41 81 770 1234
-- Intranet: WMS-Portal > Training
-
-**Zertifizierung:**
-- E-Mail: certification@georgfischer.com
-- Telefon: +41 81 770 1240
-- Online-Portal: cert.georgfischer.com
+- Pick-by-Light Techniker: +41 81 770 5555
 
 ---
 
 *Dieser Trainingsinhalt basiert auf der Jungheinrich WMS Schulungsunterlage für Georg Fischer Seewis, Version 1.1, Stand: 27.03.2025*
 
 *© Georg Fischer AG - Alle Rechte vorbehalten*
-
-**Erfolgreiche Kommissionierung!**

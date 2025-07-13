@@ -1,150 +1,631 @@
 ---
-layout: default
+layout: training
 title: "Industry-Specific Training"
-description: "Branchenspezifische Anpassungen"
-breadcrumbs:
-  - title: "TRAINING"
-  - title: "Industry-Specific Training"
+description: "Branchenspezifische WMS-Anpassungen für verschiedene Industriezweige"
+duration: "60 Minuten"
+difficulty: "Specialized"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Bestandsverwaltung"
+    url: "/pages/training/inventory/"
+learning_objectives:
+  - "Branchenspezifische Anforderungen verstehen"
+  - "Industrielle Anpassungen implementieren"
+  - "Compliance-Anforderungen verschiedener Branchen erfüllen"
+  - "Best Practices für spezifische Industrien anwenden"
+previous:
+  title: "Manager Training"
+  url: "/pages/training/manager/"
+next:
+  title: "Train-the-Trainer"
+  url: "/pages/training/trainer/"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Industry-Specific Training - Branchenspezifische Anpassungen</p>
+# Industry-Specific Training - Branchenspezifische WMS-Anpassungen
+
+<div class="industry-focus">
+    <div class="focus-icon">
+        <i class="fas fa-industry"></i>
     </div>
-
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Industry-Specific Training" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../../basics//" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+    <div class="focus-content">
+        <h3>🏭 INDUSTRIELLE EXPERTISE</h3>
+        <p><strong>Ziel:</strong> Maßgeschneiderte WMS-Lösungen für verschiedene Industriezweige bei Georg Fischer</p>
+        <p><strong>Fokus:</strong> Branchenspezifische Anforderungen, Compliance und Best Practices</p>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+## Überblick
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
-}
+Georg Fischer bedient verschiedene Industriezweige mit unterschiedlichen Anforderungen an Lagerlogistik und WMS-Funktionalitäten. Dieses Modul vermittelt branchenspezifisches Know-how für optimale WMS-Konfiguration und -betrieb.
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+## Lernziele
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+Nach Abschluss dieses Moduls können Sie:
+- Branchenspezifische Anforderungen identifizieren und umsetzen
+- Industrielle Compliance-Standards erfüllen
+- WMS-Konfigurationen für verschiedene Branchen optimieren
+- Branchenspezifische Best Practices anwenden
+- Regulatory Requirements verschiedener Industrien beachten
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+## 1. Georg Fischer Industriezweige
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+### 1.1 Automotive Industry
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+#### **Automotive-spezifische Anforderungen**
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+**Kernmerkmale der Automobilindustrie:**
+- **Just-in-Time (JIT) Lieferung**: Präzise Zeitfenster
+- **Sequenzierte Lieferung**: Exakte Reihenfolge der Teile
+- **Traceability**: Vollständige Nachverfolgbarkeit
+- **Quality Gates**: Mehrstufige Qualitätsprüfungen
+- **FIFO-Prinzip**: First In, First Out bei kritischen Teilen
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+#### **WMS-Konfiguration Automotive**
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+**Spezielle Einstellungen:**
+```yaml
+automotive_config:
+  delivery_windows:
+    tolerance: "±15 minutes"
+    schedule_type: "JIT"
+  
+  quality_control:
+    inspection_points: 3
+    sampling_rate: "100% for safety parts"
+    documentation: "complete_traceability"
+  
+  storage_strategy:
+    fifo_enforcement: true
+    sequencing_support: true
+    batch_segregation: true
+```
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+#### **Automotive Standards**
 
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
+**Compliance-Anforderungen:**
+- **IATF 16949**: Quality Management System
+- **VDA 6.3**: Process Audit Standard
+- **IMDS**: International Material Data System
+- **Supplier Code of Conduct**: Lieferantenrichtlinien
 
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+### 1.2 Aerospace & Defense
 
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+#### **Luft- und Raumfahrt Besonderheiten**
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
+**Kritische Anforderungen:**
+- **AS9100 Compliance**: Aerospace Quality Standard
+- **Material Traceability**: Komplette Materialnachverfolgung
+- **Environmental Control**: Temperatur und Luftfeuchtigkeit
+- **Security Requirements**: Sicherheitszonen und Zugangskontrollen
+- **Documentation**: Umfassende Dokumentationspflicht
 
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+#### **Aerospace WMS Setup**
+
+**Besondere Konfigurationen:**
+```ini
+[AEROSPACE_CONFIG]
+TraceabilityLevel=COMPLETE
+SecurityZones=ENABLED
+EnvironmentalMonitoring=REQUIRED
+DocumentationLevel=FULL
+SerialNumberTracking=MANDATORY
+```
+
+#### **Critical Components Handling**
+
+**Sicherheitskritische Teile:**
+- **Flight-Safety Items**: Spezielle Handhabung und Lagerung
+- **Shelf-Life Management**: Ablaufdaten-Überwachung
+- **Lot Control**: Chargen-spezifische Nachverfolgung
+- **First Article Inspection**: Erstmusterprüfung
+
+### 1.3 Medical & Pharmaceutical
+
+#### **Medizintechnik Anforderungen**
+
+**Regulatory Framework:**
+- **FDA 21 CFR Part 820**: Medical Device Quality System
+- **ISO 13485**: Medical Device Quality Management
+- **MDR (EU) 2017/745**: Medical Device Regulation
+- **Good Manufacturing Practice (GMP)**
+
+#### **Pharma-spezifische Features**
+
+**WMS-Funktionalitäten:**
+```yaml
+pharma_features:
+  batch_management:
+    expiry_tracking: true
+    fifo_enforcement: true
+    quarantine_zones: true
+  
+  temperature_control:
+    cold_chain: "2-8°C"
+    ambient: "15-25°C"
+    monitoring: "continuous"
+  
+  serialization:
+    unit_level: true
+    aggregation: true
+    verification: true
+```
+
+#### **Good Distribution Practice (GDP)**
+
+**Lagerung und Distribution:**
+- **Temperature Mapping**: Temperaturkartierung der Lagerzonen
+- **Cold Chain Management**: Kühlketten-Überwachung
+- **Contamination Control**: Kontaminationsschutz
+- **Recall Procedures**: Rückrufverfahren
+
+### 1.4 Food & Beverage
+
+#### **Lebensmittelindustrie Spezifikationen**
+
+**Food Safety Requirements:**
+- **HACCP**: Hazard Analysis Critical Control Points
+- **BRC Global Standard**: British Retail Consortium
+- **IFS Food**: International Featured Standards
+- **Organic Certification**: Bio-Zertifizierung
+
+#### **Food-Grade WMS Configuration**
+
+**Besondere Einstellungen:**
+```yaml
+food_safety:
+  lot_tracking:
+    ingredient_level: true
+    allergen_control: true
+    origin_tracking: true
+  
+  storage_conditions:
+    temperature_zones: multiple
+    humidity_control: true
+    pest_control: documented
+  
+  shelf_life:
+    fifo_enforcement: strict
+    expiry_alerts: automated
+    waste_minimization: true
+```
+
+#### **Allergen Management**
+
+**Kontaminationsvermeidung:**
+- **Segregated Storage**: Getrennte Lagerung von Allergenen
+- **Cross-Contamination Prevention**: Kreuzkontamination vermeiden
+- **Cleaning Protocols**: Reinigungsverfahren
+- **Labeling Requirements**: Kennzeichnungspflicht
+
+### 1.5 Chemical Industry
+
+#### **Chemische Industrie Anforderungen**
+
+**Safety and Compliance:**
+- **REACH Regulation**: EU-Chemikalienverordnung
+- **GHS Classification**: Global Harmonized System
+- **Seveso III Directive**: Störfall-Verordnung
+- **OSHA Standards**: Occupational Safety Standards
+
+#### **Chemical WMS Features**
+
+**Gefahrstoff-Management:**
+```yaml
+chemical_handling:
+  hazmat_classification:
+    compatibility_matrix: true
+    segregation_rules: enforced
+    quantity_limits: defined
+  
+  safety_measures:
+    emergency_procedures: documented
+    spill_response: automated
+    evacuation_routes: marked
+  
+  regulatory_compliance:
+    sds_management: integrated
+    reporting: automated
+    auditing: continuous
+```
+
+#### **Dangerous Goods Storage**
+
+**Lagerklassen nach VCI:**
+- **LGK 1**: Explosive Stoffe
+- **LGK 2**: Gase
+- **LGK 3**: Entzündbare Flüssigkeiten
+- **LGK 4**: Entzündbare Feststoffe
+- **LGK 5**: Oxidierende Stoffe
+
+## 2. Branchenspezifische Compliance
+
+### 2.1 Regulatory Frameworks
+
+#### **Internationale Standards**
+
+**ISO-Standards nach Branche:**
+```
+ISO 9001   │ Quality Management        │ Alle Branchen
+ISO 14001  │ Environmental Management  │ Alle Branchen
+ISO 45001  │ Occupational Health       │ Alle Branchen
+ISO 13485  │ Medical Devices          │ Medical
+ISO 22000  │ Food Safety              │ Food & Beverage
+AS9100     │ Aerospace Quality        │ Aerospace
+IATF 16949 │ Automotive Quality       │ Automotive
+```
+
+#### **Regional Compliance**
+
+**EU-Spezifische Vorschriften:**
+- **GDPR**: Datenschutz-Grundverordnung
+- **CE Marking**: Konformitätskennzeichnung
+- **WEEE Directive**: Elektroschrott-Richtlinie
+- **RoHS Directive**: Beschränkung gefährlicher Stoffe
+
+### 2.2 Documentation Requirements
+
+#### **Audit Trail Management**
+
+**Branchenspezifische Dokumentation:**
+```yaml
+documentation_requirements:
+  automotive:
+    - production_part_approval_process
+    - supplier_quality_agreements
+    - control_plans
+  
+  aerospace:
+    - certificate_of_conformity
+    - material_test_reports
+    - first_article_inspection
+  
+  medical:
+    - device_history_records
+    - design_controls
+    - risk_management_files
+```
+
+#### **Record Retention**
+
+**Aufbewahrungsfristen:**
+- **Automotive**: 15 Jahre nach Produktionsende
+- **Aerospace**: Lebensdauer des Produkts + 10 Jahre
+- **Medical**: 5-25 Jahre je nach Geräteklasse
+- **Food**: 2-5 Jahre je nach Produkttyp
+
+### 2.3 Quality Assurance
+
+#### **Statistical Process Control (SPC)**
+
+**Qualitätskennzahlen:**
+```yaml
+spc_metrics:
+  automotive:
+    cpk_requirement: ">1.33"
+    ppk_requirement: ">1.67"
+    defect_rate: "<10 ppm"
+  
+  aerospace:
+    zero_defects: "flight_critical_parts"
+    first_pass_yield: ">99.5%"
+    on_time_delivery: ">99%"
+  
+  medical:
+    validation_protocols: "required"
+    risk_analysis: "iso_14971"
+    clinical_evaluation: "mdr_compliant"
+```
+
+## 3. Spezielle WMS-Funktionen
+
+### 3.1 Advanced Lot Management
+
+#### **Batch Genealogy**
+
+**Erweiterte Chargen-Verfolgung:**
+```sql
+-- Beispiel: Batch Genealogy Query
+SELECT 
+    child_batch.batch_number AS final_product,
+    parent_batch.batch_number AS raw_material,
+    bt.transformation_date,
+    bt.process_step
+FROM batch_transformation bt
+JOIN batches child_batch ON bt.child_batch_id = child_batch.id
+JOIN batches parent_batch ON bt.parent_batch_id = parent_batch.id
+WHERE child_batch.batch_number = 'BATCH_001'
+ORDER BY bt.transformation_date;
+```
+
+#### **Expiry Date Management**
+
+**FEFO-Strategien (First Expired, First Out):**
+- **Automatic FEFO**: System-gesteuerte Auswahl
+- **Expiry Alerts**: Frühwarnsystem vor Ablauf
+- **Quarantine Management**: Automatische Quarantäne abgelaufener Ware
+- **Waste Reduction**: Optimierung zur Abfall-Minimierung
+
+### 3.2 Environmental Monitoring
+
+#### **Climate Control Integration**
+
+**Umgebungsüberwachung:**
+```yaml
+environmental_monitoring:
+  temperature:
+    sensors: "wireless_iot"
+    frequency: "every_5_minutes"
+    alerts: "immediate"
+  
+  humidity:
+    critical_zones: "pharma_storage"
+    tolerance: "±5%"
+    documentation: "continuous"
+  
+  air_quality:
+    particulate_monitoring: "cleanroom_areas"
+    pressure_differential: "positive_pressure"
+    filtration: "hepa_grade"
+```
+
+#### **Energy Management**
+
+**Nachhaltigkeit und Effizienz:**
+- **Energy Monitoring**: Energieverbrauch pro Lagerzone
+- **Carbon Footprint**: CO2-Bilanz der Lageroperationen
+- **Renewable Energy**: Integration erneuerbarer Energien
+- **Efficiency Optimization**: Energieeffizienz-Optimierung
+
+### 3.3 Advanced Security
+
+#### **Access Control by Industry**
+
+**Branchenspezifische Sicherheitsmaßnahmen:**
+```yaml
+security_levels:
+  aerospace_defense:
+    clearance_required: "security_cleared_personnel"
+    zones: "restricted_access"
+    monitoring: "24_7_surveillance"
+  
+  pharmaceutical:
+    gmp_compliance: "validated_personnel"
+    segregation: "product_specific"
+    audit_trail: "complete_documentation"
+  
+  automotive:
+    ip_protection: "design_confidentiality"
+    supplier_access: "limited_visibility"
+    just_in_time: "real_time_tracking"
+```
+
+## 4. Best Practices nach Industrie
+
+### 4.1 Automotive Best Practices
+
+#### **Lean Warehouse Principles**
+
+**Toyota Production System (TPS) Integration:**
+- **Kanban Systems**: Pull-basierte Nachschubsteuerung
+- **Poka-Yoke**: Fehlervermeidung durch Design
+- **Kaizen**: Kontinuierliche Verbesserung
+- **5S Methodology**: Arbeitsplatz-Organisation
+
+#### **Supplier Integration**
+
+**Vendor-Managed Inventory (VMI):**
+```yaml
+vmi_implementation:
+  real_time_visibility:
+    inventory_levels: "supplier_access"
+    consumption_patterns: "predictive_analytics"
+    replenishment_triggers: "automated"
+  
+  collaboration_tools:
+    planning_integration: "synchronized_forecasts"
+    quality_feedback: "immediate_alerts"
+    performance_metrics: "shared_dashboards"
+```
+
+### 4.2 Pharmaceutical Best Practices
+
+#### **Serialization and Track & Trace**
+
+**Global Serialization Standards:**
+- **GS1 Standards**: Globale Identifikationsstandards
+- **DSCSA Compliance**: US Drug Supply Chain Security Act
+- **EU FMD**: European Falsified Medicines Directive
+- **China NMPA**: National Medical Products Administration
+
+#### **Good Warehousing Practice (GWP)**
+
+**Pharma-Lagerstandards:**
+```yaml
+gwp_requirements:
+  facility_design:
+    segregation: "by_product_type"
+    material_flow: "unidirectional"
+    contamination_control: "validated_procedures"
+  
+  personnel:
+    training: "gmp_certified"
+    hygiene: "documented_procedures"
+    access_control: "role_based"
+  
+  documentation:
+    batch_records: "complete_traceability"
+    deviations: "investigated_documented"
+    change_control: "validated_changes"
+```
+
+### 4.3 Food Industry Best Practices
+
+#### **Cold Chain Management**
+
+**Temperaturgeführte Logistik:**
+```yaml
+cold_chain_optimization:
+  temperature_zones:
+    frozen: "-18°C to -25°C"
+    chilled: "0°C to 4°C"
+    ambient: "15°C to 25°C"
+  
+  monitoring:
+    continuous_logging: "iot_sensors"
+    alarm_thresholds: "±1°C"
+    response_procedures: "automated"
+  
+  validation:
+    mapping_studies: "annual"
+    calibration: "bi_annual"
+    qualification: "equipment_specific"
+```
+
+#### **Food Safety Culture**
+
+**HACCP Implementation:**
+- **Hazard Analysis**: Systematische Gefahrenanalyse
+- **Critical Control Points**: Kritische Lenkungspunkte
+- **Monitoring Procedures**: Überwachungsverfahren
+- **Corrective Actions**: Korrekturmaßnahmen
+
+## 5. Technology Integration
+
+### 5.1 Industry 4.0 Integration
+
+#### **IoT and Smart Sensors**
+
+**Sensor-Integration nach Branche:**
+```yaml
+iot_applications:
+  automotive:
+    - rfid_tracking: "component_level"
+    - vibration_sensors: "quality_monitoring"
+    - pressure_sensors: "hydraulic_systems"
+  
+  pharmaceutical:
+    - temperature_humidity: "environmental_control"
+    - particle_counters: "cleanroom_monitoring"
+    - weight_sensors: "inventory_accuracy"
+  
+  food_beverage:
+    - gas_sensors: "freshness_monitoring"
+    - ph_sensors: "quality_control"
+    - flow_meters: "liquid_handling"
+```
+
+#### **AI and Machine Learning**
+
+**Branchenspezifische KI-Anwendungen:**
+- **Predictive Quality**: Qualitätsvorhersage basierend auf Sensordaten
+- **Demand Forecasting**: Nachfrageprognose mit Saisonalität
+- **Anomaly Detection**: Abweichungserkennung in Prozessen
+- **Optimization Algorithms**: Optimierungsalgorithmen für Routing
+
+### 5.2 Digital Twin Technology
+
+#### **Virtual Warehouse Models**
+
+**Digital Twin Benefits:**
+```yaml
+digital_twin_advantages:
+  simulation:
+    process_optimization: "before_implementation"
+    scenario_testing: "risk_free_environment"
+    capacity_planning: "accurate_modeling"
+  
+  monitoring:
+    real_time_visualization: "3d_warehouse_view"
+    performance_analytics: "continuous_improvement"
+    predictive_maintenance: "equipment_optimization"
+```
+
+## Praktische Übungen
+
+### Übung 1: Branchenanalyse
+1. Wählen Sie eine Georg Fischer Zielbranche
+2. Identifizieren Sie spezifische WMS-Anforderungen
+3. Entwickeln Sie eine Compliance-Checkliste
+4. Erstellen Sie einen Implementierungsplan
+
+### Übung 2: Regulatory Mapping
+1. Analysieren Sie relevante Vorschriften für eine Branche
+2. Erstellen Sie ein Compliance-Framework
+3. Definieren Sie Dokumentationsanforderungen
+4. Entwickeln Sie Audit-Verfahren
+
+### Übung 3: Best Practice Implementation
+1. Wählen Sie eine Best Practice aus einer Branche
+2. Adaptieren Sie diese für Georg Fischer
+3. Erstellen Sie einen Rollout-Plan
+4. Definieren Sie Erfolgsmetriken
+
+## Lernerfolgskontrolle
+
+### Fragen zur Selbstüberprüfung
+
+1. **Welcher Standard ist für die Automobilindustrie am wichtigsten?**
+   - [ ] ISO 9001
+   - [x] IATF 16949
+   - [ ] AS9100
+   - [ ] ISO 13485
+
+2. **Was bedeutet FEFO in der Pharmabranche?**
+   - [ ] First Entered, First Out
+   - [x] First Expired, First Out
+   - [ ] First Error, First Out
+   - [ ] First Evaluated, First Out
+
+3. **Welche Temperatur ist typisch für pharmazeutische Kühlkette?**
+   - [ ] 0°C bis 2°C
+   - [x] 2°C bis 8°C
+   - [ ] 8°C bis 15°C
+   - [ ] 15°C bis 25°C
+
+### Bewertung
+- **80-100%**: Ausgezeichnet - Sie können branchenspezifische WMS-Lösungen eigenständig entwickeln
+- **60-79%**: Gut - Vertiefen Sie spezifische Industriekenntnisse
+- **40-59%**: Befriedigend - Zusätzliche Branchenforschung empfohlen
+- **<40%**: Ungenügend - Industrielle Grundlagen wiederholen
+
+## Industry Resources
+
+### Branchenverbände
+- **VDA**: Verband der Automobilindustrie
+- **BDLI**: Bundesverband der Deutschen Luft- und Raumfahrtindustrie
+- **BVMed**: Bundesverband Medizintechnologie
+- **Lebensmittelverband Deutschland**
+
+### Zertifizierungsstellen
+- **TÜV SÜD**: Technische Überwachung
+- **DQS**: Deutsche Gesellschaft zur Zertifizierung
+- **Bureau Veritas**: Internationale Zertifizierung
+- **SGS**: Société Générale de Surveillance
+
+### Fachpublikationen
+- **Automotive Logistics**: Automobillogistik
+- **Pharmaceutical Commerce**: Pharmahandel
+- **Food Logistics**: Lebensmittellogistik
+- **Chemical Engineering**: Chemietechnik
+
+## Kontakt Branchenexperten
+
+**Automotive Specialist:**
+- E-Mail: automotive.expert@georgfischer.com
+- Telefon: +41 81 770 3001
+
+**Pharmaceutical Consultant:**
+- E-Mail: pharma.specialist@georgfischer.com
+- Telefon: +41 81 770 3002
+
+**Food & Beverage Expert:**
+- E-Mail: food.specialist@georgfischer.com
+- Telefon: +41 81 770 3003
+
+---
+
+*Dieser Trainingsinhalt basiert auf internationalen Industriestandards und Georg Fischer Branchenexpertise, Version 1.0, Stand: März 2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*

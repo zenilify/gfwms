@@ -1,150 +1,544 @@
 ---
-layout: default
-title: "Security & Compliance"
-description: "Sicherheit und Compliance im WMS"
-breadcrumbs:
-  - title: "TRAINING"
-  - title: "Security & Compliance"
+layout: training
+title: "Sicherheit & Compliance"
+description: "Systemsicherheit und Compliance-Anforderungen im WMS"
+duration: "40 Minuten"
+difficulty: "Advanced"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Benutzerverwaltung"
+    url: "/pages/training/users/"
+learning_objectives:
+  - "Sicherheitsrichtlinien verstehen"
+  - "Compliance-Anforderungen erfüllen"
+  - "Bedrohungen identifizieren"
+  - "Sicherheitsverfahren implementieren"
+previous:
+  title: "Performance-Optimierung"
+  url: "/pages/training/optimization/"
+next:
+  title: "Manager Training"
+  url: "/pages/training/manager/"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Security & Compliance - Sicherheit und Compliance im WMS</p>
+# Sicherheit & Compliance - Schutz des WMS bei Georg Fischer
+
+<div class="security-alert">
+    <div class="alert-icon">
+        <i class="fas fa-shield-alt"></i>
     </div>
-
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Security & Compliance" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../../users//" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+    <div class="alert-content">
+        <h3>🔐 SICHERHEITS-PRIORITÄT</h3>
+        <p><strong>Kritisch:</strong> Sicherheitsverletzungen können Produktionsausfälle und Datenverluste verursachen</p>
+        <p><strong>Compliance:</strong> Einhaltung von ISO 27001, DSGVO und Georg Fischer Sicherheitsrichtlinien</p>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+## Überblick
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
-}
+Die Sicherheit des Jungheinrich WMS ist entscheidend für den Schutz kritischer Unternehmensdaten und die Aufrechterhaltung der Betriebsabläufe bei Georg Fischer. Dieses Modul vermittelt essenzielle Sicherheitspraktiken und Compliance-Anforderungen.
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+## Lernziele
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+Nach Abschluss dieses Moduls können Sie:
+- Sicherheitsrichtlinien von Georg Fischer anwenden
+- Compliance-Anforderungen identifizieren und umsetzen
+- Bedrohungen erkennen und melden
+- Sichere Arbeitsverfahren implementieren
+- Incident-Response-Prozeduren ausführen
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+## 1. Sicherheitsgrundlagen
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+### 1.1 Bedrohungslandschaft
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+#### **Externe Bedrohungen**
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+**Häufige Cyberbedrohungen:**
+- **Malware**: Viren, Trojaner, Ransomware
+- **Phishing**: Betrügerische E-Mails und Websites
+- **Social Engineering**: Manipulation von Mitarbeitern
+- **DDoS-Angriffe**: Überlastung der Systemressourcen
+- **Advanced Persistent Threats (APT)**: Langfristige Infiltration
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+#### **Interne Bedrohungen**
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+**Risiken von innen:**
+- **Menschliche Fehler**: Versehentliche Datenlöschung
+- **Privilegien-Missbrauch**: Überschreitung von Zugriffsrechten
+- **Insider-Bedrohungen**: Böswillige interne Akteure
+- **Schwache Passwörter**: Unsichere Authentifizierung
+- **Ungesicherte Endgeräte**: Mobile Geräte ohne Schutz
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+### 1.2 Sicherheitsprinzipien
 
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
+#### **Defense in Depth**
 
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+**Mehrschichtige Sicherheit:**
+```
+┌─────────────────────────────────────┐
+│ Ebene 1: Perimeter Security         │ ← Firewall, IDS/IPS
+├─────────────────────────────────────┤
+│ Ebene 2: Network Security           │ ← VPN, Segmentierung
+├─────────────────────────────────────┤
+│ Ebene 3: Host Security              │ ← Antivirus, Updates
+├─────────────────────────────────────┤
+│ Ebene 4: Application Security       │ ← WMS-Härtung
+├─────────────────────────────────────┤
+│ Ebene 5: Data Security              │ ← Verschlüsselung
+└─────────────────────────────────────┘
+```
 
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+#### **Least Privilege Principle**
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
+**Minimale Berechtigungen:**
+- Benutzer erhalten nur notwendige Zugriffsrechte
+- Zeitlich begrenzte Administratorrechte
+- Regelmäßige Berechtungsreviews
+- Automatische Rechtsentzug bei Rollenwechsel
 
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+### 1.3 Risikobewertung
+
+#### **Risiko-Matrix für WMS**
+
+**Wahrscheinlichkeit vs. Auswirkung:**
+```
+                 NIEDRIG    MITTEL     HOCH
+    HOCH        │ MITTEL │   HOCH   │ KRITISCH │
+    MITTEL      │ NIEDRIG│  MITTEL  │   HOCH   │
+    NIEDRIG     │SEHR NIED│ NIEDRIG  │  MITTEL  │
+```
+
+**Kritische WMS-Risiken:**
+- Datenbankkorruption → KRITISCH
+- SAP-Schnittstellenausfall → HOCH  
+- Benutzerkonten-Kompromittierung → HOCH
+- Performance-Degradation → MITTEL
+
+## 2. Zugriffskontrolle
+
+### 2.1 Authentifizierung
+
+#### **Multi-Faktor-Authentifizierung (MFA)**
+
+**Implementierung bei Georg Fischer:**
+```yaml
+mfa_policy:
+  required_for:
+    - administrative_access: true
+    - remote_access: true
+    - sensitive_operations: true
+  methods:
+    - something_you_know: "password"
+    - something_you_have: "smart_card"
+    - something_you_are: "biometric"
+```
+
+#### **Passwort-Richtlinien**
+
+**Georg Fischer Standards:**
+- **Mindestlänge**: 12 Zeichen
+- **Komplexität**: Groß-/Kleinbuchstaben, Zahlen, Sonderzeichen
+- **Gültigkeitsdauer**: 90 Tage
+- **Historie**: Letzte 12 Passwörter nicht wiederverwendbar
+- **Sperrung**: Nach 3 Fehlversuchen
+
+### 2.2 Autorisierung
+
+#### **Role-Based Access Control (RBAC)**
+
+**WMS-Rollenhierarchie:**
+```
+┌─ WMS_ADMIN ──────────────── Vollzugriff
+├─ WMS_SUPERVISOR ────────── Operative Verwaltung
+├─ WMS_OPERATOR ─────────── Standard-Operationen
+├─ WMS_READONLY ─────────── Nur Leseberechtigung
+└─ WMS_GUEST ────────────── Eingeschränkte Sicht
+```
+
+#### **Funktionsbasierte Berechtigungen**
+
+**Granulare Kontrolle:**
+- **Wareneingang**: Erfassung, Prüfung, Freigabe
+- **Kommissionierung**: Auftragserstellung, Picking, Verpackung
+- **Inventur**: Zählung, Differenzbearbeitung, Freigabe
+- **Reporting**: Standardberichte, Adhoc-Analysen, Export
+
+### 2.3 Session-Management
+
+#### **Sichere Session-Konfiguration**
+
+**Best Practices:**
+```ini
+[SESSION_SECURITY]
+SessionTimeout=30min
+IdleTimeout=15min
+ConcurrentSessions=1
+SessionCookieSecure=true
+SessionCookieHttpOnly=true
+SessionTokenRotation=enabled
+```
+
+#### **Automatische Abmeldung**
+
+**Sicherheitsmaßnahmen:**
+- Automatische Sperre nach Inaktivität
+- Erzwungene Abmeldung bei verdächtigen Aktivitäten
+- Session-Invalidierung beim Rollenwechsel
+- Sichere Session-Übertragung
+
+## 3. Datenschutz und Verschlüsselung
+
+### 3.1 Datenklassifizierung
+
+#### **Georg Fischer Datenklassen**
+
+**Klassifizierungsschema:**
+- **STRENG VERTRAULICH**: Geschäftsgeheimnisse, Patente
+- **VERTRAULICH**: Kundendaten, Lieferanteninformationen
+- **INTERN**: Operative Daten, Prozessinformationen
+- **ÖFFENTLICH**: Allgemeine Unternehmensinformationen
+
+#### **WMS-Datenklassifizierung**
+
+**Beispielzuordnung:**
+```yaml
+data_classification:
+  artikel_stammdaten: VERTRAULICH
+  lagerbestaende: INTERN
+  kundendaten: VERTRAULICH
+  systemlogs: INTERN
+  backup_daten: entsprechend_originaldaten
+```
+
+### 3.2 Verschlüsselung
+
+#### **Data at Rest**
+
+**Datenbankschutz:**
+- **Transparent Data Encryption (TDE)**: SQL Server Datenbankfiles
+- **Always Encrypted**: Sensitive Datenfelder
+- **Certificate-based Encryption**: Backup-Files
+- **BitLocker**: Vollständige Festplattenverschlüsselung
+
+#### **Data in Transit**
+
+**Übertragungsschutz:**
+- **TLS 1.3**: Alle Client-Server-Kommunikation
+- **IPSec**: VPN-Verbindungen
+- **HTTPS**: Web-basierte Zugriffe
+- **SFTP**: Secure File Transfer
+
+#### **Data in Use**
+
+**Verarbeitungsschutz:**
+- **Memory Protection**: Sensitive Daten im RAM
+- **Secure Enclaves**: Geschützte Verarbeitungsbereiche
+- **Application-level Encryption**: WMS-interne Verschlüsselung
+
+### 3.3 Key Management
+
+#### **Schlüsselverwaltung**
+
+**Hierarchisches Key Management:**
+```
+Master Key (HSM) 
+├── Database Encryption Key
+├── Application Keys
+│   ├── Session Keys
+│   └── API Keys
+└── Backup Keys
+    ├── Archive Keys
+    └── Recovery Keys
+```
+
+**Key Rotation Schedule:**
+- **Master Keys**: Jährlich
+- **Database Keys**: Halbjährlich
+- **Session Keys**: Täglich
+- **API Keys**: Monatlich
+
+## 4. Compliance-Anforderungen
+
+### 4.1 Regulatorische Compliance
+
+#### **DSGVO-Compliance**
+
+**Umsetzung im WMS:**
+- **Datenschutz by Design**: Privacy-first Entwicklung
+- **Zweckbindung**: Datenverarbeitung nur für definierte Zwecke
+- **Datenminimierung**: Nur notwendige Daten sammeln
+- **Löschkonzept**: Automatische Datenbereinigung
+- **Betroffenenrechte**: Auskunft, Berichtigung, Löschung
+
+#### **ISO 27001-Compliance**
+
+**Informationssicherheits-Management:**
+```yaml
+iso27001_controls:
+  access_control:
+    - A.9.1: Business requirements for access control
+    - A.9.2: User access management
+    - A.9.3: User responsibilities
+  cryptography:
+    - A.10.1: Cryptographic controls
+  operations_security:
+    - A.12.1: Operational procedures and responsibilities
+    - A.12.6: Management of technical vulnerabilities
+```
+
+### 4.2 Interne Richtlinien
+
+#### **Georg Fischer IT-Sicherheitsrichtlinie**
+
+**Kernpunkte:**
+- **Clean Desk Policy**: Aufgeräumte Arbeitsplätze
+- **Clear Screen Policy**: Bildschirmsperren bei Abwesenheit
+- **USB-Device Policy**: Beschränkung externer Speichermedien
+- **BYOD Policy**: Regelungen für private Geräte
+- **Social Media Policy**: Umgang mit sozialen Medien
+
+#### **Audit-Anforderungen**
+
+**Regelmäßige Überprüfungen:**
+- **Quarterly Access Reviews**: Berechtungsprüfung
+- **Annual Security Assessment**: Umfassende Sicherheitsbewertung
+- **Penetration Testing**: Externe Sicherheitstests
+- **Compliance Monitoring**: Kontinuierliche Überwachung
+
+### 4.3 Dokumentationspflichten
+
+#### **Nachweis der Compliance**
+
+**Obligatorische Dokumentation:**
+- **Risk Assessments**: Regelmäßige Risikobewertungen
+- **Security Incidents**: Vollständige Vorfallsdokumentation
+- **Training Records**: Schulungsnachweise aller Mitarbeiter
+- **Audit Trails**: Lückenlose Aktivitätsprotokolle
+
+## 5. Incident Response
+
+### 5.1 Incident-Klassifizierung
+
+#### **Sicherheitsvorfälle**
+
+**Klassifizierung nach Schweregrad:**
+```
+KRITISCH: Systemausfall, Datenverlust, Compliance-Verletzung
+HOCH:     Verdächtiger Zugriff, Malware-Erkennung, Datenleck
+MITTEL:   Policy-Verletzung, Schwache Authentifizierung
+NIEDRIG:  Verdächtige Aktivität, Konfigurationsfehler
+```
+
+#### **Response-Zeiten**
+
+**SLA für Incident Response:**
+- **KRITISCH**: 15 Minuten Erstreaktion
+- **HOCH**: 1 Stunde Erstreaktion
+- **MITTEL**: 4 Stunden Erstreaktion
+- **NIEDRIG**: 24 Stunden Erstreaktion
+
+### 5.2 Response-Prozess
+
+#### **NIST Incident Response Framework**
+
+**6-Phasen-Modell:**
+1. **Preparation**: Vorbereitung und Planung
+2. **Detection**: Erkennung und Analyse
+3. **Containment**: Eindämmung der Bedrohung
+4. **Eradication**: Beseitigung der Ursache
+5. **Recovery**: Wiederherstellung des Normalbetriebs
+6. **Lessons Learned**: Analyse und Verbesserung
+
+#### **Emergency Response Team (ERT)**
+
+**Team-Zusammensetzung:**
+- **Incident Commander**: Gesamtverantwortung
+- **Security Analyst**: Technische Analyse
+- **System Administrator**: Systemwiederherstellung
+- **Legal Counsel**: Rechtliche Bewertung
+- **Communications Lead**: Interne/externe Kommunikation
+
+### 5.3 Forensic Analysis
+
+#### **Digital Forensics**
+
+**Beweissicherung:**
+```bash
+# Beispiel: Memory Dump
+winpmem_3.3.rc3.exe -o memory_dump.raw
+
+# Beispiel: Network Capture
+tcpdump -i eth0 -w network_capture.pcap
+
+# Beispiel: System Logs
+Get-WinEvent -LogName Security | Export-Csv security_logs.csv
+```
+
+#### **Chain of Custody**
+
+**Beweiskette:**
+- Eindeutige Kennzeichnung aller Beweise
+- Lückenlose Dokumentation aller Zugriffe
+- Sichere Aufbewahrung der Beweismittel
+- Rechtssichere Übergabe an Behörden
+
+## 6. Continuous Monitoring
+
+### 6.1 Security Information and Event Management (SIEM)
+
+#### **SIEM-Integration**
+
+**Log-Quellen für WMS:**
+- Windows Event Logs
+- SQL Server Audit Logs
+- WMS Application Logs
+- Network Device Logs
+- Firewall Logs
+
+#### **Korrelationsregeln**
+
+**Automatische Bedrohungserkennung:**
+```yaml
+correlation_rules:
+  brute_force_detection:
+    condition: "failed_logins > 5 in 5min"
+    action: "block_ip_and_alert"
+  
+  privilege_escalation:
+    condition: "role_change AND after_hours"
+    action: "immediate_alert"
+  
+  data_exfiltration:
+    condition: "large_data_export AND external_ip"
+    action: "block_and_investigate"
+```
+
+### 6.2 Vulnerability Management
+
+#### **Patch Management**
+
+**Systematisches Patch-Verfahren:**
+```
+1. Vulnerability Assessment (wöchentlich)
+2. Risk Assessment (CVSS Score > 7.0)
+3. Testing in Staging Environment
+4. Change Approval Process
+5. Production Deployment
+6. Verification and Monitoring
+```
+
+#### **Security Scanning**
+
+**Regelmäßige Sicherheitstests:**
+- **Network Vulnerability Scans**: Monatlich
+- **Web Application Scans**: Wöchentlich
+- **Database Security Audits**: Quartalsweise
+- **Configuration Compliance**: Täglich
+
+### 6.3 Threat Intelligence
+
+#### **Cyber Threat Intelligence (CTI)**
+
+**Bedrohungsinformationen:**
+- **Tactical Intelligence**: Indikatoren für Kompromittierung (IoCs)
+- **Operational Intelligence**: Angriffstechniken und -verfahren (TTPs)
+- **Strategic Intelligence**: Bedrohungslandschaft und Trends
+
+#### **Threat Hunting**
+
+**Proaktive Bedrohungssuche:**
+```sql
+-- Beispiel: Anomalie-Erkennung
+SELECT user_id, COUNT(*) as login_count,
+       HOUR(login_time) as login_hour
+FROM user_sessions 
+WHERE login_date = CURDATE()
+GROUP BY user_id, HOUR(login_time)
+HAVING login_count > 10
+```
+
+## Praktische Übungen
+
+### Übung 1: Sicherheitsrichtlinien
+1. Analysieren Sie die aktuellen WMS-Benutzerberechtigungen
+2. Identifizieren Sie potenzielle Sicherheitsrisiken
+3. Entwickeln Sie Verbesserungsvorschläge
+4. Erstellen Sie eine Compliance-Checkliste
+
+### Übung 2: Incident Response
+1. Simulieren Sie einen Sicherheitsvorfall
+2. Dokumentieren Sie den Response-Prozess
+3. Bewerten Sie die Effektivität der Maßnahmen
+4. Erstellen Sie einen Lessons-Learned-Bericht
+
+### Übung 3: Security Monitoring
+1. Konfigurieren Sie Security-Alerts im WMS
+2. Definieren Sie Korrelationsregeln
+3. Testen Sie die Alerting-Mechanismen
+4. Optimieren Sie False-Positive-Raten
+
+## Lernerfolgskontrolle
+
+### Fragen zur Selbstüberprüfung
+
+1. **Was ist das Grundprinzip von "Defense in Depth"?**
+   - [ ] Eine einzige starke Sicherheitsmaßnahme
+   - [x] Mehrere Sicherheitsebenen kombinieren
+   - [ ] Nur Perimeter-Sicherheit
+   - [ ] Ausschließlich Software-basierte Sicherheit
+
+2. **Wie oft sollten Passwörter bei Georg Fischer geändert werden?**
+   - [ ] Monatlich
+   - [ ] Jährlich
+   - [x] Alle 90 Tage
+   - [ ] Nur bei Verdacht
+
+3. **Was ist die maximale Reaktionszeit für kritische Sicherheitsvorfälle?**
+   - [x] 15 Minuten
+   - [ ] 1 Stunde
+   - [ ] 4 Stunden
+   - [ ] 24 Stunden
+
+### Bewertung
+- **80-100%**: Ausgezeichnet - Sie können Sicherheit und Compliance eigenständig managen
+- **60-79%**: Gut - Vertiefen Sie spezifische Bereiche
+- **40-59%**: Befriedigend - Zusätzliche Schulung empfohlen
+- **<40%**: Ungenügend - Grundlagen wiederholen
+
+## Weiterführende Ressourcen
+
+### Dokumentation
+- **Georg Fischer IT-Sicherheitsrichtlinie**
+- **NIST Cybersecurity Framework**
+- **ISO 27001:2013 Standard**
+- **DSGVO-Implementierungsleitfaden**
+
+### Tools und Utilities
+- **Security Assessment Tools**: Vulnerability Scanner
+- **Incident Response Playbooks**: Vorgefertigte Prozeduren
+- **Compliance Checklists**: Audit-Vorlagen
+- **Training Materials**: Awareness-Schulungen
+
+## Notfall-Kontakte
+
+**Security Operations Center (SOC):**
+- E-Mail: soc@georgfischer.com
+- Telefon: +41 81 770 8888
+- Emergency: +41 81 770 9999 (24/7)
+
+**Incident Response Team:**
+- Hotline: +41 81 770 7777
+- E-Mail: incident-response@georgfischer.com
+- Eskalation: CISO +41 79 123 4567
+
+**Compliance Officer:**
+- E-Mail: compliance@georgfischer.com
+- Telefon: +41 81 770 6666
+
+---
+
+*Dieser Trainingsinhalt basiert auf den Georg Fischer Sicherheitsrichtlinien und internationalen Security-Standards, Version 2.0, Stand: März 2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*

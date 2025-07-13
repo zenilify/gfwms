@@ -1,150 +1,521 @@
 ---
-layout: default
-title: "Performance Optimierung"
+layout: training
+title: "Performance-Optimierung"
 description: "WMS-Performance und Effizienz maximieren"
-breadcrumbs:
-  - title: "TRAINING"
-  - title: "Performance Optimierung"
+duration: "55 Minuten"
+difficulty: "Advanced"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Systemkonfiguration"
+    url: "/pages/training/configuration/"
+learning_objectives:
+  - "Performance-Engpässe identifizieren"
+  - "Systemoptimierung durchführen"
+  - "Monitoring-Strategien implementieren"
+  - "Best Practices anwenden"
+previous:
+  title: "Systemkonfiguration"
+  url: "/pages/training/configuration/"
+next:
+  title: "Sicherheit & Compliance"
+  url: "/pages/training/security/"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Performance Optimierung - WMS-Performance und Effizienz maximieren</p>
+# Performance-Optimierung - WMS-Effizienz maximieren
+
+<div class="performance-alert">
+    <div class="alert-icon">
+        <i class="fas fa-tachometer-alt"></i>
     </div>
-
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Performance Optimierung" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../../configuration//" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+    <div class="alert-content">
+        <h3>⚡ PERFORMANCE-FOKUS</h3>
+        <p><strong>Ziel:</strong> Optimale WMS-Leistung für maximale Lagereffizienz bei Georg Fischer</p>
+        <p><strong>Messbare Erfolge:</strong> Reduzierung der Antwortzeiten um 30%, Steigerung des Durchsatzes um 25%</p>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+## Überblick
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
-}
+Die Performance-Optimierung des Jungheinrich WMS ist entscheidend für die Effizienz der Lageroperationen bei Georg Fischer. Dieses Modul vermittelt systematische Ansätze zur Identifikation und Behebung von Performance-Engpässen.
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+## Lernziele
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+Nach Abschluss dieses Moduls können Sie:
+- Performance-Bottlenecks systematisch identifizieren
+- Systemoptimierungen gezielt durchführen
+- Monitoring und Alerting effektiv einsetzen
+- Best Practices für nachhaltige Performance implementieren
+- ROI von Optimierungsmaßnahmen bewerten
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+## 1. Performance-Analyse
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+### 1.1 System-Monitoring Grundlagen
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+#### **Key Performance Indicators (KPIs)**
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+**Kritische Metriken:**
+- **Antwortzeit**: < 2 Sekunden für Standard-Transaktionen
+- **Durchsatz**: > 1000 Transaktionen/Stunde
+- **Verfügbarkeit**: > 99.5% während Betriebszeiten
+- **Ressourcenverbrauch**: CPU < 80%, RAM < 85%
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+#### **Monitoring-Tools**
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+**Standardwerkzeuge bei Georg Fischer:**
+- **SQL Server Profiler**: Datenbankabfragen analysieren
+- **Performance Monitor**: Systemressourcen überwachen
+- **WMS Internal Monitor**: Anwendungsspezifische Metriken
+- **Network Analyzer**: Netzwerk-Performance prüfen
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+### 1.2 Engpass-Identifikation
 
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
+#### **Systematische Analyse**
 
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+**Top-Down-Ansatz:**
+1. **Anwendungsebene**: Slow-Queries und lange Ladezeiten
+2. **Datenbankebene**: Index-Nutzung und Sperrverhalten
+3. **Systemebene**: CPU, RAM, Disk I/O
+4. **Netzwerkebene**: Latenz und Bandbreite
 
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+#### **Häufige Problemzonen**
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
+**Typische Engpässe:**
+- Unoptimierte Datenbankabfragen
+- Fehlende oder falsche Indizes
+- Überlastete Netzwerkverbindungen
+- Ineffiziente Batch-Verarbeitung
+- Memory-Leaks in Anwendungen
 
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+### 1.3 Performance-Baseline
+
+#### **Baseline-Erstellung**
+
+**Messzeiträume:**
+- **Normalbereich**: Durchschnittliche Tagesleistung
+- **Spitzenlast**: Stoßzeiten und Monatsabschluss
+- **Niedriglast**: Nacht- und Wochenendzeiten
+
+**Dokumentierte Baselines:**
+```ini
+# Performance Baseline Georg Fischer WMS
+[BASELINE_METRICS]
+AvgResponseTime=1.2s
+PeakResponseTime=2.8s
+TransactionsPerHour=850
+DatabaseConnections=45
+CPUUtilization=65%
+MemoryUsage=72%
+```
+
+## 2. Datenbank-Optimierung
+
+### 2.1 Query-Optimierung
+
+#### **SQL-Performance-Analyse**
+
+**Problematische Query-Patterns:**
+```sql
+-- SCHLECHT: Vollständiger Table Scan
+SELECT * FROM bewegungsdaten WHERE datum LIKE '2025%';
+
+-- BESSER: Index-optimiert
+SELECT artikel_nr, menge, datum 
+FROM bewegungsdaten 
+WHERE datum >= '2025-01-01' AND datum < '2025-02-01';
+```
+
+#### **Index-Strategien**
+
+**Kritische Indizes für Georg Fischer:**
+- **artikel_stamm**: artikel_nr, abc_klasse
+- **lagerort_stamm**: lagerort_id, bereich, status
+- **bewegungsdaten**: datum, artikel_nr, bewegungsart
+- **benutzer_sessions**: user_id, session_start
+
+### 2.2 Datenbankwartung
+
+#### **Regelmäßige Wartungsaufgaben**
+
+**Wöchentliche Tasks:**
+```sql
+-- Index-Fragmentierung prüfen
+SELECT object_name(i.object_id) as TableName, 
+       i.name as IndexName,
+       ps.avg_fragmentation_in_percent
+FROM sys.dm_db_index_physical_stats(db_id(), NULL, NULL, NULL, 'SAMPLED') ps
+INNER JOIN sys.indexes i ON ps.object_id = i.object_id;
+
+-- Statistiken aktualisieren
+UPDATE STATISTICS artikel_stamm;
+UPDATE STATISTICS bewegungsdaten;
+```
+
+#### **Archivierungsstrategien**
+
+**Datenlebenszyklen:**
+- **Aktive Daten**: 3 Monate online
+- **Archivdaten**: 1 Jahr komprimiert
+- **Historische Daten**: Langzeitarchiv offline
+
+### 2.3 Partitionierung
+
+#### **Horizontale Partitionierung**
+
+**Partitionierungsschema für bewegungsdaten:**
+```sql
+-- Monatliche Partitionierung
+CREATE PARTITION FUNCTION MonthlyPartition (datetime)
+AS RANGE RIGHT FOR VALUES ('2025-01-01', '2025-02-01', '2025-03-01');
+
+CREATE PARTITION SCHEME MonthlyScheme
+AS PARTITION MonthlyPartition
+TO ([PRIMARY], [ARCHIVE1], [ARCHIVE2], [ARCHIVE3]);
+```
+
+## 3. Anwendungsoptimierung
+
+### 3.1 WMS-Client Optimierung
+
+#### **PC-Client Performance**
+
+**Optimierungsmaßnahmen:**
+- **Memory Management**: Regelmäßige Cache-Bereinigung
+- **UI-Threading**: Asynchrone Datenladung
+- **Local Caching**: Stammdata lokal zwischenspeichern
+- **Batch-Processing**: Mehrere Operationen zusammenfassen
+
+#### **Mobile Terminal Optimierung**
+
+**Spezifische Anpassungen:**
+- **Offline-Fähigkeiten**: Kritische Daten lokal speichern
+- **Sync-Optimierung**: Delta-Updates statt Vollsync
+- **Battery-Management**: Energieeffiziente Algorithmen
+- **Network-Optimization**: Datenvolumen minimieren
+
+### 3.2 Workflow-Optimierung
+
+#### **Kommissionierungs-Performance**
+
+**Optimierungsfelder:**
+```yaml
+optimizations:
+  pickPath:
+    algorithm: "shortest_path"
+    reduction: "35%"
+  batchSize:
+    optimal: 12
+    improvement: "22%"
+  pickSequence:
+    method: "abc_priority"
+    efficiency: "+18%"
+```
+
+#### **Wareneingang-Optimierung**
+
+**Process-Improvements:**
+- **Parallel Processing**: Mehrere Positionen gleichzeitig
+- **Auto-Verification**: Automatische Qualitätsprüfung
+- **Smart-Routing**: Optimale Einlagerungsroute
+- **Bulk-Operations**: Massenverarbeitung von Wareneingängen
+
+### 3.3 Integration-Performance
+
+#### **SAP-Schnittstelle**
+
+**Optimierungsansätze:**
+- **Connection-Pooling**: Wiederverwendung von RFC-Verbindungen
+- **Batch-Transfer**: Sammlung mehrerer Nachrichten
+- **Async-Processing**: Nicht-blockierende Übertragung
+- **Error-Handling**: Intelligente Retry-Mechanismen
+
+## 4. Infrastruktur-Optimierung
+
+### 4.1 Hardware-Tuning
+
+#### **Server-Optimierung**
+
+**CPU-Optimierung:**
+- **Multi-Threading**: Parallele Verarbeitung aktivieren
+- **Core-Affinity**: Prozesse auf spezifische Kerne binden
+- **Scheduler-Tuning**: Prioritäten für WMS-Prozesse
+
+**Memory-Optimierung:**
+- **Buffer Pool**: 70% RAM für SQL Server
+- **Application Cache**: 20% RAM für WMS-Cache
+- **OS-Reserve**: 10% RAM für System
+
+#### **Storage-Performance**
+
+**Disk-Optimierung:**
+- **RAID-Configuration**: RAID 10 für kritische Daten
+- **SSD-Placement**: Temp-DBs und Logs auf SSD
+- **Partitioning**: Separate Partitionen für Data/Logs
+- **Backup-Storage**: Getrennte High-Speed-Volumes
+
+### 4.2 Netzwerk-Optimierung
+
+#### **Bandbreiten-Management**
+
+**QoS-Konfiguration:**
+```ini
+[QOS_SETTINGS]
+WMS_Critical=100Mbps_Reserved
+SAP_Interface=50Mbps_Reserved
+Reporting=25Mbps_Best_Effort
+Backup=10Mbps_Background
+```
+
+#### **Latenz-Reduzierung**
+
+**Optimierungsmaßnahmen:**
+- **Lokale Switches**: Gigabit-Verbindungen im Lager
+- **VLAN-Segmentierung**: WMS-Traffic isolieren
+- **Caching-Strategien**: Edge-Caching implementieren
+- **CDN-Usage**: Statische Inhalte auslagern
+
+## 5. Monitoring und Alerting
+
+### 5.1 Real-Time Monitoring
+
+#### **Dashboard-Konfiguration**
+
+**Performance-Dashboard:**
+- **System-Health**: CPU, RAM, Disk in Echtzeit
+- **Application-Metrics**: Response-Times, Error-Rates
+- **Business-KPIs**: Durchsatz, Verfügbarkeit
+- **User-Experience**: Page-Load-Times, Transaction-Success
+
+#### **Automatisierte Überwachung**
+
+**Alert-Konfiguration:**
+```yaml
+alerts:
+  critical:
+    response_time: "> 5s"
+    cpu_usage: "> 90%"
+    error_rate: "> 5%"
+  warning:
+    response_time: "> 3s"
+    cpu_usage: "> 80%"
+    memory_usage: "> 85%"
+```
+
+### 5.2 Trend-Analyse
+
+#### **Performance-Trends**
+
+**Langzeit-Monitoring:**
+- **Wachstumstrends**: Datenmenge vs. Performance
+- **Saisonale Muster**: Spitzenlast-Vorhersage
+- **Degradation-Tracking**: Schleichende Performance-Verluste
+- **Capacity-Planning**: Zukünftige Hardware-Anforderungen
+
+#### **Predictive Analytics**
+
+**Machine Learning Integration:**
+- **Anomalie-Erkennung**: Ungewöhnliche Performance-Muster
+- **Failure-Prediction**: Präventive Wartung
+- **Auto-Scaling**: Dynamische Ressourcenzuteilung
+- **Optimization-Suggestions**: KI-basierte Verbesserungsvorschläge
+
+## 6. Best Practices
+
+### 6.1 Operative Excellence
+
+#### **Daily Operations**
+
+**Täglich Checkliste:**
+- [ ] Performance-Dashboard prüfen
+- [ ] Error-Logs analysieren
+- [ ] Backup-Status verifizieren
+- [ ] Kapazitäts-Trends bewerten
+
+#### **Wöchentliche Wartung**
+
+**Weekly Tasks:**
+- [ ] Index-Fragmentierung prüfen
+- [ ] Statistiken aktualisieren
+- [ ] Performance-Reports erstellen
+- [ ] Capacity-Planning aktualisieren
+
+### 6.2 Kontinuierliche Verbesserung
+
+#### **Performance-Review-Zyklen**
+
+**Monatliche Reviews:**
+- Trend-Analyse der letzten 30 Tage
+- Bottleneck-Identifikation
+- Optimierungsmaßnahmen priorisieren
+- ROI-Bewertung umgesetzter Maßnahmen
+
+#### **Innovation-Pipeline**
+
+**Zukunftstechnologien:**
+- **In-Memory-Computing**: Ultra-schnelle Datenverarbeitung
+- **Edge-Computing**: Dezentrale Verarbeitung im Lager
+- **AI-Optimization**: Selbstoptimierende Systeme
+- **Quantum-Computing**: Revolutionäre Algorithmus-Performance
+
+## 7. Troubleshooting Guide
+
+### 7.1 Häufige Performance-Probleme
+
+#### **Symptom: Langsame Datenbankabfragen**
+
+**Diagnose-Steps:**
+1. Query-Execution-Plan analysieren
+2. Index-Usage überprüfen
+3. Parameter-Sniffing identifizieren
+4. Statistics-Aktualität prüfen
+
+**Lösungsansätze:**
+```sql
+-- Index-Empfehlung abrufen
+SELECT 
+    migs.group_handle,
+    mid.statement,
+    migs.user_seeks,
+    migs.avg_total_user_cost,
+    migs.avg_user_impact
+FROM sys.dm_db_missing_index_groups mig
+INNER JOIN sys.dm_db_missing_index_group_stats migs 
+    ON migs.group_handle = mig.index_group_handle
+INNER JOIN sys.dm_db_missing_index_details mid 
+    ON mig.index_handle = mid.index_handle;
+```
+
+#### **Symptom: Hohe CPU-Auslastung**
+
+**Diagnose-Checklist:**
+- [ ] Top-CPU-Consuming-Queries identifizieren
+- [ ] Parallel-Processing-Overhead prüfen
+- [ ] Anti-Virus-Interferenz ausschließen
+- [ ] Resource-Governor-Settings überprüfen
+
+### 7.2 Emergency-Procedures
+
+#### **Performance-Notfall-Plan**
+
+**Sofortmaßnahmen bei kritischer Performance:**
+
+**Stufe 1 (0-5 Minuten):**
+1. Query-Kill für blockierende Statements
+2. Connection-Pool zurücksetzen
+3. IIS-Reset für Web-Components
+4. Temporäre Load-Balancing-Anpassung
+
+**Stufe 2 (5-15 Minuten):**
+1. Database-Index-Rebuild für kritische Tabellen
+2. Memory-Cache vollständig leeren
+3. Service-Restart in definierter Reihenfolge
+4. Emergency-Monitoring aktivieren
+
+**Stufe 3 (15-60 Minuten):**
+1. Failover auf Backup-Systeme
+2. Load-Shedding implementieren
+3. Wartungsfenster einleiten
+4. Root-Cause-Analysis starten
+
+## Praktische Übungen
+
+### Übung 1: Performance-Baseline
+1. Erstellen Sie eine Baseline der aktuellen Performance
+2. Identifizieren Sie die Top-5-Engpässe
+3. Entwickeln Sie einen Optimierungsplan
+4. Prognostizieren Sie die erwarteten Verbesserungen
+
+### Übung 2: Query-Optimierung
+1. Analysieren Sie die langsamsten Datenbankabfragen
+2. Erstellen Sie Execution-Plans
+3. Entwickeln Sie Index-Strategien
+4. Messen Sie die Performance-Verbesserung
+
+### Übung 3: Monitoring-Setup
+1. Konfigurieren Sie ein Performance-Dashboard
+2. Definieren Sie kritische Alerts
+3. Erstellen Sie Trend-Reports
+4. Testen Sie Eskalationsprozeduren
+
+## Lernerfolgskontrolle
+
+### Fragen zur Selbstüberprüfung
+
+1. **Was ist die optimale Antwortzeit für Standard-WMS-Transaktionen?**
+   - [ ] < 1 Sekunde
+   - [x] < 2 Sekunden
+   - [ ] < 5 Sekunden
+   - [ ] < 10 Sekunden
+
+2. **Welcher Ansatz ist am effektivsten für Performance-Analyse?**
+   - [ ] Bottom-Up-Ansatz
+   - [x] Top-Down-Ansatz
+   - [ ] Random-Sampling
+   - [ ] User-Feedback-basiert
+
+3. **Wie oft sollten Index-Statistiken aktualisiert werden?**
+   - [ ] Täglich
+   - [x] Wöchentlich
+   - [ ] Monatlich
+   - [ ] Bei Bedarf
+
+### Bewertung
+- **80-100%**: Ausgezeichnet - Sie können Performance-Optimierung eigenständig durchführen
+- **60-79%**: Gut - Vertiefen Sie spezifische Techniken
+- **40-59%**: Befriedigend - Zusätzliche Praxis erforderlich
+- **<40%**: Ungenügend - Grundlagen wiederholen
+
+## Weiterführende Ressourcen
+
+### Dokumentation
+- **Microsoft SQL Server Performance Tuning Guide**
+- **Jungheinrich WMS Performance Best Practices**
+- **Georg Fischer Infrastructure Optimization Manual**
+
+### Tools und Scripts
+- **Performance Monitoring Scripts**: Automatisierte Überwachung
+- **Index Optimization Utilities**: Database-Tuning-Tools
+- **Capacity Planning Worksheets**: Ressourcenplanung
+- **Emergency Response Checklists**: Notfall-Prozeduren
+
+## ROI und Business Impact
+
+### 7.3 Performance ROI-Berechnung
+
+#### **Messbare Business-Benefits**
+
+**Quantifizierbare Verbesserungen:**
+- **Zeitersparnis**: 30% weniger Wartezeit → 2h/Tag pro Mitarbeiter
+- **Durchsatzsteigerung**: 25% mehr Transaktionen → 200 zusätzliche Aufträge/Tag
+- **Fehlerreduktion**: 40% weniger Timeouts → Weniger Nacharbeit
+- **Kosteneinsparung**: Reduzierte Hardware-Anforderungen
+
+**ROI-Berechnung Beispiel:**
+```
+Investition: 50.000 CHF (Optimierungsmaßnahmen)
+Jährliche Einsparungen:
+- Zeitersparnis: 150.000 CHF
+- Effizienzsteigerung: 80.000 CHF
+- Reduzierte IT-Kosten: 30.000 CHF
+Gesamt: 260.000 CHF/Jahr
+ROI: 420% (Break-Even nach 2.3 Monaten)
+```
+
+## Kontakt und Support
+
+**Performance-Team:**
+- E-Mail: performance@georgfischer.com
+- Telefon: +41 81 770 5679
+- Emergency: +41 81 770 9999
+
+**Escalation:**
+- Level 1: WMS-Support (Betriebszeiten)
+- Level 2: Database-Admin (24/7)
+- Level 3: Infrastructure-Team (Notfall)
+
+---
+
+*Dieser Trainingsinhalt basiert auf den Georg Fischer Performance-Standards und Best Practices der Jungheinrich WMS-Optimierung, Version 1.3, Stand: März 2025*
+
+*© Georg Fischer AG - Alle Rechte vorbehalten*

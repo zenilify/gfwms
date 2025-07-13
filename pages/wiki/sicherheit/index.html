@@ -3,148 +3,899 @@ layout: default
 title: "Sicherheitsverfahren"
 description: "Sicherheitsmaßnahmen und Zugangskontrollen implementieren"
 breadcrumbs:
-  - title: "WIKI"
+  - title: "Wiki"
   - title: "Sicherheitsverfahren"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Sicherheitsverfahren - Sicherheitsmaßnahmen und Zugangskontrollen implementieren</p>
-    </div>
+# Sicherheitsverfahren - Sicherheitsmaßnahmen & Zugangskontrollen
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Sicherheitsverfahren" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../users/" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+<div class="security-hero">
+    <div class="hero-content">
+        <h2>🔒 Umfassende WMS-Sicherheit</h2>
+        <p>Systematische Sicherheitsmaßnahmen und Zugangskontrollen für das Jungheinrich WMS bei Georg Fischer</p>
     </div>
 </div>
 
+<div class="safety-alert">
+    <div class="alert-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <div class="alert-content">
+        <h3>⚠️ SICHERHEITSHINWEIS</h3>
+        <p><strong>Kritisch:</strong> Alle Sicherheitsverfahren sind strikt einzuhalten - Verstöße können zu Systemausfällen und Datenverlust führen</p>
+        <p><strong>Notfall-Hotline:</strong> +41 81 770 7777 (24/7 Security Operations Center)</p>
+    </div>
+</div>
+
+## Überblick
+
+Die Sicherheit des Jungheinrich WMS bei Georg Fischer ist von kritischer Bedeutung für den reibungslosen Betrieb unserer Lageroperationen. Diese Dokumentation bietet umfassende Richtlinien für physische Sicherheit, Cybersecurity und Compliance-Anforderungen.
+
+## Navigation
+
+<div class="wiki-nav-tabs">
+    <button class="wiki-tab-btn active" data-tab="physical-security">Physische Sicherheit</button>
+    <button class="wiki-tab-btn" data-tab="cyber-security">Cybersecurity</button>
+    <button class="wiki-tab-btn" data-tab="access-control">Zugangskontrollen</button>
+    <button class="wiki-tab-btn" data-tab="compliance">Compliance</button>
+    <button class="wiki-tab-btn" data-tab="incidents">Vorfallmanagement</button>
+</div>
+
+## Physische Sicherheit {#physical-security}
+
+<div class="wiki-tab-content active" id="physical-security">
+
+### Zugangsberechtigungen
+
+#### **Sicherheitszonen**
+
+```yaml
+sicherheitszonen:
+  zone_1_oeffentlich:
+    beschreibung: "Öffentliche Bereiche"
+    zugang: "Alle Besucher"
+    sicherheitsstufe: "Niedrig"
+    
+  zone_2_betrieb:
+    beschreibung: "Produktionsbereiche"
+    zugang: "Autorisierte Mitarbeiter + Besucher mit Begleitung"
+    sicherheitsstufe: "Mittel"
+    
+  zone_3_lager:
+    beschreibung: "Lagerbereiche"
+    zugang: "Lager-Mitarbeiter + autorisiertes Personal"
+    sicherheitsstufe: "Hoch"
+    
+  zone_4_it:
+    beschreibung: "IT-Infrastruktur"
+    zugang: "IT-Personal + befugte Administratoren"
+    sicherheitsstufe: "Sehr Hoch"
+    
+  zone_5_kritisch:
+    beschreibung: "Kritische Systeme"
+    zugang: "Speziell autorisiertes Personal"
+    sicherheitsstufe: "Maximal"
+```
+
+#### **Zugangskontrollsysteme**
+
+**Badge-System:**
+- RFID-Karten mit individueller Programmierung
+- Zeitbasierte Zugangsrechte (Schichtzeiten)
+- Automatische Protokollierung aller Zugriffe
+- Integration mit HR-System für aktuelle Berechtigungen
+
+**Biometrische Systeme:**
+```yaml
+biometrie_systeme:
+  fingerprint_scanner:
+    standorte: ["IT-Serverraum", "Qualitätslabor"]
+    backup_methode: "PIN + Badge"
+    
+  iris_scanner:
+    standorte: ["Hochsicherheits-Bereiche"]
+    backup_methode: "Doppelte Autorisierung"
+    
+  gesichtserkennung:
+    standorte: ["Haupteingänge"]
+    verwendung: "Zusätzliche Verifikation"
+```
+
+### Videoüberwachung
+
+#### **Kamera-Abdeckung**
+
+**Kritische Bereiche:**
+- Alle Ein- und Ausgänge (24/7 Aufzeichnung)
+- Lagerbereiche mit Hochwertwaren
+- IT-Infrastrukturbereiche
+- Ladedocks und Verladerampen
+- Pausenbereiche und Umkleiden
+
+#### **Überwachungszentrale**
+
+```yaml
+ueberwachung_specs:
+  aufzeichnungsdauer: "90 Tage"
+  aufloesungen: "Minimum 1080p für kritische Bereiche"
+  speicherung: "Redundante Server + Cloud-Backup"
+  
+  monitoring:
+    besetzt: "Mo-Fr 06:00-22:00"
+    unbesetzt: "Automatische Alarme + Security-Service"
+    
+  alarmsysteme:
+    bewegungsmelder: "Außerhalb Betriebszeiten"
+    tuerkontakte: "24/7 Überwachung"
+    glasbruchmelder: "Fenster und Glastüren"
+```
+
+### Schlüsselverwaltung
+
+#### **Mechanische Schlüssel**
+
+**Schlüssel-Hierarchie:**
+```
+Generalschlüssel (Management)
+├── Bereichsschlüssel (Abteilungsleiter)
+│   ├── Funktionsschlüssel (Teamleiter)
+│   │   └── Arbeitsplatzschlüssel (Mitarbeiter)
+```
+
+**Verwaltungsprotokoll:**
+- Schlüsselausgabe nur gegen Unterschrift
+- Rückgabe bei Schichtende/Urlaub/Kündigung
+- Regelmäßige Inventur (monatlich)
+- Sofortige Sperrung bei Verlust
+
+#### **Elektronische Zutrittssysteme**
+
+```yaml
+elektronische_systeme:
+  programmierung:
+    zeitfenster: "Individuelle Arbeitszeiten"
+    berechtigung: "Rollenbasiert"
+    gueltigkeit: "Automatisches Ablaufdatum"
+    
+  ueberwachung:
+    realtime_alerts: "Unberechtigte Zugangsversuche"
+    protokollierung: "Vollständige Audit-Trails"
+    reporting: "Tägliche Zugangsberichte"
+```
+
+</div>
+
+## Cybersecurity {#cyber-security}
+
+<div class="wiki-tab-content" id="cyber-security">
+
+### IT-Sicherheitsarchitektur
+
+#### **Netzwerk-Segmentierung**
+
+```yaml
+netzwerk_zonen:
+  dmz:
+    beschreibung: "Demilitarisierte Zone"
+    systeme: ["Web-Portale", "E-Mail-Gateway", "VPN-Zugang"]
+    sicherheit: "Firewall + IDS/IPS"
+    
+  produktions_netz:
+    beschreibung: "WMS-Produktionsumgebung"
+    systeme: ["WMS-Server", "Datenbank", "Terminals"]
+    sicherheit: "Isoliert + verschlüsselt"
+    
+  verwaltungs_netz:
+    beschreibung: "Administrative Systeme"
+    systeme: ["Management-PCs", "Berichte-Server"]
+    sicherheit: "VPN-basiert + MFA"
+    
+  iot_netz:
+    beschreibung: "Automatisierungs-Geräte"
+    systeme: ["Scanner", "Drucker", "Sensoren"]
+    sicherheit: "Isoliertes VLAN"
+```
+
+#### **Firewall-Konfiguration**
+
+**Regel-Framework:**
+```firewall
+# Standard-Deny-All Policy
+default_action: DENY
+
+# Erlaubte Verbindungen
+allow_rules:
+  wms_database:
+    from: "WMS-Application-Servers"
+    to: "Database-Cluster"
+    port: "1433/tcp"
+    
+  web_portal:
+    from: "DMZ"
+    to: "WMS-Web-Servers"
+    port: "443/tcp"
+    
+  sap_integration:
+    from: "WMS-Servers"
+    to: "SAP-Gateway"
+    port: "3300-3399/tcp"
+
+# Logging
+log_level: "INFO"
+log_retention: "12 months"
+```
+
+### Endpoint-Security
+
+#### **Antivirus & Anti-Malware**
+
+**Schutz-Strategie:**
+- Enterprise-Grade Antivirus auf allen Clients
+- Real-time Scanning mit Cloud-Intelligence
+- Automatische Signature-Updates
+- Verhaltensbasierte Erkennung für Zero-Day-Threats
+
+#### **Patch-Management**
+
+```yaml
+patch_zeitplan:
+  kritische_patches:
+    zeitrahmen: "Innerhalb 72 Stunden"
+    testumgebung: "24 Stunden Vorab-Test"
+    genehmigung: "IT-Security + Operations"
+    
+  sicherheits_patches:
+    zeitrahmen: "Innerhalb 7 Tagen"
+    wartungsfenster: "Sonntags 02:00-06:00"
+    rollback_plan: "Automatisiert verfügbar"
+    
+  funktions_updates:
+    zeitrahmen: "Monatlicher Zyklus"
+    umfassende_tests: "2 Wochen in Testumgebung"
+    benutzer_schulung: "Bei UI-Änderungen erforderlich"
+```
+
+### Datenverschlüsselung
+
+#### **Verschlüsselung im Ruhezustand**
+
+```yaml
+encryption_at_rest:
+  datenbank:
+    algorithmus: "AES-256"
+    schluessel_management: "Azure Key Vault"
+    rotation: "Jährlich"
+    
+  backups:
+    algorithmus: "AES-256-GCM"
+    kompression: "Vor Verschlüsselung"
+    verifikation: "Integrität bei jedem Restore-Test"
+    
+  dateisystem:
+    algorithmus: "BitLocker (Windows)"
+    tpm_integration: "Hardware-basierte Schlüssel"
+    recovery_keys: "Zentral verwaltet"
+```
+
+#### **Verschlüsselung bei Übertragung**
+
+**Protokoll-Standards:**
+- TLS 1.3 für alle Web-Kommunikation
+- IPSec für Site-to-Site VPN
+- SFTP für Dateitransfers
+- Verschlüsselte SAP-RFC-Verbindungen
+
+### Backup & Recovery Security
+
+#### **Backup-Verschlüsselung**
+
+```yaml
+backup_security:
+  verschluesselung:
+    client_side: "Vor Upload"
+    server_side: "Zusätzliche Ebene"
+    schluessel_trennung: "Backup ≠ Produktions-Keys"
+    
+  zugriffskontrolle:
+    backup_admin: "Separates Admin-Konto"
+    vier_augen_prinzip: "Restore-Operationen"
+    audit_protokoll: "Alle Backup/Restore-Aktivitäten"
+    
+  offline_kopien:
+    haeufigkeit: "Wöchentlich"
+    aufbewahrung: "Physisch getrennte Standorte"
+    verschluesselung: "Zusätzliche Verschlüsselungsebene"
+```
+
+</div>
+
+## Zugangskontrollen {#access-control}
+
+<div class="wiki-tab-content" id="access-control">
+
+### Identity & Access Management (IAM)
+
+#### **Benutzer-Lifecycle**
+
+```yaml
+benutzer_lifecycle:
+  onboarding:
+    schritte:
+      1: "HR-Anfrage mit Rollendefinition"
+      2: "Manager-Genehmigung"
+      3: "IT-Konto-Erstellung"
+      4: "Sicherheitsschulung (obligatorisch)"
+      5: "Konto-Aktivierung nach Schulungsnachweis"
+    
+    automatisierung:
+      hr_integration: "Automatische Konto-Erstellung aus HR-System"
+      role_assignment: "Templatebasiert nach Stellenbeschreibung"
+      provisioning: "Just-in-Time für Anwendungszugriff"
+  
+  offboarding:
+    schritte:
+      1: "HR-Kündigungsmeldung"
+      2: "Sofortige Konto-Deaktivierung"
+      3: "Zugangsberechtigungen entziehen"
+      4: "Hardware-Rückgabe dokumentieren"
+      5: "Audit-Trail archivieren"
+```
+
+#### **Rollen-Matrix**
+
+| Rolle | WMS-Admin | DB-Admin | Operator | Supervisor | Manager |
+|-------|:---------:|:--------:|:--------:|:----------:|:-------:|
+| **System-Konfiguration** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Datenbank-Wartung** | ⚠️ | ✅ | ❌ | ❌ | ❌ |
+| **Benutzer-Management** | ✅ | ❌ | ❌ | ⚠️ | ⚠️ |
+| **Backup-Restore** | ✅ | ✅ | ❌ | ❌ | ❌ |
+| **Audit-Logs** | ✅ | ✅ | ❌ | ⚠️ | ✅ |
+| **Business-Reports** | ✅ | ❌ | ❌ | ✅ | ✅ |
+
+**Legende:** ✅ = Vollzugriff, ⚠️ = Eingeschränkt, ❌ = Kein Zugriff
+
+### Multi-Faktor-Authentifizierung (MFA)
+
+#### **MFA-Implementierung**
+
+```yaml
+mfa_konfiguration:
+  administrative_accounts:
+    erforderlich: "Immer"
+    methoden: ["TOTP", "Hardware-Token", "Biometrie"]
+    backup_codes: "10 Einmal-Codes"
+    
+  privilegierte_funktionen:
+    trigger: ["System-Konfiguration", "Benutzer-Management", "Datenbank-Zugriff"]
+    step_up_auth: "Zusätzliche Verifikation"
+    session_timeout: "Reduziert auf 30 Minuten"
+    
+  standard_benutzer:
+    remote_zugriff: "MFA erforderlich"
+    on_premise: "Risikobasiert (ungewöhnliche Zeiten/Orte)"
+    mobile_apps: "Biometrisch oder PIN"
+```
+
+#### **Hardware-Token**
+
+**Token-Verwaltung:**
+- Yubikey oder äquivalente FIDO2-Geräte
+- Zentrale Registrierung und Verwaltung
+- Backup-Token für kritische Accounts
+- Regelmäßige Funktionsprüfung
+
+### Privileged Access Management (PAM)
+
+#### **Administrative Konten**
+
+```yaml
+admin_accounts:
+  trennung:
+    standard_account: "Tägliche Arbeit ohne erhöhte Rechte"
+    admin_account: "Nur für administrative Tätigkeiten"
+    emergency_account: "Break-Glass für Notfälle"
+    
+  verwaltung:
+    passwort_rotation: "Monatlich automatisch"
+    session_recording: "Alle administrativen Sitzungen"
+    genehmigung: "Workflow für kritische Operationen"
+    zeitlimits: "Maximale Session-Dauer"
+```
+
+#### **Just-in-Time (JIT) Access**
+
+**Temporäre Berechtigungen:**
+- Berechtigungen nur bei Bedarf vergeben
+- Automatisches Ablaufen nach definierter Zeit
+- Genehmigungsworkflow für Berechtigungsanfragen
+- Vollständige Protokollierung aller JIT-Aktivitäten
+
+### Session-Management
+
+#### **Sitzungs-Sicherheit**
+
+```yaml
+session_security:
+  timeout_konfiguration:
+    inaktivitaets_timeout: "30 Minuten"
+    absolutes_timeout: "8 Stunden"
+    warnung_vor_ablauf: "5 Minuten"
+    
+  concurrent_sessions:
+    standard_user: "1 aktive Sitzung"
+    admin_user: "2 aktive Sitzungen"
+    ueberpruefung: "Regelmäßige Session-Audits"
+    
+  session_tokens:
+    algorithmus: "Kryptographisch sicher"
+    laenge: "256 Bit"
+    regeneration: "Bei Privilegienänderung"
+```
+
+</div>
+
+## Compliance {#compliance}
+
+<div class="wiki-tab-content" id="compliance">
+
+### Regulatorische Anforderungen
+
+#### **DSGVO-Compliance**
+
+```yaml
+dsgvo_massnahmen:
+  datenminimierung:
+    grundsatz: "Nur notwendige Daten erheben"
+    zweckbindung: "Klar definierte Verwendungszwecke"
+    loeschung: "Automatische Löschung nach Aufbewahrungsfristen"
+    
+  betroffenenrechte:
+    auskunft: "Automatisierter Prozess innerhalb 30 Tagen"
+    berichtigung: "Self-Service-Portal für Mitarbeiter"
+    loeschung: "Workflow für Löschungsanträge"
+    portabilitaet: "Strukturierte Datenexporte"
+    
+  einwilligung:
+    granular: "Spezifische Einwilligung für jeden Zweck"
+    widerruf: "Einfache Widerrufsmöglichkeit"
+    dokumentation: "Vollständige Einwilligungshistorie"
+```
+
+#### **ISO 27001 Compliance**
+
+**Sicherheitskontrollen:**
+- Informationssicherheits-Management-System (ISMS)
+- Risikobewertung und -behandlung
+- Regelmäßige interne Audits
+- Kontinuierliche Verbesserung
+
+#### **SOX-Compliance (Sarbanes-Oxley)**
+
+```yaml
+sox_kontrollen:
+  it_general_controls:
+    change_management: "Formaler Änderungsprozess"
+    access_management: "Regelmäßige Access Reviews"
+    backup_recovery: "Getestete Backup-Verfahren"
+    
+  application_controls:
+    data_integrity: "Datenvalidierung und -kontrollen"
+    processing_completeness: "Vollständigkeitskontrollen"
+    authorization: "Mehrstufige Genehmigungsverfahren"
+    
+  dokumentation:
+    prozessdokumentation: "Vollständig und aktuell"
+    kontrollnachweise: "Evidenz für alle Kontrollen"
+    testing_results: "Regelmäßige Kontrollprüfungen"
+```
+
+### Audit & Monitoring
+
+#### **Kontinuierliches Monitoring**
+
+```yaml
+monitoring_framework:
+  security_events:
+    failed_logins: "Mehr als 3 Fehlversuche"
+    privilege_escalation: "Ungewöhnliche Berechtigungsänderungen"
+    after_hours_access: "Zugriff außerhalb Arbeitszeiten"
+    data_export: "Große Datenmengen-Downloads"
+    
+  alerts:
+    echtzeit: "Kritische Sicherheitsereignisse"
+    taeglicher_bericht: "Zusammenfassung aller Ereignisse"
+    woechentlicher_trend: "Trend-Analyse und Anomalieerkennung"
+    
+  retention:
+    security_logs: "7 Jahre"
+    audit_trails: "10 Jahre"
+    compliance_dokumentation: "Dauerhaft"
+```
+
+#### **Regelmäßige Audits**
+
+**Audit-Zeitplan:**
+- **Interne Audits:** Quartalsweise
+- **Externe Audits:** Jährlich
+- **Penetrationstests:** Halbjährlich
+- **Vulnerability Assessments:** Monatlich
+
+### Dokumentation & Berichtswesen
+
+#### **Compliance-Dokumentation**
+
+```yaml
+dokumentation_struktur:
+  richtlinien:
+    informationssicherheit: "Jährliche Überprüfung"
+    datenschutz: "Bei Gesetzesänderungen"
+    zugriffskontrolle: "Halbjährlich"
+    
+  verfahren:
+    notfallplaene: "Quartalsweise getestet"
+    backup_recovery: "Monatlich validiert"
+    change_management: "Kontinuierlich gepflegt"
+    
+  nachweise:
+    schulungen: "Vollständige Teilnahmehistorie"
+    tests: "Ergebnisse aller Sicherheitstests"
+    incidents: "Komplette Vorfallsdokumentation"
+```
+
+#### **Compliance-Dashboard**
+
+**KPI-Übersicht:**
+- Compliance-Status aller Frameworks
+- Offene Audit-Findings und deren Status
+- Mitarbeiter-Schulungsstand
+- Sicherheitsvorfälle und Trends
+
+</div>
+
+## Vorfallmanagement {#incidents}
+
+<div class="wiki-tab-content" id="incidents">
+
+### Incident Response Plan
+
+#### **Klassifizierung von Sicherheitsvorfällen**
+
+```yaml
+incident_klassifizierung:
+  kategorie_1_kritisch:
+    beschreibung: "Systemausfall oder Datenverlust"
+    beispiele: ["Ransomware", "Datenexfiltration", "Kompletter Systemausfall"]
+    reaktionszeit: "Sofort (< 15 Minuten)"
+    eskalation: "CISO + Management"
+    
+  kategorie_2_hoch:
+    beschreibung: "Sicherheitsverletzung ohne Datenverlust"
+    beispiele: ["Erfolgreicher Hack-Versuch", "Malware-Infektion", "Insider-Bedrohung"]
+    reaktionszeit: "< 1 Stunde"
+    eskalation: "IT-Security Team"
+    
+  kategorie_3_mittel:
+    beschreibung: "Verdächtige Aktivitäten"
+    beispiele: ["Ungewöhnliche Zugriffsmuster", "Phishing-Versuche", "Policy-Verletzungen"]
+    reaktionszeit: "< 4 Stunden"
+    eskalation: "IT-Administrator"
+    
+  kategorie_4_niedrig:
+    beschreibung: "Potenzielle Bedrohungen"
+    beispiele: ["Schwachstellen-Meldungen", "Verdächtige E-Mails", "Minor Policy-Violations"]
+    reaktionszeit: "< 24 Stunden"
+    eskalation: "Standard IT-Support"
+```
+
+#### **Response-Team Struktur**
+
+```yaml
+incident_response_team:
+  incident_commander:
+    verantwortlichkeit: "Gesamtleitung des Incident Response"
+    person: "CISO oder designierter Stellvertreter"
+    entscheidungsbefugnis: "Vollständig für alle technischen Maßnahmen"
+    
+  technical_lead:
+    verantwortlichkeit: "Technische Analyse und Eindämmung"
+    person: "Senior IT-Administrator"
+    expertise: "WMS-Systeme und Netzwerk-Sicherheit"
+    
+  communications_lead:
+    verantwortlichkeit: "Interne und externe Kommunikation"
+    person: "IT-Manager"
+    aufgaben: ["Stakeholder-Information", "Behörden-Meldungen", "Presse-Kommunikation"]
+    
+  legal_compliance:
+    verantwortlichkeit: "Rechtliche und Compliance-Aspekte"
+    person: "Legal Department + Datenschutzbeauftragter"
+    aufgaben: ["Meldepflichten", "Haftungsfragen", "Vertragsauswirkungen"]
+```
+
+### Containment-Strategien
+
+#### **Sofort-Maßnahmen**
+
+```yaml
+containment_massnahmen:
+  netzwerk_isolation:
+    betroffene_systeme: "Sofortige Trennung vom Netzwerk"
+    methode: "Automatisiert via SIEM oder manuell"
+    dokumentation: "Alle Isolations-Schritte protokollieren"
+    
+  account_deaktivierung:
+    kompromittierte_accounts: "Sofortige Deaktivierung"
+    session_termination: "Alle aktiven Sessions beenden"
+    password_reset: "Für alle potenziell betroffenen Accounts"
+    
+  system_snapshot:
+    forensic_images: "Vor weiteren Maßnahmen erstellen"
+    memory_dumps: "Für laufende Systeme"
+    log_preservation: "Sichere Kopie aller relevanten Logs"
+```
+
+#### **Eradication & Recovery**
+
+**Wiederherstellungs-Prozess:**
+1. **Root Cause Analysis** - Ursache vollständig identifizieren
+2. **System Hardening** - Sicherheitslücken schließen
+3. **Clean Rebuild** - Betroffene Systeme neu aufsetzen
+4. **Security Validation** - Umfassende Sicherheitsprüfung
+5. **Monitored Rollback** - Überwachte Wiederinbetriebnahme
+
+### Kommunikation & Meldewesen
+
+#### **Interne Kommunikation**
+
+```yaml
+kommunikations_matrix:
+  sofortige_benachrichtigung:
+    - "Incident Commander"
+    - "CIO/CISO"
+    - "Operations Manager"
+    - "Betriebsrat (bei Mitarbeiterdaten)"
+    
+  innerhalb_1_stunde:
+    - "Geschäftsführung"
+    - "Fachbereichsleiter"
+    - "Key User"
+    
+  innerhalb_4_stunden:
+    - "Alle betroffenen Mitarbeiter"
+    - "Externe Dienstleister"
+    - "Kunden (bei Bedarf)"
+    
+  status_updates:
+    haeufigkeit: "Alle 2 Stunden bei aktiven Incidents"
+    distribution: "E-Mail + Incident-Portal"
+    inhalt: ["Status", "Maßnahmen", "Zeitschätzung", "Auswirkungen"]
+```
+
+#### **Externe Meldungen**
+
+**Regulatorische Meldepflichten:**
+- **DSGVO:** 72 Stunden an Aufsichtsbehörde bei Datenschutzverletzung
+- **NIS-Richtlinie:** Unverzüglich bei erheblichen Störungen
+- **Versicherung:** Sofortige Meldung bei Cyber-Schäden
+- **Strafverfolgung:** Bei Verdacht auf Straftaten
+
+### Forensische Untersuchung
+
+#### **Evidence Collection**
+
+```yaml
+forensic_process:
+  preservation:
+    digital_evidence: "Bit-genaue Images erstellen"
+    chain_of_custody: "Lückenlose Dokumentation"
+    hash_verification: "Integrität der Beweise sicherstellen"
+    
+  analysis:
+    malware_analysis: "Isolierte Sandbox-Umgebung"
+    network_forensics: "Packet-Capture-Analyse"
+    disk_forensics: "Gelöschte Dateien und Metadaten"
+    memory_forensics: "RAM-Dumps analysieren"
+    
+  documentation:
+    timeline_reconstruction: "Chronologischer Ablauf"
+    impact_assessment: "Umfang der Kompromittierung"
+    attribution: "Täter-Identifikation (soweit möglich)"
+```
+
+### Lessons Learned & Improvement
+
+#### **Post-Incident-Review**
+
+```yaml
+review_process:
+  zeitrahmen: "Innerhalb 2 Wochen nach Incident-Abschluss"
+  teilnehmer: ["Incident Response Team", "Fachbereiche", "Management"]
+  
+  analyse_bereiche:
+    detection: "Wie wurde der Incident entdeckt?"
+    response_time: "Waren die Reaktionszeiten angemessen?"
+    containment: "War die Eindämmung effektiv?"
+    communication: "Funktionierte die Kommunikation?"
+    tools_procedures: "Waren Tools und Verfahren ausreichend?"
+    
+  verbesserungen:
+    prozess_updates: "Überarbeitung der Response-Pläne"
+    tool_improvements: "Neue oder verbesserte Security-Tools"
+    training_needs: "Identifizierte Schulungsbedarfe"
+    policy_changes: "Anpassungen der Sicherheitsrichtlinien"
+```
+
+#### **Kontinuierliche Verbesserung**
+
+**Improvement-Cycle:**
+- Quartalsweise Review aller Security-Incidents
+- Jährliche Überarbeitung des Incident Response Plans
+- Regelmäßige Tabletop-Übungen
+- Integration von Threat Intelligence in Response-Verfahren
+
+</div>
+
+## Notfallkontakte
+
+### 24/7 Security Operations
+
+```yaml
+notfall_kontakte:
+  security_operations_center:
+    telefon: "+41 81 770 7777"
+    email: "security@georgfischer.com"
+    verfuegbarkeit: "24/7"
+    
+  ciso:
+    telefon: "+41 81 770 8888"
+    email: "ciso@georgfischer.com"
+    verfuegbarkeit: "Kritische Incidents"
+    
+  it_administrator:
+    telefon: "+41 81 770 9999"
+    email: "it-admin@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 07:00-19:00"
+    
+  externe_forensik:
+    unternehmen: "CyberSecurity Partners AG"
+    telefon: "+41 44 123 4567"
+    verfuegbarkeit: "Nach Vereinbarung"
+```
+
+## Quick Reference
+
+### Sicherheits-Checkliste
+
+| Prüfpunkt | Häufigkeit | Verantwortlich |
+|-----------|------------|----------------|
+| **Passwort-Stärke prüfen** | Monatlich | Alle Benutzer |
+| **MFA-Token funktionsfähig** | Wöchentlich | Benutzer mit MFA |
+| **Verdächtige E-Mails melden** | Sofort | Alle Mitarbeiter |
+| **Software-Updates installieren** | Nach Freigabe | IT-Team |
+| **Backup-Verifikation** | Täglich | System-Administrator |
+| **Security-Log-Review** | Täglich | Security-Team |
+
+### Incident-Kategorien Schnellübersicht
+
+- **🔴 Kritisch:** Sofortige Reaktion, Management-Eskalation
+- **🟠 Hoch:** 1-Stunden-Reaktion, Security-Team
+- **🟡 Mittel:** 4-Stunden-Reaktion, IT-Administrator
+- **🟢 Niedrig:** 24-Stunden-Reaktion, Standard-Support
+
+---
+
+*Diese Sicherheitsdokumentation wird regelmäßig aktualisiert und ist Teil der Georg Fischer Informationssicherheitsrichtlinie. Letzte Aktualisierung: März 2025*
+
 <style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
+.security-hero {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
     padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
+.safety-alert {
     background: linear-gradient(135deg, #f59e0b, #d97706);
     color: white;
+    padding: 1.5rem;
     border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+.safety-alert .alert-icon {
+    font-size: 2rem;
+    margin-top: 0.25rem;
 }
 
-.wip-header h1 {
-    font-size: 2.5rem;
+.safety-alert .alert-content h3 {
+    color: white;
     margin-bottom: 0.5rem;
+}
+
+.wiki-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.wiki-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wiki-tab-btn.active {
+    background: var(--primary-color);
     color: white;
 }
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
+.wiki-tab-content {
+    display: none;
 }
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+.wiki-tab-content.active {
+    display: block;
 }
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
     background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
+    font-weight: 600;
 }
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.wip-alternatives {
+code {
     background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
 }
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
-
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
     border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
-
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
-
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
-
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
+    overflow-x: auto;
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.wiki-tab-btn');
+    const tabContents = document.querySelectorAll('.wiki-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

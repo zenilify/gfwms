@@ -7,38 +7,681 @@ breadcrumbs:
   - title: "Benutzerverwaltung"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Benutzerverwaltung - Konten und Berechtigungen</p>
-    </div>
+# Benutzerverwaltung - Benutzerkonten und Berechtigungen
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Wiki-Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Benutzerverwaltung" befindet sich in der Entwicklungsphase.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h4>Benutzerverwaltung Schulung</h4>
-                    <p>Vollständiges Training bereits verfügbar</p>
-                    <a href="../../training/users/" class="btn btn-primary">Training starten</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../" class="btn btn-secondary">Wiki Hauptseite</a>
-                </div>
-            </div>
-        </div>
+<div class="user-management-hero">
+    <div class="hero-content">
+        <h2>👥 Zentrale Benutzerverwaltung</h2>
+        <p>Sichere und effiziente Verwaltung aller WMS-Benutzerkonten bei Georg Fischer</p>
     </div>
 </div>
+
+## Überblick
+
+Die Benutzerverwaltung im Jungheinrich WMS ermöglicht die zentrale Kontrolle über alle Benutzerkonten, Rollen und Berechtigungen. Diese Dokumentation führt Sie durch alle Aspekte der Benutzerverwaltung bei Georg Fischer.
+
+## Navigation
+
+<div class="wiki-nav-tabs">
+    <button class="wiki-tab-btn active" data-tab="basics">Grundlagen</button>
+    <button class="wiki-tab-btn" data-tab="roles">Rollen & Rechte</button>
+    <button class="wiki-tab-btn" data-tab="management">Verwaltung</button>
+    <button class="wiki-tab-btn" data-tab="security">Sicherheit</button>
+    <button class="wiki-tab-btn" data-tab="troubleshooting">Fehlerbehebung</button>
+</div>
+
+## Grundlagen {#basics}
+
+<div class="wiki-tab-content active" id="basics">
+
+### Benutzerkonten-Arten
+
+#### **Standard-Benutzertypen**
+
+| Benutzertyp | Beschreibung | Typische Verwendung |
+|-------------|--------------|---------------------|
+| **Operator** | Standard-Lagerarbeiter | Kommissionierung, Wareneingang |
+| **Supervisor** | Schichtleiter | Team-Management, Freigaben |
+| **Administrator** | System-Admin | Konfiguration, Benutzerverwaltung |
+| **Manager** | Führungskraft | Reports, Strategische Planung |
+| **Guest** | Besucher/Praktikant | Eingeschränkte Sicht |
+
+#### **Konto-Status**
+
+```yaml
+konto_status:
+  aktiv: "Vollzugriff auf zugewiesene Funktionen"
+  inaktiv: "Konto deaktiviert, kein Zugriff möglich"
+  gesperrt: "Temporäre Sperre nach Sicherheitsvorfällen"
+  abgelaufen: "Passwort abgelaufen, Erneuerung erforderlich"
+  erstanmeldung: "Erstes Login, Passwort muss geändert werden"
+```
+
+### Anmeldeverfahren
+
+#### **Standard-Anmeldung**
+
+1. **Benutzername eingeben**: Eindeutige Kennung (z.B. firstname.lastname)
+2. **Passwort eingeben**: Entsprechend Georg Fischer Passwort-Richtlinien
+3. **Arbeitsplatz auswählen**: PC-Client oder Mobile Terminal
+4. **Schicht bestätigen**: Aktuelle Arbeitsschicht verifizieren
+
+#### **Single Sign-On (SSO)**
+
+```yaml
+sso_integration:
+  active_directory: "Automatische Anmeldung mit Windows-Konto"
+  authentication_flow:
+    1: "Windows-Anmeldung erkennen"
+    2: "AD-Gruppe zu WMS-Rolle zuordnen"
+    3: "Automatischer WMS-Zugriff"
+    4: "Session-Management aktivieren"
+```
+
+#### **Multi-Faktor-Authentifizierung (MFA)**
+
+**Aktivierung für sensible Bereiche:**
+- Systemadministration
+- Manager-Funktionen
+- Remote-Zugriffe
+- Qualitätskritische Operationen
+
+</div>
+
+## Rollen & Berechtigungen {#roles}
+
+<div class="wiki-tab-content" id="roles">
+
+### Rollenhierarchie
+
+#### **WMS-Standardrollen**
+
+```
+┌─ SYSTEM_ADMIN ─────────────────────┐
+│ • Vollzugriff auf alle Funktionen  │
+│ • Benutzerverwaltung               │
+│ • Systemkonfiguration             │
+│ • Audit und Compliance            │
+└─────────────────────────────────────┘
+    ↓
+┌─ WAREHOUSE_MANAGER ────────────────┐
+│ • Operative Vollverantwortung     │
+│ • Team-Management                 │
+│ • Performance-Überwachung         │
+│ • Strategische Berichte           │
+└─────────────────────────────────────┘
+    ↓
+┌─ SHIFT_SUPERVISOR ─────────────────┐
+│ • Schichtverantwortung            │
+│ • Mitarbeiterführung              │
+│ • Freigabe-Berechtigungen         │
+│ • Operative Berichte              │
+└─────────────────────────────────────┘
+    ↓
+┌─ SENIOR_OPERATOR ──────────────────┐
+│ • Erweiterte WMS-Funktionen       │
+│ • Mentor für neue Mitarbeiter     │
+│ • Spezialaufgaben                 │
+│ • Quality Gates                   │
+└─────────────────────────────────────┘
+    ↓
+┌─ OPERATOR ─────────────────────────┐
+│ • Standard-Lageroperationen       │
+│ • Kommissionierung                │
+│ • Wareneingang/-ausgang           │
+│ • Grundlegende Inventur           │
+└─────────────────────────────────────┘
+```
+
+### Funktionale Berechtigungen
+
+#### **Berechtigungs-Matrix**
+
+| Funktion | Operator | Senior | Supervisor | Manager | Admin |
+|----------|:--------:|:------:|:----------:|:-------:|:-----:|
+| **Kommissionierung** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Wareneingang** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Inventur Standard** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Inventur Freigabe** | ❌ | ✅ | ✅ | ✅ | ✅ |
+| **Benutzer anlegen** | ❌ | ❌ | ⚠️ | ⚠️ | ✅ |
+| **Systemkonfiguration** | ❌ | ❌ | ❌ | ❌ | ✅ |
+| **Reports erstellen** | ❌ | ⚠️ | ✅ | ✅ | ✅ |
+| **Daten exportieren** | ❌ | ❌ | ⚠️ | ✅ | ✅ |
+
+**Legende:** ✅ = Vollzugriff, ⚠️ = Eingeschränkt, ❌ = Kein Zugriff
+
+#### **Spezielle Berechtigungen**
+
+```yaml
+spezial_berechtigungen:
+  notfall_funktionen:
+    beschreibung: "Notfall-Überbrückung für kritische Situationen"
+    erfordert: "Manager-Genehmigung + Dokumentation"
+    gueltigkeitsdauer: "4 Stunden"
+  
+  quality_override:
+    beschreibung: "Qualitätsprüfung überschreiben"
+    erfordert: "QM-Verantwortlicher + Begründung"
+    dokumentation: "Vollständiger Audit-Trail"
+  
+  system_maintenance:
+    beschreibung: "Wartungsmodus aktivieren"
+    erfordert: "IT-Administrator + Ankündigung"
+    benachrichtigung: "Alle aktiven Benutzer"
+```
+
+### Berechtigungsgruppen
+
+#### **Funktionale Gruppen**
+
+**Wareneingang-Team:**
+- Wareneingang erfassen und prüfen
+- Qualitätskontrolle durchführen
+- Lagerplätze zuweisen
+- Einlagerungs-Transport erstellen
+
+**Kommissionierung-Team:**
+- Pick-Listen abarbeiten
+- Kommissionier-Strategien anwenden
+- Nachschub anfordern
+- Verpackung durchführen
+
+**Qualitätssicherung:**
+- Qualitätsprüfungen durchführen
+- Quarantäne-Management
+- Reklamationsbearbeitung
+- Audit-Dokumentation
+
+**IT-Support:**
+- System-Diagnostik
+- Fehleranalyse
+- Benutzer-Support
+- Konfigurationsänderungen
+
+</div>
+
+## Benutzerverwaltung {#management}
+
+<div class="wiki-tab-content" id="management">
+
+### Benutzer anlegen
+
+#### **Neuen Benutzer erstellen**
+
+**Schritt-für-Schritt Anleitung:**
+
+1. **Navigation:** Systemverwaltung → Benutzerverwaltung → Neuer Benutzer
+2. **Persönliche Daten:**
+   ```yaml
+   benutzer_daten:
+     benutzername: "firstname.lastname"
+     vollstaendiger_name: "Nachname, Vorname"
+     email: "firstname.lastname@georgfischer.com"
+     personalnummer: "GF123456"
+     abteilung: "Lager/Logistik"
+     kostenstelle: "4711"
+   ```
+
+3. **Systemzugriff:**
+   ```yaml
+   zugriff_konfiguration:
+     gueltig_von: "YYYY-MM-DD"
+     gueltig_bis: "YYYY-MM-DD" # Optional
+     arbeitszeiten: "06:00-22:00"
+     verfuegbare_terminals: "ALL" # oder spezifische IDs
+   ```
+
+4. **Rollen zuweisen:**
+   - Primäre Rolle auswählen
+   - Zusätzliche Berechtigungen vergeben
+   - Genehmigungsworkflow aktivieren
+
+#### **Bulk-Import von Benutzern**
+
+**CSV-Import Format:**
+```csv
+Benutzername,Vollname,Email,Rolle,Abteilung,GueltigVon,GueltigBis
+john.smith,Smith\, John,john.smith@gf.com,OPERATOR,Lager,2025-03-01,
+mary.jones,Jones\, Mary,mary.jones@gf.com,SUPERVISOR,Lager,2025-03-01,2025-12-31
+```
+
+**Import-Validierung:**
+- Eindeutigkeit der Benutzernamen prüfen
+- E-Mail-Format validieren
+- Rollenberechtigungen verifizieren
+- Konfliktprüfung durchführen
+
+### Benutzerdaten bearbeiten
+
+#### **Profil-Updates**
+
+**Häufige Änderungen:**
+- Rollenänderung bei Beförderung
+- Abteilungswechsel
+- Verlängerung der Gültigkeit
+- Zusätzliche Berechtigungen
+
+#### **Passwort-Management**
+
+```yaml
+passwort_richtlinien:
+  mindestlaenge: 12
+  komplexitaet:
+    - grossbuchstaben: true
+    - kleinbuchstaben: true
+    - zahlen: true
+    - sonderzeichen: true
+  gueltigkeitsdauer: 90 # Tage
+  wiederverwertung: 12 # Letzte Passwörter
+  sperrung_nach_fehlversuchen: 3
+```
+
+**Passwort zurücksetzen:**
+1. Administrator initiiert Reset
+2. Temporäres Passwort generieren
+3. Benutzer per E-Mail benachrichtigen
+4. Erste Anmeldung erzwingt Passwort-Änderung
+
+### Benutzer deaktivieren/löschen
+
+#### **Deaktivierung (Empfohlen)**
+
+**Wann deaktivieren:**
+- Temporäre Abwesenheit (Urlaub, Krankheit)
+- Abteilungswechsel ohne WMS-Zugriff
+- Verdacht auf Sicherheitsverletzung
+
+**Deaktivierungs-Prozess:**
+1. Benutzer-Status auf "Inaktiv" setzen
+2. Aktive Sessions beenden
+3. Audit-Log erstellen
+4. Vorgesetzten benachrichtigen
+
+#### **Löschen (Nur bei Bedarf)**
+
+**Wann löschen:**
+- Endgültige Kündigung nach Dokumentationszeit
+- Duplikate/Testkonten
+- DSGVO-Löschungsantrag
+
+**Lösch-Prozess:**
+```yaml
+loeschung_checklist:
+  1: "Audit-Trail exportieren und archivieren"
+  2: "Abhängigkeiten prüfen (Genehmigungen, Aufträge)"
+  3: "Datenbank-Integrität sicherstellen"
+  4: "Löschung dokumentieren"
+  5: "Compliance-Bestätigung einholen"
+```
+
+</div>
+
+## Sicherheit {#security}
+
+<div class="wiki-tab-content" id="security">
+
+### Zugriffskontrolle
+
+#### **Session-Management**
+
+```yaml
+session_sicherheit:
+  maximale_dauer: "8 Stunden"
+  inaktivitaets_timeout: "30 Minuten"
+  concurrent_sessions: 1 # Pro Benutzer
+  location_binding: true # Terminal-spezifisch
+  
+  automatische_abmeldung:
+    - schichtende: true
+    - verdaechtige_aktivitaet: true
+    - administrator_anforderung: true
+```
+
+#### **Audit und Protokollierung**
+
+**Protokollierte Ereignisse:**
+- Anmeldungen und Abmeldungen
+- Gescheiterte Anmeldeversuche
+- Rollenänderungen
+- Berechtigungseskalationen
+- Kritische Systemzugriffe
+
+```sql
+-- Beispiel: Audit-Log-Abfrage
+SELECT 
+    al.timestamp,
+    u.username,
+    al.action,
+    al.details,
+    al.ip_address,
+    al.terminal_id
+FROM audit_log al
+JOIN users u ON al.user_id = u.id
+WHERE al.timestamp >= DATE_SUB(NOW(), INTERVAL 24 HOUR)
+ORDER BY al.timestamp DESC;
+```
+
+### Compliance und Datenschutz
+
+#### **DSGVO-Compliance**
+
+**Datenschutz-Maßnahmen:**
+- Zweckbindung der Datenverarbeitung
+- Datenminimierung bei Benutzerprofilen
+- Recht auf Auskunft implementiert
+- Recht auf Löschung berücksichtigt
+- Datenschutz-Impact-Assessment durchgeführt
+
+#### **SOX-Compliance (Sarbanes-Oxley)**
+
+**Interne Kontrollen:**
+```yaml
+sox_kontrollen:
+  segregation_of_duties:
+    - ersteller_vs_genehmiger: "Strikte Trennung"
+    - vier_augen_prinzip: "Kritische Operationen"
+  
+  audit_trail:
+    - unveraenderlichkeit: "Audit-Logs write-once"
+    - vollstaendigkeit: "Alle relevanten Aktionen"
+    - zeitstempel: "UTC mit Millisekunden"
+  
+  access_reviews:
+    - haeufigkeit: "Quartalsweise"
+    - umfang: "Alle Benutzerrechte"
+    - dokumentation: "Vollständig nachvollziehbar"
+```
+
+### Sicherheitsrichtlinien
+
+#### **Passwort-Sicherheit**
+
+**Sichere Passwort-Praktiken:**
+- Keine Weitergabe von Anmeldedaten
+- Regelmäßige Passwort-Änderung
+- Verdächtige Aktivitäten sofort melden
+- Sichere Aufbewahrung (Password Manager)
+
+#### **Arbeitsplatz-Sicherheit**
+
+**Clean Desk Policy:**
+- Bildschirm bei Abwesenheit sperren
+- Keine Notizen mit Anmeldedaten
+- Sichere Aufbewahrung von Ausdrucken
+- Mobile Geräte immer überwachen
+
+</div>
+
+## Fehlerbehebung {#troubleshooting}
+
+<div class="wiki-tab-content" id="troubleshooting">
+
+### Häufige Probleme
+
+#### **Anmeldung schlägt fehl**
+
+**Problem-Diagnose:**
+
+1. **Überprüfen Sie die Grundlagen:**
+   ```yaml
+   basic_checks:
+     benutzername: "Korrekte Schreibweise?"
+     passwort: "Caps Lock aktiviert?"
+     konto_status: "Aktiv und nicht gesperrt?"
+     netzwerk: "Verbindung zum Server vorhanden?"
+   ```
+
+2. **Häufige Ursachen:**
+   - Passwort abgelaufen
+   - Konto nach Fehlversuchen gesperrt
+   - Benutzer nicht für Terminal berechtigt
+   - Active Directory Synchronisation fehlgeschlagen
+
+**Lösungsschritte:**
+```yaml
+loesungsschritte:
+  passwort_abgelaufen:
+    1: "Administrator kontaktieren"
+    2: "Passwort zurücksetzen lassen"
+    3: "Bei erster Anmeldung neues Passwort vergeben"
+  
+  konto_gesperrt:
+    1: "Administrator über Sperrung informieren"
+    2: "Grund der Sperrung klären"
+    3: "Konto nach Freigabe entsperren lassen"
+  
+  terminal_berechtigung:
+    1: "Terminal-ID ermitteln"
+    2: "Benutzerrechte für Terminal prüfen"
+    3: "Berechtigung erweitern oder anderes Terminal nutzen"
+```
+
+#### **Langsamte Performance**
+
+**Performance-Probleme:**
+
+```yaml
+performance_diagnose:
+  symptome:
+    - langsame_anmeldung: "Mehr als 30 Sekunden"
+    - verzoegerte_bildschirmwechsel: "Mehr als 5 Sekunden"
+    - timeout_fehler: "Session läuft ab"
+  
+  ursachen:
+    - netzwerk_latenz: "Schwache Verbindung"
+    - server_auslastung: "Zu viele gleichzeitige Benutzer"
+    - client_probleme: "Terminal überlastet"
+    - datenbank_locks: "Sperren in der Datenbank"
+```
+
+**Optimierung:**
+1. **Netzwerk prüfen:** Ping-Test zum WMS-Server
+2. **Terminal neustarten:** Cache leeren und Speicher freigeben
+3. **Andere Arbeitszeiten:** Weniger frequentierte Zeiten nutzen
+4. **IT-Support kontaktieren:** Bei anhaltenden Problemen
+
+#### **Berechtigungsfehler**
+
+**"Zugriff verweigert" Meldungen:**
+
+**Diagnose-Workflow:**
+```yaml
+berechtigung_diagnose:
+  schritt_1:
+    aktion: "Aktuelle Rolle prüfen"
+    kommando: "Benutzerprofil → Rolle anzeigen"
+  
+  schritt_2:
+    aktion: "Erforderliche Berechtigung ermitteln"
+    quelle: "Fehlermeldung oder Handbuch"
+  
+  schritt_3:
+    aktion: "Berechtigung anfragen"
+    prozess: "Vorgesetzten → IT-Administrator"
+  
+  schritt_4:
+    aktion: "Temporäre Alternative finden"
+    optionen: "Delegation oder Workflow-Umgehung"
+```
+
+### Support-Eskalation
+
+#### **Eskalations-Matrix**
+
+| Problem-Typ | Level 1 | Level 2 | Level 3 |
+|-------------|---------|---------|---------|
+| **Passwort zurücksetzen** | Teamleiter | IT-Helpdesk | - |
+| **Berechtigungen ändern** | Vorgesetzter | IT-Administrator | - |
+| **Technische Probleme** | IT-Helpdesk | WMS-Administrator | Hersteller-Support |
+| **Sicherheitsvorfälle** | Sofort IT-Security | CISO | Externe Forensik |
+
+#### **Notfall-Kontakte**
+
+```yaml
+notfall_kontakte:
+  it_helpdesk:
+    telefon: "+41 81 770 5678"
+    email: "helpdesk@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 06:00-22:00"
+  
+  wms_administrator:
+    telefon: "+41 81 770 9999"
+    email: "wms-admin@georgfischer.com"
+    verfuegbarkeit: "24/7 für kritische Probleme"
+  
+  security_hotline:
+    telefon: "+41 81 770 7777"
+    email: "security@georgfischer.com"
+    verfuegbarkeit: "24/7"
+```
+
+### Wartung und Updates
+
+#### **Geplante Wartungsarbeiten**
+
+**Benutzer-Kommunikation:**
+- 48 Stunden Vorlauf für Ankündigung
+- Wartungsfenster außerhalb der Betriebszeiten
+- Alternative Arbeitsverfahren vorbereiten
+- Status-Updates während der Wartung
+
+#### **System-Updates**
+
+**Update-Prozess:**
+1. **Testsystem:** Neue Version ausgiebig testen
+2. **Benutzer-Training:** Bei Änderungen der Benutzeroberfläche
+3. **Rollback-Plan:** Für kritische Probleme vorbereitet
+4. **Überwachung:** Intensive Systemüberwachung nach Update
+
+</div>
+
+## Quick Reference
+
+### Wichtige Tastenkombinationen
+
+| Funktion | Tastenkombination | Beschreibung |
+|----------|------------------|--------------|
+| **Profil anzeigen** | `Ctrl + U` | Eigenes Benutzerprofil |
+| **Passwort ändern** | `Ctrl + P` | Passwort-Änderung |
+| **Abmelden** | `Ctrl + L` | Sichere Abmeldung |
+| **Hilfe** | `F1` | Kontext-sensitive Hilfe |
+| **Notfall-Modus** | `Ctrl + Shift + E` | Nur für Administratoren |
+
+### Standard-Arbeitszeiten
+
+```yaml
+arbeitszeiten:
+  fruehschicht: "06:00 - 14:00"
+  spaetschicht: "14:00 - 22:00"
+  nachtschicht: "22:00 - 06:00"
+  verwaltung: "08:00 - 17:00"
+```
+
+## Weiterführende Ressourcen
+
+### Interne Dokumentation
+- **[Benutzerverwaltung Schulung](../../training/users/)** - Umfassendes Training
+- **[Sicherheitsrichtlinien](../sicherheit/)** - Detaillierte Sicherheitsmaßnahmen
+- **[Systemadministration](../../training/admin/)** - Admin-Training
+
+### Externe Standards
+- **ISO 27001** - Information Security Management
+- **NIST Cybersecurity Framework** - Security Best Practices
+- **DSGVO** - Datenschutz-Grundverordnung
+
+---
+
+*Diese Dokumentation wird regelmäßig aktualisiert. Letzte Aktualisierung: März 2025*
+
+<style>
+.user-management-hero {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.wiki-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.wiki-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wiki-tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wiki-tab-content {
+    display: none;
+}
+
+.wiki-tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+code {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.wiki-tab-btn');
+    const tabContents = document.querySelectorAll('.wiki-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

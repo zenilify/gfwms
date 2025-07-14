@@ -18,7 +18,9 @@
       "Bash(python:*)",
       "Bash(grep:*)",
       "Bash(./create_wip_pages.sh:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(bundle exec:*)",
+      "Bash(bundle install:*)"
     ],
     "deny": []
   }

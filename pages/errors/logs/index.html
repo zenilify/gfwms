@@ -1,150 +1,994 @@
 ---
 layout: default
-title: "Error Logs"
-description: "Fehlerprotokoll-Analyse und -Auswertung"
+title: "Error Logs - Fehlerprotokoll-Analyse"
+description: "Systematische Analyse und Auswertung von WMS-Fehlerprotokollen"
 breadcrumbs:
-  - title: "ERRORS"
+  - title: "Störungsbehebung"
   - title: "Error Logs"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Error Logs - Fehlerprotokoll-Analyse und -Auswertung</p>
-    </div>
+# Error Logs - Fehlerprotokoll-Analyse
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Error Logs" befindet sich in der Entwicklungsphase und wird in Kürze verfügbar sein.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-arrow-right"></i>
-                    <h4>Verwandte Inhalte</h4>
-                    <p>Ähnliche oder verwandte Dokumentation</p>
-                    <a href="../common/" class="btn btn-primary">Verwandte Seite öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-book"></i>
-                    <h4>Wissensdatenbank</h4>
-                    <p>Weitere Dokumentation durchsuchen</p>
-                    <a href="../../wiki/" class="btn btn-secondary">Wiki durchsuchen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support</h4>
-                    <p>Hilfe und Unterstützung</p>
-                    <a href="mailto:erick.hernandez.zenil@georgfischer.com" class="btn btn-secondary">Kontakt</a>
-                </div>
-            </div>
-        </div>
+<div class="logs-hero">
+    <div class="hero-content">
+        <h2>📊 Systematische Log-Analyse</h2>
+        <p>Effiziente Fehlerprotokoll-Auswertung für schnelle Problemlösung im Georg Fischer WMS</p>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+<div class="logs-alert">
+    <div class="alert-icon">
+        <i class="fas fa-clipboard-list"></i>
+    </div>
+    <div class="alert-content">
+        <h3>⚡ LOG-ANALYSE PRIORITÄTEN</h3>
+        <p><strong>Ziel:</strong> Kritische Fehler innerhalb 15 Minuten identifiziert und eskaliert</p>
+        <p><strong>Log-Hotline:</strong> +41 81 770 8888 (Technical Support)</p>
+    </div>
+</div>
+
+## Überblick
+
+Die systematische Analyse von Fehlerprotokollen ist entscheidend für die Aufrechterhaltung der WMS-Stabilität. Diese Dokumentation beschreibt Methoden zur effizienten Identifikation, Kategorisierung und Behebung von Systemfehlern.
+
+## Navigation
+
+<div class="wiki-nav-tabs">
+    <button class="wiki-tab-btn active" data-tab="log-zugriff">Log-Zugriff</button>
+    <button class="wiki-tab-btn" data-tab="analyse-methoden">Analyse-Methoden</button>
+    <button class="wiki-tab-btn" data-tab="fehler-kategorien">Fehler-Kategorien</button>
+    <button class="wiki-tab-btn" data-tab="tools">Analysis Tools</button>
+    <button class="wiki-tab-btn" data-tab="automation">Automatisierung</button>
+</div>
+
+## Log-Zugriff {#log-zugriff}
+
+<div class="wiki-tab-content active" id="log-zugriff">
+
+### Verfügbare Log-Quellen
+
+#### **WMS Application Logs**
+
+```yaml
+wms_logs:
+  location: "C:\\WMS\\Logs\\"
+  format: "YYYY-MM-DD_HH-mm-ss.log"
+  retention: "30 Tage lokal, 1 Jahr archiviert"
+  
+  log_types:
+    application_log:
+      filename: "Application_{date}.log"
+      content: "Anwendungslogik, Geschäftsprozesse"
+      level: "INFO, WARN, ERROR, FATAL"
+      
+    system_log:
+      filename: "System_{date}.log"
+      content: "Systemereignisse, Ressourcen"
+      level: "DEBUG, INFO, WARN, ERROR"
+      
+    integration_log:
+      filename: "Integration_{date}.log"
+      content: "SAP-Kommunikation, EDI, APIs"
+      level: "INFO, WARN, ERROR"
+      
+    performance_log:
+      filename: "Performance_{date}.log"
+      content: "Performance-Metriken, Laufzeiten"
+      level: "INFO, WARN"
+```
+
+#### **Database Logs**
+
+```yaml
+sql_server_logs:
+  location: "C:\\Program Files\\Microsoft SQL Server\\MSSQL15.MSSQLSERVER\\MSSQL\\Log\\"
+  
+  log_files:
+    errorlog:
+      description: "SQL Server Fehlerprotokoll"
+      rotation: "Wöchentlich oder bei 10MB"
+      content: "Startmeldungen, Fehler, Warnungen"
+      
+    agent_log:
+      description: "SQL Server Agent Log"
+      content: "Job-Ausführungen, Schedules"
+      retention: "4 Wochen"
+      
+    backup_log:
+      description: "Backup/Restore Operationen"
+      content: "Backup-Status, Fehler, Wiederherstellungen"
+```
+
+#### **Windows Event Logs**
+
+```yaml
+windows_logs:
+  zugriff: "eventvwr.msc oder PowerShell"
+  
+  relevant_logs:
+    application:
+      path: "Windows Logs > Application"
+      filter: "Source: WMS*, Jungheinrich*"
+      
+    system:
+      path: "Windows Logs > System"
+      relevance: "Hardware-Fehler, Treiber-Probleme"
+      
+    security:
+      path: "Windows Logs > Security"
+      relevance: "Anmeldungsfehler, Berechtigungsprobleme"
+      
+    custom:
+      path: "Applications and Services Logs"
+      content: "Anwendungsspezifische Logs"
+```
+
+### Log-Zugriffs-Methoden
+
+#### **Direkte Datei-Analyse**
+
+```powershell
+# PowerShell-Befehle für Log-Zugriff
+
+# Neueste Fehler anzeigen
+Get-Content "C:\WMS\Logs\Application_$(Get-Date -Format 'yyyy-MM-dd').log" | Select-String "ERROR|FATAL" | Select-Object -Last 20
+
+# Log-Dateien nach Größe sortieren
+Get-ChildItem "C:\WMS\Logs\*.log" | Sort-Object Length -Descending | Select-Object Name, @{n='Size(MB)';e={[math]::Round($_.Length/1MB,2)}}
+
+# Letzte 1000 Zeilen einer Log-Datei
+Get-Content "C:\WMS\Logs\System_$(Get-Date -Format 'yyyy-MM-dd').log" -Tail 1000
+
+# Fehler in einem bestimmten Zeitraum
+$startTime = (Get-Date).AddHours(-2)
+Get-WinEvent -FilterHashtable @{LogName='Application'; StartTime=$startTime; Level=2}
+```
+
+#### **Remote Log Access**
+
+```yaml
+remote_access:
+  rdp_connection:
+    server: "WMS-SRV01.georgfischer.local"
+    credentials: "Domain-Administrator-Account erforderlich"
+    
+  powershell_remoting:
+    command: "Enter-PSSession -ComputerName WMS-SRV01"
+    requirements: "PowerShell Remoting aktiviert"
+    
+  file_shares:
+    path: "\\\\WMS-SRV01\\WMS-Logs$"
+    permissions: "Leserecht für IT-Support-Gruppe"
+    
+  log_shipping:
+    destination: "Central Log Server"
+    frequency: "Real-time via Syslog"
+    retention: "1 Jahr zentral gespeichert"
+```
+
+</div>
+
+## Analyse-Methoden {#analyse-methoden}
+
+<div class="wiki-tab-content" id="analyse-methoden">
+
+### Systematische Log-Analyse
+
+#### **Fehler-Priorisierung**
+
+```yaml
+fehler_prioritaet:
+  kritisch:
+    keywords: ["FATAL", "OutOfMemoryException", "DatabaseConnectionLost", "SystemHalt"]
+    response_time: "Sofortige Bearbeitung"
+    escalation: "Automatische Benachrichtigung Management"
+    
+  hoch:
+    keywords: ["ERROR", "Exception", "Failed", "Timeout", "AccessDenied"]
+    response_time: "15 Minuten"
+    escalation: "Team Lead nach 30 Minuten"
+    
+  mittel:
+    keywords: ["WARN", "Warning", "Deprecated", "SlowQuery"]
+    response_time: "2 Stunden"
+    escalation: "Daily Review"
+    
+  niedrig:
+    keywords: ["INFO", "Debug", "Trace"]
+    response_time: "Best Effort"
+    escalation: "Wöchentliche Analyse"
+```
+
+#### **Pattern Recognition**
+
+```regex
+# Wichtige Regex-Muster für Log-Analyse
+
+# Timestamp-Extraktion
+^(\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2},\d{3})
+
+# Exception-Erkennung
+(Exception|Error).*?\n(\s+at\s+.*\n)*
+
+# SQL-Fehler
+SQL.*?(Error|Exception|Failed).*?Message:\s*(.*?)\n
+
+# Performance-Probleme
+(slow|timeout|performance).*?(\d+(?:\.\d+)?)\s*(ms|seconds|minutes)
+
+# User-Aktivitäten
+User\s+(\w+)\s+(login|logout|action)\s+(.+)
+
+# System Resources
+(Memory|CPU|Disk).*?(\d+(?:\.\d+)?)\s*%
+```
+
+#### **Korrelations-Analyse**
+
+```yaml
+korrelation_methoden:
+  zeitbasiert:
+    window: "±5 Minuten um Fehler-Timestamp"
+    sources: ["Application", "System", "Database", "Network"]
+    ziel: "Identifikation von Root-Cause"
+    
+  benutzerbasiert:
+    tracking: "User-ID durch alle Log-Quellen"
+    scope: "Benutzer-spezifische Fehler-Muster"
+    
+  transaktionsbasiert:
+    identifier: "Transaction-ID, Session-ID"
+    verfolgung: "Ende-zu-Ende Transaktions-Verfolgung"
+    
+  systemkomponenten:
+    mapping: "Fehler zu betroffenen System-Komponenten"
+    impact_analysis: "Auswirkungsanalyse auf andere Komponenten"
+```
+
+### Analysewerkzeuge
+
+#### **PowerShell-Analyse-Scripts**
+
+```powershell
+# Error-Summary-Script
+function Get-WMSErrorSummary {
+    param(
+        [string]$LogPath = "C:\WMS\Logs",
+        [int]$Hours = 24
+    )
+    
+    $StartTime = (Get-Date).AddHours(-$Hours)
+    $LogFiles = Get-ChildItem $LogPath -Filter "*.log"
+    
+    $ErrorSummary = @{}
+    
+    foreach ($LogFile in $LogFiles) {
+        $Content = Get-Content $LogFile.FullName
+        $Errors = $Content | Where-Object { $_ -match "ERROR|FATAL" -and $_ -match $StartTime.ToString("yyyy-MM-dd") }
+        
+        foreach ($Error in $Errors) {
+            $ErrorType = ($Error -split "\s+")[3]  # Annahme: 4. Element ist Error-Type
+            if ($ErrorSummary.ContainsKey($ErrorType)) {
+                $ErrorSummary[$ErrorType]++
+            } else {
+                $ErrorSummary[$ErrorType] = 1
+            }
+        }
+    }
+    
+    return $ErrorSummary | Sort-Object Value -Descending
 }
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
+# Performance-Analysis
+function Get-WMSPerformanceMetrics {
+    param(
+        [string]$LogPath = "C:\WMS\Logs\Performance_$(Get-Date -Format 'yyyy-MM-dd').log"
+    )
+    
+    $Content = Get-Content $LogPath
+    $SlowQueries = $Content | Where-Object { $_ -match "slow" -and $_ -match "(\d+)ms" }
+    
+    $Metrics = @{
+        'Total Slow Queries' = $SlowQueries.Count
+        'Slowest Query' = ($SlowQueries | ForEach-Object { [regex]::Match($_, "(\d+)ms").Groups[1].Value } | Measure-Object -Maximum).Maximum
+        'Average Response Time' = ($SlowQueries | ForEach-Object { [regex]::Match($_, "(\d+)ms").Groups[1].Value } | Measure-Object -Average).Average
+    }
+    
+    return $Metrics
 }
+```
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+</div>
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+## Fehler-Kategorien {#fehler-kategorien}
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+<div class="wiki-tab-content" id="fehler-kategorien">
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+### System-Kategorien
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+#### **Anwendungsfehler**
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+```yaml
+application_errors:
+  business_logic_errors:
+    description: "Fehler in Geschäftslogik-Verarbeitung"
+    examples:
+      - "InvalidOrderStatus: Order cannot be shipped in current status"
+      - "InsufficientInventory: Not enough stock for requested quantity"
+      - "ValidationError: Article number format invalid"
+    impact: "Funktionale Einschränkungen"
+    resolution: "Code-Review und Business Rule Validation"
+    
+  data_consistency_errors:
+    description: "Dateninkonsistenzen zwischen Systemen"
+    examples:
+      - "StockMismatch: WMS stock differs from SAP"
+      - "MasterDataOutOfSync: Article not found in local cache"
+      - "TimestampConflict: Concurrent modification detected"
+    impact: "Datenqualitätsprobleme"
+    resolution: "Daten-Synchronisation und Reconciliation"
+    
+  integration_errors:
+    description: "Probleme bei System-Integration"
+    examples:
+      - "SAPConnectionTimeout: RFC call timed out"
+      - "EDITransmissionFailed: Message delivery failed"
+      - "APIAuthenticationError: Invalid credentials"
+    impact: "Unterbrochene Geschäftsprozesse"
+    resolution: "Verbindungs-Diagnose und Credential-Überprüfung"
+```
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+#### **System-Level Fehler**
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+```yaml
+system_errors:
+  resource_exhaustion:
+    memory_leaks:
+      pattern: "OutOfMemoryException|GC overhead limit exceeded"
+      symptoms: "Langsame Performance, System freezes"
+      diagnosis: "Memory Profiling, Heap Dumps"
+      
+    disk_space:
+      pattern: "No space left on device|Disk full"
+      symptoms: "Log rotation failures, Database write errors"
+      diagnosis: "Disk usage analysis, cleanup procedures"
+      
+    cpu_overload:
+      pattern: "High CPU usage|Thread pool exhausted"
+      symptoms: "Slow response times, timeouts"
+      diagnosis: "Performance counters, thread dumps"
+      
+  network_issues:
+    connectivity:
+      pattern: "Connection refused|Network unreachable"
+      symptoms: "Integration failures, timeouts"
+      diagnosis: "Network connectivity tests, firewall rules"
+      
+    dns_resolution:
+      pattern: "Name resolution failed|Unknown host"
+      symptoms: "Service discovery failures"
+      diagnosis: "DNS configuration check"
+      
+  security_violations:
+    authentication_failures:
+      pattern: "Authentication failed|Invalid credentials"
+      symptoms: "User login problems"
+      diagnosis: "Credential validation, account status"
+      
+    authorization_errors:
+      pattern: "Access denied|Insufficient privileges"
+      symptoms: "Feature access restrictions"
+      diagnosis: "Role and permission review"
+```
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+### Error Classification Matrix
 
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
+#### **Criticality vs. Frequency Matrix**
 
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+| Häufigkeit \ Kritikalität | Niedrig | Mittel | Hoch | Kritisch |
+|---------------------------|---------|--------|------|----------|
+| **Sehr häufig (>100/Tag)** | Monitor | Investigate | Fix Immediately | Emergency Response |
+| **Häufig (10-100/Tag)** | Log & Review | Investigate | High Priority Fix | Critical Fix |
+| **Gelegentlich (1-10/Tag)** | Log | Review Weekly | Investigate | High Priority |
+| **Selten (<1/Tag)** | Log | Monthly Review | Document | Investigate |
 
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+#### **Automatische Klassifizierung**
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
+```yaml
+auto_classification:
+  rules:
+    critical_keywords:
+      - "FATAL"
+      - "OutOfMemory"
+      - "DatabaseConnectionLost"
+      - "SystemHalt"
+      - "SecurityBreach"
+      
+    high_priority_patterns:
+      - "ERROR.*Exception"
+      - "Failed.*Transaction"
+      - "Timeout.*Critical"
+      - "Integration.*Failed"
+      
+    performance_indicators:
+      - "ResponseTime > 5000ms"
+      - "QueryTime > 30s"
+      - "CPU > 90%"
+      - "Memory > 85%"
+      
+  machine_learning:
+    model_type: "Classification Tree"
+    features: ["error_text", "frequency", "time_pattern", "user_impact"]
+    training_data: "Historical incidents with known resolutions"
+    accuracy_target: "> 85% classification accuracy"
+```
 
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
+</div>
+
+## Analysis Tools {#tools}
+
+<div class="wiki-tab-content" id="tools">
+
+### Spezialisierte Log-Tools
+
+#### **ELK Stack Integration**
+
+```yaml
+elk_stack:
+  elasticsearch:
+    version: "7.15+"
+    indices: 
+      - "wms-application-logs-*"
+      - "wms-system-logs-*"
+      - "wms-performance-logs-*"
+    retention: "90 Tage für hot data, 1 Jahr warm/cold"
+    
+  logstash:
+    pipelines:
+      wms_application:
+        input: "filebeat"
+        filters: 
+          - "grok pattern matching"
+          - "date parsing"
+          - "error classification"
+        output: "elasticsearch"
+        
+  kibana:
+    dashboards:
+      operational_overview:
+        panels: ["Error Rate", "Response Times", "System Health"]
+        refresh: "30 seconds"
+        
+      error_analysis:
+        panels: ["Error Distribution", "Error Trends", "Top Errors"]
+        timeframe: "Last 24 hours"
+        
+      performance_monitoring:
+        panels: ["Transaction Times", "Resource Usage", "Throughput"]
+        alerts: "Threshold-based alerting"
+```
+
+#### **Splunk Configuration**
+
+```yaml
+splunk_setup:
+  indexes:
+    wms_main:
+      max_data_size: "500GB"
+      retention: "1 Jahr"
+      
+  sourcetypes:
+    wms_application:
+      pattern: "*.log"
+      extraction_rules: "Custom field extraction"
+      
+  searches:
+    error_trending:
+      query: 'index=wms_main sourcetype=wms_application level=ERROR | timechart count by error_type'
+      schedule: "Hourly"
+      
+    performance_baseline:
+      query: 'index=wms_main sourcetype=wms_performance | stats avg(response_time) by operation'
+      schedule: "Daily"
+      
+  alerts:
+    critical_errors:
+      search: 'index=wms_main level=FATAL'
+      trigger: "Real-time"
+      action: "Email + SMS notification"
+      
+    performance_degradation:
+      search: 'index=wms_main sourcetype=wms_performance response_time>5000'
+      trigger: "Count > 10 in 15 minutes"
+      action: "Team notification"
+```
+
+#### **Custom Analysis Tools**
+
+```csharp
+// C# Log Analyzer Beispiel
+public class WMSLogAnalyzer
+{
+    public class LogEntry
+    {
+        public DateTime Timestamp { get; set; }
+        public string Level { get; set; }
+        public string Category { get; set; }
+        public string Message { get; set; }
+        public string StackTrace { get; set; }
+    }
+    
+    public class AnalysisResult
+    {
+        public int TotalErrors { get; set; }
+        public Dictionary<string, int> ErrorsByType { get; set; }
+        public List<string> TopErrors { get; set; }
+        public TimeSpan AnalysisDuration { get; set; }
+    }
+    
+    public static AnalysisResult AnalyzeLogs(string logPath, DateTime fromDate)
+    {
+        var result = new AnalysisResult
+        {
+            ErrorsByType = new Dictionary<string, int>(),
+            TopErrors = new List<string>()
+        };
+        
+        var logFiles = Directory.GetFiles(logPath, "*.log")
+            .Where(f => File.GetCreationTime(f) >= fromDate);
+            
+        foreach (var logFile in logFiles)
+        {
+            var lines = File.ReadAllLines(logFile);
+            
+            foreach (var line in lines)
+            {
+                if (IsErrorLine(line))
+                {
+                    result.TotalErrors++;
+                    var errorType = ExtractErrorType(line);
+                    
+                    if (result.ErrorsByType.ContainsKey(errorType))
+                        result.ErrorsByType[errorType]++;
+                    else
+                        result.ErrorsByType[errorType] = 1;
+                }
+            }
+        }
+        
+        result.TopErrors = result.ErrorsByType
+            .OrderByDescending(kvp => kvp.Value)
+            .Take(10)
+            .Select(kvp => $"{kvp.Key}: {kvp.Value} occurrences")
+            .ToList();
+            
+        return result;
+    }
+    
+    private static bool IsErrorLine(string line)
+    {
+        return line.Contains("ERROR") || line.Contains("FATAL") || line.Contains("Exception");
+    }
+    
+    private static string ExtractErrorType(string line)
+    {
+        // Regex to extract error type from log line
+        var match = Regex.Match(line, @"(\w+(?:Exception|Error))");
+        return match.Success ? match.Groups[1].Value : "Unknown";
     }
 }
+```
+
+### Monitoring Dashboards
+
+#### **Real-time Monitoring**
+
+```yaml
+real_time_dashboard:
+  metrics:
+    error_rate:
+      calculation: "Errors per minute"
+      threshold: "> 5 errors/minute"
+      alert: "Immediate notification"
+      
+    response_time:
+      percentiles: ["50th", "95th", "99th"]
+      target: "95th percentile < 2 seconds"
+      
+    system_health:
+      cpu_usage: "< 80%"
+      memory_usage: "< 85%"
+      disk_space: "< 90%"
+      
+  visualizations:
+    error_heatmap:
+      type: "Heatmap"
+      dimensions: ["Time", "Error Type"]
+      color_scale: "Green to Red"
+      
+    trend_analysis:
+      type: "Line Chart"
+      metrics: ["Error Count", "Response Time"]
+      timeframe: "Last 24 hours"
+      
+    status_indicators:
+      type: "Status Lights"
+      systems: ["WMS Core", "Database", "SAP Integration", "Hardware"]
+```
+
+</div>
+
+## Automatisierung {#automation}
+
+<div class="wiki-tab-content" id="automation">
+
+### Automated Error Detection
+
+#### **Event-Driven Processing**
+
+```yaml
+automated_detection:
+  log_watchers:
+    file_system_watcher:
+      path: "C:\\WMS\\Logs"
+      filter: "*.log"
+      event: "File Modified"
+      action: "Real-time parsing"
+      
+    event_log_monitor:
+      source: "Windows Event Log"
+      levels: ["Error", "Critical"]
+      filter: "Source=WMS*"
+      
+  pattern_matching:
+    regex_rules:
+      - pattern: "FATAL.*"
+        severity: "Critical"
+        action: "Immediate alert"
+        
+      - pattern: "ERROR.*OutOfMemory"
+        severity: "High"
+        action: "Resource monitoring + alert"
+        
+      - pattern: "WARN.*PerformanceDegradation"
+        severity: "Medium"
+        action: "Trend analysis"
+        
+  machine_learning:
+    anomaly_detection:
+      algorithm: "Isolation Forest"
+      features: ["log_frequency", "error_patterns", "time_correlations"]
+      training_period: "30 Tage"
+      sensitivity: "95% confidence interval"
+```
+
+#### **Automated Response Actions**
+
+```yaml
+automated_responses:
+  immediate_actions:
+    critical_errors:
+      - "SMS alert to on-call engineer"
+      - "Create high-priority incident ticket"
+      - "Capture system state snapshot"
+      - "Initiate automated diagnostics"
+      
+    memory_issues:
+      - "Trigger garbage collection"
+      - "Capture memory dump"
+      - "Monitor memory usage trend"
+      - "Prepare for service restart if needed"
+      
+    integration_failures:
+      - "Retry failed operations"
+      - "Switch to backup connection"
+      - "Log detailed connection state"
+      - "Notify integration team"
+      
+  escalation_procedures:
+    level_1_response:
+      timeframe: "5 minutes"
+      actions: ["Automated diagnostics", "Self-healing attempts"]
+      
+    level_2_escalation:
+      timeframe: "15 minutes"
+      actions: ["Technical team notification", "Enhanced monitoring"]
+      
+    level_3_escalation:
+      timeframe: "45 minutes"
+      actions: ["Management notification", "Vendor escalation"]
+```
+
+### Predictive Analytics
+
+#### **Error Prediction Models**
+
+```python
+# Python Example: Error Prediction Model
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+class WMSErrorPredictor:
+    def __init__(self):
+        self.model = RandomForestClassifier(n_estimators=100, random_state=42)
+        self.features = [
+            'error_frequency_1h',
+            'error_frequency_6h', 
+            'error_frequency_24h',
+            'cpu_usage_avg',
+            'memory_usage_avg',
+            'disk_io_rate',
+            'active_users',
+            'transaction_volume',
+            'hour_of_day',
+            'day_of_week'
+        ]
+        
+    def prepare_training_data(self, log_data):
+        # Feature engineering from log data
+        df = pd.DataFrame(log_data)
+        
+        # Time-based features
+        df['hour_of_day'] = pd.to_datetime(df['timestamp']).dt.hour
+        df['day_of_week'] = pd.to_datetime(df['timestamp']).dt.dayofweek
+        
+        # Rolling windows for error frequency
+        df['error_frequency_1h'] = df['error_count'].rolling('1H').sum()
+        df['error_frequency_6h'] = df['error_count'].rolling('6H').sum()
+        df['error_frequency_24h'] = df['error_count'].rolling('24H').sum()
+        
+        # Target: Will there be a critical error in next hour?
+        df['critical_error_next_hour'] = df['critical_errors'].shift(-1) > 0
+        
+        return df[self.features], df['critical_error_next_hour']
+        
+    def train_model(self, training_data):
+        X, y = self.prepare_training_data(training_data)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+        
+        self.model.fit(X_train, y_train)
+        
+        # Evaluate model
+        predictions = self.model.predict(X_test)
+        print(classification_report(y_test, predictions))
+        
+    def predict_errors(self, current_metrics):
+        probability = self.model.predict_proba([current_metrics])[0][1]
+        return {
+            'critical_error_probability': probability,
+            'risk_level': 'High' if probability > 0.7 else 'Medium' if probability > 0.3 else 'Low',
+            'recommended_actions': self.get_recommendations(probability)
+        }
+        
+    def get_recommendations(self, probability):
+        if probability > 0.7:
+            return [
+                "Increase monitoring frequency",
+                "Prepare incident response team",
+                "Consider preemptive service restart"
+            ]
+        elif probability > 0.3:
+            return [
+                "Monitor system metrics closely",
+                "Review recent changes"
+            ]
+        else:
+            return ["Continue normal operations"]
+```
+
+#### **Trend Analysis**
+
+```yaml
+trend_analysis:
+  metrics_tracked:
+    error_rates:
+      calculation: "Errors per hour by category"
+      trending: "7-day moving average"
+      prediction: "Next 24-hour error volume"
+      
+    performance_degradation:
+      calculation: "Response time percentiles"
+      trending: "Week-over-week comparison"
+      prediction: "Performance threshold breach probability"
+      
+    resource_utilization:
+      calculation: "CPU, Memory, Disk usage patterns"
+      trending: "Growth rate analysis"
+      prediction: "Resource exhaustion timeline"
+      
+  alerting_thresholds:
+    trend_alerts:
+      error_rate_increase: "> 50% increase over 3-day average"
+      performance_decline: "> 20% response time increase"
+      resource_growth: "> 10% utilization increase per week"
+      
+  predictive_maintenance:
+    schedule_optimization:
+      analysis: "Failure pattern correlation with maintenance schedules"
+      recommendation: "Optimal maintenance windows"
+      
+    component_lifecycle:
+      tracking: "Error patterns by system component age"
+      prediction: "Component replacement recommendations"
+```
+
+</div>
+
+## Support & Kontakte
+
+### Error Analysis Support Team
+
+```yaml
+support_kontakte:
+  log_analysis_team:
+    team: "Technical Log Analysis"
+    telefon: "+41 81 770 8888"
+    email: "log-analysis@georgfischer.com"
+    verfuegbarkeit: "24/7 für kritische Fehler"
+    
+  system_monitoring:
+    team: "System Monitoring & Alerting"
+    telefon: "+41 81 770 8899"
+    email: "monitoring@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 06:00-22:00"
+    
+  automation_team:
+    team: "Log Automation & Tools"
+    telefon: "+41 81 770 8877"
+    email: "automation@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 08:00-17:00"
+    
+  emergency_escalation:
+    hotline: "+41 81 770 9999"
+    verfuegbarkeit: "24/7 für System-kritische Störungen"
+    escalation: "Automatische Eskalation nach 20 Minuten"
+```
+
+## Quick Reference
+
+### Critical Commands
+
+```bash
+# Wichtigste PowerShell-Befehle für Log-Analyse
+
+# Aktuelle Fehler anzeigen
+Get-EventLog -LogName Application -EntryType Error -Newest 10
+
+# WMS-Logs nach Fehlern durchsuchen
+Select-String -Path "C:\WMS\Logs\*.log" -Pattern "ERROR|FATAL" | Select-Object -Last 20
+
+# Systemressourcen prüfen
+Get-Counter "\Processor(_Total)\% Processor Time","\Memory\Available MBytes"
+
+# Dienste-Status prüfen
+Get-Service | Where-Object {$_.Name -like "*WMS*"} | Select-Object Name, Status
+```
+
+### Error Severity Matrix
+
+| Severity | Response Time | Escalation | Actions |
+|----------|--------------|------------|----------|
+| **FATAL** | Immediate | Automatic | Emergency response, system halt possible |
+| **ERROR** | 15 minutes | After 30 min | Investigation required, potential impact |
+| **WARN** | 2 hours | Daily review | Monitor trends, preventive measures |
+| **INFO** | Best effort | Weekly review | Documentation and analysis |
+
+---
+
+*Diese Error Logs Dokumentation ermöglicht die systematische und effiziente Analyse von WMS-Fehlerprotokollen bei Georg Fischer. Kontinuierliche Updates gewährleisten optimale Fehlerbehandlung. Letzte Aktualisierung: März 2025*
+
+<style>
+.logs-hero {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logs-alert {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.logs-alert .alert-icon {
+    font-size: 2rem;
+    margin-top: 0.25rem;
+}
+
+.logs-alert .alert-content h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.wiki-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.wiki-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wiki-tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wiki-tab-content {
+    display: none;
+}
+
+.wiki-tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+code {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.wiki-tab-btn');
+    const tabContents = document.querySelectorAll('.wiki-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

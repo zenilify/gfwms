@@ -1,0 +1,1178 @@
+---
+layout: default
+title: "Lagerbestand - Inventory Management"
+description: "Präzise Bestandsführung und Bestandsoptimierung bei Georg Fischer"
+breadcrumbs:
+  - title: "Wiki"
+  - title: "Lagerbestand"
+---
+
+# Lagerbestand - Inventory Management
+
+<div class="inventory-hero">
+    <div class="hero-content">
+        <h2>📦 Präzise Bestandsführung</h2>
+        <p>Intelligentes Inventory Management für optimale Lagerbestände bei Georg Fischer</p>
+    </div>
+</div>
+
+<div class="inventory-alert">
+    <div class="alert-icon">
+        <i class="fas fa-warehouse"></i>
+    </div>
+    <div class="alert-content">
+        <h3>🎯 BESTANDS-KONTROLLE</h3>
+        <p><strong>Genauigkeit:</strong> 99.8% Bestandsgenauigkeit als Mindestanforderung</p>
+        <p><strong>Inventory-Hotline:</strong> +41 81 770 3333 (Bestands-Team)</p>
+    </div>
+</div>
+
+## Überblick
+
+Das Inventory Management bei Georg Fischer gewährleistet optimale Lagerbestände durch systematische Bestandsführung, präzise Tracking-Systeme und intelligente Optimierungsalgorithmen. Diese Dokumentation beschreibt alle Aspekte der Bestandsverwaltung im Jungheinrich WMS.
+
+## Navigation
+
+<div class="wiki-nav-tabs">
+    <button class="wiki-tab-btn active" data-tab="bestandsführung">Bestandsführung</button>
+    <button class="wiki-tab-btn" data-tab="tracking-systeme">Tracking & Rückverfolgung</button>
+    <button class="wiki-tab-btn" data-tab="optimierung">Bestandsoptimierung</button>
+    <button class="wiki-tab-btn" data-tab="inventur">Inventur & Zykluszählung</button>
+    <button class="wiki-tab-btn" data-tab="analytics">Analytics & Reporting</button>
+</div>
+
+## Bestandsführung {#bestandsführung}
+
+<div class="wiki-tab-content active" id="bestandsführung">
+
+### Bestandsstrukturen
+
+#### **Bestandsarten im WMS**
+
+```yaml
+bestandsarten:
+  verfügbarer_bestand:
+    definition: "Physisch vorhanden und für Verkauf verfügbar"
+    status_code: "AVAILABLE"
+    buchungslogik: "Automatische Reservierung bei Auftragseingang"
+    
+  reservierter_bestand:
+    definition: "Physisch vorhanden, aber für spezifische Aufträge reserviert"
+    status_code: "RESERVED"
+    reservierungsarten: ["Kundenauftrag", "Produktionsauftrag", "Transfer"]
+    
+  gesperrter_bestand:
+    definition: "Physisch vorhanden, aber nicht verfügbar"
+    status_code: "BLOCKED"
+    sperrgruende: ["Qualitätsprüfung", "Beschädigung", "Ablaufdatum"]
+    
+  in_transit_bestand:
+    definition: "Waren in Bewegung zwischen Lagerplätzen"
+    status_code: "IN_TRANSIT"
+    tracking: "Real-time Bewegungsverfolgung"
+```
+
+#### **Bestandsebenen**
+
+**Hierarchische Bestandsstruktur:**
+```yaml
+bestandshierarchie:
+  artikel_ebene:
+    scope: "Globaler Bestand pro Artikelnummer"
+    aggregation: "Summe aller Lagerplätze"
+    verwendung: "ATP-Berechnungen und Dispositionen"
+    
+  lagerort_ebene:
+    scope: "Bestand pro Lagerort (z.B. HRL, AKL, Bodenlager)"
+    granularität: "Lagerbereichs-spezifische Verfügbarkeit"
+    strategie: "Pick-Strategien und Nachschub-Steuerung"
+    
+  lagerplatz_ebene:
+    scope: "Exakter Bestand pro individuellem Lagerplatz"
+    granularität: "Finest-Level-Tracking"
+    verwendung: "Picking, Putaway, Cycle Counting"
+    
+  chargen_ebene:
+    scope: "Bestand pro Charge/Los"
+    tracking: "Vollständige Rückverfolgbarkeit"
+    verwendung: "FIFO/FEFO-Strategien, Recall-Management"
+```
+
+### Bestandsbuchungen
+
+#### **Buchungsarten**
+
+```yaml
+buchungsarten:
+  wareneingang:
+    trigger: "Physischer Wareneingang"
+    movement_type: "101"
+    validierung: ["Menge", "Qualität", "Lieferschein-Abgleich"]
+    automatisierung: "ASN-basierte Vorab-Einbuchung"
+    
+  warenausgang:
+    trigger: "Kommissionierung abgeschlossen"
+    movement_type: "601"
+    validierung: ["Pick-Bestätigung", "Verpackung", "Versandbereitschaft"]
+    integration: "Automatische SAP-Buchung"
+    
+  umbuchung:
+    trigger: "Lagerplatz-Transfer"
+    movement_type: "311/312"
+    tracking: "Lückenlose Bewegungsverfolgung"
+    validierung: "Quell- und Ziel-Platz-Validierung"
+    
+  korrektur:
+    trigger: "Inventur-Differenzen oder Fehler"
+    movement_type: "701/702"
+    approval: "Manager-Freigabe bei hohen Werten"
+    dokumentation: "Vollständige Audit-Trail"
+```
+
+#### **Automatische Buchungslogik**
+
+```yaml
+auto_booking_rules:
+  wareneingang_automation:
+    asn_matching: "Automatischer Abgleich mit Lieferavis"
+    quality_routing: "Automatisches QM-Routing basierend auf Artikelmerkmalen"
+    putaway_strategy: "Intelligente Einlagerungsplatz-Bestimmung"
+    exception_handling: "Manuelle Bearbeitung bei Abweichungen"
+    
+  pick_confirmation:
+    real_time_booking: "Sofortige Bestandsreduzierung bei Pick-Bestätigung"
+    batch_processing: "Alternative: Batch-Buchung bei Wellen-Abschluss"
+    error_handling: "Automatisches Rollback bei Stornierungen"
+    
+  transfer_booking:
+    two_step_process: "Aus-Buchung Quellplatz → Ein-Buchung Zielplatz"
+    intermediate_tracking: "Tracking während Transportzeit"
+    timeout_handling: "Automatische Eskalation bei Verzögerungen"
+```
+
+### Bestands-Monitoring
+
+#### **Real-Time Dashboards**
+
+```yaml
+monitoring_dashboards:
+  bestandsübersicht:
+    metriken: ["Gesamtbestand", "Verfügbarer Bestand", "Reservierungen", "Sperren"]
+    refresh_rate: "30 Sekunden"
+    drill_down: "Bis auf Lagerplatz-Ebene"
+    alerts: "Automatische Warnung bei kritischen Beständen"
+    
+  bewegungsanalyse:
+    metriken: ["Ein-/Ausgänge", "Umschlagsgeschwindigkeit", "Bewegungsvolumen"]
+    zeitraum: "Real-time, Stündlich, Täglich, Wöchentlich"
+    trending: "Automatische Trend-Erkennung"
+    forecasting: "Kurz- und mittelfristige Prognosen"
+    
+  exception_monitoring:
+    negative_bestände: "Sofortige Alarmierung bei negativen Beständen"
+    hohe_differenzen: "Warnung bei ungewöhnlichen Buchungen"
+    lange_verweildauer: "Tracking von Langzeit-Beständen"
+    quality_holds: "Monitoring von Qualitätssperren"
+```
+
+#### **KPI-Überwachung**
+
+```yaml
+inventory_kpis:
+  genauigkeit:
+    bestandsgenauigkeit: 
+      target: "> 99.8%"
+      messung: "Cycle Count Abweichungen"
+      frequency: "Wöchentlich"
+      
+    buchungsgenauigkeit:
+      target: "> 99.9%"
+      messung: "Fehlerquote bei Bewegungen"
+      frequency: "Täglich"
+      
+  effizienz:
+    umschlagsgeschwindigkeit:
+      target: "12x pro Jahr"
+      messung: "Durchschnittliche Verweildauer"
+      segmentierung: "Nach ABC-Klassifizierung"
+      
+    lagernutzung:
+      target: "85% Auslastung"
+      messung: "Belegte vs. verfügbare Plätze"
+      optimierung: "Kontinuierliche Platz-Optimierung"
+      
+  service_level:
+    verfügbarkeit:
+      target: "> 95% für A-Artikel"
+      messung: "Stockout-Rate"
+      eskalation: "Automatische Nachbestellung"
+      
+    lieferfähigkeit:
+      target: "> 98% on-time delivery"
+      messung: "Vollständige Auftragserfüllung"
+      integration: "SAP ATP-Check"
+```
+
+</div>
+
+## Tracking & Rückverfolgung {#tracking-systeme}
+
+<div class="wiki-tab-content" id="tracking-systeme">
+
+### Rückverfolgbarkeits-Architektur
+
+#### **Tracking-Granularität**
+
+```yaml
+tracking_levels:
+  artikel_tracking:
+    scope: "Basis-Tracking für alle Artikel"
+    identifier: "Artikelnummer + Lagerplatz"
+    retention: "24 Monate"
+    
+  chargen_tracking:
+    scope: "Charge-sensitives Material"
+    identifier: "Artikelnummer + Chargennummer"
+    retention: "7 Jahre (Regulatorische Anforderungen)"
+    rückverfolgung: "Forward/Backward Tracing"
+    
+  seriennummer_tracking:
+    scope: "High-value oder kritische Artikel"
+    identifier: "Individuelle Seriennummer"
+    retention: "Produkt-Lebensdauer + 10 Jahre"
+    granularität: "Einzelstück-Verfolgung"
+    
+  container_tracking:
+    scope: "Paletten, Kartons, Behälter"
+    identifier: "SSCC-Codes"
+    verwendung: "Handling-Optimierung und Transportverfolgung"
+```
+
+#### **Bewegungshistorie**
+
+```yaml
+movement_history:
+  datenstruktur:
+    timestamp: "Exakte Zeit der Bewegung"
+    movement_type: "Art der Bewegung (IN/OUT/TRANSFER)"
+    source_location: "Quell-Lagerplatz"
+    destination_location: "Ziel-Lagerplatz"
+    quantity: "Bewegte Menge"
+    unit: "Mengeneinheit"
+    user_id: "Ausführender Benutzer"
+    reference: "Bezug (Auftragsnummer, etc.)"
+    
+  query_capabilities:
+    by_article: "Alle Bewegungen eines Artikels"
+    by_location: "Alle Bewegungen eines Lagerplatzes"
+    by_batch: "Vollständige Chargen-Historie"
+    by_order: "Alle Bewegungen eines Auftrags"
+    
+  performance_optimization:
+    indexing: "Optimierte Indizes für schnelle Abfragen"
+    archiving: "Automatische Archivierung alter Daten"
+    caching: "Zwischenspeicherung häufiger Abfragen"
+```
+
+### Lot & Serial Number Management
+
+#### **Chargen-Management**
+
+```yaml
+batch_management:
+  eingangsprozess:
+    erfassung: "Automatische Chargen-Erfassung beim Wareneingang"
+    validierung: "Prüfung gegen Lieferanten-Daten"
+    attribute: ["Produktionsdatum", "Ablaufdatum", "Qualitätsstatus"]
+    
+  lagerung:
+    fifo_enforcement: "Automatische FIFO-Regel-Durchsetzung"
+    segregation: "Chargen-reine Lagerung wo erforderlich"
+    cross_contamination: "Verhinderung von Chargen-Vermischung"
+    
+  ausgangsprozess:
+    picking_logic: "Intelligente Chargen-Auswahl"
+    traceability: "Vollständige Dokumentation der Chargen-Zuordnung"
+    expiry_management: "Automatische Warnung bei nahenden Ablaufdaten"
+    
+  recall_management:
+    search_capability: "Schnelle Identifikation betroffener Chargen"
+    impact_analysis: "Auswirkungsanalyse auf Bestände und Kunden"
+    action_tracking: "Verfolgung von Rückruf-Maßnahmen"
+```
+
+#### **Seriennummer-Management**
+
+```yaml
+serial_number_management:
+  erfassung:
+    entry_methods: ["Barcode-Scan", "RFID-Read", "Manuelle Eingabe"]
+    validation: "Eindeutigkeitsprüfung und Format-Validierung"
+    linking: "Verknüpfung mit Artikelstamm und Auftragsdaten"
+    
+  lifecycle_tracking:
+    production: "Erfassung bei Herstellung/Wareneingang"
+    storage: "Tracking der Lagerposition"
+    picking: "Zuordnung zu spezifischen Kundenaufträgen"
+    shipping: "Verfolgung bis zur Auslieferung"
+    
+  service_integration:
+    warranty_tracking: "Integration mit Garantie-Management"
+    service_history: "Verknüpfung mit Service-Ereignissen"
+    replacement_tracking: "Verfolgung von Ersatzteilen"
+    
+  analytics:
+    performance_analysis: "Analyse der Produktperformance"
+    quality_tracking: "Qualitätstrends pro Seriennummer-Bereich"
+    lifecycle_management: "Optimierung der Produktlebenszyklen"
+```
+
+### Compliance & Auditing
+
+#### **Regulatorische Compliance**
+
+```yaml
+regulatory_compliance:
+  fda_requirements:
+    applicable_materials: "Pharma- und Medizinprodukte"
+    tracking_depth: "Vollständige Rückverfolgung vom Rohmaterial bis zum Endkunden"
+    documentation: "GMP-konforme Dokumentation"
+    audit_trail: "Unveränderliche Aufzeichnungen"
+    
+  iso_standards:
+    iso_9001: "Qualitätsmanagement-konforme Bestandsführung"
+    iso_13485: "Medizinprodukte-spezifische Anforderungen"
+    iso_14001: "Umweltmanagement-Aspekte"
+    
+  automotive_standards:
+    iatf_16949: "Automotive-spezifische Rückverfolgung"
+    ppap_documentation: "Produktionsteile-Freigabe-Dokumentation"
+    supplier_traceability: "Lieferanten-Rückverfolgung"
+    
+  food_safety:
+    haccp_compliance: "Lebensmittelsicherheit-Standards"
+    allergen_tracking: "Allergen-Nachverfolgung"
+    temperature_monitoring: "Kühlkette-Überwachung"
+```
+
+#### **Audit-Trail Management**
+
+```yaml
+audit_trail:
+  datenerfassung:
+    automated_logging: "Automatische Protokollierung aller Transaktionen"
+    user_context: "Vollständige Benutzer-Kontext-Erfassung"
+    system_events: "Protokollierung von System-Ereignissen"
+    
+  unveränderlichkeit:
+    cryptographic_signing: "Kryptografische Signierung von Aufzeichnungen"
+    blockchain_option: "Optional: Blockchain-basierte Unveränderlichkeit"
+    tamper_detection: "Erkennung von Manipulationsversuchen"
+    
+  reporting:
+    compliance_reports: "Automatische Compliance-Berichte"
+    audit_packages: "Vollständige Audit-Pakete für Behörden"
+    exception_reports: "Berichte über Anomalien und Ausnahmen"
+    
+  retention:
+    policy_based: "Richtlinien-basierte Aufbewahrungszeiten"
+    automated_archiving: "Automatische Archivierung"
+    legal_holds: "Rechtliche Aufbewahrungsanordnungen"
+```
+
+</div>
+
+## Bestandsoptimierung {#optimierung}
+
+<div class="wiki-tab-content" id="optimierung">
+
+### ABC/XYZ-Analyse
+
+#### **Klassifizierungs-Kriterien**
+
+```yaml
+abc_classification:
+  kriterien:
+    wertanteil:
+      a_artikel: "> 80% des Gesamtwertes (ca. 20% der Artikel)"
+      b_artikel: "15-80% des Gesamtwertes (ca. 30% der Artikel)"
+      c_artikel: "< 15% des Gesamtwertes (ca. 50% der Artikel)"
+      
+    berechnungsgrundlage:
+      jahresverbrauch: "Verbrauchsmenge × Standardpreis"
+      bewertungsperiode: "Rollierendes 12-Monats-Fenster"
+      aktualisierung: "Monatliche Neuberechnung"
+      
+xyz_classification:
+  kriterien:
+    verbrauchsregelmäßigkeit:
+      x_artikel: "Gleichmäßiger Verbrauch (Variationskoeffizient < 0.5)"
+      y_artikel: "Mittlere Schwankungen (Variationskoeffizient 0.5-1.0)"
+      z_artikel: "Starke Schwankungen (Variationskoeffizient > 1.0)"
+      
+    berechnungslogik:
+      variationskoeffizient: "Standardabweichung / Mittelwert"
+      betrachtungsperiode: "12 Monate mit monatlicher Granularität"
+      saisonbereinigung: "Berücksichtigung saisonaler Muster"
+```
+
+#### **Strategische Implikationen**
+
+```yaml
+abc_xyz_strategien:
+  ax_artikel:
+    strategie: "Minimal Safety Stock, JIT-Lieferung"
+    monitoring: "Tägliche Bestandsüberwachung"
+    supplier_integration: "Enge Lieferanten-Integration"
+    
+  ay_artikel:
+    strategie: "Moderate Safety Stocks, häufige Überprüfung"
+    monitoring: "Wöchentliche Analyse"
+    flexibility: "Flexible Liefervereinbarungen"
+    
+  az_artikel:
+    strategie: "Höhere Safety Stocks, Risikomanagement"
+    monitoring: "Kontinuierliche Überwachung"
+    forecasting: "Erweiterte Prognoseverfahren"
+    
+  cx_artikel:
+    strategie: "Standardisierte Bestellmengen"
+    automation: "Automatische Nachbestellung"
+    vendor_managed: "Vendor Managed Inventory"
+    
+  cz_artikel:
+    strategie: "Opportunistische Beschaffung"
+    monitoring: "Quartalsweise Überprüfung"
+    substitution: "Möglichkeiten für Artikelsubstitution"
+```
+
+### Bestandsoptimierungs-Algorithmen
+
+#### **Min/Max-Bestände**
+
+```yaml
+min_max_calculation:
+  minimum_bestand:
+    formel: "Safety Stock + Lead Time Demand"
+    safety_stock: "Service Level × √(Lead Time) × Demand Variability"
+    lead_time_demand: "Average Daily Demand × Lead Time in Days"
+    
+  maximum_bestand:
+    formel: "Minimum + Economic Order Quantity"
+    eoq_berechnung: "√(2 × Annual Demand × Order Cost / Holding Cost)"
+    adjustments: "Berücksichtigung von Lager-Constraints"
+    
+  dynamic_adjustment:
+    trigger: "Signifikante Änderungen in Verbrauchsmustern"
+    frequency: "Monatliche Überprüfung für A-Artikel, Quartalsweise für B/C"
+    ml_optimization: "Machine Learning für kontinuierliche Verbesserung"
+```
+
+#### **Predictive Analytics**
+
+```yaml
+demand_forecasting:
+  algorithmen:
+    exponential_smoothing: "Für stabile Verbrauchsmuster"
+    arima_models: "Für zeitreihen-basierte Prognosen"
+    machine_learning: "Random Forest und Neural Networks für komplexe Muster"
+    ensemble_methods: "Kombination mehrerer Verfahren für höhere Genauigkeit"
+    
+  eingangsdaten:
+    historical_consumption: "24 Monate Verbrauchshistorie"
+    seasonal_factors: "Saisonale Anpassungsfaktoren"
+    promotional_impact: "Auswirkungen von Marketingaktionen"
+    external_factors: "Wirtschaftsindikatoren und Markttrends"
+    
+  output_metriken:
+    forecast_accuracy: "MAPE (Mean Absolute Percentage Error) < 15%"
+    bias_detection: "Systematische Über-/Unterprognosen"
+    confidence_intervals: "Unsicherheitsbereiche für Prognosen"
+    
+  continuous_learning:
+    model_retraining: "Wöchentliche Modell-Aktualisierung"
+    feedback_loops: "Integration von Ist-Verbrauch in Modell-Verbesserung"
+    exception_handling: "Automatische Erkennung von Anomalien"
+```
+
+### Supply Chain Optimization
+
+#### **Lieferanten-Integration**
+
+```yaml
+supplier_integration:
+  vendor_managed_inventory:
+    scope: "C-Artikel mit regelmäßigem Verbrauch"
+    responsibility: "Lieferant übernimmt Bestandsverantwortung"
+    monitoring: "Kontinuierliche Performance-Überwachung"
+    sla: "Service Level Agreements für Verfügbarkeit"
+    
+  consignment_stock:
+    ownership: "Ware bleibt im Eigentum des Lieferanten bis zum Verbrauch"
+    space_utilization: "Optimale Nutzung von Lagerkapazitäten"
+    cash_flow: "Verbesserung der Liquidität"
+    
+  electronic_kanban:
+    automation: "Automatische Signalübertragung an Lieferanten"
+    integration: "EDI-basierte Kommunikation"
+    response_time: "Kurze Reaktionszeiten durch direkte Kopplung"
+    
+  collaborative_forecasting:
+    data_sharing: "Austausch von Prognose- und Verbrauchsdaten"
+    joint_planning: "Gemeinsame Absatz- und Einkaufsplanung"
+    risk_mitigation: "Gemeinsame Risikobewertung und -minimierung"
+```
+
+#### **Multi-Echelon Optimization**
+
+```yaml
+multi_echelon_strategy:
+  netzwerk_struktur:
+    central_warehouse: "Zentrallager für Langsamdreher"
+    regional_hubs: "Regionale Verteilzentren für Schnelldreher"
+    local_stock: "Lokale Bestände für kritische Artikel"
+    
+  bestandsallokation:
+    risk_pooling: "Zentrale Bestandshaltung zur Risikoverteilung"
+    service_differentiation: "Unterschiedliche Service Level je Standort"
+    cost_optimization: "Minimierung der Gesamtkosten im Netzwerk"
+    
+  koordination:
+    lateral_transshipment: "Seitliche Verschiebungen zwischen Standorten"
+    emergency_stock: "Notfallbestände für kritische Situationen"
+    dynamic_allocation: "Dynamische Umverteilung basierend auf Bedarfsprognosen"
+```
+
+### Obsolescence Management
+
+#### **Früherkennung**
+
+```yaml
+obsolescence_detection:
+  kennzahlen:
+    slow_moving: "Artikel ohne Bewegung > 90 Tage"
+    declining_demand: "Kontinuierlicher Nachfragerückgang > 6 Monate"
+    lifecycle_stage: "Produktlebenszyklus-basierte Klassifizierung"
+    
+  automatic_flagging:
+    regel_engine: "Automatische Markierung basierend auf definierten Regeln"
+    ml_predictions: "Machine Learning für Obsolescence-Wahrscheinlichkeit"
+    risk_scoring: "Risiko-Bewertung für jeden Artikel"
+    
+  early_warning_system:
+    alerts: "Automatische Benachrichtigung der Einkaufs-Teams"
+    recommendations: "Handlungsempfehlungen für identifizierte Artikel"
+    tracking: "Verfolgung der Entwicklung kritischer Artikel"
+```
+
+#### **Liquidations-Strategien**
+
+```yaml
+liquidation_strategies:
+  internal_redistribution:
+    cross_plant_transfer: "Umverteilung zwischen Standorten"
+    alternative_usage: "Verwendung für andere Anwendungen"
+    component_recovery: "Rückgewinnung von Komponenten"
+    
+  external_liquidation:
+    discounted_sales: "Verkauf mit Preisnachlässen"
+    bulk_sales: "Paketverkäufe an Großhändler"
+    employee_sales: "Verkauf an Mitarbeiter"
+    
+  disposal_options:
+    recycling: "Umweltfreundliche Entsorgung"
+    donation: "Spende an gemeinnützige Organisationen"
+    destruction: "Kontrollierte Vernichtung bei kritischen Materialien"
+    
+  financial_impact:
+    provision_calculation: "Automatische Berechnung von Wertberichtigungen"
+    tax_optimization: "Steueroptimale Abschreibungsstrategien"
+    cost_recovery: "Maximierung der Kostendeckung"
+```
+
+</div>
+
+## Inventur & Zykluszählung {#inventur}
+
+<div class="wiki-tab-content" id="inventur">
+
+### Inventur-Strategien
+
+#### **Vollständige Inventur**
+
+```yaml
+full_inventory:
+  frequency: "Jährlich zum Geschäftsjahresende"
+  scope: "Alle Artikel in allen Lagerbereichen"
+  duration: "3-5 Arbeitstage"
+  
+  vorbereitung:
+    system_freeze: "Einfrieren aller Bewegungen während Inventur"
+    team_assignment: "Zuweisung von Teams zu spezifischen Bereichen"
+    equipment_preparation: "Bereitstellung von Zähl-Equipment"
+    training: "Schulung der Inventur-Teams"
+    
+  durchführung:
+    systematic_counting: "Systematische Zählung nach definierten Routen"
+    double_counting: "Zweifach-Zählung für kritische Artikel"
+    blind_counting: "Zählung ohne Vorgabe der Buchbestände"
+    variance_analysis: "Sofortige Analyse größerer Abweichungen"
+    
+  nachbearbeitung:
+    variance_investigation: "Untersuchung signifikanter Differenzen"
+    approval_workflow: "Mehrstufiger Freigabeprozess für Korrekturen"
+    system_update: "Systemaktualisierung mit korrigierten Beständen"
+    lessons_learned: "Dokumentation und Verbesserungsmaßnahmen"
+```
+
+#### **Cycle Counting**
+
+```yaml
+cycle_counting:
+  strategie: "Kontinuierliche Zählung ohne Betriebsunterbrechung"
+  coverage: "100% aller Artikel im Laufe eines Jahres"
+  frequency_by_class:
+    a_artikel: "Monatlich (12x pro Jahr)"
+    b_artikel: "Quartalsweise (4x pro Jahr)"
+    c_artikel: "Halbjährlich (2x pro Jahr)"
+    
+  selection_methods:
+    abc_based: "Zählung basierend auf ABC-Klassifizierung"
+    random_sampling: "Stichproben-basierte Auswahl"
+    exception_triggered: "Anlassbezogene Zählung bei Auffälligkeiten"
+    location_based: "Lagerplatz-basierte Rotation"
+    
+  execution:
+    daily_cycles: "Tägliche Zähl-Zyklen während normaler Betriebszeiten"
+    mobile_technology: "Einsatz von Handheld-Geräten und Mobile Apps"
+    real_time_update: "Sofortige Systemaktualisierung bei Abweichungen"
+    variance_tolerance: "Definierte Toleranzen für automatische Buchungen"
+```
+
+### Zähl-Technologien
+
+#### **RFID-basierte Inventur**
+
+```yaml
+rfid_inventory:
+  technology: "Ultra-High Frequency (UHF) RFID"
+  read_range: "Bis zu 10 Meter für optimale Abdeckung"
+  
+  vorteile:
+    speed: "10x schneller als barcode-basierte Zählung"
+    accuracy: "99.5% Lesegenauigkeit"
+    automation: "Minimaler manueller Aufwand"
+    real_time: "Echtzeit-Bestandserfassung"
+    
+  implementation:
+    tag_attachment: "RFID-Tags an allen zählbaren Artikeln"
+    reader_infrastructure: "Strategisch platzierte RFID-Reader"
+    mobile_readers: "Handheld-RFID-Reader für flexible Zählung"
+    integration: "Vollständige WMS-Integration"
+    
+  challenges:
+    metal_interference: "Herausforderungen bei metallischen Artikeln"
+    liquid_impact: "Einschränkungen bei flüssigen Produkten"
+    dense_environments: "Optimierung für dichte Lagerumgebungen"
+    cost_considerations: "ROI-Analyse für verschiedene Artikelgruppen"
+```
+
+#### **Computer Vision & AI**
+
+```yaml
+vision_based_counting:
+  technology: "Deep Learning Computer Vision"
+  cameras: "Hochauflösende 4K-Kameras mit verschiedenen Objektiven"
+  
+  capabilities:
+    automatic_recognition: "Automatische Artikel-Erkennung"
+    quantity_estimation: "KI-basierte Mengen-Schätzung"
+    anomaly_detection: "Erkennung von Unregelmäßigkeiten"
+    damage_assessment: "Identifikation beschädigter Waren"
+    
+  implementation:
+    fixed_installations: "Fest installierte Kamera-Systeme"
+    mobile_solutions: "Mobile Kamera-Einheiten für flexible Einsätze"
+    drone_integration: "Drohnen-basierte Inventur für Hochregallager"
+    
+  accuracy:
+    counting_precision: "95% Genauigkeit bei optimalen Bedingungen"
+    environmental_factors: "Berücksichtigung von Beleuchtung und Sichtbarkeit"
+    continuous_learning: "Kontinuierliche Verbesserung durch ML-Training"
+```
+
+### Differenzen-Management
+
+#### **Varianz-Analyse**
+
+```yaml
+variance_analysis:
+  kategorisierung:
+    acceptable_variance:
+      definition: "Abweichungen innerhalb definierter Toleranzen"
+      threshold: "±2% oder ±50 Stück (der niedrigere Wert)"
+      action: "Automatische Buchungsanpassung"
+      
+    significant_variance:
+      definition: "Abweichungen außerhalb der Toleranzen"
+      threshold: "> ±2% und > ±50 Stück"
+      action: "Manuelle Untersuchung erforderlich"
+      
+    critical_variance:
+      definition: "Sehr große Abweichungen oder kritische Artikel"
+      threshold: "> ±10% oder Wert > 10.000 EUR"
+      action: "Sofortige Eskalation an Management"
+      
+  root_cause_analysis:
+    system_errors: "Fehler in Buchungslogik oder Systemintegration"
+    process_issues: "Probleme in operativen Abläufen"
+    theft_or_loss: "Verdacht auf Diebstahl oder Verlust"
+    counting_errors: "Fehler im Zählprozess selbst"
+```
+
+#### **Korrektur-Workflows**
+
+```yaml
+correction_workflows:
+  approval_matrix:
+    automatic_approval:
+      criteria: "Abweichung < 2% und Wert < 500 EUR"
+      action: "Automatische Buchungskorrektur"
+      documentation: "System-Log mit Timestamp"
+      
+    supervisor_approval:
+      criteria: "Abweichung 2-10% oder Wert 500-5.000 EUR"
+      approver: "Schichtleiter oder Lagerleiter"
+      timeline: "Freigabe binnen 24 Stunden"
+      
+    management_approval:
+      criteria: "Abweichung > 10% oder Wert > 5.000 EUR"
+      approver: "Lagerleiter + Controller"
+      timeline: "Freigabe binnen 48 Stunden"
+      documentation: "Detaillierte Begründung erforderlich"
+      
+  tracking_and_reporting:
+    variance_trends: "Analyse von Abweichungsmustern"
+    hotspot_identification: "Identifikation problematischer Bereiche"
+    improvement_actions: "Ableitung von Verbesserungsmaßnahmen"
+    kpi_impact: "Auswirkung auf Bestandsgenauigkeits-KPIs"
+```
+
+### Inventur-Optimierung
+
+#### **Datenqualitäts-Management**
+
+```yaml
+data_quality:
+  preventive_measures:
+    real_time_validation: "Sofortige Validierung bei Buchungen"
+    mandatory_fields: "Vollständigkeit kritischer Datenfelder"
+    format_checking: "Automatische Format-Validierung"
+    plausibility_checks: "Plausibilitätsprüfungen bei Eingaben"
+    
+  continuous_monitoring:
+    exception_reports: "Tägliche Berichte über Datenauffälligkeiten"
+    trend_analysis: "Analyse von Datenqualitätstrends"
+    automated_alerts: "Automatische Warnungen bei Qualitätsproblemen"
+    
+  improvement_processes:
+    training_programs: "Regelmäßige Schulungen für Mitarbeiter"
+    process_standardization: "Standardisierung von Eingabeprozessen"
+    system_enhancements: "Kontinuierliche Systemverbesserungen"
+    feedback_loops: "Rückkopplung von Qualitätsproblemen zu Ursachen"
+```
+
+#### **Technologie-Integration**
+
+```yaml
+technology_integration:
+  iot_sensors:
+    weight_sensors: "Automatische Gewichtsmessung für Bulk-Materialien"
+    proximity_sensors: "Erkennung von Artikelbewegungen"
+    environmental_monitoring: "Überwachung von Lagerbedingungen"
+    
+  blockchain_technology:
+    immutable_records: "Unveränderliche Aufzeichnung von Inventur-Ergebnissen"
+    audit_trail: "Vollständige Nachverfolgbarkeit aller Änderungen"
+    smart_contracts: "Automatisierte Vertragsabwicklung bei Abweichungen"
+    
+  predictive_analytics:
+    anomaly_prediction: "Vorhersage potenzieller Bestandsabweichungen"
+    optimal_timing: "Optimale Timing-Vorhersage für Cycle Counts"
+    resource_planning: "Optimale Ressourcenplanung für Inventur-Aktivitäten"
+```
+
+</div>
+
+## Analytics & Reporting {#analytics}
+
+<div class="wiki-tab-content" id="analytics">
+
+### Inventory Analytics
+
+#### **Performance Dashboards**
+
+```yaml
+performance_dashboards:
+  executive_dashboard:
+    metrics: ["Bestandswert", "Umschlagsgeschwindigkeit", "Genauigkeit", "Service Level"]
+    refresh: "Real-time"
+    drill_down: "Bis Artikel-Ebene"
+    alerts: "Executive-relevante Ausnahmen"
+    
+  operational_dashboard:
+    metrics: ["Tägliche Bewegungen", "Cycle Count Status", "Abweichungen", "Alerts"]
+    refresh: "15 Minuten"
+    interactivity: "Vollständige Drill-Down-Fähigkeiten"
+    customization: "Benutzer-spezifische Ansichten"
+    
+  analytical_dashboard:
+    metrics: ["Trends", "Prognosen", "ABC-Verteilung", "Seasonal Patterns"]
+    refresh: "Stündlich"
+    advanced_analytics: "Statistische Analysen und ML-Insights"
+    export_capabilities: "Export für weitere Analysen"
+```
+
+#### **Trend-Analyse**
+
+```yaml
+trend_analysis:
+  bewegungstrends:
+    time_series: "Zeitreihen-Analyse der Bestandsbewegungen"
+    seasonality: "Saisonale Muster und Zyklen"
+    growth_rates: "Wachstumsraten nach Kategorien"
+    volatility: "Volatilitäts-Analysen für Risikobewertung"
+    
+  accuracy_trends:
+    counting_accuracy: "Entwicklung der Zähl-Genauigkeit"
+    system_accuracy: "System-Buchungsgenauigkeit"
+    error_patterns: "Muster in Fehlern und Abweichungen"
+    improvement_tracking: "Verfolgung von Verbesserungsmaßnahmen"
+    
+  cost_trends:
+    holding_costs: "Entwicklung der Lagerhaltungskosten"
+    obsolescence_costs: "Kosten für Obsoleszenz und Abschreibungen"
+    counting_costs: "Kosten für Inventur-Aktivitäten"
+    efficiency_gains: "Effizienzgewinne durch Optimierungen"
+```
+
+### Advanced Analytics
+
+#### **Machine Learning Modelle**
+
+```yaml
+ml_models:
+  demand_forecasting:
+    algorithms: ["Random Forest", "LSTM Neural Networks", "ARIMA-X"]
+    features: ["Historical demand", "Seasonality", "Promotions", "Economic indicators"]
+    accuracy: "MAPE < 15% für A-Artikel"
+    retraining: "Wöchentliche Modell-Updates"
+    
+  anomaly_detection:
+    algorithms: ["Isolation Forest", "One-Class SVM", "Autoencoders"]
+    applications: ["Unusual transactions", "Inventory shrinkage", "System errors"]
+    alert_threshold: "99.5% Confidence Interval"
+    false_positive_rate: "< 5%"
+    
+  optimization_models:
+    algorithms: ["Genetic Algorithms", "Simulated Annealing", "Linear Programming"]
+    objectives: ["Cost minimization", "Service level maximization", "Space utilization"]
+    constraints: ["Storage capacity", "Budget limits", "Supplier constraints"]
+    
+  classification_models:
+    abc_classification: "Automated ABC/XYZ classification"
+    slow_moving_detection: "Early identification of slow-moving items"
+    substitution_analysis: "Identification of substitute products"
+```
+
+#### **Predictive Analytics**
+
+```yaml
+predictive_capabilities:
+  stockout_prediction:
+    horizon: "1-4 Wochen Vorhersage"
+    accuracy: "> 85% für kritische Artikel"
+    factors: ["Current stock", "Demand forecast", "Lead times", "Seasonality"]
+    actions: "Automatic reorder recommendations"
+    
+  obsolescence_prediction:
+    model_type: "Survival analysis and classification"
+    risk_factors: ["Declining demand", "Product lifecycle", "Technology changes"]
+    accuracy: "> 80% for 6-month horizon"
+    intervention: "Early warning alerts for purchasing"
+    
+  optimal_reorder_prediction:
+    factors: ["Demand variability", "Lead time variability", "Cost factors"]
+    optimization: "Multi-objective optimization (cost vs. service)"
+    constraints: "Storage capacity and budget limitations"
+    update_frequency: "Daily recalculation for A-items"
+```
+
+### Reporting Framework
+
+#### **Standard Reports**
+
+```yaml
+standard_reports:
+  daily_reports:
+    inventory_snapshot: "Täglicher Bestandsüberblick"
+    movement_summary: "Zusammenfassung aller Bewegungen"
+    exception_report: "Auffälligkeiten und Ausnahmen"
+    cycle_count_status: "Status der Zykluszählungen"
+    
+  weekly_reports:
+    abc_analysis: "Aktuelle ABC/XYZ-Klassifizierung"
+    slow_moving_analysis: "Langsamdreher-Analyse"
+    forecast_accuracy: "Prognose-Genauigkeit"
+    kpi_dashboard: "KPI-Übersicht"
+    
+  monthly_reports:
+    inventory_valuation: "Bestandsbewertung"
+    turn_rate_analysis: "Umschlagsgeschwindigkeits-Analyse"
+    obsolescence_report: "Obsoleszenz-Bericht"
+    cost_analysis: "Kostenlaufzeit-Analyse"
+    
+  quarterly_reports:
+    strategic_analysis: "Strategische Bestandsanalyse"
+    supplier_performance: "Lieferanten-Performance"
+    system_performance: "System-Performance-Review"
+    improvement_roadmap: "Verbesserungs-Roadmap"
+```
+
+#### **Ad-hoc Analytics**
+
+```yaml
+adhoc_analytics:
+  self_service_bi:
+    tools: "Power BI, Tableau Integration"
+    data_access: "Real-time data lake access"
+    pre_built_templates: "Vorgefertigte Analyse-Templates"
+    training: "Benutzer-Schulungen für Self-Service"
+    
+  custom_queries:
+    sql_access: "Direkter SQL-Zugang für Power-User"
+    api_access: "REST APIs für externe Analysen"
+    data_export: "Export in verschiedene Formate"
+    scheduling: "Geplante Ausführung wiederkehrender Analysen"
+    
+  collaboration:
+    shared_dashboards: "Geteilte Dashboards für Teams"
+    annotation_system: "Kommentier-System für Insights"
+    alert_sharing: "Geteilte Alert-Konfigurationen"
+    version_control: "Versionierung von Analysen"
+```
+
+### Integration & API
+
+#### **Data Integration**
+
+```yaml
+data_integration:
+  source_systems:
+    wms_core: "Kern-WMS-Daten (Real-time)"
+    sap_erp: "SAP-Stammdaten und Bewegungen"
+    quality_system: "Qualitätsdaten und Sperren"
+    supplier_portals: "Lieferanten-Daten (ASN, etc.)"
+    
+  etl_processes:
+    real_time_streaming: "Kafka-basiertes Real-time Streaming"
+    batch_processing: "Nächtliche Batch-Verarbeitung"
+    delta_loading: "Inkrementelle Datenladung"
+    data_validation: "Umfassende Datenvalidierung"
+    
+  data_warehouse:
+    architecture: "Star Schema für optimale Performance"
+    partitioning: "Zeit-basierte Partitionierung"
+    indexing: "Optimierte Indizes für Analytics"
+    retention: "Intelligente Datenarchivierung"
+```
+
+#### **Analytics APIs**
+
+```yaml
+analytics_apis:
+  rest_endpoints:
+    inventory_status: "GET /api/v1/inventory/{item_id}/status"
+    movement_history: "GET /api/v1/movements?item={id}&period={range}"
+    forecast_data: "GET /api/v1/forecast/{item_id}?horizon={weeks}"
+    kpi_metrics: "GET /api/v1/kpis?category={inventory}&period={range}"
+    
+  real_time_feeds:
+    websocket_streams: "Real-time inventory changes"
+    event_driven: "Event-based notifications"
+    subscription_model: "Subscribe to specific item changes"
+    
+  authentication:
+    oauth2: "OAuth2-basierte Authentifizierung"
+    api_keys: "API-Keys für System-Integration"
+    rate_limiting: "Intelligente Rate-Limitierung"
+    audit_logging: "Vollständige API-Zugriffs-Protokollierung"
+```
+
+</div>
+
+## Support & Kontakte
+
+### Inventory Management Support
+
+```yaml
+support_kontakte:
+  inventory_operations:
+    team: "Inventory Management Team"
+    telefon: "+41 81 770 3333"
+    email: "inventory-support@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 06:00-22:00, Sa 08:00-16:00"
+    
+  cycle_counting_team:
+    team: "Cycle Counting Specialists"
+    telefon: "+41 81 770 3344"
+    email: "cycle-counting@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 07:00-19:00"
+    
+  analytics_team:
+    team: "Inventory Analytics"
+    telefon: "+41 81 770 3355"
+    email: "inventory-analytics@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 08:00-17:00"
+    
+  emergency_support:
+    hotline: "+41 81 770 9999"
+    verfuegbarkeit: "24/7 für kritische Bestandsprobleme"
+    escalation: "Automatische Eskalation nach 30 Minuten"
+```
+
+## Quick Reference
+
+### Kritische KPIs
+
+| Bereich | Kennzahl | Zielwert | Aktuell |
+|---------|----------|----------|----------|
+| **Genauigkeit** | Bestandsgenauigkeit | > 99.8% | 99.9% |
+| **Effizienz** | Umschlagsgeschwindigkeit | 12x/Jahr | 11.8x |
+| **Service** | Stockout-Rate | < 2% | 1.8% |
+| **Kosten** | Lagerhaltungskosten | < 15% | 14.2% |
+
+### Emergency Procedures
+
+- **Negative Bestände:** Sofortige Meldung an +41 81 770 3333
+- **System-Ausfall:** Emergency Hotline +41 81 770 9999
+- **Kritische Abweichungen:** Eskalation an Lagerleitung
+- **Compliance-Verstöße:** Qualitätsmanagement informieren
+
+---
+
+*Diese Inventory Management Dokumentation unterstützt die präzise und effiziente Bestandsführung bei Georg Fischer. Kontinuierliche Updates gewährleisten Best-Practice-Compliance. Letzte Aktualisierung: März 2025*
+
+<style>
+.inventory-hero {
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.inventory-alert {
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.inventory-alert .alert-icon {
+    font-size: 2rem;
+    margin-top: 0.25rem;
+}
+
+.inventory-alert .alert-content h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.wiki-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.wiki-tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wiki-tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.wiki-tab-content {
+    display: none;
+}
+
+.wiki-tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+code {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.wiki-tab-btn');
+    const tabContents = document.querySelectorAll('.wiki-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

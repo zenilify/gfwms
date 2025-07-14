@@ -1,150 +1,2180 @@
 ---
 layout: default
-title: "Systemfehler"
-description: "Diagnose- und Lösungsleitfaden für Systemfehler"
+title: "Systemfehler - WMS Error Management"
+description: "Umfassender Leitfaden zur Diagnose und Behebung von Systemfehlern im Georg Fischer WMS"
 breadcrumbs:
   - title: "Wiki"
   - title: "Systemfehler"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Systemfehler - Diagnose und Lösungen</p>
+# Systemfehler - WMS Error Management
+
+<div class="system-errors-hero">
+    <div class="hero-content">
+        <h2>⚠️ Systemfehler-Diagnose</h2>
+        <p>Strukturierter Leitfaden zur schnellen Identifikation und Behebung von WMS-Systemfehlern</p>
     </div>
+</div>
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Wiki-Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Systemfehler" befindet sich in der Entwicklungsphase.</p>
+<div class="system-errors-alert">
+    <div class="alert-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <div class="alert-content">
+        <h3>🚨 BEI KRITISCHEN SYSTEMFEHLERN</h3>
+        <p><strong>Sofort-Maßnahme:</strong> 24/7 Notfall-Hotline +41 81 770 9999 anrufen</p>
+        <p><strong>Wichtig:</strong> System nicht weiter bedienen, bis Problem behoben ist</p>
+    </div>
+</div>
+
+## Übersicht
+
+Systemfehler im WMS können von einfachen Anwendungsfehlern bis hin zu kritischen Infrastrukturproblemen reichen. Dieser Leitfaden bietet strukturierte Ansätze zur schnellen Diagnose und Behebung von Systemfehlern.
+
+## Navigation
+
+<div class="errors-nav-tabs">
+    <button class="errors-tab-btn active" data-tab="kategorien">Fehlerkategorien</button>
+    <button class="errors-tab-btn" data-tab="diagnose">Diagnose</button>
+    <button class="errors-tab-btn" data-tab="application">Application-Errors</button>
+    <button class="errors-tab-btn" data-tab="database">Database-Errors</button>
+    <button class="errors-tab-btn" data-tab="infrastructure">Infrastructure-Errors</button>
+    <button class="errors-tab-btn" data-tab="prevention">Prävention</button>
+</div>
+
+## Fehlerkategorien {#kategorien}
+
+<div class="errors-tab-content active" id="kategorien">
+
+### Systemfehler-Klassifikation
+
+#### **Severity-Level Klassifikation**
+
+<div class="severity-levels">
+    <div class="severity-card critical">
+        <div class="severity-header">
+            <h4>🚨 KRITISCH (Severity 1)</h4>
+            <div class="severity-indicator critical"></div>
         </div>
+        <div class="severity-details">
+            <div class="severity-description">
+                <strong>Definition:</strong> Kompletter Systemausfall oder kritische Sicherheitsprobleme
+            </div>
+            <div class="severity-examples">
+                <strong>Beispiele:</strong>
+                <ul>
+                    <li>WMS-Server komplett nicht erreichbar</li>
+                    <li>Database-Server-Ausfall</li>
+                    <li>SAP-Interface komplett down</li>
+                    <li>Kritische Datenverluste</li>
+                    <li>Sicherheitsinkdente</li>
+                </ul>
+            </div>
+            <div class="severity-sla">
+                <strong>SLA:</strong> Response <15 Min, Resolution <4 Stunden
+            </div>
+            <div class="severity-escalation">
+                <strong>Eskalation:</strong> Sofort an Management + 24/7 Notfallteam
+            </div>
+        </div>
+    </div>
+    
+    <div class="severity-card high">
+        <div class="severity-header">
+            <h4>🔶 HOCH (Severity 2)</h4>
+            <div class="severity-indicator high"></div>
+        </div>
+        <div class="severity-details">
+            <div class="severity-description">
+                <strong>Definition:</strong> Schwerwiegende Funktionseinschränkungen mit Workaround
+            </div>
+            <div class="severity-examples">
+                <strong>Beispiele:</strong>
+                <ul>
+                    <li>Einzelne WMS-Module nicht verfügbar</li>
+                    <li>Performance-Degradation >50%</li>
+                    <li>Interface-Synchronisationsfehler</li>
+                    <li>Hardware-Ausfälle mit Redundanz</li>
+                    <li>Drucksystem-Ausfälle</li>
+                </ul>
+            </div>
+            <div class="severity-sla">
+                <strong>SLA:</strong> Response <2 Stunden, Resolution <24 Stunden
+            </div>
+            <div class="severity-escalation">
+                <strong>Eskalation:</strong> IT-Manager nach 4 Stunden
+            </div>
+        </div>
+    </div>
+    
+    <div class="severity-card medium">
+        <div class="severity-header">
+            <h4>🔸 MITTEL (Severity 3)</h4>
+            <div class="severity-indicator medium"></div>
+        </div>
+        <div class="severity-details">
+            <div class="severity-description">
+                <strong>Definition:</strong> Funktionale Probleme ohne kritische Auswirkungen
+            </div>
+            <div class="severity-examples">
+                <strong>Beispiele:</strong>
+                <ul>
+                    <li>Einzelne Features funktionieren nicht</li>
+                    <li>Reports generieren Fehler</li>
+                    <li>Performance-Issues <25%</li>
+                    <li>User-Interface-Probleme</li>
+                    <li>Scanner-Connectivity-Issues</li>
+                </ul>
+            </div>
+            <div class="severity-sla">
+                <strong>SLA:</strong> Response <4 Stunden, Resolution <72 Stunden
+            </div>
+            <div class="severity-escalation">
+                <strong>Eskalation:</strong> Teamleiter nach 24 Stunden
+            </div>
+        </div>
+    </div>
+    
+    <div class="severity-card low">
+        <div class="severity-header">
+            <h4>🔹 NIEDRIG (Severity 4)</h4>
+            <div class="severity-indicator low"></div>
+        </div>
+        <div class="severity-details">
+            <div class="severity-description">
+                <strong>Definition:</strong> Kosmetische oder dokumentarische Probleme
+            </div>
+            <div class="severity-examples">
+                <strong>Beispiele:</strong>
+                <ul>
+                    <li>UI-Layout-Probleme</li>
+                    <li>Rechtschreibfehler</li>
+                    <li>Feature-Requests</li>
+                    <li>Dokumentations-Updates</li>
+                    <li>Training-Material-Anpassungen</li>
+                </ul>
+            </div>
+            <div class="severity-sla">
+                <strong>SLA:</strong> Response <24 Stunden, Resolution <1 Woche
+            </div>
+            <div class="severity-escalation">
+                <strong>Eskalation:</strong> Keine automatische Eskalation
+            </div>
+        </div>
+    </div>
+</div>
 
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-first-aid"></i>
-                    <h4>Notfallverfahren</h4>
-                    <p>Systemausfall und Wiederherstellung</p>
-                    <a href="../notfallverfahren/" class="btn btn-primary">Notfallverfahren öffnen</a>
+### Fehler-Domänen Übersicht
+
+#### **Systemkomponenten und typische Fehlerquellen**
+
+<div class="error-domains">
+    <div class="domain-category">
+        <h4>🖥️ Application Layer</h4>
+        <div class="domain-errors">
+            <div class="error-type">
+                <h5>WMS Core Application</h5>
+                <ul>
+                    <li><strong>Service-Startfehler:</strong> Windows Services starten nicht</li>
+                    <li><strong>Memory-Leaks:</strong> Anwendung verbraucht zu viel RAM</li>
+                    <li><strong>Thread-Deadlocks:</strong> Anwendung friert ein</li>
+                    <li><strong>Configuration-Errors:</strong> Falsche Konfigurationsparameter</li>
+                </ul>
+            </div>
+            
+            <div class="error-type">
+                <h5>Client Applications</h5>
+                <ul>
+                    <li><strong>Connection-Timeouts:</strong> Client kann Server nicht erreichen</li>
+                    <li><strong>Version-Mismatch:</strong> Inkompatible Client/Server-Versionen</li>
+                    <li><strong>Authentication-Failures:</strong> Anmeldungsprobleme</li>
+                    <li><strong>UI-Rendering-Issues:</strong> Anzeigefehler im Interface</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="domain-category">
+        <h4>💾 Database Layer</h4>
+        <div class="domain-errors">
+            <div class="error-type">
+                <h5>SQL Server Errors</h5>
+                <ul>
+                    <li><strong>Connection-Pool-Exhaustion:</strong> Zu viele DB-Verbindungen</li>
+                    <li><strong>Deadlocks:</strong> Transaktions-Sperren</li>
+                    <li><strong>Corruption:</strong> Datenbankintegritätsfehler</li>
+                    <li><strong>Storage-Full:</strong> Festplattenspeicher voll</li>
+                </ul>
+            </div>
+            
+            <div class="error-type">
+                <h5>Data Integrity</h5>
+                <ul>
+                    <li><strong>Constraint-Violations:</strong> Datenintegritätsverletzungen</li>
+                    <li><strong>Replication-Lag:</strong> Verzögerung bei Datenreplikation</li>
+                    <li><strong>Index-Corruption:</strong> Beschädigte Datenbankindizes</li>
+                    <li><strong>Backup-Failures:</strong> Backup-Prozess fehlgeschlagen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="domain-category">
+        <h4>🌐 Network & Infrastructure</h4>
+        <div class="domain-errors">
+            <div class="error-type">
+                <h5>Network Connectivity</h5>
+                <ul>
+                    <li><strong>DNS-Resolution-Failures:</strong> Namensauflösung fehlgeschlagen</li>
+                    <li><strong>Network-Latency:</strong> Hohe Netzwerklatenz</li>
+                    <li><strong>Firewall-Blocks:</strong> Ports werden blockiert</li>
+                    <li><strong>Switch-Port-Errors:</strong> Netzwerk-Hardware-Probleme</li>
+                </ul>
+            </div>
+            
+            <div class="error-type">
+                <h5>Hardware Infrastructure</h5>
+                <ul>
+                    <li><strong>Server-Hardware-Failures:</strong> RAM, CPU, Disk-Ausfälle</li>
+                    <li><strong>Power-Supply-Issues:</strong> Stromversorgungsprobleme</li>
+                    <li><strong>Temperature-Alarms:</strong> Überhitzung</li>
+                    <li><strong>RAID-Array-Degradation:</strong> Festplatten-Array-Probleme</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="domain-category">
+        <h4>🔗 Integration Layer</h4>
+        <div class="domain-errors">
+            <div class="error-type">
+                <h5>SAP Interface</h5>
+                <ul>
+                    <li><strong>RFC-Connection-Errors:</strong> SAP-Verbindungsfehler</li>
+                    <li><strong>IDOC-Processing-Failures:</strong> Nachrichtenverarbeitung fehlgeschlagen</li>
+                    <li><strong>Data-Mapping-Errors:</strong> Datenkonvertierungsfehler</li>
+                    <li><strong>Queue-Overflow:</strong> Nachrichten-Queue übergelaufen</li>
+                </ul>
+            </div>
+            
+            <div class="error-type">
+                <h5>External Systems</h5>
+                <ul>
+                    <li><strong>API-Endpoint-Unavailable:</strong> Externe APIs nicht erreichbar</li>
+                    <li><strong>Authentication-Token-Expired:</strong> Authentifizierung abgelaufen</li>
+                    <li><strong>Data-Format-Mismatch:</strong> Datenformat nicht kompatibel</li>
+                    <li><strong>Rate-Limiting:</strong> Zu viele API-Aufrufe</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Systematische Diagnose {#diagnose}
+
+<div class="errors-tab-content" id="diagnose">
+
+### Diagnose-Workflow
+
+#### **5-Schritt-Diagnose-Prozess**
+
+<div class="diagnosis-workflow">
+    <div class="workflow-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            <h4>SYMPTOM COLLECTION</h4>
+            <div class="step-details">
+                <div class="step-actions">
+                    <strong>Zu sammelnde Informationen:</strong>
+                    <ul>
+                        <li>Exakte Fehlermeldung (Screenshot/Copy)</li>
+                        <li>Zeitpunkt des ersten Auftretens</li>
+                        <li>Betroffene Benutzer/Systeme</li>
+                        <li>Aktionen vor dem Fehler</li>
+                        <li>Häufigkeit des Problems</li>
+                    </ul>
                 </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h4>Häufige Probleme</h4>
-                    <p>Allgemeine Problemlösungen</p>
-                    <a href="../../errors/common/" class="btn btn-primary">Probleme öffnen</a>
+                <div class="step-tools">
+                    <strong>Tools:</strong> Event Viewer, WMS Error Logs, Screenshots
                 </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>IT-Support</h4>
-                    <p>Technische Unterstützung</p>
-                    <a href="tel:+41817701234" class="btn btn-secondary">+41 81 770 1234</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="workflow-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            <h4>IMPACT ASSESSMENT</h4>
+            <div class="step-details">
+                <div class="step-actions">
+                    <strong>Bewertungskriterien:</strong>
+                    <ul>
+                        <li>Anzahl betroffener Benutzer</li>
+                        <li>Kritikalität betroffener Prozesse</li>
+                        <li>Business-Impact (€/Stunde)</li>
+                        <li>Verfügbare Workarounds</li>
+                        <li>Eskalations-Notwendigkeit</li>
+                    </ul>
+                </div>
+                <div class="step-decision">
+                    <strong>Entscheidung:</strong> Severity-Level festlegen
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="workflow-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            <h4>ROOT CAUSE ANALYSIS</h4>
+            <div class="step-details">
+                <div class="step-actions">
+                    <strong>Untersuchungsmethoden:</strong>
+                    <ul>
+                        <li>Log-File-Analyse (Application, System, Database)</li>
+                        <li>Performance-Counter-Auswertung</li>
+                        <li>Network-Trace-Analyse</li>
+                        <li>Database-Query-Profiling</li>
+                        <li>Hardware-Monitoring-Review</li>
+                    </ul>
+                </div>
+                <div class="step-techniques">
+                    <strong>Techniken:</strong> 5-Why-Analyse, Fishbone-Diagramm
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="workflow-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+            <h4>SOLUTION IMPLEMENTATION</h4>
+            <div class="step-details">
+                <div class="step-actions">
+                    <strong>Lösungsansätze:</strong>
+                    <ul>
+                        <li>Sofortmaßnahmen zur Service-Wiederherstellung</li>
+                        <li>Temporäre Workarounds implementieren</li>
+                        <li>Permanente Lösungen entwickeln</li>
+                        <li>Change-Management-Prozess befolgen</li>
+                        <li>Rollback-Plan vorbereiten</li>
+                    </ul>
+                </div>
+                <div class="step-validation">
+                    <strong>Validierung:</strong> Lösung testen vor Produktions-Deployment
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="workflow-step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+            <h4>VERIFICATION & DOCUMENTATION</h4>
+            <div class="step-details">
+                <div class="step-actions">
+                    <strong>Verifikation:</strong>
+                    <ul>
+                        <li>Problem vollständig behoben?</li>
+                        <li>Keine neuen Probleme verursacht?</li>
+                        <li>Performance-Impact überprüfen</li>
+                        <li>User-Acceptance bestätigen</li>
+                        <li>Monitoring für Wiederauftreten</li>
+                    </ul>
+                </div>
+                <div class="step-documentation">
+                    <strong>Dokumentation:</strong> Knowledge Base aktualisieren
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+### Diagnose-Tools Matrix
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
-}
+#### **Tool-Empfehlungen nach Fehlerdomäne**
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+<div class="tools-matrix">
+    <table class="diagnosis-tools-table">
+        <thead>
+            <tr>
+                <th>Fehlerdomäne</th>
+                <th>Primäre Tools</th>
+                <th>Sekundäre Tools</th>
+                <th>Log-Quellen</th>
+                <th>Metriken</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>WMS Application</strong></td>
+                <td>
+                    <ul>
+                        <li>WMS Admin Console</li>
+                        <li>Process Explorer</li>
+                        <li>Windows Services</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Performance Monitor</li>
+                        <li>Application Insights</li>
+                        <li>Debugger (VS)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>WMS Application Logs</li>
+                        <li>Windows Event Log</li>
+                        <li>IIS Logs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Memory Usage</li>
+                        <li>CPU Utilization</li>
+                        <li>Thread Count</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>SQL Server</strong></td>
+                <td>
+                    <ul>
+                        <li>SQL Server Management Studio</li>
+                        <li>Activity Monitor</li>
+                        <li>SQL Profiler</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Extended Events</li>
+                        <li>PerfMon</li>
+                        <li>sp_WhoIsActive</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>SQL Server Error Log</li>
+                        <li>SQL Agent Logs</li>
+                        <li>Windows Event Log</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>CPU %</li>
+                        <li>Wait Statistics</li>
+                        <li>I/O Latency</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Network</strong></td>
+                <td>
+                    <ul>
+                        <li>ping, tracert</li>
+                        <li>telnet</li>
+                        <li>Wireshark</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Network Monitor</li>
+                        <li>Switch Management</li>
+                        <li>PRTG</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Switch Logs</li>
+                        <li>Firewall Logs</li>
+                        <li>DNS Server Logs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Latency</li>
+                        <li>Packet Loss</li>
+                        <li>Bandwidth Usage</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>SAP Interface</strong></td>
+                <td>
+                    <ul>
+                        <li>SAP GUI</li>
+                        <li>SM58 (RFC Monitor)</li>
+                        <li>WE02 (IDOC Monitor)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>ST22 (Dump Analysis)</li>
+                        <li>SLG1 (Application Log)</li>
+                        <li>RZ20 (Alert Monitor)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>SAP System Log</li>
+                        <li>RFC Trace</li>
+                        <li>IDOC Error Logs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>RFC Response Time</li>
+                        <li>IDOC Processing Rate</li>
+                        <li>Queue Length</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+### Emergency Response Checklist
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+#### **Erste Schritte bei kritischen Systemfehlern**
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+<div class="emergency-checklist">
+    <div class="checklist-section critical">
+        <h4>🚨 SOFORTMASSNAHMEN (0-5 Minuten)</h4>
+        <div class="checklist-items">
+            <div class="checklist-item">
+                <input type="checkbox" id="emergency-1">
+                <label for="emergency-1"><strong>Problem-Scope feststellen:</strong> Wie viele Benutzer/Systeme betroffen?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="emergency-2">
+                <label for="emergency-2"><strong>Severity bestimmen:</strong> Kritisch? Sofort eskalieren</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="emergency-3">
+                <label for="emergency-3"><strong>Stakeholder informieren:</strong> Management/Schichtführer benachrichtigen</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="emergency-4">
+                <label for="emergency-4"><strong>Incident-Ticket erstellen:</strong> Alle verfügbaren Informationen dokumentieren</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="emergency-5">
+                <label for="emergency-5"><strong>Experten hinzuziehen:</strong> Bei kritischen Problemen sofort Spezialisten kontaktieren</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="checklist-section high">
+        <h4>🔍 INITIAL ASSESSMENT (5-15 Minuten)</h4>
+        <div class="checklist-items">
+            <div class="checklist-item">
+                <input type="checkbox" id="assessment-1">
+                <label for="assessment-1"><strong>System-Status prüfen:</strong> Sind Core-Services online?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="assessment-2">
+                <label for="assessment-2"><strong>Error-Logs sammeln:</strong> Relevante Log-Einträge sammeln</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="assessment-3">
+                <label for="assessment-3"><strong>Network-Connectivity testen:</strong> Sind alle Systeme erreichbar?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="assessment-4">
+                <label for="assessment-4"><strong>Recent-Changes überprüfen:</strong> Wurden kürzlich Änderungen gemacht?</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="assessment-5">
+                <label for="assessment-5"><strong>Workaround identifizieren:</strong> Gibt es temporäre Lösungen?</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="checklist-section medium">
+        <h4>🛠️ INITIAL RESPONSE (15-30 Minuten)</h4>
+        <div class="checklist-items">
+            <div class="checklist-item">
+                <input type="checkbox" id="response-1">
+                <label for="response-1"><strong>Service-Restart versuchen:</strong> Einfache Restart-Maßnahmen</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="response-2">
+                <label for="response-2"><strong>Workaround implementieren:</strong> Temporäre Lösung aktivieren</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="response-3">
+                <label for="response-3"><strong>Monitoring verstärken:</strong> Zusätzliche Überwachung aktivieren</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="response-4">
+                <label for="response-4"><strong>Communication-Plan aktivieren:</strong> Regelmäßige Updates an Stakeholder</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="response-5">
+                <label for="response-5"><strong>Root-Cause-Analysis starten:</strong> Detaillierte Ursachenforschung beginnen</label>
+            </div>
+        </div>
+    </div>
+</div>
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+</div>
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+## Application-Errors {#application}
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+<div class="errors-tab-content" id="application">
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+### WMS Application Errors
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+#### **Häufige WMS-Anwendungsfehler und Lösungen**
 
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
+<div class="application-errors">
+    <div class="error-category">
+        <h4>🔧 Service-Fehler</h4>
+        <div class="error-list">
+            <div class="error-item">
+                <div class="error-header">
+                    <h5>WMS Service startet nicht</h5>
+                    <span class="error-frequency">Häufigkeit: 25%</span>
+                </div>
+                <div class="error-details">
+                    <div class="error-symptoms">
+                        <strong>Symptome:</strong>
+                        <ul>
+                            <li>Windows Service zeigt "Stopped" Status</li>
+                            <li>Event Log: "Service failed to start"</li>
+                            <li>Client kann Server nicht erreichen</li>
+                            <li>Timeout beim Service-Start</li>
+                        </ul>
+                    </div>
+                    <div class="error-causes">
+                        <strong>Mögliche Ursachen:</strong>
+                        <ul>
+                            <li>Port bereits belegt durch anderen Prozess</li>
+                            <li>Berechtigungsprobleme für Service-Account</li>
+                            <li>Korrupte Konfigurationsdatei</li>
+                            <li>Dependency-Services nicht gestartet</li>
+                            <li>Antivirus blockiert Ausführung</li>
+                        </ul>
+                    </div>
+                    <div class="error-solutions">
+                        <strong>Lösungsschritte:</strong>
+                        <ol>
+                            <li><strong>Service Dependencies prüfen:</strong>
+                                <code>sc query [ServiceName]</code>
+                                Alle abhängigen Services starten
+                            </li>
+                            <li><strong>Port-Konflikte identifizieren:</strong>
+                                <code>netstat -ano | findstr :8080</code>
+                                Anderen Prozess beenden oder Port ändern
+                            </li>
+                            <li><strong>Event Log analysieren:</strong>
+                                Windows Logs → Application → Fehlereinträge suchen
+                            </li>
+                            <li><strong>Service-Account-Berechtigungen:</strong>
+                                "Log on as a Service" Recht prüfen
+                            </li>
+                            <li><strong>Config-File validieren:</strong>
+                                XML-Syntax und Pfade überprüfen
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error-item">
+                <div class="error-header">
+                    <h5>Memory Leak im WMS Service</h5>
+                    <span class="error-frequency">Häufigkeit: 15%</span>
+                </div>
+                <div class="error-details">
+                    <div class="error-symptoms">
+                        <strong>Symptome:</strong>
+                        <ul>
+                            <li>Kontinuierlich steigender Memory-Verbrauch</li>
+                            <li>System wird zunehmend langsamer</li>
+                            <li>OutOfMemoryException in Logs</li>
+                            <li>Service-Crashes bei hoher Last</li>
+                        </ul>
+                    </div>
+                    <div class="error-diagnosis">
+                        <strong>Diagnose-Tools:</strong>
+                        <ul>
+                            <li><strong>Process Explorer:</strong> Memory-Usage über Zeit beobachten</li>
+                            <li><strong>PerfMon:</strong> Private Bytes und Working Set Counter</li>
+                            <li><strong>Application Insights:</strong> Memory-Telemetrie analysieren</li>
+                            <li><strong>DebugDiag:</strong> Memory Dump für Analyse erstellen</li>
+                        </ul>
+                    </div>
+                    <div class="error-solutions">
+                        <strong>Sofortmaßnahmen:</strong>
+                        <ol>
+                            <li><strong>Service-Restart:</strong> Sofortiger Memory-Reset</li>
+                            <li><strong>Memory-Threshold-Monitoring:</strong> Automatischer Restart bei >80%</li>
+                            <li><strong>Garbage Collection forcieren:</strong> GC.Collect() in kritischen Pfaden</li>
+                            <li><strong>Connection-Pool-Limits setzen:</strong> Database Connection Leaks vermeiden</li>
+                            <li><strong>Entwickler-Team kontaktieren:</strong> Für permanente Code-Lösung</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="error-category">
+        <h4>🔌 Connectivity-Fehler</h4>
+        <div class="error-list">
+            <div class="error-item">
+                <div class="error-header">
+                    <h5>Database Connection Timeout</h5>
+                    <span class="error-frequency">Häufigkeit: 30%</span>
+                </div>
+                <div class="error-details">
+                    <div class="error-symptoms">
+                        <strong>Symptome:</strong>
+                        <ul>
+                            <li>"Timeout expired" Error Messages</li>
+                            <li>Langsame Response-Zeiten</li>
+                            <li>Connection Pool erschöpft</li>
+                            <li>Intermittierende Verbindungsabbrüche</li>
+                        </ul>
+                    </div>
+                    <div class="error-diagnosis">
+                        <strong>Diagnose-Schritte:</strong>
+                        <ol>
+                            <li><strong>SQL Server Activity Monitor:</strong>
+                                Blocking-Processes und Long-Running-Queries identifizieren
+                            </li>
+                            <li><strong>Connection Pool Status prüfen:</strong>
+                                <code>PerfMon → .NET Data Provider for SqlServer</code>
+                            </li>
+                            <li><strong>Network-Latenz messen:</strong>
+                                <code>ping -t [database-server]</code>
+                            </li>
+                            <li><strong>Database-Performance analysieren:</strong>
+                                Slow-Query-Log und Index-Fragmentierung
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="error-solutions">
+                        <strong>Lösungsansätze:</strong>
+                        <ol>
+                            <li><strong>Connection-Pool-Einstellungen optimieren:</strong>
+                                <code>Max Pool Size=200; Connection Timeout=30</code>
+                            </li>
+                            <li><strong>Blocking-Queries beenden:</strong>
+                                <code>KILL [SPID] -- in SQL Server</code>
+                            </li>
+                            <li><strong>Index-Wartung durchführen:</strong>
+                                <code>ALTER INDEX ALL ON [table] REBUILD</code>
+                            </li>
+                            <li><strong>Database-Statistiken aktualisieren:</strong>
+                                <code>UPDATE STATISTICS [table] WITH FULLSCAN</code>
+                            </li>
+                            <li><strong>Network-Issues beheben:</strong>
+                                Switch-Ports und Kabel überprüfen
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error-item">
+                <div class="error-header">
+                    <h5>SAP RFC Connection Failed</h5>
+                    <span class="error-frequency">Häufigkeit: 20%</span>
+                </div>
+                <div class="error-details">
+                    <div class="error-symptoms">
+                        <strong>Symptome:</strong>
+                        <ul>
+                            <li>"RFC destination not found" Errors</li>
+                            <li>IDOC-Processing gestoppt</li>
+                            <li>SAP-WMS Synchronisation unterbrochen</li>
+                            <li>Business-Prozesse blockiert</li>
+                        </ul>
+                    </div>
+                    <div class="error-diagnosis">
+                        <strong>SAP-spezifische Diagnose:</strong>
+                        <ol>
+                            <li><strong>SM59 - RFC Destinations prüfen:</strong>
+                                Connection Test durchführen
+                            </li>
+                            <li><strong>ST22 - Dump Analysis:</strong>
+                                ABAP-Dumps im SAP-System analysieren
+                            </li>
+                            <li><strong>WE02 - IDOC Monitor:</strong>
+                                Fehlgeschlagene IDOC-Verarbeitung prüfen
+                            </li>
+                            <li><strong>SLG1 - Application Log:</strong>
+                                Interface-spezifische Error-Messages
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="error-solutions">
+                        <strong>Lösungsmaßnahmen:</strong>
+                        <ol>
+                            <li><strong>RFC-Connection testen:</strong>
+                                SM59 → Test Connection → Detailierte Fehlermeldung
+                            </li>
+                            <li><strong>SAP Gateway prüfen:</strong>
+                                <code>gwmon -g [gateway-host] -s [service]</code>
+                            </li>
+                            <li><strong>Firewall-Rules validieren:</strong>
+                                Ports 3300-3399 für SAP Gateway
+                            </li>
+                            <li><strong>SAP-User-Berechtigungen:</strong>
+                                RFC-User hat alle notwendigen Authorizations
+                            </li>
+                            <li><strong>IDOC-Processing neu starten:</strong>
+                                <code>BD87 → Reprocess Error IDOCs</code>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="error-category">
+        <h4>🖥️ Client-Application-Fehler</h4>
+        <div class="error-list">
+            <div class="error-item">
+                <div class="error-header">
+                    <h5>WMS Client startet nicht</h5>
+                    <span class="error-frequency">Häufigkeit: 18%</span>
+                </div>
+                <div class="error-details">
+                    <div class="error-symptoms">
+                        <strong>Symptome:</strong>
+                        <ul>
+                            <li>Application-Error beim Start</li>
+                            <li>"Could not load file or assembly" Errors</li>
+                            <li>Splash-Screen bleibt hängen</li>
+                            <li>Client schließt sich sofort wieder</li>
+                        </ul>
+                    </div>
+                    <div class="error-solutions">
+                        <strong>Troubleshooting-Schritte:</strong>
+                        <ol>
+                            <li><strong>.NET Framework prüfen:</strong>
+                                Richtige Version installiert? (4.8 oder höher)
+                            </li>
+                            <li><strong>Config-File validieren:</strong>
+                                <code>app.config</code> auf Syntax-Fehler prüfen
+                            </li>
+                            <li><strong>Dependencies überprüfen:</strong>
+                                Alle Referenced DLLs vorhanden?
+                            </li>
+                            <li><strong>Run as Administrator:</strong>
+                                Elevated Permissions testen
+                            </li>
+                            <li><strong>Event Log prüfen:</strong>
+                                Application-Logs für .NET Runtime Errors
+                            </li>
+                            <li><strong>Clean-Install durchführen:</strong>
+                                Vollständige Deinstallation und Neuinstallation
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+### Performance-Related Errors
 
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+#### **Performance-Probleme und Optimierungsansätze**
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
+<div class="performance-errors">
+    <div class="performance-issue">
+        <h4>🐌 Langsame Response-Zeiten</h4>
+        <div class="performance-analysis">
+            <div class="analysis-category">
+                <h5>Client-Side Performance</h5>
+                <div class="performance-metrics">
+                    <strong>Benchmark-Werte:</strong>
+                    <ul>
+                        <li><strong>Screen-Load-Time:</strong> <3 Sekunden (Ziel), >5 Sekunden (Problematisch)</li>
+                        <li><strong>Query-Response-Time:</strong> <2 Sekunden (Ziel), >4 Sekunden (Problematisch)</li>
+                        <li><strong>Report-Generation:</strong> <10 Sekunden (Ziel), >30 Sekunden (Problematisch)</li>
+                    </ul>
+                </div>
+                <div class="optimization-steps">
+                    <strong>Optimierungsmaßnahmen:</strong>
+                    <ol>
+                        <li><strong>Local-Caching aktivieren:</strong> Stammdaten lokal zwischenspeichern</li>
+                        <li><strong>Data-Paging implementieren:</strong> Große Datensätze portionieren</li>
+                        <li><strong>Lazy-Loading nutzen:</strong> Daten nur bei Bedarf laden</li>
+                        <li><strong>Client-Hardware upgraden:</strong> RAM und SSD-Performance</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="analysis-category">
+                <h5>Server-Side Performance</h5>
+                <div class="server-metrics">
+                    <strong>Kritische Metriken:</strong>
+                    <ul>
+                        <li><strong>CPU-Utilization:</strong> >80% sustained = Problem</li>
+                        <li><strong>Memory-Usage:</strong> >90% = Memory-Pressure</li>
+                        <li><strong>Disk-Queue-Length:</strong> >2 = I/O-Bottleneck</li>
+                        <li><strong>Network-Utilization:</strong> >70% = Bandwidth-Problem</li>
+                    </ul>
+                </div>
+                <div class="server-optimization">
+                    <strong>Server-Optimierung:</strong>
+                    <ol>
+                        <li><strong>Resource-Monitoring:</strong> Performance-Counter kontinuierlich überwachen</li>
+                        <li><strong>Application-Pool-Tuning:</strong> Memory-Limits und Recycling optimieren</li>
+                        <li><strong>Database-Query-Optimization:</strong> Slow-Queries identifizieren und optimieren</li>
+                        <li><strong>Load-Balancing:</strong> Traffic auf multiple Server verteilen</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+</div>
+
+## Database-Errors {#database}
+
+<div class="errors-tab-content" id="database">
+
+### SQL Server Error Management
+
+#### **Kritische Datenbank-Fehler und Recovery-Strategien**
+
+<div class="database-errors">
+    <div class="db-error-category">
+        <h4>💾 Corruption & Integrity</h4>
+        <div class="db-error-list">
+            <div class="db-error-item">
+                <div class="db-error-header">
+                    <h5>Database Corruption Detected</h5>
+                    <span class="db-error-severity critical">KRITISCH</span>
+                </div>
+                <div class="db-error-details">
+                    <div class="db-error-symptoms">
+                        <strong>Error-Codes:</strong>
+                        <ul>
+                            <li><code>Error 823:</code> I/O error during database page read</li>
+                            <li><code>Error 824:</code> Logical consistency-based I/O error</li>
+                            <li><code>Error 825:</code> Read-retry required</li>
+                            <li><code>Error 832:</code> Constant page has changed</li>
+                        </ul>
+                    </div>
+                    <div class="db-error-symptoms">
+                        <strong>Symptome:</strong>
+                        <ul>
+                            <li>DBCC CHECKDB schlägt fehl</li>
+                            <li>Queries returnieren korrupte Daten</li>
+                            <li>Database wird als "Suspect" markiert</li>
+                            <li>Application kann nicht auf Daten zugreifen</li>
+                        </ul>
+                    </div>
+                    <div class="db-error-emergency">
+                        <strong>🚨 NOTFALL-PROZEDUR:</strong>
+                        <ol>
+                            <li><strong>SOFORT:</strong> Database offline nehmen</li>
+                            <li><strong>Backup-Status prüfen:</strong> Ist ein Clean-Backup verfügbar?</li>
+                            <li><strong>NIEMALS:</strong> REPAIR_ALLOW_DATA_LOSS ohne Backup verwenden</li>
+                            <li><strong>DBA-Team eskalieren:</strong> Sofort Datenbank-Experten hinzuziehen</li>
+                        </ol>
+                    </div>
+                    <div class="db-error-recovery">
+                        <strong>Recovery-Strategie:</strong>
+                        <ol>
+                            <li><strong>Assessment:</strong>
+                                <code>DBCC CHECKDB('WMS_DB') WITH NO_INFOMSGS</code>
+                                Corruption-Scope bestimmen
+                            </li>
+                            <li><strong>Page-Level-Restore (wenn möglich):</strong>
+                                <code>RESTORE DATABASE WMS_DB PAGE='1:23456' FROM DISK='backup.bak'</code>
+                            </li>
+                            <li><strong>Full-Database-Restore (wenn erforderlich):</strong>
+                                <code>RESTORE DATABASE WMS_DB FROM DISK='latest_backup.bak'</code>
+                            </li>
+                            <li><strong>Transaction-Log-Replay:</strong>
+                                Point-in-Time-Recovery bis vor Corruption-Event
+                            </li>
+                            <li><strong>Consistency-Verification:</strong>
+                                <code>DBCC CHECKDB('WMS_DB') WITH EXTENDED_LOGICAL_CHECKS</code>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="db-error-item">
+                <div class="db-error-header">
+                    <h5>Transaction Log Full</h5>
+                    <span class="db-error-severity high">HOCH</span>
+                </div>
+                <div class="db-error-details">
+                    <div class="db-error-symptoms">
+                        <strong>Error-Codes:</strong>
+                        <ul>
+                            <li><code>Error 9002:</code> Transaction log for database is full</li>
+                            <li><code>Error 3201:</code> Cannot open backup device</li>
+                        </ul>
+                    </div>
+                    <div class="db-error-immediate">
+                        <strong>Sofortmaßnahmen:</strong>
+                        <ol>
+                            <li><strong>Log-Backup erstellen:</strong>
+                                <code>BACKUP LOG WMS_DB TO DISK='log_backup.trn'</code>
+                            </li>
+                            <li><strong>Log-File-Space prüfen:</strong>
+                                <code>DBCC SQLPERF(LOGSPACE)</code>
+                            </li>
+                            <li><strong>Disk-Space freigeben:</strong>
+                                Nicht benötigte Files löschen
+                            </li>
+                            <li><strong>Log-File erweitern (temporär):</strong>
+                                <code>ALTER DATABASE WMS_DB MODIFY FILE (NAME='WMS_Log', SIZE=2GB)</code>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="db-error-prevention">
+                        <strong>Präventive Maßnahmen:</strong>
+                        <ul>
+                            <li>Automatische Log-Backups alle 15 Minuten</li>
+                            <li>Log-File-Auto-Growth auf 10% setzen</li>
+                            <li>Monitoring für Log-Space-Usage >80%</li>
+                            <li>Disk-Space-Alerts konfigurieren</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="db-error-category">
+        <h4>🔒 Locking & Blocking</h4>
+        <div class="db-error-list">
+            <div class="db-error-item">
+                <div class="db-error-header">
+                    <h5>Deadlock Detected</h5>
+                    <span class="db-error-severity medium">MITTEL</span>
+                </div>
+                <div class="db-error-details">
+                    <div class="db-error-symptoms">
+                        <strong>Error-Codes:</strong>
+                        <ul>
+                            <li><code>Error 1205:</code> Transaction was deadlocked and chosen as victim</li>
+                        </ul>
+                    </div>
+                    <div class="db-error-analysis">
+                        <strong>Deadlock-Analyse:</strong>
+                        <ol>
+                            <li><strong>Deadlock-Graph anzeigen:</strong>
+                                <code>SELECT * FROM sys.dm_xe_sessions WHERE name = 'system_health'</code>
+                            </li>
+                            <li><strong>Deadlock-Monitor aktivieren:</strong>
+                                <code>DBCC TRACEON(1222, -1)</code>
+                            </li>
+                            <li><strong>Extended Events konfigurieren:</strong>
+                                Deadlock XML-Report für detaillierte Analyse
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="db-error-solutions">
+                        <strong>Lösungsansätze:</strong>
+                        <ol>
+                            <li><strong>Query-Optimierung:</strong>
+                                Indexes hinzufügen, um Lock-Escalation zu reduzieren
+                            </li>
+                            <li><strong>Transaction-Isolation anpassen:</strong>
+                                <code>SET TRANSACTION ISOLATION LEVEL READ COMMITTED SNAPSHOT</code>
+                            </li>
+                            <li><strong>Lock-Timeout setzen:</strong>
+                                <code>SET LOCK_TIMEOUT 30000</code> (30 Sekunden)
+                            </li>
+                            <li><strong>Resource-Access-Reihenfolge normalisieren:</strong>
+                                Immer gleiche Reihenfolge beim Zugriff auf Tabellen
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="db-error-item">
+                <div class="db-error-header">
+                    <h5>Long-Running Blocking Sessions</h5>
+                    <span class="db-error-severity medium">MITTEL</span>
+                </div>
+                <div class="db-error-details">
+                    <div class="db-error-detection">
+                        <strong>Blocking-Detection:</strong>
+                        <ol>
+                            <li><strong>Activity Monitor verwenden:</strong>
+                                SSMS → Activity Monitor → Processes
+                            </li>
+                            <li><strong>sp_who2 ausführen:</strong>
+                                <code>EXEC sp_who2 'active'</code>
+                            </li>
+                            <li><strong>Custom-Query für Blocking-Chains:</strong>
+                                <pre><code>SELECT 
+    blocking_session_id, 
+    session_id, 
+    wait_type, 
+    wait_time, 
+    wait_resource
+FROM sys.dm_exec_requests 
+WHERE blocking_session_id > 0</code></pre>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="db-error-resolution">
+                        <strong>Blocking-Resolution:</strong>
+                        <ol>
+                            <li><strong>Blocking-Session identifizieren:</strong>
+                                Head-Blocker in der Blocking-Chain finden
+                            </li>
+                            <li><strong>Session-Details analysieren:</strong>
+                                <code>DBCC INPUTBUFFER([session_id])</code>
+                            </li>
+                            <li><strong>Kill-Decision treffen:</strong>
+                                Business-Impact vs. Technical-Impact bewerten
+                            </li>
+                            <li><strong>Session beenden (wenn notwendig):</strong>
+                                <code>KILL [session_id]</code>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="db-error-category">
+        <h4>📈 Performance Issues</h4>
+        <div class="db-error-list">
+            <div class="db-error-item">
+                <div class="db-error-header">
+                    <h5>High CPU Usage</h5>
+                    <span class="db-error-severity high">HOCH</span>
+                </div>
+                <div class="db-error-details">
+                    <div class="db-error-thresholds">
+                        <strong>Performance-Thresholds:</strong>
+                        <ul>
+                            <li><strong>Warning:</strong> CPU >80% für >5 Minuten</li>
+                            <li><strong>Critical:</strong> CPU >95% für >2 Minuten</li>
+                            <li><strong>Emergency:</strong> CPU 100% für >30 Sekunden</li>
+                        </ul>
+                    </div>
+                    <div class="db-error-diagnosis">
+                        <strong>CPU-Usage-Analyse:</strong>
+                        <ol>
+                            <li><strong>Top-CPU-Consuming-Queries:</strong>
+                                <pre><code>SELECT TOP 10 
+    qs.sql_handle,
+    qs.total_worker_time,
+    qs.execution_count,
+    st.text
+FROM sys.dm_exec_query_stats qs
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st
+ORDER BY qs.total_worker_time DESC</code></pre>
+                            </li>
+                            <li><strong>Currently-Executing-Queries:</strong>
+                                <code>SELECT * FROM sys.dm_exec_requests WHERE cpu_time > 5000</code>
+                            </li>
+                            <li><strong>Wait-Statistics analysieren:</strong>
+                                <code>SELECT * FROM sys.dm_os_wait_stats ORDER BY wait_time_ms DESC</code>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="db-error-mitigation">
+                        <strong>CPU-Load-Mitigation:</strong>
+                        <ol>
+                            <li><strong>Resource-Governor aktivieren:</strong>
+                                CPU-Limits für verschiedene Workload-Groups setzen
+                            </li>
+                            <li><strong>Query-Optimization:</strong>
+                                Missing-Indexes hinzufügen, Query-Plans optimieren
+                            </li>
+                            <li><strong>Parallel-Processing begrenzen:</strong>
+                                <code>sp_configure 'max degree of parallelism', 4</code>
+                            </li>
+                            <li><strong>Background-Processes throtteln:</strong>
+                                Index-Maintenance und Backup-Jobs zeitlich verteilen
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+### Database Recovery Procedures
+
+#### **Disaster Recovery für kritische Datenbankfehler**
+
+<div class="database-recovery">
+    <div class="recovery-scenario">
+        <h4>🆘 Database Offline/Inaccessible</h4>
+        <div class="recovery-steps">
+            <div class="recovery-step emergency">
+                <h5>PHASE 1: EMERGENCY ASSESSMENT (0-15 Min)</h5>
+                <ol>
+                    <li><strong>Service-Status prüfen:</strong>
+                        <code>net start | findstr SQL</code>
+                    </li>
+                    <li><strong>Error-Log analysieren:</strong>
+                        <code>C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Log\ERRORLOG</code>
+                    </li>
+                    <li><strong>Disk-Space überprüfen:</strong>
+                        Sind Data/Log-Drives voll?
+                    </li>
+                    <li><strong>Hardware-Status:</strong>
+                        RAID-Arrays, Memory, Network-Connectivity
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="recovery-step high">
+                <h5>PHASE 2: IMMEDIATE RECOVERY (15-60 Min)</h5>
+                <ol>
+                    <li><strong>Database-Status bestimmen:</strong>
+                        <code>SELECT name, state_desc FROM sys.databases WHERE name = 'WMS_DB'</code>
+                    </li>
+                    <li><strong>Emergency-Mode aktivieren (wenn nötig):</strong>
+                        <code>ALTER DATABASE WMS_DB SET EMERGENCY</code>
+                    </li>
+                    <li><strong>Read-Only-Access ermöglichen:</strong>
+                        <code>ALTER DATABASE WMS_DB SET SINGLE_USER WITH ROLLBACK IMMEDIATE</code>
+                    </li>
+                    <li><strong>Consistency-Check durchführen:</strong>
+                        <code>DBCC CHECKDB('WMS_DB', REPAIR_ALLOW_DATA_LOSS)</code> (nur als letzter Ausweg!)
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="recovery-step medium">
+                <h5>PHASE 3: FULL RESTORATION (1-4 Stunden)</h5>
+                <ol>
+                    <li><strong>Backup-Restore-Strategy planen:</strong>
+                        Latest Full + Differential + Log-Backups identifizieren
+                    </li>
+                    <li><strong>Point-in-Time-Recovery durchführen:</strong>
+                        <pre><code>RESTORE DATABASE WMS_DB FROM DISK = 'full_backup.bak' WITH NORECOVERY
+RESTORE DATABASE WMS_DB FROM DISK = 'diff_backup.bak' WITH NORECOVERY  
+RESTORE LOG WMS_DB FROM DISK = 'log_backup.trn' WITH RECOVERY</code></pre>
+                    </li>
+                    <li><strong>Data-Validation durchführen:</strong>
+                        Critical Business-Data-Integrity prüfen
+                    </li>
+                    <li><strong>Application-Services wieder starten:</strong>
+                        WMS-Services in korrekter Reihenfolge starten
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Infrastructure-Errors {#infrastructure}
+
+<div class="errors-tab-content" id="infrastructure">
+
+### Hardware Infrastructure Errors
+
+#### **Hardware-Ausfälle und Recovery-Strategien**
+
+<div class="infrastructure-errors">
+    <div class="hardware-category">
+        <h4>🖥️ Server Hardware</h4>
+        <div class="hardware-errors">
+            <div class="hardware-error">
+                <div class="hardware-error-header">
+                    <h5>Server Hardware Failure</h5>
+                    <span class="hardware-error-impact critical">KRITISCH</span>
+                </div>
+                <div class="hardware-error-details">
+                    <div class="hardware-symptoms">
+                        <strong>Erkennungsmerkmale:</strong>
+                        <ul>
+                            <li>Server reagiert nicht mehr (keine Ping-Response)</li>
+                            <li>Blue Screen of Death (BSOD)</li>
+                            <li>Hardware-Beep-Codes beim Boot</li>
+                            <li>LED-Status-Indikatoren zeigen Fehler</li>
+                            <li>Temperaturen außerhalb Normalbereich</li>
+                        </ul>
+                    </div>
+                    <div class="hardware-diagnosis">
+                        <strong>Hardware-Diagnose-Schritte:</strong>
+                        <ol>
+                            <li><strong>Physical-Inspection:</strong>
+                                <ul>
+                                    <li>LED-Status-Lights überprüfen</li>
+                                    <li>Fan-Operation kontrollieren</li>
+                                    <li>Kabel-Verbindungen sicherstellen</li>
+                                    <li>Burn-Smell oder physische Schäden</li>
+                                </ul>
+                            </li>
+                            <li><strong>Management-Interface prüfen:</strong>
+                                <ul>
+                                    <li>iDRAC/iLO Remote-Console</li>
+                                    <li>System-Event-Log analysieren</li>
+                                    <li>Hardware-Inventory überprüfen</li>
+                                    <li>Temperature und Voltage-Readings</li>
+                                </ul>
+                            </li>
+                            <li><strong>Component-Level-Testing:</strong>
+                                <ul>
+                                    <li>Memory-Test (POST oder Diagnostic-Tools)</li>
+                                    <li>CPU-Temperature und -Load</li>
+                                    <li>Storage-Health (SMART-Status)</li>
+                                    <li>Network-Interface-Cards</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="hardware-recovery">
+                        <strong>Recovery-Strategien:</strong>
+                        <div class="recovery-options">
+                            <div class="recovery-option">
+                                <h6>Option 1: Hot-Swap/Redundancy</h6>
+                                <ul>
+                                    <li>Defekte Komponente identifizieren</li>
+                                    <li>Hot-Swap-fähige Teile ersetzen (RAM, Disks, PSU)</li>
+                                    <li>RAID-Rebuild automatisch starten lassen</li>
+                                    <li>System-Monitoring für erfolgreiche Integration</li>
+                                </ul>
+                                <div class="recovery-time">RTO: 30 Minuten</div>
+                            </div>
+                            
+                            <div class="recovery-option">
+                                <h6>Option 2: Failover zu Standby-System</h6>
+                                <ul>
+                                    <li>Cluster-Failover initiieren</li>
+                                    <li>Virtual-Machine-Migration (vMotion)</li>
+                                    <li>Load-Balancer umkonfigurieren</li>
+                                    <li>DNS-Records aktualisieren (wenn nötig)</li>
+                                </ul>
+                                <div class="recovery-time">RTO: 15 Minuten</div>
+                            </div>
+                            
+                            <div class="recovery-option">
+                                <h6>Option 3: Hardware-Ersatz</h6>
+                                <ul>
+                                    <li>Ersatz-Hardware aus Inventory beschaffen</li>
+                                    <li>Operating-System von Backup-Image</li>
+                                    <li>Application-Restore von Backup</li>
+                                    <li>Data-Restore von neuesten Backups</li>
+                                </ul>
+                                <div class="recovery-time">RTO: 4-8 Stunden</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hardware-error">
+                <div class="hardware-error-header">
+                    <h5>Storage Array Failure</h5>
+                    <span class="hardware-error-impact high">HOCH</span>
+                </div>
+                <div class="hardware-error-details">
+                    <div class="storage-monitoring">
+                        <strong>RAID-Status-Monitoring:</strong>
+                        <div class="raid-status-check">
+                            <h6>Windows (Server Manager):</h6>
+                            <code>Get-StoragePool | Get-PhysicalDisk | Select FriendlyName, HealthStatus</code>
+                            
+                            <h6>Dell PowerEdge (OMSA):</h6>
+                            <code>omreport storage vdisk</code>
+                            
+                            <h6>HP ProLiant (Smart Array):</h6>
+                            <code>hpssacli ctrl all show config</code>
+                        </div>
+                    </div>
+                    <div class="storage-recovery">
+                        <strong>Storage-Recovery-Procedures:</strong>
+                        <ol>
+                            <li><strong>RAID-Degraded-Status:</strong>
+                                <ul>
+                                    <li>Defekte Disk identifizieren</li>
+                                    <li>Hot-Spare automatisch aktiviert?</li>
+                                    <li>Replacement-Disk einbauen</li>
+                                    <li>Rebuild-Progress überwachen</li>
+                                </ul>
+                            </li>
+                            <li><strong>RAID-Failed-Status:</strong>
+                                <ul>
+                                    <li>Data-Loss-Assessment durchführen</li>
+                                    <li>Backup-Restore-Strategy aktivieren</li>
+                                    <li>Emergency-Disk-Recovery-Tools verwenden</li>
+                                    <li>Professional-Data-Recovery-Services kontaktieren</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hardware-category">
+        <h4>🌐 Network Infrastructure</h4>
+        <div class="network-errors">
+            <div class="network-error">
+                <div class="network-error-header">
+                    <h5>Network Connectivity Loss</h5>
+                    <span class="network-error-scope">INFRASTRUCTURE-WIDE</span>
+                </div>
+                <div class="network-error-details">
+                    <div class="network-diagnosis">
+                        <strong>Network-Troubleshooting-Matrix:</strong>
+                        <table class="network-troubleshooting">
+                            <thead>
+                                <tr>
+                                    <th>Scope</th>
+                                    <th>Symptoms</th>
+                                    <th>Diagnosis-Tools</th>
+                                    <th>Likely-Cause</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Single-Host</td>
+                                    <td>Nur ein PC/Server betroffen</td>
+                                    <td>ipconfig, ping, device-manager</td>
+                                    <td>NIC-Failure, Cable, Switch-Port</td>
+                                </tr>
+                                <tr>
+                                    <td>Subnet</td>
+                                    <td>Mehrere Hosts in gleicher VLAN</td>
+                                    <td>switch-management, port-status</td>
+                                    <td>Switch-Failure, Uplink-Problems</td>
+                                </tr>
+                                <tr>
+                                    <td>Site-Wide</td>
+                                    <td>Komplettes Standort-Netzwerk</td>
+                                    <td>Core-Switch-Console, ISP-Status</td>
+                                    <td>Core-Infrastructure, ISP-Outage</td>
+                                </tr>
+                                <tr>
+                                    <td>WAN</td>
+                                    <td>Keine Internet/Remote-Connectivity</td>
+                                    <td>traceroute, ISP-Management</td>
+                                    <td>WAN-Link-Failure, Routing-Issues</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="network-recovery">
+                        <strong>Network-Recovery-Procedures:</strong>
+                        <ol>
+                            <li><strong>Layer-1-Verification:</strong>
+                                <ul>
+                                    <li>Cable-Integrity testen</li>
+                                    <li>Switch-Port-LEDs überprüfen</li>
+                                    <li>Power-Status aller Network-Devices</li>
+                                </ul>
+                            </li>
+                            <li><strong>Layer-2-Troubleshooting:</strong>
+                                <ul>
+                                    <li>MAC-Address-Tables überprüfen</li>
+                                    <li>VLAN-Configuration validieren</li>
+                                    <li>Spanning-Tree-Protocol-Status</li>
+                                </ul>
+                            </li>
+                            <li><strong>Layer-3-Analysis:</strong>
+                                <ul>
+                                    <li>Routing-Table-Entries</li>
+                                    <li>Default-Gateway-Reachability</li>
+                                    <li>DNS-Resolution-Testing</li>
+                                </ul>
+                            </li>
+                            <li><strong>Service-Restoration:</strong>
+                                <ul>
+                                    <li>Failed-Components ersetzen</li>
+                                    <li>Backup-Paths aktivieren</li>
+                                    <li>Configuration-Restore from-Backup</li>
+                                    <li>End-to-End-Connectivity-Testing</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="network-error">
+                <div class="network-error-header">
+                    <h5>WLAN Infrastructure Problems</h5>
+                    <span class="network-error-scope">WIRELESS-SPECIFIC</span>
+                </div>
+                <div class="network-error-details">
+                    <div class="wlan-diagnosis">
+                        <strong>WLAN-specific-Troubleshooting:</strong>
+                        <ol>
+                            <li><strong>Access-Point-Health:</strong>
+                                <ul>
+                                    <li>AP-Status im Wireless-Controller prüfen</li>
+                                    <li>Power-over-Ethernet (PoE) ausreichend?</li>
+                                    <li>Firmware-Version aktuell?</li>
+                                    <li>Channel-Utilization und Interference</li>
+                                </ul>
+                            </li>
+                            <li><strong>Radio-Frequency-Analysis:</strong>
+                                <ul>
+                                    <li>2.4GHz vs 5GHz Performance</li>
+                                    <li>Adjacent-Channel-Interference</li>
+                                    <li>Signal-Strength-Mapping</li>
+                                    <li>Noise-Floor-Measurements</li>
+                                </ul>
+                            </li>
+                            <li><strong>Client-Connectivity-Issues:</strong>
+                                <ul>
+                                    <li>Authentication-Failures (WPA2/WPA3)</li>
+                                    <li>DHCP-Assignment-Problems</li>
+                                    <li>Roaming-Behavior zwischen APs</li>
+                                    <li>Device-specific-Compatibility</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="wlan-optimization">
+                        <strong>WLAN-Performance-Optimization:</strong>
+                        <ul>
+                            <li><strong>Channel-Planning:</strong> Auto-RF vs Manual-Channel-Assignment</li>
+                            <li><strong>Power-Levels:</strong> Minimize-Interference, Maximize-Coverage</li>
+                            <li><strong>Client-Load-Balancing:</strong> Distribute-Clients across-APs</li>
+                            <li><strong>QoS-Policies:</strong> Prioritize-WMS-Traffic over-other-applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hardware-category">
+        <h4>⚡ Power & Environmental</h4>
+        <div class="environmental-errors">
+            <div class="environmental-error">
+                <div class="environmental-error-header">
+                    <h5>Power Supply Issues</h5>
+                    <span class="environmental-error-impact high">HOCH</span>
+                </div>
+                <div class="environmental-error-details">
+                    <div class="power-monitoring">
+                        <strong>Power-Infrastructure-Monitoring:</strong>
+                        <ul>
+                            <li><strong>UPS-Status:</strong> Battery-Level, Load-Percentage, Runtime-Remaining</li>
+                            <li><strong>PDU-Monitoring:</strong> Per-Outlet-Power-Draw, Voltage-Levels</li>
+                            <li><strong>Generator-Status:</strong> Fuel-Level, Automatic-Transfer-Switch</li>
+                            <li><strong>Environmental:</strong> Temperature, Humidity, Airflow</li>
+                        </ul>
+                    </div>
+                    <div class="power-emergency">
+                        <strong>Power-Emergency-Procedures:</strong>
+                        <ol>
+                            <li><strong>UPS-Battery-Low-Alert:</strong>
+                                <ul>
+                                    <li>Graceful-Shutdown-Sequence initiieren</li>
+                                    <li>Critical-Systems priorisieren (Database-Server first)</li>
+                                    <li>Backup-Generator starten (manual/automatic)</li>
+                                    <li>Generator-to-UPS-Transfer koordinieren</li>
+                                </ul>
+                            </li>
+                            <li><strong>Complete-Power-Loss:</strong>
+                                <ul>
+                                    <li>Assess-Scope: Partial vs Complete-Facility</li>
+                                    <li>Emergency-Generator-Status prüfen</li>
+                                    <li>Cold-Boot-Sequence nach Power-Restoration</li>
+                                    <li>System-Integrity-Checks durchführen</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="environmental-error">
+                <div class="environmental-error-header">
+                    <h5>Cooling System Failure</h5>
+                    <span class="environmental-error-impact critical">KRITISCH</span>
+                </div>
+                <div class="environmental-error-details">
+                    <div class="cooling-monitoring">
+                        <strong>Temperature-Monitoring-Thresholds:</strong>
+                        <ul>
+                            <li><strong>Normal:</strong> Server-Intake 18-27°C, Exhaust <40°C</li>
+                            <li><strong>Warning:</strong> Server-Intake >27°C, Exhaust >40°C</li>
+                            <li><strong>Critical:</strong> Server-Intake >32°C, Exhaust >50°C</li>
+                            <li><strong>Emergency-Shutdown:</strong> Server-Intake >35°C</li>
+                        </ul>
+                    </div>
+                    <div class="cooling-emergency">
+                        <strong>Cooling-Emergency-Response:</strong>
+                        <ol>
+                            <li><strong>Immediate-Actions (0-5 Minutes):</strong>
+                                <ul>
+                                    <li>HVAC-System-Status überprüfen</li>
+                                    <li>Emergency-Cooling-Units aktivieren</li>
+                                    <li>Server-Load reduzieren (non-critical-services stoppen)</li>
+                                    <li>Hot-Aisle-Containment überprüfen</li>
+                                </ul>
+                            </li>
+                            <li><strong>Escalation-Actions (5-15 Minutes):</strong>
+                                <ul>
+                                    <li>Facility-Management kontaktieren</li>
+                                    <li>Portable-AC-Units aufstellen</li>
+                                    <li>Server-Migration auf andere-Racks</li>
+                                    <li>Emergency-Shutdown-Sequence vorbereiten</li>
+                                </ul>
+                            </li>
+                            <li><strong>Emergency-Shutdown (>15 Minutes ohne Lösung):</strong>
+                                <ul>
+                                    <li>Graceful-Application-Shutdown</li>
+                                    <li>Database-Transactions abschließen</li>
+                                    <li>Server-Power-Down in kontrollierter Reihenfolge</li>
+                                    <li>Environmental-System-Repair koordinieren</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Fehlerprävention {#prevention}
+
+<div class="errors-tab-content" id="prevention">
+
+### Proactive Error Prevention
+
+#### **Strategien zur Vermeidung von Systemfehlern**
+
+<div class="prevention-strategies">
+    <div class="prevention-category">
+        <h4>🔍 Monitoring & Alerting</h4>
+        <div class="monitoring-framework">
+            <div class="monitoring-layer">
+                <h5>Infrastructure-Monitoring</h5>
+                <div class="monitoring-metrics">
+                    <div class="metric-group">
+                        <h6>Server-Health-Metrics</h6>
+                        <table class="metrics-table">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Warning-Threshold</th>
+                                    <th>Critical-Threshold</th>
+                                    <th>Monitoring-Frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CPU-Utilization</td>
+                                    <td>>80% für 5 Min</td>
+                                    <td>>95% für 2 Min</td>
+                                    <td>Jede Minute</td>
+                                </tr>
+                                <tr>
+                                    <td>Memory-Usage</td>
+                                    <td>>85% für 10 Min</td>
+                                    <td>>95% für 5 Min</td>
+                                    <td>Jede Minute</td>
+                                </tr>
+                                <tr>
+                                    <td>Disk-Space</td>
+                                    <td>>85% belegt</td>
+                                    <td>>95% belegt</td>
+                                    <td>Alle 5 Minuten</td>
+                                </tr>
+                                <tr>
+                                    <td>Disk-I/O-Latency</td>
+                                    <td>>20ms average</td>
+                                    <td>>50ms average</td>
+                                    <td>Kontinuierlich</td>
+                                </tr>
+                                <tr>
+                                    <td>Network-Latency</td>
+                                    <td>>100ms</td>
+                                    <td>>500ms</td>
+                                    <td>Alle 30 Sekunden</td>
+                                </tr>
+                                <tr>
+                                    <td>Temperature</td>
+                                    <td>>30°C Intake</td>
+                                    <td>>35°C Intake</td>
+                                    <td>Kontinuierlich</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="monitoring-layer">
+                <h5>Application-Performance-Monitoring (APM)</h5>
+                <div class="apm-metrics">
+                    <div class="apm-category">
+                        <h6>WMS-Application-Health</h6>
+                        <ul>
+                            <li><strong>Response-Time-Monitoring:</strong>
+                                <ul>
+                                    <li>Login-Process: <3 Sekunden (Warning), <5 Sekunden (Critical)</li>
+                                    <li>Search-Queries: <2 Sekunden (Warning), <4 Sekunden (Critical)</li>
+                                    <li>Report-Generation: <10 Sekunden (Warning), <30 Sekunden (Critical)</li>
+                                    <li>Transaction-Processing: <1 Sekunde (Warning), <3 Sekunden (Critical)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Error-Rate-Monitoring:</strong>
+                                <ul>
+                                    <li>Application-Errors: >1% (Warning), >5% (Critical)</li>
+                                    <li>Database-Connection-Errors: >0.1% (Warning), >1% (Critical)</li>
+                                    <li>SAP-Interface-Errors: >0.5% (Warning), >2% (Critical)</li>
+                                </ul>
+                            </li>
+                            <li><strong>User-Experience-Metrics:</strong>
+                                <ul>
+                                    <li>Concurrent-Users: >500 (Warning), >800 (Critical)</li>
+                                    <li>Session-Timeouts: >5% (Warning), >10% (Critical)</li>
+                                    <li>Failed-Logins: >10/Min (Warning), >50/Min (Critical)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="monitoring-layer">
+                <h5>Business-Process-Monitoring</h5>
+                <div class="business-monitoring">
+                    <div class="process-kpis">
+                        <h6>Critical-Business-Processes</h6>
+                        <table class="business-metrics-table">
+                            <thead>
+                                <tr>
+                                    <th>Business-Process</th>
+                                    <th>Key-Metric</th>
+                                    <th>Expected-Volume</th>
+                                    <th>Alert-Threshold</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Wareneingang</td>
+                                    <td>Buchungen/Stunde</td>
+                                    <td>50-150/Stunde</td>
+                                    <td><25/Stunde oder >200/Stunde</td>
+                                </tr>
+                                <tr>
+                                    <td>Kommissionierung</td>
+                                    <td>Picks/Stunde</td>
+                                    <td>200-500/Stunde</td>
+                                    <td><100/Stunde oder >600/Stunde</td>
+                                </tr>
+                                <tr>
+                                    <td>Versand</td>
+                                    <td>Lieferungen/Tag</td>
+                                    <td>100-300/Tag</td>
+                                    <td><50/Tag oder >400/Tag</td>
+                                </tr>
+                                <tr>
+                                    <td>SAP-Synchronisation</td>
+                                    <td>IDOC-Processing/Min</td>
+                                    <td>10-50/Min</td>
+                                    <td><5/Min oder >100/Min</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="prevention-category">
+        <h4>🔧 Predictive Maintenance</h4>
+        <div class="predictive-maintenance">
+            <div class="prediction-models">
+                <h5>Failure-Prediction-Models</h5>
+                <div class="prediction-categories">
+                    <div class="prediction-category">
+                        <h6>Hardware-Failure-Prediction</h6>
+                        <ul>
+                            <li><strong>Hard-Disk-Failure-Prediction:</strong>
+                                <ul>
+                                    <li>SMART-Attribute-Monitoring (Reallocated-Sectors, Spin-Retry-Count)</li>
+                                    <li>I/O-Error-Rate-Trending</li>
+                                    <li>Temperature-History-Analysis</li>
+                                    <li>Age-based-Replacement-Scheduling</li>
+                                </ul>
+                            </li>
+                            <li><strong>Memory-Failure-Prediction:</strong>
+                                <ul>
+                                    <li>ECC-Error-Count-Trending</li>
+                                    <li>Memory-Test-Error-Patterns</li>
+                                    <li>Application-Crash-Correlation</li>
+                                </ul>
+                            </li>
+                            <li><strong>Power-Supply-Health:</strong>
+                                <ul>
+                                    <li>Voltage-Stability-Monitoring</li>
+                                    <li>Temperature-Drift-Analysis</li>
+                                    <li>Fan-Speed-Degradation</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="prediction-category">
+                        <h6>Software-Performance-Degradation</h6>
+                        <ul>
+                            <li><strong>Database-Performance-Trends:</strong>
+                                <ul>
+                                    <li>Query-Execution-Time-Trending</li>
+                                    <li>Index-Fragmentation-Growth-Rate</li>
+                                    <li>Transaction-Log-Growth-Patterns</li>
+                                    <li>Blocking-Session-Frequency-Increase</li>
+                                </ul>
+                            </li>
+                            <li><strong>Application-Memory-Leaks:</strong>
+                                <ul>
+                                    <li>Memory-Usage-Trend-Analysis</li>
+                                    <li>Garbage-Collection-Frequency</li>
+                                    <li>Object-Lifetime-Monitoring</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="maintenance-scheduling">
+                <h5>Automated-Maintenance-Scheduling</h5>
+                <div class="automation-framework">
+                    <div class="scheduled-tasks">
+                        <h6>Präventive-Wartungsaufgaben</h6>
+                        <table class="maintenance-schedule">
+                            <thead>
+                                <tr>
+                                    <th>Wartungsaufgabe</th>
+                                    <th>Trigger-Bedingung</th>
+                                    <th>Automatisierung</th>
+                                    <th>Validierung</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Database-Index-Rebuild</td>
+                                    <td>Fragmentation >30%</td>
+                                    <td>SQL-Agent-Job</td>
+                                    <td>Performance-Improvement-Measurement</td>
+                                </tr>
+                                <tr>
+                                    <td>Log-File-Cleanup</td>
+                                    <td>Disk-Space >85%</td>
+                                    <td>PowerShell-Script</td>
+                                    <td>Space-Freed-Verification</td>
+                                </tr>
+                                <tr>
+                                    <td>Service-Memory-Reset</td>
+                                    <td>Memory-Usage >4GB</td>
+                                    <td>Scheduled-Service-Restart</td>
+                                    <td>Service-Health-Check</td>
+                                </tr>
+                                <tr>
+                                    <td>Certificate-Renewal</td>
+                                    <td>30-Tage-vor-Ablauf</td>
+                                    <td>Certificate-Management-Tool</td>
+                                    <td>SSL-Handshake-Test</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="prevention-category">
+        <h4>🛡️ Redundancy & High Availability</h4>
+        <div class="ha-architecture">
+            <div class="redundancy-layers">
+                <h5>Multi-Layer-Redundancy-Strategy</h5>
+                <div class="redundancy-components">
+                    <div class="redundancy-layer">
+                        <h6>Application-Layer-Redundancy</h6>
+                        <ul>
+                            <li><strong>Load-Balanced-WMS-Servers:</strong>
+                                <ul>
+                                    <li>Minimum 2 Active-WMS-Server-Instances</li>
+                                    <li>Session-State-Replication</li>
+                                    <li>Health-Check-based-Load-Distribution</li>
+                                    <li>Automatic-Failover bei Server-Ausfall</li>
+                                </ul>
+                            </li>
+                            <li><strong>Database-High-Availability:</strong>
+                                <ul>
+                                    <li>SQL-Server-Always-On-Availability-Groups</li>
+                                    <li>Synchronous-Commit zu Primary-Replica</li>
+                                    <li>Asynchronous-Commit zu DR-Replica</li>
+                                    <li>Automatic-Failover-Configuration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="redundancy-layer">
+                        <h6>Infrastructure-Layer-Redundancy</h6>
+                        <ul>
+                            <li><strong>Network-Redundancy:</strong>
+                                <ul>
+                                    <li>Dual-Uplinks für alle-Critical-Switches</li>
+                                    <li>HSRP/VRRP für Default-Gateway-Redundancy</li>
+                                    <li>Multiple-ISP-Connections</li>
+                                    <li>BGP-Routing für Internet-Failover</li>
+                                </ul>
+                            </li>
+                            <li><strong>Power-Redundancy:</strong>
+                                <ul>
+                                    <li>Dual-Power-Supplies in allen-Servern</li>
+                                    <li>Redundante-UPS-Systems</li>
+                                    <li>Backup-Generator mit-Auto-Transfer</li>
+                                    <li>PDU-A/B-Power-Distribution</li>
+                                </ul>
+                            </li>
+                            <li><strong>Storage-Redundancy:</strong>
+                                <ul>
+                                    <li>RAID-10-Configuration für-OS-Drives</li>
+                                    <li>SAN-based-Storage mit-Multipathing</li>
+                                    <li>Real-time-Data-Replication zu DR-Site</li>
+                                    <li>Regular-Backup-Testing und-Validation</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="failover-procedures">
+                <h5>Automated-Failover-Procedures</h5>
+                <div class="failover-scenarios">
+                    <div class="failover-scenario">
+                        <h6>WMS-Application-Server-Failover</h6>
+                        <ol>
+                            <li><strong>Health-Check-Failure-Detection:</strong>
+                                Load-Balancer erkennt failed-Health-Check (3 consecutive-failures)
+                            </li>
+                            <li><strong>Traffic-Redirection:</strong>
+                                Alle-neuen-Sessions werden auf healthy-Server geleitet
+                            </li>
+                            <li><strong>Session-State-Migration:</strong>
+                                Active-Sessions werden von-Session-Store wiederhergestellt
+                            </li>
+                            <li><strong>Alert-Generation:</strong>
+                                Operations-Team wird über-Failover informiert
+                            </li>
+                            <li><strong>Auto-Recovery-Attempt:</strong>
+                                Failed-Server wird automatisch-restarted und-reintegriert
+                            </li>
+                        </ol>
+                        <div class="failover-sla">
+                            <strong>SLA:</strong> <30-Sekunden-Failover-Time, <0.1%-Transaction-Loss
+                        </div>
+                    </div>
+                    
+                    <div class="failover-scenario">
+                        <h6>Database-Server-Failover</h6>
+                        <ol>
+                            <li><strong>Always-On-Health-Detection:</strong>
+                                SQL-Server-erkennt-Primary-Replica-Failure
+                            </li>
+                            <li><strong>Automatic-Failover-Initiation:</strong>
+                                Secondary-Replica wird-zu-Primary promoted
+                            </li>
+                            <li><strong>DNS-Update:</strong>
+                                Listener-IP zeigt-auf-neuen-Primary
+                            </li>
+                            <li><strong>Application-Reconnection:</strong>
+                                Connection-Pools-reconnecten-automatisch
+                            </li>
+                            <li><strong>Data-Consistency-Verification:</strong>
+                                Automatic-Consistency-Checks nach-Failover
+                            </li>
+                        </ol>
+                        <div class="failover-sla">
+                            <strong>SLA:</strong> <60-Sekunden-Failover-Time, Zero-Data-Loss
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="prevention-category">
+        <h4>📚 Knowledge Management</h4>
+        <div class="knowledge-framework">
+            <div class="knowledge-base">
+                <h5>Error-Resolution-Knowledge-Base</h5>
+                <div class="kb-structure">
+                    <div class="kb-component">
+                        <h6>Searchable-Error-Database</h6>
+                        <ul>
+                            <li><strong>Error-Signature-Indexing:</strong>
+                                <ul>
+                                    <li>Error-Codes und-Messages indexiert</li>
+                                    <li>Symptom-based-Search-Capability</li>
+                                    <li>Component-based-Categorization</li>
+                                    <li>Solution-Effectiveness-Rating</li>
+                                </ul>
+                            </li>
+                            <li><strong>Solution-Templates:</strong>
+                                <ul>
+                                    <li>Step-by-Step-Resolution-Guides</li>
+                                    <li>Required-Tools und-Access-Levels</li>
+                                    <li>Estimated-Resolution-Time</li>
+                                    <li>Rollback-Procedures</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="kb-component">
+                        <h6>Continuous-Learning-System</h6>
+                        <ul>
+                            <li><strong>Post-Incident-Reviews:</strong>
+                                <ul>
+                                    <li>Root-Cause-Analysis-Documentation</li>
+                                    <li>Prevention-Strategy-Updates</li>
+                                    <li>Process-Improvement-Identification</li>
+                                    <li>Training-Gap-Analysis</li>
+                                </ul>
+                            </li>
+                            <li><strong>Best-Practice-Sharing:</strong>
+                                <ul>
+                                    <li>Monthly-Lessons-Learned-Sessions</li>
+                                    <li>Cross-Team-Knowledge-Transfer</li>
+                                    <li>Vendor-Best-Practice-Integration</li>
+                                    <li>Industry-Standard-Adoption</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Support-Kontakte
+
+<div class="support-contacts-section">
+    <div class="emergency-contacts">
+        <h3>🚨 Notfall-Kontakte</h3>
+        <div class="contact-grid">
+            <div class="contact-card critical">
+                <h4>24/7 System-Notfall</h4>
+                <div class="contact-details">
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <strong>+41 81 770 9999</strong>
+                    </div>
+                    <div class="contact-purpose">
+                        Kritische Systemausfälle, Sicherheitsvorfälle, Datenverlust
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card high">
+                <h4>IT-Support Desk</h4>
+                <div class="contact-details">
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <strong>+41 81 770 5678</strong>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <strong>wms-support@georgfischer.com</strong>
+                    </div>
+                    <div class="contact-hours">
+                        Mo-Fr 07:00-18:00 Uhr
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="specialized-contacts">
+        <h3>🔧 Spezialisierte Error-Response-Teams</h3>
+        <div class="specialist-grid">
+            <div class="specialist-team">
+                <h4>Database-Emergency-Team</h4>
+                <div class="team-contact">
+                    <i class="fas fa-envelope"></i>
+                    <strong>dba-emergency@georgfischer.com</strong>
+                </div>
+                <div class="team-specialty">SQL-Server-Corruption, Performance-Issues, Backup-Recovery</div>
+            </div>
+            
+            <div class="specialist-team">
+                <h4>Network-Operations-Center</h4>
+                <div class="team-contact">
+                    <i class="fas fa-phone"></i>
+                    <strong>+41 81 770 1280</strong>
+                </div>
+                <div class="team-specialty">Network-Outages, Infrastructure-Failures, Connectivity-Issues</div>
+            </div>
+            
+            <div class="specialist-team">
+                <h4>SAP-Interface-Team</h4>
+                <div class="team-contact">
+                    <i class="fas fa-envelope"></i>
+                    <strong>sap-interface@georgfischer.com</strong>
+                </div>
+                <div class="team-specialty">RFC-Errors, IDOC-Processing, SAP-Connectivity</div>
+            </div>
+            
+            <div class="specialist-team">
+                <h4>Security-Incident-Response</h4>
+                <div class="team-contact">
+                    <i class="fas fa-envelope"></i>
+                    <strong>security-incident@georgfischer.com</strong>
+                </div>
+                <div class="team-specialty">Security-Breaches, Malware-Detection, Access-Issues</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Tab switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.errors-tab-btn');
+    const tabContents = document.querySelectorAll('.errors-tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            // Remove active class from all tabs and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            button.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

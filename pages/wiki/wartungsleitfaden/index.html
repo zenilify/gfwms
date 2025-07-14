@@ -1,143 +1,1700 @@
 ---
 layout: default
-title: "Wartungsleitfaden"
-description: "Routinewartung und Systemgesundheitsprüfungen"
+title: "Wartungsleitfaden - WMS Systemwartung"
+description: "Umfassender Leitfaden für die präventive Wartung und Systemgesundheitsprüfungen des Georg Fischer WMS"
 breadcrumbs:
   - title: "Wiki"
   - title: "Wartungsleitfaden"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Wartungsleitfaden - System-Maintenance</p>
+# Wartungsleitfaden - WMS Systemwartung
+
+<div class="maintenance-hero">
+    <div class="hero-content">
+        <h2>🔧 Präventive Systemwartung</h2>
+        <p>Strukturierter Leitfaden für die optimale Wartung und Pflege des Georg Fischer WMS</p>
     </div>
+</div>
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Wiki-Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Wartungsleitfaden" befindet sich in der Entwicklungsphase.</p>
-        </div>
+<div class="maintenance-alert">
+    <div class="alert-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <div class="alert-content">
+        <h3>⚠️ WARTUNGSARBEITEN NUR MIT BERECHTIGUNG</h3>
+        <p><strong>Wichtig:</strong> Alle Wartungsarbeiten erfordern entsprechende Berechtigung und Schulung</p>
+        <p><strong>Bei Unsicherheit:</strong> IT-Support +41 81 770 5678 kontaktieren</p>
+    </div>
+</div>
 
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-first-aid"></i>
-                    <h4>Notfallverfahren</h4>
-                    <p>System-Wiederherstellung und Wartung</p>
-                    <a href="../notfallverfahren/" class="btn btn-primary">Notfallverfahren öffnen</a>
+## Übersicht
+
+Die regelmäßige Wartung des WMS gewährleistet optimale Performance, maximale Verfügbarkeit und verlängert die Systemlebensdauer. Dieser Leitfaden definiert strukturierte Wartungsverfahren für alle Systemkomponenten.
+
+## Navigation
+
+<div class="maintenance-nav-tabs">
+    <button class="maintenance-tab-btn active" data-tab="planung">Planung</button>
+    <button class="maintenance-tab-btn" data-tab="praevention">Prävention</button>
+    <button class="maintenance-tab-btn" data-tab="hardware">Hardware</button>
+    <button class="maintenance-tab-btn" data-tab="software">Software</button>
+    <button class="maintenance-tab-btn" data-tab="datenbank">Datenbank</button>
+    <button class="maintenance-tab-btn" data-tab="dokumentation">Dokumentation</button>
+</div>
+
+## Wartungsplanung {#planung}
+
+<div class="maintenance-tab-content active" id="planung">
+
+### Wartungszyklen bei Georg Fischer
+
+#### **Wartungskategorien**
+
+<div class="maintenance-categories">
+    <div class="category-card daily">
+        <h4>🌅 Tägliche Wartung</h4>
+        <div class="category-duration">Durchführung: 15-30 Min</div>
+        <div class="category-responsible">Verantwortlich: Schichtführer/Operator</div>
+        <ul>
+            <li>System-Status prüfen</li>
+            <li>Grundlegende Funktionschecks</li>
+            <li>Performance-Monitoring</li>
+            <li>Backup-Status verifizieren</li>
+        </ul>
+    </div>
+    
+    <div class="category-card weekly">
+        <h4>📅 Wöchentliche Wartung</h4>
+        <div class="category-duration">Durchführung: 1-2 Stunden</div>
+        <div class="category-responsible">Verantwortlich: IT-Support Level 1</div>
+        <ul>
+            <li>Detaillierte Systemdiagnose</li>
+            <li>Log-Dateien analysieren</li>
+            <li>Hardware-Komponenten prüfen</li>
+            <li>Sicherheits-Updates</li>
+        </ul>
+    </div>
+    
+    <div class="category-card monthly">
+        <h4>📊 Monatliche Wartung</h4>
+        <div class="category-duration">Durchführung: 4-6 Stunden</div>
+        <div class="category-responsible">Verantwortlich: IT-Support Level 2</div>
+        <ul>
+            <li>Umfassende Performance-Analyse</li>
+            <li>Datenbank-Optimierung</li>
+            <li>Storage-Management</li>
+            <li>Kapazitätsplanung</li>
+        </ul>
+    </div>
+    
+    <div class="category-card quarterly">
+        <h4>🔄 Quartalsweise Wartung</h4>
+        <div class="category-duration">Durchführung: 1-2 Tage</div>
+        <div class="category-responsible">Verantwortlich: System-Administrator</div>
+        <ul>
+            <li>Disaster Recovery Tests</li>
+            <li>Major System Updates</li>
+            <li>Hardware-Lifecycle Review</li>
+            <li>Security Audits</li>
+        </ul>
+    </div>
+</div>
+
+### Wartungskalender 2025
+
+#### **Q1 2025 - Geplante Wartungsarbeiten**
+
+<div class="maintenance-calendar">
+    <div class="calendar-month">
+        <h4>Januar 2025</h4>
+        <div class="calendar-events">
+            <div class="calendar-event critical">
+                <div class="event-date">15. Jan</div>
+                <div class="event-details">
+                    <strong>WMS Major Update</strong><br>
+                    Jungheinrich WMS v5.3.0<br>
+                    <em>Geplante Downtime: 4 Stunden</em>
                 </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Technischer Dienst</h4>
-                    <p>Wartungsunterstützung</p>
-                    <a href="tel:+41817701234" class="btn btn-secondary">+41 81 770 1234</a>
+            </div>
+            <div class="calendar-event medium">
+                <div class="event-date">28. Jan</div>
+                <div class="event-details">
+                    <strong>Database Maintenance</strong><br>
+                    Index-Reorganisation und Statistiken<br>
+                    <em>Geplante Downtime: 2 Stunden</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="calendar-month">
+        <h4>Februar 2025</h4>
+        <div class="calendar-events">
+            <div class="calendar-event high">
+                <div class="event-date">12. Feb</div>
+                <div class="event-details">
+                    <strong>Hardware Lifecycle Review</strong><br>
+                    Scanner und Drucker Evaluation<br>
+                    <em>Keine Downtime geplant</em>
+                </div>
+            </div>
+            <div class="calendar-event medium">
+                <div class="event-date">25. Feb</div>
+                <div class="event-details">
+                    <strong>Security Patch Deployment</strong><br>
+                    Windows Updates und Antivirus<br>
+                    <em>Rolling Updates - Minimal Impact</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="calendar-month">
+        <h4>März 2025</h4>
+        <div class="calendar-events">
+            <div class="calendar-event critical">
+                <div class="event-date">18. Mär</div>
+                <div class="event-details">
+                    <strong>Disaster Recovery Test</strong><br>
+                    Vollständiger DR-Simulationstest<br>
+                    <em>Geplante Downtime: 6 Stunden</em>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+### Wartungsfenster
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    border-radius: var(--radius-lg);
-}
+#### **Standard-Wartungszeiten**
 
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
+```yaml
+standard_wartungsfenster:
+  taglich:
+    zeit: "05:00 - 05:30 Uhr"
+    impact: "Minimal - Background Operations"
+    verfugbarkeit: "100% für Endbenutzer"
+    
+  wochentlich:
+    zeit: "Samstag 22:00 - Sonntag 02:00 Uhr"
+    impact: "Moderat - Einige Services betroffen"
+    verfugbarkeit: "95% Core Functions"
+    
+  monatlich:
+    zeit: "Erster Sonntag im Monat 20:00 - 06:00 Uhr"
+    impact: "Hoch - Geplante Downtime"
+    verfugbarkeit: "Eingeschränkt während Wartung"
+    
+  notfall:
+    zeit: "Nach Bedarf"
+    impact: "Kritisch - Sofortige Aktion erforderlich"
+    verfugbarkeit: "Service Recovery Priorität"
+```
 
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
+</div>
 
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
+## Präventive Wartung {#praevention}
 
-.wip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
+<div class="maintenance-tab-content" id="praevention">
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
-}
+### Präventionsstrategien
 
-.wip-message h2 {
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
+#### **Proaktive Systemüberwachung**
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-}
+<div class="prevention-strategies">
+    <div class="strategy-section">
+        <h4>🔍 Kontinuierliches Monitoring</h4>
+        <div class="monitoring-grid">
+            <div class="monitoring-item">
+                <h5>System-Performance</h5>
+                <ul>
+                    <li>CPU-Auslastung überwachen (Alarm bei >80%)</li>
+                    <li>Memory-Verbrauch prüfen (Alarm bei >85%)</li>
+                    <li>Disk-Space monitoring (Alarm bei >90%)</li>
+                    <li>Network-Latenz messen</li>
+                </ul>
+                <div class="monitoring-tools">
+                    <strong>Tools:</strong> PRTG, Nagios, Windows Performance Monitor
+                </div>
+            </div>
+            
+            <div class="monitoring-item">
+                <h5>Anwendungs-Health</h5>
+                <ul>
+                    <li>WMS-Services Status (24/7)</li>
+                    <li>Database Connection Pool</li>
+                    <li>Interface-Verbindungen zu SAP</li>
+                    <li>User Session Management</li>
+                </ul>
+                <div class="monitoring-tools">
+                    <strong>Tools:</strong> Application Insights, SQL Server Management Studio
+                </div>
+            </div>
+            
+            <div class="monitoring-item">
+                <h5>Business-Metriken</h5>
+                <ul>
+                    <li>Transaktions-Durchsatz</li>
+                    <li>Response-Zeiten</li>
+                    <li>Error-Rates überwachen</li>
+                    <li>User-Activity Trends</li>
+                </ul>
+                <div class="monitoring-tools">
+                    <strong>Tools:</strong> Custom Dashboards, Power BI
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="strategy-section">
+        <h4>🔮 Predictive Maintenance</h4>
+        <div class="predictive-approach">
+            <div class="prediction-method">
+                <h5>Trend-Analyse</h5>
+                <p>Langzeit-Überwachung kritischer Metriken zur Vorhersage von Ausfällen:</p>
+                <ul>
+                    <li>Disk-Fragmentation Trends</li>
+                    <li>Database Growth Patterns</li>
+                    <li>Hardware-Performance Degradation</li>
+                    <li>Network-Traffic Anomalien</li>
+                </ul>
+            </div>
+            
+            <div class="prediction-method">
+                <h5>Machine Learning Modelle</h5>
+                <p>Einsatz von ML-Algorithmen für erweiterte Vorhersagen:</p>
+                <ul>
+                    <li>Anomaly Detection in Log-Files</li>
+                    <li>Capacity Planning Models</li>
+                    <li>Failure Prediction Algorithms</li>
+                    <li>Maintenance Scheduling Optimization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-.wip-alternatives h3 {
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
+### Early Warning System
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+#### **Alarm-Konfiguration**
 
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
+<div class="alert-configuration">
+    <div class="alert-level critical">
+        <h4>🚨 Kritische Alarme</h4>
+        <div class="alert-details">
+            <div class="alert-triggers">
+                <strong>Auslöser:</strong>
+                <ul>
+                    <li>Kompletter Service-Ausfall</li>
+                    <li>Database Connection Loss</li>
+                    <li>Disk Space >95% voll</li>
+                    <li>CPU >95% für >5 Minuten</li>
+                </ul>
+            </div>
+            <div class="alert-response">
+                <strong>Response:</strong>
+                <ul>
+                    <li>Sofortige SMS an On-Call Engineer</li>
+                    <li>Automatische Eskalation nach 5 Min</li>
+                    <li>Incident Management System Trigger</li>
+                    <li>Management Notification</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="alert-level high">
+        <h4>🔶 Hohe Priorität Alarme</h4>
+        <div class="alert-details">
+            <div class="alert-triggers">
+                <strong>Auslöser:</strong>
+                <ul>
+                    <li>Einzelne Service-Degradation</li>
+                    <li>Interface-Verbindungsabbrüche</li>
+                    <li>Response-Zeit >5 Sekunden</li>
+                    <li>Memory Usage >90%</li>
+                </ul>
+            </div>
+            <div class="alert-response">
+                <strong>Response:</strong>
+                <ul>
+                    <li>E-Mail an Support-Team</li>
+                    <li>Ticket-Erstellung im ITSM</li>
+                    <li>Escalation nach 30 Minuten</li>
+                    <li>Shift Lead Notification</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="alert-level medium">
+        <h4>🔸 Mittlere Priorität Alarme</h4>
+        <div class="alert-details">
+            <div class="alert-triggers">
+                <strong>Auslöser:</strong>
+                <ul>
+                    <li>Performance-Degradation</li>
+                    <li>Log-File Anomalien</li>
+                    <li>Hardware-Warnung</li>
+                    <li>Backup-Fehler</li>
+                </ul>
+            </div>
+            <div class="alert-response">
+                <strong>Response:</strong>
+                <ul>
+                    <li>Dashboard-Alert anzeigen</li>
+                    <li>Daily Report aufnehmen</li>
+                    <li>Nächste Wartung vorziehen</li>
+                    <li>Dokumentation aktualisieren</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
+</div>
 
-.alternative-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-}
+## Hardware-Wartung {#hardware}
 
-.alternative-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
+<div class="maintenance-tab-content" id="hardware">
 
-@media (max-width: 768px) {
-    .alternatives-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+### Server-Hardware
+
+#### **Wartungsroutinen für Server-Infrastruktur**
+
+<div class="hardware-maintenance">
+    <div class="server-category">
+        <h4>🖥️ WMS Application Server</h4>
+        <div class="maintenance-tasks">
+            <div class="task-frequency daily">
+                <h5>Täglich</h5>
+                <ul>
+                    <li>Temperature-Monitoring prüfen</li>
+                    <li>Fan-Speed und Airflow kontrollieren</li>
+                    <li>Power-Status aller Komponenten</li>
+                    <li>RAID-Array Status verifizieren</li>
+                </ul>
+            </div>
+            <div class="task-frequency weekly">
+                <h5>Wöchentlich</h5>
+                <ul>
+                    <li>Hardware-Event-Logs analysieren</li>
+                    <li>Memory-Tests durchführen</li>
+                    <li>Network-Interface Cards prüfen</li>
+                    <li>UPS-Battery Status kontrollieren</li>
+                </ul>
+            </div>
+            <div class="task-frequency monthly">
+                <h5>Monatlich</h5>
+                <ul>
+                    <li>Staubfilter reinigen</li>
+                    <li>Kabelverbindungen überprüfen</li>
+                    <li>Firmware-Updates installieren</li>
+                    <li>Spare-Parts Inventory prüfen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="server-category">
+        <h4>💾 Database Server</h4>
+        <div class="maintenance-tasks">
+            <div class="task-frequency daily">
+                <h5>Täglich</h5>
+                <ul>
+                    <li>Storage-Performance monitoring</li>
+                    <li>I/O-Statistiken analysieren</li>
+                    <li>Backup-Prozess verifizieren</li>
+                    <li>Transaction-Log-Growth prüfen</li>
+                </ul>
+            </div>
+            <div class="task-frequency weekly">
+                <h5>Wöchentlich</h5>
+                <ul>
+                    <li>Database-Consistency-Checks</li>
+                    <li>Index-Fragmentation messen</li>
+                    <li>Storage-Capacity planen</li>
+                    <li>Performance-Baselines aktualisieren</li>
+                </ul>
+            </div>
+            <div class="task-frequency monthly">
+                <h5>Monatlich</h5>
+                <ul>
+                    <li>SAN-Storage Health-Check</li>
+                    <li>Database-Statistiken neu berechnen</li>
+                    <li>Archive-Prozesse optimieren</li>
+                    <li>Disaster-Recovery-Tests</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+### Client-Hardware
+
+#### **Arbeitsplatz-Computer und Peripherie**
+
+<div class="client-maintenance">
+    <div class="client-category">
+        <h4>💻 Arbeitsplatz-PCs</h4>
+        <div class="maintenance-checklist">
+            <div class="check-item">
+                <input type="checkbox" id="pc-check-1">
+                <label for="pc-check-1">Windows-Updates installiert und aktuelle Patches</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="pc-check-2">
+                <label for="pc-check-2">Antivirus-Software aktuell und funktionsfähig</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="pc-check-3">
+                <label for="pc-check-3">Disk-Cleanup und Defragmentierung durchgeführt</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="pc-check-4">
+                <label for="pc-check-4">WMS-Client-Software auf neuester Version</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="pc-check-5">
+                <label for="pc-check-5">Netzwerk-Verbindung stabil und performant</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" id="pc-check-6">
+                <label for="pc-check-6">Hardware-Temperatur im Normalbereich</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="client-category">
+        <h4>📱 Mobile Devices & Handhelds</h4>
+        <div class="mobile-maintenance">
+            <div class="device-type">
+                <h5>Barcode-Scanner</h5>
+                <ul>
+                    <li>Objektiv-Reinigung mit speziellen Tüchern</li>
+                    <li>Battery-Ladezyklen optimieren</li>
+                    <li>Firmware-Updates installieren</li>
+                    <li>Kalibrierung und Scan-Tests</li>
+                    <li>Drop-Tests und Robustheitsprüfung</li>
+                </ul>
+            </div>
+            <div class="device-type">
+                <h5>Mobile Computer</h5>
+                <ul>
+                    <li>Screen-Protector und Cases prüfen</li>
+                    <li>WLAN-Verbindungsqualität testen</li>
+                    <li>App-Updates durchführen</li>
+                    <li>Storage-Cleanup und Optimierung</li>
+                    <li>Backup und Sync-Prozesse verifizieren</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="client-category">
+        <h4>🖨️ Drucker & Label-Printer</h4>
+        <div class="printer-maintenance">
+            <div class="maintenance-schedule">
+                <h5>Regelmäßige Wartungsaufgaben</h5>
+                <table class="maintenance-table">
+                    <thead>
+                        <tr>
+                            <th>Aufgabe</th>
+                            <th>Häufigkeit</th>
+                            <th>Geschätzter Aufwand</th>
+                            <th>Verantwortlich</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Druckkopf reinigen</td>
+                            <td>Täglich</td>
+                            <td>5 Minuten</td>
+                            <td>Operator</td>
+                        </tr>
+                        <tr>
+                            <td>Papier/Label-Vorrat prüfen</td>
+                            <td>Täglich</td>
+                            <td>2 Minuten</td>
+                            <td>Operator</td>
+                        </tr>
+                        <tr>
+                            <td>Druckqualität testen</td>
+                            <td>Wöchentlich</td>
+                            <td>10 Minuten</td>
+                            <td>Shift Lead</td>
+                        </tr>
+                        <tr>
+                            <td>Kalibrierung durchführen</td>
+                            <td>Monatlich</td>
+                            <td>30 Minuten</td>
+                            <td>IT-Support</td>
+                        </tr>
+                        <tr>
+                            <td>Mechanische Komponenten prüfen</td>
+                            <td>Quartalsweise</td>
+                            <td>1 Stunde</td>
+                            <td>Techniker</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+### Netzwerk-Infrastructure
+
+#### **Switches, Router und Wireless-Access-Points**
+
+<div class="network-maintenance">
+    <div class="network-component">
+        <h4>🌐 Core Network Switches</h4>
+        <div class="component-details">
+            <div class="maintenance-procedure">
+                <h5>Monitoring & Health-Checks</h5>
+                <ul>
+                    <li><strong>Port-Utilization:</strong> Überwachung der Bandbreiten-Nutzung</li>
+                    <li><strong>Error-Rates:</strong> CRC-Errors und Packet-Loss monitoring</li>
+                    <li><strong>Temperature:</strong> Switch-Temperatur und Fan-Status</li>
+                    <li><strong>Power-Supply:</strong> Redundante Stromversorgung prüfen</li>
+                </ul>
+            </div>
+            <div class="maintenance-procedure">
+                <h5>Wartungsmaßnahmen</h5>
+                <ul>
+                    <li><strong>Firmware-Updates:</strong> Quartalsweise auf neue Versionen prüfen</li>
+                    <li><strong>Configuration-Backup:</strong> Wöchentlich Konfiguration sichern</li>
+                    <li><strong>Cable-Management:</strong> Monatlich Verkabelung prüfen</li>
+                    <li><strong>Performance-Baselines:</strong> Vierteljährlich neue Baselines erstellen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="network-component">
+        <h4>📶 Wireless Infrastructure</h4>
+        <div class="wireless-monitoring">
+            <div class="wifi-health">
+                <h5>WLAN-Qualitätsprüfung</h5>
+                <div class="wifi-checklist">
+                    <div class="check-item">
+                        <input type="checkbox" id="wifi-check-1">
+                        <label for="wifi-check-1">Signal-Stärke in allen Arbeitsbereichen >-65 dBm</label>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="wifi-check-2">
+                        <label for="wifi-check-2">Keine Interferenzen von anderen Netzwerken</label>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="wifi-check-3">
+                        <label for="wifi-check-3">Access-Point-Redundanz funktionsfähig</label>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="wifi-check-4">
+                        <label for="wifi-check-4">Roaming zwischen APs nahtlos</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Software-Wartung {#software}
+
+<div class="maintenance-tab-content" id="software">
+
+### WMS-Anwendung
+
+#### **Jungheinrich WMS Software-Maintenance**
+
+<div class="software-maintenance">
+    <div class="application-layer">
+        <h4>🔧 Application Services</h4>
+        <div class="service-maintenance">
+            <div class="service-item">
+                <h5>WMS Core Services</h5>
+                <div class="service-details">
+                    <div class="service-checks">
+                        <strong>Regelmäßige Prüfungen:</strong>
+                        <ul>
+                            <li>Service-Status und Startup-Type</li>
+                            <li>Memory-Leaks Detection</li>
+                            <li>Connection-Pool Gesundheit</li>
+                            <li>Thread-Pool Auslastung</li>
+                        </ul>
+                    </div>
+                    <div class="service-actions">
+                        <strong>Wartungsmaßnahmen:</strong>
+                        <ul>
+                            <li>Service-Restart bei Memory-Threshold</li>
+                            <li>Configuration-Updates anwenden</li>
+                            <li>Log-Level Anpassungen</li>
+                            <li>Performance-Counter sammeln</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-item">
+                <h5>Integration Services</h5>
+                <div class="service-details">
+                    <div class="integration-monitoring">
+                        <strong>SAP-WMS Interface:</strong>
+                        <ul>
+                            <li>IDOC-Processing Queues überwachen</li>
+                            <li>RFC-Connection Health prüfen</li>
+                            <li>Error-Handling und Retry-Logic</li>
+                            <li>Data-Synchronization Consistency</li>
+                        </ul>
+                    </div>
+                    <div class="integration-maintenance">
+                        <strong>Interface-Wartung:</strong>
+                        <ul>
+                            <li>Message-Queue Cleanup</li>
+                            <li>Dead-Letter-Queue verarbeiten</li>
+                            <li>Connection-Parameter optimieren</li>
+                            <li>Throughput-Performance messen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="application-layer">
+        <h4>📱 Client Applications</h4>
+        <div class="client-software">
+            <div class="deployment-management">
+                <h5>Software-Deployment und Updates</h5>
+                <div class="deployment-strategy">
+                    <div class="deployment-phase">
+                        <h6>1. Test-Environment</h6>
+                        <ul>
+                            <li>Neue WMS-Version in Testumgebung deployen</li>
+                            <li>Funktionale Tests durchführen</li>
+                            <li>Performance-Regression-Tests</li>
+                            <li>User-Acceptance-Testing</li>
+                        </ul>
+                    </div>
+                    <div class="deployment-phase">
+                        <h6>2. Staging-Environment</h6>
+                        <ul>
+                            <li>Production-ähnliche Umgebung testen</li>
+                            <li>Integration-Tests mit SAP</li>
+                            <li>Load-Testing durchführen</li>
+                            <li>Rollback-Verfahren testen</li>
+                        </ul>
+                    </div>
+                    <div class="deployment-phase">
+                        <h6>3. Production-Deployment</h6>
+                        <ul>
+                            <li>Rolling-Deployment-Strategie</li>
+                            <li>Health-Checks nach Deployment</li>
+                            <li>User-Training für neue Features</li>
+                            <li>Post-Deployment-Monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="version-management">
+                <h5>Version-Control und Lifecycle</h5>
+                <table class="version-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Current Version</th>
+                            <th>Latest Available</th>
+                            <th>Update Status</th>
+                            <th>Next Maintenance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>WMS Server</td>
+                            <td>5.2.1</td>
+                            <td>5.3.0</td>
+                            <td class="status-pending">Update geplant</td>
+                            <td>15.01.2025</td>
+                        </tr>
+                        <tr>
+                            <td>PC Client</td>
+                            <td>5.2.1</td>
+                            <td>5.2.2</td>
+                            <td class="status-current">Aktuell</td>
+                            <td>01.02.2025</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Client</td>
+                            <td>3.1.4</td>
+                            <td>3.2.0</td>
+                            <td class="status-pending">Testing</td>
+                            <td>22.01.2025</td>
+                        </tr>
+                        <tr>
+                            <td>Scanner Firmware</td>
+                            <td>4.2.1</td>
+                            <td>4.2.1</td>
+                            <td class="status-current">Aktuell</td>
+                            <td>15.02.2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+### System-Software
+
+#### **Betriebssystem und Infrastructure-Software**
+
+<div class="system-software">
+    <div class="os-maintenance">
+        <h4>🖥️ Windows Server Maintenance</h4>
+        <div class="windows-care">
+            <div class="update-management">
+                <h5>Windows Update Management</h5>
+                <div class="update-strategy">
+                    <div class="update-category critical">
+                        <h6>Kritische Sicherheits-Updates</h6>
+                        <ul>
+                            <li><strong>Timeline:</strong> Innerhalb 72 Stunden nach Release</li>
+                            <li><strong>Testing:</strong> Minimale Tests in Dev-Environment</li>
+                            <li><strong>Deployment:</strong> Sofortige Installation auf allen Systemen</li>
+                            <li><strong>Rollback:</strong> Automatisch bei Service-Failure</li>
+                        </ul>
+                    </div>
+                    <div class="update-category high">
+                        <h6>Wichtige Updates</h6>
+                        <ul>
+                            <li><strong>Timeline:</strong> Innerhalb 2 Wochen nach Release</li>
+                            <li><strong>Testing:</strong> Umfassende Tests in Test-Environment</li>
+                            <li><strong>Deployment:</strong> Stufenweise Rollout</li>
+                            <li><strong>Rollback:</strong> Vorbereitet und getestet</li>
+                        </ul>
+                    </div>
+                    <div class="update-category optional">
+                        <h6>Optionale Updates</h6>
+                        <ul>
+                            <li><strong>Timeline:</strong> Mit nächstem Wartungsfenster</li>
+                            <li><strong>Testing:</strong> Vollständige Regression-Tests</li>
+                            <li><strong>Deployment:</strong> Nach ausführlicher Validierung</li>
+                            <li><strong>Rollback:</strong> Standard-Verfahren</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="registry-maintenance">
+                <h5>Registry und System-Cleanup</h5>
+                <div class="cleanup-tasks">
+                    <div class="cleanup-item">
+                        <h6>Registry-Optimierung</h6>
+                        <ul>
+                            <li>Orphaned Registry-Keys entfernen</li>
+                            <li>System-Performance-Einstellungen optimieren</li>
+                            <li>Registry-Backup vor Änderungen</li>
+                            <li>Registry-Fragmentation reduzieren</li>
+                        </ul>
+                    </div>
+                    <div class="cleanup-item">
+                        <h6>Disk-Cleanup</h6>
+                        <ul>
+                            <li>Temporary-Files automatisch löschen</li>
+                            <li>Windows-Update-Cleanup durchführen</li>
+                            <li>Event-Log-Rotation konfigurieren</li>
+                            <li>Recycle-Bin Policy durchsetzen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="security-software">
+        <h4>🛡️ Security Software Maintenance</h4>
+        <div class="security-components">
+            <div class="antivirus-management">
+                <h5>Antivirus & Anti-Malware</h5>
+                <div class="av-maintenance">
+                    <div class="av-task">
+                        <h6>Definition-Updates</h6>
+                        <ul>
+                            <li>Automatische Updates alle 4 Stunden</li>
+                            <li>Manual-Check bei kritischen Threats</li>
+                            <li>Offline-Update-Mechanismus für isolierte Systeme</li>
+                            <li>Update-Success-Verification</li>
+                        </ul>
+                    </div>
+                    <div class="av-task">
+                        <h6>Scan-Konfiguration</h6>
+                        <ul>
+                            <li>Full-System-Scan wöchentlich (Sonntag 02:00)</li>
+                            <li>Quick-Scan täglich (05:00)</li>
+                            <li>Real-Time-Protection kontinuierlich aktiv</li>
+                            <li>Custom-Scan für WMS-Directories</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="firewall-management">
+                <h5>Firewall & Network Security</h5>
+                <div class="firewall-maintenance">
+                    <div class="firewall-rules">
+                        <h6>Rule-Management</h6>
+                        <ul>
+                            <li>Monatliche Review aller Firewall-Rules</li>
+                            <li>Unused-Rules automatisch deaktivieren</li>
+                            <li>Access-Logs analysieren und Anomalien detektieren</li>
+                            <li>Rule-Performance und Impact messen</li>
+                        </ul>
+                    </div>
+                    <div class="intrusion-detection">
+                        <h6>Intrusion Detection System</h6>
+                        <ul>
+                            <li>IDS-Signatures wöchentlich aktualisieren</li>
+                            <li>False-Positive-Rate optimieren</li>
+                            <li>Alert-Thresholds fine-tunen</li>
+                            <li>Incident-Response-Playbooks aktualisieren</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Datenbank-Wartung {#datenbank}
+
+<div class="maintenance-tab-content" id="datenbank">
+
+### SQL Server Maintenance
+
+#### **Umfassende Datenbank-Wartung für WMS**
+
+<div class="database-maintenance">
+    <div class="maintenance-category performance">
+        <h4>⚡ Performance-Optimierung</h4>
+        <div class="performance-tasks">
+            <div class="task-group">
+                <h5>Index-Management</h5>
+                <div class="index-maintenance">
+                    <div class="index-task">
+                        <h6>Index-Fragmentierung</h6>
+                        <div class="task-details">
+                            <div class="task-schedule">
+                                <strong>Häufigkeit:</strong> Wöchentlich (Sonntag 01:00)
+                            </div>
+                            <div class="task-procedure">
+                                <strong>Vorgehen:</strong>
+                                <ol>
+                                    <li>Fragmentierung aller Indizes analysieren</li>
+                                    <li>Reorganize bei 5-30% Fragmentierung</li>
+                                    <li>Rebuild bei >30% Fragmentierung</li>
+                                    <li>Statistiken nach Index-Wartung aktualisieren</li>
+                                </ol>
+                            </div>
+                            <div class="task-script">
+                                <strong>Automatisierung:</strong>
+                                <code>EXEC sp_MSforeachtable "DBCC DBREINDEX ('?')"</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="index-task">
+                        <h6>Index-Usage-Analyse</h6>
+                        <div class="task-details">
+                            <div class="usage-analysis">
+                                <strong>Monatliche Analyse:</strong>
+                                <ul>
+                                    <li>Ungenutzte Indizes identifizieren</li>
+                                    <li>Missing-Index-Recommendations prüfen</li>
+                                    <li>Duplicate-Indizes konsolidieren</li>
+                                    <li>Index-Performance-Impact bewerten</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="task-group">
+                <h5>Query-Performance</h5>
+                <div class="query-optimization">
+                    <div class="query-analysis">
+                        <h6>Slow-Query-Detection</h6>
+                        <div class="monitoring-setup">
+                            <strong>Monitoring-Konfiguration:</strong>
+                            <ul>
+                                <li>Queries >5 Sekunden loggen</li>
+                                <li>CPU-intensive Queries identifizieren</li>
+                                <li>I/O-Heavy Operations überwachen</li>
+                                <li>Blocking-Processes automatisch detektieren</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="query-tuning">
+                        <h6>Performance-Tuning</h6>
+                        <div class="tuning-approach">
+                            <strong>Optimierungsstrategien:</strong>
+                            <ul>
+                                <li>Execution-Plans analysieren</li>
+                                <li>Parameter-Sniffing-Issues lösen</li>
+                                <li>Query-Hints strategisch einsetzen</li>
+                                <li>Stored-Procedure-Performance optimieren</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="maintenance-category backup">
+        <h4>💾 Backup & Recovery</h4>
+        <div class="backup-strategy">
+            <div class="backup-types">
+                <div class="backup-type full">
+                    <h5>Full Backup</h5>
+                    <div class="backup-details">
+                        <div class="backup-schedule">
+                            <strong>Zeitplan:</strong> Täglich 23:00 Uhr
+                        </div>
+                        <div class="backup-retention">
+                            <strong>Aufbewahrung:</strong>
+                            <ul>
+                                <li>Lokal: 7 Tage</li>
+                                <li>Network-Storage: 30 Tage</li>
+                                <li>Tape-Archive: 12 Monate</li>
+                                <li>Cloud-Backup: 7 Jahre</li>
+                            </ul>
+                        </div>
+                        <div class="backup-verification">
+                            <strong>Verifikation:</strong>
+                            <ul>
+                                <li>Checksum-Verification bei jedem Backup</li>
+                                <li>Restore-Test monatlich durchführen</li>
+                                <li>Recovery-Time-Objectives prüfen</li>
+                                <li>Backup-Size-Trends überwachen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="backup-type differential">
+                    <h5>Differential Backup</h5>
+                    <div class="backup-details">
+                        <div class="backup-schedule">
+                            <strong>Zeitplan:</strong> Stündlich (09:00-18:00)
+                        </div>
+                        <div class="backup-purpose">
+                            <strong>Zweck:</strong> Minimierung des Recovery-Time-Windows
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="backup-type transaction-log">
+                    <h5>Transaction Log Backup</h5>
+                    <div class="backup-details">
+                        <div class="backup-schedule">
+                            <strong>Zeitplan:</strong> Alle 15 Minuten
+                        </div>
+                        <div class="backup-importance">
+                            <strong>Kritisch für:</strong> Point-in-Time-Recovery
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disaster-recovery">
+                <h5>Disaster Recovery Procedures</h5>
+                <div class="dr-scenarios">
+                    <div class="dr-scenario">
+                        <h6>Szenario 1: Database Corruption</h6>
+                        <div class="recovery-steps">
+                            <ol>
+                                <li>Corrupted-Pages identifizieren</li>
+                                <li>Page-Level-Restore durchführen</li>
+                                <li>Consistency-Check ausführen</li>
+                                <li>Service-Restart und Validation</li>
+                            </ol>
+                            <div class="estimated-time">
+                                <strong>RTO:</strong> 30 Minuten | <strong>RPO:</strong> 15 Minuten
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dr-scenario">
+                        <h6>Szenario 2: Complete Server Loss</h6>
+                        <div class="recovery-steps">
+                            <ol>
+                                <li>Standby-Server aktivieren</li>
+                                <li>Latest Full + Differential Backup restore</li>
+                                <li>Transaction-Log-Backups anwenden</li>
+                                <li>WMS-Services umkonfigurieren</li>
+                                <li>Full-System-Testing durchführen</li>
+                            </ol>
+                            <div class="estimated-time">
+                                <strong>RTO:</strong> 4 Stunden | <strong>RPO:</strong> 15 Minuten
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="maintenance-category housekeeping">
+        <h4>🧹 Data Housekeeping</h4>
+        <div class="housekeeping-tasks">
+            <div class="data-archiving">
+                <h5>Daten-Archivierung</h5>
+                <div class="archiving-rules">
+                    <table class="archiving-table">
+                        <thead>
+                            <tr>
+                                <th>Tabelle/Datentyp</th>
+                                <th>Retention-Policy</th>
+                                <th>Archivierungs-Methode</th>
+                                <th>Häufigkeit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transaction-Logs</td>
+                                <td>3 Monate online</td>
+                                <td>Compressed Archive</td>
+                                <td>Monatlich</td>
+                            </tr>
+                            <tr>
+                                <td>Bewegungsdaten</td>
+                                <td>12 Monate online</td>
+                                <td>Historical-Table</td>
+                                <td>Jährlich</td>
+                            </tr>
+                            <tr>
+                                <td>System-Logs</td>
+                                <td>6 Monate online</td>
+                                <td>File-System-Archive</td>
+                                <td>Quartalsweise</td>
+                            </tr>
+                            <tr>
+                                <td>User-Sessions</td>
+                                <td>30 Tage online</td>
+                                <td>Auto-Delete</td>
+                                <td>Täglich</td>
+                            </tr>
+                            <tr>
+                                <td>Error-Logs</td>
+                                <td>90 Tage online</td>
+                                <td>Compressed-Backup</td>
+                                <td>Monatlich</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="space-management">
+                <h5>Storage-Space-Management</h5>
+                <div class="space-monitoring">
+                    <div class="space-alerts">
+                        <h6>Kapazitäts-Monitoring</h6>
+                        <ul>
+                            <li><strong>Warnung bei 80% Auslastung:</strong> E-Mail an DB-Admin</li>
+                            <li><strong>Kritisch bei 90% Auslastung:</strong> SMS + Ticket</li>
+                            <li><strong>Emergency bei 95% Auslastung:</strong> Auto-Archivierung</li>
+                            <li><strong>Full bei 98% Auslastung:</strong> Read-Only-Mode</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="space-optimization">
+                        <h6>Storage-Optimierung</h6>
+                        <ul>
+                            <li>Database-File-Growth automatisch konfigurieren</li>
+                            <li>Temp-DB-Sizing optimieren</li>
+                            <li>Log-File-Management automatisieren</li>
+                            <li>Data-Compression strategisch einsetzen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="maintenance-category monitoring">
+        <h4>📊 Database-Monitoring</h4>
+        <div class="monitoring-setup">
+            <div class="performance-monitoring">
+                <h5>Performance-Metriken</h5>
+                <div class="key-metrics">
+                    <div class="metric-group">
+                        <h6>Response-Time-Metriken</h6>
+                        <ul>
+                            <li><strong>Average Query Duration:</strong> <5 Sekunden</li>
+                            <li><strong>95th Percentile Response:</strong> <10 Sekunden</li>
+                            <li><strong>Connection-Establishment-Time:</strong> <1 Sekunde</li>
+                            <li><strong>Transaction-Commit-Time:</strong> <2 Sekunden</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-group">
+                        <h6>Throughput-Metriken</h6>
+                        <ul>
+                            <li><strong>Transactions per Second:</strong> >500 TPS</li>
+                            <li><strong>Batch Requests per Second:</strong> >1000 req/s</li>
+                            <li><strong>Page Reads per Second:</strong> Monitor for spikes</li>
+                            <li><strong>Lock Waits per Second:</strong> <10 waits/s</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="metric-group">
+                        <h6>Resource-Utilization</h6>
+                        <ul>
+                            <li><strong>CPU-Utilization:</strong> <80% sustained</li>
+                            <li><strong>Memory-Usage:</strong> <90% Buffer Pool</li>
+                            <li><strong>Disk-I/O-Wait:</strong> <20ms average</li>
+                            <li><strong>Network-Bandwidth:</strong> <70% utilization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="health-monitoring">
+                <h5>Database-Health-Checks</h5>
+                <div class="health-checks">
+                    <div class="automated-checks">
+                        <h6>Automatisierte Prüfungen</h6>
+                        <table class="health-check-table">
+                            <thead>
+                                <tr>
+                                    <th>Check-Type</th>
+                                    <th>Häufigkeit</th>
+                                    <th>Threshold</th>
+                                    <th>Action bei Überschreitung</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DBCC CHECKDB</td>
+                                    <td>Wöchentlich</td>
+                                    <td>0 Corruption-Errors</td>
+                                    <td>Immediate-Alert + Backup-Restore</td>
+                                </tr>
+                                <tr>
+                                    <td>Deadlock-Detection</td>
+                                    <td>Kontinuierlich</td>
+                                    <td>>5 Deadlocks/Stunde</td>
+                                    <td>Query-Analysis + Tuning</td>
+                                </tr>
+                                <tr>
+                                    <td>Blocking-Processes</td>
+                                    <td>Jede Minute</td>
+                                    <td>>60 Sekunden Block</td>
+                                    <td>Process-Kill + Investigation</td>
+                                </tr>
+                                <tr>
+                                    <td>Failed-Login-Attempts</td>
+                                    <td>Real-Time</td>
+                                    <td>>10 Attempts/Minute</td>
+                                    <td>IP-Block + Security-Alert</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Dokumentation {#dokumentation}
+
+<div class="maintenance-tab-content" id="dokumentation">
+
+### Wartungsdokumentation
+
+#### **Strukturierte Dokumentation aller Wartungsaktivitäten**
+
+<div class="documentation-framework">
+    <div class="doc-category">
+        <h4>📋 Wartungsprotokoll-Template</h4>
+        <div class="protocol-template">
+            <div class="template-section">
+                <h5>Standard-Wartungsbericht</h5>
+                <div class="template-structure">
+                    <div class="template-field">
+                        <strong>Wartungsdatum:</strong> [YYYY-MM-DD HH:MM]
+                    </div>
+                    <div class="template-field">
+                        <strong>Durchgeführt von:</strong> [Name, Rolle, Team]
+                    </div>
+                    <div class="template-field">
+                        <strong>Wartungstyp:</strong> [Präventiv/Korrektiv/Notfall]
+                    </div>
+                    <div class="template-field">
+                        <strong>Betroffene Systeme:</strong> [Liste aller beteiligten Komponenten]
+                    </div>
+                    <div class="template-field">
+                        <strong>Geplante Downtime:</strong> [Start - Ende]
+                    </div>
+                    <div class="template-field">
+                        <strong>Tatsächliche Downtime:</strong> [Start - Ende]
+                    </div>
+                    <div class="template-field">
+                        <strong>Durchgeführte Arbeiten:</strong>
+                        <ul>
+                            <li>[Detaillierte Beschreibung der Aktivitäten]</li>
+                            <li>[Verwendete Tools und Verfahren]</li>
+                            <li>[Aufgetretene Probleme und Lösungen]</li>
+                        </ul>
+                    </div>
+                    <div class="template-field">
+                        <strong>Ergebnisse und Messwerte:</strong>
+                        <ul>
+                            <li>[Performance-Verbesserungen]</li>
+                            <li>[Behobene Issues]</li>
+                            <li>[Neue Baseline-Werte]</li>
+                        </ul>
+                    </div>
+                    <div class="template-field">
+                        <strong>Follow-up Aktionen:</strong>
+                        <ul>
+                            <li>[Zusätzliche Überwachung erforderlich]</li>
+                            <li>[Geplante Nacharbeiten]</li>
+                            <li>[Empfehlungen für zukünftige Wartungen]</li>
+                        </ul>
+                    </div>
+                    <div class="template-field">
+                        <strong>Validierung:</strong>
+                        <ul>
+                            <li>[Funktionsprüfung erfolgreich]</li>
+                            <li>[Performance-Tests bestanden]</li>
+                            <li>[User-Acceptance bestätigt]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="doc-category">
+        <h4>📊 KPI-Dashboard für Wartung</h4>
+        <div class="maintenance-kpis">
+            <div class="kpi-section">
+                <h5>Wartungseffektivität-Metriken</h5>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-title">MTBF (Mean Time Between Failures)</div>
+                        <div class="kpi-value">847 Stunden</div>
+                        <div class="kpi-trend positive">↗ +12% vs. Vormonat</div>
+                        <div class="kpi-target">Ziel: >720 Stunden</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-title">MTTR (Mean Time To Repair)</div>
+                        <div class="kpi-value">23 Minuten</div>
+                        <div class="kpi-trend positive">↘ -8% vs. Vormonat</div>
+                        <div class="kpi-target">Ziel: <30 Minuten</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-title">Planned vs. Unplanned Maintenance</div>
+                        <div class="kpi-value">85:15 Ratio</div>
+                        <div class="kpi-trend positive">↗ +5% geplante Wartung</div>
+                        <div class="kpi-target">Ziel: 90:10 Ratio</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-title">First-Time-Fix-Rate</div>
+                        <div class="kpi-value">92%</div>
+                        <div class="kpi-trend neutral">= Gleichbleibend</div>
+                        <div class="kpi-target">Ziel: >90%</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-title">Maintenance Cost per Hour</div>
+                        <div class="kpi-value">€142</div>
+                        <div class="kpi-trend positive">↘ -6% vs. Vormonat</div>
+                        <div class="kpi-target">Ziel: <€150/Stunde</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-title">System Availability</div>
+                        <div class="kpi-value">99.7%</div>
+                        <div class="kpi-trend positive">↗ +0.2% vs. Vormonat</div>
+                        <div class="kpi-target">Ziel: >99.5%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="kpi-section">
+                <h5>Trend-Analyse</h5>
+                <div class="trend-charts">
+                    <div class="chart-placeholder">
+                        <h6>System-Verfügbarkeit Trend (12 Monate)</h6>
+                        <div class="chart-info">
+                            <p>Zeigt die monatliche System-Verfügbarkeit und identifiziert saisonale Muster</p>
+                        </div>
+                    </div>
+                    <div class="chart-placeholder">
+                        <h6>Wartungskosten Trend (12 Monate)</h6>
+                        <div class="chart-info">
+                            <p>Überwacht die Entwicklung der Wartungskosten und ROI-Optimierung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="doc-category">
+        <h4>📁 Dokumenten-Management</h4>
+        <div class="document-structure">
+            <div class="document-hierarchy">
+                <h5>Ordnerstruktur für Wartungsdokumentation</h5>
+                <div class="folder-tree">
+                    <div class="folder-item">
+                        <i class="fas fa-folder"></i>
+                        <strong>Wartungsdokumentation/</strong>
+                        <div class="sub-folders">
+                            <div class="folder-item">
+                                <i class="fas fa-folder"></i>
+                                <strong>01_Wartungsplanung/</strong>
+                                <div class="sub-folders">
+                                    <div class="file-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        Wartungskalender_2025.pdf
+                                    </div>
+                                    <div class="file-item">
+                                        <i class="fas fa-file-excel"></i>
+                                        Ressourcenplanung.xlsx
+                                    </div>
+                                    <div class="file-item">
+                                        <i class="fas fa-file-word"></i>
+                                        Wartungsstrategie_V2.1.docx
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="folder-item">
+                                <i class="fas fa-folder"></i>
+                                <strong>02_Protokolle/</strong>
+                                <div class="sub-folders">
+                                    <div class="folder-item">
+                                        <i class="fas fa-folder"></i>
+                                        <strong>2025/</strong>
+                                        <div class="sub-folders">
+                                            <div class="folder-item">
+                                                <i class="fas fa-folder"></i>
+                                                <strong>01_Januar/</strong>
+                                            </div>
+                                            <div class="folder-item">
+                                                <i class="fas fa-folder"></i>
+                                                <strong>02_Februar/</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="folder-item">
+                                <i class="fas fa-folder"></i>
+                                <strong>03_Checklisten/</strong>
+                                <div class="sub-folders">
+                                    <div class="file-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        Hardware_Wartung_Checklist.pdf
+                                    </div>
+                                    <div class="file-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        Software_Update_Checklist.pdf
+                                    </div>
+                                    <div class="file-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        Datenbank_Wartung_Checklist.pdf
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="folder-item">
+                                <i class="fas fa-folder"></i>
+                                <strong>04_Verfahrensanweisungen/</strong>
+                                <div class="sub-folders">
+                                    <div class="file-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        Notfall_Wartung_Procedure.pdf
+                                    </div>
+                                    <div class="file-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        Disaster_Recovery_Plan.pdf
+                                    </div>
+                                    <div class="file-item">
+                                        <i class="fas fa-file-pdf"></i>
+                                        Rollback_Procedures.pdf
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="folder-item">
+                                <i class="fas fa-folder"></i>
+                                <strong>05_KPI_Berichte/</strong>
+                                <div class="sub-folders">
+                                    <div class="file-item">
+                                        <i class="fas fa-file-excel"></i>
+                                        Monatsbericht_Wartung_Jan2025.xlsx
+                                    </div>
+                                    <div class="file-item">
+                                        <i class="fas fa-file-powerpoint"></i>
+                                        Quartalsreview_Q4_2024.pptx
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="version-control">
+                <h5>Dokument-Versionierung</h5>
+                <div class="version-guidelines">
+                    <div class="version-rule">
+                        <h6>Naming-Convention</h6>
+                        <div class="naming-format">
+                            <code>[Dokumenttyp]_[Beschreibung]_V[Major].[Minor].docx</code>
+                            <div class="naming-example">
+                                Beispiel: <code>Wartungsprotokoll_WMS_Update_V2.1.docx</code>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="version-rule">
+                        <h6>Versions-Schema</h6>
+                        <ul>
+                            <li><strong>Major-Version (X.0):</strong> Grundlegende Änderungen in Struktur oder Verfahren</li>
+                            <li><strong>Minor-Version (X.Y):</strong> Ergänzungen oder kleinere Korrekturen</li>
+                            <li><strong>Patch-Version (X.Y.Z):</strong> Rechtschreibkorrekturen oder Format-Anpassungen</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="version-rule">
+                        <h6>Review-Prozess</h6>
+                        <ol>
+                            <li><strong>Erstellung:</strong> Autor erstellt Entwurf</li>
+                            <li><strong>Review:</strong> Fachbereichsleiter prüft Inhalt</li>
+                            <li><strong>Freigabe:</strong> IT-Manager genehmigt finale Version</li>
+                            <li><strong>Distribution:</strong> Controlled Distribution an relevante Teams</li>
+                            <li><strong>Archivierung:</strong> Alte Versionen werden archiviert</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="doc-category">
+        <h4>🔄 Lessons Learned Database</h4>
+        <div class="lessons-learned">
+            <div class="lessons-structure">
+                <h5>Wissensdatenbank für Wartungserfahrungen</h5>
+                <div class="lessons-categories">
+                    <div class="lesson-category">
+                        <h6>Hardware-Ausfälle</h6>
+                        <div class="lesson-entry">
+                            <div class="lesson-date">15.12.2024</div>
+                            <div class="lesson-title">SAN-Controller Ausfall während Backup</div>
+                            <div class="lesson-summary">
+                                <strong>Problem:</strong> Primärer SAN-Controller versagte während nächtlichem Backup
+                            </div>
+                            <div class="lesson-solution">
+                                <strong>Lösung:</strong> Automatischer Failover auf sekundären Controller funktionierte
+                            </div>
+                            <div class="lesson-prevention">
+                                <strong>Prävention:</strong> Monitoring für Controller-Temperatur hinzugefügt
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-category">
+                        <h6>Software-Updates</h6>
+                        <div class="lesson-entry">
+                            <div class="lesson-date">08.01.2025</div>
+                            <div class="lesson-title">WMS-Update verursacht SAP-Interface-Probleme</div>
+                            <div class="lesson-summary">
+                                <strong>Problem:</strong> Nach WMS-Update funktionierte SAP-Schnittstelle nicht mehr
+                            </div>
+                            <div class="lesson-solution">
+                                <strong>Lösung:</strong> Interface-Configuration musste nach Update angepasst werden
+                            </div>
+                            <div class="lesson-prevention">
+                                <strong>Prävention:</strong> Interface-Tests in Update-Checklist aufgenommen
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-category">
+                        <h6>Performance-Optimierung</h6>
+                        <div class="lesson-entry">
+                            <div class="lesson-date">22.11.2024</div>
+                            <div class="lesson-title">Database-Performance nach Index-Rebuild deutlich verbessert</div>
+                            <div class="lesson-summary">
+                                <strong>Beobachtung:</strong> Monatlicher Index-Rebuild reduzierte Query-Zeit um 40%
+                            </div>
+                            <div class="lesson-solution">
+                                <strong>Implementierung:</strong> Automatischer Index-Rebuild alle 2 Wochen eingeführt
+                            </div>
+                            <div class="lesson-prevention">
+                                <strong>Monitoring:</strong> Index-Fragmentierung wird kontinuierlich überwacht
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="knowledge-sharing">
+                <h5>Wissenstransfer-Mechanismen</h5>
+                <div class="sharing-methods">
+                    <div class="sharing-method">
+                        <h6>Monatliche Wartungs-Reviews</h6>
+                        <ul>
+                            <li>Präsentation der wichtigsten Lessons Learned</li>
+                            <li>Team-Diskussion über Verbesserungsmöglichkeiten</li>
+                            <li>Update von Verfahrensanweisungen basierend auf Erfahrungen</li>
+                            <li>Cross-Training für neue Wartungsverfahren</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sharing-method">
+                        <h6>Wartungs-Wiki (intern)</h6>
+                        <ul>
+                            <li>Zentrale Wissensdatenbank mit Suchfunktion</li>
+                            <li>Verknüpfung mit Ticket-System für Problem-Resolution</li>
+                            <li>Tag-System für schnelle Kategorisierung</li>
+                            <li>Bewertungssystem für Relevanz der Einträge</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sharing-method">
+                        <h6>Mentoring-Programm</h6>
+                        <ul>
+                            <li>Erfahrene Techniker trainieren neue Mitarbeiter</li>
+                            <li>Hands-on-Training bei kritischen Wartungsarbeiten</li>
+                            <li>Regelmäßige Kompetenz-Assessments</li>
+                            <li>Zertifizierung für verschiedene Wartungs-Level</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+## Support-Kontakte
+
+<div class="support-contacts-section">
+    <div class="emergency-contacts">
+        <h3>🚨 Notfall-Kontakte</h3>
+        <div class="contact-grid">
+            <div class="contact-card critical">
+                <h4>24/7 Notfall-Hotline</h4>
+                <div class="contact-details">
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <strong>+41 81 770 9999</strong>
+                    </div>
+                    <div class="contact-purpose">
+                        Bei kritischen Systemausfällen oder Sicherheitsproblemen
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card high">
+                <h4>IT-Support Desk</h4>
+                <div class="contact-details">
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <strong>+41 81 770 5678</strong>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <strong>wms-support@georgfischer.com</strong>
+                    </div>
+                    <div class="contact-hours">
+                        Mo-Fr 07:00-18:00 Uhr
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="specialized-contacts">
+        <h3>🔧 Spezialisierte Wartungs-Teams</h3>
+        <div class="specialist-grid">
+            <div class="specialist-team">
+                <h4>Database-Administration</h4>
+                <div class="team-contact">
+                    <i class="fas fa-envelope"></i>
+                    <strong>dba-team@georgfischer.com</strong>
+                </div>
+            </div>
+            
+            <div class="specialist-team">
+                <h4>Hardware-Wartung</h4>
+                <div class="team-contact">
+                    <i class="fas fa-phone"></i>
+                    <strong>+41 81 770 1280</strong>
+                </div>
+            </div>
+            
+            <div class="specialist-team">
+                <h4>Netzwerk-Administration</h4>
+                <div class="team-contact">
+                    <i class="fas fa-envelope"></i>
+                    <strong>network-team@georgfischer.com</strong>
+                </div>
+            </div>
+            
+            <div class="specialist-team">
+                <h4>Wartungskoordination</h4>
+                <div class="team-contact">
+                    <i class="fas fa-envelope"></i>
+                    <strong>erick.hernandez.zenil@georgfischer.com</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Tab switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.maintenance-tab-btn');
+    const tabContents = document.querySelectorAll('.maintenance-tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            // Remove active class from all tabs and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            button.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>

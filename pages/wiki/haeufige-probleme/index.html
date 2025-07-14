@@ -1,150 +1,1207 @@
 ---
 layout: default
-title: "Häufige Probleme"
-description: "Lösungen für häufig auftretende WMS-Probleme"
+title: "Häufige Probleme - WMS Troubleshooting"
+description: "Lösungen für häufig auftretende WMS-Probleme und Störungen bei Georg Fischer"
 breadcrumbs:
   - title: "Wiki"
   - title: "Häufige Probleme"
 ---
 
-<div class="wip-container">
-    <div class="wip-header">
-        <div class="wip-icon">
-            <i class="fas fa-hard-hat"></i>
-        </div>
-        <h1>🚧 Seite in Entwicklung</h1>
-        <p class="wip-subtitle">Häufige Probleme - WMS Troubleshooting</p>
-    </div>
+# Häufige Probleme - WMS Troubleshooting
 
-    <div class="wip-content">
-        <div class="wip-message">
-            <h2>Diese Wiki-Seite wird derzeit entwickelt</h2>
-            <p>Die Dokumentation für "Häufige Probleme" befindet sich in der Entwicklungsphase.</p>
-        </div>
-
-        <div class="wip-alternatives">
-            <h3>Verfügbare Alternativen:</h3>
-            <div class="alternatives-grid">
-                <div class="alternative-card">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h4>Häufige Probleme (Fehlersektion)</h4>
-                    <p>Detaillierte Problemlösungen</p>
-                    <a href="../../errors/common/" class="btn btn-primary">Problemlösungen öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-first-aid"></i>
-                    <h4>Notfallverfahren</h4>
-                    <p>Kritische Situationen bewältigen</p>
-                    <a href="../notfallverfahren/" class="btn btn-primary">Notfallverfahren öffnen</a>
-                </div>
-                
-                <div class="alternative-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Support Hotline</h4>
-                    <p>Sofortige Hilfe bei Problemen</p>
-                    <a href="tel:+41817709999" class="btn btn-secondary">+41 81 770 9999</a>
-                </div>
-            </div>
-        </div>
+<div class="problems-hero">
+    <div class="hero-content">
+        <h2>🔧 Schnelle Problemlösung</h2>
+        <p>Lösungen für häufig auftretende WMS-Probleme und Störungen bei Georg Fischer</p>
     </div>
 </div>
 
+<div class="problems-alert">
+    <div class="alert-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <div class="alert-content">
+        <h3>🚨 BEI KRITISCHEN PROBLEMEN</h3>
+        <p><strong>Sofortige Hilfe:</strong> 24/7 Notfall-Hotline +41 81 770 9999</p>
+        <p><strong>Wichtig:</strong> Arbeitsplatz sichern, System nicht weiter bedienen</p>
+    </div>
+</div>
+
+## Navigation
+
+<div class="problems-nav">
+    <div class="problem-search">
+        <input type="text" id="problem-search" placeholder="Problem oder Fehlermeldung eingeben..." class="search-input">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="category-tabs">
+        <button class="category-btn active" data-category="all">Alle Probleme</button>
+        <button class="category-btn" data-category="login">Anmeldung</button>
+        <button class="category-btn" data-category="hardware">Hardware</button>
+        <button class="category-btn" data-category="software">Software</button>
+        <button class="category-btn" data-category="network">Netzwerk</button>
+        <button class="category-btn" data-category="performance">Performance</button>
+    </div>
+</div>
+
+## Problemkategorien
+
+### Anmeldung und Zugang {#login}
+
+<div class="problem-category" data-category="login">
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🔐 Anmeldung fehlgeschlagen</h3>
+        <span class="problem-frequency">Häufigkeit: 35%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>"Ungültiger Benutzername oder Passwort"</li>
+            <li>Anmeldebildschirm erscheint erneut</li>
+            <li>Fehlermeldung: "Authentifizierung fehlgeschlagen"</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Basis-Checks:</strong>
+                <ul>
+                    <li>Capslock-Taste prüfen</li>
+                    <li>Tastatur-Layout überprüfen</li>
+                    <li>Passwort sorgfältig eingeben</li>
+                </ul>
+            </li>
+            <li><strong>Account-Status:</strong>
+                <ul>
+                    <li>Passwort abgelaufen? (nach 90 Tagen)</li>
+                    <li>Account gesperrt? (nach 5 Fehlversuchen)</li>
+                    <li>Benutzer noch aktiv?</li>
+                </ul>
+            </li>
+            <li><strong>Netzwerk-Verbindung:</strong>
+                <ul>
+                    <li>Internetverbindung testen</li>
+                    <li>VPN-Verbindung prüfen</li>
+                    <li>Firewall-Einstellungen</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Bei weiteren Problemen: IT-Support +41 81 770 7777</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>⏰ Session-Timeout</h3>
+        <span class="problem-frequency">Häufigkeit: 20%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>"Session abgelaufen" Meldung</li>
+            <li>Automatische Abmeldung nach Inaktivität</li>
+            <li>Arbeit geht verloren</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Sofortmaßnahmen:</strong>
+                <ul>
+                    <li>Neu anmelden</li>
+                    <li>Letzte Transaktionen prüfen</li>
+                    <li>Ungespeicherte Daten wiederherstellen</li>
+                </ul>
+            </li>
+            <li><strong>Prävention:</strong>
+                <ul>
+                    <li>Regelmäßige Aktivität (alle 20 Min.)</li>
+                    <li>Arbeiten häufiger speichern</li>
+                    <li>Browser-Tabs nicht schließen</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Konfiguration:</h4>
+        <p>Session-Timeout: 30 Minuten (Standard)</p>
+        <p>Verlängerung nur durch Administrator</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🚫 Unzureichende Berechtigungen</h3>
+        <span class="problem-frequency">Häufigkeit: 15%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>"Zugriff verweigert" Meldungen</li>
+            <li>Fehlende Menüoptionen</li>
+            <li>Funktionen nicht verfügbar</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Rollenprüfung:</strong>
+                <ul>
+                    <li>Aktuelle Benutzerrolle anzeigen</li>
+                    <li>Erforderliche Berechtigung ermitteln</li>
+                    <li>Berechtigungsmatrix konsultieren</li>
+                </ul>
+            </li>
+            <li><strong>Beantragung:</strong>
+                <ul>
+                    <li>Vorgesetzten kontaktieren</li>
+                    <li>Geschäftliche Begründung</li>
+                    <li>Berechtigungsformular ausfüllen</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Berechtigungsanfragen: Key User oder Administrator</p>
+    </div>
+</div>
+
+</div>
+
+### Hardware-Probleme {#hardware}
+
+<div class="problem-category" data-category="hardware">
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>📱 Scanner funktioniert nicht</h3>
+        <span class="problem-frequency">Häufigkeit: 28%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Kein Scannen möglich</li>
+            <li>Roter Laserstrahl fehlt</li>
+            <li>Kein Piepston</li>
+            <li>Fehlende Datenübertragung</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Basis-Checks:</strong>
+                <ul>
+                    <li>Akku-Status prüfen</li>
+                    <li>Verbindung zur Dockingstation</li>
+                    <li>Sauberkeit der Linse</li>
+                </ul>
+            </li>
+            <li><strong>Neustart:</strong>
+                <ul>
+                    <li>Scanner aus- und einschalten</li>
+                    <li>Dockingstation trennen/verbinden</li>
+                    <li>System-Neustart falls nötig</li>
+                </ul>
+            </li>
+            <li><strong>Ersatzgerät:</strong>
+                <ul>
+                    <li>Ersatzscanner aus Lager</li>
+                    <li>Konfiguration übertragen</li>
+                    <li>Defektes Gerät markieren</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Techniker: +41 62 739 32 80</p>
+        <p>Ersatzgerät: Lager-Ausgabe</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🖨️ Drucker druckt nicht</h3>
+        <span class="problem-frequency">Häufigkeit: 22%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Druckauftrag hängt</li>
+            <li>Fehlermeldung am Drucker</li>
+            <li>Etiketten unvollständig</li>
+            <li>Papierstau</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Sofortmaßnahmen:</strong>
+                <ul>
+                    <li>Drucker-Display prüfen</li>
+                    <li>Papier-/Etiketten-Vorrat</li>
+                    <li>Druckwarteschlange leeren</li>
+                </ul>
+            </li>
+            <li><strong>Mechanische Prüfung:</strong>
+                <ul>
+                    <li>Papierstau entfernen</li>
+                    <li>Druckwalze reinigen</li>
+                    <li>Toner/Farbbandwechsel</li>
+                </ul>
+            </li>
+            <li><strong>Software-Reset:</strong>
+                <ul>
+                    <li>Drucker-Spooler neu starten</li>
+                    <li>Treiber aktualisieren</li>
+                    <li>Netzwerkverbindung prüfen</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Techniker vor Ort: +41 62 739 32 80</p>
+        <p>Ersatzteile: Wartungsteam</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>💻 Handheld-Gerät hängt</h3>
+        <span class="problem-frequency">Häufigkeit: 18%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Bildschirm friert ein</li>
+            <li>Keine Eingabe möglich</li>
+            <li>Langsame Reaktion</li>
+            <li>Unvollständige Anzeige</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Soft-Reset:</strong>
+                <ul>
+                    <li>Neustart über Menü</li>
+                    <li>Aktuelle Transaktion abbrechen</li>
+                    <li>Daten synchronisieren</li>
+                </ul>
+            </li>
+            <li><strong>Hard-Reset:</strong>
+                <ul>
+                    <li>Power-Taste 10 Sek. halten</li>
+                    <li>Akku entfernen/einsetzen</li>
+                    <li>Kalter Neustart</li>
+                </ul>
+            </li>
+            <li><strong>Neuinitialisierung:</strong>
+                <ul>
+                    <li>Gerät in Dockingstation</li>
+                    <li>Konfiguration neu laden</li>
+                    <li>Ersatzgerät aktivieren</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>IT-Support: +41 81 770 7777</p>
+        <p>Ersatzgerät: Sofort verfügbar</p>
+    </div>
+</div>
+
+</div>
+
+### Software-Probleme {#software}
+
+<div class="problem-category" data-category="software">
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🖥️ WMS-Client startet nicht</h3>
+        <span class="problem-frequency">Häufigkeit: 25%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Fehlermeldung beim Start</li>
+            <li>Weißer/schwarzer Bildschirm</li>
+            <li>Langsamer Startvorgang</li>
+            <li>Absturz während Initialisierung</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Basis-Checks:</strong>
+                <ul>
+                    <li>Andere Anwendungen schließen</li>
+                    <li>Arbeitsspeicher prüfen</li>
+                    <li>Festplattenspeicher</li>
+                </ul>
+            </li>
+            <li><strong>Neustart:</strong>
+                <ul>
+                    <li>Anwendung beenden</li>
+                    <li>Prozesse im Task-Manager</li>
+                    <li>PC-Neustart</li>
+                </ul>
+            </li>
+            <li><strong>Konfiguration:</strong>
+                <ul>
+                    <li>Config-Dateien prüfen</li>
+                    <li>Netzwerk-Einstellungen</li>
+                    <li>Datenbankverbindung</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>System-Administrator: +41 81 770 7779</p>
+        <p>Neuinstallation falls erforderlich</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>💾 Datenverlust nach Absturz</h3>
+        <span class="problem-frequency">Häufigkeit: 12%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Eingaben verschwunden</li>
+            <li>Transaktion nicht gespeichert</li>
+            <li>Datenbank-Inkonsistenz</li>
+            <li>Fehlende Buchungen</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Sofortmaßnahmen:</strong>
+                <ul>
+                    <li>Betroffene Bereiche sperren</li>
+                    <li>Zeitpunkt dokumentieren</li>
+                    <li>Andere Benutzer informieren</li>
+                </ul>
+            </li>
+            <li><strong>Datenrecovery:</strong>
+                <ul>
+                    <li>Backup-Status prüfen</li>
+                    <li>Transaktionsprotokoll</li>
+                    <li>Automatische Wiederherstellung</li>
+                </ul>
+            </li>
+            <li><strong>Validierung:</strong>
+                <ul>
+                    <li>Datenbestand prüfen</li>
+                    <li>Konsistenz-Checks</li>
+                    <li>Manuelle Korrekturen</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Notfall-DBA: +41 81 770 9999</p>
+        <p>Datenbank-Wiederherstellung</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🔄 Synchronisation fehlgeschlagen</h3>
+        <span class="problem-frequency">Häufigkeit: 20%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Daten nicht aktuell</li>
+            <li>SAP-Abweichungen</li>
+            <li>Bestandsdifferenzen</li>
+            <li>Fehlende Aufträge</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Sync-Status:</strong>
+                <ul>
+                    <li>Letzte Synchronisation</li>
+                    <li>Fehlende Datensätze</li>
+                    <li>Sync-Queue prüfen</li>
+                </ul>
+            </li>
+            <li><strong>Manuelle Synchronisation:</strong>
+                <ul>
+                    <li>Sync-Prozess starten</li>
+                    <li>Einzelne Datensätze</li>
+                    <li>Vollständige Aktualisierung</li>
+                </ul>
+            </li>
+            <li><strong>Konfliktlösung:</strong>
+                <ul>
+                    <li>Duplikate auflösen</li>
+                    <li>Prioritäten definieren</li>
+                    <li>Datenbereinigung</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>SAP-Interface-Team: +41 81 770 7778</p>
+        <p>Datenabgleich erforderlich</p>
+    </div>
+</div>
+
+</div>
+
+### Netzwerk-Probleme {#network}
+
+<div class="problem-category" data-category="network">
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🌐 Keine Netzwerkverbindung</h3>
+        <span class="problem-frequency">Häufigkeit: 30%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>"Server nicht erreichbar"</li>
+            <li>Timeout-Meldungen</li>
+            <li>Langsame Verbindung</li>
+            <li>Verbindungsabbrüche</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Basis-Checks:</strong>
+                <ul>
+                    <li>Netzwerkkabel prüfen</li>
+                    <li>WLAN-Verbindung</li>
+                    <li>Switch-Status</li>
+                </ul>
+            </li>
+            <li><strong>Netzwerk-Tests:</strong>
+                <ul>
+                    <li>Ping zum Server</li>
+                    <li>DNS-Auflösung</li>
+                    <li>Portverbindungen</li>
+                </ul>
+            </li>
+            <li><strong>Konfiguration:</strong>
+                <ul>
+                    <li>IP-Adresse prüfen</li>
+                    <li>Subnet-Maske</li>
+                    <li>Gateway-Erreichbarkeit</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Netzwerk-Team: +41 81 770 7770</p>
+        <p>Infrastruktur-Check erforderlich</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🔥 Firewall blockiert WMS</h3>
+        <span class="problem-frequency">Häufigkeit: 15%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Verbindung wird abgelehnt</li>
+            <li>Bestimmte Funktionen blockiert</li>
+            <li>Intermittierende Probleme</li>
+            <li>Sicherheitswarnung</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Firewall-Check:</strong>
+                <ul>
+                    <li>Windows-Firewall</li>
+                    <li>Unternehmens-Firewall</li>
+                    <li>Antivirus-Software</li>
+                </ul>
+            </li>
+            <li><strong>Ausnahmen:</strong>
+                <ul>
+                    <li>WMS-Ports freigeben</li>
+                    <li>Anwendung whitelisten</li>
+                    <li>Temporäre Deaktivierung</li>
+                </ul>
+            </li>
+            <li><strong>Konfiguration:</strong>
+                <ul>
+                    <li>Regeln anpassen</li>
+                    <li>Ports dokumentieren</li>
+                    <li>Sicherheitsrichtlinien</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Security-Team: +41 81 770 7771</p>
+        <p>Firewall-Regel-Anpassung</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🚀 VPN-Verbindung instabil</h3>
+        <span class="problem-frequency">Häufigkeit: 18%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Häufige Verbindungsabbrüche</li>
+            <li>Langsame Datenübertragung</li>
+            <li>Authentifizierung fehlgeschlagen</li>
+            <li>Verbindung kann nicht hergestellt werden</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>VPN-Status:</strong>
+                <ul>
+                    <li>Verbindungsstatus prüfen</li>
+                    <li>Zertifikat-Gültigkeit</li>
+                    <li>Benutzer-Credentials</li>
+                </ul>
+            </li>
+            <li><strong>Neuverbindung:</strong>
+                <ul>
+                    <li>VPN trennen/verbinden</li>
+                    <li>Client neu starten</li>
+                    <li>Alternativer Server</li>
+                </ul>
+            </li>
+            <li><strong>Konfiguration:</strong>
+                <ul>
+                    <li>Verbindungseinstellungen</li>
+                    <li>Protokoll-Auswahl</li>
+                    <li>Bandbreiten-Limits</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>VPN-Support: +41 81 770 7772</p>
+        <p>Zertifikat-Erneuerung</p>
+    </div>
+</div>
+
+</div>
+
+### Performance-Probleme {#performance}
+
+<div class="problem-category" data-category="performance">
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🐌 System reagiert langsam</h3>
+        <span class="problem-frequency">Häufigkeit: 40%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Lange Ladezeiten</li>
+            <li>Verzögerte Reaktion</li>
+            <li>Timeout-Meldungen</li>
+            <li>Benutzer-Frustration</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Ressourcen-Check:</strong>
+                <ul>
+                    <li>CPU-Auslastung</li>
+                    <li>Arbeitsspeicher</li>
+                    <li>Festplattenspeicher</li>
+                </ul>
+            </li>
+            <li><strong>Optimierung:</strong>
+                <ul>
+                    <li>Unnötige Programme schließen</li>
+                    <li>Temp-Dateien löschen</li>
+                    <li>Neustart durchführen</li>
+                </ul>
+            </li>
+            <li><strong>Datenbank:</strong>
+                <ul>
+                    <li>Slow-Query-Analyse</li>
+                    <li>Index-Optimierung</li>
+                    <li>Statistiken aktualisieren</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Performance-Team: +41 81 770 7773</p>
+        <p>System-Tuning erforderlich</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>💾 Arbeitsspeicher voll</h3>
+        <span class="problem-frequency">Häufigkeit: 25%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>"Nicht genügend Speicher"</li>
+            <li>System friert ein</li>
+            <li>Anwendungen stürzen ab</li>
+            <li>Sehr langsame Reaktion</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Sofortmaßnahmen:</strong>
+                <ul>
+                    <li>Große Anwendungen schließen</li>
+                    <li>Browser-Tabs reduzieren</li>
+                    <li>Dokumente speichern</li>
+                </ul>
+            </li>
+            <li><strong>Speicher freigeben:</strong>
+                <ul>
+                    <li>Task-Manager verwenden</li>
+                    <li>Speicherfresser beenden</li>
+                    <li>System-Cache leeren</li>
+                </ul>
+            </li>
+            <li><strong>Dauerhafte Lösung:</strong>
+                <ul>
+                    <li>RAM-Upgrade prüfen</li>
+                    <li>Virtuellen Speicher</li>
+                    <li>Startup-Programme</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Hardware-Team: +41 81 770 7774</p>
+        <p>RAM-Upgrade erforderlich</p>
+    </div>
+</div>
+
+<div class="problem-card">
+    <div class="problem-header">
+        <h3>🗄️ Datenbank überlastet</h3>
+        <span class="problem-frequency">Häufigkeit: 15%</span>
+    </div>
+    <div class="problem-symptoms">
+        <h4>Symptome:</h4>
+        <ul>
+            <li>Sehr langsame Abfragen</li>
+            <li>Timeout bei Berichten</li>
+            <li>Sperren (Deadlocks)</li>
+            <li>Hohe CPU-Last auf Server</li>
+        </ul>
+    </div>
+    <div class="problem-solutions">
+        <h4>Lösungsschritte:</h4>
+        <ol>
+            <li><strong>Monitoring:</strong>
+                <ul>
+                    <li>Aktive Verbindungen</li>
+                    <li>Laufende Abfragen</li>
+                    <li>Blocking-Prozesse</li>
+                </ul>
+            </li>
+            <li><strong>Optimierung:</strong>
+                <ul>
+                    <li>Slow-Queries beenden</li>
+                    <li>Index-Rebuild</li>
+                    <li>Statistiken aktualisieren</li>
+                </ul>
+            </li>
+            <li><strong>Wartung:</strong>
+                <ul>
+                    <li>Maintenance-Window</li>
+                    <li>Datenbankpflege</li>
+                    <li>Archivierung</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div class="problem-escalation">
+        <h4>Eskalation:</h4>
+        <p>Database-Team: +41 81 770 7775</p>
+        <p>Maintenance-Window planen</p>
+    </div>
+</div>
+
+</div>
+
+## Schnelle Lösungen
+
+### Top 5 Sofortmaßnahmen
+
+<div class="quick-fixes">
+    <div class="quick-fix">
+        <h3>🔄 Neustart durchführen</h3>
+        <p>Löst 60% aller Probleme</p>
+        <ul>
+            <li>Anwendung neu starten</li>
+            <li>PC neu starten</li>
+            <li>Gerät neu starten</li>
+        </ul>
+    </div>
+    
+    <div class="quick-fix">
+        <h3>🔌 Verbindung prüfen</h3>
+        <p>Löst 25% aller Probleme</p>
+        <ul>
+            <li>Kabel überprüfen</li>
+            <li>WLAN-Status</li>
+            <li>Netzwerk-Ping</li>
+        </ul>
+    </div>
+    
+    <div class="quick-fix">
+        <h3>🔋 Akku/Strom prüfen</h3>
+        <p>Löst 20% aller Probleme</p>
+        <ul>
+            <li>Akkustand prüfen</li>
+            <li>Ladekabel</li>
+            <li>Stromversorgung</li>
+        </ul>
+    </div>
+    
+    <div class="quick-fix">
+        <h3>🧹 Cache leeren</h3>
+        <p>Löst 15% aller Probleme</p>
+        <ul>
+            <li>Browser-Cache</li>
+            <li>Temp-Dateien</li>
+            <li>System-Cache</li>
+        </ul>
+    </div>
+    
+    <div class="quick-fix">
+        <h3>📞 Support kontaktieren</h3>
+        <p>Für alle anderen Probleme</p>
+        <ul>
+            <li>Problem dokumentieren</li>
+            <li>Screenshots erstellen</li>
+            <li>Hotline anrufen</li>
+        </ul>
+    </div>
+</div>
+
+## Präventive Maßnahmen
+
+### Tägliche Routine
+
+```yaml
+praeventive_massnahmen:
+  arbeitsbeginn:
+    - "System-Status prüfen"
+    - "Aktualisierungen installieren"
+    - "Backup-Status kontrollieren"
+    - "Speicherplatz überprüfen"
+    
+  arbeitsende:
+    - "Offene Transaktionen abschließen"
+    - "Temp-Dateien löschen"
+    - "Logout korrekt durchführen"
+    - "Geräte ordnungsgemäß herunterfahren"
+    
+  woechentlich:
+    - "Virenscan durchführen"
+    - "Defragmentierung"
+    - "Log-Dateien archivieren"
+    - "Performance-Check"
+    
+  monatlich:
+    - "Passwörter aktualisieren"
+    - "Zertifikate prüfen"
+    - "Backup-Wiederherstellung testen"
+    - "Dokumentation aktualisieren"
+```
+
+## Kontakt und Support
+
+### Support-Hierarchie
+
+```yaml
+support_kontakte:
+  level_1_basic:
+    beschreibung: "Erste Hilfe bei Standard-Problemen"
+    telefon: "+41 81 770 7777"
+    email: "wms-support@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 06:00-22:00"
+    
+  level_2_advanced:
+    beschreibung: "Komplexe technische Probleme"
+    telefon: "+41 81 770 7778"
+    email: "advanced-support@georgfischer.com"
+    verfuegbarkeit: "Mo-Fr 08:00-18:00"
+    
+  level_3_expert:
+    beschreibung: "Systemkritische Störungen"
+    telefon: "+41 81 770 7779"
+    email: "expert-support@georgfischer.com"
+    verfuegbarkeit: "24/7 für Notfälle"
+    
+  notfall_hotline:
+    beschreibung: "Kritische Systemausfälle"
+    telefon: "+41 81 770 9999"
+    verfuegbarkeit: "24/7 sofortige Hilfe"
+    max_antwortzeit: "15 Minuten"
+```
+
+### Eskalationsmatrix
+
+| Problem-Typ | Schweregrad | Erste Anlaufstelle | Eskalation nach |
+|-------------|-------------|--------------------|--------------
+| Anmeldung | Niedrig | Level 1 | 30 Min |
+| Hardware | Mittel | Level 1 | 20 Min |
+| Netzwerk | Hoch | Level 2 | 15 Min |
+| Datenbank | Kritisch | Level 3 | 10 Min |
+| Systemausfall | Notfall | Hotline | Sofort |
+
+### Dokumentation erforderlich
+
+Für alle Probleme bitte dokumentieren:
+- **Zeitpunkt** des Auftretens
+- **Fehlermeldung** (Screenshot)
+- **Betroffene Benutzer/Bereiche**
+- **Durchgeführte Lösungsschritte**
+- **Endergebnis** der Lösung
+
+---
+
+*Diese Problemlösungsdokumentation wird kontinuierlich erweitert basierend auf neuen Erkenntnissen und Häufigkeiten. Letzte Aktualisierung: März 2025*
+
 <style>
-.wip-container {
-    max-width: 800px;
-    margin: 0 auto;
+.problems-hero {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
     padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.wip-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
+.problems-alert {
     background: linear-gradient(135deg, #f59e0b, #d97706);
     color: white;
+    padding: 1.5rem;
     border-radius: var(--radius-lg);
-}
-
-.wip-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.wip-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.wip-subtitle {
-    font-size: 1.25rem;
-    opacity: 0.9;
-}
-
-.wip-content {
+    margin: 2rem 0;
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.wip-message {
-    text-align: center;
-    padding: 2rem;
+.problems-alert .alert-icon {
+    font-size: 2rem;
+    margin-top: 0.25rem;
+}
+
+.problems-alert .alert-content h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.problems-nav {
     background: var(--bg-secondary);
+    padding: 1.5rem;
     border-radius: var(--radius-lg);
-    border: 2px dashed var(--border-color);
+    margin-bottom: 2rem;
 }
 
-.wip-message h2 {
-    color: var(--text-primary);
+.problem-search {
+    display: flex;
+    gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
-.wip-alternatives {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
+.search-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
 }
 
-.wip-alternatives h3 {
+.search-btn {
+    padding: 0.75rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category-btn {
+    padding: 0.5rem 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.problem-category {
+    margin-bottom: 3rem;
+}
+
+.problem-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--error-color);
+}
+
+.problem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.problem-header h3 {
     color: var(--text-primary);
+    margin: 0;
+}
+
+.problem-frequency {
+    background: var(--error-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+}
+
+.problem-symptoms,
+.problem-solutions,
+.problem-escalation {
     margin-bottom: 1.5rem;
 }
 
-.alternatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.alternative-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
-
-.alternative-card i {
-    font-size: 2rem;
-    color: #f59e0b;
-    margin-bottom: 1rem;
-}
-
-.alternative-card h4 {
+.problem-symptoms h4,
+.problem-solutions h4,
+.problem-escalation h4 {
     color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
-.alternative-card p {
+.problem-symptoms ul,
+.problem-solutions ul,
+.problem-solutions ol {
+    margin-left: 1rem;
+}
+
+.problem-escalation {
+    background: rgba(239, 68, 68, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--error-color);
+}
+
+.problem-escalation p {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+}
+
+.problem-category.hidden {
+    display: none;
+}
+
+.problem-card.hidden {
+    display: none;
+}
+
+.quick-fixes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.quick-fix {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--success-color);
+}
+
+.quick-fix h3 {
+    color: var(--success-color);
+    margin-bottom: 0.5rem;
+}
+
+.quick-fix p {
     color: var(--text-secondary);
+    font-size: 0.875rem;
     margin-bottom: 1rem;
 }
 
+code {
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
-    .alternatives-grid {
+    .problems-nav {
+        text-align: center;
+    }
+    
+    .category-tabs {
+        justify-content: center;
+    }
+    
+    .problem-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .quick-fixes {
         grid-template-columns: 1fr;
+    }
+    
+    .problem-search {
+        flex-direction: column;
     }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Category filtering
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const problemCategories = document.querySelectorAll('.problem-category');
+    const problemCards = document.querySelectorAll('.problem-card');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show/hide categories based on selection
+            problemCategories.forEach(cat => {
+                if (category === 'all' || cat.dataset.category === category) {
+                    cat.classList.remove('hidden');
+                } else {
+                    cat.classList.add('hidden');
+                }
+            });
+        });
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('problem-search');
+    const searchBtn = document.querySelector('.search-btn');
+    
+    function performSearch() {
+        const query = searchInput.value.toLowerCase();
+        
+        problemCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const symptoms = card.querySelector('.problem-symptoms').textContent.toLowerCase();
+            const solutions = card.querySelector('.problem-solutions').textContent.toLowerCase();
+            
+            if (title.includes(query) || symptoms.includes(query) || solutions.includes(query)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add(query ? 'hidden' : 'hidden');
+            }
+        });
+        
+        // Show all categories if searching
+        if (query) {
+            problemCategories.forEach(cat => {
+                cat.classList.remove('hidden');
+            });
+        }
+    }
+    
+    searchInput.addEventListener('input', performSearch);
+    searchBtn.addEventListener('click', function() {
+        searchInput.focus();
+    });
+    
+    // Clear search when clicking "Alle Probleme"
+    document.querySelector('[data-category="all"]').addEventListener('click', function() {
+        searchInput.value = '';
+        problemCards.forEach(card => card.classList.remove('hidden'));
+    });
+});
+</script>

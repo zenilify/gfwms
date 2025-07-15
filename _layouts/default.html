@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Georg Fischer WMS</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     
     <!-- SEO -->
     {% seo %}
     
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/georg-fischer-corporate.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     
     <!-- Fonts -->
@@ -21,11 +22,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
     
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#1e40af">
+    <!-- Theme Color - Georg Fischer Blue -->
+    <meta name="theme-color" content="#1965a3">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Georg Fischer WMS{% endif %}">
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
@@ -33,65 +34,73 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Georg Fischer WMS{% endif %}">
     <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:image" content="{{ '/assets/images/og-image.png' | absolute_url }}">
 </head>
 <body>
     <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
     
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <a href="{{ '/' | relative_url }}" class="brand-link">
-                    <i class="fas fa-warehouse"></i>
-                    <span>{{ site.title }}</span>
-                </a>
-            </div>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <div class="nav-menu">
-                {% for item in site.navigation %}
-                <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">
-                    {{ item.name }}
-                </a>
-                {% endfor %}
+    <nav class="gf-nav" role="navigation" aria-label="Hauptnavigation">
+        <div class="gf-container">
+            <div class="gf-nav-container">
+                <div class="gf-nav-logo">
+                    <a href="{{ '/' | relative_url }}" style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="font-size: 2rem; font-weight: bold; color: #1965a3;">GF</span>
+                        <span style="color: #1a1e2a;">WMS Wissensdatenbank</span>
+                    </a>
+                </div>
+                
+                <button class="nav-toggle" aria-label="Navigation umschalten" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="gf-nav-menu">
+                    <a href="{{ '/' | relative_url }}" class="gf-nav-link {% if page.url == '/' %}active{% endif %}">
+                        Startseite
+                    </a>
+                    <a href="{{ '/pages/training/' | relative_url }}" class="gf-nav-link {% if page.url contains '/training/' %}active{% endif %}">
+                        Schulung
+                    </a>
+                    <a href="{{ '/pages/wiki/' | relative_url }}" class="gf-nav-link {% if page.url contains '/wiki/' %}active{% endif %}">
+                        Wiki
+                    </a>
+                    <a href="{{ '/pages/errors/' | relative_url }}" class="gf-nav-link {% if page.url contains '/errors/' %}active{% endif %}">
+                        Fehlerbehebung
+                    </a>
+                    <a href="{{ '/pages/chatbot/' | relative_url }}" class="gf-nav-link {% if page.url contains '/chatbot/' %}active{% endif %}">
+                        KI-Assistent
+                    </a>
+                </div>
                 
                 <!-- Search -->
                 <div class="nav-search">
-                    <input type="search" id="search-input" placeholder="Search..." aria-label="Search">
-                    <button type="button" id="search-button" aria-label="Search">
+                    <button type="button" id="search-button" aria-label="Suchen" class="gf-btn gf-btn-secondary" style="padding: 0.5rem 1rem;">
                         <i class="fas fa-search"></i>
+                        <span style="margin-left: 0.5rem;">Suchen</span>
                     </button>
                 </div>
-                
-                <!-- Theme Toggle -->
-                <button class="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                </button>
             </div>
         </div>
     </nav>
     
     <!-- Breadcrumbs -->
     {% if page.breadcrumbs %}
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb-list">
-                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    <nav class="breadcrumbs" aria-label="Brotkrumennavigation" style="background-color: #f7fafc; padding: 1rem 0;">
+        <div class="gf-container">
+            <ol class="breadcrumb-list" style="display: flex; list-style: none; margin: 0; padding: 0; gap: 0.5rem;">
+                <li><a href="{{ '/' | relative_url }}" style="color: #1965a3;">Startseite</a></li>
                 {% for crumb in page.breadcrumbs %}
-                <li>
+                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="color: #718096;">/</span>
                     {% if crumb.url %}
-                    <a href="{{ crumb.url | relative_url }}">{{ crumb.title }}</a>
+                    <a href="{{ crumb.url | relative_url }}" style="color: #1965a3;">{{ crumb.title }}</a>
                     {% else %}
-                    <span>{{ crumb.title }}</span>
+                    <span style="color: #2d3748;">{{ crumb.title }}</span>
                     {% endif %}
                 </li>
                 {% endfor %}
@@ -106,63 +115,86 @@
     </main>
     
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>{{ site.title }}</h3>
-                    <p>{{ site.description }}</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    </div>
+    <footer class="gf-section-dark" role="contentinfo" style="padding: 3rem 0;">
+        <div class="gf-container">
+            <div class="gf-grid gf-grid-4" style="margin-bottom: 3rem;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Georg Fischer WMS</h3>
+                    <p style="color: #cbd5e0; margin-bottom: 1.5rem;">Ihre umfassende Wissensdatenbank für das Warehouse Management System</p>
+                    <p style="color: #cbd5e0; font-size: 0.875rem;">Excellence in Flow</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        {% for item in site.navigation %}
-                        <li><a href="{{ item.url | relative_url }}">{{ item.name }}</a></li>
-                        {% endfor %}
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Schnellzugriff</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/training/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Schulungszentrum</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/wiki/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Wissensdatenbank</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/errors/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Fehlerbehebung</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/chatbot/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">KI-Assistent</a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="{{ '/pages/errors/contact/' | relative_url }}">Contact Us</a></li>
-                        <li><a href="{{ '/pages/errors/faq/' | relative_url }}">FAQ</a></li>
-                        <li><a href="{{ '/pages/errors/system/' | relative_url }}">System Status</a></li>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/errors/contact/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Kontakt</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/wiki/haeufige-probleme/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Häufige Fragen</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/errors/system/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Systemstatus</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/report-issue/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Problem melden</a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="{{ '/pages/training/downloads/' | relative_url }}">Downloads</a></li>
-                        <li><a href="{{ '/pages/wiki/glossary/' | relative_url }}">Glossary</a></li>
-                        <li><a href="{{ '/pages/wiki/updates/' | relative_url }}">Updates</a></li>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Ressourcen</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/wiki/downloads/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Downloads</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/wiki/glossar/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Glossar</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/wiki/vorlagen/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Vorlagen</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="{{ '/pages/wiki/notfallverfahren/' | relative_url }}" style="color: #cbd5e0; text-decoration: none;">Notfallverfahren</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-                <p>Last updated: {{ site.time | date: '%B %d, %Y' }}</p>
+            <div style="border-top: 1px solid #4a5568; padding-top: 2rem; text-align: center; color: #cbd5e0;">
+                <p>&copy; {{ 'now' | date: '%Y' }} Georg Fischer AG. Alle Rechte vorbehalten.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem;">Letzte Aktualisierung: {{ site.time | date: '%-d. %B %Y' }}</p>
             </div>
         </div>
     </footer>
     
     <!-- Search Modal -->
-    <div id="search-modal" class="search-modal" role="dialog" aria-label="Search" aria-hidden="true">
-        <div class="search-modal-content">
-            <div class="search-modal-header">
-                <h2>Search Knowledge Base</h2>
-                <button class="search-modal-close" aria-label="Close search">&times;</button>
+    <div id="search-modal" class="search-modal" role="dialog" aria-label="Suche" aria-hidden="true" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="search-modal-content" style="background-color: white; margin: 5% auto; padding: 2rem; max-width: 600px; border-radius: 0.5rem;">
+            <div class="search-modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="color: #1965a3; margin: 0;">Wissensdatenbank durchsuchen</h2>
+                <button class="search-modal-close" aria-label="Suche schließen" style="background: none; border: none; font-size: 2rem; cursor: pointer; color: #718096;">&times;</button>
             </div>
             <div class="search-modal-body">
-                <input type="search" id="modal-search-input" placeholder="What are you looking for?" aria-label="Search">
+                <input type="search" id="modal-search-input" placeholder="Wonach suchen Sie?" aria-label="Suche" class="gf-form-control" style="margin-bottom: 1.5rem;">
                 <div id="search-results" class="search-results"></div>
             </div>
         </div>
@@ -170,9 +202,6 @@
     
     <!-- Scripts -->
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    
-    <!-- Analytics -->
-    <!-- Add your analytics code here -->
     
     <!-- Service Worker -->
     <script>

@@ -1,0 +1,526 @@
+---
+layout: default
+title: "Bereitstellungsleitfaden - Georg Fischer WMS"
+description: "Umfassende Checkliste und Anleitung für die Bereitstellung der Georg Fischer WMS-Dokumentationswebsite"
+breadcrumbs:
+  - title: "Startseite"
+    url: "/"
+  - title: "Bereitstellung"
+---
+
+<div class="gf-container" style="padding: 3rem 0;">
+    <div class="gf-section" style="text-align: center;">
+        <h1 style="color: #1965a3; margin-bottom: 1rem;">Georg Fischer WMS Dokumentation - Bereitstellungs-Checkliste</h1>
+        <p style="font-size: 1.25rem; color: #4a5568; max-width: 800px; margin: 0 auto;">Vollständige Anleitung für die Bereitstellung der WMS-Dokumentationswebsite in die Produktion.</p>
+    </div>
+
+    <section class="gf-section">
+        <h2 style="color: #1965a3; text-align: center; margin-bottom: 2rem;">Vor-Bereitstellungs-Überprüfung ✅</h2>
+        
+        <div class="gf-card" style="padding: 2rem; margin-bottom: 2rem;">
+            <h3 style="color: #1965a3; margin-bottom: 1rem;">Inhaltsvalidierung ✅</h3>
+            <div style="margin-left: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #22c55e;">
+                    <input type="checkbox" checked disabled style="margin-right: 0.75rem;">
+                    <label style="text-decoration: line-through;">Alle WIP-Seiten in vollständigen Inhalt umgewandelt</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #22c55e;">
+                    <input type="checkbox" checked disabled style="margin-right: 0.75rem;">
+                    <label style="text-decoration: line-through;">Kontaktinformationen standardisiert</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Emergency hotline numbers unified</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Breadcrumb navigation consistent</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Internal links validated</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Terminology standardized</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="verification-category">
+            <h3>Technical Requirements ✅</h3>
+            <div class="checklist">
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Jekyll configuration complete (_config.yml)</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>All layouts functional (default, wiki, training, error)</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>CSS styling complete and responsive</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>JavaScript functionality tested</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Manifest.json configured</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Service worker (sw.js) present</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="verification-category">
+            <h3>Quality Assurance ✅</h3>
+            <div class="checklist">
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Mobile responsiveness verified</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Cross-browser compatibility considered</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Search functionality implemented</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>Navigation menus functional</label>
+                </div>
+                <div class="checklist-item completed">
+                    <input type="checkbox" checked disabled>
+                    <label>All interactive components working</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="deployment-steps-section">
+        <h2>Deployment Steps</h2>
+
+        <div class="deployment-step">
+            <h3>1. Pre-Deployment Tasks</h3>
+            <div class="code-block">
+                <pre><code># Install Jekyll dependencies
+bundle install
+
+# Build the site
+bundle exec jekyll build
+
+# Test locally
+bundle exec jekyll serve
+# Visit http://localhost:4000 to verify</code></pre>
+            </div>
+        </div>
+
+        <div class="deployment-step">
+            <h3>2. Configuration Updates</h3>
+            <p>Update <code>_config.yml</code> with production values:</p>
+            <div class="code-block">
+                <pre><code># Update these values for production
+url: "https://your-production-url.com"
+baseurl: "/path-if-needed"</code></pre>
+            </div>
+        </div>
+
+        <div class="deployment-step">
+            <h3>3. Asset Verification</h3>
+            <p>Ensure these directories contain required files:</p>
+            <ul>
+                <li><code>/downloads/</code> - Software and document downloads</li>
+                <li><code>/videos/</code> - Training videos (if referenced)</li>
+                <li><code>/tools/</code> - Online tools (if referenced)</li>
+            </ul>
+        </div>
+
+        <div class="deployment-step">
+            <h3>4. External Dependencies</h3>
+            <p>Verify these external resources:</p>
+            <ul>
+                <li>Font Awesome icons (CDN or local)</li>
+                <li>Google Fonts (if used)</li>
+                <li>Any JavaScript libraries</li>
+            </ul>
+        </div>
+
+        <div class="deployment-step">
+            <h3>5. Security Considerations</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="sec1">
+                    <label for="sec1">Remove any development/debug code</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="sec2">
+                    <label for="sec2">Verify no sensitive information in commits</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="sec3">
+                    <label for="sec3">Check file permissions</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="sec4">
+                    <label for="sec4">Enable HTTPS for production</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="sec5">
+                    <label for="sec5">Configure proper CORS headers if needed</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="deployment-step">
+            <h3>6. Performance Optimization</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="perf1">
+                    <label for="perf1">Minify CSS and JavaScript files</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="perf2">
+                    <label for="perf2">Optimize images (PDF extracts in assets/images/)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="perf3">
+                    <label for="perf3">Enable caching headers</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="perf4">
+                    <label for="perf4">Consider CDN for static assets</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="deployment-step">
+            <h3>7. Backup and Version Control</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="bak1">
+                    <label for="bak1">Create full backup of current production (if updating)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="bak2">
+                    <label for="bak2">Tag the release in Git</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="bak3">
+                    <label for="bak3">Document deployment version</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="deployment-step">
+            <h3>8. Post-Deployment Testing</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="post1">
+                    <label for="post1">Verify all pages load correctly</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="post2">
+                    <label for="post2">Test search functionality</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="post3">
+                    <label for="post3">Check all navigation menus</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="post4">
+                    <label for="post4">Validate contact forms/emails</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="post5">
+                    <label for="post5">Test on multiple devices</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="post6">
+                    <label for="post6">Verify 404 page works</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="deployment-step">
+            <h3>9. Monitoring Setup</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="mon1">
+                    <label for="mon1">Configure uptime monitoring</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="mon2">
+                    <label for="mon2">Set up error logging</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="mon3">
+                    <label for="mon3">Enable analytics (if required)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="mon4">
+                    <label for="mon4">Create automated backups</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="deployment-step">
+            <h3>10. Communication</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="com1">
+                    <label for="com1">Notify stakeholders of deployment</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="com2">
+                    <label for="com2">Update internal documentation</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="com3">
+                    <label for="com3">Inform support team of go-live</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="com4">
+                    <label for="com4">Schedule training sessions if needed</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rollback-section">
+        <h2>Rollback Plan</h2>
+        <div class="rollback-content">
+            <p>In case of issues:</p>
+            <ol>
+                <li>Keep previous version backup accessible</li>
+                <li>Document rollback procedure</li>
+                <li>Test rollback process</li>
+                <li>Maintain version control tags</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="support-contacts-section">
+        <h2>Support Contacts for Deployment</h2>
+        <div class="contact-cards">
+            <div class="contact-card">
+                <p><strong>Technical Lead:</strong> Erick Hernandez Zenil (erick.hernandez.zenil@georgfischer.com)</p>
+                <p><strong>IT Support:</strong> +41 81 770 5678</p>
+                <p><strong>Emergency:</strong> +41 81 770 9999</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-verification-section">
+        <h2>Final Verification</h2>
+        <div class="final-checklist">
+            <div class="checklist-item">
+                <input type="checkbox" id="fin1">
+                <label for="fin1">All content reviewed and approved</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="fin2">
+                <label for="fin2">Legal/compliance requirements met</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="fin3">
+                <label for="fin3">Accessibility standards checked</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="fin4">
+                <label for="fin4">Documentation complete</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="fin5">
+                <label for="fin5">Training materials ready</label>
+            </div>
+        </div>
+    </section>
+
+    <div class="note-section">
+        <p><strong>Note:</strong> This checklist should be reviewed and customized based on your specific deployment environment and requirements.</p>
+    </div>
+</div>
+
+<style>
+.deployment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.deployment-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.deployment-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pre-deployment-section {
+    margin: 4rem 0;
+}
+
+.verification-category {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+}
+
+.verification-category h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.checklist {
+    margin: 1rem 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.checklist-item.completed {
+    color: #10b981;
+}
+
+.checklist-item input[type="checkbox"] {
+    margin-right: 0.75rem;
+    width: 18px;
+    height: 18px;
+}
+
+.checklist-item label {
+    color: var(--text-secondary);
+}
+
+.checklist-item.completed label {
+    color: #10b981;
+    text-decoration: line-through;
+}
+
+.deployment-steps-section {
+    margin: 4rem 0;
+}
+
+.deployment-step {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.deployment-step h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.code-block {
+    background: #1f2937;
+    color: #e5e7eb;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.deployment-step ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.deployment-step ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.rollback-section {
+    margin: 4rem 0;
+}
+
+.rollback-content {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.rollback-content ol {
+    margin: 1rem 0 0 1rem;
+}
+
+.support-contacts-section {
+    margin: 4rem 0;
+}
+
+.contact-cards {
+    margin-top: 1rem;
+}
+
+.contact-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.contact-card p {
+    margin: 0.5rem 0;
+}
+
+.final-verification-section {
+    margin: 4rem 0;
+}
+
+.final-checklist {
+    background: white;
+    padding: 2rem;
+    border: 2px solid #1e40af;
+    border-radius: var(--radius-lg);
+}
+
+.note-section {
+    margin: 3rem 0;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .deployment-header h1 {
+        font-size: 2rem;
+    }
+    
+    .deployment-step {
+        padding: 1.5rem;
+    }
+}
+</style>

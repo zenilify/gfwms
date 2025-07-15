@@ -20,7 +20,10 @@
       "Bash(./create_wip_pages.sh:*)",
       "Bash(find:*)",
       "Bash(bundle exec:*)",
-      "Bash(bundle install:*)"
+      "Bash(bundle install:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:www.georgfischer.com)",
+      "WebFetch(domain:brandfetch.com)"
     ],
     "deny": []
   }

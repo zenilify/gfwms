@@ -1,0 +1,407 @@
+---
+layout: default
+title: "Probleme melden - Georg Fischer WMS"
+description: "Melden Sie Fehler oder schlagen Sie neue Funktionen für die WMS-Wissensdatenbank vor"
+breadcrumbs:
+  - title: "Startseite"
+    url: "/"
+  - title: "Probleme melden"
+---
+
+<div class="gf-container" style="padding: 3rem 0;">
+    <div class="gf-section" style="text-align: center;">
+        <h1 style="color: #1965a3; margin-bottom: 1rem;">Probleme melden & Funktionen vorschlagen</h1>
+        <p style="font-size: 1.25rem; color: #4a5568; max-width: 800px; margin: 0 auto;">Helfen Sie uns, die WMS-Wissensdatenbank zu verbessern, indem Sie Fehler melden oder neue Funktionen vorschlagen.</p>
+    </div>
+
+    <div class="gf-grid gf-grid-2" style="margin-top: 3rem;">
+        <div class="gf-card" style="border: 2px solid #ef4444; padding: 2rem;">
+            <div style="text-align: center; margin-bottom: 1rem;">
+                <div style="font-size: 3rem; margin-bottom: 0.5rem;">🐛</div>
+                <h2 style="color: #1965a3; margin: 0;">Fehlerbericht</h2>
+            </div>
+            <p style="text-align: center; color: #718096; margin-bottom: 2rem;">Einen Fehler auf der Website melden</p>
+            
+            <div>
+                <h3 style="color: #1965a3; margin-bottom: 0.5rem;">🐛 Problembeschreibung</h3>
+                <p style="color: #718096; font-size: 0.875rem; margin-bottom: 0.5rem;">Eine klare und präzise Beschreibung des Fehlers.</p>
+                <textarea class="gf-form-control" placeholder="Beschreiben Sie das Problem..." rows="4"></textarea>
+
+                <h3 style="color: #1965a3; margin: 2rem 0 0.5rem;">🔄 Schritte zur Reproduktion</h3>
+                <div style="background: #f7fafc; padding: 1rem; border-radius: 0.375rem;">
+                    <div style="margin-bottom: 0.5rem; color: #718096;">1. Gehe zu '...'</div>
+                    <div style="margin-bottom: 0.5rem; color: #718096;">2. Klicke auf '....'</div>
+                    <div style="margin-bottom: 0.5rem; color: #718096;">3. Scrolle nach unten zu '....'</div>
+                    <div style="color: #718096;">4. Siehe Fehler</div>
+                </div>
+
+                <h3 style="color: #1965a3; margin: 2rem 0 0.5rem;">✅ Erwartetes Verhalten</h3>
+                <textarea class="gf-form-control" placeholder="Was sollte passieren?" rows="2"></textarea>
+
+                <h3 style="color: #1965a3; margin: 2rem 0 0.5rem;">📱 Umgebung</h3>
+                <div class="gf-grid gf-grid-3" style="gap: 1rem;">
+                    <div>
+                        <label class="gf-form-label">Gerät:</label>
+                        <select class="gf-form-control">
+                            <option>Desktop</option>
+                            <option>Mobile</option>
+                            <option>Tablet</option>
+                        </select>
+                    </div>
+                    <div class="env-item">
+                        <label>Browser:</label>
+                        <select>
+                            <option>Chrome</option>
+                            <option>Firefox</option>
+                            <option>Safari</option>
+                            <option>Edge</option>
+                        </select>
+                    </div>
+                    <div class="env-item">
+                        <label>Betriebssystem:</label>
+                        <select>
+                            <option>Windows</option>
+                            <option>macOS</option>
+                            <option>Linux</option>
+                            <option>iOS</option>
+                            <option>Android</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3>🚨 Priorität</h3>
+                <div class="priority-options">
+                    <label class="priority-option">
+                        <input type="radio" name="bug-priority" value="low">
+                        <span>Niedrig - Kleinere Unannehmlichkeit</span>
+                    </label>
+                    <label class="priority-option">
+                        <input type="radio" name="bug-priority" value="medium">
+                        <span>Mittel - Beeinträchtigt die Funktionalität</span>
+                    </label>
+                    <label class="priority-option">
+                        <input type="radio" name="bug-priority" value="high">
+                        <span>Hoch - Blockiert wichtige Features</span>
+                    </label>
+                    <label class="priority-option">
+                        <input type="radio" name="bug-priority" value="critical">
+                        <span>Kritisch - Notfall (WMS-Betrieb betroffen)</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <a href="https://github.com/zenilify/gfwms/issues/new?assignees=zenilify&labels=bug&projects=&template=bug_report.md" class="btn btn-danger" target="_blank">
+                        <i class="fab fa-github"></i> Bug auf GitHub melden
+                    </a>
+                    <div class="alternative-contact">
+                        <p>Für dringende Probleme kontaktieren Sie:</p>
+                        <strong>Erick Hernandez Zenil: +41 76 342 47 31</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="issue-type-card feature-request">
+            <div class="card-header">
+                <div class="card-icon">🚀</div>
+                <h2>Feature Request / Funktionswunsch</h2>
+            </div>
+            <p>Eine neue Funktion für die WMS-Wissensdatenbank vorschlagen</p>
+            
+            <div class="report-form">
+                <h3>🚀 Funktionsbeschreibung</h3>
+                <p class="form-hint">Eine klare und präzise Beschreibung der gewünschten Funktion.</p>
+                <textarea placeholder="Was soll die neue Funktion können?" rows="4"></textarea>
+
+                <h3>🎯 Problemstellung</h3>
+                <textarea placeholder="Welches Problem würde diese Funktion lösen?" rows="3"></textarea>
+
+                <h3>💡 Vorgeschlagene Lösung</h3>
+                <textarea placeholder="Wie sollte es implementiert werden?" rows="3"></textarea>
+
+                <h3>📊 Nutzen für das WMS-Team</h3>
+                <div class="benefit-options">
+                    <label class="benefit-option">
+                        <input type="checkbox" value="efficiency">
+                        <span>Verbessert die Effizienz</span>
+                    </label>
+                    <label class="benefit-option">
+                        <input type="checkbox" value="errors">
+                        <span>Reduziert Fehler</span>
+                    </label>
+                    <label class="benefit-option">
+                        <input type="checkbox" value="training">
+                        <span>Erleichtert das Training</span>
+                    </label>
+                    <label class="benefit-option">
+                        <input type="checkbox" value="usability">
+                        <span>Verbessert die Benutzerfreundlichkeit</span>
+                    </label>
+                </div>
+
+                <h3>📱 Betroffene Bereiche</h3>
+                <div class="area-options">
+                    <label class="area-option">
+                        <input type="checkbox" value="homepage">
+                        <span>Homepage</span>
+                    </label>
+                    <label class="area-option">
+                        <input type="checkbox" value="training">
+                        <span>Schulungszentrum</span>
+                    </label>
+                    <label class="area-option">
+                        <input type="checkbox" value="wiki">
+                        <span>Wissensdatenbank</span>
+                    </label>
+                    <label class="area-option">
+                        <input type="checkbox" value="chatbot">
+                        <span>KI-Chatbot</span>
+                    </label>
+                    <label class="area-option">
+                        <input type="checkbox" value="errors">
+                        <span>Fehlerdokumentation</span>
+                    </label>
+                </div>
+
+                <h3>⏰ Priorität/Zeitrahmen</h3>
+                <div class="priority-options">
+                    <label class="priority-option">
+                        <input type="radio" name="feature-priority" value="low">
+                        <span>Niedrig - Wäre nett zu haben</span>
+                    </label>
+                    <label class="priority-option">
+                        <input type="radio" name="feature-priority" value="medium">
+                        <span>Mittel - Würde die Arbeit erleichtern</span>
+                    </label>
+                    <label class="priority-option">
+                        <input type="radio" name="feature-priority" value="high">
+                        <span>Hoch - Wichtig für tägliche Abläufe</span>
+                    </label>
+                    <label class="priority-option">
+                        <input type="radio" name="feature-priority" value="critical">
+                        <span>Kritisch - Blockiert WMS-Operationen</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <a href="https://github.com/zenilify/gfwms/issues/new?assignees=zenilify&labels=enhancement&projects=&template=feature_request.md" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i> Feature auf GitHub vorschlagen
+                    </a>
+                    <div class="alternative-contact">
+                        <p>Für Diskussionen kontaktieren:</p>
+                        <strong>Erick Hernandez Zenil: erick@zenilify.com</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.report-issue-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.issue-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.issue-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.issue-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+}
+
+.issue-type-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+}
+
+.issue-type-card.bug-report {
+    border-color: #dc2626;
+}
+
+.issue-type-card.feature-request {
+    border-color: #1e40af;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    font-size: 3rem;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.report-form {
+    margin-top: 2rem;
+}
+
+.report-form h3 {
+    color: var(--text-primary);
+    margin: 2rem 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.form-hint {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    resize: vertical;
+}
+
+.steps-list {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
+
+.step-item {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.environment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.env-item label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.env-item select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+}
+
+.priority-options,
+.benefit-options,
+.area-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.priority-option,
+.benefit-option,
+.area-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.priority-option input,
+.benefit-option input,
+.area-option input {
+    cursor: pointer;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-primary {
+    background: #1e40af;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+}
+
+.alternative-contact {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.alternative-contact p {
+    margin: 0 0 0.5rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+    .issue-types {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .issue-header h1 {
+        font-size: 2rem;
+    }
+    
+    .issue-type-card {
+        padding: 1.5rem;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+    }
+}
+</style>

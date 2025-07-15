@@ -1,0 +1,537 @@
+---
+layout: default
+title: "Beitragen - Georg Fischer WMS Wissensdatenbank"
+description: "Richtlinien und Informationen zum Beitragen zur WMS-Wissensdatenbank"
+breadcrumbs:
+  - title: "Startseite"
+    url: "/"
+  - title: "Beitragen"
+---
+
+<div class="gf-container" style="padding: 3rem 0;">
+    <div class="gf-section" style="text-align: center;">
+        <h1 style="color: #1965a3; margin-bottom: 1rem;">Beitragen zur Georg Fischer WMS Wissensdatenbank</h1>
+        <p style="font-size: 1.25rem; color: #4a5568; max-width: 800px; margin: 0 auto;">Vielen Dank für Ihr Interesse an der Verbesserung unserer WMS-Wissensdatenbank!</p>
+    </div>
+
+    <section class="gf-section">
+        <h2 style="color: #1965a3; text-align: center; margin-bottom: 2rem;">🚀 Schnellstart</h2>
+        <div class="gf-grid gf-grid-4">
+            <div class="gf-card" style="padding: 2rem; text-align: center;">
+                <div style="width: 50px; height: 50px; background: #1965a3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">1</div>
+                <h3 style="color: #1965a3;">Repository forken</h3>
+                <div style="background: #f7fafc; padding: 1rem; border-radius: 0.375rem; margin-top: 1rem;">
+                    <pre style="margin: 0; font-size: 0.875rem;"><code>git clone https://github.com/zenilify/gfwms.git
+cd gfwms</code></pre>
+                </div>
+            </div>
+
+            <div class="gf-card" style="padding: 2rem; text-align: center;">
+                <div style="width: 50px; height: 50px; background: #1965a3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">2</div>
+                <h3 style="color: #1965a3;">Branch erstellen</h3>
+                <div style="background: #f7fafc; padding: 1rem; border-radius: 0.375rem; margin-top: 1rem;">
+                    <pre style="margin: 0; font-size: 0.875rem;"><code>git checkout -b feature/neue-funktion</code></pre>
+                </div>
+            </div>
+
+            <div class="gf-card" style="padding: 2rem; text-align: center;">
+                <div style="width: 50px; height: 50px; background: #1965a3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">3</div>
+                <h3 style="color: #1965a3;">Änderungen testen</h3>
+                <div style="background: #f7fafc; padding: 1rem; border-radius: 0.375rem; margin-top: 1rem;">
+                    <pre style="margin: 0; font-size: 0.875rem;"><code>bundle exec jekyll serve</code></pre>
+                </div>
+            </div>
+
+            <div class="gf-card" style="padding: 2rem; text-align: center;">
+                <div style="width: 50px; height: 50px; background: #1965a3; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">4</div>
+                <h3 style="color: #1965a3;">Pull Request erstellen</h3>
+                <p style="color: #718096;">Erstellen Sie einen Pull Request auf GitHub mit einer klaren Beschreibung Ihrer Änderungen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="guidelines-section">
+        <h2>📝 Inhaltsrichtlinien</h2>
+        
+        <div class="guideline-category">
+            <h3>Dokumentation</h3>
+            <ul>
+                <li><strong>Sprache:</strong> Deutsch (technische Begriffe)</li>
+                <li><strong>Format:</strong> Markdown oder HTML</li>
+                <li><strong>Struktur:</strong> Klare Überschriften und Abschnitte</li>
+                <li><strong>Bilder:</strong> Optimiert für Web (&lt; 1MB)</li>
+            </ul>
+        </div>
+
+        <div class="guideline-category">
+            <h3>Code-Standards</h3>
+            <ul>
+                <li><strong>HTML:</strong> Semantisch korrekt</li>
+                <li><strong>CSS:</strong> BEM-Methodologie</li>
+                <li><strong>JavaScript:</strong> ES6+ mit Kommentaren</li>
+                <li><strong>Jekyll:</strong> Liquid-Templates verwenden</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="file-organization-section">
+        <h2>🔧 Dateienorganisation</h2>
+        <div class="file-tree">
+            <pre><code>/Users/ezenil/gfwms/
+├── _layouts/          # Jekyll-Layouts
+├── _includes/         # Wiederverwendbare Komponenten
+├── pages/             # Hauptinhaltseiten
+│   ├── training/      # Schulungsmaterialien
+│   ├── wiki/          # Wissensdatenbank
+│   ├── chatbot/       # KI-Assistent
+│   └── errors/        # Fehlerdokumentation
+├── assets/            # CSS, JS, Bilder
+└── _config.yml        # Jekyll-Konfiguration</code></pre>
+        </div>
+    </section>
+
+    <section class="contribution-types-section">
+        <h2>🎯 Arten von Beiträgen</h2>
+        
+        <div class="contribution-grid">
+            <div class="contribution-card">
+                <div class="contribution-icon">📚</div>
+                <h3>Dokumentation</h3>
+                <ul>
+                    <li>Neue Verfahren hinzufügen</li>
+                    <li>Bestehende Artikel aktualisieren</li>
+                    <li>Fehlercode-Lösungen erweitern</li>
+                    <li>Screenshots und Diagramme hinzufügen</li>
+                </ul>
+            </div>
+
+            <div class="contribution-card">
+                <div class="contribution-icon">🐛</div>
+                <h3>Fehlerbehebungen</h3>
+                <ul>
+                    <li>Broken Links reparieren</li>
+                    <li>Tippfehler korrigieren</li>
+                    <li>Layout-Probleme beheben</li>
+                    <li>Responsive Design verbessern</li>
+                </ul>
+            </div>
+
+            <div class="contribution-card">
+                <div class="contribution-icon">⚡</div>
+                <h3>Neue Funktionen</h3>
+                <ul>
+                    <li>Interaktive Komponenten</li>
+                    <li>Suchfunktionalität</li>
+                    <li>Offline-Unterstützung</li>
+                    <li>Accessibility-Verbesserungen</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="pr-checklist-section">
+        <h2>📋 Pull Request Checkliste</h2>
+        <div class="checklist">
+            <div class="checklist-item">
+                <input type="checkbox" id="check1">
+                <label for="check1"><strong>Branch aktualisiert</strong> mit dem neuesten main</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check2">
+                <label for="check2"><strong>Tests bestanden</strong> (Jekyll build erfolgreich)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check3">
+                <label for="check3"><strong>Responsive Design</strong> auf mobilen Geräten getestet</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check4">
+                <label for="check4"><strong>Links funktionieren</strong> alle korrekt</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check5">
+                <label for="check5"><strong>Deutsche Rechtschreibung</strong> überprüft</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check6">
+                <label for="check6"><strong>Commit-Nachrichten</strong> sind aussagekräftig</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="check7">
+                <label for="check7"><strong>Screenshots</strong> bei UI-Änderungen hinzugefügt</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-process-section">
+        <h2>🔍 Review-Prozess</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <h3>1. Automatische Checks</h3>
+                <ul>
+                    <li>Jekyll Build erfolgreich</li>
+                    <li>Links sind gültig</li>
+                    <li>HTML/CSS validiert</li>
+                </ul>
+            </div>
+
+            <div class="process-step">
+                <h3>2. Manuelle Überprüfung</h3>
+                <ul>
+                    <li>Inhaltliche Korrektheit</li>
+                    <li>Technische Genauigkeit</li>
+                    <li>Benutzerfreundlichkeit</li>
+                </ul>
+            </div>
+
+            <div class="process-step">
+                <h3>3. Freigabe</h3>
+                <ul>
+                    <li>Review von Erick Hernandez Zenil</li>
+                    <li>Deployment auf GitHub Pages</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="emergency-updates-section">
+        <h2>🚨 Notfall-Updates</h2>
+        <div class="emergency-info">
+            <p>Für kritische Updates (z.B. Notfallkontakte):</p>
+            <ol>
+                <li><strong>Direkter Kontakt:</strong> erick.hernandez.zenil@georgfischer.com</li>
+                <li><strong>Telefon:</strong> +41 76 342 47 31</li>
+                <li><strong>Urgent PR:</strong> Mit "URGENT" im Titel</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>📞 Kontakt</h2>
+        <div class="contact-info-card">
+            <p><strong>Projektverantwortlicher:</strong> Erick Hernandez Zenil</p>
+            <p><strong>E-Mail:</strong> <a href="mailto:erick.hernandez.zenil@georgfischer.com">erick.hernandez.zenil@georgfischer.com</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+41763424731">+41 76 342 47 31</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/zenilify" target="_blank">@zenilify</a></p>
+        </div>
+    </section>
+
+    <section class="recognition-section">
+        <h2>🎖️ Anerkennung</h2>
+        <p>Alle Beitragenden werden in der <a href="https://github.com/zenilify/gfwms/graphs/contributors" target="_blank">Contributors-Seite</a> aufgeführt.</p>
+        <p class="thank-you">Vielen Dank für Ihren Beitrag zur Verbesserung unserer WMS-Dokumentation! 🙏</p>
+    </section>
+</div>
+
+<style>
+.contributing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.contributing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contributing-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Quickstart Section */
+.quickstart-section {
+    margin: 4rem 0;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    background: #1e40af;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.code-snippet {
+    background: #1f2937;
+    color: #e5e7eb;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+
+.code-snippet pre {
+    margin: 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.875rem;
+}
+
+/* Guidelines Section */
+.guidelines-section {
+    margin: 4rem 0;
+}
+
+.guideline-category {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+}
+
+.guideline-category h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.guideline-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guideline-category li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+/* File Organization Section */
+.file-organization-section {
+    margin: 4rem 0;
+}
+
+.file-tree {
+    background: #1f2937;
+    color: #e5e7eb;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.file-tree pre {
+    margin: 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+/* Contribution Types Section */
+.contribution-types-section {
+    margin: 4rem 0;
+}
+
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contribution-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contribution-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contribution-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.contribution-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contribution-card li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.contribution-card li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1e40af;
+}
+
+/* PR Checklist Section */
+.pr-checklist-section {
+    margin: 4rem 0;
+}
+
+.checklist {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-top: 1rem;
+}
+
+.checklist-item {
+    margin-bottom: 1rem;
+}
+
+.checklist-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.checklist-item label {
+    color: var(--text-secondary);
+}
+
+/* Review Process Section */
+.review-process-section {
+    margin: 4rem 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.process-step {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.process-step h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.process-step ul {
+    list-style: none;
+    padding: 0;
+}
+
+.process-step li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.process-step li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+}
+
+/* Emergency Updates Section */
+.emergency-updates-section {
+    margin: 4rem 0;
+}
+
+.emergency-info {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+}
+
+.emergency-info ol {
+    margin: 1rem 0 0 1rem;
+}
+
+/* Contact Section */
+.contact-section {
+    margin: 4rem 0;
+}
+
+.contact-info-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    margin: 1rem auto;
+}
+
+.contact-info-card p {
+    margin: 0.5rem 0;
+}
+
+.contact-info-card a {
+    color: #1e40af;
+    text-decoration: none;
+}
+
+.contact-info-card a:hover {
+    text-decoration: underline;
+}
+
+/* Recognition Section */
+.recognition-section {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.thank-you {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .contributing-header h1 {
+        font-size: 2rem;
+    }
+    
+    .steps-grid,
+    .contribution-grid,
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

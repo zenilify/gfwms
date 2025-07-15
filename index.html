@@ -4,160 +4,190 @@ title: "Georg Fischer WMS Wissensdatenbank"
 description: "Ihre umfassende Anleitung für das Warehouse Management System"
 ---
 
-<div class="hero-section">
-    <div class="hero-content">
-        <h1>Willkommen bei der Georg Fischer WMS Wissensdatenbank</h1>
-        <p class="hero-subtitle">Ihre umfassende Anleitung zur Beherrschung des Jungheinrich Warehouse Management Systems</p>
-        <div class="safety-notice">
-            <div class="safety-content">
-                <i class="fas fa-exclamation-triangle"></i>
-                <div>
-                    <h3>⚠️ Wichtiger Hinweis für neue Mitarbeiter</h3>
-                    <p>Diese Website enthält Anleitungen für das WMS. Bei Unsicherheiten oder kritischen Fehlern kontaktieren Sie IMMER zuerst Ihren Schichtführer oder erfahrene Kollegen.</p>
-                    <div class="emergency-info">
-                        <span><strong>Schichtführer:</strong> Intern 1234</span>
-                        <span><strong>Notfall:</strong> +41 81 770 9999</span>
-                    </div>
+<div class="gf-hero">
+    <div class="gf-container">
+        <h1 style="margin-bottom: 1rem;">Willkommen bei der Georg Fischer WMS Wissensdatenbank</h1>
+        <p class="gf-hero-subtitle">Ihre umfassende Anleitung zur Beherrschung des Jungheinrich Warehouse Management Systems</p>
+        <div class="gf-alert gf-alert-warning" style="max-width: 800px; margin: 2rem auto;">
+            <i class="fas fa-exclamation-triangle" style="font-size: 2rem;"></i>
+            <div>
+                <h3 style="margin-top: 0;">Wichtiger Hinweis für neue Mitarbeiter</h3>
+                <p>Diese Website enthält Anleitungen für das WMS. Bei Unsicherheiten oder kritischen Fehlern kontaktieren Sie IMMER zuerst Ihren Schichtführer oder erfahrene Kollegen.</p>
+                <div style="display: flex; gap: 2rem; margin-top: 1rem;">
+                    <span><strong>Schichtführer:</strong> Intern 1234</span>
+                    <span><strong>24/7 Notfall-Hotline:</strong> +41 81 770 9999</span>
                 </div>
             </div>
         </div>
 
-        <div class="hero-buttons">
-            <a href="{{ '/pages/quick-reference.html' | relative_url }}" class="btn btn-primary">🚀 Quick Start für Neue</a>
-            <a href="{{ '/pages/errors/common/' | relative_url }}" class="btn btn-warning">🔧 Problemlösungen</a>
-            <a href="{{ '/pages/training/' | relative_url }}" class="btn btn-secondary">📚 Training Module</a>
-            <a href="{{ '/pages/wiki/' | relative_url }}" class="btn btn-secondary">📖 Wissensdatenbank</a>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
+            <a href="{{ '/pages/quick-reference.html' | relative_url }}" class="gf-btn gf-btn-primary">🚀 Schnellstart für neue Mitarbeiter</a>
+            <a href="{{ '/pages/errors/common/' | relative_url }}" class="gf-btn gf-btn-secondary">🔧 Problemlösungen</a>
+            <a href="{{ '/pages/training/' | relative_url }}" class="gf-btn gf-btn-dark">📚 Schulungsmodule</a>
+            <a href="{{ '/pages/wiki/' | relative_url }}" class="gf-btn gf-btn-dark">📖 Wissensdatenbank</a>
         </div>
     </div>
 </div>
 
-<div class="features-section">
-    <div class="container">
-        <h2>Entdecken Sie unsere Ressourcen</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
+<div class="gf-section">
+    <div class="gf-container">
+        <h2 style="text-align: center; color: #1965a3; margin-bottom: 3rem;">Entdecken Sie unsere Ressourcen</h2>
+        <div class="gf-grid gf-grid-4">
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="color: #1965a3; margin-bottom: 1rem;">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                     </svg>
                 </div>
                 <h3>Interaktive Schulung</h3>
-                <p>Schritt-für-Schritt-Anleitungen und praktische Übungen zur Beherrschung des WMS-Betriebs</p>
-                <a href="{{ '/pages/training/' | relative_url }}" class="feature-link">Jetzt lernen →</a>
+                <p style="color: #718096;">Schritt-für-Schritt-Anleitungen und praktische Übungen zur Beherrschung des WMS-Betriebs</p>
+                <a href="{{ '/pages/training/' | relative_url }}" class="gf-btn gf-btn-primary" style="margin-top: 1rem;">Jetzt lernen →</a>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="color: #1965a3; margin-bottom: 1rem;">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
                 </div>
                 <h3>Wissensdatenbank</h3>
-                <p>Umfassende Dokumentation, Verfahren und Best Practices für WMS</p>
-                <a href="{{ '/pages/wiki/' | relative_url }}" class="feature-link">Wiki durchsuchen →</a>
+                <p style="color: #718096;">Umfassende Dokumentation, Verfahren und Best Practices für WMS</p>
+                <a href="{{ '/pages/wiki/' | relative_url }}" class="gf-btn gf-btn-primary" style="margin-top: 1rem;">Wiki durchsuchen →</a>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="color: #1965a3; margin-bottom: 1rem;">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                     </svg>
                 </div>
-                <h3>KI-Chatbot</h3>
-                <p>Erhalten Sie sofortige Antworten auf Ihre WMS-Fragen mit unserem intelligenten Assistenten</p>
-                <a href="{{ '/pages/chatbot/' | relative_url }}" class="feature-link">Jetzt chatten →</a>
+                <h3>KI-Assistent</h3>
+                <p style="color: #718096;">Erhalten Sie sofortige Antworten auf Ihre WMS-Fragen mit unserem intelligenten Assistenten</p>
+                <a href="{{ '/pages/chatbot/' | relative_url }}" class="gf-btn gf-btn-primary" style="margin-top: 1rem;">Jetzt chatten →</a>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="color: #1965a3; margin-bottom: 1rem;">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
                 <h3>Störungsbehebung</h3>
-                <p>Fehlerbehebungsanleitungen und Lösungen für häufige WMS-Probleme</p>
-                <a href="{{ '/pages/errors/' | relative_url }}" class="feature-link">Lösungen finden →</a>
+                <p style="color: #718096;">Fehlerbehebungsanleitungen und Lösungen für häufige WMS-Probleme</p>
+                <a href="{{ '/pages/errors/' | relative_url }}" class="gf-btn gf-btn-primary" style="margin-top: 1rem;">Lösungen finden →</a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="quick-access-section">
-    <div class="container">
-        <h2>Schnellzugriff</h2>
-        <div class="quick-access-grid">
-            <div class="quick-access-card">
-                <h3>🚀 Erste Schritte</h3>
-                <ul>
-                    <li><a href="{{ '/pages/training/basics/' | relative_url }}">WMS Grundlagen</a></li>
-                    <li><a href="{{ '/pages/training/navigation/' | relative_url }}">Systemnavigation</a></li>
-                    <li><a href="{{ '/pages/training/first-steps/' | relative_url }}">PC-Client Anmeldung</a></li>
+<div class="gf-section gf-section-gray">
+    <div class="gf-container">
+        <h2 style="text-align: center; color: #1965a3; margin-bottom: 3rem;">Schnellzugriff</h2>
+        <div class="gf-grid gf-grid-3">
+            <div class="gf-card" style="padding: 2rem;">
+                <h3 style="color: #1965a3; margin-bottom: 1rem;">🚀 Erste Schritte</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/training/basics/' | relative_url }}" style="color: #4a5568;">WMS Grundlagen</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/training/navigation/' | relative_url }}" style="color: #4a5568;">Systemnavigation</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/training/first-steps/' | relative_url }}" style="color: #4a5568;">PC-Client Anmeldung</a></li>
                 </ul>
             </div>
             
-            <div class="quick-access-card">
-                <h3>📊 Tägliche Abläufe</h3>
-                <ul>
-                    <li><a href="{{ '/pages/wiki/wareneingang/' | relative_url }}">Wareneingang</a></li>
-                    <li><a href="{{ '/pages/wiki/kommissionierung/' | relative_url }}">Kommissionierung</a></li>
-                    <li><a href="{{ '/pages/wiki/bestandsverwaltung/' | relative_url }}">Bestandsverwaltung</a></li>
+            <div class="gf-card" style="padding: 2rem;">
+                <h3 style="color: #1965a3; margin-bottom: 1rem;">📊 Tägliche Abläufe</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/wiki/wareneingang/' | relative_url }}" style="color: #4a5568;">Wareneingang</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/wiki/kommissionierung/' | relative_url }}" style="color: #4a5568;">Kommissionierung</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/wiki/bestandsverwaltung/' | relative_url }}" style="color: #4a5568;">Bestandsverwaltung</a></li>
                 </ul>
             </div>
             
-            <div class="quick-access-card">
-                <h3>🔧 Fehlerbehebung</h3>
-                <ul>
-                    <li><a href="{{ '/pages/errors/common/' | relative_url }}">Häufige Probleme</a></li>
-                    <li><a href="{{ '/pages/errors/system/' | relative_url }}">Systemfehler</a></li>
-                    <li><a href="{{ '/pages/errors/contact/' | relative_url }}">Support kontaktieren</a></li>
+            <div class="gf-card" style="padding: 2rem;">
+                <h3 style="color: #1965a3; margin-bottom: 1rem;">🔧 Fehlerbehebung</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/errors/common/' | relative_url }}" style="color: #4a5568;">Häufige Probleme</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/errors/system/' | relative_url }}" style="color: #4a5568;">Systemfehler</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="{{ '/pages/errors/contact/' | relative_url }}" style="color: #4a5568;">Support kontaktieren</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<div class="stats-section">
-    <div class="container">
-        <h2>Wissensdatenbank Statistiken</h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">279</div>
-                <div class="stat-label">Schulungsseiten</div>
+<div class="gf-section gf-section-dark">
+    <div class="gf-container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Wissensdatenbank Statistiken</h2>
+        <div class="gf-grid gf-grid-4">
+            <div style="text-align: center;">
+                <div style="font-size: 3rem; font-weight: bold; color: #4aa6e5; margin-bottom: 0.5rem;">279</div>
+                <div style="color: #cbd5e0;">Schulungsseiten</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">98</div>
-                <div class="stat-label">Data Center Handbuch</div>
+            <div style="text-align: center;">
+                <div style="font-size: 3rem; font-weight: bold; color: #4aa6e5; margin-bottom: 0.5rem;">98</div>
+                <div style="color: #cbd5e0;">Data Center Handbuch</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">48</div>
-                <div class="stat-label">Störungslösungen</div>
+            <div style="text-align: center;">
+                <div style="font-size: 3rem; font-weight: bold; color: #4aa6e5; margin-bottom: 0.5rem;">48</div>
+                <div style="color: #cbd5e0;">Störungslösungen</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">Mo-Fr</div>
-                <div class="stat-label">Support 06:00-22:00</div>
+            <div style="text-align: center;">
+                <div style="font-size: 3rem; font-weight: bold; color: #4aa6e5; margin-bottom: 0.5rem;">24/7</div>
+                <div style="color: #cbd5e0;">Notfall-Hotline</div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="recent-updates-section">
-    <div class="container">
-        <h2>Aktuelle Updates</h2>
-        <div class="updates-grid">
-            <div class="update-card">
-                <div class="update-date">Dezember 2024</div>
-                <h3>Notfallblatt aktualisiert</h3>
-                <p>Neue Telefonnummern und Supportnehmer für schnellere Störungsbehebung</p>
+<div class="gf-section">
+    <div class="gf-container">
+        <h2 style="text-align: center; color: #1965a3; margin-bottom: 3rem;">Projektdokumentation</h2>
+        <div class="gf-grid gf-grid-4">
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+                <h3 style="color: #1965a3;">Über das Projekt</h3>
+                <p style="color: #718096; margin-bottom: 1.5rem;">Erfahren Sie mehr über die Georg Fischer WMS Wissensdatenbank und ihre Funktionen.</p>
+                <a href="{{ '/pages/about/' | relative_url }}" class="gf-btn gf-btn-primary">Mehr erfahren →</a>
             </div>
-            <div class="update-card">
-                <div class="update-date">September 2024</div>
-                <h3>Data Center Handbuch v7.4b</h3>
-                <p>Erweiterte Analysen und KI-basierte Assistenzfunktionen dokumentiert</p>
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                <h3 style="color: #1965a3;">Beitragen</h3>
+                <p style="color: #718096; margin-bottom: 1.5rem;">Richtlinien und Informationen zum Beitragen zur WMS-Wissensdatenbank.</p>
+                <a href="{{ '/pages/contributing/' | relative_url }}" class="gf-btn gf-btn-primary">Mitmachen →</a>
             </div>
-            <div class="update-card">
-                <div class="update-date">März 2025</div>
-                <h3>Schulungsunterlage v1.1</h3>
-                <p>Vollständige Dokumentation aller WMS-Prozesse für Georg Fischer Seewis</p>
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+                <h3 style="color: #1965a3;">Bereitstellungsleitfaden</h3>
+                <p style="color: #718096; margin-bottom: 1.5rem;">Vollständige Anleitung für die Bereitstellung der Dokumentationswebsite.</p>
+                <a href="{{ '/pages/deployment/' | relative_url }}" class="gf-btn gf-btn-primary">Bereitstellung →</a>
+            </div>
+            <div class="gf-card" style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                <h3 style="color: #1965a3;">Projektstatus</h3>
+                <p style="color: #718096; margin-bottom: 1.5rem;">Umfassender Projektabschlussbericht mit allen Details und Statistiken.</p>
+                <a href="{{ '/pages/project-status/' | relative_url }}" class="gf-btn gf-btn-primary">Status ansehen →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gf-section gf-section-gray">
+    <div class="gf-container">
+        <h2 style="text-align: center; color: #1965a3; margin-bottom: 3rem;">Aktuelle Updates</h2>
+        <div class="gf-grid gf-grid-3">
+            <div class="gf-card" style="padding: 2rem;">
+                <div class="gf-badge gf-badge-primary" style="margin-bottom: 1rem;">Januar 2025</div>
+                <h3 style="color: #1965a3;">Projekt 100% abgeschlossen</h3>
+                <p style="color: #718096;">Alle WMS-Dokumentationsseiten fertiggestellt und für die Produktion bereit</p>
+            </div>
+            <div class="gf-card" style="padding: 2rem;">
+                <div class="gf-badge gf-badge-primary" style="margin-bottom: 1rem;">Dezember 2024</div>
+                <h3 style="color: #1965a3;">Notfallblatt aktualisiert</h3>
+                <p style="color: #718096;">Neue Telefonnummern und Supportkontakte für schnellere Störungsbehebung</p>
+            </div>
+            <div class="gf-card" style="padding: 2rem;">
+                <div class="gf-badge gf-badge-primary" style="margin-bottom: 1rem;">September 2024</div>
+                <h3 style="color: #1965a3;">Data Center Handbuch v7.4b</h3>
+                <p style="color: #718096;">Erweiterte Analysen und KI-basierte Assistenzfunktionen dokumentiert</p>
             </div>
         </div>
     </div>
@@ -226,6 +256,53 @@ description: "Ihre umfassende Anleitung für das Warehouse Management System"
 .btn.btn-warning:hover {
     background-color: #d97706;
     border-color: #d97706;
+}
+
+/* Documentation Section Styles */
+.documentation-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.doc-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.doc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.doc-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.doc-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.doc-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.doc-card .btn {
+    width: 100%;
 }
 
 @media (max-width: 768px) {

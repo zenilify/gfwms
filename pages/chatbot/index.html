@@ -3,92 +3,93 @@ layout: default
 title: "WMS KI-Assistent"
 description: "Erhalten Sie sofortige Antworten auf Ihre WMS-Fragen mit unserem intelligenten Assistenten"
 breadcrumbs:
+  - title: "Startseite"
+    url: "/"
   - title: "KI-Assistent"
 ---
 
-<div class="chatbot-container">
-    <div class="chatbot-header">
-        <div class="container">
-            <h1>Jungheinrich WMS KI-Assistent</h1>
-            <p>Erhalten Sie sofortige Antworten auf Ihre WMS-Fragen. Unser KI-Assistent ist mit der gesamten WMS-Dokumentation und allen Verfahren geschult.</p>
+<div class="gf-container" style="padding: 3rem 0;">
+    <div class="gf-hero" style="padding: 2rem 0; margin-bottom: 3rem;">
+        <div class="gf-container">
+            <h1 style="color: white; margin-bottom: 1rem;">Georg Fischer WMS KI-Assistent</h1>
+            <p style="color: white; opacity: 0.9; font-size: 1.25rem;">Erhalten Sie sofortige Antworten auf Ihre WMS-Fragen. Unser KI-Assistent ist mit der gesamten WMS-Dokumentation und allen Verfahren geschult.</p>
         </div>
     </div>
 
-    <div class="chatbot-main">
-        <div class="container">
-            <div class="chatbot-interface">
-                <div class="chatbot-sidebar">
-                    <div class="chatbot-info">
-                        <h3>Verwendung</h3>
-                        <ul>
-                            <li>Stellen Sie Fragen in natürlicher Sprache</li>
-                            <li>Fordern Sie Schritt-für-Schritt-Anleitungen an</li>
-                            <li>Erhalten Sie Hilfe bei der Fehlerbehebung</li>
-                            <li>Finden Sie relevante Dokumentation</li>
+    <div class="gf-section">
+        <div class="chatbot-interface" style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem; height: 600px; background: white; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); overflow: hidden;">
+                <div class="chatbot-sidebar" style="background: #f7fafc; padding: 2rem; border-right: 1px solid #e2e8f0; overflow-y: auto;">
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #1965a3; margin-bottom: 1rem;">Verwendung</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0; color: #4a5568; font-size: 0.875rem;"><span style="color: #1965a3; font-weight: bold; margin-right: 0.5rem;">•</span>Stellen Sie Fragen in natürlicher Sprache</li>
+                            <li style="padding: 0.5rem 0; color: #4a5568; font-size: 0.875rem;"><span style="color: #1965a3; font-weight: bold; margin-right: 0.5rem;">•</span>Fordern Sie Schritt-für-Schritt-Anleitungen an</li>
+                            <li style="padding: 0.5rem 0; color: #4a5568; font-size: 0.875rem;"><span style="color: #1965a3; font-weight: bold; margin-right: 0.5rem;">•</span>Erhalten Sie Hilfe bei der Fehlerbehebung</li>
+                            <li style="padding: 0.5rem 0; color: #4a5568; font-size: 0.875rem;"><span style="color: #1965a3; font-weight: bold; margin-right: 0.5rem;">•</span>Finden Sie relevante Dokumentation</li>
                         </ul>
                     </div>
 
-                    <div class="quick-questions">
-                        <h3>Häufige Fragen</h3>
-                        <div class="quick-question-list">
-                            <button class="quick-question-btn" data-question="Wie führe ich den Wareneingang durch?">
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #1965a3; margin-bottom: 1rem;">Häufige Fragen</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <button class="gf-btn gf-btn-secondary" style="font-size: 0.875rem; padding: 0.75rem; text-align: left;" data-question="Wie führe ich den Wareneingang durch?">
                                 Wie führe ich den Wareneingang durch?
                             </button>
-                            <button class="quick-question-btn" data-question="Wie funktioniert die Kommissionierung?">
+                            <button class="gf-btn gf-btn-secondary" style="font-size: 0.875rem; padding: 0.75rem; text-align: left;" data-question="Wie funktioniert die Kommissionierung?">
                                 Wie funktioniert die Kommissionierung?
                             </button>
-                            <button class="quick-question-btn" data-question="Wie erstelle ich Berichte?">
+                            <button class="gf-btn gf-btn-secondary" style="font-size: 0.875rem; padding: 0.75rem; text-align: left;" data-question="Wie erstelle ich Berichte?">
                                 Wie erstelle ich Berichte?
                             </button>
-                            <button class="quick-question-btn" data-question="Was tue ich, wenn das System langsam ist?">
+                            <button class="gf-btn gf-btn-secondary" style="font-size: 0.875rem; padding: 0.75rem; text-align: left;" data-question="Was tue ich, wenn das System langsam ist?">
                                 Was tue ich, wenn das System langsam ist?
                             </button>
-                            <button class="quick-question-btn" data-question="Wie füge ich neue Benutzer hinzu?">
+                            <button class="gf-btn gf-btn-secondary" style="font-size: 0.875rem; padding: 0.75rem; text-align: left;" data-question="Wie füge ich neue Benutzer hinzu?">
                                 Wie füge ich neue Benutzer hinzu?
                             </button>
                         </div>
                     </div>
 
-                    <div class="chatbot-stats">
-                        <h3>Assistent Statistiken</h3>
-                        <div class="stat-item">
-                            <span class="stat-label">Beantwortete Fragen</span>
-                            <span class="stat-value">15,847</span>
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: #1965a3; margin-bottom: 1rem;">Assistent Statistiken</h3>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">
+                            <span style="font-size: 0.875rem; color: #4a5568;">Beantwortete Fragen</span>
+                            <span style="font-weight: 600; color: #1965a3;">15,847</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Durchschnittliche Antwortzeit</span>
-                            <span class="stat-value">2.3 Sekunden</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">
+                            <span style="font-size: 0.875rem; color: #4a5568;">Durchschnittliche Antwortzeit</span>
+                            <span style="font-weight: 600; color: #1965a3;">2.3 Sekunden</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Erfolgsrate</span>
-                            <span class="stat-value">94%</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0;">
+                            <span style="font-size: 0.875rem; color: #4a5568;">Erfolgsrate</span>
+                            <span style="font-weight: 600; color: #1965a3;">94%</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="chatbot-chat">
-                    <div class="chat-header">
-                        <div class="chat-status">
-                            <div class="status-indicator online"></div>
-                            <span>WMS Assistent ist online</span>
+                <div class="chatbot-chat" style="display: flex; flex-direction: column; height: 100%;">
+                    <div class="chat-header" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #e2e8f0; background: #f7fafc;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite;"></div>
+                            <span style="color: #2d3748;">WMS Assistent ist online</span>
                         </div>
-                        <div class="chat-actions">
-                            <button class="chat-action-btn" id="clear-chat" title="Clear conversation">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button style="background: none; border: none; color: #718096; cursor: pointer; padding: 0.5rem; border-radius: 0.25rem; transition: all 0.2s;" id="clear-chat" title="Unterhaltung löschen">
                                 <i class="fas fa-trash"></i>
                             </button>
-                            <button class="chat-action-btn" id="export-chat" title="Export conversation">
+                            <button style="background: none; border: none; color: #718096; cursor: pointer; padding: 0.5rem; border-radius: 0.25rem; transition: all 0.2s;" id="export-chat" title="Unterhaltung exportieren">
                                 <i class="fas fa-download"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="chat-messages" id="chat-messages">
-                        <div class="message assistant-message">
-                            <div class="message-avatar">
+                    <div class="chat-messages" id="chat-messages" style="flex: 1; overflow-y: auto; padding: 1rem 2rem; background: white;">
+                        <div class="message assistant-message" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: #1965a3; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">
                                 <i class="fas fa-robot"></i>
                             </div>
-                            <div class="message-content">
-                                <div class="message-bubble">
+                            <div style="flex: 1; max-width: 70%;">
+                                <div style="background: #f7fafc; border-radius: 0.75rem; padding: 1rem; margin-bottom: 0.5rem; border: 1px solid #e2e8f0;">
                                     <p>Hallo! Ich bin Ihr WMS KI-Assistent. Ich kann Ihnen helfen bei:</p>
                                     <ul>
                                         <li>Schritt-für-Schritt-Anleitungen</li>
@@ -99,25 +100,25 @@ breadcrumbs:
                                     </ul>
                                     <p>Was möchten Sie über das WMS wissen?</p>
                                 </div>
-                                <div class="message-time">Gerade eben</div>
+                                <div style="font-size: 0.75rem; color: #a0aec0;">Gerade eben</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="chat-input-area">
-                        <div class="chat-input-container">
-                            <input type="text" id="chat-input" placeholder="Stellen Sie Ihre Frage zum WMS..." maxlength="500">
-                            <button id="send-button" class="send-btn" disabled>
+                    <div class="chat-input-area" style="padding: 1rem 2rem; background: #f7fafc; border-top: 1px solid #e2e8f0;">
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <input type="text" id="chat-input" placeholder="Stellen Sie Ihre Frage zum WMS..." maxlength="500" class="gf-form-control" style="flex: 1;">
+                            <button id="send-button" class="gf-btn gf-btn-primary" style="width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%;" disabled>
                                 <i class="fas fa-paper-plane"></i>
                             </button>
                         </div>
-                        <div class="chat-input-footer">
-                            <span class="character-count">0/500</span>
-                            <div class="chat-features">
-                                <button class="feature-btn" id="voice-input" title="Voice input">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+                            <span style="font-size: 0.75rem; color: #a0aec0;">0/500</span>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button style="background: none; border: none; color: #718096; cursor: pointer; padding: 0.25rem; border-radius: 0.25rem; transition: color 0.2s;" id="voice-input" title="Spracheingabe">
                                     <i class="fas fa-microphone"></i>
                                 </button>
-                                <button class="feature-btn" id="attachment" title="Attach file">
+                                <button style="background: none; border: none; color: #718096; cursor: pointer; padding: 0.25rem; border-radius: 0.25rem; transition: color 0.2s;" id="attachment" title="Datei anhängen">
                                     <i class="fas fa-paperclip"></i>
                                 </button>
                             </div>
@@ -130,6 +131,12 @@ breadcrumbs:
 </div>
 
 <style>
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
 .chatbot-container {
     min-height: 100vh;
     display: flex;
@@ -302,8 +309,8 @@ breadcrumbs:
 }
 
 .chat-action-btn:hover {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
+    background: rgba(0, 0, 0, 0.05);
+    color: #1965a3;
 }
 
 .chat-messages {
@@ -542,7 +549,7 @@ class WMSChatbot {
     }
 
     setupQuickQuestions() {
-        const quickQuestionBtns = document.querySelectorAll('.quick-question-btn');
+        const quickQuestionBtns = document.querySelectorAll('[data-question]');
         quickQuestionBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const question = btn.dataset.question;
@@ -581,7 +588,7 @@ class WMSChatbot {
     handleInputChange() {
         const chatInput = document.getElementById('chat-input');
         const sendButton = document.getElementById('send-button');
-        const characterCount = document.querySelector('.character-count');
+        const characterCount = document.querySelector('.chat-input-area span');
         
         const length = chatInput.value.length;
         characterCount.textContent = `${length}/500`;

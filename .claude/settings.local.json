@@ -23,7 +23,8 @@
       "Bash(bundle install:*)",
       "Bash(gh api:*)",
       "WebFetch(domain:www.georgfischer.com)",
-      "WebFetch(domain:brandfetch.com)"
+      "WebFetch(domain:brandfetch.com)",
+      "Bash(gh run list:*)"
     ],
     "deny": []
   }

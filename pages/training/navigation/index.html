@@ -25,6 +25,14 @@ next:
 
 # Systemnavigation - Jungheinrich WMS PC-Client
 
+<link rel="stylesheet" href="/assets/css/training-enhancements.css">
+
+<div class="interactive-demo">
+    <h2>🚀 Willkommen zur interaktiven Navigation!</h2>
+    <p>In diesem Modul lernen Sie, wie Sie sich wie ein Profi durch das Jungheinrich WMS bewegen.</p>
+    <button class="demo-button" onclick="startNavigationDemo()">Demo starten</button>
+</div>
+
 ## Überblick
 
 Die effiziente Navigation im Jungheinrich WMS PC-Client ist entscheidend für eine produktive Arbeit. Dieses Modul zeigt Ihnen, wie Sie sich optimal im System bewegen und alle verfügbaren Funktionen schnell finden.
@@ -41,22 +49,28 @@ Nach Abschluss dieses Moduls können Sie:
 
 ## 1. Anmeldung am WMS PC-Client
 
-### 1.1 Systemstart
+### 1.1 Systemstart - Animierte Anleitung
 
-**Anmeldung > Anmelden**
+<div class="training-image-container">
+    <img src="/assets/images/training_gifs/login_process.gif" alt="Anmeldeprozess Animation" class="training-image">
+    <p class="image-caption">Animierter Anmeldeprozess - Schritt für Schritt</p>
+</div>
 
-1. **Desktop-Icon doppelklicken**
-   - Jungheinrich WMS-Icon auf dem Desktop
-   - Anmeldefenster öffnet sich automatisch
-
-2. **Anmeldedaten eingeben**
-   - Benutzername (Login-Name)
-   - Passwort
-   - System auswählen (falls mehrere verfügbar)
-
-3. **Anmelden**
-   - "Anmelden"-Schaltfläche betätigen
-   - Zugriff auf WMS-Funktionen
+<div class="step-guide">
+    <div class="step-item">
+        <strong>Desktop-Icon doppelklicken</strong>
+        <p>Jungheinrich WMS-Icon auf dem Desktop</p>
+    </div>
+    <div class="step-item">
+        <strong>Anmeldedaten eingeben</strong>
+        <p>Benutzername: Ihre Personalnummer<br>
+           Passwort: Ihr persönliches Passwort</p>
+    </div>
+    <div class="step-item">
+        <strong>System auswählen und anmelden</strong>
+        <p>Wählen Sie "Produktivsystem" für den Echtbetrieb</p>
+    </div>
+</div>
 
 ### 1.2 Systemidentifikation
 
@@ -119,6 +133,11 @@ Das WMS-Interface gliedert sich in folgende Bereiche:
 ## 3. Navigationsbereich im Detail
 
 ### 3.1 Schaltflächen des Navigationsbereichs
+
+<div class="training-image-container">
+    <img src="/assets/images/training_gifs/navigation_menu.gif" alt="Navigationsmenü Animation" class="training-image">
+    <p class="image-caption">Interaktive Navigation durch das Menüsystem</p>
+</div>
 
 #### **Menü ein-/ausblenden**
 - **Schaltfläche** links oben im Navigationsbereich
@@ -381,9 +400,39 @@ Stammdaten > Artikelstamm > Artikel bearbeiten
 - **Tastenkombinationen Übersicht**
 
 ### Screenshots und Hilfsmittel
-*[Platzhalter für Screenshots der Navigation]*
-*[Platzhalter für Tastenkombinationen-Übersicht]*
-*[Platzhalter für Menüstruktur-Diagramm]*
+
+<div class="training-image-grid">
+    <div class="training-image-item">
+        <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_022_img_01.png" alt="WMS Hauptbildschirm" class="training-image">
+        <p class="image-caption">WMS PC-Client Hauptbildschirm</p>
+    </div>
+    <div class="training-image-item">
+        <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_024_img_01.png" alt="Navigationsbereich" class="training-image">
+        <p class="image-caption">Navigationsbereich im Detail</p>
+    </div>
+    <div class="training-image-item">
+        <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_027_img_01.png" alt="Breadcrumb Navigation" class="training-image">
+        <p class="image-caption">Breadcrumb-Navigation</p>
+    </div>
+    <div class="training-image-item">
+        <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_028_img_01.png" alt="Suchfunktion" class="training-image">
+        <p class="image-caption">Erweiterte Suchfunktion</p>
+    </div>
+</div>
+
+#### Tastenkombinationen-Übersicht
+<div class="highlight-box">
+    <h4>Quick Reference Card</h4>
+    <table class="table table-condensed">
+        <tr><td><kbd>F1</kbd></td><td>Hilfe</td></tr>
+        <tr><td><kbd>F2</kbd></td><td>Bearbeiten</td></tr>
+        <tr><td><kbd>F3</kbd></td><td>Suchen</td></tr>
+        <tr><td><kbd>F5</kbd></td><td>Aktualisieren</td></tr>
+        <tr><td><kbd>F9</kbd></td><td>Speichern</td></tr>
+        <tr><td><kbd>Ctrl + M</kbd></td><td>Menü toggle</td></tr>
+        <tr><td><kbd>Ctrl + 1-4</kbd></td><td>Arbeitsbereich</td></tr>
+    </table>
+</div>
 
 ## Nächste Schritte
 
@@ -408,3 +457,28 @@ Nach Abschluss dieses Moduls:
 *Dieser Trainingsinhalt basiert auf der Jungheinrich WMS Schulungsunterlage für Georg Fischer Seewis, Version 1.1, Stand: 27.03.2025*
 
 *© Georg Fischer AG - Alle Rechte vorbehalten*
+
+<script>
+function startNavigationDemo() {
+    alert('Die interaktive Demo startet! Folgen Sie den Anweisungen auf dem Bildschirm.');
+    // In a real implementation, this could launch an interactive tutorial
+}
+
+// Add hover effects to images
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.training-image');
+    images.forEach(img => {
+        img.addEventListener('click', function() {
+            // Create modal for larger view
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:pointer;';
+            const largeImg = document.createElement('img');
+            largeImg.src = this.src;
+            largeImg.style.cssText = 'max-width:90%;max-height:90%;';
+            modal.appendChild(largeImg);
+            modal.addEventListener('click', () => modal.remove());
+            document.body.appendChild(modal);
+        });
+    });
+});
+</script>

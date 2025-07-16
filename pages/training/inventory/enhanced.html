@@ -1,0 +1,605 @@
+---
+layout: training
+title: "Bestandsverwaltung - Interaktiv"
+description: "Praxisnahe Bestandsverwaltung mit visuellen Beispielen"
+duration: "65 Minuten"
+difficulty: "Intermediate"
+progress: 0
+prerequisites:
+  - title: "WMS Grundlagen"
+    url: "/pages/training/basics/"
+  - title: "Systemnavigation"
+    url: "/pages/training/navigation/"
+learning_objectives:
+  - "Bestandsführung und -kontrolle meistern"
+  - "Inventurprozesse durchführen"
+  - "Lagerplatzoptimierung verstehen"
+  - "Bestandsberichte erstellen und interpretieren"
+previous:
+  title: "Kommissionierung"
+  url: "/pages/training/picking/"
+next:
+  title: "Berichtswesen"
+  url: "/pages/training/reporting/"
+---
+
+# Bestandsverwaltung - Praxisorientiertes Training
+
+<link rel="stylesheet" href="/assets/css/training-enhancements.css">
+
+<div class="interactive-demo">
+    <h2>📦 Meistern Sie die Bestandsverwaltung!</h2>
+    <p>Lernen Sie durch praktische Beispiele und visuelle Anleitungen, wie Sie Bestände effizient verwalten.</p>
+    <div class="demo-stats">
+        <span class="stat-item">🎯 15 Praxisbeispiele</span>
+        <span class="stat-item">📊 8 Berichte</span>
+        <span class="stat-item">🔍 5 Analysetools</span>
+    </div>
+</div>
+
+## 1. Bestandsübersicht verstehen
+
+### 1.1 Das Lagerlayout
+
+<div class="training-image-container">
+    <img src="/assets/images/training_gifs/warehouse_layout.gif" alt="Animiertes Lagerlayout" class="training-image">
+    <p class="image-caption">Interaktive Übersicht der Lagerbereiche</p>
+</div>
+
+<div class="practical-example">
+    <h4>Beispiel: Lagerplatzbelegung analysieren</h4>
+    <p>Georg Fischer Seewis verfügt über folgende Lagerbereiche:</p>
+    <ul>
+        <li><strong>Hochregallager (HRL):</strong> 12.000 Palettenplätze</li>
+        <li><strong>Automatikkleinteilelager (AKL):</strong> 25.000 Behälterplätze</li>
+        <li><strong>Vorzone:</strong> 500 Stellplätze</li>
+        <li><strong>Qualitätszone:</strong> 200 Prüfplätze</li>
+    </ul>
+    <div class="highlight-box">
+        <strong>Aktuelle Auslastung:</strong> HRL: 87% | AKL: 92% | Vorzone: 65%
+    </div>
+</div>
+
+## 2. Bestandsarten und ihre Verwaltung
+
+### 2.1 Bestandsklassifizierung
+
+<div class="step-guide">
+    <div class="step-item">
+        <strong>Verfügbarer Bestand</strong>
+        <p>Sofort kommissionierbar</p>
+        <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_124_img_01.png" alt="Verfügbarer Bestand" style="max-width: 300px;">
+    </div>
+    <div class="step-item">
+        <strong>Gesperrter Bestand</strong>
+        <p>Qualitätsprüfung oder Reklamation</p>
+        <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_125_img_01.png" alt="Gesperrter Bestand" style="max-width: 300px;">
+    </div>
+    <div class="step-item">
+        <strong>Reservierter Bestand</strong>
+        <p>Für Aufträge vorgemerkt</p>
+        <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_126_img_01.png" alt="Reservierter Bestand" style="max-width: 300px;">
+    </div>
+</div>
+
+### 2.2 Praktisches Beispiel: Bestandsstatus ändern
+
+<div class="practical-example">
+    <h4>Szenario: Qualitätssperrung durchführen</h4>
+    <p>Ein Kunde meldet einen Qualitätsmangel bei Ventil-Artikel 4021.123.456</p>
+    
+    <div class="step-guide">
+        <div class="step-item">
+            <strong>Bestand lokalisieren</strong>
+            <code>Bestandsverwaltung → Artikelbestand → Suche: 4021.123.456</code>
+        </div>
+        <div class="step-item">
+            <strong>Charge identifizieren</strong>
+            <p>Charge: 2025-03-001 | Menge: 250 ST | Lagerort: HRL-05-12-03</p>
+        </div>
+        <div class="step-item">
+            <strong>Status ändern</strong>
+            <p>Status von "Verfügbar" auf "Gesperrt" | Grund: "Qualitätsprüfung"</p>
+        </div>
+        <div class="step-item">
+            <strong>Dokumentation</strong>
+            <p>Sperrnummer: QS-2025-0347 | Prüfauftrag erstellt</p>
+        </div>
+    </div>
+</div>
+
+## 3. Inventurprozesse
+
+### 3.1 Inventurarten im Überblick
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Inventurart</th>
+            <th>Häufigkeit</th>
+            <th>Umfang</th>
+            <th>Beispiel bei GF</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Stichtagsinventur</strong></td>
+            <td>Jährlich</td>
+            <td>Gesamtbestand</td>
+            <td>31.12. - Komplettinventur</td>
+        </tr>
+        <tr>
+            <td><strong>Permanente Inventur</strong></td>
+            <td>Laufend</td>
+            <td>Rotierende Bereiche</td>
+            <td>Täglich 50 Lagerplätze</td>
+        </tr>
+        <tr>
+            <td><strong>Anlassinventur</strong></td>
+            <td>Bei Bedarf</td>
+            <td>Einzelne Artikel</td>
+            <td>Bei Differenzen</td>
+        </tr>
+        <tr>
+            <td><strong>Nulldurchgangsinventur</strong></td>
+            <td>Automatisch</td>
+            <td>Leere Plätze</td>
+            <td>Bei Leerkommissionierung</td>
+        </tr>
+    </tbody>
+</table>
+
+### 3.2 Inventurdurchführung - Schritt für Schritt
+
+<div class="training-image-container">
+    <img src="/assets/images/pdf_extracts/Georg_Fischer_Seewis_Schulung_WMS/page_140_img_01.png" alt="Inventurprozess" class="training-image">
+    <p class="image-caption">Der Inventurprozess im WMS</p>
+</div>
+
+<div class="interactive-inventory-demo">
+    <h4>🎮 Interaktive Inventur-Simulation</h4>
+    <div id="inventory-simulator">
+        <div class="inventory-step active" data-step="1">
+            <h5>Schritt 1: Inventurauftrag abrufen</h5>
+            <p>Scanner zeigt: Lagerplatz HRL-03-15-02</p>
+            <button onclick="nextInventoryStep(2)">Weiter →</button>
+        </div>
+        <div class="inventory-step" data-step="2" style="display:none;">
+            <h5>Schritt 2: Physische Zählung</h5>
+            <p>Gefunden: Artikel 4021.987.654 | Menge: <input type="number" id="count-input" value="48"> ST</p>
+            <button onclick="nextInventoryStep(3)">Zählung bestätigen →</button>
+        </div>
+        <div class="inventory-step" data-step="3" style="display:none;">
+            <h5>Schritt 3: Differenz feststellen</h5>
+            <p class="alert-box">⚠️ Differenz: Soll: 50 ST | Ist: 48 ST | Differenz: -2 ST</p>
+            <button onclick="nextInventoryStep(4)">Nachzählung →</button>
+        </div>
+        <div class="inventory-step" data-step="4" style="display:none;">
+            <h5>Schritt 4: Inventurabschluss</h5>
+            <p>✅ Inventur abgeschlossen | Differenz gebucht | Protokoll: INV-2025-0892</p>
+            <button onclick="resetInventory()">Neue Inventur starten</button>
+        </div>
+    </div>
+</div>
+
+## 4. Lagerplatzoptimierung
+
+### 4.1 ABC-XYZ-Analyse
+
+<div class="training-image-grid">
+    <div class="training-image-item">
+        <h5>ABC-Analyse (Wertanteil)</h5>
+        <canvas id="abc-chart" width="300" height="200"></canvas>
+        <ul style="text-align: left; margin-top: 1rem;">
+            <li><strong>A-Artikel:</strong> 20% der Artikel = 80% des Wertes</li>
+            <li><strong>B-Artikel:</strong> 30% der Artikel = 15% des Wertes</li>
+            <li><strong>C-Artikel:</strong> 50% der Artikel = 5% des Wertes</li>
+        </ul>
+    </div>
+    <div class="training-image-item">
+        <h5>XYZ-Analyse (Verbrauch)</h5>
+        <canvas id="xyz-chart" width="300" height="200"></canvas>
+        <ul style="text-align: left; margin-top: 1rem;">
+            <li><strong>X-Artikel:</strong> Konstanter Verbrauch</li>
+            <li><strong>Y-Artikel:</strong> Schwankender Verbrauch</li>
+            <li><strong>Z-Artikel:</strong> Unregelmäßiger Verbrauch</li>
+        </ul>
+    </div>
+</div>
+
+### 4.2 Optimierungsmatrix
+
+<div class="optimization-matrix">
+    <table class="matrix-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>X (Konstant)</th>
+                <th>Y (Schwankend)</th>
+                <th>Z (Unregelmäßig)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>A (Hoher Wert)</strong></td>
+                <td class="priority-high">AX: Schnellläuferzone</td>
+                <td class="priority-medium">AY: Mittlere Zone</td>
+                <td class="priority-medium">AZ: Überwachte Zone</td>
+            </tr>
+            <tr>
+                <td><strong>B (Mittlerer Wert)</strong></td>
+                <td class="priority-medium">BX: Standard Zone</td>
+                <td class="priority-low">BY: Flexible Zone</td>
+                <td class="priority-low">BZ: Sammelzone</td>
+            </tr>
+            <tr>
+                <td><strong>C (Niedriger Wert)</strong></td>
+                <td class="priority-low">CX: Kompaktlager</td>
+                <td class="priority-low">CY: Reservezone</td>
+                <td class="priority-lowest">CZ: Langsamdreher</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+## 5. Bestandsberichte und KPIs
+
+### 5.1 Wichtige Kennzahlen
+
+<div class="kpi-dashboard">
+    <div class="kpi-card">
+        <h5>Lagerumschlag</h5>
+        <div class="kpi-value">12.5</div>
+        <div class="kpi-trend">↑ +8%</div>
+        <p>Ziel: > 10</p>
+    </div>
+    <div class="kpi-card">
+        <h5>Bestandsgenauigkeit</h5>
+        <div class="kpi-value">99.2%</div>
+        <div class="kpi-trend">↑ +0.3%</div>
+        <p>Ziel: > 99%</p>
+    </div>
+    <div class="kpi-card">
+        <h5>Reichweite</h5>
+        <div class="kpi-value">28 Tage</div>
+        <div class="kpi-trend">→ ±0</div>
+        <p>Ziel: 25-30</p>
+    </div>
+    <div class="kpi-card">
+        <h5>Kapitalbindung</h5>
+        <div class="kpi-value">2.4 Mio</div>
+        <div class="kpi-trend">↓ -5%</div>
+        <p>Ziel: < 2.5 Mio</p>
+    </div>
+</div>
+
+### 5.2 Berichtsbeispiel: Langsamdreher-Analyse
+
+<div class="report-example">
+    <h5>Langsamdreher-Report Q1 2025</h5>
+    <table class="report-table">
+        <thead>
+            <tr>
+                <th>Artikel</th>
+                <th>Bezeichnung</th>
+                <th>Bestand</th>
+                <th>Letzte Bewegung</th>
+                <th>Wert</th>
+                <th>Aktion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4021.456.789</td>
+                <td>Ventil DN50 Sonder</td>
+                <td>45 ST</td>
+                <td>vor 180 Tagen</td>
+                <td>13.500 €</td>
+                <td><button class="action-btn">Analysieren</button></td>
+            </tr>
+            <tr>
+                <td>4021.789.012</td>
+                <td>Flansch Spezial</td>
+                <td>120 ST</td>
+                <td>vor 365 Tagen</td>
+                <td>8.400 €</td>
+                <td><button class="action-btn">Aussondern</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+## 6. Praktische Übungen
+
+### Übung 1: Bestandskorrektur
+<div class="exercise-box">
+    <h5>Szenario:</h5>
+    <p>Bei der Kommissionierung wurde eine Differenz festgestellt. Artikel 4021.111.222 zeigt im System 100 ST, physisch sind aber nur 95 ST vorhanden.</p>
+    <details>
+        <summary>Lösung anzeigen</summary>
+        <ol>
+            <li>Bestandsverwaltung → Bestandskorrektur</li>
+            <li>Artikel suchen: 4021.111.222</li>
+            <li>Korrekturgrund: "Kommissionierdifferenz"</li>
+            <li>Neue Menge: 95 ST</li>
+            <li>Differenz: -5 ST dokumentieren</li>
+        </ol>
+    </details>
+</div>
+
+### Übung 2: ABC-Analyse durchführen
+<div class="exercise-box">
+    <h5>Aufgabe:</h5>
+    <p>Führen Sie eine ABC-Analyse für die Produktgruppe "Ventile" durch.</p>
+    <button onclick="startABCExercise()">Übung starten</button>
+</div>
+
+## 7. Tipps aus der Praxis
+
+<div class="tips-section">
+    <div class="tip-card">
+        <h5>💡 Tipp 1: Zyklische Inventur</h5>
+        <p>Teilen Sie Ihr Lager in 250 Zonen. Bei täglich einer Zone haben Sie nach einem Jahr alles gezählt.</p>
+    </div>
+    <div class="tip-card">
+        <h5>💡 Tipp 2: Nullbestände prüfen</h5>
+        <p>Nutzen Sie Leerkommissionierungen automatisch für Nulldurchgangsinventuren.</p>
+    </div>
+    <div class="tip-card">
+        <h5>💡 Tipp 3: Frühwarnsystem</h5>
+        <p>Richten Sie Alerts für kritische Mindestbestände ein - 20% über Sicherheitsbestand.</p>
+    </div>
+</div>
+
+## Lernkontrolle
+
+<div class="quiz-container">
+    <h3>Testen Sie Ihr Wissen!</h3>
+    
+    <div class="quiz-question">1. Wie hoch sollte die Bestandsgenauigkeit mindestens sein?</div>
+    <ul class="quiz-options">
+        <li class="quiz-option" onclick="checkAnswer(this, false)">95%</li>
+        <li class="quiz-option" onclick="checkAnswer(this, false)">97%</li>
+        <li class="quiz-option" onclick="checkAnswer(this, true)">99%</li>
+        <li class="quiz-option" onclick="checkAnswer(this, false)">100%</li>
+    </ul>
+    
+    <div class="quiz-question">2. Was gehört zur permanenten Inventur?</div>
+    <ul class="quiz-options">
+        <li class="quiz-option" onclick="checkAnswer(this, true)">Rotierende Bereichszählung</li>
+        <li class="quiz-option" onclick="checkAnswer(this, false)">Jährliche Komplettinventur</li>
+        <li class="quiz-option" onclick="checkAnswer(this, false)">Nur Hochwerttteile</li>
+        <li class="quiz-option" onclick="checkAnswer(this, false)">Monatliche Stichproben</li>
+    </ul>
+</div>
+
+<style>
+.demo-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.optimization-matrix .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.matrix-table td, .matrix-table th {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.priority-high { background: #ff6b6b; color: white; }
+.priority-medium { background: #feca57; }
+.priority-low { background: #48dbfb; }
+.priority-lowest { background: #c8d6e5; }
+
+.kpi-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.kpi-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.kpi-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0.5rem 0;
+}
+
+.kpi-trend {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.report-table th, .report-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.action-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.exercise-box {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.tips-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.tip-card {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.inventory-step {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.alert-box {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+</style>
+
+<script>
+function nextInventoryStep(step) {
+    document.querySelectorAll('.inventory-step').forEach(el => {
+        el.style.display = 'none';
+        el.classList.remove('active');
+    });
+    const nextStep = document.querySelector(`[data-step="${step}"]`);
+    if (nextStep) {
+        nextStep.style.display = 'block';
+        nextStep.classList.add('active');
+    }
+}
+
+function resetInventory() {
+    nextInventoryStep(1);
+    document.getElementById('count-input').value = 48;
+}
+
+function checkAnswer(element, isCorrect) {
+    const options = element.parentElement.querySelectorAll('.quiz-option');
+    options.forEach(opt => {
+        opt.classList.remove('correct', 'incorrect');
+        opt.onclick = null;
+    });
+    
+    if (isCorrect) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('incorrect');
+    }
+}
+
+function startABCExercise() {
+    alert('ABC-Analyse Übung: Öffnet in neuem Fenster...');
+}
+
+// Draw simple charts
+document.addEventListener('DOMContentLoaded', function() {
+    // ABC Chart
+    const abcCanvas = document.getElementById('abc-chart');
+    if (abcCanvas && abcCanvas.getContext) {
+        const ctx = abcCanvas.getContext('2d');
+        // Simple bar chart
+        ctx.fillStyle = '#ff6b6b';
+        ctx.fillRect(20, 150, 60, -120);
+        ctx.fillStyle = '#feca57';
+        ctx.fillRect(100, 150, 60, -60);
+        ctx.fillStyle = '#48dbfb';
+        ctx.fillRect(180, 150, 60, -30);
+        
+        // Labels
+        ctx.fillStyle = '#000';
+        ctx.font = '14px Arial';
+        ctx.fillText('A', 45, 170);
+        ctx.fillText('B', 125, 170);
+        ctx.fillText('C', 205, 170);
+    }
+    
+    // XYZ Chart
+    const xyzCanvas = document.getElementById('xyz-chart');
+    if (xyzCanvas && xyzCanvas.getContext) {
+        const ctx = xyzCanvas.getContext('2d');
+        // Simple line chart simulation
+        ctx.strokeStyle = '#28a745';
+        ctx.beginPath();
+        ctx.moveTo(20, 100);
+        ctx.lineTo(100, 100);
+        ctx.stroke();
+        
+        ctx.strokeStyle = '#ffc107';
+        ctx.beginPath();
+        ctx.moveTo(20, 80);
+        ctx.lineTo(50, 120);
+        ctx.lineTo(100, 90);
+        ctx.stroke();
+        
+        ctx.strokeStyle = '#dc3545';
+        ctx.beginPath();
+        ctx.moveTo(20, 60);
+        ctx.lineTo(40, 140);
+        ctx.lineTo(70, 40);
+        ctx.lineTo(100, 130);
+        ctx.stroke();
+        
+        // Labels
+        ctx.fillStyle = '#000';
+        ctx.font = '12px Arial';
+        ctx.fillText('X', 110, 100);
+        ctx.fillText('Y', 110, 90);
+        ctx.fillText('Z', 110, 130);
+    }
+});
+</script>
+
+## Zusammenfassung
+
+Sie haben nun die fortgeschrittenen Konzepte der Bestandsverwaltung gemeistert:
+
+- ✅ Bestandsarten und -status verstanden
+- ✅ Inventurprozesse durchgeführt
+- ✅ ABC-XYZ-Analyse angewendet
+- ✅ KPIs interpretiert und optimiert
+
+## Nächste Schritte
+
+Vertiefen Sie Ihr Wissen mit dem [Berichtswesen-Modul](/pages/training/reporting/) oder üben Sie mit realen Szenarien im [Praxis-Workshop](/pages/training/workshop/).
+
+---
+
+<div style="text-align: center; margin-top: 3rem;">
+    <a href="/pages/training/picking/" class="btn btn-secondary">← Zurück zu Kommissionierung</a>
+    <a href="/pages/training/reporting/" class="btn btn-primary">Weiter zu Berichtswesen →</a>
+</div>

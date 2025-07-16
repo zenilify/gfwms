@@ -24,7 +24,11 @@
       "Bash(gh api:*)",
       "WebFetch(domain:www.georgfischer.com)",
       "WebFetch(domain:brandfetch.com)",
-      "Bash(gh run list:*)"
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(claude doctor)",
+      "Bash(claude doctor:*)",
+      "Bash(echo:*)"
     ],
     "deny": []
   }
